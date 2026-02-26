@@ -140,20 +140,23 @@ input[type=range]{ accent-color: var(--c-primary); width: 90px; }
     position: relative;
     bottom: 1.2rem;
 
+    width: 100%;              /* ✅ cruciaal */
+    text-align: center;       /* ✅ centreert tekst */
+
     font-family: var(--f-mono);
-    font-size: 0.65rem;              /* iets groter, subtiel */
-    letter-spacing: 0.28rem;         /* meer “radio / CW” */
+    font-size: 0.65rem;
+    letter-spacing: 0.28rem;
 
-    text-align: center;              /* ✅ center */
+    color: var(--c-primary-dim);
+    opacity: 0.75;
 
-    color: var(--c-primary-dim);     /* groen maar niet hard */
-    opacity: 0.75;                   /* beter contrast */
-
-    text-shadow: 
-        0 0 6px rgba(0,255,136,0.35), /* zachte glow */
+    text-shadow:
+        0 0 6px rgba(0,255,136,0.35),
         0 0 18px rgba(0,255,136,0.15);
 
     z-index: 2;
+}
+``
 }
 </style>
 
