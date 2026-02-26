@@ -141,39 +141,36 @@ input[type=range]{ accent-color: var(--c-primary); width: 90px; }
 }
 .enter-site .arr { transition: transform 0.25s ease; }
 .enter-site:hover .arr { transform: translateX(5px); }
-.bottom-label {
+.enter-site--label{
+  /* ruimte tussen knop en label */
   margin-top: 1.2rem;
 
-  font-family: var(--f-mono);
+  /* maak het label “tekst”, geen knop */
+  display: block;         /* <- belangrijk: geen inline-flex meer */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
+  /* typografie */
   font-size: 0.55rem;
   letter-spacing: 0.22rem;
-  text-transform: uppercase;
-
+  line-height: 1;         /* strakker, geen optische verschuiving */
   color: var(--c-text-3);
-  opacity: 0.7;
+  opacity: 0.75;
 
-  white-space: nowrap;
+  /* geen interactie */
   pointer-events: none;
 }
-  
-.enter-site--label {
-  margin-top: 1.2rem;      /* ✅ ruimte tussen knop en label */
-  padding: 0;              /* geen knop-gevoel */
-  border: none;            /* ✅ geen groen kader */
 
-  font-size: 0.55rem;      /* iets kleiner */
-  letter-spacing: 0.22rem;
-
+/* voorkom dat het label “hover” mee doet */
+.enter-site--label:hover{
   color: var(--c-text-3);
-  opacity: 0.7;
-
-  pointer-events: none;    /* geen hover/click */
+  box-shadow: none;
+  letter-spacing: 0.22rem;
 }
 
-
-
-
-  
 </style>
 
 <!-- RADIALE GLOW -->
