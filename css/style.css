@@ -437,3 +437,91 @@ body.landing { overflow: hidden; }
      pointer-events: none;
      animation: fadeUp 0.8s 0.6s ease both;
    }
+
+/* ========== Rijke tijdlijn ========== */
+.rich-timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.rich-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--c-primary),
+    rgba(0,255,136,.1)
+  );
+}
+
+.rtl-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.rtl-item::before {
+  content: '';
+  position: absolute;
+  left: -2.9rem;
+  top: .4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  box-shadow: var(--glow-sm);
+  border: 2px solid var(--c-bg);
+}
+
+.rtl-item.dim::before {
+  background: var(--c-surface-2);
+  border-color: var(--c-border-h);
+  box-shadow: none;
+}
+
+.rtl-year {
+  font-family: var(--f-mono);
+  font-size: .6rem;
+  letter-spacing: .14rem;
+  color: var(--c-primary);
+  margin-bottom: .25rem;
+}
+
+.rtl-item.dim .rtl-year {
+  color: var(--c-text-3);
+}
+
+.rtl-title {
+  font-family: var(--f-display);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: .35rem;
+}
+
+.rtl-desc {
+  font-size: .86rem;
+  color: var(--c-text-2);
+  line-height: 1.7;
+  margin-bottom: .5rem;
+}
+
+.tl-badges {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+
+.tl-badge {
+  font-family: var(--f-mono);
+  font-size: .55rem;
+  letter-spacing: .12rem;
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border-h);
+  color: var(--c-text-3);
+}
