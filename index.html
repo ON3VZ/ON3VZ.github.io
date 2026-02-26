@@ -1,0 +1,23 @@
+
+---
+layout: default
+landing: true
+title: Home
+---
+<section class="stage">
+ <h1 class="callsign-hero">ON3KRB</h1>
+ <p class="phonetic-line">Foxtrot · Tango · Bravo</p>
+</section>
+<section class="container">
+ <h2>Laatste posts</h2>
+ <div class="blog-grid">
+ {% assign posts = site.posts | slice: 0,4 %}
+ {% for post in posts %}
+  {% if forloop.first %}
+   <a class="blog-featured" href="{{ post.url }}"><h3>{{ post.title }}</h3><p>{{ post.excerpt }}</p></a>
+  {% else %}
+   <a class="blog-card" href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
+  {% endif %}
+ {% endfor %}
+ </div>
+</section>

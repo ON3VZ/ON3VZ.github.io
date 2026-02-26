@@ -1,0 +1,22 @@
+
+---
+layout: default
+title: Over mezelf
+---
+<section class="container">
+ <h1>Over mezelf</h1>
+ <p>Radioamateur ON3KRB.</p>
+</section>
+<section class="container">
+ <h2>Traject – mijn weg naar de ether</h2>
+ <div class="blog-grid">
+ {% assign posts = site.posts | slice: 0,4 %}
+ {% for post in posts %}
+  {% if forloop.first %}
+   <a class="blog-featured" href="{{ post.url }}"><h3>{{ post.title }}</h3><p>{{ post.excerpt }}</p></a>
+  {% else %}
+   <a class="blog-card" href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
+  {% endif %}
+ {% endfor %}
+ </div>
+</section>
