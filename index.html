@@ -137,33 +137,26 @@ input[type=range]{ accent-color: var(--c-primary); width: 90px; }
 .enter-site .arr { transition: transform 0.25s ease; }
 .enter-site:hover .arr { transform: translateX(5px); }
 .bottom-label {
-.bottom-label{
   position: fixed;
   left: 50%;
   bottom: 1.6rem;
   transform: translateX(-50%);
   z-index: 50;
 
-  /* typography */
   font-family: var(--f-mono);
-  font-size: 0.70rem;
+  font-size: 0.7rem;
   letter-spacing: 0.32rem;
   text-transform: uppercase;
 
-  /* zichtbaar op donker, in lijn met je theme */
-  color: rgba(226,234,245,0.78); /* net iets helderder dan --c-text-3 */
+  color: var(--c-primary-dim);
   text-shadow:
     0 0 10px rgba(0,255,136,0.28),
     0 0 26px rgba(0,255,136,0.12);
 
-  opacity: 1;            /* laat opacity door kleur regelen */
   white-space: nowrap;
-  pointer-events: none;  /* geen klik-interferentie */
+  pointer-events: none;
 }
-
-}
-``
-}
+  
 </style>
 
 <!-- RADIALE GLOW -->
