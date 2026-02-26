@@ -137,24 +137,30 @@ input[type=range]{ accent-color: var(--c-primary); width: 90px; }
 .enter-site .arr { transition: transform 0.25s ease; }
 .enter-site:hover .arr { transform: translateX(5px); }
 .bottom-label {
-    position: relative;
-    bottom: 1.2rem;
+.bottom-label{
+  position: fixed;
+  left: 50%;
+  bottom: 1.6rem;
+  transform: translateX(-50%);
+  z-index: 50;
 
-    width: 100%;              /* ✅ cruciaal */
-    text-align: center;       /* ✅ centreert tekst */
+  /* typography */
+  font-family: var(--f-mono);
+  font-size: 0.70rem;
+  letter-spacing: 0.32rem;
+  text-transform: uppercase;
 
-    font-family: var(--f-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.28rem;
+  /* zichtbaar op donker, in lijn met je theme */
+  color: rgba(226,234,245,0.78); /* net iets helderder dan --c-text-3 */
+  text-shadow:
+    0 0 10px rgba(0,255,136,0.28),
+    0 0 26px rgba(0,255,136,0.12);
 
-    color: var(--c-primary-dim);
-    opacity: 0.75;
+  opacity: 1;            /* laat opacity door kleur regelen */
+  white-space: nowrap;
+  pointer-events: none;  /* geen klik-interferentie */
+}
 
-    text-shadow:
-        0 0 6px rgba(0,255,136,0.35),
-        0 0 18px rgba(0,255,136,0.15);
-
-    z-index: 2;
 }
 ``
 }
