@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Morse leren: 4de item
+title: 'Morse leren: 4de item'
 tags: ['CW']
 ---
 
