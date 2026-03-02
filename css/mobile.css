@@ -1,0 +1,66 @@
+/* ============================================================
+   ON3KRB — Mobile Page Styles
+   ============================================================ */
+
+.mobile-hero { position:relative; padding:5rem 0 4rem; overflow:hidden; }
+.mobile-hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--c-border-hard),transparent); }
+
+/* Status pill */
+.status-pill {
+  display:inline-flex; align-items:center; gap:.35rem;
+  font-family:var(--f-mono); font-size:.58rem; letter-spacing:.12rem; text-transform:uppercase;
+  padding:.2rem .65rem; border-radius:999px;
+}
+.status-pill.owned { background:rgba(0,212,255,0.1); color:var(--c-cyan); border:1px solid rgba(0,212,255,0.3); }
+.status-pill.future { background:rgba(0,255,136,0.08); color:var(--c-primary); border:1px solid rgba(0,255,136,0.2); }
+.status-pill.later { background:rgba(240,165,0,0.08); color:var(--c-amber); border:1px solid rgba(240,165,0,0.2); }
+.status-pill::before { content:''; width:5px; height:5px; border-radius:50%; }
+.status-pill.owned::before { background:var(--c-cyan); box-shadow:0 0 6px var(--c-cyan); }
+.status-pill.future::before { background:var(--c-primary); box-shadow:0 0 6px var(--c-primary); }
+.status-pill.later::before { background:var(--c-amber); box-shadow:0 0 6px var(--c-amber); }
+
+/* Car diagram */
+.car-diagram { margin:2rem 0; border:1px solid var(--c-border); border-radius:16px;
+  background:var(--c-surface); padding:1.5rem; }
+.car-diagram svg { width:100%; max-width:600px; display:block; margin:0 auto; }
+
+/* Mobile gear layout */
+.mobile-layout { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start; margin-top:2rem; }
+
+/* Gear card */
+.gear-card {
+  background:var(--c-surface); border:1px solid var(--c-border); border-radius:14px;
+  padding:1.25rem; transition:all var(--t); position:relative; overflow:hidden;
+}
+.gear-card:hover { border-color:var(--c-border-hard); transform:translateY(-3px); box-shadow:0 6px 24px rgba(0,255,136,0.07); }
+.gear-card.owned { border-left:3px solid var(--c-cyan); }
+.gear-card.future { border-left:3px solid var(--c-primary); }
+.gear-card.later { border-left:3px solid var(--c-amber); }
+
+.gear-card__header { display:flex; align-items:center; gap:.75rem; margin-bottom:.75rem; }
+.gear-card__icon { width:40px; height:40px; border-radius:8px; background:var(--c-surface-2);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.gear-card__title { font-family:var(--f-display); font-size:.9rem; font-weight:700; color:var(--c-text); }
+.gear-card__model { font-family:var(--f-mono); font-size:.65rem; color:var(--c-primary); }
+.gear-card__desc { font-size:.8rem; color:var(--c-text-2); line-height:1.6; margin-bottom:.75rem; }
+
+/* Antenna comparison */
+.ant-compare { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem; }
+.ant-item { background:var(--c-surface); border:1px solid var(--c-border); border-radius:10px; padding:1rem; text-align:center; }
+.ant-item.primary { border-color:var(--c-border-hard); background:var(--c-surface-2); }
+.ant-name { font-family:var(--f-mono); font-size:.7rem; color:var(--c-primary); margin-bottom:.25rem; }
+.ant-spec { font-size:.75rem; color:var(--c-text-2); }
+
+/* Install note */
+.install-note {
+  background:rgba(240,165,0,0.06); border:1px solid rgba(240,165,0,0.2); border-radius:12px;
+  padding:1rem 1.25rem; margin-top:1.5rem;
+  font-size:.82rem; color:var(--c-text-2);
+}
+.install-note strong { color:var(--c-amber); }
+
+@media(max-width:700px) {
+  .mobile-layout { grid-template-columns:1fr; }
+  .ant-compare { grid-template-columns:1fr; }
+}
