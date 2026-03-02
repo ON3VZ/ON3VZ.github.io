@@ -195,7 +195,7 @@
     ctx.font = '400 30px "Share Tech Mono", monospace';
     ctx.fillStyle = C.text3;
     ctx.textAlign = 'left';
-    ctx.fillText('CONFIRMING OUR QSO  ·  PSE QSL VIA Bbureau', 62, 780);
+    ctx.fillText('CONFIRMING OUR QSO  ·  PSE QSL VIA BUREAU', 62, 780);
 
     /* ── 16. Bottom morse decoration ── */
     const morse73 = '-- ---  ...  -.. .  --- -. ...';
