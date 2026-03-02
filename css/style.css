@@ -551,7 +551,7 @@ body.landing { overflow: hidden; }
   letter-spacing: .12rem;
   padding: .25rem .55rem;
   border-radius: 999px;
-  background: var(--c-surface-2);
+  background: var(--c-amber);
   border: 1px solid var(--c-border-h);
   color: var(--c-text-3);
 }
