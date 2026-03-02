@@ -532,7 +532,10 @@
   drawCard({call:"YOURCALL",opName:"",date:new Date().toISOString().slice(0,10),utc:"14:32",band:"20M",mode:"SSB",rVal:5,sVal:9});
 
   document.querySelectorAll('.qsl-form-panel input,.qsl-form-panel select')
-    .forEach(el=>el.addEventListener('input',()=>drawCard(getFormData())));
+    .forEach(el=>{
+      el.addEventListener('input',  ()=>drawCard(getFormData()));
+      el.addEventListener('change', ()=>drawCard(getFormData()));
+    });
 
   document.getElementById('btnDownload').addEventListener('click',()=>{
     const d=getFormData();
