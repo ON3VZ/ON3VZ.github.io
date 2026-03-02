@@ -16,8 +16,37 @@ extra_js:
       <p class="section-sub">Get in touch, check my profile or generate a personalised QSL card for our QSO.</p>
     </div>
 
+    <!-- ── IDENTITY BLOCK ── -->
+    <div class="identity-block anim-2">
+      <div class="id-item">
+        <div class="id-label">Callsign</div>
+        <div class="id-value id-call">ON3KRB</div>
+      </div>
+      <div class="id-divider"></div>
+      <div class="id-item">
+        <div class="id-label">Operator</div>
+        <div class="id-value">Kristof</div>
+      </div>
+      <div class="id-divider"></div>
+      <div class="id-item">
+        <div class="id-label">QTH</div>
+        <div class="id-value">Hoboken, Antwerpen · Belgium</div>
+      </div>
+      <div class="id-divider"></div>
+      <div class="id-item">
+        <div class="id-label">Grid</div>
+        <div class="id-value id-grid">JO21GF</div>
+      </div>
+      <div class="id-divider"></div>
+      <!-- Email is assembled by JS to avoid scrapers -->
+      <div class="id-item">
+        <div class="id-label">E-mail</div>
+        <a class="id-value id-email" id="contactEmail" href="#">&#9679;&#9679;&#9679;</a>
+      </div>
+    </div>
+
     <!-- ── CONTACT TILES ── -->
-    <div class="contact-grid anim-2">
+    <div class="contact-grid anim-3">
 
       <a class="contact-tile" href="https://www.qrz.com/db/ON3KRB" target="_blank" rel="noopener">
         <div class="tile-icon">📡</div>
@@ -181,3 +210,16 @@ extra_js:
 
 <!-- ── DOWNLOAD TOAST ── -->
 <div class="dl-toast" id="dlToast">✓ QSL Card downloaded!</div>
+
+<script>
+/* ── Safe email assembly — keeps address out of plain HTML ── */
+(function() {
+  var u = 'ON3KRB';
+  var d = 'outlook' + '.' + 'com';
+  var el = document.getElementById('contactEmail');
+  if (el) {
+    el.href = 'mailto:' + u + '@' + d;
+    el.textContent = u + '\u0040' + d;
+  }
+})();
+</script>
