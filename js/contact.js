@@ -390,12 +390,30 @@
     });
 
     /* Active arc colour: red when low, amber mid, green when strong */
-    const activeFrac = (sVal-1)/8;
-    const col1 = sVal<=3 ? C.red : (sVal<=6 ? C.amber : C.green);
-    ctx.beginPath(); ctx.arc(cx,cy,r,sa,sa+span*Math.min(activeFrac,1));
-    glow(col1,12); ctx.strokeStyle=col1; ctx.lineWidth=10; ctx.stroke(); noGlow();
+    /* Helper: zone colour for a given S value */
+    function zoneCol(s) {
+      return s <= 3 ? C.red : (s <= 6 ? C.amber : C.green);
+    }
 
-    /* Tick marks + S-labels */
+    const activeFrac = (sVal-1)/8;
+    const col1 = zoneCol(sVal);  /* needle/pivot colour = zone of current value */
+
+    /* Active arc drawn segment-by-segment so each zone has its own colour */
+    const zoneSegs = [
+      {s0:1, s1:3, col:C.red},
+      {s0:4, s1:6, col:C.amber},
+      {s0:7, s1:9, col:C.green},
+    ];
+    zoneSegs.forEach(seg=>{
+      if(sVal < seg.s0) return;          /* needle hasn't reached this zone */
+      const segStart = sa + span*((seg.s0-1)/8);
+      const segEnd   = sa + span*(Math.min(sVal, seg.s1)-1)/8;
+      if(segEnd <= segStart) return;
+      ctx.beginPath(); ctx.arc(cx,cy,r, segStart, segEnd);
+      glow(seg.col, 10); ctx.strokeStyle=seg.col; ctx.lineWidth=10; ctx.stroke(); noGlow();
+    });
+
+    /* Tick marks + S-labels — each tick gets its own zone colour */
     for(let s=1;s<=9;s++){
       const frac=(s-1)/8;
       const angle=sa+span*frac;
@@ -406,14 +424,14 @@
       const tx2=cx+Math.cos(angle)*(r+tickLen/2);
       const ty2=cy+Math.sin(angle)*(r+tickLen/2);
       ctx.beginPath(); ctx.moveTo(tx1,ty1); ctx.lineTo(tx2,ty2);
-      ctx.strokeStyle=s<=sVal?col1:hex2rgba(C.dark,0.7);
+      ctx.strokeStyle = s<=sVal ? zoneCol(s) : hex2rgba(C.dark,0.7);
       ctx.lineWidth=isMajor?2.5:1.5; ctx.stroke();
 
       if(isMajor){
         const lx=cx+Math.cos(angle)*(r-32);
         const ly=cy+Math.sin(angle)*(r-32);
         ctx.font=`600 ${size*0.085}px "Share Tech Mono", monospace`;
-        ctx.fillStyle=s<=sVal?col1:hex2rgba(C.dark,0.6);
+        ctx.fillStyle = s<=sVal ? zoneCol(s) : hex2rgba(C.dark,0.6);
         ctx.textAlign='center'; ctx.textBaseline='middle';
         ctx.fillText('S'+s, lx, ly);
       }
