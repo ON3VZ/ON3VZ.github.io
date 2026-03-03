@@ -19,7 +19,7 @@
 .port-subnav__inner::-webkit-scrollbar { display:none; }
 .port-tab {
   flex-shrink:0; font-family:var(--f-mono); font-size:.65rem; letter-spacing:.12rem; text-transform:uppercase;
-  color:var(--c-text-3); background:none; border:1px solid transparent; border-radius:6px;
+  color:var(--c-text-2); background:none; border:1px solid transparent; border-radius:6px;
   padding:.35rem .9rem; cursor:pointer; transition:all var(--t); text-decoration:none; display:inline-block;
 }
 .port-tab:hover { color:var(--c-primary); border-color:var(--c-border); }
@@ -59,7 +59,7 @@
 .port-card__label { font-family:var(--f-mono); font-size:.6rem; letter-spacing:.12rem; text-transform:uppercase;
   color:var(--c-primary); margin-bottom:.25rem; }
 .port-card__name { font-family:var(--f-display); font-size:.9rem; font-weight:700; color:var(--c-text); margin-bottom:.2rem; }
-.port-card__model { font-family:var(--f-mono); font-size:.65rem; color:var(--c-text-3); margin-bottom:.5rem; }
+.port-card__model { font-family:var(--f-mono); font-size:.65rem; color:var(--c-text-2); margin-bottom:.5rem; }
 .port-card__desc { font-size:.8rem; color:var(--c-text-2); line-height:1.6; }
 .port-card__price { font-family:var(--f-mono); font-size:.72rem; color:var(--c-amber); margin-top:.6rem; }
 .port-card__status { margin-bottom:.75rem; }
@@ -93,7 +93,7 @@
 .cb-card__cat { font-family:var(--f-mono); font-size:.58rem; letter-spacing:.12rem; text-transform:uppercase;
   color:var(--c-amber); margin-bottom:.25rem; }
 .cb-card__name { font-family:var(--f-display); font-size:.9rem; font-weight:700; color:var(--c-text); margin-bottom:.2rem; }
-.cb-card__model { font-family:var(--f-mono); font-size:.65rem; color:var(--c-text-3); margin-bottom:.5rem; }
+.cb-card__model { font-family:var(--f-mono); font-size:.65rem; color:var(--c-text-2); margin-bottom:.5rem; }
 .cb-card__desc { font-size:.8rem; color:var(--c-text-2); line-height:1.6; }
 .cb-card__price { font-family:var(--f-mono); font-size:.72rem; color:var(--c-amber); margin-top:.6rem; }
 .cb-card.owned-cb { border-left:3px solid var(--c-amber); }
