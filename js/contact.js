@@ -1,5 +1,5 @@
 /* ============================================================
-   ON3KRB — QSL Card Generator v3  |  contact.js
+   ON3VZ — QSL Card Generator v3  |  contact.js
    ============================================================ */
 (function () {
   'use strict';
@@ -87,12 +87,12 @@
     ctx.fillText('QSL CARD', x+16, 44);
     noGlow(); ctx.restore();
 
-    /* ON3KRB — main callsign */
+    /* ON3VZ — main callsign */
     ctx.font = '900 136px "Orbitron", monospace';
     ctx.textAlign = 'left';
     glow(C.green, 48);
     ctx.fillStyle = C.green;
-    ctx.fillText('ON3KRB', x, 210);
+    ctx.fillText('ON3VZ', x, 210);
     noGlow();
 
     /* Underline */
@@ -348,7 +348,7 @@
     /* ── 73 signature ── */
     ctx.font='600 26px "Share Tech Mono", monospace';
     glow(C.green,8); ctx.fillStyle=hex2rgba(C.green,0.50);
-    ctx.textAlign='left'; ctx.fillText('73 DE ON3KRB', 52, H-32);
+    ctx.textAlign='left'; ctx.fillText('73 DE ON3VZ', 52, H-32);
     noGlow();
 
     /* ── Stamp ── */
@@ -469,7 +469,7 @@
       ctx.beginPath(); ctx.arc(cx,cy,rad,0,TAU);
       ctx.strokeStyle=hex2rgba(C.green,0.16-i*0.04); ctx.lineWidth=i?1:2; ctx.stroke();
     });
-    const arcText='ON3KRB · HOBOKEN · BELGIUM ·';
+    const arcText='ON3VZ · HOBOKEN · BELGIUM ·';
     ctx.font='700 16px "Orbitron", monospace';
     ctx.fillStyle=hex2rgba(C.green,0.48);
     const ar=r-8;
@@ -561,7 +561,7 @@
 
   document.getElementById('btnDownload').addEventListener('click',()=>{
     const d=getFormData();
-    const fn=`QSL_ON3KRB_${(d.call||'QSO').toUpperCase()}_${(d.date||'').replace(/-/g,'')}.png`;
+    const fn=`QSL_ON3VZ_${(d.call||'QSO').toUpperCase()}_${(d.date||'').replace(/-/g,'')}.png`;
     const a=document.createElement('a'); a.download=fn; a.href=canvas.toDataURL('image/png'); a.click();
     const t=document.getElementById('dlToast'); t.classList.add('show');
     setTimeout(()=>t.classList.remove('show'),2800);

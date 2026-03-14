@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ON3KRB — Kristof
+title: ON3VZ — Kristof
 body_class: landing
 no_footer: true
 ---
@@ -200,8 +200,8 @@ input[type=range]{ accent-color: var(--c-primary); width: 90px; }
   </div>
 
   <!-- Callsign -->
-  <div class="callsign-hero">ON3KRB</div>
-  <div class="phonetic-line">Kilo · Romeo · Bravo</div>
+  <div class="callsign-hero">ON3VZ</div>
+  <div class="phonetic-line">Victor · Zulu</div>
 
   <!-- Morse karakterblokken -->
   <div class="morse-chars" id="morseChars"></div>
@@ -228,7 +228,7 @@ input[type=range]{ accent-color: var(--c-primary); width: 90px; }
       ENTER SITE <span class="arr">→</span>
     </a>
   
-    <div class="enter-site enter-site--label">73 DE ON3KRB · BELGIUM</div>
+    <div class="enter-site enter-site--label">73 DE ON3VZ · BELGIUM</div>
   </div>
 
 
@@ -237,7 +237,7 @@ input[type=range]{ accent-color: var(--c-primary); width: 90px; }
 
 <script>
 // ── MORSE (landing) ──
-const CALL = 'ON3KRB';
+const CALL = 'ON3VZ';
 const MORSE = {
   A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',
   K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',
@@ -306,7 +306,7 @@ async function playMorse() {
     if (ci < chars.length-1) await sleep(chr);
   }
   setActive(-1); setLed(false);
-  setStatus(stopFlag ? '' : '✓ ON3KRB — 73!');
+  setStatus(stopFlag ? '' : '✓ ON3VZ — 73!');
   document.getElementById('playBtn').disabled = false;
   document.getElementById('stopBtn').disabled = true;
   playing = false;

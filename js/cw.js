@@ -32,11 +32,11 @@ const QCODES = [
 ];
 
 const QSO = [
-  { who:'ON3KRB', side:'caller',  phrase:'CQ CQ CQ DE ON3KRB ON3KRB K',                           meaning:'Calling CQ — inviting any station to reply' },
-  { who:'PA3XYZ', side:'station', phrase:'ON3KRB DE PA3XYZ PA3XYZ K',                              meaning:'Answering the CQ call' },
-  { who:'ON3KRB', side:'caller',  phrase:'PA3XYZ DE ON3KRB UR 579 579 NAME KRISTOF QTH BELGIUM BK',meaning:'Signal report, name and location' },
+  { who:'ON3VZ', side:'caller',  phrase:'CQ CQ CQ DE ON3VZ ON3VZ K',                           meaning:'Calling CQ — inviting any station to reply' },
+  { who:'PA3XYZ', side:'station', phrase:'ON3VZ DE PA3XYZ PA3XYZ K',                              meaning:'Answering the CQ call' },
+  { who:'ON3VZ', side:'caller',  phrase:'PA3XYZ DE ON3VZ UR 579 579 NAME KRISTOF QTH BELGIUM BK',meaning:'Signal report, name and location' },
   { who:'PA3XYZ', side:'station', phrase:'R TNX UR 579 579 NAME JAN QTH NETHERLANDS BK',           meaning:'Acknowledge, give own report and details' },
-  { who:'ON3KRB', side:'caller',  phrase:'R R TNX FER QSO 73 SK',                                  meaning:'Thanks, 73 best wishes — end of contact' },
+  { who:'ON3VZ', side:'caller',  phrase:'R R TNX FER QSO 73 SK',                                  meaning:'Thanks, 73 best wishes — end of contact' },
 ];
 
 const QSO_PFX = 'q';
