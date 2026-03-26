@@ -24,7 +24,7 @@ title: Blog
           <p class="blog-card__excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
         </div>
         <div class="blog-card__footer">
-          <span class="read-more">Lees meer →</span>
+          <span class="read-more">Read more →</span>
           <span style="font-family:var(--f-mono);font-size:0.6rem;color:var(--c-text-3);">{{ post.content | number_of_words | divided_by: 220 | plus: 1 }} min</span>
         </div>
       </a>
