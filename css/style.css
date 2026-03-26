@@ -368,8 +368,8 @@ body {
   text-decoration: none; padding: 0.7rem 1.6rem;
   border-radius: 8px; cursor: pointer; border: none; transition: all var(--t);
 }
-.btn-primary { background: var(--c-primary); color: var(--c-bg); font-weight: 700; }
-.btn-primary:hover { background: #fff; box-shadow: var(--glow-md); transform: translateY(-2px); }
+.btn-primary { background: var(--c-primary); color: #fff; font-weight: 700; }
+.btn-primary:hover { background: #fff; color: var(--c-primary); box-shadow: var(--glow-md); transform: translateY(-2px); }
 .btn-ghost { background: transparent; color: var(--c-text-2); border: 1px solid var(--c-border-hard); }
 .btn-ghost:hover { color: var(--c-primary); border-color: var(--c-primary); box-shadow: var(--glow-sm); }
 
