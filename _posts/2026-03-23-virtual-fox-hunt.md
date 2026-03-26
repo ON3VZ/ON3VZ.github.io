@@ -4,6 +4,12 @@ title: "Hunt the Fox — A Virtual ARDF Game Born from Club Passion"
 tags: ['ARDF']
 ---
 
+<div style="text-align:center;margin:1.5rem 0 2rem;">
+  <a href="https://on3vz.github.io/wld-foxhunt/" class="btn btn-primary" target="_blank" rel="noopener" style="font-size:1.1rem;padding:0.75rem 2rem;letter-spacing:0.05em;">
+    🦊 Play FoxWave Online →
+  </a>
+</div>
+
 There is something contagious about genuine enthusiasm. Watching my club mates at [ON6WL](https://on6wl.be) pour their hearts into developing the **WLD ARDF NextGen** system — building, testing, fine-tuning, weekend after weekend — does something to you. It makes you want to contribute.
 
 So when I was asked to help put together the **PowerPoint presentation introducing the WLD NextGen at [HamCon 2026](https://hamcon.be)**, I did not hesitate for a second. It was an honour. And sitting there, working through the slides, thinking about how to explain ARDF to a wider audience, a question kept nagging me:
