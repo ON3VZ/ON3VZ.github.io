@@ -425,6 +425,8 @@ main { display: block; }
 .prose h1, .prose h2, .prose h3 { color: var(--c-text); font-family: var(--f-display); }
 .prose a { color: var(--c-primary); text-decoration: none; }
 .prose a:hover { text-shadow: var(--glow-sm); }
+.prose .btn-primary { color: #fff; }
+.prose .btn-primary:hover { color: var(--c-primary); text-shadow: none; }
 
 /* Landing body helper (index) */
 body.landing { overflow: hidden; }
