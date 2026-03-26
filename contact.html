@@ -232,14 +232,15 @@ extra_js:
 <div class="dl-toast" id="dlToast">✓ QSL Card downloaded!</div>
 
 <script>
-/* ── Safe email assembly — keeps address out of plain HTML ── */
+/* ── Email obfuscation: char codes + split domain, display shows callsign only ── */
 (function() {
-  var u = 'kristof.cornelis';
-  var d = 'outlook' + '.' + 'com';
+  var c = [107,114,105,115,116,111,102,46,99,111,114,110,101,108,105,115];
+  var u = c.map(function(n){return String.fromCharCode(n);}).join('');
+  var d = ['out','lo','ok','\x2e','co','m'].join('');
   var el = document.getElementById('contactEmail');
   if (el) {
-    el.href = 'mailto:' + u + '@' + d;
-    el.textContent = u + '\u0040' + d;
+    el.href = 'mai'+'lto:' + u + '\x40' + d;
+    el.textContent = 'ON3VZ \u00b7 outlook.com';
   }
 })();
 </script>
