@@ -5,7 +5,7 @@ tags: ['ARDF']
 ---
 
 <div style="text-align:center;margin:1.5rem 0 2rem;">
-  <a href="https://on3vz.github.io/wld-foxhunt/" class="btn btn-primary" target="_blank" rel="noopener" style="font-size:1.1rem;padding:0.75rem 2rem;letter-spacing:0.05em;color:#fff;">
+  <a href="https://on3vz.github.io/wld-foxhunt/" class="btn btn-primary" target="_blank" rel="noopener" style="font-size:1.1rem;padding:0.75rem 2rem;letter-spacing:0.05em;">
     🦊 Play FoxWave Online →
   </a>
 </div>
