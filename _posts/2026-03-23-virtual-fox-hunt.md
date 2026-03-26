@@ -4,6 +4,8 @@ title: "Hunt the Fox — A Virtual ARDF Game Born from Club Passion"
 tags: ['ARDF']
 ---
 
+<p style="font-size:0.85rem;color:var(--c-text-3);text-align:center;margin-bottom:0.5rem;">⚠️ The game is currently only available in Dutch.</p>
+
 <div style="text-align:center;margin:1.5rem 0 2rem;">
   <a href="https://on3vz.github.io/wld-foxhunt/" class="btn btn-primary" target="_blank" rel="noopener" style="font-size:1.1rem;padding:0.75rem 2rem;letter-spacing:0.05em;">
     🦊 Play FoxWave Online →
