@@ -10,7 +10,7 @@ tags: ['ARDF']
   </a>
 </div>
 
-There is something contagious about genuine enthusiasm. Watching my club mates at [ON6WL](https://on6wl.be) pour their hearts into developing the **WLD ARDF NextGen** system — building, testing, fine-tuning, weekend after weekend — does something to you. It makes you want to contribute.
+There is something contagious about genuine enthusiasm. Watching my club mates at [ON6WL](https://on6wl.be) pour their hearts into developing the **WLD ARDF NextGen** system — building, testing, fine-tuning, day after day — does something to you. It makes you want to contribute.
 
 So when I was asked to help put together the **PowerPoint presentation introducing the WLD NextGen at [HamCon 2026](https://hamcon.be)**, I did not hesitate for a second. It was an honour. And sitting there, working through the slides, thinking about how to explain ARDF to a wider audience, a question kept nagging me:
 
@@ -24,7 +24,7 @@ The answer I came up with: **let them try it. Virtually.**
 
 Meet **[FoxWave](https://on3vz.github.io/wld-foxhunt/)** — a browser-based virtual ARDF game I built to bring the fox hunting experience to anyone, anywhere, no licence required, no field required.
 
-It runs entirely in your browser. No install. No account. Mouse or keyboard, your choice. And it is — I say this without exaggeration — surprisingly addictive.
+It runs entirely in your browser. No install. No account. Mouse or keyboard, your choice. And it is, I say this without exaggeration, surprisingly addictive.
 
 ---
 
@@ -34,7 +34,7 @@ The concept mirrors real ARDF as closely as possible.
 
 **Your mission:** find 5 hidden radio beacons scattered across the terrain and make it back to base before time runs out.
 
-The world has a deliberately blocky, Minecraft-like feel — cheerful, accessible, and just atmospheric enough to make you feel like you are genuinely out in the field. Start the hunt and you will find yourself standing right next to the **WLD tent**. Turn around — and there is the ON6WL club tent too. A small wink to everyone who has been part of this journey.
+The world has a deliberately blocky, Minecraft-like feel, cheerful, accessible, and just atmospheric enough to make you feel like you are genuinely out in the field. Start the hunt and you will find yourself standing right next to the **WLD tent**. Turn around, and there is the ON6WL club tent too. A small wink to everyone who has been part of this journey.
 
 ### Read the Briefing First
 
@@ -48,7 +48,7 @@ The most important controls are also shown on screen during the game, so do not 
 
 ### The Minimap
 
-In the top right corner you will see a minimap — think of it as the paper map every real ARDF competitor carries. It becomes your most important tool as the hunt progresses.
+In the top right corner you will see a minimap, think of it as the paper map every real ARDF competitor carries. It becomes your most important tool as the hunt progresses.
 
 ### The Receiver
 
@@ -58,7 +58,7 @@ Press **R** to bring up your virtual receiver.
 
 Just like in real ARDF, you get two things: an **audible signal** and a **visual signal strength meter**. Rotate until the signal peaks, decide you are lined up correctly, and press **Y** (for *Yes*). Your bearing gets plotted on the minimap.
 
-Move to a different spot. Take another bearing. Where the two lines cross — **that is where your fox is hiding**.
+Move to a different spot. Take another bearing. Where the two lines cross, **that is where your fox is hiding**.
 
 ![Bearing lines intersecting on the map](/assets/images/WLD_FOX_Bearing.jpg)
 
@@ -72,7 +72,7 @@ Five foxes found? Sprint back to the tent at the start. When you arrive, you can
 
 ---
 
-## Download the Game Rules
+## Download the Game Rules (in Dutch)
 
 Want a full overview of how to play before you start? Download the instruction sheet:
 
@@ -84,10 +84,10 @@ Want a full overview of how to play before you start? Download the instruction s
 
 ## Why This Matters
 
-ARDF is not just a niche activity for hardcore radio operators. It is sport. It is puzzle-solving. It is technology. It is the outdoors. And it is deeply social — the community around it is some of the warmest I have encountered in amateur radio.
+ARDF is not just a niche activity for hardcore radio operators. It is sport. It is puzzle-solving. It is technology. It is the outdoors. And it is deeply social, the community around it is very warmfull.
 
-The WLD NextGen system, built with real craftsmanship by the team at ON6WL, deserves to be known beyond the field events and club meetings. A virtual game is not a replacement for the real thing — it is a door. If even a handful of people try FoxWave, get curious, and show up to a real ARDF event as a result, then it has done its job.
+The WLD NextGen system, built with real craftsmanship by the team at ON6WL, deserves to be known beyond the field events and club meetings. A virtual game is not a replacement for the real thing, it is a door. If even a handful of people try FoxWave, get curious, and show up to a real ARDF event as a result, then it has done its job.
 
-Go hunt some foxes. And if you enjoy it — come find us at [ON6WL](https://on6wl.be).
+Go hunt some foxes. And if you enjoy it, come find us at [ON6WL](https://on6wl.be).
 
 *73, Kristof — ON3VZ*
