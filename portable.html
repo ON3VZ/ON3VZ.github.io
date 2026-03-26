@@ -109,8 +109,8 @@ extra_css: ["/css/portable.css"]
 <section class="port-section" id="future">
   <div class="container">
     <div class="section-label">Section 2</div>
-    <h2 class="section-title">Future plans — POTA setup</h2>
-    <p class="section-sub">Parks on the Air activations from parks, forts and nature reserves near home. Also usable from the garden as a training setup.</p>
+    <h2 class="section-title">POTA setup — IC-705</h2>
+    <p class="section-sub">Parks on the Air activations from parks, forts and nature reserves near home. Also usable from the garden as a training setup. Blog posts with field results coming soon.</p>
 
     <!-- POTA Overview diagram -->
     <div style="background:var(--c-surface); border:1px solid var(--c-border); border-radius:16px; padding:1.5rem; margin:2rem 0;">
@@ -140,11 +140,11 @@ extra_css: ["/css/portable.css"]
         <g transform="translate(250,90)">
           <rect x="0" y="0" width="130" height="70" rx="8" fill="#111d35" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
           <rect x="8" y="8" width="78" height="44" rx="3" fill="#0d1428" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
-          <text x="47" y="32" fill="#00ff88" font-size="8" text-anchor="middle" filter="url(#pg)">IC-7300 MkII</text>
-          <text x="47" y="43" fill="rgba(0,255,136,0.4)" font-size="6" text-anchor="middle">or FT-710 Field</text>
+          <text x="47" y="32" fill="#00ff88" font-size="8" text-anchor="middle" filter="url(#pg)">ICOM IC-705</text>
+          <text x="47" y="43" fill="rgba(0,255,136,0.4)" font-size="6" text-anchor="middle">10W · QRP portable</text>
           <circle cx="105" cy="30" r="12" fill="#0d1428" stroke="rgba(0,255,136,0.35)" stroke-width="1.5"/>
           <line x1="105" y1="19" x2="105" y2="24" stroke="#00ff88" stroke-width="2"/>
-          <text x="65" y="62" fill="rgba(0,255,136,0.3)" font-size="6">25W · Class C</text>
+          <text x="65" y="62" fill="rgba(0,255,136,0.3)" font-size="6">10W · AH-705 Tuner</text>
         </g>
         <!-- USB -->
         <line x1="380" y1="125" x2="430" y2="120" stroke="rgba(0,212,255,0.3)" stroke-width="1.5"/>
@@ -161,8 +161,8 @@ extra_css: ["/css/portable.css"]
         <g transform="translate(250,20)">
           <rect x="0" y="0" width="80" height="48" rx="6" fill="#0d1428" stroke="rgba(0,212,255,0.35)" stroke-width="1.5"/>
           <text x="40" y="18" fill="#00d4ff" font-size="8" text-anchor="middle">LiFePO4</text>
-          <text x="40" y="29" fill="rgba(0,212,255,0.5)" font-size="7" text-anchor="middle">12V · 20Ah</text>
-          <text x="40" y="40" fill="rgba(0,212,255,0.3)" font-size="6" text-anchor="middle">5+ hrs operation</text>
+          <text x="40" y="29" fill="rgba(0,212,255,0.5)" font-size="7" text-anchor="middle">12V · portable</text>
+          <text x="40" y="40" fill="rgba(0,212,255,0.3)" font-size="6" text-anchor="middle">field power</text>
         </g>
         <line x1="290" y1="68" x2="315" y2="90" stroke="rgba(0,212,255,0.3)" stroke-width="1.5"/>
         <!-- Labels -->
@@ -173,75 +173,108 @@ extra_css: ["/css/portable.css"]
     <div class="port-grid">
 
       <!-- Transceiver -->
-      <div class="port-card future">
-        <div class="port-card__status"><span class="s-future">Future plan</span></div>
-        <div class="port-card__label">HF Transceiver</div>
-        <div class="port-card__name">IC-7300 MkII or FT-710 Field</div>
-        <div class="port-card__model">100W HF SDR transceiver</div>
-        <div class="port-card__desc">The FT-710 Field (2.6 kg, 15A draw) is the lighter POTA choice. The IC-7300 MkII (4.4 kg) is the better shack radio but perfectly usable in the field. Strategy A: buy FT-710 now, IC-7300 later for the shack. Strategy B: IC-7300 everywhere.</div>
+      <div class="port-card owned">
+        <div class="port-card__status"><span class="s-owned">Owned</span></div>
+        <div class="port-card__label">HF/VHF/UHF Transceiver</div>
+        <div class="port-card__name">ICOM IC-705</div>
+        <div class="port-card__model">10W · SDR · 160m–70cm · QRP portable</div>
+        <div class="port-card__desc">The heart of the POTA portable setup. Compact SDR-based all-band radio covering HF to 70cm. Paired with the AH-705 automatic tuner for easy multiband operation. Powered by the LiFePO4 battery in the field.</div>
         <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key" style="font-size:.62rem;">FT-710 Field</span><span class="spec-val" style="font-size:.72rem;">2.6 kg · 15A · POTA ideal</span></div>
-          <div class="spec-row"><span class="spec-key" style="font-size:.62rem;">IC-7300 MkII</span><span class="spec-val" style="font-size:.72rem;">4.4 kg · 22A · shack ideal</span></div>
-          <div class="spec-row"><span class="spec-key" style="font-size:.62rem;">Both</span><span class="spec-val" style="font-size:.72rem;">100W · SDR · 160–6m</span></div>
+          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">160m – 70cm</span></div>
+          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">10W</span></div>
+          <div class="spec-row"><span class="spec-key">Features</span><span class="spec-val">SDR · Bluetooth · Built-in battery</span></div>
+        </div>
+      </div>
+
+      <!-- AH-705 Tuner -->
+      <div class="port-card owned">
+        <div class="port-card__status"><span class="s-owned">Owned</span></div>
+        <div class="port-card__label">Automatic Antenna Tuner</div>
+        <div class="port-card__name">ICOM AH-705</div>
+        <div class="port-card__model">Automatic Tuner for IC-705</div>
+        <div class="port-card__desc">Dedicated automatic tuner for the IC-705. Enables quick multiband operation with wire antennas without manual adjustment. Matches impedance across all HF bands — essential for the EFHW and dipole antennas.</div>
+        <div style="margin-top:.75rem;">
+          <div class="spec-row"><span class="spec-key">Compatible</span><span class="spec-val">IC-705 only</span></div>
+          <div class="spec-row"><span class="spec-key">Tuning</span><span class="spec-val">Automatic</span></div>
         </div>
       </div>
 
       <!-- MC-750 -->
-      <div class="port-card future">
-        <div class="port-card__status"><span class="s-future">Future plan</span></div>
-        <div class="port-card__label">HF Portable Antenna</div>
-        <div class="port-card__name">K-Point MC-750</div>
-        <div class="port-card__model">40/20/17/15/10m vertical · 7.5m</div>
-        <div class="port-card__desc">Self-supporting 7.5m multiband vertical. No trees or supports needed. 4 radials laid flat on the grass. Set up in ~15 minutes. The backbone of every POTA activation and garden practice session.</div>
+      <div class="port-card owned">
+        <div class="port-card__status"><span class="s-owned">Owned</span></div>
+        <div class="port-card__label">HF Portable Vertical</div>
+        <div class="port-card__name">MC-750 Portable Vertical</div>
+        <div class="port-card__model">40–6m · self-supporting with extra radials</div>
+        <div class="port-card__desc">Self-supporting multiband vertical for 40–6m. Set up in ~15 minutes. Used with extra radials for improved ground efficiency. Pairs well with the AH-705 tuner. The backbone of every POTA activation and garden practice session.</div>
         <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">40 · 20 · 17 · 15 · 10m</span></div>
-          <div class="spec-row"><span class="spec-key">Height</span><span class="spec-val">7.5m self-supporting</span></div>
+          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">40m – 6m</span></div>
+          <div class="spec-row"><span class="spec-key">Radials</span><span class="spec-val">Extra radials for improved efficiency</span></div>
           <div class="spec-row"><span class="spec-key">Setup</span><span class="spec-val">~15 minutes incl. radials</span></div>
         </div>
       </div>
 
-      <!-- Spiderbeam HD Tripod -->
-      <div class="port-card future">
-        <div class="port-card__status"><span class="s-future">Future plan</span></div>
-        <div class="port-card__label">Antenna Tripod</div>
-        <div class="port-card__name">Spiderbeam HD Tripod</div>
-        <div class="port-card__model">Steel · 20 kg max</div>
-        <div class="port-card__desc">Heavy-duty steel tripod rated for the MC-750 at 7.5m in wind. Rubber feet for hard surfaces (parking, stone). Combine with a RVS ground pin in soft ground for extra stability.</div>
+      <!-- Diamond RHM-12 -->
+      <div class="port-card owned">
+        <div class="port-card__status"><span class="s-owned">Owned</span></div>
+        <div class="port-card__label">HF/VHF/UHF Portable Antenna</div>
+        <div class="port-card__name">Diamond RHM-12</div>
+        <div class="port-card__model">HF to 70cm · portable whip</div>
+        <div class="port-card__desc">Compact portable whip covering HF through 70cm. Ideal for quick deployments and walk-around POTA activations. Works with the IC-705 across all bands. Lightweight and easy to carry.</div>
+        <div style="margin-top:.75rem;">
+          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">HF to 70cm</span></div>
+          <div class="spec-row"><span class="spec-key">Type</span><span class="spec-val">Portable whip</span></div>
+        </div>
+      </div>
+
+      <!-- Band Hopper IV -->
+      <div class="port-card owned">
+        <div class="port-card__status"><span class="s-owned">Owned</span></div>
+        <div class="port-card__label">Multi-band Dipole</div>
+        <div class="port-card__name">Dipool Band Hopper IV</div>
+        <div class="port-card__model">Four-band · 20m / 30m / 40m / 80m</div>
+        <div class="port-card__desc">Four-band resonant dipole for 20m, 30m, 40m and 80m. No tuner needed on the supported bands. Easy to deploy between two supports or trees. Excellent choice for POTA activations where a proper dipole can be hung.</div>
+        <div style="margin-top:.75rem;">
+          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">20m · 30m · 40m · 80m</span></div>
+          <div class="spec-row"><span class="spec-key">Type</span><span class="spec-val">Resonant dipole</span></div>
+        </div>
+      </div>
+
+      <!-- EFHW -->
+      <div class="port-card owned">
+        <div class="port-card__status"><span class="s-owned">Owned</span></div>
+        <div class="port-card__label">End-Fed Half Wave</div>
+        <div class="port-card__name">EFHW 40/20/15/10m</div>
+        <div class="port-card__model">Up to 1000W · multiband</div>
+        <div class="port-card__desc">Multiband EFHW antenna covering 40, 20, 15 and 10m. High power rating up to 1000W — perfectly matched for 10W IC-705 use. Minimal setup needed, works well from a single high support point.</div>
+        <div style="margin-top:.75rem;">
+          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">40m · 20m · 15m · 10m</span></div>
+          <div class="spec-row"><span class="spec-key">Max power</span><span class="spec-val">1000W</span></div>
+        </div>
       </div>
 
       <!-- LiFePO4 -->
-      <div class="port-card future">
-        <div class="port-card__status"><span class="s-future">Future plan</span></div>
+      <div class="port-card owned">
+        <div class="port-card__status"><span class="s-owned">Owned</span></div>
         <div class="port-card__label">Field Power</div>
-        <div class="port-card__name">LiFePO4 · 12V 20Ah</div>
-        <div class="port-card__model">LiTime or equivalent</div>
-        <div class="port-card__desc">Lithium iron phosphate battery for all portable and mobile operation. At 25W (Class C): 5+ hours per charge. Safe to transport, deeply dischargeable. Charged at home the night before with the LiTime 20A charger.</div>
+        <div class="port-card__name">LiFePO4 Battery</div>
+        <div class="port-card__model">Portable field power</div>
+        <div class="port-card__desc">Lithium iron phosphate battery powering the IC-705 in the field. Safe to transport, deeply dischargeable. Multiple hours of operation per charge at 10W. Used for all portable and POTA activations.</div>
         <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Capacity</span><span class="spec-val">20Ah · 12V</span></div>
-          <div class="spec-row"><span class="spec-key">Runtime</span><span class="spec-val">5+ hrs at 25W Class C</span></div>
-          <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">~2.5 kg</span></div>
+          <div class="spec-row"><span class="spec-key">Chemistry</span><span class="spec-val">LiFePO4</span></div>
+          <div class="spec-row"><span class="spec-key">Use</span><span class="spec-val">IC-705 field power</span></div>
         </div>
       </div>
 
       <!-- Laptop + software -->
-      <div class="port-card future">
-        <div class="port-card__status"><span class="s-future">Future plan</span></div>
+      <div class="port-card owned">
+        <div class="port-card__status"><span class="s-owned">Owned</span></div>
         <div class="port-card__label">Digital modes + logging</div>
         <div class="port-card__name">ThinkPad + WSJT-X</div>
         <div class="port-card__model">Low EMI · long battery life</div>
-        <div class="port-card__desc">Lenovo ThinkPad for FT8 operations and real-time logging via Log4OM2. WSJT-X runs FT8/FT4. At 25W on 40m FT8 — 10+ QSOs for a valid POTA activation in under 45 minutes is realistic.</div>
+        <div class="port-card__desc">Lenovo ThinkPad for FT8 operations and real-time logging via Log4OM2. WSJT-X runs FT8/FT4. On 40m FT8 — 10+ QSOs for a valid POTA activation in under 45 minutes is realistic.</div>
         <div style="margin-top:.5rem; display:flex; gap:.4rem; flex-wrap:wrap;">
           <span class="tl-badge">WSJT-X</span><span class="tl-badge">Log4OM2</span><span class="tl-badge">FT8 / FT4</span><span class="tl-badge">SSB</span>
         </div>
-      </div>
-
-      <!-- RigExpert -->
-      <div class="port-card future">
-        <div class="port-card__status"><span class="s-future">Future plan</span></div>
-        <div class="port-card__label">Field tool</div>
-        <div class="port-card__name">RigExpert AA-35 Zoom</div>
-        <div class="port-card__model">Antenna analyser · Bluetooth</div>
-        <div class="port-card__desc">Essential POTA tool: tune the MC-750 on each band without transmitting. Graphical SWR sweep, Bluetooth to smartphone. Shared with the shack.</div>
       </div>
 
     </div>
@@ -275,8 +308,8 @@ extra_css: ["/css/portable.css"]
 
     <!-- Explanation strip -->
     <div class="cb-hero-strip">
-      <p>On family holidays in the Ardennes, the plan is to build a <strong>local CB radio network</strong> using 27 MHz (Citizen Band). No amateur radio licence required — fully legal in Belgium and the Netherlands with CE-marked equipment. The full family can participate from day one.</p>
-      <p style="margin-top:.75rem;">The setup combines the <strong>two PNI HP 82 handhelds already owned</strong> (4W FM) with a proper <strong>base station (Albrecht AE 5900 Mini SSB)</strong> and a <strong>mobile car station</strong> — giving 12W SSB range of 20–60 km vs the 2–8 km of the handhelds. The holiday house becomes the radio hub.</p>
+      <p>On family holidays in the Ardennes, we built a <strong>local CB radio network</strong> using 27 MHz (Citizen Band). No amateur radio licence required — fully legal in Belgium with CE-marked equipment. The full family can participate from day one — a great way to get the kids involved in radio too.</p>
+      <p style="margin-top:.75rem;">The setup combines the <strong>two PNI HP 82 handhelds</strong> (4W FM) with a proper <strong>base station (Albrecht AE 5900 Mini SSB)</strong> and a <strong>mobile car station</strong> — giving 12W SSB range of 20–60 km vs the 2–8 km of the handhelds. The holiday house becomes the radio hub.</p>
     </div>
 
     <!-- CB Setup diagram -->
@@ -361,7 +394,7 @@ extra_css: ["/css/portable.css"]
 
       <!-- PNI HP 82 - OWNED -->
       <div class="cb-card owned-cb">
-        <div style="margin-bottom:.4rem;"><span class="s-owned" style="border-color:rgba(240,165,0,0.4); background:rgba(240,165,0,0.08); color:#b0c4d8;">Already owned × 2</span></div>
+        <div style="margin-bottom:.4rem;"><span class="s-owned" style="border-color:rgba(240,165,0,0.4); background:rgba(240,165,0,0.08); color:#b0c4d8;">× 2</span></div>
         <div class="cb-card__cat">CB Handheld</div>
         <div class="cb-card__name">PNI HP 82 × 2</div>
         <div class="cb-card__model">27 MHz · 4W FM · CE-marked</div>
@@ -381,7 +414,7 @@ extra_css: ["/css/portable.css"]
         <div class="cb-card__desc">The key upgrade: 12W SSB vs 4W FM. SSB filters signals more efficiently — 3× more effective in hilly terrain. TFT colour display, VOX, NRC noise reduction. Two identical radios (base + mobile) for consistent operation. Plugs into the MAAS SPS-30 II at the holiday house.</div>
         <div style="margin-top:.75rem;">
           <div class="spec-row"><span class="spec-key">Modes</span><span class="spec-val">AM · FM · USB · LSB</span></div>
-          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">12W PEP SSB (legal!)</span></div>
+          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">12W PEP SSB</span></div>
           <div class="spec-row"><span class="spec-key">Channels</span><span class="spec-val">40 EU + CEPT multi-norm</span></div>
         </div>
       </div>
@@ -456,10 +489,9 @@ extra_css: ["/css/portable.css"]
       <div class="section-label">Channel reference</div>
       <div class="cb-channels">
         <div class="cb-channel-row header"><span>CH</span><span>Frequency</span><span>Use</span><span>Tag</span></div>
-        <div class="cb-channel-row"><span class="cb-ch-num">9</span><span class="cb-ch-freq">27.065 MHz</span><span class="cb-ch-use">Emergency channel — always keep clear</span><span class="cb-ch-tag">EMERGENCY</span></div>
         <div class="cb-channel-row"><span class="cb-ch-num">19</span><span class="cb-ch-freq">27.185 MHz</span><span class="cb-ch-use">International call channel AM/FM (road, trucks)</span><span class="cb-ch-tag">CALLING</span></div>
         <div class="cb-channel-row"><span class="cb-ch-num">38 LSB</span><span class="cb-ch-freq">27.385 MHz LSB</span><span class="cb-ch-use">SSB call channel Europe — use for POTA · agree working channel then move</span><span class="cb-ch-tag">SSB CALL</span></div>
-        <div class="cb-channel-row"><span class="cb-ch-num">40</span><span class="cb-ch-freq">27.405 MHz</span><span class="cb-ch-use">Popular in the Netherlands</span><span class="cb-ch-tag">NL</span></div>
+        <div class="cb-channel-row"><span class="cb-ch-num">27</span><span class="cb-ch-freq">27.275 MHz</span><span class="cb-ch-use">Popular calling channel in Belgium</span><span class="cb-ch-tag">BE</span></div>
         <div class="cb-channel-row"><span class="cb-ch-num">35</span><span class="cb-ch-freq">27.355 MHz</span><span class="cb-ch-use">Working channel after call on CH38 LSB</span><span class="cb-ch-tag">WORKING</span></div>
       </div>
     </div>
@@ -487,7 +519,7 @@ extra_css: ["/css/portable.css"]
 
     <div class="info-box amber" style="margin-top:1.5rem;">
       <span class="info-box__icon">⚠️</span>
-      <div><strong>Legal note:</strong> CB radio on 27 MHz is completely free without a licence in Belgium and the Netherlands. CE-marked equipment is mandatory. The Albrecht AE 5900 Mini SSB is CE-certified (CEPT multi-norm). SSB at 12W PEP is the legal maximum — 3× more effective than 4W FM. Channel 9 is always kept clear (emergency).</div>
+      <div><strong>Legal note:</strong> CB radio on 27 MHz is completely free without a licence in Belgium. CE-marked equipment is mandatory. The Albrecht AE 5900 Mini SSB is CE-certified (CEPT multi-norm). SSB at 12W PEP is the legal maximum — 3× more effective than 4W FM.</div>
     </div>
 
 
