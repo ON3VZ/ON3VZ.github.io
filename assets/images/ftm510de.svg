@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200">
+  <defs>
+    <linearGradient id="body510" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a2e38"/>
+      <stop offset="30%" stop-color="#1c1f28"/>
+      <stop offset="100%" stop-color="#0e1018"/>
+    </linearGradient>
+    <linearGradient id="screen510" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#001a1a"/>
+      <stop offset="100%" stop-color="#000d0d"/>
+    </linearGradient>
+    <radialGradient id="knob510" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#4a4e58"/>
+      <stop offset="100%" stop-color="#1a1c24"/>
+    </radialGradient>
+    <radialGradient id="bigknob510" cx="38%" cy="32%" r="60%">
+      <stop offset="0%" stop-color="#5a5e6a"/>
+      <stop offset="40%" stop-color="#2c2f3a"/>
+      <stop offset="100%" stop-color="#0e1018"/>
+    </radialGradient>
+    <filter id="glow510">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow510" x="-5%" y="-5%" width="115%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Drop shadow -->
+  <rect x="8" y="12" width="504" height="178" rx="10" fill="rgba(0,0,0,0.5)" filter="url(#shadow510)"/>
+  <!-- Main body -->
+  <rect x="6" y="6" width="506" height="182" rx="10" fill="url(#body510)"/>
+  <rect x="6" y="6" width="506" height="3" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <rect x="6" y="6" width="3" height="182" rx="2" fill="rgba(255,255,255,0.05)"/>
+  <rect x="6" y="185" width="506" height="3" rx="2" fill="rgba(0,0,0,0.5)"/>
+
+  <!-- Front speaker left -->
+  <rect x="14" y="18" width="36" height="158" rx="4" fill="rgba(0,0,0,0.3)"/>
+  <g fill="rgba(255,255,255,0.06)">
+    <rect x="18" y="30" width="28" height="2" rx="1"/>
+    <rect x="18" y="36" width="28" height="2" rx="1"/>
+    <rect x="18" y="42" width="28" height="2" rx="1"/>
+    <rect x="18" y="48" width="28" height="2" rx="1"/>
+    <rect x="18" y="54" width="28" height="2" rx="1"/>
+    <rect x="18" y="60" width="28" height="2" rx="1"/>
+    <rect x="18" y="66" width="28" height="2" rx="1"/>
+    <rect x="18" y="72" width="28" height="2" rx="1"/>
+    <rect x="18" y="78" width="28" height="2" rx="1"/>
+    <rect x="18" y="84" width="28" height="2" rx="1"/>
+    <rect x="18" y="90" width="28" height="2" rx="1"/>
+    <rect x="18" y="96" width="28" height="2" rx="1"/>
+    <rect x="18" y="102" width="28" height="2" rx="1"/>
+    <rect x="18" y="108" width="28" height="2" rx="1"/>
+    <rect x="18" y="114" width="28" height="2" rx="1"/>
+    <rect x="18" y="120" width="28" height="2" rx="1"/>
+    <rect x="18" y="126" width="28" height="2" rx="1"/>
+    <rect x="18" y="132" width="28" height="2" rx="1"/>
+    <rect x="18" y="138" width="28" height="2" rx="1"/>
+    <rect x="18" y="144" width="28" height="2" rx="1"/>
+    <rect x="18" y="150" width="28" height="2" rx="1"/>
+    <rect x="18" y="156" width="28" height="2" rx="1"/>
+    <rect x="18" y="162" width="28" height="2" rx="1"/>
+  </g>
+
+  <!-- Main colour LCD screen -->
+  <rect x="58" y="14" width="240" height="140" rx="5" fill="#0a0c12" stroke="rgba(0,212,255,0.25)" stroke-width="1.5"/>
+  <rect x="61" y="17" width="234" height="134" rx="3" fill="url(#screen510)"/>
+
+  <!-- Screen content - dual band display -->
+  <!-- Band A header -->
+  <rect x="61" y="17" width="234" height="24" rx="3" fill="#001518"/>
+  <text x="73" y="33" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(0,212,255,0.6)" letter-spacing="1">A</text>
+  <text x="84" y="33" font-family="'Share Tech Mono',monospace" font-size="16" font-weight="700" fill="#00d4ff" filter="url(#glow510)">145.500</text>
+  <text x="196" y="30" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,212,255,0.5)">MHz</text>
+  <text x="216" y="29" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.7)">FM</text>
+  <text x="240" y="29" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.4)">55W</text>
+  <text x="268" y="29" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,212,255,0.5)">DCS</text>
+
+  <!-- S-meter A -->
+  <text x="73" y="51" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(0,212,255,0.4)">S 1  3  5  7  9 +20 +40</text>
+  <rect x="73" y="53" width="200" height="6" rx="2" fill="#000e12"/>
+  <rect x="73" y="53" width="88" height="6" rx="2" fill="rgba(0,212,255,0.7)"/>
+  <rect x="73" y="53" width="48" height="6" rx="2" fill="rgba(0,255,136,0.6)"/>
+
+  <!-- APRS / C4FM badge -->
+  <rect x="73" y="62" width="28" height="10" rx="2" fill="rgba(0,255,136,0.15)" stroke="rgba(0,255,136,0.4)" stroke-width="0.8"/>
+  <text x="87" y="70" font-family="'Share Tech Mono',monospace" font-size="6" fill="#00ff88" text-anchor="middle">C4FM</text>
+  <rect x="105" y="62" width="28" height="10" rx="2" fill="rgba(240,165,0,0.15)" stroke="rgba(240,165,0,0.4)" stroke-width="0.8"/>
+  <text x="119" y="70" font-family="'Share Tech Mono',monospace" font-size="6" fill="#f0a500" text-anchor="middle">APRS</text>
+  <rect x="137" y="62" width="32" height="10" rx="2" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.3)" stroke-width="0.8"/>
+  <text x="153" y="70" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(0,212,255,0.7)" text-anchor="middle">S-DX</text>
+
+  <!-- Divider -->
+  <line x1="65" y1="78" x2="291" y2="78" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+
+  <!-- Band B -->
+  <text x="73" y="93" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(0,212,255,0.4)" letter-spacing="1">B</text>
+  <text x="84" y="93" font-family="'Share Tech Mono',monospace" font-size="14" fill="rgba(0,212,255,0.55)">432.500</text>
+  <text x="190" y="90" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,212,255,0.35)">MHz</text>
+  <text x="218" y="90" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.3)">FM</text>
+
+  <!-- S-meter B -->
+  <rect x="73" y="97" width="200" height="5" rx="2" fill="#000e12"/>
+  <rect x="73" y="97" width="40" height="5" rx="2" fill="rgba(0,212,255,0.4)"/>
+
+  <!-- Bottom status bar -->
+  <rect x="61" y="138" width="234" height="13" rx="0" fill="rgba(0,212,255,0.05)" style="border-radius:0 0 3px 3px"/>
+  <text x="73" y="148" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(0,212,255,0.35)">TX 50W  RX 108–999 MHz  ASP ON</text>
+
+  <!-- Mic/PTT connector -->
+  <rect x="61" y="155" width="50" height="14" rx="3" fill="#0e1018" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="86" y="165" font-family="'Share Tech Mono',monospace" font-size="5.5" fill="rgba(255,255,255,0.25)" text-anchor="middle">MIC</text>
+
+  <!-- Right panel -->
+  <rect x="308" y="14" width="190" height="162" rx="5" fill="rgba(0,0,0,0.15)"/>
+
+  <!-- Tuning knob large -->
+  <circle cx="400" cy="95" r="52" fill="rgba(0,0,0,0.45)" filter="url(#shadow510)"/>
+  <circle cx="400" cy="95" r="48" fill="url(#bigknob510)"/>
+  <circle cx="400" cy="95" r="48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <g stroke="rgba(255,255,255,0.25)" stroke-width="1.2">
+    <line x1="400" y1="49" x2="400" y2="57"/>
+    <line x1="400" y1="133" x2="400" y2="141"/>
+    <line x1="354" y1="95" x2="362" y2="95"/>
+    <line x1="438" y1="95" x2="446" y2="95"/>
+    <line x1="368" y1="63" x2="374" y2="69"/>
+    <line x1="426" y1="63" x2="432" y2="69"/>
+    <line x1="368" y1="121" x2="374" y2="127"/>
+    <line x1="426" y1="121" x2="432" y2="127"/>
+  </g>
+  <circle cx="400" cy="95" r="34" fill="#1e2230" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <circle cx="400" cy="95" r="22" fill="#252835" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="400" y1="75" x2="400" y2="87" stroke="#00d4ff" stroke-width="2.5" filter="url(#glow510)"/>
+  <circle cx="400" cy="74" r="2.5" fill="#00d4ff" filter="url(#glow510)"/>
+  <text x="400" y="156" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.25)" text-anchor="middle">DIAL</text>
+
+  <!-- Small buttons left of big knob -->
+  <rect x="316" y="24" width="36" height="14" rx="3" fill="#1c2030" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+  <text x="334" y="34" font-family="'Share Tech Mono',monospace" font-size="6.5" fill="#00d4ff" text-anchor="middle">BAND</text>
+
+  <rect x="316" y="44" width="36" height="14" rx="3" fill="#141618" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="334" y="54" font-family="'Share Tech Mono',monospace" font-size="6.5" fill="rgba(255,255,255,0.3)" text-anchor="middle">V/M</text>
+
+  <rect x="316" y="64" width="36" height="14" rx="3" fill="#141618" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+  <text x="334" y="74" font-family="'Share Tech Mono',monospace" font-size="6.5" fill="rgba(0,255,136,0.6)" text-anchor="middle">A/B</text>
+
+  <!-- Squelch knob -->
+  <circle cx="334" cy="115" r="16" fill="rgba(0,0,0,0.4)"/>
+  <circle cx="334" cy="115" r="14" fill="url(#knob510)"/>
+  <line x1="334" y1="103" x2="334" y2="109" stroke="rgba(240,165,0,0.8)" stroke-width="1.5"/>
+  <text x="334" y="138" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(255,255,255,0.3)" text-anchor="middle">SQL</text>
+
+  <!-- Volume knob -->
+  <circle cx="334" cy="158" r="14" fill="rgba(0,0,0,0.4)"/>
+  <circle cx="334" cy="158" r="12" fill="url(#knob510)"/>
+  <line x1="334" y1="147" x2="334" y2="153" stroke="rgba(0,212,255,0.8)" stroke-width="1.5"/>
+  <text x="334" y="178" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(255,255,255,0.3)" text-anchor="middle">VOL</text>
+
+  <!-- Power LED + button -->
+  <circle cx="490" cy="26" r="6" fill="#00d4ff" opacity="0.85" filter="url(#glow510)"/>
+  <circle cx="490" cy="26" r="6" fill="none" stroke="rgba(0,212,255,0.6)" stroke-width="1"/>
+
+  <!-- Label -->
+  <text x="66" y="183" font-family="'Orbitron',monospace" font-size="11" font-weight="700" fill="rgba(255,255,255,0.8)" letter-spacing="1">FTM-510DE ASP</text>
+  <text x="66" y="194" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,212,255,0.5)" letter-spacing="2">YAESU · C4FM/FM · 2m/70cm · 55W</text>
+</svg>

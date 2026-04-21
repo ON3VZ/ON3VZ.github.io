@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200">
+  <defs>
+    <linearGradient id="body_mw" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2e3240"/>
+      <stop offset="40%" stop-color="#1e2230"/>
+      <stop offset="100%" stop-color="#0e1018"/>
+    </linearGradient>
+    <linearGradient id="panel_mw" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#181c28"/>
+      <stop offset="100%" stop-color="#1a1e2c"/>
+    </linearGradient>
+    <filter id="shadow_mw" x="-5%" y="-5%" width="115%" height="125%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+    <filter id="glow_mw">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Shadow -->
+  <rect x="10" y="14" width="500" height="170" rx="8" fill="rgba(0,0,0,0.5)" filter="url(#shadow_mw)"/>
+  <!-- Main enclosure -->
+  <rect x="8" y="8" width="502" height="174" rx="8" fill="url(#body_mw)"/>
+  <!-- Top edge highlight -->
+  <rect x="8" y="8" width="502" height="3" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <!-- Left edge -->
+  <rect x="8" y="8" width="3" height="174" fill="rgba(255,255,255,0.05)"/>
+  <!-- Ventilation slots top -->
+  <g fill="rgba(0,0,0,0.4)" stroke="rgba(0,0,0,0.6)" stroke-width="0.5">
+    <rect x="20" y="12" width="60" height="4" rx="1"/>
+    <rect x="86" y="12" width="60" height="4" rx="1"/>
+    <rect x="152" y="12" width="60" height="4" rx="1"/>
+    <rect x="218" y="12" width="60" height="4" rx="1"/>
+    <rect x="284" y="12" width="60" height="4" rx="1"/>
+    <rect x="350" y="12" width="60" height="4" rx="1"/>
+    <rect x="416" y="12" width="60" height="4" rx="1"/>
+  </g>
+
+  <!-- Left AC input section -->
+  <rect x="16" y="24" width="130" height="150" rx="5" fill="url(#panel_mw)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="81" y="44" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,255,255,0.4)" text-anchor="middle" letter-spacing="1">AC INPUT</text>
+  <line x1="24" y1="48" x2="138" y2="48" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- AC terminal block -->
+  <rect x="30" y="58" width="100" height="50" rx="4" fill="#0e1018" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <g fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1">
+    <rect x="36" y="64" width="16" height="20" rx="2"/>
+    <rect x="58" y="64" width="16" height="20" rx="2"/>
+    <rect x="80" y="64" width="16" height="20" rx="2"/>
+    <rect x="102" y="64" width="16" height="20" rx="2"/>
+  </g>
+  <text x="44" y="91" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(255,100,100,0.7)" text-anchor="middle">L</text>
+  <text x="66" y="91" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(100,100,255,0.7)" text-anchor="middle">N</text>
+  <text x="88" y="91" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(255,255,255,0.4)" text-anchor="middle">⏚</text>
+  <text x="81" y="120" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.25)" text-anchor="middle">85–264V AC</text>
+  <text x="81" y="132" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.2)" text-anchor="middle">47–63 Hz</text>
+  <text x="81" y="148" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(240,165,0,0.4)" text-anchor="middle">UNIVERSAL INPUT</text>
+  <text x="81" y="162" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.2)" text-anchor="middle">IEC 320</text>
+
+  <!-- Center section — specs and label -->
+  <rect x="155" y="24" width="200" height="150" rx="5" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <text x="255" y="50" font-family="'Orbitron',monospace" font-size="13" font-weight="700" fill="rgba(255,255,255,0.75)" text-anchor="middle" letter-spacing="2">MEAN WELL</text>
+  <text x="255" y="66" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(240,165,0,0.7)" text-anchor="middle" letter-spacing="1">RSP-360-13.5</text>
+  <line x1="165" y1="72" x2="345" y2="72" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <text x="175" y="92" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)">Output</text>
+  <text x="345" y="92" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(240,165,0,0.8)" text-anchor="end">13.8V DC</text>
+  <text x="175" y="108" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)">Current</text>
+  <text x="345" y="108" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,255,136,0.8)" text-anchor="end">26A max</text>
+  <text x="175" y="124" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)">Power</text>
+  <text x="345" y="124" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,212,255,0.8)" text-anchor="end">360W</text>
+  <text x="175" y="140" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)">Ripple</text>
+  <text x="345" y="140" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,255,255,0.45)" text-anchor="end">&lt; 150 mVpp</text>
+  <text x="175" y="156" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)">Grade</text>
+  <text x="345" y="156" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,255,136,0.5)" text-anchor="end">Industrial</text>
+  <text x="175" y="168" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)">Duty</text>
+  <text x="345" y="168" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,255,136,0.5)" text-anchor="end">Continuous 24/7</text>
+
+  <!-- Right DC output section -->
+  <rect x="362" y="24" width="130" height="150" rx="5" fill="url(#panel_mw)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="427" y="44" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,255,136,0.6)" text-anchor="middle" letter-spacing="1">DC OUTPUT</text>
+  <line x1="370" y1="48" x2="484" y2="48" stroke="rgba(0,255,136,0.1)" stroke-width="1"/>
+
+  <!-- DC terminal block -->
+  <rect x="376" y="58" width="100" height="50" rx="4" fill="#0e1018" stroke="rgba(0,255,136,0.1)" stroke-width="1"/>
+  <g stroke="rgba(0,255,136,0.2)" stroke-width="1">
+    <rect x="384" y="64" width="18" height="22" rx="2" fill="rgba(0,255,136,0.06)"/>
+    <rect x="408" y="64" width="18" height="22" rx="2" fill="rgba(0,255,136,0.06)"/>
+    <rect x="432" y="64" width="18" height="22" rx="2" fill="rgba(0,255,136,0.06)"/>
+    <rect x="456" y="64" width="18" height="22" rx="2" fill="rgba(0,0,0,0.2)"/>
+  </g>
+  <!-- Terminal screws -->
+  <circle cx="393" cy="73" r="4" fill="#1a1e28" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+  <circle cx="417" cy="73" r="4" fill="#1a1e28" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+  <circle cx="441" cy="73" r="4" fill="#1a1e28" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+  <text x="393" y="91" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,80,80,0.8)" text-anchor="middle">+V</text>
+  <text x="417" y="91" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,80,80,0.6)" text-anchor="middle">+V</text>
+  <text x="441" y="91" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(100,180,255,0.7)" text-anchor="middle">-V</text>
+  <text x="465" y="91" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.3)" text-anchor="middle">⏚</text>
+
+  <!-- Power LED -->
+  <circle cx="427" cy="118" r="7" fill="#00ff88" opacity="0.9" filter="url(#glow_mw)"/>
+  <circle cx="427" cy="118" r="7" fill="none" stroke="rgba(0,255,136,0.6)" stroke-width="1"/>
+  <text x="427" y="135" font-family="'Share Tech Mono',monospace" font-size="6.5" fill="rgba(0,255,136,0.6)" text-anchor="middle">PWR</text>
+
+  <!-- Adj trimmer -->
+  <circle cx="460" cy="118" r="10" fill="#1a1e28" stroke="rgba(240,165,0,0.4)" stroke-width="1.5"/>
+  <circle cx="460" cy="118" r="6" fill="#0e1018"/>
+  <line x1="460" y1="110" x2="460" y2="116" stroke="rgba(240,165,0,0.7)" stroke-width="1.5"/>
+  <text x="460" y="135" font-family="'Share Tech Mono',monospace" font-size="5.5" fill="rgba(240,165,0,0.4)" text-anchor="middle">ADJ</text>
+
+  <text x="427" y="155" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.35)" text-anchor="middle">13.8V REGULATED</text>
+  <text x="427" y="167" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.2)" text-anchor="middle">LOW RIPPLE</text>
+</svg>

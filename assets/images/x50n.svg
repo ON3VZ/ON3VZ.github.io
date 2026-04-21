@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 420" width="160" height="420">
+  <defs>
+    <linearGradient id="mast" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1e28"/>
+      <stop offset="40%" stop-color="#3a3e4a"/>
+      <stop offset="100%" stop-color="#1a1e28"/>
+    </linearGradient>
+    <linearGradient id="body_x50" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1c2030"/>
+      <stop offset="35%" stop-color="#4a4e5a"/>
+      <stop offset="65%" stop-color="#4a4e5a"/>
+      <stop offset="100%" stop-color="#1c2030"/>
+    </linearGradient>
+    <linearGradient id="coil_x50" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#141820"/>
+      <stop offset="40%" stop-color="#2a3040"/>
+      <stop offset="100%" stop-color="#141820"/>
+    </linearGradient>
+    <filter id="glow_x50">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Top tip -->
+  <polygon points="80,8 75,28 85,28" fill="#6a6e7a"/>
+  <line x1="80" y1="8" x2="80" y2="28" stroke="#8a8e9a" stroke-width="1.5"/>
+
+  <!-- Top radiator section -->
+  <rect x="75" y="28" width="10" height="80" rx="3" fill="url(#body_x50)"/>
+  <rect x="77" y="28" width="6" height="80" fill="rgba(255,255,255,0.04)"/>
+
+  <!-- Band trap / coil section 1 (2m) -->
+  <rect x="68" y="108" width="24" height="22" rx="5" fill="url(#coil_x50)" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+  <!-- Coil windings -->
+  <g stroke="rgba(0,212,255,0.5)" stroke-width="1" fill="none">
+    <ellipse cx="80" cy="113" rx="9" ry="2.5"/>
+    <ellipse cx="80" cy="118" rx="9" ry="2.5"/>
+    <ellipse cx="80" cy="123" rx="9" ry="2.5"/>
+  </g>
+  <text x="80" y="143" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,212,255,0.6)" text-anchor="middle">2m</text>
+
+  <!-- Middle radiator -->
+  <rect x="75" y="130" width="10" height="80" rx="3" fill="url(#body_x50)"/>
+
+  <!-- Band trap / coil section 2 (70cm) -->
+  <rect x="68" y="210" width="24" height="22" rx="5" fill="url(#coil_x50)" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+  <g stroke="rgba(0,255,136,0.45)" stroke-width="1" fill="none">
+    <ellipse cx="80" cy="215" rx="9" ry="2.5"/>
+    <ellipse cx="80" cy="220" rx="9" ry="2.5"/>
+    <ellipse cx="80" cy="225" rx="9" ry="2.5"/>
+  </g>
+  <text x="80" y="245" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,255,136,0.6)" text-anchor="middle">70cm</text>
+
+  <!-- Lower radiator -->
+  <rect x="75" y="232" width="10" height="80" rx="3" fill="url(#body_x50)"/>
+
+  <!-- Mounting bracket -->
+  <rect x="62" y="312" width="36" height="28" rx="4" fill="#1a1e28" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="68" y="316" width="24" height="20" rx="3" fill="#0e1018"/>
+  <!-- Bracket bolts -->
+  <circle cx="67" cy="318" r="2.5" fill="#2a2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+  <circle cx="93" cy="318" r="2.5" fill="#2a2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+  <circle cx="67" cy="334" r="2.5" fill="#2a2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+  <circle cx="93" cy="334" r="2.5" fill="#2a2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+
+  <!-- Mast pipe -->
+  <rect x="74" y="340" width="12" height="60" rx="3" fill="url(#mast)"/>
+
+  <!-- N connector at bottom -->
+  <rect x="70" y="395" width="20" height="18" rx="4" fill="#222630" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+  <circle cx="80" cy="404" r="5" fill="#0e1018" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+  <circle cx="80" cy="404" r="2.5" fill="rgba(0,212,255,0.3)"/>
+  <text x="80" y="416" font-family="'Share Tech Mono',monospace" font-size="6.5" fill="rgba(0,212,255,0.5)" text-anchor="middle">N</text>
+
+  <!-- Radiation glow hints -->
+  <ellipse cx="80" cy="60" rx="35" ry="12" fill="none" stroke="rgba(0,212,255,0.12)" stroke-width="1" stroke-dasharray="3,4"/>
+  <ellipse cx="80" cy="60" rx="50" ry="18" fill="none" stroke="rgba(0,212,255,0.07)" stroke-width="1" stroke-dasharray="3,6"/>
+
+  <!-- Labels -->
+  <text x="80" y="8" font-family="'Orbitron',monospace" font-size="7" font-weight="700" fill="rgba(0,212,255,0.7)" text-anchor="middle">X-50N</text>
+  <text x="116" y="70" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,212,255,0.45)">4.5 dBi</text>
+  <text x="116" y="180" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.45)">7.2 dBi</text>
+  <text x="116" y="280" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.25)">1.7 m</text>
+  <text x="80" y="360" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(255,255,255,0.2)" text-anchor="middle">DIAMOND</text>
+</svg>

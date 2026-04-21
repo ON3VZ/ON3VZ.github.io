@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 460" width="200" height="460">
+  <defs>
+    <linearGradient id="mast_iw" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1e28"/>
+      <stop offset="35%" stop-color="#4a4e5a"/>
+      <stop offset="65%" stop-color="#4a4e5a"/>
+      <stop offset="100%" stop-color="#1a1e28"/>
+    </linearGradient>
+    <linearGradient id="radial_iw" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1c2030"/>
+      <stop offset="50%" stop-color="#3a3e4a"/>
+      <stop offset="100%" stop-color="#1c2030"/>
+    </linearGradient>
+    <filter id="glow_iw">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Label top -->
+  <text x="100" y="16" font-family="'Orbitron',monospace" font-size="9" font-weight="700" fill="rgba(0,255,136,0.75)" text-anchor="middle" letter-spacing="1">IronWave 6</text>
+  <text x="100" y="30" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.4)" text-anchor="middle">DX VERTICAL · HF 10–20m</text>
+
+  <!-- Top tip / cap -->
+  <polygon points="100,42 95,58 105,58" fill="#5a5e6a"/>
+  <line x1="100" y1="42" x2="100" y2="58" stroke="#8a8e9a" stroke-width="1.5"/>
+
+  <!-- Main radiator body (top section) -->
+  <rect x="94" y="58" width="12" height="100" rx="3" fill="url(#mast_iw)"/>
+
+  <!-- Band section marker 1 (10/12m) -->
+  <rect x="88" y="158" width="24" height="16" rx="4" fill="#1a2030" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
+  <text x="100" y="169" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.8)" text-anchor="middle">10·12m</text>
+  <text x="140" y="168" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.4)">CLASS C ★</text>
+
+  <!-- Main radiator body (mid section) -->
+  <rect x="94" y="174" width="12" height="80" rx="3" fill="url(#mast_iw)"/>
+
+  <!-- Band section marker 2 (15/17m) -->
+  <rect x="88" y="254" width="24" height="16" rx="4" fill="#1a2030" stroke="rgba(0,255,136,0.4)" stroke-width="1.5"/>
+  <text x="100" y="265" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.7)" text-anchor="middle">15·17m</text>
+  <text x="140" y="264" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.4)">CLASS C ★</text>
+
+  <!-- Main radiator body (lower section) -->
+  <rect x="94" y="270" width="12" height="70" rx="3" fill="url(#mast_iw)"/>
+
+  <!-- Band section marker 3 (20/30m) -->
+  <rect x="88" y="340" width="24" height="16" rx="4" fill="#1a2030" stroke="rgba(0,255,136,0.35)" stroke-width="1"/>
+  <text x="100" y="351" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.6)" text-anchor="middle">20·30m</text>
+  <text x="140" y="350" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,255,136,0.35)">CLASS C ★ (20m)</text>
+
+  <!-- Base / mount section -->
+  <rect x="84" y="356" width="32" height="28" rx="4" fill="#1a1e28" stroke="rgba(0,255,136,0.3)" stroke-width="1.5"/>
+  <rect x="90" y="360" width="20" height="20" rx="2" fill="#0e1018"/>
+  <!-- SO-239 / N base connector -->
+  <circle cx="100" cy="370" r="7" fill="#222630" stroke="rgba(0,255,136,0.4)" stroke-width="1"/>
+  <circle cx="100" cy="370" r="3.5" fill="#0a0c12" stroke="rgba(0,255,136,0.3)" stroke-width="0.8"/>
+
+  <!-- Ground stake -->
+  <rect x="96" y="384" width="8" height="30" rx="2" fill="url(#mast_iw)"/>
+  <polygon points="96,414 100,428 104,414" fill="#3a3e4a"/>
+
+  <!-- Ground line -->
+  <line x1="30" y1="384" x2="170" y2="384" stroke="rgba(0,255,136,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- RADIALS — 32 of them, drawn as lines spreading from base -->
+  <!-- Front visible radials (simplified, representative) -->
+  <g stroke="rgba(0,255,136,0.25)" stroke-width="1" fill="none">
+    <!-- Right side radials -->
+    <line x1="100" y1="384" x2="170" y2="390"/>
+    <line x1="100" y1="384" x2="175" y2="397"/>
+    <line x1="100" y1="384" x2="172" y2="405"/>
+    <line x1="100" y1="384" x2="168" y2="413"/>
+    <line x1="100" y1="384" x2="160" y2="420"/>
+    <line x1="100" y1="384" x2="148" y2="427"/>
+    <line x1="100" y1="384" x2="135" y2="430"/>
+    <line x1="100" y1="384" x2="120" y2="432"/>
+    <!-- Left side radials -->
+    <line x1="100" y1="384" x2="30" y2="390"/>
+    <line x1="100" y1="384" x2="25" y2="397"/>
+    <line x1="100" y1="384" x2="28" y2="405"/>
+    <line x1="100" y1="384" x2="32" y2="413"/>
+    <line x1="100" y1="384" x2="40" y2="420"/>
+    <line x1="100" y1="384" x2="52" y2="427"/>
+    <line x1="100" y1="384" x2="65" y2="430"/>
+    <line x1="100" y1="384" x2="80" y2="432"/>
+  </g>
+  <!-- Background radials dimmer -->
+  <g stroke="rgba(0,255,136,0.12)" stroke-width="0.8" fill="none">
+    <line x1="100" y1="384" x2="155" y2="386"/>
+    <line x1="100" y1="384" x2="163" y2="388"/>
+    <line x1="100" y1="384" x2="140" y2="388"/>
+    <line x1="100" y1="384" x2="45" y2="386"/>
+    <line x1="100" y1="384" x2="37" y2="388"/>
+    <line x1="100" y1="384" x2="60" y2="388"/>
+    <line x1="100" y1="384" x2="108" y2="435"/>
+    <line x1="100" y1="384" x2="92" y2="435"/>
+  </g>
+
+  <!-- 32 radials label -->
+  <text x="100" y="450" font-family="'Share Tech Mono',monospace" font-size="7.5" fill="rgba(0,255,136,0.5)" text-anchor="middle">32 BURIED RADIALS</text>
+  <text x="100" y="460" font-family="'Share Tech Mono',monospace" font-size="6.5" fill="rgba(0,255,136,0.3)" text-anchor="middle">Low-loss RF ground plane</text>
+
+  <!-- Radiation pattern hint (vertical low-angle) -->
+  <ellipse cx="100" cy="200" rx="16" ry="120" fill="none" stroke="rgba(0,255,136,0.08)" stroke-width="1" stroke-dasharray="3,5"/>
+  <!-- Side lobes small -->
+  <ellipse cx="60" cy="300" rx="22" ry="9" fill="rgba(0,255,136,0.05)" transform="rotate(-15 60 300)"/>
+  <ellipse cx="140" cy="300" rx="22" ry="9" fill="rgba(0,255,136,0.05)" transform="rotate(15 140 300)"/>
+
+  <!-- Glow around radiator top -->
+  <rect x="94" y="58" width="12" height="30" rx="3" fill="rgba(0,255,136,0.06)" filter="url(#glow_iw)"/>
+</svg>

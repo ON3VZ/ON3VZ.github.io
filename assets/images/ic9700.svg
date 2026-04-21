@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" width="520" height="220">
+  <defs>
+    <linearGradient id="body97" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#282c38"/>
+      <stop offset="30%" stop-color="#1a1e28"/>
+      <stop offset="100%" stop-color="#0c0f18"/>
+    </linearGradient>
+    <linearGradient id="screen97" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000d1a"/>
+      <stop offset="100%" stop-color="#00060d"/>
+    </linearGradient>
+    <radialGradient id="knob97" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#4a4e5a"/>
+      <stop offset="100%" stop-color="#181c24"/>
+    </radialGradient>
+    <radialGradient id="bigknob97" cx="38%" cy="32%" r="60%">
+      <stop offset="0%" stop-color="#555a68"/>
+      <stop offset="40%" stop-color="#2a2f3a"/>
+      <stop offset="100%" stop-color="#0c0f18"/>
+    </radialGradient>
+    <filter id="glow97">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow97" x="-5%" y="-5%" width="115%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+    <linearGradient id="wfall97" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00aaff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#0066cc" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#003366" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="14" width="504" height="196" rx="12" fill="rgba(0,0,0,0.5)" filter="url(#shadow97)"/>
+  <rect x="6" y="8" width="506" height="200" rx="12" fill="url(#body97)"/>
+  <rect x="6" y="8" width="506" height="3" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="6" y="8" width="3" height="200" rx="2" fill="rgba(255,255,255,0.04)"/>
+
+  <!-- Screen bezel -->
+  <rect x="16" y="18" width="300" height="168" rx="6" fill="#090b12" stroke="rgba(0,212,255,0.3)" stroke-width="1.5"/>
+  <rect x="19" y="21" width="294" height="162" rx="4" fill="url(#screen97)"/>
+
+  <!-- Frequency display -->
+  <rect x="19" y="21" width="294" height="30" rx="4" fill="#000d1a"/>
+  <text x="32" y="42" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(0,212,255,0.55)">A</text>
+  <text x="42" y="43" font-family="'Share Tech Mono',monospace" font-size="18" font-weight="700" fill="#00d4ff" filter="url(#glow97)">144.300.00</text>
+  <text x="215" y="39" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,212,255,0.45)">MHz</text>
+  <text x="242" y="38" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(0,255,136,0.7)">USB</text>
+  <text x="280" y="38" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(255,255,255,0.35)">100W</text>
+
+  <!-- Sub frequency -->
+  <text x="32" y="62" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(0,212,255,0.35)">B  432.100</text>
+  <text x="138" y="60" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,212,255,0.25)">MHz  FM</text>
+
+  <!-- S-meter -->
+  <text x="32" y="74" font-family="'Share Tech Mono',monospace" font-size="5.5" fill="rgba(0,212,255,0.35)">S 1  3  5  7  9  +20  +40  +60</text>
+  <rect x="32" y="76" width="240" height="7" rx="2" fill="#000810"/>
+  <rect x="32" y="76" width="110" height="7" rx="2" fill="rgba(0,180,255,0.65)"/>
+  <rect x="32" y="76" width="55" height="7" rx="2" fill="rgba(0,255,136,0.7)"/>
+
+  <!-- Spectrum display -->
+  <rect x="19" y="88" width="294" height="58" fill="#000610"/>
+  <polyline points="19,143 35,140 50,136 65,130 80,122 95,116 110,120 125,118 140,112 155,106 170,98 185,94 200,100 215,106 230,110 245,114 260,118 275,122 280,130 295,140 313,145"
+    fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.85" filter="url(#glow97)"/>
+  <polygon points="19,146 35,140 50,136 65,130 80,122 95,116 110,120 125,118 140,112 155,106 170,98 185,94 200,100 215,106 230,110 245,114 260,118 275,122 280,130 295,140 313,146"
+    fill="url(#wfall97)" opacity="0.25"/>
+  <line x1="170" y1="88" x2="170" y2="146" stroke="rgba(0,212,255,0.5)" stroke-width="1" stroke-dasharray="2,2"/>
+  <!-- 2m / 70cm label in spectrum -->
+  <text x="32" y="99" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(0,212,255,0.35)">2m 144 MHz</text>
+
+  <!-- Waterfall -->
+  <rect x="19" y="146" width="294" height="37" fill="#00040a"/>
+  <rect x="19" y="146" width="294" height="7" fill="rgba(0,100,200,0.15)"/>
+  <rect x="19" y="153" width="294" height="7" fill="rgba(0,80,180,0.1)"/>
+  <rect x="19" y="160" width="294" height="7" fill="rgba(0,120,200,0.12)"/>
+  <rect x="19" y="167" width="294" height="7" fill="rgba(0,60,160,0.08)"/>
+  <rect x="19" y="174" width="294" height="9" fill="rgba(0,40,120,0.06)"/>
+  <rect x="160" y="146" width="25" height="37" fill="rgba(0,212,255,0.12)" rx="1"/>
+  <rect x="165" y="146" width="12" height="37" fill="rgba(0,212,255,0.18)" rx="1"/>
+
+  <!-- Label -->
+  <text x="24" y="200" font-family="'Orbitron',monospace" font-size="11" font-weight="700" fill="rgba(255,255,255,0.8)" letter-spacing="1">IC-9700</text>
+  <text x="24" y="213" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(0,212,255,0.5)" letter-spacing="2">ICOM · SDR · 2m/70cm/23cm</text>
+
+  <!-- Right panel -->
+  <rect x="325" y="18" width="175" height="172" rx="5" fill="rgba(0,0,0,0.18)"/>
+
+  <!-- Big VFO knob -->
+  <circle cx="416" cy="104" r="50" fill="rgba(0,0,0,0.45)" filter="url(#shadow97)"/>
+  <circle cx="416" cy="104" r="46" fill="url(#bigknob97)"/>
+  <circle cx="416" cy="104" r="46" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <g stroke="rgba(255,255,255,0.22)" stroke-width="1.2">
+    <line x1="416" y1="60" x2="416" y2="68"/>
+    <line x1="416" y1="140" x2="416" y2="148"/>
+    <line x1="372" y1="104" x2="380" y2="104"/>
+    <line x1="452" y1="104" x2="460" y2="104"/>
+    <line x1="383" y1="72" x2="389" y2="78"/>
+    <line x1="443" y1="72" x2="449" y2="78"/>
+  </g>
+  <circle cx="416" cy="104" r="34" fill="#1c2030"/>
+  <circle cx="416" cy="104" r="22" fill="#242835"/>
+  <line x1="416" y1="84" x2="416" y2="96" stroke="#00d4ff" stroke-width="2.5" filter="url(#glow97)"/>
+  <circle cx="416" cy="83" r="2.5" fill="#00d4ff" filter="url(#glow97)"/>
+
+  <!-- Button col -->
+  <rect x="333" y="24" width="38" height="13" rx="3" fill="#1c2030" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+  <text x="352" y="33.5" font-family="'Share Tech Mono',monospace" font-size="6" fill="#00d4ff" text-anchor="middle">2m/70cm</text>
+
+  <rect x="333" y="42" width="38" height="13" rx="3" fill="#141618" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="352" y="51.5" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(255,255,255,0.35)" text-anchor="middle">MODE</text>
+
+  <rect x="333" y="60" width="38" height="13" rx="3" fill="#141618" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+  <text x="352" y="69.5" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(0,255,136,0.6)" text-anchor="middle">DUAL</text>
+
+  <rect x="333" y="78" width="38" height="13" rx="3" fill="#1a2040" stroke="rgba(240,165,0,0.4)" stroke-width="1"/>
+  <text x="352" y="87.5" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(240,165,0,0.7)" text-anchor="middle">SAT</text>
+
+  <!-- Knob row bottom -->
+  <circle cx="342" cy="158" r="13" fill="rgba(0,0,0,0.4)"/>
+  <circle cx="342" cy="158" r="11" fill="url(#knob97)"/>
+  <line x1="342" y1="148" x2="342" y2="153" stroke="rgba(0,212,255,0.8)" stroke-width="1.5"/>
+  <text x="342" y="176" font-family="'Share Tech Mono',monospace" font-size="5.5" fill="rgba(255,255,255,0.25)" text-anchor="middle">AF</text>
+
+  <circle cx="370" cy="158" r="13" fill="rgba(0,0,0,0.4)"/>
+  <circle cx="370" cy="158" r="11" fill="url(#knob97)"/>
+  <line x1="370" y1="148" x2="370" y2="153" stroke="rgba(240,165,0,0.8)" stroke-width="1.5"/>
+  <text x="370" y="176" font-family="'Share Tech Mono',monospace" font-size="5.5" fill="rgba(255,255,255,0.25)" text-anchor="middle">SQL</text>
+
+  <!-- Power LED -->
+  <circle cx="486" cy="22" r="5" fill="#00d4ff" opacity="0.85" filter="url(#glow97)"/>
+  <text x="342" y="203" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(255,255,255,0.2)">VHF · UHF · SHF · D-STAR</text>
+</svg>
