@@ -8,272 +8,183 @@ extra_css: ["/css/portable.css"]
 <div class="portable-hero">
   <div class="container">
     <div class="section-label">ON3VZ · Portable</div>
-    <h1 class="section-title">On the air.<br>Anywhere, anytime.</h1>
-    <p class="section-sub">POTA activations, field operations and a family-friendly 11m CB network on holiday.</p>
+    <h1 class="section-title">On the air.<br><span style="color:var(--c-primary);">Anywhere, anytime.</span></h1>
+    <p class="section-sub">POTA activations, field operations, and a family-friendly 11m CB network on holiday. A complete portable HF station — built to operate far from the shack.</p>
     <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.25rem;">
-      <a href="#current" class="btn btn-ghost">Current gear</a>
-      <a href="#future" class="btn btn-primary">Future plans</a>
+      <a href="#portable" class="btn btn-primary">Portable HF Station</a>
       <a href="#cb" class="btn btn-ghost" style="border-color:rgba(240,165,0,0.4); color:var(--c-amber);">11m CB ↓</a>
     </div>
   </div>
 </div>
 
-<!-- STICKY SUBMENU -->
-<div class="port-subnav">
-  <div class="port-subnav__inner">
-    <a href="#current" class="port-tab" id="tab-current">Current equipment</a>
-    <a href="#future" class="port-tab" id="tab-future">Future plans — POTA</a>
-    <a href="#cb" class="port-tab" id="tab-cb">11m Citizen Band · 27 MHz</a>
-  </div>
-</div>
-
-<!-- ══════════════════════════════
-     SECTION 1: CURRENT EQUIPMENT
-     ══════════════════════════════ -->
-<section class="port-section" id="current">
+<!-- ══════════════════════════════════════
+     PORTABLE HF STATION
+     ══════════════════════════════════════ -->
+<section class="port-section" id="portable">
   <div class="container">
-    <div class="section-label">Section 1</div>
-    <h2 class="section-title">Current equipment</h2>
-    <p class="section-sub">What's already in the bag — ready to use from day one.</p>
 
-    <div class="port-grid" style="margin-top:2rem;">
-
-      <!-- FT-65 -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Future</span></div>
-        <div class="port-card__label">Handheld VHF/UHF</div>
-        <div class="port-card__name">Yaesu FT-65</div>
-        <div class="port-card__model">Dual Band 2m / 70cm</div>
-        <div class="port-card__desc">Rugged dual-band handheld. Primary radio for VHF portable and POTA walk-around. Works as backup when the mobile rig isn't in the car.</div>
-        <div style="margin-top:.6rem; display:flex; gap:.4rem; flex-wrap:wrap;">
-          <span class="tl-badge">FT-65</span><span class="tl-badge">SRJ-701A</span><span class="tl-badge">SRJ-77</span><span class="tl-badge">Pigtail</span>
-        </div>
-        <div style="margin-top:1rem; border-radius:8px; overflow:hidden; background:rgba(0,0,0,0.25); padding:0.5rem 1rem; display:flex; justify-content:center;">
-          <img src="/assets/images/ft65.svg" alt="Yaesu FT-65" style="height:180px; width:auto; display:block; border-radius:4px;">
-        </div>
+    <div class="chapter-header">
+      <div class="chapter-header__accent chapter-header__accent--green"></div>
+      <div>
+        <div class="chapter-header__label">Portable HF Station</div>
+        <h2 class="chapter-header__title">Field-Ready HF</h2>
+        <p class="chapter-header__sub">The same radio as the shack — the IC-7300 MK II — deployed in the field from a LiFePO4 battery. Two antenna systems cover different use cases: a resonant multiband dipole for quick POTA setups, and a high-efficiency open-wire doublet for maximum flexibility and minimum loss.</p>
       </div>
-
-      <!-- Comet CA-2X4SR -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">Mobile VHF/UHF Antenna</div>
-        <div class="port-card__name">Comet CA-2X4SR</div>
-        <div class="port-card__model">2m / 70cm · 150W</div>
-        <div class="port-card__desc">Full-size dual-band mobile antenna. Primary antenna for the car magnet mount. Also usable on a portable mast in the field via an SO-239 adapter.</div>
-      </div>
-
-      <!-- SBB-2 -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">Compact Mobile Antenna</div>
-        <div class="port-card__name">Comet SBB-2</div>
-        <div class="port-card__model">2m / 70cm · 60W</div>
-        <div class="port-card__desc">Compact backup antenna. Ideal when a full-size whip isn't practical.</div>
-      </div>
-
-      <!-- Komunica mount -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">Magnet Mount</div>
-        <div class="port-card__name">Komunica BM-1 PL</div>
-        <div class="port-card__model">SO-239 · 5m RG-58</div>
-        <div class="port-card__desc">Strong magnet base with 5m coax cable. Rooftop car mounting — no drilling. Used in combination with CA-2X4SR or SBB-2.</div>
-      </div>
-
-      <!-- PNI HP 82 CB handhelds -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">CB Handheld · 27 MHz</div>
-        <div class="port-card__name">PNI HP 82 × 2</div>
-        <div class="port-card__model">CB 27 MHz · 4W FM</div>
-        <div class="port-card__desc">Two CB handhelds. Used for local family communication on holiday. Range: 2–8 km in hilly terrain (Ardennes). Will be expanded with the full CB POTA setup — see Section 3.</div>
-        <div style="margin-top:.6rem; display:flex; gap:.4rem; flex-wrap:wrap;">
-          <span class="tl-badge" style="border-color:rgba(240,165,0,0.4);">No licence</span>
-          <span class="tl-badge" style="border-color:rgba(240,165,0,0.4);">4W FM</span>
-          <span class="tl-badge" style="border-color:rgba(240,165,0,0.3);">CH 1–40</span>
-        </div>
-      </div>
-
     </div>
 
-    <div class="info-box" style="margin-top:2rem;">
-      <span class="info-box__icon">📡</span>
-      <div>The FT-65 and mobile antennas are solid foundations. The POTA amateur radio setup and the full CB network for holidays are the next steps — see sections below.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════
-     SECTION 2: FUTURE POTA PLANS
-     ══════════════════════════════ -->
-<section class="port-section" id="future">
-  <div class="container">
-    <div class="section-label">Section 2</div>
-    <h2 class="section-title">POTA setup — IC-705</h2>
-    <p class="section-sub">Parks on the Air activations from parks, forts and nature reserves near home. Also usable from the garden as a training setup. Blog posts with field results coming soon.</p>
-
-    <!-- POTA Overview diagram -->
-    <div style="background:var(--c-surface); border:1px solid var(--c-border); border-radius:16px; padding:1.5rem; margin:2rem 0;">
-      <svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" style="font-family:'Share Tech Mono',monospace; width:100%; height:auto;">
-        <defs><filter id="pg"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-        <!-- Tripod + MC-750 -->
-        <g transform="translate(60,20)">
-          <line x1="30" y1="0" x2="30" y2="110" stroke="#00ff88" stroke-width="2.5" filter="url(#pg)"/>
-          <line x1="10" y1="40" x2="50" y2="40" stroke="#00ff88" stroke-width="1.5"/>
-          <line x1="14" y1="65" x2="46" y2="65" stroke="#00ff88" stroke-width="1.5"/>
-          <line x1="17" y1="90" x2="43" y2="90" stroke="#00ff88" stroke-width="1.5"/>
-          <!-- Tripod legs -->
-          <line x1="30" y1="110" x2="5" y2="140" stroke="rgba(0,255,136,0.4)" stroke-width="2"/>
-          <line x1="30" y1="110" x2="30" y2="145" stroke="rgba(0,255,136,0.4)" stroke-width="2"/>
-          <line x1="30" y1="110" x2="55" y2="140" stroke="rgba(0,255,136,0.4)" stroke-width="2"/>
-          <!-- Radials -->
-          <line x1="30" y1="110" x2="-20" y2="128" stroke="rgba(0,255,136,0.2)" stroke-width="1" stroke-dasharray="3,2"/>
-          <line x1="30" y1="110" x2="80" y2="128" stroke="rgba(0,255,136,0.2)" stroke-width="1" stroke-dasharray="3,2"/>
-          <text x="30" y="-8" fill="#00ff88" font-size="9" text-anchor="middle">MC-750</text>
-          <text x="30" y="160" fill="rgba(0,255,136,0.4)" font-size="7" text-anchor="middle">7.5m · Spiderbeam</text>
-          <text x="30" y="170" fill="rgba(0,255,136,0.4)" font-size="7" text-anchor="middle">HD Tripod</text>
-        </g>
-        <!-- Coax line -->
-        <line x1="120" y1="100" x2="250" y2="115" stroke="rgba(0,255,136,0.3)" stroke-width="1.5" stroke-dasharray="5,3"/>
-        <text x="182" y="100" fill="rgba(0,255,136,0.3)" font-size="7">Aircell 7 coax</text>
-        <!-- Transceiver -->
-        <g transform="translate(250,90)">
-          <rect x="0" y="0" width="130" height="70" rx="8" fill="#111d35" stroke="rgba(0,255,136,0.5)" stroke-width="1.5"/>
-          <rect x="8" y="8" width="78" height="44" rx="3" fill="#0d1428" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
-          <text x="47" y="32" fill="#00ff88" font-size="8" text-anchor="middle" filter="url(#pg)">ICOM IC-705</text>
-          <text x="47" y="43" fill="rgba(0,255,136,0.4)" font-size="6" text-anchor="middle">10W · QRP portable</text>
-          <circle cx="105" cy="30" r="12" fill="#0d1428" stroke="rgba(0,255,136,0.35)" stroke-width="1.5"/>
-          <line x1="105" y1="19" x2="105" y2="24" stroke="#00ff88" stroke-width="2"/>
-          <text x="65" y="62" fill="rgba(0,255,136,0.3)" font-size="6">10W · AH-705 Tuner</text>
-        </g>
-        <!-- USB -->
-        <line x1="380" y1="125" x2="430" y2="120" stroke="rgba(0,212,255,0.3)" stroke-width="1.5"/>
-        <text x="403" y="114" fill="rgba(0,212,255,0.3)" font-size="6">USB</text>
-        <!-- Laptop -->
-        <g transform="translate(430,95)">
-          <rect x="0" y="0" width="100" height="65" rx="6" fill="#0d1428" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
-          <rect x="5" y="5" width="90" height="48" rx="3" fill="#080d18"/>
-          <rect x="5" y="5" width="90" height="18" fill="rgba(0,212,255,0.05)"/>
-          <text x="50" y="40" fill="rgba(0,212,255,0.5)" font-size="7" text-anchor="middle">WSJT-X + Log4OM2</text>
-          <text x="50" y="51" fill="rgba(0,212,255,0.3)" font-size="6" text-anchor="middle">FT8 · SSB · Log</text>
-        </g>
-        <!-- Battery -->
-        <g transform="translate(250,20)">
-          <rect x="0" y="0" width="80" height="48" rx="6" fill="#0d1428" stroke="rgba(0,212,255,0.35)" stroke-width="1.5"/>
-          <text x="40" y="18" fill="#00d4ff" font-size="8" text-anchor="middle">LiFePO4</text>
-          <text x="40" y="29" fill="rgba(0,212,255,0.5)" font-size="7" text-anchor="middle">12V · portable</text>
-          <text x="40" y="40" fill="rgba(0,212,255,0.3)" font-size="6" text-anchor="middle">field power</text>
-        </g>
-        <line x1="290" y1="68" x2="315" y2="90" stroke="rgba(0,212,255,0.3)" stroke-width="1.5"/>
-        <!-- Labels -->
-        <text x="400" y="15" fill="rgba(0,255,136,0.18)" font-size="8" text-anchor="middle" letter-spacing="3">POTA FIELD SETUP — SIGNAL FLOW</text>
-      </svg>
+    <!-- Transceiver -->
+    <div class="equip-featured equip-featured--green" style="margin-bottom:1.5rem;">
+      <div class="equip-featured__body">
+        <div class="equip-featured__top">
+          <div class="status-badge status-badge--active">● Active</div>
+          <div class="equip-featured__cat">Transceiver · HF / 6m</div>
+        </div>
+        <h3 class="equip-featured__model">ICOM IC-7300 MK II</h3>
+        <p class="equip-featured__desc">The same transceiver as the shack — doubles as the portable rig. The IC-7300 MK II's compact form factor and low RX current (0.7A standby) make it a natural fit for battery-powered field operation. The built-in ATU handles the doublet on multiple bands. The real-time spectrum scope is invaluable in the field for finding activity fast.</p>
+        <div class="spec-grid">
+          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">160m – 6m (+ 4m EU)</span></div>
+          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">100W max · runs 10W on Class C</span></div>
+          <div class="spec-row"><span class="spec-key">RX standby</span><span class="spec-val">0.7A — efficient on battery</span></div>
+          <div class="spec-row"><span class="spec-key">Built-in ATU</span><span class="spec-val">Yes — tunes doublet on most bands</span></div>
+          <div class="spec-row"><span class="spec-key">Display</span><span class="spec-val">4.3″ touch + spectrum scope</span></div>
+        </div>
+      </div>
+      <div class="equip-featured__img-wrap">
+        <img src="/assets/images/ic7300mkii.svg" alt="ICOM IC-7300 MK II" class="equip-featured__img">
+        <div class="equip-featured__img-label">ICOM IC-7300 MK II</div>
+      </div>
     </div>
 
-    <div class="port-grid">
-
-      <!-- Transceiver -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">HF/VHF/UHF Transceiver</div>
-        <div class="port-card__name">ICOM IC-705</div>
-        <div class="port-card__model">10W · SDR · 160m–70cm · QRP portable</div>
-        <div class="port-card__desc">The heart of the POTA portable setup. Compact SDR-based all-band radio covering HF to 70cm. Paired with the AH-705 automatic tuner for easy multiband operation. Powered by the LiFePO4 battery in the field.</div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands: </span><span class="spec-val">160m – 70cm</span></div>
-          <div class="spec-row"><span class="spec-key">Power: </span><span class="spec-val">10W</span></div>
-          <div class="spec-row"><span class="spec-key">Features: </span><span class="spec-val">SDR · Bluetooth · Built-in battery</span></div>
+    <!-- Power -->
+    <div class="equip-card equip-card--active equip-card--wide" style="margin-bottom:1.5rem;">
+      <div class="equip-card__top">
+        <div class="equip-card__icon" style="background:rgba(0,212,255,0.08);">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="3" y="8" width="20" height="14" rx="3" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+            <rect x="23" y="12" width="3" height="6" rx="1" fill="#00d4ff"/>
+            <line x1="7" y1="15" x2="11" y2="11" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="11" y1="11" x2="11" y2="15" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="11" y1="15" x2="15" y2="11" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="15" y1="11" x2="15" y2="15" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="15" y1="15" x2="19" y2="11" stroke="rgba(0,212,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </div>
+        <span class="status-badge status-badge--active">● Active</span>
       </div>
+      <div class="equip-card__name">Field Power Supply</div>
+      <div class="equip-card__model">LiFePO4 · 50Ah</div>
+      <div class="equip-card__desc">A 50Ah lithium iron phosphate battery is the backbone of the portable station. LiFePO4 chemistry is the smart choice for portable radio: flat voltage discharge curve (stays near 13.2V until nearly empty), high cycle life (2000+ cycles), and safe chemistry — no thermal runaway. At 10W TX with typical POTA duty cycles, a single charge supports a full day of field operation with plenty of margin.</div>
+      <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:0 2rem; max-width:560px;">
+        <div class="spec-row"><span class="spec-key">Capacity</span><span class="spec-val">50Ah</span></div>
+        <div class="spec-row"><span class="spec-key">Chemistry</span><span class="spec-val">LiFePO4 — safe &amp; stable</span></div>
+        <div class="spec-row"><span class="spec-key">Voltage</span><span class="spec-val">12.8V nominal · flat curve</span></div>
+        <div class="spec-row"><span class="spec-key">Cycle life</span><span class="spec-val">2000+ full cycles</span></div>
+      </div>
+      <div class="equip-card__facts" style="margin-top:.75rem;">
+        <div class="fact-item">⚡ Flat discharge = stable voltage</div>
+        <div class="fact-item">🔁 2000+ cycles</div>
+        <div class="fact-item">🏕️ Full day POTA on one charge</div>
+        <div class="fact-item">🔒 Safe chemistry · no thermal runaway</div>
+      </div>
+    </div>
 
-      <!-- AH-705 Tuner -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">Automatic Antenna Tuner</div>
-        <div class="port-card__name">ICOM AH-705</div>
-        <div class="port-card__model">Automatic Tuner for IC-705</div>
-        <div class="port-card__desc">Dedicated automatic tuner for the IC-705. Enables quick multiband operation with wire antennas without manual adjustment. Matches impedance across all HF bands — essential for the EFHW and dipole antennas.</div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Compatible: </span><span class="spec-val">IC-705 only</span></div>
-          <div class="spec-row"><span class="spec-key">Tuning: </span><span class="spec-val">Automatic</span></div>
-        </div>
-      </div>
-
-      <!-- MC-750 -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">HF Portable Vertical</div>
-        <div class="port-card__name">MC-750 Portable Vertical</div>
-        <div class="port-card__model">40–6m · self-supporting with extra radials</div>
-        <div class="port-card__desc">Self-supporting multiband vertical for 40–6m. Set up in ~15 minutes. Used with extra radials for improved ground efficiency. Pairs well with the AH-705 tuner. The backbone of every POTA activation and garden practice session.</div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands: </span><span class="spec-val">40m – 6m</span></div>
-          <div class="spec-row"><span class="spec-key">Radials: </span><span class="spec-val">Extra radials for improved efficiency</span></div>
-          <div class="spec-row"><span class="spec-key">Setup: </span><span class="spec-val">~15 minutes incl. radials</span></div>
-        </div>
-      </div>
-
-      <!-- Diamond RHM-12 -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">HF/VHF/UHF Portable Antenna</div>
-        <div class="port-card__name">Diamond RHM-12</div>
-        <div class="port-card__model">HF to 70cm · portable whip</div>
-        <div class="port-card__desc">Compact portable whip covering HF through 70cm. Ideal for quick deployments and walk-around POTA activations. Works with the IC-705 across all bands. Lightweight and easy to carry.</div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands: </span><span class="spec-val">HF to 70cm</span></div>
-          <div class="spec-row"><span class="spec-key">Type: </span><span class="spec-val">Portable whip</span></div>
-        </div>
-      </div>
+    <!-- Antennas -->
+    <div class="section-sublabel" style="margin:2.5rem 0 1.25rem;">Portable Antenna System</div>
+    <div class="equip-grid equip-grid--2col">
 
       <!-- Band Hopper IV -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">Multi-band Dipole</div>
-        <div class="port-card__name">Dipool Band Hopper IV</div>
-        <div class="port-card__model">Four-band · 20m / 30m / 40m / 80m</div>
-        <div class="port-card__desc">Four-band resonant dipole for 20m, 30m, 40m and 80m. No tuner needed on the supported bands. Easy to deploy between two supports or trees. Excellent choice for POTA activations where a proper dipole can be hung.</div>
+      <div class="equip-card equip-card--active">
+        <div class="equip-card__top">
+          <div class="equip-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <line x1="2" y1="14" x2="26" y2="14" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="14" y1="14" x2="14" y2="24" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="10" y1="24" x2="18" y2="24" stroke="rgba(0,255,136,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="14" cy="14" r="2.5" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="equip-card__badges">
+            <span class="status-badge status-badge--active">● Active</span>
+          </div>
+        </div>
+        <div class="equip-card__name">Multi-band Dipole</div>
+        <div class="equip-card__model">Band Hopper IV</div>
+        <div class="equip-card__desc">A four-band resonant dipole covering 20m, 30m, 40m, and 80m with no tuner required on any of the supported bands. Purpose-built for portable and POTA use: hangs between two trees or supports, deploys in minutes, and delivers true resonant performance on all four bands thanks to its fan dipole construction. The go-to antenna for quick POTA activations.</div>
+        <div class="info-callout" style="margin:1rem 0;">
+          <p>Resonant on all four bands — no ATU needed. That means maximum efficiency at the antenna itself, with no matching loss. Easy to deploy solo in the field.</p>
+        </div>
         <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands: </span><span class="spec-val">20m · 30m · 40m · 80m</span></div>
-          <div class="spec-row"><span class="spec-key">Type: </span><span class="spec-val">Resonant dipole</span></div>
+          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">20m · 30m · 40m · 80m</span></div>
+          <div class="spec-row"><span class="spec-key">Type</span><span class="spec-val">Fan dipole · resonant per band</span></div>
+          <div class="spec-row"><span class="spec-key">Tuner</span><span class="spec-val">Not required</span></div>
+          <div class="spec-row"><span class="spec-key">Deploy</span><span class="spec-val">Between trees or portable masts</span></div>
+        </div>
+        <div class="equip-card__facts" style="margin-top:.75rem;">
+          <div class="fact-item">🌲 Hangs between trees</div>
+          <div class="fact-item">🎯 Resonant · no tuner loss</div>
+          <div class="fact-item">🏕️ POTA-ready</div>
         </div>
       </div>
 
-      <!-- EFHW -->
-      <div class="port-card owned">
-        <div class="port-card__status"><span class="s-owned">Owned</span></div>
-        <div class="port-card__label">End-Fed Half Wave</div>
-        <div class="port-card__name">EFHW 40/20/15/10m</div>
-        <div class="port-card__model">Up to 1000W · multiband</div>
-        <div class="port-card__desc">Multiband EFHW antenna covering 40, 20, 15 and 10m. High power rating up to 1000W — perfectly matched for 10W IC-705 use. Minimal setup needed, works well from a single high support point.</div>
+      <!-- Open-wire doublet -->
+      <div class="equip-card equip-card--active">
+        <div class="equip-card__top">
+          <div class="equip-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <line x1="2" y1="12" x2="26" y2="12" stroke="#00ff88" stroke-width="2" stroke-linecap="round"/>
+              <line x1="2" y1="16" x2="26" y2="16" stroke="#00ff88" stroke-width="2" stroke-linecap="round"/>
+              <line x1="14" y1="16" x2="14" y2="26" stroke="rgba(0,255,136,0.5)" stroke-width="2" stroke-linecap="round"/>
+              <rect x="12" y="21" width="4" height="6" rx="1" fill="rgba(0,255,136,0.15)" stroke="rgba(0,255,136,0.5)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="equip-card__badges">
+            <span class="status-badge status-badge--active">● Active</span>
+          </div>
+        </div>
+        <div class="equip-card__name">Open-Wire Doublet</div>
+        <div class="equip-card__model">9kW · 600Ω Ladder Line</div>
+        <div class="equip-card__desc">A full-size HF doublet fed with 600Ω open-wire ladder line — the most efficient feeder available for a portable multiband antenna. Unlike coaxial cable, open-wire line has extremely low loss even at high SWR, which means the IC-7300's built-in ATU can tune it across virtually the entire HF spectrum with minimal loss.</div>
+
+        <div class="info-callout" style="margin:1rem 0;">
+          <p><strong>Why ladder line beats coax here:</strong> Coaxial cable becomes very lossy when operated at high SWR — a multiband doublet will have high SWR on most bands. Open-wire line (600Ω) has such low conductor loss that even at 10:1 SWR, the loss remains negligible. At low power (10W), every fraction of a dB matters — ladder line gets the signal out where coax would absorb it.</p>
+        </div>
+
         <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands: </span><span class="spec-val">40m · 20m · 15m · 10m</span></div>
-          <div class="spec-row"><span class="spec-key">Max power: </span><span class="spec-val">1000W</span></div>
+          <div class="spec-row"><span class="spec-key">Feedline</span><span class="spec-val">600Ω open-wire ladder line</span></div>
+          <div class="spec-row"><span class="spec-key">Power rating</span><span class="spec-val">9 kW (well above any portable need)</span></div>
+          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">80m through 10m with ATU</span></div>
+          <div class="spec-row"><span class="spec-key">Loss vs coax</span><span class="spec-val">Dramatically lower at high SWR</span></div>
+        </div>
+        <div class="equip-card__facts" style="margin-top:.75rem;">
+          <div class="fact-item">📡 Truly multiband</div>
+          <div class="fact-item">⚡ Near-zero feeder loss</div>
+          <div class="fact-item">🔋 Critical advantage at 10W</div>
+          <div class="fact-item">🎛️ IC-7300 ATU tunes it</div>
         </div>
       </div>
-
-
     </div>
 
     <!-- POTA Locations -->
-    <div style="margin-top:2.5rem;">
-      <div class="section-label">POTA locations near Hoboken</div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin-top:1rem;">
-        <div class="exp-card"><div class="exp-label">Fort 5 Mortsel · ~8 km</div><div class="exp-title" style="font-size:.9rem;">Historic fort with open terrain</div><div class="exp-text">Tripod + MC-750 ideal. Check pota.app for reference.</div></div>
-        <div class="exp-card"><div class="exp-label">Kalmthoutse Heide · ~25 km</div><div class="exp-title" style="font-size:.9rem;">Open heath — wind exposed</div><div class="exp-text">Guywires recommended. Stunning location.</div></div>
-        <div class="exp-card"><div class="exp-label">Provinciedomein Vrieselhof · ~15 km</div><div class="exp-title" style="font-size:.9rem;">Forest and open zones</div><div class="exp-text">Trees available for wire antenna.</div></div>
-        <div class="exp-card"><div class="exp-label">Garden — 0 km</div><div class="exp-title" style="font-size:.9rem;">Best training location</div><div class="exp-text">Full POTA setup in 15 min. Practice everything before the real activation.</div></div>
+    <div class="section-sublabel" style="margin:2.5rem 0 1.25rem;">POTA Locations Near Hoboken</div>
+    <div style="background:var(--c-surface); border:1px solid var(--c-border); border-radius:16px; padding:1.5rem;">
+      <div style="display:grid; gap:1rem;">
+        <div style="display:flex; align-items:flex-start; gap:1rem; padding-bottom:1rem; border-bottom:1px solid var(--c-border);">
+          <div style="font-size:1.5rem; flex-shrink:0;">🏰</div>
+          <div>
+            <div style="font-family:var(--f-mono); font-size:.7rem; color:var(--c-primary); margin-bottom:.2rem;">~8 km from home</div>
+            <div style="font-weight:600; font-size:.95rem; margin-bottom:.2rem;">Fort 5 Mortsel</div>
+            <div style="font-size:.82rem; color:var(--c-text-2);">Historic Brialmont fort — quiet grounds, trees for antenna supports, open air. Solid POTA activation spot within easy reach. The Band Hopper IV fits well between the perimeter trees.</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="info-box" style="margin-top:1.5rem;">
-      <span class="info-box__icon">📡</span>
-      <div>Looking for POTA locations and activations in Belgium? Check out <a href="https://www.belgiumoutdoorshack.be/" target="_blank" rel="noopener" style="color:var(--c-primary);">Belgium Outdoorshack</a> — a great resource for outdoor radio operators.</div>
-    </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════
+     SECTION: 11m CITIZEN BAND
+     ══════════════════════════════ -->
      SECTION 3: 11m CITIZEN BAND
      ══════════════════════════════ -->
 <section class="port-section" id="cb">
