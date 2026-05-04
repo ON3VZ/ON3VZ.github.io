@@ -148,6 +148,7 @@ The solar system required filtering on **both** the AC and DC sides. Filtering o
 | Filter position | Purpose |
 |---|---|
 | AC filter on inverter output (meter cabinet) | Stops inverter switching noise reaching the mains |
+| AC filter before shack sub-distribution board | Second AC-side barrier, directly protects shack equipment |
 | DC filters per string, at inverter | First DC-side barrier |
 | DC filters at roof cable entry, both strings | Second DC-side barrier |
 
