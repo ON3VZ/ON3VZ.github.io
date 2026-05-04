@@ -126,14 +126,12 @@ The table below shows how the two antennas work together across the full Class C
 
 | Band | Vertical | Horizontal Wire | Recommended for |
 |------|----------|-----------------|-----------------|
-| **10m** | ✅ Primary, DX | Secondary | DX → vertical |
-| **12m** | ✅ Primary, DX | Secondary | DX → vertical |
-| **15m** | ✅ Primary, DX | Secondary | DX → vertical |
-| **17m** | ✅ Primary, DX | Secondary | DX → vertical |
-| **20m** | ✅ Primary, DX | ✅ Regional | DX → vertical / regional → wire |
-| **30m** | ✅ With raised radials | ✅ Mixed | Both useful |
-| **40m** | ✅ DX (raised radials) | ✅ NVIS / regional | DX → vertical / regional → wire |
 | **80m** | ❌ Not covered | ✅ Primary, NVIS | Wire only |
+| **40m** | ✅ DX (raised radials) | ✅ NVIS / regional | DX → vertical / regional → wire |
+| **30m** | ✅ With raised radials | ✅ Mixed | Both useful |
+| **20m** | ✅ Primary, DX | ✅ Regional | DX → vertical / regional → wire |
+| **15m** | ✅ Primary, DX | Secondary | DX → vertical |
+| **10m** | ✅ Primary, DX | Secondary | DX → vertical |
 
 Switching between antennas uses a manual switch with a dedicated **ground position**, a third position that connects all inputs directly to earth. A passive safety measure that drains static charge when the station is unattended, without relying on active protection devices.
 
