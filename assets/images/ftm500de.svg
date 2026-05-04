@@ -80,7 +80,7 @@
   <!-- APRS strip -->
   <rect x="24" y="77" width="241" height="20" rx="0" fill="#080e18"/>
   <rect x="24" y="77" width="4" height="20" fill="url(#aprsGrad)"/>
-  <text x="32" y="88" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(240,165,0,0.8)">APRS  ON3KRB-9  ON AIR</text>
+  <text x="32" y="88" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(240,165,0,0.8)">APRS  ON3VZ-9  ON AIR</text>
   <text x="32" y="95" font-family="'Share Tech Mono',monospace" font-size="6" fill="rgba(240,165,0,0.4)">50.6N 4.3E  →  ANT  145.825</text>
 
   <!-- Spectrum area -->
