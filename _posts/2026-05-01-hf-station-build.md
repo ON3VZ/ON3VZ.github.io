@@ -68,6 +68,8 @@ Here is something I did not expect to find. With **six raised radials of 6 metre
 
 > **Why does this work?** The 6-metre radiator is electrically short at 7 MHz (roughly 0.15λ). The raised radials at ~0.23λ on 40 metres act as resonant counterpoises that reshape current distribution and pull the feedpoint resonance toward the target band. No traps. No coils. Just wire geometry working with physics.
 
+This is not part of the current installation, but a planned extension for a later stage. The baseline radial field already gives solid 20 to 10 metre DX coverage. Adding raised radials for 40 metre DX is a low-cost upgrade that requires no changes to the existing setup, just additional wire.
+
 ### Band Coverage, Vertical Antenna
 
 | Band | Frequency | SWR (baseline) | Tuner needed? | Primary mode | Notes |
