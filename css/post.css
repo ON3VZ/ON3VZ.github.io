@@ -11,3 +11,72 @@
 .post-body img{ max-width:100%; height:auto; border-radius:12px; border:1px solid var(--c-border); }
 .post-body code{ font-family: var(--f-mono); color: var(--c-cyan); }
 .post-body pre{ background: var(--c-surface); border:1px solid var(--c-border); padding:1rem; border-radius:12px; overflow:auto; }
+
+/* Heading spacing — prevent titles sticking together */
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Tables */
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 1.8rem 0 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0,255,136,0.14);
+}
+
+/* All cells: left-align, top-align */
+.post-body table th,
+.post-body table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(0,255,136,0.10);
+  color: var(--c-text-2);
+  word-break: break-word;
+}
+
+/* Header row */
+.post-body table thead th {
+  background: rgba(0,255,136,0.09);
+  color: var(--c-primary);
+  font-weight: 600;
+  font-family: var(--f-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(0,255,136,0.22);
+}
+
+/* First column (term/label column) */
+.post-body table td:first-child {
+  background: rgba(0,212,255,0.05);
+  color: var(--c-cyan);
+  font-weight: 500;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+}
+
+/* Alternating row tint for readability */
+.post-body table tbody tr:nth-child(even) td {
+  background: rgba(255,255,255,0.02);
+}
+.post-body table tbody tr:nth-child(even) td:first-child {
+  background: rgba(0,212,255,0.07);
+}
+
+/* Hover highlight */
+.post-body table tbody tr:hover td {
+  background: rgba(0,255,136,0.04);
+}
+.post-body table tbody tr:hover td:first-child {
+  background: rgba(0,212,255,0.10);
+}
