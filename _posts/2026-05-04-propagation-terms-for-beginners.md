@@ -199,7 +199,7 @@ Now that all the terms make sense, here is a summary of what amateurs consider g
 |---|---|---|
 | NOAA Space Weather Dashboard | [spaceweather.noaa.gov](https://www.spaceweather.gov) | Official Kp index, G-scale alerts, CME forecasts |
 | Spaceweather.com | [spaceweather.com](https://spaceweather.com) | Daily solar news with aurora alerts and SFI |
-| SolarHam | [solarham.com](https://www.solarham.com) | Real-time solar data, flare alerts, CME tracking |
+| SolarHam | [solarham.net](https://www.solarham.net) | Real-time solar data, flare alerts, CME tracking |
 | SpaceWeather Live | [spaceweatherlive.com](https://www.spaceweatherlive.com) | Live Kp, aurora alerts, solar wind data |
 
 ### 📡 Propagation Monitoring & Maps
@@ -208,7 +208,6 @@ Now that all the terms make sense, here is a summary of what amateurs consider g
 |---|---|---|
 | DX Info Centre (Tropo) | [dxinfocentre.com/tropo_nwe.html](https://www.dxinfocentre.com/tropo_nwe.html) | Real-time tropospheric propagation maps for NW Europe |
 | Poollicht.be | [poollicht.be](https://www.poollicht.be) | Belgian aurora and space weather site |
-| PropQuest | [propquest.net](https://propquest.net) | Daily propagation updates during the Sporadic-E season |
 | DX Maps | [dxmaps.com](https://www.dxmaps.com) | Real-time DX spots mapped by band and propagation type |
 | Make More Miles on VHF | [mmmonvhf.de](https://www.mmmonvhf.de) | VHF/UHF propagation monitoring and records |
 | PSK Reporter | [pskreporter.info](https://pskreporter.info) | Live propagation map based on FT8/WSPR reception reports |
@@ -218,9 +217,8 @@ Now that all the terms make sense, here is a summary of what amateurs consider g
 | Source | URL | Description |
 |---|---|---|
 | ARRL Propagation | [arrl.org/propagation](https://www.arrl.org/propagation) | In-depth propagation guides by the American Radio Relay League |
-| ON4UN's Low-Band DXing | — | Classic reference book for 80/160 m propagation (available via ARRL) |
 | VERON (membership) | [veron.nl](https://veron.nl) | Dutch amateur radio society — weekly news, events, licence info |
 
 ---
 
-*73 de ON3VZ / ON3KRB — still learning, one abbreviation at a time.*
+*73 de ON3VZ — still learning, one abbreviation at a time.*
