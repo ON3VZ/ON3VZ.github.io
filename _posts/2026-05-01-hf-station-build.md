@@ -207,9 +207,9 @@ SSB is the honest benchmark. No digital processing gain, no weak-signal magic. W
 
 | Scenario | Band | Expected reach |
 |----------|------|----------------|
-| European contacts | 20m | Routine on good days, requires decent conditions |
-| Regional contacts | 40m | Daily, reliable via NVIS wire |
 | Evening / night | 80m | 500–1500 km, solid NVIS |
+| Regional contacts | 40m | Daily, reliable via NVIS wire |
+| European contacts | 20m | Routine on good days, requires decent conditions |
 | DX contacts | 15m / 10m | Possible when bands are truly open |
 
 At 25 watts SSB, every decibel counts. A well-matched antenna, a low-noise receive chain, and clean RF make the difference between completing a contact and being a 59 report that never gets returned.
@@ -220,11 +220,11 @@ FT8 changes the equation significantly for low-power operation. The mode operate
 
 | Scenario | Band | Expected reach |
 |----------|------|----------------|
+| Evening / night | 80m | 500–1500 km, solid NVIS |
+| Regional contacts | 40m | Daily, reliable via NVIS wire |
 | European contacts | 20m | Routine, most days |
 | DX contacts | 17m / 20m | Regular when bands are open |
 | Transatlantic DX | 15m / 10m | Possible during good conditions |
-| Regional contacts | 40m | Daily, reliable via NVIS wire |
-| Evening / night | 80m | 500–1500 km, solid NVIS |
 
 > FT8 at 25 watts can reach stations that SSB at 100 watts would struggle with. But the goal has always been a station capable of **real voice contacts** too. FT8 is a tool, not a destination.
 
