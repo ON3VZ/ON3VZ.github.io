@@ -222,8 +222,8 @@ FT8 changes the equation significantly for low-power operation. The mode operate
 |----------|------|----------------|
 | Evening / night | 80m | 500–1500 km, solid NVIS |
 | Regional contacts | 40m | Daily, reliable via NVIS wire |
+| DX contacts | 30m | Regular when bands are open |
 | European contacts | 20m | Routine, most days |
-| DX contacts | 17m / 20m | Regular when bands are open |
 | Transatlantic DX | 15m / 10m | Possible during good conditions |
 
 > FT8 at 25 watts can reach stations that SSB at 100 watts would struggle with. But the goal has always been a station capable of **real voice contacts** too. FT8 is a tool, not a destination.
