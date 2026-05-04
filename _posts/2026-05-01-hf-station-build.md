@@ -107,13 +107,14 @@ The wire is black and fades to weathered grey over time. Mounted on short grey P
 
 ### Band Coverage, Horizontal Wire Antenna
 
-| Band | Frequency | Primary use | Radiation angle | Notes |
-|------|-----------|-------------|-----------------|-------|
-| **80m** | 3.5–3.8 MHz | NVIS / regional | High (NVIS) | Evening and night propagation, excellent |
-| **40m** | 7.0–7.2 MHz | NVIS / regional | High (NVIS) | Daytime and evening regional contacts |
-| **30m** | 10.1 MHz | Mixed | Medium | Useful transition band |
-| **20m** | 14 MHz | Regional / medium DX | Medium-high | Complementary to vertical |
-| **15m–10m** | 21–29 MHz | General | Variable | Usable, vertical preferred for DX |
+| Band | Frequency | Primary use | Notes |
+|------|-----------|-------------|-------|
+| **80m** | 3.5–3.8 MHz | NVIS / regional | Strong NVIS focus, evening and night propagation |
+| **40m** | 7.0–7.2 MHz | NVIS / regional | Strong NVIS focus, daytime and evening contacts |
+| **30m** | 10.1 MHz | NVIS / regional | NVIS focus, vertical preferred for DX |
+| **20m** | 14 MHz | General | Works, vertical is the better choice for DX |
+| **15m** | 21 MHz | General | Works, vertical is the better choice for DX |
+| **10m** | 28–29.7 MHz | General | Works, vertical is the better choice for DX |
 
 ---
 
