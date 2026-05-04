@@ -197,17 +197,34 @@ There are **three completely separate functions** that the word "grounding" gets
 
 ## 8. What to Expect from This Station
 
-With 25 watts, a well-performing vertical with a proper radial system, and a complementary horizontal wire for NVIS:
+With 25 watts, a well-performing vertical with a proper radial system, and a complementary horizontal wire for NVIS, the expectations differ significantly depending on mode.
+
+### SSB (Phone)
+
+SSB is the honest benchmark. No digital processing gain, no weak-signal magic. What you transmit is what the other station hears.
 
 | Scenario | Band | Expected reach |
 |----------|------|----------------|
-| European contacts (SSB / FT8) | 20m | Routine, most days |
-| Transatlantic DX (FT8) | 15m / 10m | Possible during good conditions |
-| DX contacts (FT8) | 17m / 20m | Regular when bands are open |
+| European contacts | 20m | Routine on good days, requires decent conditions |
+| Regional contacts | 40m | Daily, reliable via NVIS wire |
+| Evening / night | 80m | 500–1500 km, solid NVIS |
+| DX contacts | 15m / 10m | Possible when bands are truly open |
+
+At 25 watts SSB, every decibel counts. A well-matched antenna, a low-noise receive chain, and clean RF make the difference between completing a contact and being a 59 report that never gets returned.
+
+### FT8 (Digital)
+
+FT8 changes the equation significantly for low-power operation. The mode operates some 15 dB below the noise floor that SSB requires, which translates to a dramatic increase in effective range at the same power level.
+
+| Scenario | Band | Expected reach |
+|----------|------|----------------|
+| European contacts | 20m | Routine, most days |
+| DX contacts | 17m / 20m | Regular when bands are open |
+| Transatlantic DX | 15m / 10m | Possible during good conditions |
 | Regional contacts | 40m | Daily, reliable via NVIS wire |
 | Evening / night | 80m | 500–1500 km, solid NVIS |
 
-FT8 changes the equation significantly for low-power operation. At 25 watts with a well-matched antenna, FT8 can reach stations that SSB would not. But the goal has always been a station capable of **real voice contacts** too, and for that, every decibel of signal that reaches the antenna feedpoint without being lost to mismatch, noise, or common-mode radiation is a decibel that actually counts.
+> FT8 at 25 watts can reach stations that SSB at 100 watts would struggle with. But the goal has always been a station capable of **real voice contacts** too. FT8 is a tool, not a destination.
 
 ---
 
