@@ -6,7 +6,7 @@ tags: [HF, Antennas, Station Build, Class C, Equipment]
 
 Getting a Class C amateur radio licence feels like finally having the key to a door you have been staring at for months. You pass the exam, you receive your callsign, and then reality sets in: **now what?**
 
-The licence permits you to transmit on a handful of HF bands — 160, 80, 40, 30, 20, 15, and 10 metres — but the power limit is a modest **25 watts**. No linear amplifier to fall back on, no beam antenna pointing at the horizon. Just you, your wits, and whatever signal you can put into the air.
+The licence permits you to transmit on the HF bands 80, 40, 30, 20, 15, and 10 metres, plus 2 metres and 70 cm on VHF — but the power limit is a modest **25 watts**. No linear amplifier to fall back on, no beam antenna pointing at the horizon. Just you, your wits, and whatever signal you can put into the air.
 
 My situation added a few more constraints on top of that. I live in a semi-detached house in an urban area. The garden is small. Neighbours are close. A solar inverter runs most of the day. And a partner who — let us say — had a firm opinion about how many antenna structures were acceptable on the roof.
 
