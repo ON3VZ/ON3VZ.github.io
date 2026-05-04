@@ -114,7 +114,6 @@ The wire is black and fades to weathered grey over time. Mounted on short grey P
 | **30m** | 10.1 MHz | Mixed | Medium | Useful transition band |
 | **20m** | 14 MHz | Regional / medium DX | Medium-high | Complementary to vertical |
 | **15m–10m** | 21–29 MHz | General | Variable | Usable — vertical preferred for DX |
-| **160m** | 1.8–2.0 MHz | Regional | High | Compromised by length; usable locally |
 
 ---
 
@@ -132,7 +131,6 @@ The table below shows how the two antennas work together across the full Class C
 | **30m** | ✅ With raised radials | ✅ Mixed | Both useful |
 | **40m** | ✅ DX (raised radials) | ✅ NVIS / regional | DX → vertical / regional → wire |
 | **80m** | ❌ Not covered | ✅ Primary, NVIS | Wire only |
-| **160m** | ❌ Not covered | ⚠️ Limited | Wire (regional only) |
 
 Switching between antennas uses a manual switch with a dedicated **ground position** — a third position that connects all inputs directly to earth. A passive safety measure that drains static charge when the station is unattended, without relying on active protection devices.
 
@@ -207,7 +205,6 @@ With 25 watts, a well-performing vertical with a proper radial system, and a com
 | DX contacts (FT8) | 17m / 20m | Regular when bands are open |
 | Regional contacts | 40m | Daily, reliable via NVIS wire |
 | Evening / night | 80m | 500–1500 km, solid NVIS |
-| 160m regional | 160m | Local and regional, limited |
 
 FT8 changes the equation significantly for low-power operation. At 25 watts with a well-matched antenna, FT8 can reach stations that SSB would not. But the goal has always been a station capable of **real voice contacts** too — and for that, every decibel of signal that reaches the antenna feedpoint without being lost to mismatch, noise, or common-mode radiation is a decibel that actually counts.
 
