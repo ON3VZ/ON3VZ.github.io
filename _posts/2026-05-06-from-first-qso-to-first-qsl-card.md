@@ -43,14 +43,6 @@ This article answers all those questions — completely, in the right order, wit
 - Operators who want to streamline their workflow
 - Club members planning their first field day or POTA activation
 
-**My setup as reference:**
-- **HF home station**: Icom IC-7300 MkII
-- **VHF/UHF home station**: Icom IC-2730E + WiMo WY-209 9-element Yagi on Spiderbeam 12.5 m mast with Yaesu G-450CDC rotor + Diamond X-50N omnidirectional
-- **Mobile**: Yaesu FTM-510DE in Mazda CX-60
-- **HF antennas**: RF.Guru EFOC29 + MIDI doublet
-- **Logging software**: Log4OM 2 (home), HAMRS (field), N1MM+ (contests), WSJT-X (FT8)
-- **Club**: WLD / ON6WL, Hoboken
-
 ---
 
 ## 2. The Basics: QSO, Logbook, UTC and ADIF {#basics}
@@ -77,7 +69,7 @@ Three Q-codes that beginners constantly mix up:
    — **CQ** = "I am calling anyone", a general call.
 2. **Station B replies** — *"ON3VZ, this is PA3XYZ, Papa Alpha Three X-ray Yankee Zulu."*
 3. **Exchange** — Minimum: **RST report** (Readability, Strength, Tone — e.g. 59 = perfectly readable and strong), name, location.
-4. **Closing** — *"73, this is ON3VZ, clear."* — 73 is the radio greeting for "best regards".
+4. **Closing** — *"73, PA3XYZ ON3VZ."* — 73 is the radio greeting for "best regards".
 
 > 💡 **Pro tip:** The NATO phonetic alphabet is not optional — it is a requirement. "Oscar November Three Victor Zulu" must come automatically before you go on the air. Practise it out loud until it flows without thinking.
 
@@ -102,7 +94,7 @@ The UBA (*Union of Belgian Radio Amateurs*) considers logging "good amateur prac
 - Want to apply for DXCC or other awards
 - Want to resolve a dispute about a QSO
 
-> 🇧🇪 **Belgian-specific:** As Class C in Belgium you have access to all amateur bands and modes. There are no special logging requirements specific to Class C versus Class A or B.
+> 🇧🇪 **Belgian-specific:** As Class C in Belgium you have access to the 80, 40, 30, 20, 15, 10 m, 2 m and 70 cm bands and all permitted modes. There are no special logging requirements specific to Class C versus Class A or B.
 
 ### Minimum Fields You Always Log
 
@@ -1553,7 +1545,3 @@ Start with LoTW. Set your clock correctly. Log in UTC. Learn your NATO phonetic 
 
 73, Kristof — ON3VZ
 *Hoboken (Antwerp) — Grid JO21EE — UBA / WLD / ON6WL*
-
----
-
-*Version 1.0 — May 2026*
