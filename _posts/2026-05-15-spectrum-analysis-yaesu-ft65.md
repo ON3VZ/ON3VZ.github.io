@@ -4,17 +4,15 @@ title: "My Yaesu FT-65 Under the Microscope: A Deep Spectrum Analysis on 2 Metre
 tags: [VHF, Measurement, Equipment, Beginners, FT-65, Spectrum Analyser]
 ---
 
-Yesterday the WOLF club organised a workshop on spectrum analysers. I brought along my **Yaesu FT-65** handheld radio and connected it — for the first time in my life — to a real spectrum analyser. What appeared on the screen was frankly fascinating, and deeply educational.
+Yesterday the WLD club organised a workshop on spectrum analysers. I brought along my **Yaesu FT-65** handheld radio and connected it, for the first time in my life, to a real spectrum analyser. What appeared on the screen was frankly fascinating, and deeply educational.
 
 This article explains everything step by step: what the instrument is, how the test setup works, what sine waves and harmonics are, what all the units mean including the dB scale in plain language, and what CE certification has to do with it all.
-
-This article is written so that people **without a technical background** can still follow it. At the same time I have tried to preserve the technical depth for those who want to dig deeper.
 
 ---
 
 ## Table of Contents
 
-1. [What is a Spectrum Analyser — and How Does It Differ from an Oscilloscope?](#1-what-is-a-spectrum-analyser)
+1. [What is a Spectrum Analyser, and How Does It Differ from an Oscilloscope?](#1-what-is-a-spectrum-analyser)
 2. [The dB Scale in Plain Language](#2-the-db-scale-in-plain-language)
 3. [dBm, dB and dBc Explained with Formulas](#3-dbm-db-and-dbc-explained-with-formulas)
 4. [Sine Waves and Harmonics: the Physics of a Transmitter](#4-sine-waves-and-harmonics)
@@ -27,16 +25,16 @@ This article is written so that people **without a technical background** can st
 
 ---
 
-## 1. What Is a Spectrum Analyser?
+## 1. What Is a Spectrum Analyser, and How Does It Differ from an Oscilloscope?
 
 ### The Oscilloscope: Time Domain
 
-You may know the **oscilloscope** — the instrument with the green waveforms you always see in laboratory scenes. An oscilloscope shows you an electrical signal in the **time domain**: the horizontal axis is time, the vertical axis is voltage.
+You may know the **oscilloscope**, the instrument with the green waveforms you always see in laboratory scenes. An oscilloscope shows you an electrical signal in the **time domain**: the horizontal axis is time, the vertical axis is amplitude (voltage).
 
-You can literally see how the signal moves through time — the waveform. A clean radio signal at 145 MHz looks on a scope like a smooth, repeating sine wave: up, back to zero, down, back to zero, and that 145 million times per second.
+You can literally see how the signal moves through time: the waveform. A clean radio signal at 145 MHz looks on a scope like a smooth, repeating sine wave: up, back to zero, down, back to zero, 145 million times per second.
 
 ```
-Voltage (V)
+Amplitude / Voltage (V)
     ▲
   1 |   ╭──╮       ╭──╮       ╭──╮
     |  ╯    ╰     ╯    ╰     ╯    ╰
@@ -45,7 +43,7 @@ Voltage (V)
  -1 |         ╰──╯       ╰──╯
 ```
 
-A scope is ideal for studying waveforms, but it does **not** tell you which frequency components are present — and certainly not how strong each one is individually.
+A scope is ideal for studying waveforms, but it does **not** tell you which frequency components are present, and certainly not how strong each one is individually.
 
 ### The Spectrum Analyser: Frequency Domain
 
@@ -69,7 +67,7 @@ So you can see immediately: the transmitter radiates mainly on 145.96 MHz, but t
 
 ### The Mathematical Bridge: Fourier
 
-The theory behind all of this is called the **Fourier transform** — a mathematical technique that decomposes any arbitrary waveform into a sum of sine waves, each with their own frequency and strength. The spectrum analyser does this in hardware, in real time, while you watch.
+The theory behind all of this is called the **Fourier transform**, a mathematical technique that decomposes any arbitrary waveform into a sum of sine waves, each with their own frequency and strength. The spectrum analyser does this in hardware, in real time, while you watch.
 
 > **In short:** a scope shows *how* the signal looks. A spectrum analyser shows *what it is made of*.
 
@@ -77,7 +75,7 @@ The theory behind all of this is called the **Fourier transform** — a mathemat
 
 ## 2. The dB Scale in Plain Language
 
-This is the section where many people switch off. "dB", "dBm", "dBc" — it sounds complicated, but the idea behind it is actually quite elegant. Read through this carefully, because once you understand it, the rest of the article falls into place.
+This is the section where many people switch off. "dB", "dBm", "dBc": it sounds complicated, but the idea behind it is actually quite elegant. Read through this carefully, because once you understand it, the rest of the article falls into place.
 
 ### The Problem with Linear Scales
 
@@ -114,7 +112,7 @@ Some examples:
 | 0.1 | −1 | 10⁻¹ = 0.1 |
 | 0.001 | −3 | 10⁻³ = 0.001 |
 
-The magic: **every number — large or small — now fits onto a manageable scale**.
+The magic: **every number, large or small, now fits onto a manageable scale**.
 
 ### From Logarithm to Decibel (dB)
 
@@ -170,7 +168,7 @@ That is precisely why radio amateurs and engineers always think in dB. It makes 
 
 ### The Logarithmic Scale on Screen
 
-Now you also understand why the spectrum analyser uses a logarithmic scale. On the screen we see **8 dB per grid row** (LOG 8 dB). Each row downward is 8 dB weaker — that is a factor of 6.3 in power. Over 10 rows from top to bottom that is a factor of 6.3¹⁰ ≈ **one billion**. That enormous range fits visually and neatly on the screen.
+Now you also understand why the spectrum analyser uses a logarithmic scale. On the screen we see **8 dB per grid row** (LOG 8 dB). Each row downward is 8 dB weaker, a factor of 6.3 in power. Over 10 rows from top to bottom that is a factor of 6.3¹⁰ ≈ **one billion**. That enormous range fits visually and neatly on the screen.
 
 ```
 Row  1 (top):   −40 dBm  = 0.0001    mW  ← reference line
@@ -190,7 +188,7 @@ Now that we understand the dB scale, we can discuss the specific units shown on 
 
 ### dBm: Absolute Power
 
-**dBm** stands for *decibels relative to 1 milliwatt*. It is an **absolute** power measure — you know exactly how many Watts it represents, not just the ratio to something else.
+**dBm** stands for *decibels relative to 1 milliwatt*, an **absolute** power measure: you know exactly how many Watts it represents, not just the ratio to something else.
 
 The formula:
 
@@ -224,7 +222,7 @@ A reference table every radio amateur should know by heart:
 
 ### dB: Relative Difference
 
-**dB** (without suffix) is always a **ratio** between two powers. It has no absolute meaning — it only says how large the difference is.
+**dB** (without suffix) is always a **ratio** between two powers. It has no absolute meaning: it only says how large the difference is.
 
 ```
 ΔdB = 10 × log₁₀( P1 / P2 )
@@ -236,11 +234,11 @@ On our screen we see marker ΔM1 with 73.09 dB. That means:
 Ratio = 10 ^ (73.09 / 10) = 10 ^ 7.309 = 20,380,000
 ```
 
-The carrier is therefore **more than 20 million times stronger** than the noise floor. That is why we need the dB scale — on a linear scale this simply cannot be displayed.
+The carrier is therefore **more than 20 million times stronger** than the noise floor. That is why we need the dB scale: on a linear scale this simply cannot be displayed.
 
 ### dBc: Spectral Purity
 
-**dBc** stands for *decibels relative to the carrier* — the desired, primary frequency of the transmitter.
+**dBc** stands for *decibels relative to the carrier*, the desired primary frequency of the transmitter.
 
 ```
 P(dBc) = P(spur, dBm) − P(carrier, dBm)
@@ -281,7 +279,7 @@ On a spectrum analyser this would give one perfect, infinitely narrow line at f�
 
 ### Reality: Harmonics Are Inevitable
 
-In practice, a perfect sine wave does not exist. Transistors, amplifier stages, switching power supplies and other components inside a transmitter are **not perfectly linear** — they distort the signal slightly. That distortion has a mathematically predictable consequence: **harmonics are generated**.
+In practice, a perfect sine wave does not exist. Transistors, amplifier stages, switching power supplies and other components inside a transmitter are **not perfectly linear**, they distort the signal slightly. That distortion has a mathematically predictable consequence: **harmonics are generated**.
 
 Harmonics are additional sine waves at **exact multiples of the fundamental frequency**:
 
@@ -292,7 +290,7 @@ s(t) = A₁×sin(2π×f₀×t)        ← fundamental (wanted)
      + A₄×sin(2π×4f₀×t) + ...
 ```
 
-This is not a coincidence or design flaw — it is a fundamental law of mathematics (Fourier analysis): **any non-linear distortion of a sine wave produces harmonics at multiples of the fundamental frequency**.
+This is not a coincidence or design flaw: it is a fundamental law of mathematics (Fourier analysis): **any non-linear distortion of a sine wave produces harmonics at multiples of the fundamental frequency**.
 
 ### Harmonics of the FT-65 at 145.96 MHz
 
@@ -302,12 +300,12 @@ This is not a coincidence or design flaw — it is a fundamental law of mathemat
 | 2nd harmonic | 291.920 MHz | ~291.600 MHz | ~320 kHz* |
 | 3rd harmonic / spur | 437.880 MHz | ~434.160 MHz | ~3.7 MHz** |
 
-\* Small deviation due to the wide RBW of 300 kHz — acceptable at this measurement setting.  
+\* Small deviation due to the wide RBW of 300 kHz, acceptable at this measurement setting.  
 \*\* Larger deviation: this is likely a spurious emission from the radio's internal synthesiser, not the true third harmonic.
 
 ### Why Harmonics Can Never Be Fully Eliminated
 
-Even the most expensive professional transmitters have harmonics — they are simply suppressed to an extremely low level. The goal of good transmitter design is to push those harmonics as far below the carrier as possible, so they cause no interference to other users of the radio spectrum.
+Even the most expensive professional transmitters have harmonics: they are simply suppressed to an extremely low level. The goal of good transmitter design is to push those harmonics as far below the carrier as possible, so they cause no interference to other users of the radio spectrum.
 
 > 💡 **Analogy:** think of an acoustic guitar. When you pluck a string, you hear not just the fundamental note but also the overtones (harmonics). That is precisely what makes the string sound beautiful. In a radio transmitter, however, you want those overtones to be as small as possible, because they could interfere with other stations.
 
@@ -317,7 +315,7 @@ Even the most expensive professional transmitters have harmonics — they are si
 
 ### What Is the Siglent SSA3021X?
 
-The **Siglent SSA3021X** is a professional mid-range spectrum analyser made by the Chinese manufacturer Siglent — a respected maker of test equipment that is also found in professional laboratories.
+The **Siglent SSA3021X** is a professional mid-range spectrum analyser made by the Chinese manufacturer Siglent, a respected maker of test equipment that is also found in professional laboratories.
 
 | Specification | Value |
 |--------------|-------|
@@ -336,7 +334,7 @@ With its upper limit of **2.1 GHz**, the SSA3021X covers the entire playground f
 
 | Amateur band | Frequency | Covered? |
 |-------------|-----------|----------|
-| HF (160m – 10m) | 1.8 – 30 MHz | ✅ (from the 9 kHz lower limit) |
+| HF | 1.8 – 30 MHz | ✅ |
 | 6m | 50 – 54 MHz | ✅ |
 | 2m | 144 – 146 MHz | ✅ |
 | 70cm | 430 – 440 MHz | ✅ |
@@ -349,12 +347,12 @@ For most VHF/UHF measurements this instrument is more than sufficient.
 
 A spectrum analyser like the SSA3021X is used for:
 
-- **Harmonic analysis** — as in this article
-- **Channel power and occupancy** — how much spectrum does your signal consume?
-- **Intermodulation** — distortion when two signals are present simultaneously
-- **Antenna match curves** — in combination with a tracking generator
-- **EMC pre-compliance** — are there unwanted emissions from equipment?
-- **Spectrum monitoring** — which signals are active in a given range?
+- **Harmonic analysis**: as in this article
+- **Channel power and occupancy**: how much spectrum does your signal consume?
+- **Intermodulation**: distortion when two signals are present simultaneously
+- **Antenna match curves**: in combination with a tracking generator
+- **EMC pre-compliance**: are there unwanted emissions from equipment?
+- **Spectrum monitoring**: which signals are active in a given range?
 
 ---
 
@@ -395,7 +393,7 @@ Between the antenna output of the FT-65 and the RF INPUT of the SSA3021X, a **40
 
 ### What Is an Attenuator?
 
-An attenuator is a precision passive network of resistors. It reduces the signal power by an exact, known factor — in this case **10,000 times** (= 40 dB) — without altering the frequency content or the relative ratios between signal components.
+An attenuator is a precision passive network of resistors. It reduces the signal power by an exact, known factor: in this case **10,000 times** (= 40 dB), without altering the frequency content or the relative ratios between signal components.
 
 This is crucial: both the carrier and all harmonics are **attenuated equally**. The relative ratios (dBc) remain identical, even after the attenuator. This means we can still correctly measure harmonic suppression.
 
@@ -414,7 +412,7 @@ After 40 dB attenuator (measured values at analyser input):
     3rd peak / spur:              ~ −109.53 dBm
 ```
 
-The difference between the theoretical −13 dBm and the measured −37.73 dBm (~25 dB) is due to cable losses, the internal measurement configuration, and possible deviations in the exact attenuation of the attenuator. For a qualitative harmonic analysis this does not matter — what we care about are the **relative** levels (dBc), not the absolute values.
+The difference between the theoretical −13 dBm and the measured −37.73 dBm (~25 dB) is due to cable losses, the internal measurement configuration, and possible deviations in the exact attenuation of the attenuator. For a qualitative harmonic analysis this does not matter: what we care about are the **relative** levels (dBc), not the absolute values.
 
 ---
 
@@ -431,8 +429,8 @@ The photo below shows the Siglent SSA3021X screen as captured during the measure
 | **Ref −40.00 dBm** | −40 dBm | Top of the Y-axis (reference line at top) |
 | **LOG 8 dB** | 8 dB/division | Each grid row = 8 dB difference in power |
 | **Att 0.00 dB** | 0 dB | No additional internal attenuation in the analyser |
-| **RBW 300 kHz** | 300 kHz | Resolution bandwidth — width of the measurement filter |
-| **VBW 10 kHz** | 10 kHz | Video bandwidth — noise smoothing |
+| **RBW 300 kHz** | 300 kHz | Resolution bandwidth, width of the measurement filter |
+| **VBW 10 kHz** | 10 kHz | Video bandwidth, noise smoothing |
 | **Start 120 MHz** | 120 MHz | Left edge of the graph |
 | **Stop 450 MHz** | 450 MHz | Right edge of the graph |
 | **Span ~330 MHz** | 330 MHz | Total measured frequency range |
@@ -445,7 +443,7 @@ The photo below shows the Siglent SSA3021X screen as captured during the measure
 - **Narrow RBW (e.g. 1 kHz):** you see a lot of detail, but the sweep takes longer. Suitable for accurate measurement of weak signals.
 - **Wide RBW (e.g. 300 kHz):** you quickly get an overview but lose detail. Suitable for an initial survey.
 
-In this measurement **RBW = 300 kHz** was used — wide enough to capture the entire 2m FM signal (including the modulation sidebands) in one broad peak. For norm-compliant measurements you would use a narrower RBW.
+In this measurement **RBW = 300 kHz** was used, wide enough to capture the entire 2m FM signal (including the modulation sidebands) in one broad peak. For norm-compliant measurements you would use a narrower RBW.
 
 **VBW (Video BandWidth)** is a smoothing filter that averages out noise fluctuations so that weak signals become more visible. A low VBW gives a quieter, more averaged display.
 
@@ -466,7 +464,7 @@ The Y-axis shows LOG 8 dB per division. The scale runs (top to bottom):
 −112 dBm  ← noise floor (~bottom grid)
 ```
 
-The carrier peak reaches just below −40 dBm. The noise floor sits around −110 dBm. That is a dynamic range of **70 dB** — in other words, the test setup distinguishes signals that differ by a factor of **10,000,000** in power.
+The carrier peak reaches just below −40 dBm. The noise floor sits around −110 dBm. That is a dynamic range of **70 dB**; in other words, the test setup distinguishes signals that differ by a factor of **10,000,000** in power.
 
 ---
 
@@ -485,7 +483,7 @@ Frequency: 126.600 MHz
 Power:     −110.82 dBm
 ```
 
-This is the noise floor of the test setup — the lowest level we can measure. In power terms: 10^(−110.82/10) = 0.0000000083 mW = **8.3 picowatts**. An unimaginably small quantity.
+This is the noise floor of the test setup, the lowest level we can measure. In power terms: 10^(−110.82/10) = 0.0000000083 mW = **8.3 picowatts**. An unimaginably small quantity.
 
 ### Marker ΔM1: the Carrier
 
@@ -497,7 +495,7 @@ Actual frequency: 126.600 + 19.360 = 145.960 MHz  ✅ (2m FM segment)
 Actual power:     −110.82 + 73.09  = −37.73 dBm
 ```
 
-The carrier sits at **145.960 MHz** — a standard 2m frequency — and has a power of **−37.73 dBm** at the analyser input (after the 40 dB attenuator).
+The carrier sits at **145.960 MHz**, a standard 2m frequency, and has a power of **−37.73 dBm** at the analyser input (after the 40 dB attenuator).
 
 ### Marker 2Δ1: the Second Harmonic
 
@@ -523,7 +521,7 @@ Expected 3rd harmonic: 145.960 × 3 = 437.880 MHz
 Deviation: ~3.7 MHz (too large for a true harmonic)
 ```
 
-The deviation of nearly 4 MHz is too large to confidently call this the third harmonic. This is most likely a **spurious emission** — an unwanted signal component from the radio's internal VCO or PLL synthesiser — rather than a true harmonic. Its level of **−71.80 dBc** is well below the regulatory limit, so no cause for concern.
+The deviation of nearly 4 MHz is too large to confidently call this the third harmonic. This is most likely a **spurious emission**, an unwanted signal component from the radio's internal VCO or PLL synthesiser, rather than a true harmonic. Its level of **−71.80 dBc** is well below the regulatory limit, so no cause for concern.
 
 ---
 
@@ -533,11 +531,11 @@ The deviation of nearly 4 MHz is too large to confidently call this the third ha
 
 **CE** (*Conformité Européenne*) is the European certification mark. When you see a CE mark on a product, it means the manufacturer declares that the product complies with all applicable European directives.
 
-For radio transmitters — including the Yaesu FT-65 — this falls under the **Radio Equipment Directive (RED) 2014/53/EU**. Concretely, the manufacturer must demonstrate that the device:
+For radio transmitters, including the Yaesu FT-65, this falls under the **Radio Equipment Directive (RED) 2014/53/EU**. Concretely, the manufacturer must demonstrate that the device:
 
-1. Has **spectral purity** — harmonics and unwanted emissions are sufficiently suppressed
-2. **Does not interfere with other equipment** — EMC (electromagnetic compatibility)
-3. **Is safe for the user** — electrical safety
+1. Has **spectral purity**: harmonics and unwanted emissions are sufficiently suppressed
+2. **Does not interfere with other equipment**: EMC (electromagnetic compatibility)
+3. **Is safe for the user**: electrical safety
 
 ### Which Standard Applies to the FT-65?
 
@@ -568,7 +566,7 @@ A norm-compliant measurement requires:
 - An accredited testing laboratory
 - Standardised measurement distance and configuration
 
-Our test setup has a measurement uncertainty of probably **±3 to ±5 dB**. The actual level could therefore be ±4.6 dB lower — right below the limit.
+Our test setup has a measurement uncertainty of probably **±3 to ±5 dB**. The actual level could therefore be ±4.6 dB lower, right below the limit.
 
 **Nuance 2: Influence of the RBW.**
 
@@ -587,7 +585,7 @@ Carrier at antenna:              +27 dBm (500 mW, low power mode)
 2nd harmonic (−55.37 dBc):       +27 − 55.37 = −28.37 dBm = 1.45 µW
 ```
 
-**1.45 microwatts** at 291 MHz. A rubber duck antenna (the standard flexible antenna of the FT-65) has very poor efficiency at 291 MHz. The power actually radiated at the 2nd harmonic is in practice a **fraction of a microwatt** — at a few metres distance this is completely unmeasurable.
+**1.45 microwatts** at 291 MHz. A rubber duck antenna (the standard flexible antenna of the FT-65) has very poor efficiency at 291 MHz. The power actually radiated at the 2nd harmonic is in practice a **fraction of a microwatt** , at a few metres distance this is completely unmeasurable.
 
 > **CE conclusion:** our measurement beautifully illustrates the principles behind the standard, but is not a substitute for an official type approval measurement. The FT-65 is a solid, CE-certified device. The slightly elevated second harmonic in our measurement is due to the test setup, not a flaw in the radio.
 
@@ -616,11 +614,10 @@ Carrier:          −37.73 + 40 =  +2.27 dBm  ≈  1.7 mW  (Low Power mode activ
 3rd peak / spur: −109.53 + 40 = −69.53 dBm  ≈  0.1 nW
 ```
 
-Note: the low carrier value (+2.27 dBm ≈ 1.7 mW instead of the expected 500 mW) points to significant cable losses and/or the exact attenuation of the attenuator deviating from the nominal 40 dB. The relative dBc values are reliable; the absolute powers are indicative only.
 
 ### What Did I Learn from This Measurement?
 
-1. **A spectrum analyser reveals what you cannot see with the naked eye — or a scope.** That one pure sine wave you think you are transmitting turns out to have a rich structure.
+1. **A spectrum analyser reveals what you cannot see with the naked eye, or even a scope.** That one pure sine wave you think you are transmitting turns out to have a rich structure.
 
 2. **The Yaesu FT-65 behaves as expected from a CE-certified device.** The carrier is strong and clean; the unwanted emissions are weak.
 
@@ -630,21 +627,3 @@ Note: the low carrier value (+2.27 dBm ≈ 1.7 mW instead of the expected 500 mW
 
 5. **Fourier was right.** Every imperfect sine produces harmonics at multiples of the fundamental frequency. The mathematics and the measurement agree perfectly.
 
----
-
-### What Comes Next?
-
-In a future article I want to perform the same measurement at **full power (5 W)** with a higher-quality attenuator, and use a narrower RBW to measure the harmonics more accurately. I also want to put the **IC-7300 MkII** on HF under the analyser — curious what a modern SDR-based HF transceiver looks like in terms of harmonic purity.
-
-*Stay tuned. 73 de ON3VZ.*
-
----
-
-*Measurement date: 15 May 2026*  
-*Equipment: Siglent SSA3021X · Yaesu FT-65 · 40 dB SMA attenuator*  
-*Location: Hoboken (Antwerp), Belgium*  
-*Licence: ON3VZ — Belgian Class C radio amateur*
-
----
-
-> *This article was written with the aim of teaching both beginners and more experienced radio amateurs something about spectrum analysis. Corrections, additions or questions are always welcome via the contact page or via the QRZ profile of ON3VZ.*
