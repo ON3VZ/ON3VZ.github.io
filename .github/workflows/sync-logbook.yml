@@ -1,35 +1,43 @@
-name: Sync QRZ Logbook
+name: Update Logbook Manifest
 
 on:
-  schedule:
-    - cron: '0 2 * * *'
+  push:
+    paths:
+      - 'assets/data/**'
   workflow_dispatch:
 
 jobs:
-  sync-logbook:
+  update-manifest:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Fetch QRZ logbook (ADIF)
-        env:
-          QRZ_API_KEY: ${{ secrets.QRZ_API_KEY }}
-        run: curl -s -X POST --data "KEY=${QRZ_API_KEY}&ACTION=FETCH&OPTION=ADIF" "https://logbook.qrz.com/api" -o assets/data/logbook.adi
-
-      - name: Verify and show result
+      - name: Generate manifest.json
         run: |
-          echo "File size: $(wc -c < assets/data/logbook.adi) bytes"
-          cat assets/data/logbook.adi
+          cd assets/data
+          FILES=()
+          for f in *; do
+            [ "$f" = "manifest.json" ] && continue
+            [ "$f" = ".gitkeep" ] && continue
+            if [[ "$f" == *.adi ]] || grep -qi "<eor>" "$f" 2>/dev/null; then
+              FILES+=("\"$f\"")
+            fi
+          done
+          JSON_FILES=$(IFS=','; echo "${FILES[*]}")
+          DATE=$(date +%Y-%m-%d)
+          echo "{\"files\":[${JSON_FILES}],\"updated\":\"${DATE}\"}" > manifest.json
+          echo "Manifest updated:"
+          cat manifest.json
 
-      - name: Commit updated logbook
+      - name: Commit manifest
         run: |
           git config user.email "on3vz@uba.be"
           git config user.name "ON3VZ"
-          git add assets/data/logbook.adi
-          git diff --staged --quiet || git commit -m "chore: sync QRZ logbook [skip ci]" && git push
+          git add assets/data/manifest.json
+          git diff --staged --quiet || git commit -m "chore: update logbook manifest [skip ci]" && git push
