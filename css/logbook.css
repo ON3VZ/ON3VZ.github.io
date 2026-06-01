@@ -8,7 +8,7 @@
 }
 
 .lb-hero {
-  padding: 3.5rem 0 2.5rem;
+  padding: 2rem 0 1.5rem;
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -22,8 +22,8 @@
 /* ── STATS BAR ── */
 .lb-stats {
   display: flex;
-  gap: 2.5rem;
-  margin-top: 2rem;
+  gap: 2rem;
+  margin-top: 1.2rem;
   flex-wrap: wrap;
 }
 
@@ -35,7 +35,7 @@
 
 .lb-stat-val {
   font-family: var(--f-display);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--c-primary);
   text-shadow: var(--glow-sm);
@@ -54,11 +54,11 @@
 .lb-filters {
   display: flex;
   align-items: flex-start;
-  gap: 1rem 2rem;
-  padding: 1.5rem 0 2rem;
+  gap: 0.75rem 1.5rem;
+  padding: 1rem 0 1.2rem;
   border-bottom: 1px solid var(--c-border);
   flex-wrap: wrap;
-  row-gap: 0.75rem;
+  row-gap: 0.6rem;
 }
 
 .filter-group {
@@ -193,9 +193,7 @@
 .lb-map-inner {
   position: relative;
   width: 100%;
-  height: 75vh;
-  min-height: 560px;
-  max-height: 900px;
+  height: 580px;
 }
 
 .world-map {
