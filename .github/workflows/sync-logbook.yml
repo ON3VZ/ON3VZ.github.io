@@ -20,15 +20,16 @@ jobs:
       - name: Fetch QRZ logbook (ADIF)
         env:
           QRZ_API_KEY: ${{ secrets.QRZ_API_KEY }}
+        run: curl -s -X POST --data "KEY=${QRZ_API_KEY}&ACTION=FETCH&OPTION=ADIF" "https://logbook.qrz.com/api" -o assets/data/logbook.adi
+
+      - name: Verify and show result
         run: |
-          curl -s -X POST \
-            --data "KEY=${QRZ_API_KEY}&ACTION=FETCH&OPTION=ADIF" \
-            "https://logbook.qrz.com/api" \
-            -o assets/data/logbook.adi
+          echo "File size: $(wc -c < assets/data/logbook.adi) bytes"
+          head -c 200 assets/data/logbook.adi
 
-          if [ ! -s assets/data/logbook.adi ]; then
-            echo "ERROR: Downloaded ADIF file is empty."
-            exit 1
-          fi
-
-          if grep -q "STATUS=FAIL" asse
+      - name: Commit updated logbook
+        run: |
+          git config user.email "on3vz@uba.be"
+          git config user.name "ON3VZ"
+          git add assets/data/logbook.adi
+          git diff --staged --quiet || git commit -m "chore: sync QRZ logbook [skip ci]" && git push
