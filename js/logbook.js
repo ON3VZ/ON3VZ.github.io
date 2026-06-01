@@ -552,7 +552,7 @@ function initMap() {
   // Use actual container pixel dimensions
   const container = document.getElementById('mapSection');
   const W = container.offsetWidth || 1200;
-  const H = 580;
+  const H = 660;
 
   svgEl = d3.select('#worldMap');
   svgEl
@@ -561,12 +561,11 @@ function initMap() {
     .style('width', W + 'px')
     .style('height', H + 'px');
 
-  // NaturalEarth1: world fits in width at scale = W/6.28
-  // Shift translate Y down so northern latitudes stay in frame
+  // Scale to fit world in width, shift down so Belgium sits at ~35% from top
   const scale = W / 6.3;
   projection = d3.geoNaturalEarth1()
     .scale(scale)
-    .translate([W / 2, H / 2 + scale * 0.18]);
+    .translate([W / 2, H * 0.52]);
 
   path = d3.geoPath().projection(projection);
 
