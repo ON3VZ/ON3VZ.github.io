@@ -207,8 +207,8 @@
 /* Map countries */
 .map-country {
   fill: #112240;
-  stroke: rgba(100,140,180,0.18);
-  stroke-width: 0.3;
+  stroke: rgba(100,150,200,0.35);
+  stroke-width: 0.4;
   transition: fill var(--t);
 }
 

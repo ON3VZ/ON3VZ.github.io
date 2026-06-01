@@ -5,6 +5,30 @@
 
 'use strict';
 
+
+/* ── ISO numeric → amateur radio prefix ── */
+const ISO_PREFIX = {
+  4:'YA',8:'ZA',12:'7X',24:'D2',32:'LU',36:'VK',40:'OE',50:'S2',
+  56:'ON',64:'A5',68:'CP',76:'PY',100:'LZ',116:'XU',120:'TJ',
+  124:'VE',152:'CE',156:'BY',170:'HK',178:'TN',188:'TI',191:'9A',
+  192:'CO',203:'OK',208:'OZ',218:'HC',818:'SU',222:'YS',231:'ET',
+  246:'OH',250:'F',276:'DL',288:'9G',300:'SV',320:'TG',332:'HH',
+  340:'HR',348:'HA',356:'VU',360:'YB',364:'EP',368:'YI',372:'EI',
+  376:'4X',380:'I',388:'6Y',392:'JA',400:'JY',398:'UN',404:'5Z',
+  408:'P5',410:'HL',414:'9K',418:'XW',422:'OD',434:'5A',484:'XE',
+  504:'CN',508:'C9',524:'9N',528:'PA',554:'ZL',566:'5N',578:'LA',
+  586:'AP',591:'HP',604:'OA',608:'DU',616:'SP',620:'CT',634:'A7',
+  642:'YO',643:'UA',682:'HZ',686:'6W',703:'OM',705:'S5',706:'T5',
+  710:'ZS',724:'EA',729:'ST',752:'SM',756:'HB',760:'YK',764:'HS',
+  792:'TA',800:'5X',804:'UR',784:'A6',826:'G',840:'W',858:'CX',
+  860:'UK',862:'YV',704:'3W',887:'7O',894:'9J',716:'Z2',
+  51:'EK',31:'4J',112:'EU',44:'C6',48:'A9',84:'V3',204:'TY',
+  72:'A2',854:'XT',108:'9U',132:'D4',140:'TL',148:'TT',174:'D6',
+  266:'TR',270:'C5',324:'3X',624:'J5',454:'7Q',466:'TZ',478:'5T',
+  516:'V5',562:'5U',646:'9X',678:'S9',729:'ST',834:'5H',768:'5V',
+  788:'3V',716:'Z2'
+};
+
 /* ── ISO numeric → country name (subset, for hover tooltip) ── */
 const ISO_NAMES = {
   4:'Afghanistan',8:'Albania',12:'Algeria',24:'Angola',32:'Argentina',
@@ -586,7 +610,7 @@ function initMap() {
       d3.select(this).attr('fill', '#1a3a5c');
       const id = d.id ? parseInt(d.id) : null;
       const name = ISO_NAMES[id] || (d.properties && d.properties.name) || '';
-      if (name) showCountryTip(event, name);
+      if (name) showCountryTip(event, name, id);
     })
     .on('mousemove', moveTooltip)
     .on('mouseout', function() {
@@ -692,9 +716,10 @@ function ensureTooltip() {
     document.body.appendChild(tooltip);
   }
 }
-function showCountryTip(event, name) {
+function showCountryTip(event, name, id) {
   ensureTooltip();
-  tooltip.innerHTML = `<strong>${name}</strong>`;
+  const prefix = id && ISO_PREFIX[parseInt(id)] ? ` <span style="color:var(--c-text-3);font-size:0.6rem">${ISO_PREFIX[parseInt(id)]}</span>` : '';
+  tooltip.innerHTML = `<strong>${name}</strong>${prefix}`;
   tooltip.classList.add('visible');
   moveTooltip(event);
 }
