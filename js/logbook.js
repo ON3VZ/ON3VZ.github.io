@@ -5,6 +5,8 @@
 
 'use strict';
 
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
 /* ── CONFIG ── */
 const CFG = {
   homeLatLng: [51.178, 4.347],          // Hoboken, Antwerpen
@@ -87,9 +89,11 @@ let allQsos   = [];
 let sortCol = 'date';
 let sortDir = 'desc';
 let tableSearch = {};
-let activeYears = new Set();
-let activeBands = new Set();
-let activeCont  = new Set();
+let activeYears  = new Set();
+let activeMonths = new Set();
+let activeBands  = new Set();
+let activeCont   = new Set();
+const ALL_YEARS_THRESHOLD = 2; // show month filter only when ≤ this many years selected
 let d3Loaded = false;
 let geoReady = false;
 let worldGeo = null;
@@ -306,13 +310,71 @@ function buildFilters() {
     .sort((a,b) => (CFG.bandOrder.indexOf(a)+99) - (CFG.bandOrder.indexOf(b)+99));
   const conts  = [...new Set(allQsos.map(q => q.cont))].sort();
 
-  activeYears = new Set(years);
-  activeBands = new Set(bands);
-  activeCont  = new Set(conts);
+  activeYears  = new Set(years);
+  activeMonths = new Set();
+  activeBands  = new Set(bands);
+  activeCont   = new Set(conts);
 
-  buildPills('msYear', years, activeYears, v => { toggle(activeYears, v); applyFilters(); });
+  buildPills('msYear', years, activeYears, v => {
+    toggle(activeYears, v);
+    rebuildMonthFilter();
+    applyFilters();
+  });
   buildPills('msBand', bands, activeBands, v => { toggle(activeBands, v); applyFilters(); });
   buildPills('msCont', conts,  activeCont,  v => { toggle(activeCont, v);  applyFilters(); });
+  rebuildMonthFilter();
+}
+
+function rebuildMonthFilter() {
+  const group = document.getElementById('monthGroup');
+  const label = document.getElementById('monthLabel');
+  const wrap  = document.getElementById('msMonth');
+
+  // Only show when 1 or 2 years are selected
+  const selYears = [...activeYears].sort();
+  if (selYears.length === 0 || selYears.length > ALL_YEARS_THRESHOLD) {
+    group.style.display = 'none';
+    activeMonths.clear();
+    return;
+  }
+
+  // Find months that have QSOs in the selected years
+  const monthsInYears = new Set(
+    allQsos
+      .filter(q => activeYears.has(q.year) && q.date && q.date.length >= 6)
+      .map(q => q.date.slice(0, 6)) // YYYYMM
+  );
+
+  if (!monthsInYears.size) { group.style.display = 'none'; return; }
+
+  // Update label
+  label.textContent = selYears.length === 1
+    ? 'MONTH · ' + selYears[0]
+    : 'MONTH · ' + selYears.join(' + ');
+
+  // Rebuild pills
+  wrap.innerHTML = '';
+  const sorted = [...monthsInYears].sort();
+
+  // Init activeMonths to all if empty
+  if (!activeMonths.size) sorted.forEach(m => activeMonths.add(m));
+
+  sorted.forEach(ym => {
+    const monthIdx = parseInt(ym.slice(4, 6), 10) - 1;
+    const label2 = MONTH_NAMES[monthIdx] || ym.slice(4, 6);
+    const pill = document.createElement('button');
+    pill.className = 'ms-pill ms-pill--month' + (activeMonths.has(ym) ? ' active' : '');
+    pill.textContent = label2;
+    pill.dataset.val = ym;
+    pill.addEventListener('click', () => {
+      toggle(activeMonths, ym);
+      pill.classList.toggle('active', activeMonths.has(ym));
+      applyFilters();
+    });
+    wrap.appendChild(pill);
+  });
+
+  group.style.display = '';
 }
 
 function buildPills(containerId, values, activeSet, onToggle) {
@@ -343,20 +405,31 @@ function toggle(set, val) {
 
 function selectAll() {
   allQsos.forEach(q => { activeYears.add(q.year); activeBands.add(q.band); activeCont.add(q.cont); });
+  activeMonths.clear();
   document.querySelectorAll('.ms-pill').forEach(p => p.classList.add('active'));
+  rebuildMonthFilter();
   applyFilters();
 }
 
 function clearAll() {
-  activeYears.clear(); activeBands.clear(); activeCont.clear();
+  activeYears.clear(); activeBands.clear(); activeCont.clear(); activeMonths.clear();
   document.querySelectorAll('.ms-pill').forEach(p => p.classList.remove('active'));
+  document.getElementById('monthGroup').style.display = 'none';
   applyFilters();
 }
 
 function applyFilters() {
-  const filtered = allQsos.filter(q =>
-    activeYears.has(q.year) && activeBands.has(q.band) && activeCont.has(q.cont)
-  );
+  const filtered = allQsos.filter(q => {
+    if (!activeYears.has(q.year)) return false;
+    if (!activeBands.has(q.band)) return false;
+    if (!activeCont.has(q.cont))  return false;
+    // Month filter only active when visible
+    if (activeMonths.size && document.getElementById('monthGroup').style.display !== 'none') {
+      const ym = (q.date || '').slice(0, 6);
+      if (!activeMonths.has(ym)) return false;
+    }
+    return true;
+  });
   updateStats(filtered);
   renderTable(filtered);
   if (geoReady) renderMap(filtered);

@@ -558,3 +558,38 @@
   margin-left: 0.2rem;
   opacity: 0.7;
 }
+
+/* ── MONTH FILTER — subtiel, iets kleiner dan jaar/band pills ── */
+.filter-group--month {
+  border-left: 1px solid var(--c-border);
+  padding-left: 1.2rem;
+  margin-left: 0.2rem;
+}
+
+.filter-group--month .filter-label {
+  color: var(--c-text-3);
+  font-size: 0.58rem;
+  letter-spacing: 0.1rem;
+}
+
+.ms-pill--month {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.55rem;
+  opacity: 0.75;
+  border-color: rgba(0,255,136,0.15);
+  color: var(--c-text-3);
+}
+
+.ms-pill--month.active {
+  opacity: 1;
+  background: rgba(0,255,136,0.08);
+  border-color: rgba(0,255,136,0.4);
+  color: var(--c-primary);
+  box-shadow: none;
+}
+
+.ms-pill--month:hover {
+  opacity: 1;
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
