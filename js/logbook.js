@@ -288,6 +288,7 @@ function normaliseQso(f) {
     cont:    f.CONT       || guessContinent(f.COUNTRY || ''),
     lat:     parseFloat(f.LAT)  || null,
     lng:     parseFloat(f.LON)  || null,
+    dist:    f.DISTANCE ? parseInt(f.DISTANCE) : null,
     year:    (f.QSO_DATE || '').slice(0, 4),
   };
 }
@@ -533,6 +534,7 @@ function renderTable(qsos) {
     const colour = CFG.bandColours[q.band] || '#adb5bd';
     const dateStr = q.date ? q.date.slice(0,4)+'-'+q.date.slice(4,6)+'-'+q.date.slice(6,8) : '';
     const timeStr = q.time ? q.time.slice(0,2)+':'+q.time.slice(2,4) : '';
+    const distStr = q.dist ? `${q.dist.toLocaleString()} km` : '';
     return `<tr>
       <td>${dateStr}</td>
       <td>${timeStr}</td>
@@ -543,6 +545,7 @@ function renderTable(qsos) {
       <td>${q.rstR}</td>
       <td>${q.dxcc}</td>
       <td>${CFG.contNames[q.cont] || q.cont}</td>
+      <td class="qso-dist">${distStr}</td>
     </tr>`;
   }).join('');
 }
@@ -698,7 +701,8 @@ function showCountryTip(event, name) {
 function showTooltip(event, q) {
   ensureTooltip();
   const dateStr = q.date ? q.date.slice(0,4)+'-'+q.date.slice(4,6)+'-'+q.date.slice(6,8) : '';
-  tooltip.innerHTML = `<strong>${q.call}</strong>${q.dxcc ? q.dxcc + '<br>' : ''}${q.band.toUpperCase()} · ${q.mode}${dateStr ? '<br>' + dateStr : ''}`;
+  const distStr = q.dist ? ` · ${q.dist.toLocaleString()} km` : '';
+  tooltip.innerHTML = `<strong>${q.call}</strong>${q.dxcc ? q.dxcc + '<br>' : ''}${q.band.toUpperCase()} · ${q.mode}${distStr}${dateStr ? '<br>' + dateStr : ''}`;
   tooltip.classList.add('visible');
   moveTooltip(event);
 }
