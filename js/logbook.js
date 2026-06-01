@@ -517,7 +517,7 @@ function initMap() {
   // Use actual container pixel dimensions
   const container = document.getElementById('mapSection');
   const W = container.offsetWidth || 1200;
-  const H = 560;
+  const H = container.offsetHeight || 600;
 
   svgEl = d3.select('#worldMap');
   svgEl
@@ -526,10 +526,11 @@ function initMap() {
     .style('width', W + 'px')
     .style('height', H + 'px');
 
-  const scale = W / 5.5;
+  // Scale to fit full world in width, shift down a bit so Europe is visible
+  const scale = W / 6.1;
   projection = d3.geoNaturalEarth1()
     .scale(scale)
-    .translate([W / 2, H / 2 + H * 0.06]);
+    .translate([W / 2, H / 2 + 30]);
 
   path = d3.geoPath().projection(projection);
 
@@ -541,7 +542,17 @@ function initMap() {
     .data(countries.features)
     .enter().append('path')
     .attr('class', 'map-country')
-    .attr('d', path);
+    .attr('d', path)
+    .on('mouseover', function(event, d) {
+      d3.select(this).attr('fill', '#1a3a5c');
+      const name = d.properties && d.properties.name ? d.properties.name : '';
+      if (name) showCountryTip(event, name);
+    })
+    .on('mousemove', moveTooltip)
+    .on('mouseout', function() {
+      d3.select(this).attr('fill', null);
+      hideTooltip();
+    });
 
   // Graticule
   const graticule = d3.geoGraticule()();
@@ -641,6 +652,13 @@ function ensureTooltip() {
     document.body.appendChild(tooltip);
   }
 }
+function showCountryTip(event, name) {
+  ensureTooltip();
+  tooltip.innerHTML = `<strong>${name}</strong>`;
+  tooltip.classList.add('visible');
+  moveTooltip(event);
+}
+
 function showTooltip(event, q) {
   ensureTooltip();
   const dateStr = q.date ? q.date.slice(0,4)+'-'+q.date.slice(4,6)+'-'+q.date.slice(6,8) : '';
