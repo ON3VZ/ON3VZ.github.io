@@ -1,4 +1,23 @@
-- name: Fetch QRZ logbook (ADIF)
+name: Sync QRZ Logbook
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync-logbook:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch QRZ logbook (ADIF)
         env:
           QRZ_API_KEY: ${{ secrets.QRZ_API_KEY }}
         run: |
@@ -12,11 +31,4 @@
             exit 1
           fi
 
-          if grep -q "STATUS=FAIL" assets/data/logbook.adi; then
-            echo "ERROR: QRZ API returned failure:"
-            cat assets/data/logbook.adi
-            exit 1
-          fi
-
-          QSOCOUNT=$(grep -ci "<EOR>" assets/data/logbook.adi || echo 0)
-          echo "QSOs found: ${QSOCOUNT}"
+          if grep -q "STATUS=FAIL" asse
