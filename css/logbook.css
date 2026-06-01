@@ -8,7 +8,7 @@
 }
 
 .lb-hero {
-  padding: 3.5rem 0 2rem;
+  padding: 3.5rem 0 2.5rem;
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -55,7 +55,7 @@
   display: flex;
   align-items: flex-end;
   gap: 1.5rem;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 2rem;
   border-bottom: 1px solid var(--c-border);
   flex-wrap: wrap;
 }
@@ -191,8 +191,8 @@
 .lb-map-inner {
   position: relative;
   width: 100%;
-  aspect-ratio: 2 / 1;
-  max-height: 480px;
+  aspect-ratio: 960 / 520;
+  max-height: 520px;
 }
 
 .world-map {

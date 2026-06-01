@@ -454,7 +454,7 @@ function initMap() {
 
   projection = d3.geoNaturalEarth1()
     .scale(153)
-    .translate([W / 2, H / 2]);
+    .translate([W / 2, H / 2 + 40]);
 
   path = d3.geoPath().projection(projection);
 
