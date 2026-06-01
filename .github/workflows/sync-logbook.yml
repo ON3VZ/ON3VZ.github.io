@@ -25,7 +25,7 @@ jobs:
       - name: Verify and show result
         run: |
           echo "File size: $(wc -c < assets/data/logbook.adi) bytes"
-          head -c 200 assets/data/logbook.adi
+          cat assets/data/logbook.adi
 
       - name: Commit updated logbook
         run: |
