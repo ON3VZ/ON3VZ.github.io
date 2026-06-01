@@ -513,3 +513,28 @@
   border-color: var(--c-amber);
   background: rgba(240,165,0,0.06);
 }
+
+/* ── BAND PILLS — per-band colour ── */
+.ms-pill--band {
+  border-color: color-mix(in srgb, var(--pill-colour) 50%, transparent);
+  color: color-mix(in srgb, var(--pill-colour) 70%, var(--c-text-2));
+}
+
+.ms-pill--band.active {
+  background: color-mix(in srgb, var(--pill-colour) 15%, transparent);
+  border-color: var(--pill-colour);
+  color: var(--pill-colour);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--pill-colour) 40%, transparent);
+}
+
+.ms-pill--band:not(.active) {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--pill-colour) 25%, transparent);
+  color: color-mix(in srgb, var(--pill-colour) 40%, var(--c-text-3));
+}
+
+.ms-pill--band:hover {
+  border-color: var(--pill-colour);
+  color: var(--pill-colour);
+  background: color-mix(in srgb, var(--pill-colour) 10%, transparent);
+}

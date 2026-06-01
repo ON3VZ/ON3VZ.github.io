@@ -319,6 +319,12 @@ function buildPills(containerId, values, activeSet, onToggle) {
     pill.className = 'ms-pill active';
     pill.textContent = v.toUpperCase();
     pill.dataset.val = v;
+    // Apply band colour if this is the band filter
+    const bandColour = CFG.bandColours[v];
+    if (bandColour) {
+      pill.style.setProperty('--pill-colour', bandColour);
+      pill.classList.add('ms-pill--band');
+    }
     pill.addEventListener('click', () => {
       onToggle(v);
       pill.classList.toggle('active', activeSet.has(v));
