@@ -55,7 +55,7 @@
   display: flex;
   align-items: flex-end;
   gap: 1.5rem;
-  padding: 1.5rem 0 2rem;
+  padding: 1.5rem 0 2.5rem;
   border-bottom: 1px solid var(--c-border);
   flex-wrap: wrap;
 }
@@ -180,19 +180,21 @@
 
 /* ── MAP SECTION ── */
 .lb-map-section {
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
   border-bottom: 1px solid var(--c-border);
   position: relative;
   overflow: hidden;
-  margin-top: 0;
 }
 
 .lb-map-inner {
   position: relative;
   width: 100%;
-  aspect-ratio: 960 / 520;
-  max-height: 520px;
+  height: 60vh;
+  min-height: 400px;
+  max-height: 620px;
 }
 
 .world-map {
@@ -353,7 +355,7 @@
 
 /* ── TABS ── */
 .lb-tabs-section {
-  padding-top: 0;
+  padding-top: 2rem;
   padding-bottom: 4rem;
 }
 

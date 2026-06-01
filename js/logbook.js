@@ -441,9 +441,9 @@ function renderTable(qsos) {
 
 /* ── MAP ── */
 function initMap() {
-  // Use fixed logical dimensions for consistent rendering
-  const W = 960;
-  const H = 480;
+  // Fixed logical dimensions — wide aspect ratio fills container
+  const W = 1200;
+  const H = 600;
 
   svgEl = d3.select('#worldMap');
   svgEl
@@ -453,8 +453,8 @@ function initMap() {
     .style('height', '100%');
 
   projection = d3.geoNaturalEarth1()
-    .scale(153)
-    .translate([W / 2, H / 2 + 40]);
+    .scale(185)
+    .translate([W / 2, H / 2 + 30]);
 
   path = d3.geoPath().projection(projection);
 
