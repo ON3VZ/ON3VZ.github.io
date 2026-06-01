@@ -1,0 +1,112 @@
+---
+layout: default
+title: ON3VZ — Logbook
+extra_css:
+  - /css/logbook.css
+extra_js:
+  - /js/logbook.js
+---
+
+<div class="lb-wrap">
+
+  <!-- HERO -->
+  <div class="lb-hero container anim-1">
+    <div class="section-label">ON3VZ · LOGBOOK</div>
+    <h1 class="section-title">QSO Logbook</h1>
+    <p class="lb-sub">Live data from QRZ.com · Great-circle paths · Filtered by band, year and continent.</p>
+    <div class="lb-stats" id="lbStats">
+      <div class="lb-stat"><span class="lb-stat-val" id="statTotal">—</span><span class="lb-stat-lbl">QSOs</span></div>
+      <div class="lb-stat"><span class="lb-stat-val" id="statDXCC">—</span><span class="lb-stat-lbl">DXCC</span></div>
+      <div class="lb-stat"><span class="lb-stat-val" id="statBands">—</span><span class="lb-stat-lbl">Bands</span></div>
+      <div class="lb-stat"><span class="lb-stat-val" id="statCont">—</span><span class="lb-stat-lbl">Continents</span></div>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="lb-filters container anim-2" id="filterBar">
+    <div class="filter-group">
+      <label class="filter-label">YEAR</label>
+      <div class="ms-wrap" id="msYear"></div>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">BAND</label>
+      <div class="ms-wrap" id="msBand"></div>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">CONTINENT</label>
+      <div class="ms-wrap" id="msCont"></div>
+    </div>
+    <div class="filter-group filter-actions">
+      <button class="btn-filter-all" id="btnSelectAll">All</button>
+      <button class="btn-filter-clear" id="btnClearAll">Clear</button>
+      <button class="btn-refresh" id="btnRefresh" title="Refresh from QRZ">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        Refresh
+      </button>
+    </div>
+  </div>
+
+  <!-- MAP SECTION (fullscreen) -->
+  <div class="lb-map-section" id="mapSection">
+    <div class="lb-map-inner">
+      <svg id="worldMap" class="world-map"></svg>
+      <div class="map-legend" id="mapLegend"></div>
+      <div class="map-loading" id="mapLoading">
+        <div class="map-loading-inner">
+          <svg width="32" height="32" viewBox="0 0 28 32" fill="none"><line x1="14" y1="2" x2="14" y2="28" stroke="#00ff88" stroke-width="2"/><line x1="8" y1="14" x2="20" y2="14" stroke="#00ff88" stroke-width="1.5"/><circle cx="14" cy="2" r="2.5" fill="#00ff88"/></svg>
+          <span id="mapLoadingText">Loading logbook…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="lb-tabs-section container">
+    <div class="lb-tab-bar anim-3">
+      <button class="lb-tab active" data-tab="table">QSO Table</button>
+      <button class="lb-tab" data-tab="qrz">QRZ Live</button>
+    </div>
+
+    <!-- TABLE TAB -->
+    <div class="lb-tab-content active" id="tab-table">
+      <div class="qso-table-wrap">
+        <table class="qso-table" id="qsoTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Call</th>
+              <th>Band</th>
+              <th>Mode</th>
+              <th>RST Sent</th>
+              <th>RST Rcvd</th>
+              <th>DXCC</th>
+              <th>Continent</th>
+            </tr>
+          </thead>
+          <tbody id="qsoTbody">
+            <tr><td colspan="9" class="tbl-empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- QRZ TAB -->
+    <div class="lb-tab-content" id="tab-qrz">
+      <div class="qrz-iframe-wrap">
+        <div class="section-label" style="margin-bottom:1rem;">Live QRZ.com logbook</div>
+        <iframe
+          align="top"
+          frameborder="0"
+          height="600"
+          scrolling="yes"
+          src="https://logbook.qrz.com/lbstat/ON3VZ/"
+          width="100%"
+          class="qrz-iframe"
+          title="QRZ Logbook ON3VZ">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+</div>
