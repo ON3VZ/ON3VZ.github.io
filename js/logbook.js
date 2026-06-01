@@ -514,20 +514,22 @@ function renderTable(qsos) {
 
 /* ── MAP ── */
 function initMap() {
-  // Fixed logical dimensions — fills container width
-  const W = 1400;
-  const H = 700;
+  // Use actual container pixel dimensions
+  const container = document.getElementById('mapSection');
+  const W = container.offsetWidth || 1200;
+  const H = 560;
 
   svgEl = d3.select('#worldMap');
   svgEl
     .attr('viewBox', `0 0 ${W} ${H}`)
-    .attr('preserveAspectRatio', 'xMidYMid meet')
-    .style('width', '100%')
-    .style('height', '100%');
+    .attr('preserveAspectRatio', 'none')
+    .style('width', W + 'px')
+    .style('height', H + 'px');
 
+  const scale = W / 5.5;
   projection = d3.geoNaturalEarth1()
-    .scale(218)
-    .translate([W / 2, H / 2 + 20]);
+    .scale(scale)
+    .translate([W / 2, H / 2 + H * 0.06]);
 
   path = d3.geoPath().projection(projection);
 

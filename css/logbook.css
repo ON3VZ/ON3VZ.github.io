@@ -53,11 +53,12 @@
 /* ── FILTER BAR ── */
 .lb-filters {
   display: flex;
-  align-items: flex-end;
-  gap: 1.5rem;
-  padding: 1.5rem 0 2.5rem;
+  align-items: flex-start;
+  gap: 1rem 2rem;
+  padding: 1.5rem 0 2rem;
   border-bottom: 1px solid var(--c-border);
   flex-wrap: wrap;
+  row-gap: 0.75rem;
 }
 
 .filter-group {
@@ -192,12 +193,12 @@
 .lb-map-inner {
   position: relative;
   width: 100%;
-  height: 70vh;
-  min-height: 480px;
-  max-height: 760px;
+  height: 560px;
 }
 
 .world-map {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   display: block;
@@ -355,7 +356,7 @@
 
 /* ── TABS ── */
 .lb-tabs-section {
-  padding-top: 3rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
@@ -563,7 +564,13 @@
 .filter-group--month {
   border-left: 1px solid var(--c-border);
   padding-left: 1.2rem;
-  margin-left: 0.2rem;
+  margin-left: 0;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .filter-group--month .filter-label {
