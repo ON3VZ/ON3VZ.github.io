@@ -74,16 +74,26 @@ extra_js:
       <div class="qso-table-wrap">
         <table class="qso-table" id="qsoTable">
           <thead>
-            <tr>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Call</th>
-              <th>Band</th>
-              <th>Mode</th>
-              <th>RST Sent</th>
-              <th>RST Rcvd</th>
-              <th>DXCC</th>
-              <th>Continent</th>
+            <tr id="qsoSortRow">
+              <th data-col="date" class="sortable sort-desc">Date <span class="sort-icon">↓</span></th>
+              <th data-col="time" class="sortable">Time <span class="sort-icon"></span></th>
+              <th data-col="call" class="sortable">Call <span class="sort-icon"></span></th>
+              <th data-col="band" class="sortable">Band <span class="sort-icon"></span></th>
+              <th data-col="mode" class="sortable">Mode <span class="sort-icon"></span></th>
+              <th data-col="rstS" class="sortable">RST S <span class="sort-icon"></span></th>
+              <th data-col="rstR" class="sortable">RST R <span class="sort-icon"></span></th>
+              <th data-col="dxcc" class="sortable">DXCC <span class="sort-icon"></span></th>
+              <th data-col="cont" class="sortable">Cont <span class="sort-icon"></span></th>
+            </tr>
+            <tr id="qsoSearchRow">
+              <th><input class="tbl-search" data-col="date" placeholder="filter…"></th>
+              <th><input class="tbl-search" data-col="time" placeholder="filter…"></th>
+              <th><input class="tbl-search" data-col="call" placeholder="e.g. ON3"></th>
+              <th><input class="tbl-search" data-col="band" placeholder="e.g. 20m"></th>
+              <th><input class="tbl-search" data-col="mode" placeholder="e.g. SSB"></th>
+              <th></th><th></th>
+              <th><input class="tbl-search" data-col="dxcc" placeholder="country…"></th>
+              <th><input class="tbl-search" data-col="cont" placeholder="e.g. EU"></th>
             </tr>
           </thead>
           <tbody id="qsoTbody">

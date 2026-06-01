@@ -84,6 +84,9 @@ const CONT_CENTROID = {
 
 /* ── STATE ── */
 let allQsos   = [];
+let sortCol = 'date';
+let sortDir = 'desc';
+let tableSearch = {};
 let activeYears = new Set();
 let activeBands = new Set();
 let activeCont  = new Set();
@@ -95,6 +98,7 @@ let projection, path, svgEl, svgG;
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
   setupTabs();
+  setupTableControls();
   loadD3ThenGeo();
   loadAdif();
   document.getElementById('btnRefresh').addEventListener('click', refreshFromQRZ);
@@ -367,6 +371,38 @@ function updateStats(qsos) {
   document.getElementById('statCont').textContent  = new Set(qsos.map(q => q.cont)).size;
 }
 
+/* ── TABLE SORT & SEARCH SETUP ── */
+function setupTableControls() {
+  // Sort on header click
+  document.querySelectorAll('.sortable').forEach(th => {
+    th.addEventListener('click', () => {
+      const col = th.dataset.col;
+      if (sortCol === col) {
+        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortCol = col;
+        sortDir = 'asc';
+      }
+      // Update header classes
+      document.querySelectorAll('.sortable').forEach(h => {
+        h.classList.remove('sort-asc', 'sort-desc');
+        h.querySelector('.sort-icon').textContent = '';
+      });
+      th.classList.add('sort-' + sortDir);
+      th.querySelector('.sort-icon').textContent = sortDir === 'asc' ? '↑' : '↓';
+      applyFilters();
+    });
+  });
+
+  // Search inputs
+  document.querySelectorAll('.tbl-search').forEach(inp => {
+    inp.addEventListener('input', () => {
+      tableSearch[inp.dataset.col] = inp.value.trim().toLowerCase();
+      applyFilters();
+    });
+  });
+}
+
 /* ── TABLE ── */
 function renderTable(qsos) {
   const tbody = document.getElementById('qsoTbody');
@@ -374,8 +410,25 @@ function renderTable(qsos) {
     tbody.innerHTML = '<tr><td colspan="9" class="tbl-empty">No QSOs match the selected filters.</td></tr>';
     return;
   }
-  // Show newest first, max 500 rows for performance
-  const rows = qsos.slice().sort((a,b) => (b.date+b.time).localeCompare(a.date+a.time)).slice(0,500);
+  // Apply column search filters
+  const searches = Object.entries(tableSearch).filter(([,v]) => v);
+  if (searches.length) {
+    qsos = qsos.filter(q =>
+      searches.every(([col, val]) => String(q[col] || '').toLowerCase().includes(val))
+    );
+  }
+
+  // Sort
+  qsos = qsos.slice().sort((a, b) => {
+    let va = String(a[sortCol] || '');
+    let vb = String(b[sortCol] || '');
+    // Date+time: combine for proper sort
+    if (sortCol === 'date') { va = a.date + a.time; vb = b.date + b.time; }
+    const cmp = va.localeCompare(vb, undefined, { numeric: true });
+    return sortDir === 'asc' ? cmp : -cmp;
+  });
+
+  const rows = qsos.slice(0, 500);
   tbody.innerHTML = rows.map(q => {
     const colour = CFG.bandColours[q.band] || '#adb5bd';
     const dateStr = q.date ? q.date.slice(0,4)+'-'+q.date.slice(4,6)+'-'+q.date.slice(6,8) : '';
