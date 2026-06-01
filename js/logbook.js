@@ -514,9 +514,9 @@ function renderTable(qsos) {
 
 /* ── MAP ── */
 function initMap() {
-  // Fixed logical dimensions — wide aspect ratio fills container
-  const W = 1200;
-  const H = 600;
+  // Fixed logical dimensions — fills container width
+  const W = 1400;
+  const H = 700;
 
   svgEl = d3.select('#worldMap');
   svgEl
@@ -526,8 +526,8 @@ function initMap() {
     .style('height', '100%');
 
   projection = d3.geoNaturalEarth1()
-    .scale(185)
-    .translate([W / 2, H / 2 + 30]);
+    .scale(218)
+    .translate([W / 2, H / 2 + 20]);
 
   path = d3.geoPath().projection(projection);
 
@@ -546,8 +546,8 @@ function initMap() {
   svgG.append('path')
     .datum(graticule)
     .attr('fill', 'none')
-    .attr('stroke', 'rgba(0,255,136,0.06)')
-    .attr('stroke-width', 0.4)
+    .attr('stroke', 'rgba(0,255,136,0.09)')
+    .attr('stroke-width', 0.5)
     .attr('d', path);
 }
 
@@ -582,9 +582,9 @@ function renderMap(qsos) {
       .attr('class', 'qso-arc')
       .attr('d', path)
       .attr('stroke', colour)
-      .attr('stroke-width', 1.2)
+      .attr('stroke-width', 1.6)
       .attr('fill', 'none')
-      .attr('opacity', 0.45)
+      .attr('opacity', 0.6)
       .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('opacity', 1).attr('stroke-width', 2.2); })
       .on('mousemove', moveTooltip)
       .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', 0.45).attr('stroke-width', 1.2); });
@@ -600,7 +600,7 @@ function renderMap(qsos) {
     svgG.append('circle')
       .attr('class', 'dx-dot')
       .attr('cx', xy[0]).attr('cy', xy[1])
-      .attr('r', 2.5)
+      .attr('r', 3.5)
       .attr('fill', colour)
       .attr('opacity', 0.8)
       .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('r', 4); })
