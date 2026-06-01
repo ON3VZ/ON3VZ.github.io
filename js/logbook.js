@@ -5,6 +5,41 @@
 
 'use strict';
 
+/* ── ISO numeric → country name (subset, for hover tooltip) ── */
+const ISO_NAMES = {
+  4:'Afghanistan',8:'Albania',12:'Algeria',24:'Angola',32:'Argentina',
+  36:'Australia',40:'Austria',50:'Bangladesh',56:'Belgium',64:'Bhutan',
+  68:'Bolivia',76:'Brazil',100:'Bulgaria',116:'Cambodia',120:'Cameroon',
+  124:'Canada',152:'Chile',156:'China',170:'Colombia',178:'Congo',
+  188:'Costa Rica',191:'Croatia',192:'Cuba',203:'Czech Republic',
+  208:'Denmark',218:'Ecuador',818:'Egypt',222:'El Salvador',231:'Ethiopia',
+  246:'Finland',250:'France',276:'Germany',288:'Ghana',300:'Greece',
+  320:'Guatemala',332:'Haiti',340:'Honduras',348:'Hungary',356:'India',
+  360:'Indonesia',364:'Iran',368:'Iraq',372:'Ireland',376:'Israel',
+  380:'Italy',388:'Jamaica',392:'Japan',400:'Jordan',398:'Kazakhstan',
+  404:'Kenya',408:'North Korea',410:'South Korea',414:'Kuwait',418:'Laos',
+  422:'Lebanon',434:'Libya',484:'Mexico',504:'Morocco',508:'Mozambique',
+  524:'Nepal',528:'Netherlands',540:'New Caledonia',554:'New Zealand',
+  566:'Nigeria',578:'Norway',586:'Pakistan',591:'Panama',604:'Peru',
+  608:'Philippines',616:'Poland',620:'Portugal',630:'Puerto Rico',
+  634:'Qatar',642:'Romania',643:'Russia',682:'Saudi Arabia',
+  686:'Senegal',694:'Sierra Leone',703:'Slovakia',705:'Slovenia',
+  706:'Somalia',710:'South Africa',724:'Spain',729:'Sudan',752:'Sweden',
+  756:'Switzerland',760:'Syria',764:'Thailand',792:'Turkey',800:'Uganda',
+  804:'Ukraine',784:'UAE',826:'United Kingdom',840:'United States',
+  858:'Uruguay',860:'Uzbekistan',862:'Venezuela',704:'Vietnam',887:'Yemen',
+  894:'Zambia',716:'Zimbabwe',12:'Algeria',51:'Armenia',31:'Azerbaijan',
+  112:'Belarus',44:'Bahamas',48:'Bahrain',84:'Belize',204:'Benin',
+  72:'Botswana',854:'Burkina Faso',108:'Burundi',132:'Cape Verde',
+  140:'Central African Republic',148:'Chad',174:'Comoros',266:'Gabon',
+  270:'Gambia',324:'Guinea',624:'Guinea-Bissau',454:'Malawi',466:'Mali',
+  478:'Mauritania',508:'Mozambique',516:'Namibia',562:'Niger',646:'Rwanda',
+  678:'São Tomé',686:'Senegal',694:'Sierra Leone',706:'Somalia',
+  729:'Sudan',834:'Tanzania',768:'Togo',788:'Tunisia',800:'Uganda',
+  894:'Zambia',716:'Zimbabwe'
+};
+
+
 const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 /* ── CONFIG ── */
@@ -131,7 +166,7 @@ function loadD3ThenGeo() {
     topoScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js';
     topoScript.onload = () => {
       d3Loaded = true;
-      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')
         .then(r => r.json())
         .then(data => {
           worldGeo = data;
@@ -546,7 +581,8 @@ function initMap() {
     .attr('d', path)
     .on('mouseover', function(event, d) {
       d3.select(this).attr('fill', '#1a3a5c');
-      const name = d.properties && d.properties.name ? d.properties.name : '';
+      const id = d.id ? parseInt(d.id) : null;
+      const name = ISO_NAMES[id] || (d.properties && d.properties.name) || '';
       if (name) showCountryTip(event, name);
     })
     .on('mousemove', moveTooltip)
