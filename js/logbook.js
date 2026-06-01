@@ -96,7 +96,9 @@ const DXCC_LL = {
   /* Europe */
   'Belgium':          [50.5, 4.5],    'Netherlands':     [52.1, 5.3],
   'Germany':          [51.2, 10.4],   'France':          [46.2, 2.2],
-  'United Kingdom':   [54.0, -2.0],   'Ireland':         [53.0, -8.0],
+  'United Kingdom':   [54.0, -2.0],   'England':         [53.0, -1.5],
+  'Scotland':         [56.5, -4.0],   'Wales':           [52.3, -3.7],
+  'Ireland':          [53.0, -8.0],
   'Spain':            [40.2, -3.7],   'Portugal':        [39.5, -8.0],
   'Italy':            [42.8, 12.8],   'Switzerland':     [46.8, 8.2],
   'Austria':          [47.5, 13.9],   'Poland':          [52.1, 19.4],
@@ -299,6 +301,15 @@ function parseAdif(raw) {
   return qsos;
 }
 
+/* Parse ADIF lat/lng strings like "N053 06.252" or "W001 22.500" */
+function parseAdifCoord(s) {
+  if (!s) return null;
+  const m = String(s).trim().match(/^([NSEW])\s*(\d+)\s+(\d+(?:\.\d+)?)$/i);
+  if (!m) { const v = parseFloat(s); return isNaN(v) ? null : v; }
+  const deg = parseInt(m[2], 10) + parseFloat(m[3]) / 60;
+  return (m[1].toUpperCase() === 'S' || m[1].toUpperCase() === 'W') ? -deg : deg;
+}
+
 function normaliseQso(f) {
   const band = normaliseBand(f.BAND || f.FREQ || '');
   return {
@@ -311,8 +322,8 @@ function normaliseQso(f) {
     rstR:    f.RST_RCVD   || '',
     dxcc:    f.COUNTRY    || f.DXCC || '',
     cont:    f.CONT       || guessContinent(f.COUNTRY || ''),
-    lat:     parseFloat(f.LAT)  || null,
-    lng:     parseFloat(f.LON)  || null,
+    lat:     parseAdifCoord(f.LAT),
+    lng:     parseAdifCoord(f.LON),
     dist:    f.DISTANCE ? parseInt(f.DISTANCE) : (f.DIST ? parseInt(f.DIST) : null),
     year:    (f.QSO_DATE || '').slice(0, 4),
   };
