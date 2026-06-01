@@ -191,9 +191,8 @@
 .lb-map-inner {
   position: relative;
   width: 100%;
-  height: 52vh;
-  min-height: 300px;
-  max-height: 520px;
+  aspect-ratio: 2 / 1;
+  max-height: 480px;
 }
 
 .world-map {
@@ -541,50 +540,19 @@
   background: color-mix(in srgb, var(--pill-colour) 10%, transparent);
 }
 
-/* ── TABLE SORT & SEARCH ── */
+/* ── TABLE SORT ── */
 .sortable {
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
 }
 
-.sortable:hover {
-  color: var(--c-primary);
-}
-
+.sortable:hover { color: var(--c-primary); }
 .sortable.sort-asc  { color: var(--c-primary); }
 .sortable.sort-desc { color: var(--c-primary); }
 
 .sort-icon {
   font-size: 0.7rem;
-  margin-left: 0.25rem;
+  margin-left: 0.2rem;
   opacity: 0.7;
-}
-
-#qsoSearchRow th {
-  padding: 0.3rem 0.5rem;
-  background: var(--c-surface);
-  border-bottom: 1px solid var(--c-border);
-}
-
-.tbl-search {
-  width: 100%;
-  background: var(--c-surface-2);
-  border: 1px solid var(--c-border);
-  border-radius: 3px;
-  color: var(--c-text-2);
-  font-family: var(--f-mono);
-  font-size: 0.65rem;
-  padding: 0.25rem 0.4rem;
-  outline: none;
-  transition: border-color var(--t);
-}
-
-.tbl-search:focus {
-  border-color: var(--c-primary);
-}
-
-.tbl-search::placeholder {
-  color: var(--c-text-3);
-  opacity: 0.6;
 }

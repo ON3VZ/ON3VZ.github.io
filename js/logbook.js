@@ -410,14 +410,6 @@ function renderTable(qsos) {
     tbody.innerHTML = '<tr><td colspan="9" class="tbl-empty">No QSOs match the selected filters.</td></tr>';
     return;
   }
-  // Apply column search filters
-  const searches = Object.entries(tableSearch).filter(([,v]) => v);
-  if (searches.length) {
-    qsos = qsos.filter(q =>
-      searches.every(([col, val]) => String(q[col] || '').toLowerCase().includes(val))
-    );
-  }
-
   // Sort
   qsos = qsos.slice().sort((a, b) => {
     let va = String(a[sortCol] || '');
@@ -449,16 +441,20 @@ function renderTable(qsos) {
 
 /* ── MAP ── */
 function initMap() {
-  const container = document.getElementById('mapSection');
-  const w = container.offsetWidth;
-  const h = Math.min(container.offsetHeight, w * 0.5);
+  // Use fixed logical dimensions for consistent rendering
+  const W = 960;
+  const H = 480;
 
   svgEl = d3.select('#worldMap');
-  svgEl.attr('viewBox', `0 0 ${w} ${h}`).attr('preserveAspectRatio', 'xMidYMid meet');
+  svgEl
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('preserveAspectRatio', 'xMidYMid meet')
+    .style('width', '100%')
+    .style('height', '100%');
 
   projection = d3.geoNaturalEarth1()
-    .scale(w / 6.3)
-    .translate([w / 2, h / 2]);
+    .scale(153)
+    .translate([W / 2, H / 2]);
 
   path = d3.geoPath().projection(projection);
 
