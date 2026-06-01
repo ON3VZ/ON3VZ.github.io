@@ -129,6 +129,4 @@ The course is available in **English**, **Dutch (Nederlands)**, and **French (Fr
   </a>
 </div>
 
-If you have questions after working through it, or if something is unclear, find me on air or drop a message via the [contact page](/contact/). And if you come to the next WLD portable session — you will know exactly what that −3 dB means.
-
 *73, Kristof — ON3VZ*
