@@ -61,13 +61,15 @@ async function handleQrzFetch(request, env) {
   }
 
   try {
-    // Fetch ADIF from QRZ Logbook API
-    const qrzUrl = `https://logbook.qrz.com/api?key=${apiKey}&action=FETCH&option=ADIF`;
+    // QRZ Logbook API requires HTTP POST with form-encoded data
+    const qrzUrl = 'https://logbook.qrz.com/api';
     const upstream = await fetch(qrzUrl, {
+      method: 'POST',
       headers: {
-        'User-Agent': 'ON3VZ-LogbookSync/1.0 (https://on3vz.github.io)',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'User-Agent': 'ON3VZ-LogbookSync/1.0',
       },
-      cf: { cacheTtl: 300 }  // Cache at Cloudflare edge for 5 minutes
+      body: `KEY=${apiKey}&ACTION=FETCH&OPTION=ADIF`,
     });
 
     if (!upstream.ok) {
