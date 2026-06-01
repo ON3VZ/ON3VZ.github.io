@@ -198,24 +198,8 @@ function deduplicateQsos(qsos) {
 function refreshFromQRZ() {
   const btn = document.getElementById('btnRefresh');
   btn.classList.add('spinning');
-  setLoading('Fetching from QRZ.com…');
-
-  fetch(CFG.proxyUrl)
-    .then(r => {
-      if (!r.ok) throw new Error('Proxy error ' + r.status);
-      return r.text();
-    })
-    .then(raw => {
-      allQsos = parseAdif(raw);
-      buildFilters();
-      applyFilters();
-      btn.classList.remove('spinning');
-    })
-    .catch(err => {
-      btn.classList.remove('spinning');
-      setLoading('QRZ fetch failed: ' + err.message);
-      console.error('QRZ refresh error:', err);
-    });
+  setTimeout(() => btn.classList.remove('spinning'), 1000);
+  loadAdif();
 }
 
 /* ── ADIF PARSER ── */

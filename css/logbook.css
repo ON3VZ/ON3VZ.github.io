@@ -184,13 +184,14 @@
   border-bottom: 1px solid var(--c-border);
   position: relative;
   overflow: hidden;
+  margin-top: 0;
 }
 
 .lb-map-inner {
   position: relative;
   width: 100%;
-  max-height: 70vh;
-  aspect-ratio: 2 / 1;
+  max-height: 55vh;
+  aspect-ratio: 2.2 / 1;
 }
 
 .world-map {
