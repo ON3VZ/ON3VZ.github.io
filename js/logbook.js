@@ -268,7 +268,8 @@ function parseAdif(raw) {
       const val  = rec.slice(fm.index + fm[0].length, fm.index + fm[0].length + len).trim();
       fields[name] = val;
     }
-    if (!fields.CALL) continue;
+    if (!fields.CALL && !fields.STATION_CALLSIGN) continue;
+    if (!fields.CALL && fields.STATION_CALLSIGN) fields.CALL = fields.STATION_CALLSIGN;
     qsos.push(normaliseQso(fields));
   }
   return qsos;
@@ -288,7 +289,7 @@ function normaliseQso(f) {
     cont:    f.CONT       || guessContinent(f.COUNTRY || ''),
     lat:     parseFloat(f.LAT)  || null,
     lng:     parseFloat(f.LON)  || null,
-    dist:    f.DISTANCE ? parseInt(f.DISTANCE) : null,
+    dist:    f.DISTANCE ? parseInt(f.DISTANCE) : (f.DIST ? parseInt(f.DIST) : null),
     year:    (f.QSO_DATE || '').slice(0, 4),
   };
 }
@@ -555,7 +556,7 @@ function initMap() {
   // Use actual container pixel dimensions
   const container = document.getElementById('mapSection');
   const W = container.offsetWidth || 1200;
-  const H = 660;
+  const H = 740;
 
   svgEl = d3.select('#worldMap');
   svgEl
@@ -568,7 +569,7 @@ function initMap() {
   const scale = W / 6.3;
   projection = d3.geoNaturalEarth1()
     .scale(scale)
-    .translate([W / 2, H * 0.52]);
+    .translate([W / 2, H * 0.56]);
 
   path = d3.geoPath().projection(projection);
 
