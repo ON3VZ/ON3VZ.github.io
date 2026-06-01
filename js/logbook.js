@@ -8,7 +8,7 @@
 /* ── CONFIG ── */
 const CFG = {
   homeLatLng: [51.178, 4.347],          // Hoboken, Antwerpen
-  proxyUrl: 'https://YOUR_WORKER.YOUR_SUBDOMAIN.workers.dev/qrz',
+  proxyUrl: 'https://on3vz-qrz-proxy.kristof-cornelis.workers.dev/qrz',
   adifPath: '/assets/data/logbook.adi',
   bandOrder: ['160m','80m','40m','30m','20m','17m','15m','12m','10m','6m','2m','70cm'],
   bandColours: {
