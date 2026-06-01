@@ -9,7 +9,7 @@
 const CFG = {
   homeLatLng: [51.178, 4.347],          // Hoboken, Antwerpen
   proxyUrl: 'https://on3vz-qrz-proxy.kristof-cornelis.workers.dev/qrz',
-  adifPath: '/assets/data/logbook.adi',
+  adifDir: '/assets/data/',            // directory scanned for all *.adi files
   bandOrder: ['160m','80m','40m','30m','20m','17m','15m','12m','10m','6m','2m','70cm'],
   bandColours: {
     '80m':  '#ff6b6b',
@@ -138,25 +138,60 @@ function loadD3ThenGeo() {
   document.head.appendChild(d3Script);
 }
 
-/* ── LOAD ADIF (local file) ── */
+/* ── LOAD ALL ADIF FILES via manifest ── */
 function loadAdif() {
   setLoading('Loading logbook data…');
-  fetch(CFG.adifPath + '?t=' + Date.now())
-    .then(r => {
-      if (!r.ok) throw new Error('No logbook.adi found');
-      return r.text();
+  const ts = '?t=' + Date.now();
+  // Fetch the manifest that lists all ADI files in the data directory
+  fetch(CFG.adifDir + 'manifest.json' + ts)
+    .then(r => r.ok ? r.json() : Promise.resolve(null))
+    .then(manifest => {
+      // If no manifest, fall back to single logbook.adi
+      const files = manifest ? manifest.files : ['logbook.adi'];
+      return Promise.all(
+        files.map(f =>
+          fetch(CFG.adifDir + f + ts)
+            .then(r => r.ok ? r.text() : '')
+            .catch(() => '')
+        )
+      );
     })
-    .then(raw => {
-      allQsos = parseAdif(raw);
-      if (!allQsos.length) throw new Error('No QSOs found in ADI file');
+    .then(texts => {
+      const combined = texts.join('\n');
+      const raw = parseAdif(combined);
+      allQsos = deduplicateQsos(raw);
+      if (!allQsos.length) throw new Error('No QSOs found in ADI files');
       buildFilters();
       applyFilters();
     })
     .catch(err => {
       setLoading('No logbook data · ' + err.message);
       document.getElementById('qsoTbody').innerHTML =
-        '<tr><td colspan="9" class="tbl-empty">No logbook data available. Click Refresh to load from QRZ.</td></tr>';
+        '<tr><td colspan="9" class="tbl-empty">No logbook data available.</td></tr>';
     });
+}
+
+/* ── DEDUPLICATE QSOs ──
+   Key: call + date + time (±1 min) + band + mode
+   Keeps the QSO with the most filled-in fields.           */
+function deduplicateQsos(qsos) {
+  const map = new Map();
+  qsos.forEach(q => {
+    // Round time to nearest 5 minutes to catch slight differences
+    const t = q.time ? q.time.slice(0,4) : '0000';
+    const key = [q.call, q.date, t.slice(0,3), q.band, q.mode]
+      .join('|').toLowerCase();
+    if (!map.has(key)) {
+      map.set(key, q);
+    } else {
+      // Keep the one with more non-empty fields
+      const existing = map.get(key);
+      const existScore = Object.values(existing).filter(Boolean).length;
+      const newScore   = Object.values(q).filter(Boolean).length;
+      if (newScore > existScore) map.set(key, q);
+    }
+  });
+  return [...map.values()];
 }
 
 /* ── REFRESH FROM QRZ (via Cloudflare Worker) ── */
