@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Segoe UI',Arial,sans-serif">
+  <rect width="900" height="520" fill="#0d1117" rx="10"/>
+  <text x="450" y="28" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="700">IC-7300 MkII — Recommended Settings per Band · ON3VZ</text>
+
+  <!-- Column headers -->
+  <g fill="#58a6ff" font-size="11" font-weight="600" text-anchor="middle">
+    <text x="75" y="52">Band</text>
+    <text x="195" y="52">Power / Mode</text>
+    <text x="330" y="52">PreAmp / ATT</text>
+    <text x="465" y="52">NB / NR</text>
+    <text x="600" y="52">Filter</text>
+    <text x="735" y="52">AGC</text>
+    <text x="845" y="52">Notes</text>
+  </g>
+
+  <!-- Header line -->
+  <line x1="10" y1="58" x2="890" y2="58" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Row data -->
+  <!-- 80m -->
+  <rect x="10" y="62" width="880" height="68" fill="#161b22" rx="4"/>
+  <text x="75" y="84" text-anchor="middle" fill="#1f6feb" font-size="13" font-weight="700">80m</text>
+  <text x="75" y="100" text-anchor="middle" fill="#8b949e" font-size="9">3.5–3.8 MHz</text>
+  <text x="75" y="114" text-anchor="middle" fill="#8b949e" font-size="9">LSB / FT8</text>
+
+  <text x="195" y="84" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">25 W</text>
+  <text x="195" y="99" text-anchor="middle" fill="#8b949e" font-size="9">LSB: 3.600–3.800</text>
+  <text x="195" y="113" text-anchor="middle" fill="#8b949e" font-size="9">FT8: 3.573 MHz</text>
+
+  <text x="330" y="84" text-anchor="middle" fill="#e6edf3" font-size="10">PRE1 (day)</text>
+  <text x="330" y="99" text-anchor="middle" fill="#8b949e" font-size="9">OFF (night)</text>
+  <text x="330" y="113" text-anchor="middle" fill="#f0a500" font-size="9">ATT 20dB @ S9+ QRM</text>
+
+  <text x="465" y="84" text-anchor="middle" fill="#e6edf3" font-size="10">NB ON · 50% · medium</text>
+  <text x="465" y="99" text-anchor="middle" fill="#8b949e" font-size="9">NR level 5–8</text>
+  <text x="465" y="113" text-anchor="middle" fill="#da3633" font-size="9">⚠ PV inverter QRM</text>
+
+  <text x="600" y="84" text-anchor="middle" fill="#e6edf3" font-size="10">SSB: 2.4 kHz</text>
+  <text x="600" y="99" text-anchor="middle" fill="#8b949e" font-size="9">CW: 500 Hz</text>
+  <text x="600" y="113" text-anchor="middle" fill="#8b949e" font-size="9">DX: 1.8 kHz</text>
+
+  <text x="735" y="84" text-anchor="middle" fill="#e6edf3" font-size="10">SLOW (SSB/CW)</text>
+  <text x="735" y="99" text-anchor="middle" fill="#8b949e" font-size="9">FAST (DX pile-up)</text>
+
+  <!-- 40m -->
+  <rect x="10" y="134" width="880" height="68" fill="#0d1117" rx="4"/>
+  <text x="75" y="156" text-anchor="middle" fill="#3fb950" font-size="13" font-weight="700">40m</text>
+  <text x="75" y="172" text-anchor="middle" fill="#8b949e" font-size="9">7.0–7.2 MHz</text>
+  <text x="75" y="186" text-anchor="middle" fill="#8b949e" font-size="9">LSB / FT8</text>
+
+  <text x="195" y="156" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">25 W</text>
+  <text x="195" y="171" text-anchor="middle" fill="#8b949e" font-size="9">LSB: 7.060–7.200</text>
+  <text x="195" y="185" text-anchor="middle" fill="#8b949e" font-size="9">FT8: 7.074 MHz</text>
+
+  <text x="330" y="156" text-anchor="middle" fill="#e6edf3" font-size="10">PRE1 (day)</text>
+  <text x="330" y="171" text-anchor="middle" fill="#8b949e" font-size="9">OFF (night)</text>
+  <text x="330" y="185" text-anchor="middle" fill="#f0a500" font-size="9">ATT 6–12dB high noise</text>
+
+  <text x="465" y="156" text-anchor="middle" fill="#e6edf3" font-size="10">NB ON (broadcast clicks)</text>
+  <text x="465" y="171" text-anchor="middle" fill="#8b949e" font-size="9">NR level 4–6</text>
+  <text x="465" y="185" text-anchor="middle" fill="#8b949e" font-size="9">Busiest EU band</text>
+
+  <text x="600" y="156" text-anchor="middle" fill="#e6edf3" font-size="10">SSB: 2.4 kHz</text>
+  <text x="600" y="171" text-anchor="middle" fill="#8b949e" font-size="9">CW: 500 Hz</text>
+  <text x="600" y="185" text-anchor="middle" fill="#8b949e" font-size="9">Busy: 1.8 kHz</text>
+
+  <text x="735" y="156" text-anchor="middle" fill="#e6edf3" font-size="10">SLOW</text>
+
+  <!-- 30m -->
+  <rect x="10" y="206" width="880" height="68" fill="#161b22" rx="4"/>
+  <text x="75" y="228" text-anchor="middle" fill="#f0a500" font-size="13" font-weight="700">30m</text>
+  <text x="75" y="244" text-anchor="middle" fill="#8b949e" font-size="9">10.100–10.150</text>
+  <text x="75" y="258" text-anchor="middle" fill="#8b949e" font-size="9">CW / Digital only</text>
+
+  <text x="195" y="228" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">25 W</text>
+  <text x="195" y="243" text-anchor="middle" fill="#8b949e" font-size="9">CW: 10.100–10.130</text>
+  <text x="195" y="257" text-anchor="middle" fill="#da3633" font-size="9">NO SSB · WARC band</text>
+
+  <text x="330" y="228" text-anchor="middle" fill="#e6edf3" font-size="10">PRE1</text>
+  <text x="330" y="243" text-anchor="middle" fill="#8b949e" font-size="9">ATT OFF</text>
+  <text x="330" y="257" text-anchor="middle" fill="#8b949e" font-size="9">FT8: 10.136</text>
+
+  <text x="465" y="228" text-anchor="middle" fill="#e6edf3" font-size="10">NB ON (low level)</text>
+  <text x="465" y="243" text-anchor="middle" fill="#8b949e" font-size="9">NR level 4–5</text>
+
+  <text x="600" y="228" text-anchor="middle" fill="#e6edf3" font-size="10">CW: 500 / 250 Hz</text>
+  <text x="600" y="243" text-anchor="middle" fill="#8b949e" font-size="9">FT8: 3 kHz wide</text>
+
+  <text x="735" y="228" text-anchor="middle" fill="#e6edf3" font-size="10">SLOW (CW)</text>
+  <text x="735" y="243" text-anchor="middle" fill="#8b949e" font-size="9">FAST (FT8)</text>
+
+  <!-- 20m -->
+  <rect x="10" y="278" width="880" height="68" fill="#0d1117" rx="4"/>
+  <text x="75" y="300" text-anchor="middle" fill="#58a6ff" font-size="13" font-weight="700">20m</text>
+  <text x="75" y="316" text-anchor="middle" fill="#8b949e" font-size="9">14.0–14.35 MHz</text>
+  <text x="75" y="330" text-anchor="middle" fill="#8b949e" font-size="9">USB / FT8</text>
+
+  <text x="195" y="300" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">25 W</text>
+  <text x="195" y="315" text-anchor="middle" fill="#8b949e" font-size="9">USB: 14.100–14.350</text>
+  <text x="195" y="329" text-anchor="middle" fill="#8b949e" font-size="9">FT8: 14.074 MHz</text>
+
+  <text x="330" y="300" text-anchor="middle" fill="#e6edf3" font-size="10">PRE1 (weak DX)</text>
+  <text x="330" y="315" text-anchor="middle" fill="#8b949e" font-size="9">PRE2 (exc. cond.)</text>
+  <text x="330" y="329" text-anchor="middle" fill="#8b949e" font-size="9">ATT OFF / 6dB local</text>
+
+  <text x="465" y="300" text-anchor="middle" fill="#e6edf3" font-size="10">NB low or OFF</text>
+  <text x="465" y="315" text-anchor="middle" fill="#8b949e" font-size="9">NR level 3–5</text>
+  <text x="465" y="329" text-anchor="middle" fill="#8b949e" font-size="9">Best all-round DX</text>
+
+  <text x="600" y="300" text-anchor="middle" fill="#e6edf3" font-size="10">SSB: 2.4 kHz</text>
+  <text x="600" y="315" text-anchor="middle" fill="#8b949e" font-size="9">DX: 1.8 kHz</text>
+  <text x="600" y="329" text-anchor="middle" fill="#8b949e" font-size="9">CW: 500 Hz</text>
+
+  <text x="735" y="300" text-anchor="middle" fill="#e6edf3" font-size="10">SLOW (SSB/CW)</text>
+  <text x="735" y="315" text-anchor="middle" fill="#8b949e" font-size="9">FAST (pile-up)</text>
+
+  <!-- 15m -->
+  <rect x="10" y="350" width="880" height="68" fill="#161b22" rx="4"/>
+  <text x="75" y="372" text-anchor="middle" fill="#bc8cff" font-size="13" font-weight="700">15m</text>
+  <text x="75" y="388" text-anchor="middle" fill="#8b949e" font-size="9">21.0–21.45 MHz</text>
+  <text x="75" y="402" text-anchor="middle" fill="#8b949e" font-size="9">USB / FT8</text>
+
+  <text x="195" y="372" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">25 W</text>
+  <text x="195" y="387" text-anchor="middle" fill="#8b949e" font-size="9">USB: 21.150–21.450</text>
+  <text x="195" y="401" text-anchor="middle" fill="#8b949e" font-size="9">FT8: 21.074 MHz</text>
+
+  <text x="330" y="372" text-anchor="middle" fill="#e6edf3" font-size="10">PRE2 (or OFF)</text>
+  <text x="330" y="387" text-anchor="middle" fill="#8b949e" font-size="9">ATT 6–12dB strong sig.</text>
+
+  <text x="465" y="372" text-anchor="middle" fill="#e6edf3" font-size="10">NB OFF or low</text>
+  <text x="465" y="387" text-anchor="middle" fill="#8b949e" font-size="9">NR level 2–4</text>
+  <text x="465" y="401" text-anchor="middle" fill="#f0a500" font-size="9">SFI&gt;120 = daily open</text>
+
+  <text x="600" y="372" text-anchor="middle" fill="#e6edf3" font-size="10">SSB: 2.4 kHz</text>
+  <text x="600" y="387" text-anchor="middle" fill="#8b949e" font-size="9">CW: 500 Hz</text>
+
+  <text x="735" y="372" text-anchor="middle" fill="#e6edf3" font-size="10">MED (faster DX)</text>
+
+  <!-- 10m -->
+  <rect x="10" y="422" width="880" height="68" fill="#0d1117" rx="4"/>
+  <text x="75" y="444" text-anchor="middle" fill="#da3633" font-size="13" font-weight="700">10m</text>
+  <text x="75" y="460" text-anchor="middle" fill="#8b949e" font-size="9">28.0–29.7 MHz</text>
+  <text x="75" y="474" text-anchor="middle" fill="#8b949e" font-size="9">USB / FM / FT8</text>
+
+  <text x="195" y="444" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">25 W</text>
+  <text x="195" y="459" text-anchor="middle" fill="#8b949e" font-size="9">USB: 28.300–29.300</text>
+  <text x="195" y="473" text-anchor="middle" fill="#8b949e" font-size="9">FT8: 28.074 · FM: 29+</text>
+
+  <text x="330" y="444" text-anchor="middle" fill="#e6edf3" font-size="10">PRE2 or OFF</text>
+  <text x="330" y="459" text-anchor="middle" fill="#8b949e" font-size="9">ATT 12–20dB (Es boom)</text>
+
+  <text x="465" y="444" text-anchor="middle" fill="#e6edf3" font-size="10">NB OFF (clean band)</text>
+  <text x="465" y="459" text-anchor="middle" fill="#8b949e" font-size="9">NR OFF / 1–2</text>
+  <text x="465" y="473" text-anchor="middle" fill="#f0a500" font-size="9">Watch DX cluster for Es</text>
+
+  <text x="600" y="444" text-anchor="middle" fill="#e6edf3" font-size="10">SSB: 2.4 kHz</text>
+  <text x="600" y="459" text-anchor="middle" fill="#8b949e" font-size="9">CW: 500 Hz</text>
+  <text x="600" y="473" text-anchor="middle" fill="#8b949e" font-size="9">FM: wideband</text>
+
+  <text x="735" y="444" text-anchor="middle" fill="#e6edf3" font-size="10">FAST (signals fluctuate)</text>
+
+  <!-- Vertical separators -->
+  <g stroke="#21262d" stroke-width="1">
+    <line x1="133" y1="40" x2="133" y2="490"/>
+    <line x1="258" y1="40" x2="258" y2="490"/>
+    <line x1="393" y1="40" x2="393" y2="490"/>
+    <line x1="528" y1="40" x2="528" y2="490"/>
+    <line x1="663" y1="40" x2="663" y2="490"/>
+    <line x1="798" y1="40" x2="798" y2="490"/>
+  </g>
+
+  <text x="450" y="510" text-anchor="middle" fill="#484f58" font-size="9">Class C · Max 25W HF · Belgium · IARU Region 1 · BIPT licence ON3VZ</text>
+</svg>
