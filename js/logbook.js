@@ -150,6 +150,8 @@ let allQsos   = [];
 let sortCol = 'date';
 let sortDir = 'desc';
 let tableSearch = {};
+const PAGE_SIZE = 25;
+let currentPage = 1;
 let activeYears  = new Set();
 let activeMonths = new Set();
 let activeBands  = new Set();
@@ -503,6 +505,7 @@ function applyFilters() {
     return true;
   });
   updateStats(filtered);
+  currentPage = 1;
   renderTable(filtered);
   if (geoReady) renderMap(filtered);
   else if (!geoReady && d3Loaded) { /* wait */ }
@@ -551,8 +554,10 @@ function setupTableControls() {
 /* ── TABLE ── */
 function renderTable(qsos) {
   const tbody = document.getElementById('qsoTbody');
+  const pgEl  = document.getElementById('qso-pagination');
   if (!qsos.length) {
-    tbody.innerHTML = '<tr><td colspan="9" class="tbl-empty">No QSOs match the selected filters.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="10" class="tbl-empty">No QSOs match the selected filters.</td></tr>';
+    if (pgEl) pgEl.innerHTML = '';
     return;
   }
   // Sort
@@ -565,7 +570,13 @@ function renderTable(qsos) {
     return sortDir === 'asc' ? cmp : -cmp;
   });
 
-  const rows = qsos.slice(0, 500);
+  const totalPages = Math.ceil(qsos.length / PAGE_SIZE);
+  if (currentPage > totalPages) currentPage = totalPages;
+  if (currentPage < 1) currentPage = 1;
+
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const rows  = qsos.slice(start, start + PAGE_SIZE);
+
   tbody.innerHTML = rows.map(q => {
     const colour = CFG.bandColours[q.band] || '#adb5bd';
     const dateStr = q.date ? q.date.slice(0,4)+'-'+q.date.slice(4,6)+'-'+q.date.slice(6,8) : '';
@@ -584,6 +595,27 @@ function renderTable(qsos) {
       <td class="qso-dist">${distStr}</td>
     </tr>`;
   }).join('');
+
+  // Pagination bar
+  if (pgEl) {
+    const from = start + 1;
+    const to   = Math.min(start + PAGE_SIZE, qsos.length);
+    pgEl.innerHTML = `
+      <button class="pg-btn" id="pgPrev" ${currentPage <= 1 ? 'disabled' : ''}>&#8592; Prev</button>
+      <span class="pg-info">QSOs ${from}–${to} of ${qsos.length} &nbsp;|&nbsp; Page ${currentPage} / ${totalPages}</span>
+      <button class="pg-btn" id="pgNext" ${currentPage >= totalPages ? 'disabled' : ''}>Next &#8594;</button>
+    `;
+    // Store sorted list reference for next/prev without re-sorting
+    pgEl._qsos = qsos;
+    document.getElementById('pgPrev').addEventListener('click', () => {
+      currentPage--;
+      renderTable(pgEl._qsos);
+    });
+    document.getElementById('pgNext').addEventListener('click', () => {
+      currentPage++;
+      renderTable(pgEl._qsos);
+    });
+  }
 }
 
 /* ── MAP ── */
