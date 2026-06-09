@@ -870,7 +870,7 @@ A **QSL card** is the physical confirmation of a radio contact — in use since 
 
 ### Standard Format
 
-**148 × 105 mm = A6** (A4 folded in quarters). This is the international standard. All QSL bureau systems are set up for this. Thickness: minimum 300 g/m² card stock.
+**90 × 140 mm** is the IARU standard size. All QSL bureau systems are set up for this. Thickness: minimum 300 g/m² card stock.
 
 ### What Goes on It?
 
@@ -901,7 +901,7 @@ A **QSL card** is the physical confirmation of a radio contact — in use since 
 
 ### Designing with Canva
 
-**Canva** ([https://www.canva.com](https://www.canva.com)) — free online design tool. Create an account → Create a design → Custom size: **148 mm × 105 mm** → export as **PDF (Print)** with crop marks and bleed.
+**Canva** ([https://www.canva.com](https://www.canva.com)) — free online design tool. Create an account → Create a design → Custom size: **90 × 140 mm** → export as **PDF (Print)** with crop marks and bleed.
 
 **Technical requirements:**
 - Resolution: minimum **300 DPI**
@@ -1294,7 +1294,7 @@ Start order: OmniRig → Log4OM → WSJT-X
 ### Phase 4 — QSL Card
 
 ```
-[ ] Design in Canva (148×105mm, 300 DPI, CMYK, 3mm bleed)
+[ ] Design in Canva (90×140mm, 300 DPI, CMYK, 3mm bleed)
 [ ] All fields checked three times for errors
 [ ] Order placed (250 copies recommended)
 [ ] Proof approved
