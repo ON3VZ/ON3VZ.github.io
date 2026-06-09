@@ -669,7 +669,43 @@ function initMap() {
     .attr('stroke', 'rgba(0,255,136,0.09)')
     .attr('stroke-width', 0.5)
     .attr('d', path);
+
+  setupMapZoom(W, H); // === MAP ZOOM (added 2026-06-09): delete this line to revert ===
 }
+
+/* === MAP ZOOM (added 2026-06-09): delete this whole block to revert =========
+   Additive zoom layer. Does NOT touch the projection / positioning above.
+   - scaleExtent min = 1: cannot zoom out beyond the default (perfect) view.
+   - translateExtent locks the map to its bounds, so at scale 1 it stays put.
+   - Mouse-wheel zoom is disabled so the page keeps scrolling normally;
+     drag-to-pan only does something once you have zoomed in with the + button.
+============================================================================ */
+let mapZoom = null;
+function setupMapZoom(W, H) {
+  if (!svgEl || !svgG || typeof d3.zoom !== 'function') return;
+
+  mapZoom = d3.zoom()
+    .scaleExtent([1, 8])
+    .translateExtent([[0, 0], [W, H]])
+    .filter(event => event.type !== 'wheel' && !event.ctrlKey && !event.button)
+    .on('zoom', event => { svgG.attr('transform', event.transform); });
+
+  svgEl.call(mapZoom);
+  svgEl.on('dblclick.zoom', null); // no double-click zoom, buttons only
+
+  const zoomBy = factor =>
+    svgEl.transition().duration(250).call(mapZoom.scaleBy, factor);
+
+  const btnIn    = document.getElementById('mapZoomIn');
+  const btnOut   = document.getElementById('mapZoomOut');
+  const btnReset = document.getElementById('mapZoomReset');
+
+  if (btnIn)    btnIn.addEventListener('click',  () => zoomBy(1.6));
+  if (btnOut)   btnOut.addEventListener('click', () => zoomBy(1 / 1.6));
+  if (btnReset) btnReset.addEventListener('click',
+    () => svgEl.transition().duration(300).call(mapZoom.transform, d3.zoomIdentity));
+}
+/* === END MAP ZOOM ======================================================== */
 
 function renderMap(qsos) {
   if (!geoReady || !svgG) return;
