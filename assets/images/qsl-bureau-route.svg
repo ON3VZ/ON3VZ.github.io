@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" font-family="ui-monospace,'Cascadia Code','Courier New',monospace">
+  <defs>
+    <linearGradient id="rt-node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111d35"/><stop offset="1" stop-color="#0d1428"/>
+    </linearGradient>
+    <filter id="rt-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="rt-arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L7 3 L0 6 Z" fill="#00ff88"/>
+    </marker>
+    <marker id="rt-arrow-c" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L7 3 L0 6 Z" fill="#00d4ff"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="470" fill="#080d18" rx="14"/>
+  <text x="450" y="34" text-anchor="middle" fill="#00ff88" font-size="18" font-weight="700" filter="url(#rt-glow)" letter-spacing="2">THE JOURNEY OF YOUR CARD</text>
+  <text x="450" y="56" text-anchor="middle" fill="#7a96b0" font-size="11.5">UBA bureau route since the 2026 reorganisation</text>
+
+  <!-- ============ OUTGOING ============ -->
+  <text x="40" y="92" fill="#00ff88" font-size="12.5" letter-spacing="2" font-weight="700">▸ OUTGOING</text>
+
+  <!-- nodes -->
+  <g>
+    <rect x="36" y="104" width="118" height="74" rx="9" fill="url(#rt-node)" stroke="#00ff88" stroke-width="1.5"/>
+    <text x="95" y="135" text-anchor="middle" fill="#00ff88" font-size="14" font-weight="700">YOU</text>
+    <text x="95" y="153" text-anchor="middle" fill="#e2eaf5" font-size="11">ON3VZ</text>
+    <text x="95" y="169" text-anchor="middle" fill="#7a96b0" font-size="9.5">sort + bundle</text>
+  </g>
+  <g>
+    <rect x="196" y="104" width="124" height="74" rx="9" fill="url(#rt-node)" stroke="#1f3a2e" stroke-width="1.4"/>
+    <text x="258" y="132" text-anchor="middle" fill="#e2eaf5" font-size="11.5" font-weight="700">SECTION WLD</text>
+    <text x="258" y="149" text-anchor="middle" fill="#b0c4d8" font-size="10">QSL manager</text>
+    <text x="258" y="166" text-anchor="middle" fill="#7a96b0" font-size="9.5">collects monthly</text>
+  </g>
+  <g>
+    <rect x="362" y="104" width="138" height="74" rx="9" fill="url(#rt-node)" stroke="#1f3a2e" stroke-width="1.4"/>
+    <text x="431" y="132" text-anchor="middle" fill="#e2eaf5" font-size="11.5" font-weight="700">NATIONAL MGR</text>
+    <text x="431" y="149" text-anchor="middle" fill="#f0a500" font-size="10.5">José · ON4CJK</text>
+    <text x="431" y="166" text-anchor="middle" fill="#7a96b0" font-size="9.5">UBA central</text>
+  </g>
+  <g>
+    <rect x="542" y="104" width="118" height="74" rx="9" fill="url(#rt-node)" stroke="#1f3a2e" stroke-width="1.4"/>
+    <text x="601" y="132" text-anchor="middle" fill="#e2eaf5" font-size="11.5" font-weight="700">DARC</text>
+    <text x="601" y="149" text-anchor="middle" fill="#b0c4d8" font-size="10">Germany</text>
+    <text x="601" y="166" text-anchor="middle" fill="#7a96b0" font-size="9.5">packs + ships</text>
+  </g>
+  <g>
+    <rect x="702" y="104" width="160" height="74" rx="9" fill="url(#rt-node)" stroke="#00d4ff" stroke-width="1.4"/>
+    <text x="782" y="132" text-anchor="middle" fill="#00d4ff" font-size="11.5" font-weight="700">IARU BUREAUS</text>
+    <text x="782" y="149" text-anchor="middle" fill="#b0c4d8" font-size="10">worldwide → DX</text>
+    <text x="782" y="166" text-anchor="middle" fill="#7a96b0" font-size="9.5">the other station</text>
+  </g>
+
+  <!-- arrows out -->
+  <g stroke="#00ff88" stroke-width="2" fill="none">
+    <line x1="156" y1="141" x2="192" y2="141" marker-end="url(#rt-arrow)"/>
+    <line x1="322" y1="141" x2="358" y2="141" marker-end="url(#rt-arrow)"/>
+    <line x1="502" y1="141" x2="538" y2="141" marker-end="url(#rt-arrow)"/>
+    <line x1="662" y1="141" x2="698" y2="141" marker-end="url(#rt-arrow)"/>
+  </g>
+
+  <!-- ============ INCOMING ============ -->
+  <text x="40" y="246" fill="#00d4ff" font-size="12.5" letter-spacing="2" font-weight="700">◂ INCOMING</text>
+
+  <g>
+    <rect x="702" y="258" width="160" height="70" rx="9" fill="url(#rt-node)" stroke="#00d4ff" stroke-width="1.4"/>
+    <text x="782" y="288" text-anchor="middle" fill="#00d4ff" font-size="11.5" font-weight="700">WORLD → UBA</text>
+    <text x="782" y="306" text-anchor="middle" fill="#7a96b0" font-size="9.5">cards arrive for ON3VZ</text>
+  </g>
+  <g>
+    <rect x="496" y="258" width="170" height="70" rx="9" fill="url(#rt-node)" stroke="#1f3a2e" stroke-width="1.4"/>
+    <text x="581" y="288" text-anchor="middle" fill="#e2eaf5" font-size="11.5" font-weight="700">UBA SORTS</text>
+    <text x="581" y="306" text-anchor="middle" fill="#7a96b0" font-size="9.5">per section · OCR-assisted</text>
+  </g>
+  <g>
+    <rect x="290" y="258" width="170" height="70" rx="9" fill="url(#rt-node)" stroke="#1f3a2e" stroke-width="1.4"/>
+    <text x="375" y="288" text-anchor="middle" fill="#e2eaf5" font-size="11.5" font-weight="700">SECTION WLD</text>
+    <text x="375" y="306" text-anchor="middle" fill="#f0a500" font-size="10">11 × per year</text>
+  </g>
+  <g>
+    <rect x="84" y="258" width="170" height="70" rx="9" fill="url(#rt-node)" stroke="#00ff88" stroke-width="1.5"/>
+    <text x="169" y="288" text-anchor="middle" fill="#00ff88" font-size="13" font-weight="700">YOU · ON3VZ</text>
+    <text x="169" y="306" text-anchor="middle" fill="#7a96b0" font-size="9.5">collect at the meeting</text>
+  </g>
+
+  <g stroke="#00d4ff" stroke-width="2" fill="none">
+    <line x1="700" y1="293" x2="668" y2="293" marker-end="url(#rt-arrow-c)"/>
+    <line x1="494" y1="293" x2="462" y2="293" marker-end="url(#rt-arrow-c)"/>
+    <line x1="288" y1="293" x2="256" y2="293" marker-end="url(#rt-arrow-c)"/>
+  </g>
+
+  <!-- ============ NOTES ============ -->
+  <rect x="36" y="356" width="408" height="86" rx="9" fill="rgba(240,165,0,0.07)" stroke="rgba(240,165,0,0.35)"/>
+  <text x="56" y="380" fill="#f0a500" font-size="12.5" font-weight="700">⚠ Correct sorting is now mandatory</text>
+  <text x="56" y="401" fill="#b0c4d8" font-size="11">Since the DARC partnership, badly sorted bundles are</text>
+  <text x="56" y="418" fill="#b0c4d8" font-size="11">returned unprocessed, at the section's expense. Hand in</text>
+  <text x="56" y="435" fill="#b0c4d8" font-size="11">your cards already neatly pre-sorted.</text>
+
+  <rect x="456" y="356" width="406" height="86" rx="9" fill="rgba(0,212,255,0.06)" stroke="rgba(0,212,255,0.3)"/>
+  <text x="476" y="380" fill="#00d4ff" font-size="12.5" font-weight="700">ℹ Hand in to your section only</text>
+  <text x="476" y="401" fill="#b0c4d8" font-size="11">Always deliver to the WLD QSL manager, never directly</text>
+  <text x="476" y="418" fill="#b0c4d8" font-size="11">to the national manager. A small section batch (under 10</text>
+  <text x="476" y="435" fill="#b0c4d8" font-size="11">cards / ±30 g) is merged with the next month's shipment.</text>
+</svg>

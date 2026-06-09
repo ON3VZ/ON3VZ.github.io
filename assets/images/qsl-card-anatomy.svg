@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="ui-monospace,'Cascadia Code','Courier New',monospace">
+  <defs>
+    <linearGradient id="qa-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111d35"/>
+      <stop offset="1" stop-color="#0d1428"/>
+    </linearGradient>
+    <filter id="qa-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="560" fill="#080d18" rx="14"/>
+  <text x="450" y="34" text-anchor="middle" fill="#00ff88" font-size="18" font-weight="700" filter="url(#qa-glow)" letter-spacing="2">QSL CARD ANATOMY</text>
+  <text x="450" y="56" text-anchor="middle" fill="#7a96b0" font-size="11.5">What every card needs so the other station can find your QSO</text>
+
+  <!-- ================= FRONT ================= -->
+  <text x="70" y="92" fill="#00d4ff" font-size="12" letter-spacing="2">FRONT</text>
+  <rect x="60" y="100" width="360" height="232" rx="10" fill="url(#qa-card)" stroke="#1f3a2e" stroke-width="1.5"/>
+  <line x1="60" y1="172" x2="420" y2="172" stroke="rgba(0,255,136,0.12)"/>
+
+  <text x="82" y="150" fill="#00ff88" font-size="40" font-weight="700" filter="url(#qa-glow)">ON3VZ</text>
+  <circle cx="372" cy="135" r="22" fill="none" stroke="#00d4ff" stroke-width="1.4" opacity="0.6"/>
+  <circle cx="372" cy="135" r="13" fill="none" stroke="#00d4ff" stroke-width="1.4" opacity="0.8"/>
+  <circle cx="372" cy="135" r="4" fill="#00d4ff"/>
+  <path d="M372 135 L372 100 M372 135 L344 120 M372 135 L400 120" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+
+  <text x="82" y="196" fill="#e2eaf5" font-size="13">Kristof · Hoboken, Belgium</text>
+  <text x="82" y="220" fill="#b0c4d8" font-size="12.5">Grid: <tspan fill="#f0a500">JO21EE</tspan></text>
+  <text x="82" y="242" fill="#b0c4d8" font-size="12.5">DXCC: Belgium / ON</text>
+  <text x="82" y="264" fill="#b0c4d8" font-size="12.5">CQ Zone 14 · ITU Zone 14</text>
+
+  <rect x="82" y="284" width="220" height="30" rx="6" fill="rgba(0,212,255,0.08)" stroke="#1f3a2e"/>
+  <text x="96" y="304" fill="#00d4ff" font-size="12">UBA member · WLD · ON6WL</text>
+
+  <!-- front markers -->
+  <g font-size="12" font-weight="700">
+    <circle cx="64" cy="118" r="11" fill="#00ff88"/><text x="64" y="122" text-anchor="middle" fill="#080d18">1</text>
+  </g>
+
+  <!-- ================= BACK ================= -->
+  <text x="490" y="92" fill="#00d4ff" font-size="12" letter-spacing="2">BACK · QSO FILL-IN FIELDS</text>
+  <rect x="480" y="100" width="360" height="232" rx="10" fill="url(#qa-card)" stroke="#1f3a2e" stroke-width="1.5"/>
+
+  <text x="500" y="130" fill="#7a96b0" font-size="11">TO RADIO</text>
+  <rect x="586" y="116" width="120" height="20" rx="4" fill="#080d18" stroke="rgba(0,255,136,0.2)"/>
+  <text x="596" y="131" fill="#00ff88" font-size="12.5" font-weight="700">PA3XYZ</text>
+
+  <!-- grid of fields -->
+  <g font-size="11" fill="#7a96b0">
+    <text x="500" y="166">DATE</text><text x="620" y="166">UTC</text><text x="730" y="166">BAND</text>
+    <text x="500" y="206">MODE</text><text x="620" y="206">RST S</text><text x="730" y="206">RST R</text>
+  </g>
+  <g font-size="12.5" fill="#e2eaf5">
+    <text x="500" y="184">09-jun-2026</text><text x="620" y="184" fill="#f0a500" font-weight="700">14:32</text><text x="730" y="184">20m</text>
+    <text x="500" y="224">SSB</text><text x="620" y="224">59</text><text x="730" y="224">57</text>
+  </g>
+  <line x1="500" y1="190" x2="820" y2="190" stroke="rgba(255,255,255,0.06)"/>
+  <line x1="500" y1="230" x2="820" y2="230" stroke="rgba(255,255,255,0.06)"/>
+
+  <text x="500" y="262" fill="#7a96b0" font-size="11">QSL VIA</text>
+  <rect x="586" y="248" width="160" height="20" rx="4" fill="#080d18" stroke="rgba(0,212,255,0.25)"/>
+  <text x="596" y="263" fill="#00d4ff" font-size="12">Bureau</text>
+
+  <text x="500" y="296" fill="#b0c4d8" font-size="12">PSE QSL  ·  TNX QSL</text>
+  <text x="820" y="318" text-anchor="end" fill="#00ff88" font-size="13" font-weight="700">73 de ON3VZ</text>
+
+  <!-- back markers -->
+  <g font-size="12" font-weight="700">
+    <circle cx="576" cy="126" r="11" fill="#00ff88"/><text x="576" y="130" text-anchor="middle" fill="#080d18">2</text>
+    <circle cx="660" cy="159" r="9" fill="#f0a500"/><text x="660" y="163" text-anchor="middle" fill="#080d18" font-size="11">3</text>
+    <circle cx="576" cy="258" r="11" fill="#00d4ff"/><text x="576" y="262" text-anchor="middle" fill="#080d18">4</text>
+  </g>
+
+  <!-- ================= LEGEND ================= -->
+  <rect x="60" y="360" width="780" height="172" rx="10" fill="#0d1428" stroke="#1f3a2e"/>
+  <line x1="450" y1="378" x2="450" y2="514" stroke="rgba(255,255,255,0.06)"/>
+
+  <!-- left column -->
+  <g font-size="12.5">
+    <circle cx="84" cy="392" r="11" fill="#00ff88"/><text x="84" y="396" text-anchor="middle" fill="#080d18" font-weight="700">1</text>
+    <text x="106" y="389" fill="#e2eaf5" font-weight="700">Your callsign, large &amp; clear.</text>
+    <text x="106" y="408" fill="#b0c4d8">Name, QTH and 6-char locator too.</text>
+
+    <circle cx="84" cy="440" r="11" fill="#00ff88"/><text x="84" y="444" text-anchor="middle" fill="#080d18" font-weight="700">2</text>
+    <text x="106" y="437" fill="#e2eaf5" font-weight="700">Addressee call, prominent.</text>
+    <text x="106" y="456" fill="#b0c4d8">The bureau sorts on this call.</text>
+
+    <circle cx="84" cy="488" r="11" fill="#f0a500"/><text x="84" y="492" text-anchor="middle" fill="#080d18" font-weight="700">3</text>
+    <text x="106" y="485" fill="#e2eaf5" font-weight="700">Time = UTC, always.</text>
+    <text x="106" y="504" fill="#b0c4d8">Wrong time, and the QSO is never found.</text>
+  </g>
+
+  <!-- right column -->
+  <g font-size="12.5">
+    <circle cx="478" cy="392" r="11" fill="#00d4ff"/><text x="478" y="396" text-anchor="middle" fill="#080d18" font-weight="700">4</text>
+    <text x="500" y="389" fill="#e2eaf5" font-weight="700">Use VIA for a manager.</text>
+    <text x="500" y="408" fill="#b0c4d8">"J8LP via K3LP", sorted on the manager.</text>
+
+    <text x="500" y="437" fill="#e2eaf5" font-weight="700">Don't print the bureau address.</text>
+    <text x="500" y="456" fill="#b0c4d8">Foreign bureaus know it, and it changes.</text>
+
+    <text x="500" y="485" fill="#e2eaf5" font-weight="700">IARU size: 90 × 140 mm.</text>
+    <text x="500" y="504" fill="#b0c4d8">On 190–250 g/m² card stock.</text>
+  </g>
+
+  <text x="450" y="552" text-anchor="middle" fill="#5a728c" font-size="10.5">ON3VZ · QSL card layout for the UBA bureau · example fields</text>
+</svg>

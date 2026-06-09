@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" font-family="ui-monospace,'Cascadia Code','Courier New',monospace">
+  <defs>
+    <linearGradient id="so-node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111d35"/><stop offset="1" stop-color="#0d1428"/>
+    </linearGradient>
+    <filter id="so-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="470" fill="#080d18" rx="14"/>
+  <text x="450" y="34" text-anchor="middle" fill="#00ff88" font-size="18" font-weight="700" filter="url(#so-glow)" letter-spacing="2">SORT LIKE A PRO</text>
+  <text x="450" y="56" text-anchor="middle" fill="#7a96b0" font-size="11.5">Pre-sorting is your job, and it keeps your bundle from being refused</text>
+
+  <!-- ===== LEFT: step list ===== -->
+  <rect x="36" y="80" width="420" height="360" rx="10" fill="#0d1428" stroke="#1f3a2e"/>
+  <text x="56" y="108" fill="#00d4ff" font-size="12.5" letter-spacing="2" font-weight="700">THE 6 STEPS</text>
+
+  <g font-size="12">
+    <circle cx="68" cy="142" r="12" fill="#00ff88"/><text x="68" y="146" text-anchor="middle" fill="#080d18" font-weight="700">1</text>
+    <text x="90" y="146" fill="#e2eaf5">Lay out all your outgoing cards.</text>
+
+    <circle cx="68" cy="188" r="12" fill="#00ff88"/><text x="68" y="192" text-anchor="middle" fill="#080d18" font-weight="700">2</text>
+    <text x="90" y="185" fill="#e2eaf5">Find the IARU bureau per card</text>
+    <text x="90" y="201" fill="#7a96b0">using the sort list V1.0.</text>
+
+    <circle cx="68" cy="240" r="12" fill="#00ff88"/><text x="68" y="244" text-anchor="middle" fill="#080d18" font-weight="700">3</text>
+    <text x="90" y="244" fill="#e2eaf5">Group cards for the same bureau.</text>
+
+    <circle cx="68" cy="286" r="12" fill="#00ff88"/><text x="68" y="290" text-anchor="middle" fill="#080d18" font-weight="700">4</text>
+    <text x="90" y="283" fill="#e2eaf5">Bundle each packet with an elastic</text>
+    <text x="90" y="299" fill="#7a96b0">band, even if it is just one card.</text>
+
+    <circle cx="68" cy="338" r="12" fill="#00ff88"/><text x="68" y="342" text-anchor="middle" fill="#080d18" font-weight="700">5</text>
+    <text x="90" y="342" fill="#e2eaf5">Order the bundles alphabetically.</text>
+
+    <circle cx="68" cy="390" r="12" fill="#f0a500"/><text x="68" y="394" text-anchor="middle" fill="#080d18" font-weight="700">6</text>
+    <text x="90" y="383" fill="#e2eaf5">Set aside "no IARU bureau"</text>
+    <text x="90" y="399" fill="#7a96b0">countries, sent direct / via mgr.</text>
+  </g>
+
+  <!-- ===== RIGHT: rule cards ===== -->
+  <!-- rule 1: bureau = manager -->
+  <rect x="476" y="80" width="388" height="106" rx="10" fill="url(#so-node)" stroke="rgba(0,212,255,0.3)"/>
+  <text x="496" y="106" fill="#00d4ff" font-size="12.5" font-weight="700">RULE 1 · Sort on the MANAGER</text>
+  <text x="496" y="129" fill="#b0c4d8" font-size="11">A "QSL via" card goes to the manager's bureau, not</text>
+  <text x="496" y="146" fill="#b0c4d8" font-size="11">the DX station's country.</text>
+  <rect x="496" y="156" width="350" height="22" rx="5" fill="#080d18" stroke="rgba(0,255,136,0.18)"/>
+  <text x="508" y="171" font-size="11.5"><tspan fill="#00ff88" font-weight="700">J8LP via K3LP</tspan><tspan fill="#7a96b0"> → sort under </tspan><tspan fill="#f0a500" font-weight="700">W</tspan><tspan fill="#7a96b0"> (USA), not J</tspan></text>
+
+  <!-- rule 2: USA by digit -->
+  <rect x="476" y="200" width="388" height="106" rx="10" fill="url(#so-node)" stroke="rgba(240,165,0,0.35)"/>
+  <text x="496" y="226" fill="#f0a500" font-size="12.5" font-weight="700">RULE 2 · USA sorts by the DIGIT</text>
+  <text x="496" y="249" fill="#b0c4d8" font-size="11">K, W, N and AA–AK are split by the number in the call.</text>
+  <g font-size="11" font-weight="700">
+    <rect x="496" y="262" width="48" height="30" rx="5" fill="#080d18" stroke="#1f3a2e"/><text x="520" y="282" text-anchor="middle" fill="#f0a500">W6XYZ</text>
+    <text x="556" y="282" fill="#7a96b0" font-size="11">→ packet</text>
+    <rect x="626" y="262" width="40" height="30" rx="5" fill="rgba(240,165,0,0.12)" stroke="rgba(240,165,0,0.4)"/><text x="646" y="282" text-anchor="middle" fill="#f0a500">W6</text>
+    <text x="690" y="282" fill="#7a96b0" font-size="11">not just "W"</text>
+  </g>
+
+  <!-- rule 3: no bureau -->
+  <rect x="476" y="320" width="388" height="120" rx="10" fill="url(#so-node)" stroke="#1f3a2e"/>
+  <text x="496" y="346" fill="#e2eaf5" font-size="12.5" font-weight="700">NO BUREAU FOR THAT COUNTRY?</text>
+  <text x="496" y="369" fill="#b0c4d8" font-size="11">If the list says "no IARU QSL bureau available":</text>
+  <g font-size="11">
+    <circle cx="504" cy="390" r="3" fill="#00ff88"/><text x="516" y="394" fill="#b0c4d8">Manager exists → sort on the manager's bureau.</text>
+    <circle cx="504" cy="414" r="3" fill="#00ff88"/><text x="516" y="418" fill="#b0c4d8">No manager → send direct to the address (often a P.O. Box),</text>
+    <text x="516" y="433" fill="#7a96b0">with return postage if you want a card back.</text>
+  </g>
+</svg>
