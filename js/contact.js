@@ -108,7 +108,7 @@
     /* Grid locator only */
     ctx.font='600 26px "Share Tech Mono", monospace';
     glow(C.cyan, 8); ctx.fillStyle=C.cyan;
-    ctx.fillText('JO21GF', x, 302);
+    ctx.fillText('JO21EE', x, 302);
     noGlow();
 
     /* Belgian flag stripe */
@@ -481,7 +481,7 @@
     });
     ctx.font='600 18px "Share Tech Mono", monospace';
     ctx.fillStyle=hex2rgba(C.cyan,0.50); ctx.textAlign='center';
-    ctx.fillText('JO21GF',cx,cy+6);
+    ctx.fillText('JO21EE',cx,cy+6);
     glow(C.green,12);
     ctx.beginPath(); ctx.arc(cx,cy,4,0,TAU);
     ctx.fillStyle=hex2rgba(C.green,0.5); ctx.fill(); noGlow();

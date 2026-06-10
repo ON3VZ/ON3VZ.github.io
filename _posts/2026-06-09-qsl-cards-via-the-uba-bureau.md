@@ -13,6 +13,8 @@ tags: [QSL, UBA, Bureau, Beginners, HF, DX]
 
 I already wrote a broad [logging and QSL guide](/2026/05/06/from-first-qso-to-first-qsl-card/) that covers the digital side (LoTW, eQSL, Clublog, QRZ.com) in depth. This post is the focused companion to it: everything about **paper cards through the UBA bureau**, the cheapest way to exchange real QSLs, updated for the 2026 reorganisation.
 
+> 🇧🇪 **Written for the Belgian situation.** The bureau described here is the one run by the **UBA** (the Royal Union of Belgian Radio Amateurs), so the sections, the national QSL manager and the sort list are all Belgian specifics. The general ideas (how to fill out a card, sorting by IARU bureau, the "QSL via" rules) apply anywhere, but the procedure, the addresses and the resources below are UBA's. If you are licensed in another country, your own national society runs an equivalent bureau.
+
 ---
 
 ## On This Page
@@ -150,7 +152,10 @@ Whoever hands in cards **must sort them beforehand**. That saves your section ma
 
 ## 7. Using the Sort List V1.0 {#sortlist}
 
-The UBA provides a sort list. It has three columns: the **prefix** (the start of the callsign on the card, e.g. DL, G, W, ON), the **country or region** (a check so you know you have the right prefix), and the **packet** (the bureau code to sort the card under).
+The UBA provides two tools for looking up the correct bureau:
+
+- **QBuS** (QSL Bureau Search) at [qbus.uba.be](https://qbus.uba.be/online/qbus-online.php): the official online lookup by Rik ON7YD. Enter any callsign or prefix and it tells you the correct IARU bureau and whether one exists at all. Free, no login needed.
+- **Sort list V1.0 PDF**: the printable reference, available for UBA members in the [UBA Downloads area](https://www.uba.be/en/downloads-uba) (login required). It has three columns: the **prefix** (e.g. DL, G, W, ON), the **country or region**, and the **packet** (the bureau code to sort under).
 
 A few worked examples:
 
@@ -162,7 +167,7 @@ A few worked examples:
 
 ### Common destinations (excerpt)
 
-A handful of bureaus you will meet most often as a beginner. The *complete* list is in the UBA PDF "UBA QSL Bureau, sort list V1.0".
+A handful of bureaus you will meet most often as a beginner. When in doubt, always confirm with QBuS.
 
 | Prefix | Country / region | Packet |
 |---|---|---|
@@ -187,7 +192,7 @@ A handful of bureaus you will meet most often as a beginner. The *complete* list
 | VK, VH – VN, AX | Australia | VK |
 | PP – PY, PZ | Brazil | PY |
 
-> 💡 In doubt about an exotic prefix? Look it up in the full sort list V1.0, and check the [IARU list of QSL bureaus](https://www.iaru.org/reference/qsl-bureau-2/) to confirm the bureau is still active.
+> 💡 Exotic prefix you don't recognise? QBuS will handle it. Also cross-check with the [IARU list of QSL bureaus](https://www.iaru.org/reference/qsl-bureau-2/) to confirm the bureau is still active.
 
 ---
 
@@ -252,9 +257,10 @@ These are not in my source bundle, but they are the lessons that saved me effort
 
 | Resource | Link |
 |---|---|
-| UBA QSL service | [uba.be/nl/uba/qsl-dienst](https://www.uba.be/nl/uba/qsl-dienst) |
+| UBA QSL service (EN) | [uba.be/en/node/2007](https://www.uba.be/en/node/2007) |
+| QBuS: bureau lookup tool | [qbus.uba.be](https://qbus.uba.be/online/qbus-online.php) |
+| Sort list V1.0 PDF (members) | [UBA Downloads](https://www.uba.be/en/downloads-uba) |
 | IARU list of active QSL bureaus | [iaru.org/reference/qsl-bureau-2](https://www.iaru.org/reference/qsl-bureau-2/) |
-| Sort list V1.0 | UBA PDF "UBA QSL Bureau, sort list" (always download the latest from the UBA site) |
 | Changes to your details | [members@uba.be](mailto:members@uba.be) |
 | My digital companion guide | [From First QSO to First QSL Card](/2026/05/06/from-first-qso-to-first-qsl-card/) |
 
