@@ -1,5 +1,6 @@
 title: ON3VZ — Kristof
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
+future: true
 # GitHub Pages defaults (optional)
 plugins: []
