@@ -1,0 +1,70 @@
+---
+layout: default
+title: ON3VZ — DXCC Matrix
+extra_css:
+  - /css/dxcc-matrix.css
+extra_js:
+  - /js/dxcc-matrix.js
+---
+
+<div class="dm-wrap">
+
+  <!-- HERO -->
+  <div class="dm-hero container anim-1">
+    <a class="dm-back" href="/logbook/">&#8592; Back to Logbook</a>
+    <div class="section-label">ON3VZ · LOGBOOK</div>
+    <h1 class="section-title">DXCC &#215; Band Matrix</h1>
+    <p class="dm-sub">Worked entities grouped by continent, each with its callsign prefix, DXCC code and QSO count per band. Same ADIF data as the logbook. Click a continent to collapse it.</p>
+
+    <div class="dm-stats">
+      <div class="dm-stat"><span class="dm-stat-val" id="dmStatQsos">—</span><span class="dm-stat-lbl">QSOs</span></div>
+      <div class="dm-stat"><span class="dm-stat-val" id="dmStatEnt">—</span><span class="dm-stat-lbl">Entities</span></div>
+      <div class="dm-stat"><span class="dm-stat-val" id="dmStatCont">—</span><span class="dm-stat-lbl">Continents</span></div>
+      <div class="dm-stat"><span class="dm-stat-val" id="dmStatBand">—</span><span class="dm-stat-lbl">Bands</span></div>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="dm-controls container anim-2">
+    <div class="dm-ctrl-group">
+      <label>Continent</label>
+      <div class="dm-chips" id="dmContChips"></div>
+    </div>
+    <div class="dm-ctrl-group">
+      <label>Band <span style="opacity:.6">(Class C · ✦ = outside set)</span></label>
+      <div class="dm-chips" id="dmBandChips"></div>
+    </div>
+    <div class="dm-ctrl-group dm-ctrl-toggles">
+      <label>View</label>
+      <label class="dm-switch"><input type="checkbox" id="tgEmptyCountries" checked> Hide empty countries</label>
+      <label class="dm-switch"><input type="checkbox" id="tgEmptyBands"> Hide empty bands</label>
+      <label class="dm-switch"><input type="checkbox" id="tgHeat" checked> Heatmap</label>
+    </div>
+    <div class="dm-ctrl-group">
+      <label>Tools</label>
+      <div class="dm-ctrl-actions">
+        <input type="search" id="dmSearch" class="dm-search" placeholder="Search country / prefix…">
+        <select id="dmSort" class="dm-select">
+          <option value="qso">Sort: QSOs</option>
+          <option value="alpha">Sort: A–Z</option>
+        </select>
+        <button type="button" id="dmExpand" class="dm-btn">Expand all</button>
+        <button type="button" id="dmCollapse" class="dm-btn">Collapse all</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATRIX -->
+  <div class="dm-table-section container anim-3">
+    <div class="dm-table-wrap">
+      <table class="dm-table" id="dmTable">
+        <thead id="dmHead"></thead>
+        <tbody id="dmBody">
+          <tr><td class="dm-empty" colspan="12">Loading logbook data…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dm-loading" id="dmLoading">Loading…</div>
+  </div>
+
+</div>
