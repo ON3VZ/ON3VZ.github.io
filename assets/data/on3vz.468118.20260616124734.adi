@@ -1,0 +1,2267 @@
+QRZLogbook download for on3vz
+    Date: Tue Jun 16 12:47:34 2026
+    Bookid: 468118
+    Records: 44
+    <ADIF_VER:5>3.1.1
+    <PROGRAMID:10>QRZLogbook
+    <PROGRAMVERSION:3>2.0
+    <eoh>
+<mode:3>SSB
+<lat:11>N042 41.250
+<app_qrzlog_status:1>C
+<distance:4>1776
+<eqsl_qsl_sent:1>N
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<gridsquare:6>KN22dq
+<lotw_qslrdate:8>20260601
+<time_on:4>1439
+<qth:5>Sofia
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<my_city:7>Hoboken
+<freq:5>14.27
+<lotw_qsl_rcvd:1>Y
+<freq_rx:5>14.27
+<lotw_qslsdate:8>20260611
+<lon:11>E024 17.500
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<band_rx:3>20m
+<my_itu_zone:2>27
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260527
+<qso_date_off:8>20260527
+<qsl_via:6>Bureau
+<qrzcom_qso_download_status:1>Y
+<call:7>LZ100LZ
+<qso_date:8>20260527
+<name:42>BFRA Bulgarian Federation of Radioamateurs
+<band:3>20m
+<my_iota:4>none
+<tx_pwr:2>25
+<time_off:4>1439
+<qrzcom_qso_upload_status:1>Y
+<my_cq_zone:2>14
+<cqz:2>20
+<station_callsign:5>ON3VZ
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260601
+<dxcc:3>212
+<rst_sent:2>57
+<app_qrzlog_logid:10>1457819377
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<eqsl_qsl_rcvd:1>N
+<country:8>Bulgaria
+<eor>
+
+<eqsl_qsl_sent:1>N
+<distance:4>2232
+<app_qrzlog_status:1>N
+<lat:11>N055 46.250
+<mode:3>SSB
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<qth:10>Batlow NSW
+<time_on:4>1637
+<gridsquare:6>KO85ss
+<lotw_qsl_sent:1>Y
+<qrzcom_qso_upload_date:8>20260527
+<rst_rcvd:2>59
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<band_rx:3>20m
+<my_itu_zone:2>27
+<lon:11>E037 32.500
+<freq_rx:6>14.205
+<lotw_qslsdate:8>20260605
+<lotw_qsl_rcvd:1>N
+<freq:6>14.205
+<my_city:7>Hoboken
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260527
+<my_iota:4>none
+<name:16>Lindsay A Turner
+<band:3>20m
+<qso_date:8>20260527
+<call:6>RT25KR
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<state:2>NS
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1637
+<tx_pwr:2>25
+<my_lon:11>E004 20.880
+<cont:2>EU
+<my_gridsquare:6>JO21ee
+<country:6>Russia
+<eqsl_qsl_rcvd:1>N
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1457851915
+<rst_sent:2>57
+<dxcc:2>54
+<eor>
+
+<time_on:4>1958
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:5>SPLIT
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<gridsquare:6>JN83fm
+<eqsl_qsl_sent:1>N
+<distance:4>1245
+<mode:3>SSB
+<lat:11>N043 31.200
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_via:6>Bureau
+<qso_date_off:8>20260527
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<band_rx:3>20m
+<my_itu_zone:2>27
+<qrzcom_qso_upload_date:8>20260527
+<rst_rcvd:2>56
+<lotw_qsl_rcvd:1>N
+<freq:6>14.171
+<my_city:7>Hoboken
+<lon:11>E016 27.400
+<freq_rx:6>14.171
+<lotw_qslsdate:8>20260611
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>15
+<tx_pwr:2>25
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1958
+<qso_date:8>20260527
+<my_iota:4>none
+<name:34>Radio klub Marjan 60th Anniversary
+<band:3>20m
+<call:7>9A60CBM
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1457906806
+<country:7>Croatia
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>497
+<rst_sent:2>57
+<my_lon:11>E004 20.880
+<cont:2>EU
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<eor>
+
+<ituz:1>9
+<lotw_qsl_sent:1>Y
+<gridsquare:6>FN76oj
+<lotw_qslrdate:8>20260602
+<time_on:4>2313
+<qth:18>Saint-Antoine Nord
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<mode:3>SSB
+<lat:11>N046 23.748
+<app_qrzlog_status:1>C
+<distance:4>4904
+<eqsl_qsl_sent:1>N
+<qso_date_off:8>20260531
+<qsl_via:23>EMail, Direct or Bureau
+<qrzcom_qso_download_status:1>Y
+<freq:6>14.145
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>Y
+<freq_rx:6>14.145
+<lotw_qslsdate:8>20260611
+<lon:11>W064 47.520
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<band_rx:3>20m
+<my_itu_zone:2>27
+<rst_rcvd:2>53
+<qrzcom_qso_upload_date:8>20260531
+<email:18>ve9cf@outnaboot.ca
+<tx_pwr:2>25
+<time_off:4>2313
+<qrzcom_qso_upload_status:1>Y
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:1>5
+<call:5>VE9CF
+<qso_date:8>20260531
+<name:15>Stuart Crawford
+<band:3>20m
+<my_iota:4>none
+<dxcc:1>1
+<rst_sent:2>55
+<app_qrzlog_logid:10>1459437940
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<eqsl_qsl_rcvd:1>N
+<country:6>Canada
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>NA
+<app_qrzlog_qsldate:8>20260611
+<eor>
+
+<qso_date_off:8>20260601
+<qrzcom_qso_download_status:1>Y
+<lon:11>W001 22.500
+<freq_rx:5>7.152
+<lotw_qslsdate:8>20260611
+<lotw_qsl_rcvd:1>N
+<freq:5>7.152
+<my_city:7>Hoboken
+<qrzcom_qso_upload_date:8>20260601
+<rst_rcvd:2>44
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>40m
+<gridsquare:6>IO93hc
+<ituz:2>27
+<lotw_qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:20>Westhouses, ALFRETON
+<time_on:4>1710
+<lat:11>N053 06.252
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<distance:3>445
+<dxcc:3>223
+<rst_sent:2>57
+<country:7>England
+<eqsl_qsl_rcvd:1>N
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1459953715
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<my_lon:11>E004 20.880
+<cont:2>EU
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1710
+<tx_pwr:2>25
+<email:27>pursglove944@btinternet.com
+<station_callsign:5>ON3VZ
+<cqz:2>14
+<my_cq_zone:2>14
+<call:5>M0TRP
+<my_iota:4>none
+<name:14>Tony Pursglove
+<band:3>40m
+<qso_date:8>20260601
+<eor>
+
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260614
+<dxcc:3>248
+<rst_sent:2>53
+<app_qrzlog_logid:10>1460192053
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<eqsl_qsl_rcvd:1>N
+<country:5>Italy
+<call:6>IU2MCW
+<qso_date:8>20260602
+<name:17>Massimiliano Musa
+<band:3>20m
+<my_iota:4>none
+<tx_pwr:2>25
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>0649
+<my_cq_zone:2>14
+<cqz:2>15
+<station_callsign:5>ON3VZ
+<freq:6>14.217
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>Y
+<freq_rx:6>14.217
+<lotw_qslsdate:8>20260605
+<lon:11>E010 22.400
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<my_itu_zone:2>27
+<band_rx:3>20m
+<rst_rcvd:2>52
+<qrzcom_qso_upload_date:8>20260602
+<qso_date_off:8>20260602
+<qsl_via:6>Direct
+<qrzcom_qso_download_status:1>Y
+<mode:3>SSB
+<app_qrzlog_status:1>C
+<lat:11>N045 01.200
+<distance:3>817
+<eqsl_qsl_sent:1>N
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<gridsquare:8>JN55EA44
+<lotw_qslrdate:8>20260607
+<time_on:4>0649
+<qth:16>Gussola, Cremona
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<eor>
+
+<time_off:4>0703
+<qrzcom_qso_upload_status:1>Y
+<email:28>alessandrotellini@tiscali.it
+<tx_pwr:2>25
+<cqz:2>14
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<call:5>IQ5LI
+<name:30>Sez. A.R.I. LIVORNO Radio Club
+<band:3>20m
+<my_iota:4>none
+<qso_date:8>20260602
+<rst_sent:2>59
+<dxcc:3>248
+<eqsl_qsl_rcvd:1>N
+<country:5>Italy
+<app_qrzlog_logid:10>1460197457
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<my_lon:11>E004 20.880
+<cont:2>EU
+<gridsquare:6>JN53en
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<qth:7>LIVORNO
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<time_on:4>0703
+<app_qrzlog_status:1>N
+<lat:11>N043 33.750
+<mode:3>SSB
+<distance:3>960
+<eqsl_qsl_sent:1>N
+<qso_date_off:8>20260602
+<qsl_via:6>BUREAU
+<qrzcom_qso_download_status:1>Y
+<freq_rx:4>14.2
+<lotw_qslsdate:8>20260611
+<lon:11>E010 22.500
+<freq:4>14.2
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260602
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>20m
+<eor>
+
+<gridsquare:6>JN45nt
+<lotw_qsl_sent:1>Y
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<qth:4>Como
+<time_on:4>1346
+<app_qrzlog_status:1>N
+<lat:11>N045 48.490
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<distance:3>691
+<qso_date_off:8>20260603
+<qrzcom_qso_download_status:1>Y
+<qsl_via:10>Via IK2AQZ
+<lon:11>E009 05.363
+<lotw_qslsdate:8>20260611
+<freq_rx:6>28.436
+<lotw_qsl_rcvd:1>N
+<freq:6>28.436
+<my_city:7>Hoboken
+<qrzcom_qso_upload_date:8>20260603
+<rst_rcvd:2>59
+<my_itu_zone:2>27
+<band_rx:3>10m
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<time_off:4>1346
+<qrzcom_qso_upload_status:1>Y
+<tx_pwr:2>25
+<email:17>aricomo@libero.it
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<call:5>IQ2DB
+<my_iota:4>none
+<band:3>10m
+<name:54>A.R.I. Italian Amateur Radio Society Section of Como -
+<qso_date:8>20260603
+<dxcc:3>248
+<rst_sent:2>58
+<country:5>Italy
+<eqsl_qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1460686678
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<cont:2>EU
+<my_lon:11>E004 20.880
+<eor>
+
+<cont:2>EU
+<my_lon:11>E004 20.880
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<app_qrzlog_logid:10>1460700363
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<eqsl_qsl_rcvd:1>N
+<country:7>Hungary
+<dxcc:3>239
+<rst_sent:2>59
+<qso_date:8>20260603
+<band:3>10m
+<name:17>ZOLTAN Bagyinszki
+<my_iota:4>none
+<call:5>HA4FF
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>15
+<email:13>ha4ff@gmx.com
+<tx_pwr:2>25
+<time_off:4>1419
+<qrzcom_qso_upload_status:1>Y
+<my_itu_zone:2>27
+<band_rx:3>10m
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<rst_rcvd:2>58
+<qrzcom_qso_upload_date:8>20260603
+<my_city:7>Hoboken
+<freq:6>28.468
+<lotw_qsl_rcvd:1>N
+<lotw_qslsdate:8>20260611
+<freq_rx:6>28.468
+<lon:11>E018 22.325
+<qsl_via:15>EQSL or BUREAU.
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260603
+<distance:4>1114
+<eqsl_qsl_sent:1>N
+<mode:3>SSB
+<lat:11>N047 06.589
+<app_qrzlog_status:1>N
+<time_on:4>1419
+<qth:13>Szabadbattyan
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<lotw_qsl_sent:1>Y
+<ituz:2>28
+<gridsquare:6>JN97ec
+<eor>
+
+<distance:3>707
+<eqsl_qsl_sent:1>N
+<mode:3>SSB
+<lat:11>N046 10.752
+<app_qrzlog_status:1>N
+<time_on:4>1713
+<qth:16>25048 EDOLO (BS)
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<lotw_qsl_sent:1>Y
+<ituz:2>28
+<gridsquare:6>JN56de
+<band_rx:3>40m
+<my_itu_zone:2>27
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260603
+<freq:5>7.135
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<lotw_qslsdate:8>20260611
+<freq_rx:5>7.135
+<lon:11>E010 19.458
+<qsl_via:24>OK VIA BUREAU, NO E-QSL.
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260603
+<qso_date:8>20260603
+<band:3>40m
+<name:16>SIMONE ALBERTANI
+<my_iota:4>none
+<call:6>IZ2BVC
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>14
+<email:18>iz2bvc@virgilio.it
+<tx_pwr:2>25
+<time_off:4>1713
+<qrzcom_qso_upload_status:1>Y
+<cont:2>EU
+<my_lon:11>E004 20.880
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<app_qrzlog_logid:10>1460746071
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<eqsl_qsl_rcvd:1>N
+<country:5>Italy
+<dxcc:3>248
+<rst_sent:2>59
+<eor>
+
+<my_lon:11>E004 20.880
+<cont:2>EU
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1460836210
+<country:8>Slovenia
+<eqsl_qsl_rcvd:1>N
+<rst_sent:2>57
+<dxcc:3>499
+<qso_date:8>20260603
+<my_iota:4>none
+<name:12>JANEZ CELARC
+<band:3>20m
+<call:5>S51DX
+<my_cq_zone:2>14
+<cqz:2>15
+<station_callsign:5>ON3VZ
+<tx_pwr:2>25
+<email:15>s51dx@yahoo.com
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>2144
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>20m
+<qrzcom_qso_upload_date:8>20260603
+<rst_rcvd:2>55
+<lotw_qsl_rcvd:1>N
+<freq:5>14.31
+<my_city:7>Hoboken
+<lon:11>E014 17.019
+<freq_rx:5>14.31
+<lotw_qslsdate:8>20260611
+<qrzcom_qso_download_status:1>Y
+<qsl_via:59>No eQSL, No LOTW, No QRZ. Direct (please cover the postage)
+<qso_date_off:8>20260603
+<eqsl_qsl_sent:1>N
+<distance:3>932
+<mode:3>SSB
+<lat:11>N045 57.460
+<app_qrzlog_status:1>N
+<time_on:4>2144
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:7>VRHNIKA
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<gridsquare:6>JN75dw
+<eor>
+
+<cqz:2>14
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1601
+<tx_pwr:2>25
+<band:3>40m
+<name:8>DARC AJW
+<my_iota:4>none
+<qso_date:8>20260605
+<call:7>DL50OHM
+<eqsl_qsl_rcvd:1>N
+<country:7>Germany
+<app_qrzlog_logid:10>1461469082
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<rst_sent:2>59
+<dxcc:3>230
+<app_qrzlog_qsldate:8>20260611
+<cont:2>EU
+<my_lon:11>E004 20.880
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<qth:8>Baunatal
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<time_on:4>1601
+<gridsquare:6>JO40ic
+<lotw_qsl_sent:1>Y
+<ituz:2>28
+<distance:3>330
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>C
+<lat:11>N050 06.250
+<mode:3>SSB
+<qsl_via:21>via bureau SDOK 50OHM
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260605
+<rst_rcvd:2>33
+<qrzcom_qso_upload_date:8>20260605
+<my_itu_zone:2>27
+<band_rx:3>40m
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<lotw_qslsdate:8>20260611
+<freq_rx:5>7.185
+<lon:11>E008 42.500
+<freq:5>7.185
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<eor>
+
+<time_off:4>1607
+<qrzcom_qso_upload_status:1>Y
+<email:16>eb1dj@hotmail.es
+<tx_pwr:2>25
+<cqz:2>14
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<call:5>EB1DJ
+<name:25>Alex Saez Llorente (JANO)
+<band:3>20m
+<my_iota:4>none
+<qso_date:8>20260605
+<rst_sent:2>59
+<dxcc:3>281
+<eqsl_qsl_rcvd:1>N
+<country:5>Spain
+<app_qrzlog_logid:10>1461470755
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<app_qrzlog_qsldate:8>20260611
+<my_lon:11>E004 20.880
+<cont:2>EU
+<gridsquare:6>IN52mo
+<ituz:2>37
+<lotw_qsl_sent:1>Y
+<qth:64>IN52MO - D.M.E: 15067 / Ria de Arosa Norte - Sierra del Barbanza
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<lotw_qslrdate:8>20260605
+<time_on:4>1607
+<lat:11>N042 35.460
+<app_qrzlog_status:1>C
+<mode:3>SSB
+<distance:4>1386
+<eqsl_qsl_sent:1>N
+<qso_date_off:8>20260605
+<qsl_via:19>LOTW, e-QSL, BUREAU
+<qrzcom_qso_download_status:1>Y
+<freq_rx:6>14.241
+<lotw_qslsdate:8>20260611
+<lon:11>W008 56.893
+<my_city:7>Hoboken
+<freq:6>14.241
+<lotw_qsl_rcvd:1>Y
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260605
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>20m
+<eor>
+
+<call:6>IZ0RDM
+<my_iota:4>none
+<name:14>williams falco
+<band:3>20m
+<qso_date:8>20260605
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1614
+<tx_pwr:2>25
+<email:16>iz0rdm@gmail.com
+<cqz:2>15
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<app_qrzlog_qsldate:8>20260615
+<my_lon:11>E004 20.880
+<cont:2>EU
+<dxcc:3>248
+<rst_sent:2>59
+<country:5>Italy
+<eqsl_qsl_rcvd:1>N
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<iota:6>EU-045
+<app_qrzlog_logid:10>1461472757
+<app_qrzlog_status:1>C
+<lat:11>N041 37.439
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<distance:4>1232
+<gridsquare:6>JN61go
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:9>ardea RM,
+<time_on:4>1614
+<lon:11>E012 31.758
+<freq_rx:6>14.265
+<lotw_qslsdate:8>20260611
+<lotw_qsl_rcvd:1>N
+<my_city:7>Hoboken
+<freq:6>14.265
+<qrzcom_qso_upload_date:8>20260605
+<rst_rcvd:2>59
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<band_rx:3>20m
+<my_itu_zone:2>27
+<qso_date_off:8>20260605
+<qrzcom_qso_download_status:1>Y
+<qsl_via:35>QSL: LOTW - EQSL - BUREAU OR DIRECT
+<eor>
+
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260609
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1461819027
+<country:5>Spain
+<eqsl_qsl_rcvd:1>N
+<rst_sent:2>59
+<dxcc:3>281
+<qso_date:8>20260606
+<my_iota:4>none
+<name:25>BERNARDO DOMINGUEZ BARROS
+<band:3>20m
+<call:7>AO114DD
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>14
+<tx_pwr:2>25
+<email:23>ecocharlie1dd@gmail.com
+<state:2>PO
+<time_off:4>1842
+<qrzcom_qso_upload_status:1>Y
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<band_rx:3>20m
+<my_itu_zone:2>27
+<qrzcom_qso_upload_date:8>20260606
+<rst_rcvd:2>59
+<lotw_qsl_rcvd:1>Y
+<freq:5>14.26
+<my_city:7>Hoboken
+<lon:11>W003 42.500
+<freq_rx:5>14.26
+<lotw_qslsdate:8>20260611
+<qrzcom_qso_download_status:1>Y
+<qsl_via:13>QSL VIA EC1DD
+<qso_date_off:8>20260606
+<eqsl_qsl_sent:1>N
+<distance:4>1350
+<mode:3>SSB
+<lat:11>N040 23.750
+<app_qrzlog_status:1>C
+<time_on:4>1842
+<lotw_qslrdate:8>20260607
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:8>GONDOMAR
+<ituz:2>37
+<lotw_qsl_sent:1>Y
+<gridsquare:6>IN80dj
+<eor>
+
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>20
+<tx_pwr:2>25
+<email:12>lz3ga@abv.bg
+<time_off:4>1941
+<qrzcom_qso_upload_status:1>Y
+<qso_date:8>20260606
+<my_iota:4>none
+<band:3>20m
+<name:27>Bulgarian Club Blagovestnik
+<call:7>LZ370TL
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1461834228
+<country:8>Bulgaria
+<eqsl_qsl_rcvd:1>N
+<rst_sent:2>59
+<dxcc:3>212
+<cont:2>EU
+<my_lon:11>E004 20.880
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<time_on:4>1941
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<qth:7>Karlovo
+<lotw_qsl_sent:1>Y
+<ituz:2>28
+<gridsquare:6>KN22dq
+<eqsl_qsl_sent:1>N
+<distance:4>1776
+<mode:3>SSB
+<lat:11>N042 41.250
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_via:24>VIA BUREAU or P.O.BOX 36
+<qso_date_off:8>20260606
+<band_rx:3>20m
+<my_itu_zone:2>27
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<qrzcom_qso_upload_date:8>20260606
+<rst_rcvd:2>58
+<lotw_qsl_rcvd:1>N
+<freq:7>14.2225
+<my_city:7>Hoboken
+<lon:11>E024 17.500
+<lotw_qslsdate:8>20260611
+<freq_rx:7>14.2225
+<eor>
+
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260611
+<qslsdate:8>20260611
+<my_gridsquare:6>JO21ee
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1462304580
+<country:5>Spain
+<eqsl_qsl_rcvd:1>N
+<rst_sent:2>59
+<dxcc:3>281
+<qso_date:8>20260607
+<my_iota:4>none
+<name:25>Alex Saez Llorente (JANO)
+<band:3>20m
+<call:5>EB1DJ
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>14
+<tx_pwr:2>25
+<email:16>eb1dj@hotmail.es
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1815
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<my_itu_zone:2>27
+<band_rx:3>20m
+<qrzcom_qso_upload_date:8>20260607
+<rst_rcvd:2>59
+<lotw_qsl_rcvd:1>Y
+<freq:6>14.242
+<my_city:7>Hoboken
+<lon:11>W008 56.893
+<freq_rx:6>14.242
+<lotw_qslsdate:8>20260611
+<qrzcom_qso_download_status:1>Y
+<qsl_via:19>LOTW, e-QSL, BUREAU
+<qso_date_off:8>20260607
+<eqsl_qsl_sent:1>N
+<distance:4>1386
+<mode:3>SSB
+<lat:11>N042 35.460
+<app_qrzlog_status:1>C
+<time_on:4>1815
+<lotw_qslrdate:8>20260607
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:64>IN52MO - D.M.E: 15067 / Ria de Arosa Norte - Sierra del Barbanza
+<ituz:2>37
+<lotw_qsl_sent:1>Y
+<gridsquare:6>IN52mo
+<eor>
+
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>20m
+<qrzcom_qso_upload_date:8>20260607
+<rst_rcvd:2>59
+<lotw_qsl_rcvd:1>N
+<freq:6>14.288
+<my_city:7>Hoboken
+<lon:11>E014 03.070
+<freq_rx:6>14.288
+<lotw_qslsdate:8>20260611
+<qrzcom_qso_download_status:1>Y
+<qsl_via:9>ONLY EQSL
+<qso_date_off:8>20260607
+<eqsl_qsl_sent:1>N
+<distance:4>1703
+<mode:3>SSB
+<lat:11>N037 29.178
+<app_qrzlog_status:1>N
+<time_on:4>1821
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<qth:13>Caltanissetta
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<gridsquare:6>JM77al
+<my_lon:11>E004 20.880
+<cont:2>EU
+<my_gridsquare:6>JO21ee
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<iota:6>EU-025
+<app_qrzlog_logid:10>1462305467
+<country:5>Italy
+<eqsl_qsl_rcvd:1>N
+<rst_sent:2>59
+<dxcc:3>248
+<qso_date:8>20260607
+<my_iota:4>none
+<name:34>Club Station Sez Ari Caltanissetta
+<band:3>20m
+<call:5>IQ9NI
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>15
+<tx_pwr:2>25
+<email:26>aricaltanissetta@libero.it
+<time_off:4>1821
+<qrzcom_qso_upload_status:1>Y
+<eor>
+
+<time_on:4>1824
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<qth:4>Roma
+<lotw_qsl_sent:1>Y
+<ituz:2>28
+<gridsquare:8>JN61iv12
+<eqsl_qsl_sent:1>N
+<distance:4>1212
+<mode:3>SSB
+<lat:11>N041 53.125
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_via:53>Mr. Bellone Massimo,via ollolai 113.00132,Rome ,italy
+<qso_date_off:8>20260607
+<band_rx:3>20m
+<my_itu_zone:2>27
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<qrzcom_qso_upload_date:8>20260607
+<rst_rcvd:2>59
+<lotw_qsl_rcvd:1>N
+<freq:6>14.254
+<my_city:7>Hoboken
+<lon:11>E012 40.750
+<lotw_qslsdate:8>20260611
+<freq_rx:6>14.254
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>15
+<tx_pwr:2>25
+<email:16>iu0pxq@gmail.com
+<time_off:4>1824
+<qrzcom_qso_upload_status:1>Y
+<qso_date:8>20260607
+<my_iota:4>none
+<band:3>20m
+<name:15>Massimo Bellone
+<call:6>IU0PXQ
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1462306497
+<country:5>Italy
+<eqsl_qsl_rcvd:1>N
+<rst_sent:2>59
+<dxcc:3>248
+<cont:2>EU
+<my_lon:11>E004 20.880
+<app_qrzlog_qsldate:8>20260615
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<eor>
+
+<eqsl_qsl_rcvd:1>N
+<country:7>Croatia
+<app_qrzlog_logid:10>1462311399
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<dxcc:3>497
+<rst_sent:2>59
+<my_lon:11>E004 20.880
+<cont:2>EU
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1838
+<email:19>dx_9a4x@hotmail.com
+<tx_pwr:2>25
+<name:12>SLAVEN GALIC
+<band:3>15m
+<my_iota:4>none
+<qso_date:8>20260607
+<call:4>9A4X
+<qsl_via:6>Bureau
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260607
+<rst_rcvd:2>58
+<qrzcom_qso_upload_date:8>20260607
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>15m
+<freq_rx:6>21.237
+<lotw_qslsdate:8>20260611
+<lon:11>E016 22.500
+<my_city:7>Hoboken
+<freq:6>21.237
+<lotw_qsl_rcvd:1>N
+<qth:29>SUMPETAR 21314 KRILO-JESENICE
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<time_on:4>1838
+<gridsquare:6>JN85et
+<lotw_qsl_sent:1>Y
+<distance:4>1066
+<eqsl_qsl_sent:1>N
+<lat:11>N045 48.750
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<eor>
+
+<lat:11>N059 56.808
+<app_qrzlog_status:1>C
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<distance:4>1885
+<gridsquare:6>KO59ew
+<ituz:2>29
+<lotw_qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:14>St. Petersburg
+<time_on:4>1928
+<lotw_qslrdate:8>20260607
+<lon:11>E030 20.612
+<freq_rx:6>14.284
+<lotw_qslsdate:8>20260611
+<lotw_qsl_rcvd:1>Y
+<freq:6>14.284
+<my_city:7>Hoboken
+<qrzcom_qso_upload_date:8>20260607
+<rst_rcvd:2>59
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>20m
+<qso_date_off:8>20260607
+<qrzcom_qso_download_status:1>Y
+<qsl_via:6>RA1ANY
+<call:4>RW1F
+<my_iota:4>none
+<name:34>NEW CALL - RW1F, Sergey Chebotarev
+<band:3>20m
+<qso_date:8>20260607
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1928
+<tx_pwr:2>25
+<email:20>ra1any.spb@gmail.com
+<station_callsign:5>ON3VZ
+<cqz:2>16
+<my_cq_zone:2>14
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<app_qrzlog_qsldate:8>20260611
+<my_lon:11>E004 20.880
+<cont:2>EU
+<dxcc:2>54
+<rst_sent:2>59
+<country:6>Russia
+<eqsl_qsl_rcvd:1>N
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1462337051
+<eor>
+
+<qso_date_off:8>20260607
+<qrzcom_qso_download_status:1>Y
+<lotw_qsl_rcvd:1>N
+<freq:5>7.175
+<my_city:7>Hoboken
+<lon:11>W000 59.400
+<freq_rx:5>7.175
+<lotw_qslsdate:8>20260611
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<band_rx:3>40m
+<my_itu_zone:2>27
+<qrzcom_qso_upload_date:8>20260607
+<rst_rcvd:2>59
+<ituz:2>27
+<lotw_qsl_sent:1>Y
+<gridsquare:6>IO94MB
+<time_on:4>2240
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:12>Flaxton Moor
+<mode:3>SSB
+<lat:11>N054 03.243
+<app_qrzlog_status:1>C
+<eqsl_qsl_sent:1>N
+<distance:3>482
+<rst_sent:2>59
+<dxcc:3>223
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1462411392
+<country:7>England
+<eqsl_qsl_rcvd:1>N
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260611
+<tx_pwr:2>25
+<email:14>chris@g5kc.com
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>2240
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>14
+<call:4>G5KC
+<qso_date:8>20260607
+<my_iota:4>none
+<name:13>Chris Quarton
+<band:3>40m
+<eor>
+
+<distance:4>1386
+<eqsl_qsl_sent:1>N
+<lat:11>N042 35.460
+<app_qrzlog_status:1>C
+<mode:3>SSB
+<qth:64>IN52MO - D.M.E: 15067 / Ria de Arosa Norte - Sierra del Barbanza
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<lotw_qslrdate:8>20260608
+<time_on:4>1637
+<gridsquare:6>IN52mo
+<ituz:2>37
+<lotw_qsl_sent:1>Y
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260608
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<my_itu_zone:2>27
+<band_rx:3>20m
+<freq_rx:6>14.217
+<lotw_qslsdate:8>20260611
+<lon:11>W008 56.893
+<freq:6>14.217
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>Y
+<qsl_via:19>LOTW, e-QSL, BUREAU
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260608
+<name:25>Alex Saez Llorente (JANO)
+<band:3>20m
+<my_iota:4>none
+<qso_date:8>20260608
+<call:5>EB1DJ
+<cqz:2>14
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1637
+<email:16>eb1dj@hotmail.es
+<tx_pwr:2>25
+<app_qrzlog_qsldate:8>20260611
+<my_lon:11>E004 20.880
+<cont:2>EU
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260611
+<eqsl_qsl_rcvd:1>N
+<country:5>Spain
+<app_qrzlog_logid:10>1462742286
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<dxcc:3>281
+<rst_sent:2>59
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>0651
+<email:15>lz1gu@yahoo.com
+<tx_pwr:2>25
+<station_callsign:5>ON3VZ
+<cqz:2>20
+<my_cq_zone:2>14
+<call:5>LZ1GU
+<name:17>HAYRABED ASHIKYAN
+<band:3>20m
+<my_iota:4>none
+<qso_date:8>20260609
+<rst_sent:2>59
+<dxcc:3>212
+<eqsl_qsl_rcvd:1>N
+<country:8>Bulgaria
+<app_qrzlog_logid:10>1462948457
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<my_lon:11>E004 20.880
+<cont:2>EU
+<gridsquare:6>KN12qo
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<qth:10>1000 SOFIA
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<time_on:4>0651
+<lat:11>N042 35.999
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<distance:4>1725
+<eqsl_qsl_sent:1>N
+<qso_date_off:8>20260609
+<qsl_via:36>BUREAU OR DIRECT and QRZ.com Logbook
+<qrzcom_qso_download_status:1>Y
+<freq_rx:6>14.207
+<lotw_qslsdate:8>20260611
+<lon:11>E023 23.722
+<my_city:7>Hoboken
+<freq:6>14.207
+<lotw_qsl_rcvd:1>N
+<rst_rcvd:2>57
+<qrzcom_qso_upload_date:8>20260609
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<band_rx:3>20m
+<my_itu_zone:2>27
+<eor>
+
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<cont:2>EU
+<my_lon:11>E004 20.880
+<dxcc:3>272
+<rst_sent:2>55
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1463020606
+<country:8>Portugal
+<eqsl_qsl_rcvd:1>N
+<call:8>CT7/F2VX
+<qso_date:8>20260609
+<my_iota:4>none
+<band:3>10m
+<tx_pwr:2>25
+<time_off:4>1049
+<qrzcom_qso_upload_status:1>Y
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>14
+<lotw_qsl_rcvd:1>N
+<my_city:7>Hoboken
+<freq:5>28.45
+<lon:11>W000 00.000
+<lotw_qslsdate:8>20260611
+<freq_rx:5>28.45
+<band_rx:3>10m
+<my_itu_zone:2>27
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<qrzcom_qso_upload_date:8>20260609
+<rst_rcvd:2>56
+<qso_date_off:8>20260609
+<qrzcom_qso_download_status:1>Y
+<qsl_via:20>VIA BUREAU OR DIRECT
+<mode:3>SSB
+<lat:11>S000 00.000
+<app_qrzlog_status:1>N
+<eqsl_qsl_sent:1>N
+<lotw_qsl_sent:1>Y
+<ituz:2>37
+<time_on:4>1049
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1103
+<email:15>mendilor@tin.it
+<tx_pwr:2>25
+<station_callsign:5>ON3VZ
+<cqz:2>15
+<my_cq_zone:2>14
+<call:6>IZ2FOS
+<band:3>20m
+<name:15>Lorenzo Mendini
+<my_iota:4>none
+<qso_date:8>20260609
+<dxcc:3>248
+<rst_sent:2>55
+<eqsl_qsl_rcvd:1>N
+<country:5>Italy
+<app_qrzlog_logid:10>1463022723
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<cont:2>EU
+<my_lon:11>E004 20.880
+<gridsquare:6>JN55fk
+<lotw_qsl_sent:1>Y
+<ituz:2>28
+<qth:19>Calcinato (Brescia)
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<time_on:4>1103
+<lat:11>N045 26.250
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<distance:3>781
+<eqsl_qsl_sent:1>N
+<qso_date_off:8>20260609
+<qsl_via:15>Bureau - DIRECT
+<qrzcom_qso_download_status:1>Y
+<lotw_qslsdate:8>20260611
+<freq_rx:6>14.247
+<lon:11>E010 27.500
+<freq:6>14.247
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<rst_rcvd:2>56
+<qrzcom_qso_upload_date:8>20260609
+<my_itu_zone:2>27
+<band_rx:3>20m
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<eor>
+
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260611
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<app_qrzlog_logid:10>1463102028
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<eqsl_qsl_rcvd:1>N
+<country:7>England
+<rst_sent:2>54
+<dxcc:3>223
+<qso_date:8>20260609
+<name:11>JAMES DANDO
+<band:3>10m
+<my_iota:4>none
+<call:5>G0IDX
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<email:22>Jamesdando50@gmail.com
+<tx_pwr:2>25
+<time_off:4>1608
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<band_rx:3>10m
+<my_itu_zone:2>27
+<rst_rcvd:2>53
+<qrzcom_qso_upload_date:8>20260609
+<freq:6>28.427
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>28.427
+<lotw_qslsdate:8>20260611
+<lon:11>W002 42.273
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260609
+<distance:3>491
+<eqsl_qsl_sent:1>N
+<mode:3>SSB
+<lat:11>N051 14.254
+<app_qrzlog_status:1>C
+<time_on:4>1608
+<qth:8>Somerset
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<lotw_qsl_sent:1>Y
+<gridsquare:6>IO81pf
+<eor>
+
+<distance:4>1609
+<eqsl_qsl_sent:1>N
+<mode:3>SSB
+<app_qrzlog_status:1>N
+<lat:11>N039 21.152
+<time_on:4>1618
+<qth:21>CASTIGLIONE COSENTINO
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<gridsquare:6>JM89di
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<band_rx:3>20m
+<my_itu_zone:2>27
+<rst_rcvd:2>58
+<qrzcom_qso_upload_date:8>20260609
+<my_city:7>Hoboken
+<freq:6>14.257
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>14.257
+<lotw_qslsdate:8>20260612
+<lon:11>E016 17.441
+<qsl_via:7>DIRETTA
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260609
+<qso_date:8>20260609
+<name:12>LENTI ETTORE
+<band:3>20m
+<my_iota:4>none
+<call:6>IU8QGR
+<my_cq_zone:2>14
+<cqz:2>15
+<station_callsign:5>ON3VZ
+<email:22>lentiettore@hotmail.it
+<tx_pwr:2>25
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1618
+<my_lon:11>E004 20.880
+<cont:2>EU
+<qslsdate:8>20260610
+<my_gridsquare:6>JO21ee
+<app_qrzlog_logid:10>1463105070
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<eqsl_qsl_rcvd:1>N
+<country:5>Italy
+<rst_sent:2>59
+<dxcc:3>248
+<eor>
+
+<qth:7>COIMBRA
+<qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<time_on:4>1635
+<gridsquare:6>IN50se
+<lotw_qsl_sent:1>Y
+<ituz:2>37
+<distance:4>1571
+<eqsl_qsl_sent:1>N
+<lat:11>N040 11.250
+<app_qrzlog_status:1>C
+<mode:3>SSB
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260610
+<rst_rcvd:2>58
+<qrzcom_qso_upload_date:8>20260610
+<band_rx:3>10m
+<my_itu_zone:2>27
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<lotw_qslsdate:8>20260611
+<freq_rx:6>28.435
+<lon:11>W008 27.480
+<freq:6>28.435
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<cqz:2>14
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<time_off:4>1635
+<qrzcom_qso_upload_status:1>Y
+<email:22>cs5arc.geral@gmail.com
+<tx_pwr:2>25
+<band:3>10m
+<name:46>ARC - Associação de radioamadores de Coimbra
+<my_iota:4>none
+<qso_date:8>20260610
+<call:6>CS2OGA
+<eqsl_qsl_rcvd:1>N
+<country:8>NON-DXCC
+<app_qrzlog_logid:10>1463616645
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<rst_sent:2>57
+<app_qrzlog_qsldate:8>20260614
+<my_lon:11>E004 20.880
+<my_gridsquare:6>JO21ee
+<qslsdate:8>20260610
+<eor>
+
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>2101
+<tx_pwr:2>25
+<name:32>80 YEARS OF THE ITALIAN REPUBLIC
+<band:3>10m
+<my_iota:4>none
+<qso_date:8>20260610
+<call:7>IR0RCAG
+<eqsl_qsl_rcvd:1>N
+<country:8>Sardinia
+<app_qrzlog_logid:10>1463700879
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<iota:6>EU-024
+<dxcc:3>225
+<rst_sent:2>57
+<my_lon:11>E004 20.880
+<cont:2>EU
+<my_gridsquare:6>JO21ee
+<qth:22>SARDINIA ISLAND EU-024
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<time_on:4>2101
+<gridsquare:6>JM49ne
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<distance:4>1384
+<eqsl_qsl_sent:1>N
+<lat:11>N039 11.200
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<qsl_via:12>Via HAMAWARD
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260610
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260610
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<band_rx:3>10m
+<my_itu_zone:2>27
+<freq_rx:6>28.455
+<lotw_qslsdate:8>20260610
+<lon:11>E009 07.400
+<freq:6>28.455
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<eor>
+
+<my_cq_zone:2>14
+<cqz:2>15
+<station_callsign:5>ON3VZ
+<tx_pwr:2>25
+<email:13>oe3kdc@gmx.at
+<time_off:4>1515
+<qrzcom_qso_upload_status:1>Y
+<qso_date:8>20260611
+<my_iota:4>none
+<name:14>Bernhard Kraft
+<band:3>15m
+<call:6>OE3KDC
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1463999475
+<country:7>Austria
+<eqsl_qsl_rcvd:1>N
+<rst_sent:2>55
+<dxcc:3>206
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260611
+<qslsdate:8>20260611
+<my_gridsquare:6>JO21ee
+<time_on:4>1515
+<lotw_qslrdate:8>20260611
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qth:16>Göstling / Ybbs
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<gridsquare:8>JN77LT13
+<eqsl_qsl_sent:1>N
+<distance:3>850
+<mode:3>SSB
+<lat:11>N047 48.402
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_via:8>Per Mail
+<qso_date_off:8>20260611
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>15m
+<qrzcom_qso_upload_date:8>20260611
+<rst_rcvd:2>44
+<lotw_qsl_rcvd:1>Y
+<freq:6>21.305
+<my_city:7>Hoboken
+<lon:11>E014 55.990
+<freq_rx:6>21.305
+<lotw_qslsdate:8>20260611
+<eor>
+
+<ituz:2>37
+<lotw_qsl_sent:1>Y
+<gridsquare:6>IN52mo
+<lotw_qslrdate:8>20260612
+<time_on:4>1131
+<qth:64>IN52MO - D.M.E: 15067 / Ria de Arosa Norte - Sierra del Barbanza
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<mode:3>SSB
+<lat:11>N042 35.460
+<app_qrzlog_status:1>C
+<distance:4>1386
+<eqsl_qsl_sent:1>N
+<qso_date_off:8>20260612
+<qsl_via:19>LOTW, e-QSL, BUREAU
+<qrzcom_qso_download_status:1>Y
+<freq:6>14.218
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>Y
+<freq_rx:6>14.218
+<lotw_qslsdate:8>20260612
+<lon:11>W008 56.893
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>20m
+<rst_rcvd:2>57
+<qrzcom_qso_upload_date:8>20260612
+<email:16>eb1dj@hotmail.es
+<tx_pwr:2>25
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1131
+<my_cq_zone:2>14
+<cqz:2>14
+<station_callsign:5>ON3VZ
+<call:5>EB1DJ
+<qso_date:8>20260612
+<name:25>Alex Saez Llorente (JANO)
+<band:3>20m
+<my_iota:4>none
+<rst_sent:2>59
+<dxcc:3>281
+<app_qrzlog_logid:10>1464245803
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<eqsl_qsl_rcvd:1>N
+<country:5>Spain
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260612
+<eor>
+
+<call:5>S51DX
+<my_iota:4>none
+<name:12>JANEZ CELARC
+<band:3>20m
+<qso_date:8>20260612
+<time_off:4>2206
+<qrzcom_qso_upload_status:1>Y
+<tx_pwr:2>25
+<email:15>s51dx@yahoo.com
+<cqz:2>15
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>EU
+<rst_sent:2>59
+<dxcc:3>499
+<country:8>Slovenia
+<eqsl_qsl_rcvd:1>N
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1464458327
+<lat:11>N045 57.460
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<distance:3>932
+<gridsquare:6>JN75dw
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<qth:7>VRHNIKA
+<time_on:4>2206
+<lon:11>E014 17.019
+<freq_rx:6>14.315
+<lotw_qslsdate:8>20260612
+<lotw_qsl_rcvd:1>N
+<freq:6>14.315
+<my_city:7>Hoboken
+<qrzcom_qso_upload_date:8>20260612
+<rst_rcvd:2>57
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<my_itu_zone:2>27
+<band_rx:3>20m
+<qso_date_off:8>20260612
+<qrzcom_qso_download_status:1>Y
+<qsl_via:59>No eQSL, No LOTW, No QRZ. Direct (please cover the postage)
+<eor>
+
+<freq:5>14.25
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>14.25
+<lotw_qslsdate:8>20260612
+<lon:11>E015 56.153
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<my_itu_zone:2>27
+<band_rx:3>20m
+<rst_rcvd:2>58
+<qrzcom_qso_upload_date:8>20260612
+<qso_date_off:8>20260612
+<qsl_via:30>VIA BUREAU SSA ON SKYPE SM5YMS
+<qrzcom_qso_download_status:1>Y
+<mode:3>SSB
+<lat:11>N058 19.735
+<app_qrzlog_status:1>C
+<distance:4>1086
+<eqsl_qsl_sent:1>N
+<ituz:2>18
+<lotw_qsl_sent:1>Y
+<gridsquare:6>JO78xh
+<time_on:4>2239
+<qth:17>58595 Link�ping
+<my_lat:11>N051 10.560
+<qsl_sent:1>Y
+<qslsdate:8>20260612
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>EU
+<app_qrzlog_qsldate:8>20260612
+<dxcc:3>284
+<rst_sent:2>57
+<app_qrzlog_logid:10>1464463302
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<eqsl_qsl_rcvd:1>N
+<country:6>Sweden
+<call:6>SM5YMS
+<qso_date:8>20260612
+<name:15>Mikael Lindberg
+<band:3>20m
+<my_iota:4>none
+<email:17>sm5yms@hotmail.se
+<tx_pwr:2>25
+<time_off:4>2239
+<qrzcom_qso_upload_status:1>Y
+<my_cq_zone:2>14
+<cqz:2>14
+<station_callsign:5>ON3VZ
+<eor>
+
+<qsl_via:6>ON4AUB
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260613
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260613
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<my_itu_zone:2>27
+<band_rx:2>2m
+<freq_rx:7>144.675
+<lotw_qslsdate:8>20260613
+<lon:11>E003 57.449
+<freq:7>144.675
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<qth:12>LOKEREN 9160
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<time_on:4>0947
+<gridsquare:6>JO11XC
+<ituz:2>27
+<lotw_qsl_sent:1>Y
+<distance:2>29
+<eqsl_qsl_sent:1>N
+<lat:11>N051 05.319
+<app_qrzlog_status:1>N
+<mode:2>FM
+<eqsl_qsl_rcvd:1>N
+<country:7>Belgium
+<app_qrzlog_logid:10>1464590761
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<rst_sent:2>59
+<dxcc:3>209
+<my_lon:11>E004 20.880
+<cont:2>EU
+<my_gridsquare:6>JO21ee
+<station_callsign:5>ON3VZ
+<cqz:2>14
+<my_cq_zone:2>14
+<time_off:4>0947
+<qrzcom_qso_upload_status:1>Y
+<email:16>on4aub@skynet.be
+<tx_pwr:2>50
+<name:23>FRANCOIS VAN DEN BROECK
+<band:2>2m
+<my_iota:4>none
+<qso_date:8>20260613
+<call:6>ON4AUB
+<eor>
+
+<eqsl_qsl_rcvd:1>N
+<country:5>Italy
+<app_qrzlog_logid:10>1464592346
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<dxcc:3>248
+<rst_sent:2>54
+<my_lon:11>E004 20.880
+<cont:2>EU
+<my_gridsquare:6>JO21ee
+<station_callsign:5>ON3VZ
+<cqz:2>15
+<my_cq_zone:2>14
+<time_off:4>1001
+<qrzcom_qso_upload_status:1>Y
+<tx_pwr:2>25
+<band:3>15m
+<my_iota:4>none
+<qso_date:8>20260613
+<call:6>IUOPXQ
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260613
+<rst_rcvd:2>57
+<qrzcom_qso_upload_date:8>20260613
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<band_rx:3>15m
+<my_itu_zone:2>27
+<freq_rx:5>21.27
+<lotw_qslsdate:8>20260613
+<lon:11>W000 00.000
+<my_city:7>Hoboken
+<freq:5>21.27
+<lotw_qsl_rcvd:1>N
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<time_on:4>1001
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<eqsl_qsl_sent:1>N
+<lat:11>S000 00.000
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<eor>
+
+<qsl_via:36>OQRS only via M0OXO - see link below
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260613
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260613
+<my_itu_zone:2>27
+<band_rx:3>20m
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<lotw_qslsdate:8>20260613
+<freq_rx:6>14.223
+<lon:11>W003 22.500
+<freq:6>14.223
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<qth:7>Various
+<qsl_sent:1>N
+<my_lat:11>N051 10.560
+<time_on:4>1009
+<gridsquare:6>IO85hr
+<lotw_qsl_sent:1>Y
+<distance:3>719
+<eqsl_qsl_sent:1>N
+<lat:11>N055 43.750
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<eqsl_qsl_rcvd:1>N
+<country:8>Scotland
+<app_qrzlog_logid:10>1464593667
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<dxcc:3>279
+<rst_sent:2>59
+<cont:2>EU
+<my_lon:11>E004 20.880
+<my_gridsquare:6>JO21ee
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<time_off:4>1009
+<qrzcom_qso_upload_status:1>Y
+<email:22>ContestClub@rsgbcc.org
+<tx_pwr:2>25
+<band:3>20m
+<name:30>Radio Society of Great Britain
+<my_iota:4>none
+<qso_date:8>20260613
+<call:5>GM6XX
+<eor>
+
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260613
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<band_rx:3>20m
+<my_itu_zone:2>27
+<freq_rx:6>14.218
+<lotw_qslsdate:8>20260613
+<lon:11>E024 17.500
+<freq:6>14.218
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<qsl_via:24>VIA BUREAU or P.O.BOX 36
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260613
+<distance:4>1776
+<eqsl_qsl_sent:1>N
+<lat:11>N042 41.250
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<qth:7>Karlovo
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<time_on:4>2123
+<gridsquare:6>KN22dq
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<my_lon:11>E004 20.880
+<cont:2>EU
+<my_gridsquare:6>JO21ee
+<eqsl_qsl_rcvd:1>N
+<country:8>Bulgaria
+<app_qrzlog_logid:10>1464761895
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<rst_sent:2>58
+<dxcc:3>212
+<name:27>Bulgarian Club Blagovestnik
+<band:3>20m
+<my_iota:4>none
+<qso_date:8>20260613
+<call:7>LZ370TL
+<station_callsign:5>ON3VZ
+<cqz:2>20
+<my_cq_zone:2>14
+<time_off:4>2123
+<qrzcom_qso_upload_status:1>Y
+<email:12>lz3ga@abv.bg
+<tx_pwr:2>25
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1906
+<tx_pwr:2>25
+<station_callsign:5>ON3VZ
+<cqz:2>14
+<my_cq_zone:2>14
+<call:10>CT7/UR9IDX
+<band:3>15m
+<my_iota:4>none
+<qso_date:8>20260614
+<rst_sent:2>59
+<dxcc:3>272
+<eqsl_qsl_rcvd:1>N
+<country:8>Portugal
+<app_qrzlog_logid:10>1465140811
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<my_gridsquare:6>JO21ee
+<cont:2>EU
+<my_lon:11>E004 20.880
+<lotw_qsl_sent:1>Y
+<ituz:2>37
+<qsl_sent:1>N
+<my_lat:11>N051 10.560
+<time_on:4>1906
+<lat:11>S000 00.000
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<qso_date_off:8>20260614
+<qrzcom_qso_download_status:1>Y
+<lotw_qslsdate:8>20260615
+<freq_rx:5>21.25
+<lon:11>W000 00.000
+<my_city:7>Hoboken
+<freq:5>21.25
+<lotw_qsl_rcvd:1>N
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260614
+<my_itu_zone:2>27
+<band_rx:3>15m
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<eor>
+
+<dxcc:2>54
+<rst_sent:2>59
+<qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<app_qrzlog_logid:10>1465141923
+<country:6>Russia
+<eqsl_qsl_rcvd:1>N
+<my_gridsquare:6>JO21ee
+<cont:2>EU
+<my_lon:11>E004 20.880
+<tx_pwr:2>25
+<email:14>ua6hrr@mail.ru
+<time_off:4>1909
+<qrzcom_qso_upload_status:1>Y
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<call:6>UA6HRR
+<qso_date:8>20260614
+<my_iota:4>none
+<band:3>20m
+<name:22>Sergey V. Konstantinov
+<qso_date_off:8>20260614
+<qrzcom_qso_download_status:1>Y
+<lotw_qsl_rcvd:1>N
+<freq:6>14.188
+<my_city:7>Hoboken
+<lon:11>E043 02.400
+<lotw_qslsdate:8>20260615
+<freq_rx:6>14.188
+<band_rx:3>20m
+<my_itu_zone:2>27
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<qrzcom_qso_upload_date:8>20260614
+<rst_rcvd:2>56
+<lotw_qsl_sent:1>Y
+<gridsquare:6>LN15me
+<time_on:4>1909
+<qsl_sent:1>N
+<my_lat:11>N051 10.560
+<qth:35>s. Rogataya Balka, Stavropolsky kr.
+<mode:3>SSB
+<app_qrzlog_status:1>N
+<lat:11>N045 11.200
+<eqsl_qsl_sent:1>N
+<distance:4>2909
+<eor>
+
+<mode:3>SSB
+<lat:11>N042 29.335
+<app_qrzlog_status:1>N
+<distance:4>1220
+<eqsl_qsl_sent:1>N
+<ituz:2>28
+<lotw_qsl_sent:1>Y
+<gridsquare:6>JN72cl
+<time_on:4>0534
+<qth:7>PESCARA
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<freq:5>14.27
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>14.27
+<lotw_qslsdate:8>20260615
+<lon:11>E014 10.987
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<band_rx:3>20m
+<my_itu_zone:2>27
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260615
+<qso_date_off:8>20260615
+<qsl_via:6>Bureau
+<qrzcom_qso_download_status:1>Y
+<call:5>IQ6PE
+<qso_date:8>20260615
+<name:27>A. R. I. Sezione di Pescara
+<band:3>20m
+<my_iota:4>none
+<email:25>aripescara@aripescara.org
+<tx_pwr:2>25
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>0534
+<my_cq_zone:2>14
+<cqz:2>15
+<station_callsign:5>ON3VZ
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>EU
+<rst_sent:2>59
+<dxcc:3>248
+<app_qrzlog_logid:10>1465320515
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<eqsl_qsl_rcvd:1>N
+<country:5>Italy
+<eor>
+
+<time_off:4>1506
+<qrzcom_qso_upload_status:1>Y
+<email:16>iu0pxq@gmail.com
+<tx_pwr:2>25
+<station_callsign:5>ON3VZ
+<cqz:2>15
+<my_cq_zone:2>14
+<call:6>IU0PXQ
+<band:3>15m
+<name:15>Massimo Bellone
+<my_iota:4>none
+<qso_date:8>20260614
+<dxcc:3>248
+<rst_sent:2>58
+<eqsl_qsl_rcvd:1>N
+<country:5>Italy
+<app_qrzlog_logid:10>1465342232
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<my_gridsquare:6>JO21ee
+<app_qrzlog_qsldate:8>20260615
+<cont:2>EU
+<my_lon:11>E004 20.880
+<gridsquare:8>JN61iv12
+<lotw_qsl_sent:1>Y
+<ituz:2>28
+<qth:4>Roma
+<qsl_sent:1>N
+<my_lat:11>N051 10.560
+<time_on:4>1506
+<lat:11>N041 53.125
+<app_qrzlog_status:1>C
+<mode:3>SSB
+<distance:4>1212
+<eqsl_qsl_sent:1>N
+<qso_date_off:8>20260614
+<qsl_via:53>Mr. Bellone Massimo,via ollolai 113.00132,Rome ,italy
+<qrzcom_qso_download_status:1>Y
+<lotw_qslsdate:8>20260615
+<freq_rx:6>21.282
+<lon:11>E012 40.750
+<freq:6>21.282
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<rst_rcvd:2>59
+<qrzcom_qso_upload_date:8>20260615
+<my_itu_zone:2>27
+<band_rx:3>15m
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<eor>
+
+<gridsquare:6>JN53fj
+<lotw_qsl_sent:1>Y
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<comment:42>Band lot of fluctuations . QSO interrupted
+<qth:33>ROSIGNANO MARITTIMO LIVORNO 57016
+<time_on:4>1639
+<lat:11>N043 24.041
+<app_qrzlog_status:1>N
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<distance:3>979
+<qso_date_off:8>20260615
+<qrzcom_qso_download_status:1>Y
+<qsl_via:20>VIA BUREAU OR DIRECT
+<lon:11>E010 27.292
+<freq_rx:6>28.459
+<lotw_qslsdate:8>20260615
+<lotw_qsl_rcvd:1>N
+<freq:6>28.459
+<my_city:7>Hoboken
+<qrzcom_qso_upload_date:8>20260615
+<rst_rcvd:2>55
+<qrzcom_qso_download_date:8>20260616
+<my_country:7>Belgium
+<band_rx:3>10m
+<my_itu_zone:2>27
+<time_off:4>1639
+<qrzcom_qso_upload_status:1>Y
+<tx_pwr:2>25
+<email:13>iz5drl@tin.it
+<station_callsign:5>ON3VZ
+<my_cq_zone:2>14
+<call:6>IZ5DRL
+<my_iota:4>none
+<name:18>MAURIZIO GASPERINI
+<band:3>10m
+<qso_date:8>20260615
+<dxcc:3>248
+<rst_sent:2>59
+<country:5>Italy
+<eqsl_qsl_rcvd:1>N
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1465499262
+<my_gridsquare:6>JO21ee
+<my_lon:11>E004 20.880
+<cont:2>EU
+<eor>
+
+<my_cq_zone:2>14
+<station_callsign:5>ON3VZ
+<cqz:2>20
+<tx_pwr:2>25
+<email:13>g4ijd@sky.com
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1240
+<qso_date:8>20260616
+<my_iota:4>none
+<name:11>JOHN SEDDON
+<band:3>15m
+<call:9>TA4/G4IJD
+<my_name:16>Kristof Cornelis
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1465902209
+<country:6>Turkey
+<eqsl_qsl_rcvd:1>N
+<rst_sent:2>55
+<dxcc:3>390
+<my_lon:11>E004 20.880
+<cont:2>AS
+<my_gridsquare:6>JO21ee
+<time_on:4>1240
+<my_lat:11>N051 10.560
+<qsl_sent:1>N
+<qth:8>Oludeniz
+<ituz:2>39
+<lotw_qsl_sent:1>Y
+<gridsquare:6>KM46nn
+<eqsl_qsl_sent:1>N
+<distance:4>2545
+<mode:3>SSB
+<app_qrzlog_status:1>N
+<lat:11>N036 34.105
+<qrzcom_qso_download_status:1>Y
+<qso_date_off:8>20260616
+<my_country:7>Belgium
+<qrzcom_qso_download_date:8>20260616
+<my_itu_zone:2>27
+<band_rx:3>15m
+<qrzcom_qso_upload_date:8>20260616
+<rst_rcvd:2>57
+<lotw_qsl_rcvd:1>N
+<freq:5>21.27
+<my_city:7>Hoboken
+<lon:11>E029 08.657
+<freq_rx:5>21.27
+<lotw_qslsdate:8>20260616
+<eor>
+
