@@ -704,7 +704,31 @@ function setupMapZoom(W, H) {
   if (btnOut)   btnOut.addEventListener('click', () => zoomBy(1 / 1.6));
   if (btnReset) btnReset.addEventListener('click',
     () => svgEl.transition().duration(300).call(mapZoom.transform, d3.zoomIdentity));
+
+  /* --- INITIAL VIEW (added 2026-06-16): start ~2x zoomed, home QTH centred ---
+     Delete just these two lines to go back to the full-world start view.
+     The Reset button still returns to the whole-world view; +/- still work. */
+  setHomeStartView(W, H);
 }
+
+/* === INITIAL HOME VIEW (added 2026-06-16): delete this whole block to revert =
+   On load, snap the map to a ~2x zoom centred on the home QTH so the start
+   screen matches the "already zoomed in twice" look. d3 clamps the transform
+   to the existing translateExtent automatically, so it can never escape the
+   map bounds. Does not touch the projection, the buttons, or anything else. */
+function setHomeStartView(W, H) {
+  if (!mapZoom || !svgEl || !projection) return;
+  const [homeLat, homeLng] = CFG.homeLatLng;
+  const home = projection([homeLng, homeLat]);
+  if (!home) return;
+  const k = 2; // initial zoom factor ("2x")
+  const t = d3.zoomIdentity
+    .translate(W / 2, H / 2)
+    .scale(k)
+    .translate(-home[0], -home[1]);
+  svgEl.call(mapZoom.transform, t);
+}
+/* === END INITIAL HOME VIEW =============================================== */
 /* === END MAP ZOOM ======================================================== */
 
 function renderMap(qsos) {
