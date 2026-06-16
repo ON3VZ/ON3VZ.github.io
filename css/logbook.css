@@ -699,3 +699,30 @@
   .map-zoom-btn { width: 34px; height: 34px; font-size: 1.1rem; }
 }
 /* === END MAP ZOOM CONTROLS ================================================ */
+
+/* ── STATION NOTE (added 2026-06-16): same panel as DXCC matrix; delete this block to revert ── */
+.dm-station {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-amber);
+  border-radius: 10px;
+}
+.dm-station-label {
+  font-family: var(--f-mono);
+  font-size: .62rem;
+  letter-spacing: .14rem;
+  color: var(--c-amber);
+  text-transform: uppercase;
+  margin-bottom: .45rem;
+}
+.dm-station-text {
+  color: var(--c-text-2);
+  font-size: .85rem;
+  line-height: 1.55;
+  max-width: 70ch;
+  margin: 0;
+}
+.dm-station-text strong { color: var(--c-text); font-weight: 600; }
+/* ── END STATION NOTE ── */
