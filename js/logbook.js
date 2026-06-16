@@ -721,7 +721,7 @@ function setHomeStartView(W, H) {
   const [homeLat, homeLng] = CFG.homeLatLng;
   const home = projection([homeLng, homeLat]);
   if (!home) return;
-  const k = 3.2; // initial zoom factor (one extra + step from 2x)
+  const k = 5.12; // initial zoom factor (two extra + steps from 2x)
   const t = d3.zoomIdentity
     .translate(W / 2, H / 2)
     .scale(k)
