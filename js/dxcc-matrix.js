@@ -56,7 +56,7 @@ function loadAdif() {
       ));
     })
     .then(texts => {
-      const qsos = dedup(parseAdif(texts.join('\n')));
+      const qsos = dedup(backfillEntities(parseAdif(texts.join('\n'))));
       if (!qsos.length) throw new Error('No QSOs found');
       model = buildModel(qsos);
       buildChips();
@@ -94,6 +94,8 @@ function parseAdif(raw) {
       country: f.COUNTRY || '',
       cont: (f.CONT || '').toUpperCase(),
       dxcc: f.DXCC || '',
+      cqz: f.CQZ || '',
+      ituz: f.ITUZ || '',
     });
   }
   return out;
@@ -135,17 +137,75 @@ function normBand(val) {
   return 'other';
 }
 
-/* Derive a clean callsign prefix block from a real callsign.
-   Purely data-driven: e.g. LZ100LZ -> LZ, RT25KR -> RT, 9A1AA -> 9A,
-   PA3ABC -> PA. Handles portable indicators (F/ON3VZ, ON3VZ/P). */
+/* Derive the DXCC-relevant prefix from a callsign, compound calls included.
+   FIXED 2026-06-24: for "location/home" compound calls the operating entity is
+   given by the part BEFORE the slash, i.e. the SHORTER segment, not the longer
+   home call. The previous version picked the longest segment, so CT7/F2VX read
+   as F (France) and TA4/G4IJD as G (England). We now strip portable/mobile
+   suffixes (/P /M /MM /AM /A /QRP and bare digits) and take the shortest
+   remaining segment.
+     CT7/F2VX -> CT,  CT7/UR9IDX -> CT,  TA4/G4IJD -> TA,
+     ON3VZ/P  -> ON,  LZ100LZ    -> LZ,  9A4X      -> 9A */
+const PFX_SUFFIXES = new Set(['P', 'M', 'MM', 'AM', 'A', 'QRP']);
 function callPrefix(call) {
   call = (call || '').toUpperCase();
-  const parts = call.split('/').filter(Boolean);
+  let parts = call.split('/').filter(Boolean);
   if (!parts.length) return '';
-  const withDigit = parts.filter(p => /\d/.test(p));
-  const main = (withDigit.length ? withDigit : parts).sort((a, b) => b.length - a.length)[0];
+  if (parts.length > 1) {
+    const core = parts.filter(p => !PFX_SUFFIXES.has(p) && !/^\d+$/.test(p));
+    if (core.length) parts = core;
+    parts.sort((a, b) => a.length - b.length);   // shortest segment = location prefix
+  }
+  const main = parts[0];
   const m = main.match(/^(\d?[A-Z]+)/);
   return m ? m[1] : main;
+}
+
+/* ── ENTITY BACKFILL (added 2026-06-24) ──────────────────────────────────────
+   Some QRZ records arrive with COUNTRY="NON-DXCC" (or blank) and no <DXCC>/<CONT>
+   - seen on special-event calls such as CS2OGA. That produced a stray, entity-
+   less "NON-DXCC" row. We repair such records without ever inventing data:
+     1. LEARN from this very log - every QSO that already carries COUNTRY+DXCC
+        teaches us  prefix -> {country, dxcc, cont, cqz, ituz}.
+     2. A tiny manual map (PREFIX_OVERRIDES) only for prefixes that never appear
+        with complete data in the log. Verify any entry you add here yourself.
+   Anything still unresolved is left exactly as QRZ sent it (never guessed).
+   Revert: delete PREFIX_OVERRIDES + backfillEntities and the call in loadAdif. */
+const PREFIX_OVERRIDES = {
+  // Portugal mainland special-event prefixes (CT / CR / CQ / CS all = DXCC 272).
+  CS: { country: 'Portugal', dxcc: '272', cont: 'EU', cqz: '14', ituz: '37' },
+  CR: { country: 'Portugal', dxcc: '272', cont: 'EU', cqz: '14', ituz: '37' },
+  CQ: { country: 'Portugal', dxcc: '272', cont: 'EU', cqz: '14', ituz: '37' },
+};
+
+function isBlankEntity(v) {
+  const s = (v || '').trim().toUpperCase();
+  return !s || s === 'NON-DXCC' || s === 'NONE';
+}
+
+function backfillEntities(qsos) {
+  // Step 1: learn prefix -> entity from records that are already complete.
+  const learned = {};
+  qsos.forEach(q => {
+    if (!isBlankEntity(q.country) && q.dxcc) {
+      const p = callPrefix(q.call);
+      if (p && !learned[p]) {
+        learned[p] = { country: q.country, dxcc: q.dxcc, cont: q.cont, cqz: q.cqz, ituz: q.ituz };
+      }
+    }
+  });
+  // Step 2: fill only the gaps on incomplete records.
+  qsos.forEach(q => {
+    if (!isBlankEntity(q.country) && q.dxcc && q.cont && q.cqz && q.ituz) return;
+    const src = learned[callPrefix(q.call)] || PREFIX_OVERRIDES[callPrefix(q.call)];
+    if (!src) return;                         // unknown prefix -> leave untouched
+    if (isBlankEntity(q.country) && src.country) q.country = src.country;
+    if (!q.dxcc && src.dxcc) q.dxcc = src.dxcc;
+    if (!q.cont && src.cont) q.cont = src.cont;
+    if (!q.cqz  && src.cqz)  q.cqz  = src.cqz;
+    if (!q.ituz && src.ituz) q.ituz = src.ituz;
+  });
+  return qsos;
 }
 
 /* ── BUILD MATRIX MODEL ── */

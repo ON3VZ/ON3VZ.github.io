@@ -371,8 +371,19 @@ function guessContinent(country) {
   return map[country] || 'EU';
 }
 
+/* Resolve a map position for a QSO.
+   FIXED 2026-06-24: QRZ sends an "unknown location" sentinel of exactly 0,0 on
+   some special-event / portable calls (e.g. CT7/F2VX). The old test
+   `qso.lat && qso.lng` also threw away any genuine coordinate that happens to be
+   exactly 0 (equator or Greenwich meridian). We now accept any finite value,
+   treat an exact 0,0 pair as "no fix", and fall back to the worked entity's
+   centroid, then its continent, so a pin is never dropped on Null Island. */
+function hasRealCoords(q) {
+  return Number.isFinite(q.lat) && Number.isFinite(q.lng) && !(q.lat === 0 && q.lng === 0);
+}
+
 function getLatLng(qso) {
-  if (qso.lat && qso.lng) return [qso.lat, qso.lng];
+  if (hasRealCoords(qso)) return [qso.lat, qso.lng];
   if (DXCC_LL[qso.dxcc]) return DXCC_LL[qso.dxcc];
   return CONT_CENTROID[qso.cont] || [0, 0];
 }
