@@ -178,6 +178,13 @@ const PREFIX_OVERRIDES = {
   CQ: { country: 'Portugal', dxcc: '272', cont: 'EU', cqz: '14', ituz: '37' },
 };
 
+/* Authoritative per-call corrections (override even non-blank QRZ values).
+   EG60BRILAT: QRZ tags it Balearic Islands (DXCC 21) but its own gridsquare
+   IN52pk sits in Galicia, mainland Spain, so it is filed under Spain. */
+const CALL_OVERRIDES = {
+  EG60BRILAT: { country: 'Spain', dxcc: '281', cont: 'EU', cqz: '14', ituz: '37' },
+};
+
 function isBlankEntity(v) {
   const s = (v || '').trim().toUpperCase();
   return !s || s === 'NON-DXCC' || s === 'NONE';
@@ -196,6 +203,13 @@ function backfillEntities(qsos) {
   });
   // Step 2: fill only the gaps on incomplete records.
   qsos.forEach(q => {
+    const forced = CALL_OVERRIDES[(q.call || '').toUpperCase()];
+    if (forced) {                             // authoritative correction
+      q.country = forced.country; q.dxcc = forced.dxcc; q.cont = forced.cont;
+      if (forced.cqz)  q.cqz  = forced.cqz;
+      if (forced.ituz) q.ituz = forced.ituz;
+      return;
+    }
     if (!isBlankEntity(q.country) && q.dxcc && q.cont && q.cqz && q.ituz) return;
     const src = learned[callPrefix(q.call)] || PREFIX_OVERRIDES[callPrefix(q.call)];
     if (!src) return;                         // unknown prefix -> leave untouched

@@ -230,7 +230,7 @@ function loadAdif() {
     .then(texts => {
       const combined = texts.join('\n');
       const raw = parseAdif(combined);
-      allQsos = deduplicateQsos(raw);
+      allQsos = backfillEntities(deduplicateQsos(raw));
       if (!allQsos.length) throw new Error('No QSOs found in ADI files');
       buildFilters();
       applyFilters();
@@ -386,6 +386,72 @@ function getLatLng(qso) {
   if (hasRealCoords(qso)) return [qso.lat, qso.lng];
   if (DXCC_LL[qso.dxcc]) return DXCC_LL[qso.dxcc];
   return CONT_CENTROID[qso.cont] || [0, 0];
+}
+
+/* ── ENTITY BACKFILL (added 2026-06-24) ──────────────────────────────────────
+   Mirrors the DXCC-matrix logic so the table, tooltips and map agree.
+   QRZ sometimes exports a call with COUNTRY="NON-DXCC" or blank (e.g. CS2OGA,
+   a Portuguese special call) or with an entity that contradicts its own grid-
+   square (EG60BRILAT is tagged Balearic but gridsquare IN52pk is in Galicia,
+   mainland Spain). We repair such records:
+     - CALL_OVERRIDES  : authoritative per-call corrections (verified by grid).
+     - learn from log  : prefix -> entity taken from records already complete.
+     - PREFIX_OVERRIDES: prefixes that never appear complete in the log.
+   Unknown prefixes are left exactly as QRZ sent them (never invented).
+   Revert: remove this block + the backfillEntities() call in loadAdif. */
+const PFX_SUFFIXES = new Set(['P', 'M', 'MM', 'AM', 'A', 'QRP']);
+function callPrefix(call) {
+  call = (call || '').toUpperCase();
+  let parts = call.split('/').filter(Boolean);
+  if (!parts.length) return '';
+  if (parts.length > 1) {
+    const core = parts.filter(p => !PFX_SUFFIXES.has(p) && !/^\d+$/.test(p));
+    if (core.length) parts = core;
+    parts.sort((a, b) => a.length - b.length);
+  }
+  const m = parts[0].match(/^(\d?[A-Z]+)/);
+  return m ? m[1] : parts[0];
+}
+
+/* country name + continent (the only entity fields the logbook page uses) */
+const CALL_OVERRIDES = {
+  // Tagged "Balearic Islands" by QRZ, but gridsquare IN52pk = Galicia (mainland).
+  EG60BRILAT: { dxcc: 'Spain', cont: 'EU' },
+};
+const PREFIX_OVERRIDES = {
+  // Portugal mainland special-event prefixes (CT / CR / CQ / CS all = Portugal).
+  CS: { dxcc: 'Portugal', cont: 'EU' },
+  CR: { dxcc: 'Portugal', cont: 'EU' },
+  CQ: { dxcc: 'Portugal', cont: 'EU' },
+};
+
+function isBlankEntity(v) {
+  const s = (v || '').trim().toUpperCase();
+  return !s || s === 'NON-DXCC' || s === 'NONE';
+}
+
+function backfillEntities(qsos) {
+  const learned = {};
+  qsos.forEach(q => {
+    if (!isBlankEntity(q.dxcc)) {
+      const p = callPrefix(q.call);
+      if (p && !learned[p]) learned[p] = { dxcc: q.dxcc, cont: q.cont };
+    }
+  });
+  qsos.forEach(q => {
+    const forced = CALL_OVERRIDES[(q.call || '').toUpperCase()];
+    if (forced) {                                   // authoritative correction
+      q.dxcc = forced.dxcc;
+      if (forced.cont) q.cont = forced.cont;
+      return;
+    }
+    if (!isBlankEntity(q.dxcc) && q.cont) return;
+    const src = learned[callPrefix(q.call)] || PREFIX_OVERRIDES[callPrefix(q.call)];
+    if (!src) return;                               // unknown -> leave untouched
+    if (isBlankEntity(q.dxcc) && src.dxcc) q.dxcc = src.dxcc;
+    if (!q.cont && src.cont) q.cont = src.cont;
+  });
+  return qsos;
 }
 
 /* ── FILTERS ── */
