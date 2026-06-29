@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreeCAD voor Radioamateurs — WLD ON6WL</title>
+  <link rel="stylesheet" href="assets/css/freecad.css">
+  <style>
+    body { background: var(--navy); }
+    .login-grid { position:fixed; inset:0; background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px); background-size:52px 52px; pointer-events:none; }
+    .version-tag { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); font-size:.72rem; color:var(--slate); font-family:var(--mono); letter-spacing:.05em; z-index:20; }
+    .profiles-box { margin:6px 0 18px; }
+    .profiles-box .pb-label { font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--slate); margin-bottom:8px; }
+    .profile-row { display:flex; gap:8px; margin-bottom:8px; }
+    .profile-pick { flex:1; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:11px 14px; border:1px solid rgba(0,180,204,.3); background:var(--teal-dim); border-radius:var(--r-sm); cursor:pointer; font-family:var(--mono); font-weight:700; color:var(--teal); font-size:.9rem; }
+    .profile-pick:hover { background:rgba(0,180,204,.18); }
+    .profile-pick .pp-prog { font-size:.74rem; color:var(--slate); font-weight:600; }
+    .profile-del { width:42px; border:1px solid var(--line); background:var(--white); border-radius:var(--r-sm); cursor:pointer; color:var(--slate); font-size:1rem; }
+    .profile-del:hover { color:var(--orange); border-color:var(--orange); }
+    .or-sep { text-align:center; color:var(--slate); font-size:.78rem; margin:14px 0 10px; position:relative; }
+    .pb-full { font-size:.8rem; color:var(--orange); margin-top:6px; }
+  </style>
+</head>
+<body>
+<div class="login-grid"></div>
+<div class="login-page">
+  <svg class="login-waves" viewBox="0 0 1200 80" preserveAspectRatio="none">
+    <path class="rf-w3" fill="none" stroke="#00B4CC" stroke-width="1.2" d="M0,50 Q60,60 120,50 Q180,40 240,50 Q300,60 360,50 Q420,40 480,50 Q540,60 600,50 Q660,40 720,50 Q780,60 840,50 Q900,40 960,50 Q1020,60 1080,50 Q1140,40 1200,48"/>
+    <path class="rf-w1" fill="none" stroke="#00B4CC" stroke-width="2" d="M0,62 Q40,72 80,62 Q120,52 160,62 Q200,72 240,62 Q280,52 320,62 Q360,72 400,62 Q440,52 480,62 Q520,72 560,62 Q600,52 640,62 Q680,72 720,62 Q760,52 800,62 Q840,72 880,62 Q920,52 960,62 Q1000,72 1040,62 Q1080,52 1120,62 Q1160,72 1200,65"/>
+  </svg>
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-bar"></div>
+      <div class="login-logo-wld">WLD</div>
+      <div class="login-logo-info">
+        <span class="login-logo-sub">ON6WL · UBA</span>
+        <span class="login-logo-name">Waaslandse Radio Amateurs</span>
+      </div>
+    </div>
+    <h1 class="login-title" id="lt">FreeCAD voor Radioamateurs</h1>
+    <p class="login-subtitle" id="ls">Leer zelf behuizingen tekenen en printen. Kies je profiel of voeg een nieuwe roepnaam toe.</p>
+
+    <div class="profiles-box" id="profilesBox" style="display:none">
+      <div class="pb-label" id="pbLabel">Bestaande profielen</div>
+      <div id="profilesList"></div>
+      <div class="or-sep" id="orSep">— of nieuwe roepnaam —</div>
+    </div>
+
+    <div id="newWrap">
+      <label class="login-label" id="lc" for="callsign-inp">Nieuwe roepnaam</label>
+      <input id="callsign-inp" class="login-input" type="text" placeholder="bijv. ON3XYZ" maxlength="10" autocomplete="off" autocapitalize="characters">
+      <div class="pb-full" id="pbFull" style="display:none">Maximum 5 profielen bereikt. Verwijder er een om een nieuwe toe te voegen.</div>
+    </div>
+
+    <div class="login-lang-label" id="ll">Taal / Language / Langue</div>
+    <div class="login-lang-grid">
+      <button class="lang-btn selected" data-lang="nl" onclick="selectLang('nl',this)"><span class="lang-btn-flag">🇧🇪</span><span class="lang-btn-name">Nederlands</span></button>
+      <button class="lang-btn" data-lang="fr" onclick="selectLang('fr',this)"><span class="lang-btn-flag">🇫🇷</span><span class="lang-btn-name">Français</span></button>
+      <button class="lang-btn" data-lang="en" onclick="selectLang('en',this)"><span class="lang-btn-flag">🇬🇧</span><span class="lang-btn-name">English</span></button>
+    </div>
+    <button class="btn-start" id="startBtn" onclick="startCursus()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <span id="lb">Start de cursus</span>
+    </button>
+  </div>
+</div>
+<div class="version-tag">WLD ON6WL · FreeCAD-cursus · doelversie 1.1.1</div>
+
+<script src="assets/js/app.js"></script>
+<script>
+  const TEXTS = {
+    nl:{title:'FreeCAD voor Radioamateurs',sub:'Leer zelf behuizingen tekenen en printen. Kies je profiel of voeg een nieuwe roepnaam toe.',existing:'Bestaande profielen',or:'— of nieuwe roepnaam —',call:'Nieuwe roepnaam',ph:'bijv. ON3XYZ',lang:'Taal / Language / Langue',btn:'Start de cursus',full:'Maximum 5 profielen bereikt. Verwijder er een om een nieuwe toe te voegen.'},
+    fr:{title:'FreeCAD pour Radioamateurs',sub:'Choisissez votre profil ou ajoutez un nouvel indicatif.',existing:'Profils existants',or:'— ou nouvel indicatif —',call:'Nouvel indicatif',ph:'ex. ON3XYZ',lang:'Langue / Taal / Language',btn:'Démarrer le cours',full:'Maximum 5 profils atteint. Supprimez-en un pour en ajouter.'},
+    en:{title:'FreeCAD for Radio Amateurs',sub:'Pick your profile or add a new callsign.',existing:'Existing profiles',or:'— or new callsign —',call:'New callsign',ph:'e.g. ON3XYZ',lang:'Language / Taal / Langue',btn:'Start the course',full:'Maximum of 5 profiles reached. Remove one to add a new profile.'}
+  };
+  let selectedLang='nl';
+  function selectLang(lang,btn){ selectedLang=lang;
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected');
+    const t=TEXTS[lang];
+    lt.textContent=t.title; ls.textContent=t.sub; pbLabel.textContent=t.existing; orSep.textContent=t.or;
+    lc.textContent=t.call; document.getElementById('callsign-inp').placeholder=t.ph; ll.textContent=t.lang; lb.textContent=t.btn; pbFull.textContent=t.full;
+    const s=fcLoad(); s.lang=lang; fcSave(s);
+  }
+  function renderProfiles(){
+    const s=fcLoad(); const profs=Object.keys(s.profiles||{});
+    const box=document.getElementById('profilesBox'); const list=document.getElementById('profilesList');
+    if(profs.length===0){ box.style.display='none'; }
+    else { box.style.display='block';
+      list.innerHTML=profs.map(cs=>{ const done=Object.values(s.profiles[cs].done||{}).filter(Boolean).length;
+        return `<div class="profile-row"><button class="profile-pick" onclick="pick('${cs}')"><span>${cs}</span><span class="pp-prog">${done}/23</span></button><button class="profile-del" title="verwijder" onclick="removeProfile('${cs}')">✕</button></div>`; }).join('');
+    }
+    const full = profs.length>=5;
+    document.getElementById('newWrap').style.opacity = full?'.5':'1';
+    document.getElementById('callsign-inp').disabled = full;
+    document.getElementById('pbFull').style.display = full?'block':'none';
+  }
+  function pick(cs){ fcSwitch(cs); window.location.href='index.html'; }
+  function removeProfile(cs){ const s=fcLoad(); delete s.profiles[cs]; if(s.active===cs) s.active=Object.keys(s.profiles)[0]||null; fcSave(s); renderProfiles(); }
+  function startCursus(){
+    const cs=document.getElementById('callsign-inp').value.trim().toUpperCase();
+    if(!cs){ const profs=fcProfiles(); if(profs.length){ pick(fcActive()||profs[0]); } else { document.getElementById('callsign-inp').focus(); } return; }
+    if(!fcAddProfile(cs)){ document.getElementById('pbFull').style.display='block'; return; }
+    const s=fcLoad(); s.lang=selectedLang; fcSave(s);
+    window.location.href='index.html';
+  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    const s=fcLoad(); if(s.lang){ const b=document.querySelector('[data-lang="'+s.lang+'"]'); if(b) selectLang(s.lang,b); }
+    renderProfiles();
+    document.getElementById('callsign-inp').addEventListener('keydown',e=>{ if(e.key==='Enter') startCursus(); });
+  });
+</script>
+</body>
+</html>

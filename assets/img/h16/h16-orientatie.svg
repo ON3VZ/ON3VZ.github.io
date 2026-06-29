@@ -1,0 +1,17 @@
+<svg viewBox="0 0 620 250" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+  <style>.lyr{stroke:#9fb4c4;stroke-width:1;}.body{fill:none;stroke:#0B2138;stroke-width:2;}.lab{fill:#0B2138;font-size:13px;font-weight:700;}.dim{fill:#43586b;font-size:12px;}.frc{stroke:#FF6B35;stroke-width:2.4;}.weak{fill:#c0392b;font-size:12px;font-weight:700;}.strong{fill:#1a8f4a;font-size:12px;font-weight:700;}</style>
+  <!-- left: layers horizontal, force pulls across layers (weak) -->
+  <rect x="50" y="70" width="170" height="110" fill="#eef3f6"/>
+  <g class="lyr"><line x1="50" y1="84" x2="220" y2="84"/><line x1="50" y1="98" x2="220" y2="98"/><line x1="50" y1="112" x2="220" y2="112"/><line x1="50" y1="126" x2="220" y2="126"/><line x1="50" y1="140" x2="220" y2="140"/><line x1="50" y1="154" x2="220" y2="154"/><line x1="50" y1="168" x2="220" y2="168"/></g>
+  <rect class="body" x="50" y="70" width="170" height="110"/>
+  <line class="frc" x1="135" y1="55" x2="135" y2="20" marker-end="url(#a)"/><line class="frc" x1="135" y1="195" x2="135" y2="230" marker-end="url(#a)"/>
+  <text class="weak" x="135" y="248" text-anchor="middle">✗ kracht dwars op de lagen = zwak</text>
+  <text class="lab" x="135" y="14" text-anchor="middle">lagen</text>
+  <!-- right: same part, force along layers (strong) -->
+  <rect x="400" y="70" width="170" height="110" fill="#eef3f6"/>
+  <g class="lyr"><line x1="414" y1="70" x2="414" y2="180"/><line x1="428" y1="70" x2="428" y2="180"/><line x1="442" y1="70" x2="442" y2="180"/><line x1="456" y1="70" x2="456" y2="180"/><line x1="470" y1="70" x2="470" y2="180"/><line x1="484" y1="70" x2="484" y2="180"/><line x1="498" y1="70" x2="498" y2="180"/><line x1="512" y1="70" x2="512" y2="180"/><line x1="526" y1="70" x2="526" y2="180"/><line x1="540" y1="70" x2="540" y2="180"/><line x1="554" y1="70" x2="554" y2="180"/></g>
+  <rect class="body" x="400" y="70" width="170" height="110"/>
+  <line class="frc" x1="485" y1="55" x2="485" y2="20" marker-end="url(#a)"/><line class="frc" x1="485" y1="195" x2="485" y2="230" marker-end="url(#a)"/>
+  <text class="strong" x="485" y="248" text-anchor="middle">✓ kracht langs de lagen = sterker</text>
+  <defs><marker id="a" markerWidth="9" markerHeight="9" refX="4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#FF6B35"/></marker></defs>
+</svg>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H17 · Frontpaneel met tekst — FreeCAD voor Radioamateurs</title>
+<link rel="stylesheet" href="../assets/css/freecad.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="header-logo"><a href="../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;"><span class="header-logo-wld">WLD</span><div class="header-logo-sep"></div></a>
+  <span class="header-logo-title"><span class="lang-block active" data-lang="nl">FreeCAD voor Radioamateurs</span><span class="lang-block" data-lang="fr">FreeCAD pour Radioamateurs</span><span class="lang-block" data-lang="en">FreeCAD for Radio Amateurs</span></span></div>
+  <div class="header-center"><div class="header-progress-wrap"><div class="header-progress-label"><span data-i18n="progress">Voortgang</span><span class="header-progress-done">0 / 23</span></div><div class="header-progress-track"><div class="header-progress-fill" style="width:0%"></div></div></div></div>
+  <div class="header-right"><span class="header-callsign" id="hCallsign">—</span><div class="lang-switcher"><button class="lang-switch-btn active" data-lang="nl">NL</button><button class="lang-switch-btn" data-lang="fr">FR</button><button class="lang-switch-btn" data-lang="en">EN</button></div><button class="menu-toggle" id="menu-toggle">☰</button></div>
+</header>
+<nav class="app-sidebar"></nav>
+<main class="app-main"><div class="main-inner">
+
+<div class="chapter-header">
+  <div class="ch-header-meta">
+    <div class="ch-breadcrumb"><a href="../index.html"><span class="lang-block active" data-lang="nl">Overzicht</span><span class="lang-block" data-lang="fr">Aperçu</span><span class="lang-block" data-lang="en">Overview</span></a><span>›</span><span class="lang-block active" data-lang="nl">Niveau 3 — Gevorderd</span><span class="lang-block" data-lang="fr">Niveau 3 — Avancé</span><span class="lang-block" data-lang="en">Level 3 — Advanced</span></div>
+    <span class="ch-badge ch-badge-num">H17</span><span class="ch-badge ch-badge-level gevorderd"><span class="lang-block active" data-lang="nl">Gevorderd</span><span class="lang-block" data-lang="fr">Avancé</span><span class="lang-block" data-lang="en">Advanced</span></span>
+  </div>
+  <h1><span class="lang-block active" data-lang="nl">Frontpaneel met tekst: graveren &amp; embossen</span><span class="lang-block" data-lang="fr">Façade avec texte : graver &amp; emboss</span><span class="lang-block" data-lang="en">Front panel text: engrave &amp; emboss</span></h1>
+  <p class="intro"><span class="lang-block active" data-lang="nl">Een frontpaneel zonder opschriften is half werk. Met <strong>ShapeString</strong> zet je tekst om in echte geometrie die je kunt <strong>verhogen</strong> (embossen) of <strong>verzinken</strong> (graveren) — voor labels als "VOL", "PTT", een schaalverdeling of je roepnaam.</span><span class="lang-block" data-lang="fr">Une façade sans inscriptions est inachevée. <strong>ShapeString</strong> transforme du texte en géométrie à <strong>emboss</strong> ou <strong>graver</strong>.</span><span class="lang-block" data-lang="en">A front panel without labels is half done. <strong>ShapeString</strong> turns text into real geometry you can <strong>emboss</strong> or <strong>engrave</strong> — labels like "VOL", "PTT", a scale, or your callsign.</span></p>
+  <svg class="ch-header-waves" viewBox="0 0 820 44" preserveAspectRatio="none"><path class="rf-w3" fill="none" stroke="#00B4CC" stroke-width="1" d="M0,28 Q41,34 82,28 Q123,22 164,28 Q205,34 246,28 Q287,22 328,28 Q369,34 410,28 Q451,22 492,28 Q533,34 574,28 Q615,22 656,28 Q697,34 738,28 Q779,22 820,26"/><path class="rf-w1" fill="none" stroke="#00B4CC" stroke-width="1.8" d="M0,34 Q20,40 41,34 Q61,28 82,34 Q102,40 123,34 Q143,28 164,34 Q184,40 205,34 Q225,28 246,34 Q266,40 287,34 Q307,28 328,34 Q348,40 369,34 Q389,28 410,34 Q430,40 451,34 Q471,28 492,34 Q512,40 533,34 Q553,28 574,34 Q594,40 615,34 Q635,28 656,34 Q676,40 697,34 Q717,28 738,34 Q758,40 779,34 Q799,28 820,32"/></svg>
+</div>
+
+<div class="chapter-body">
+
+<div class="leerdoelen">
+  <div class="leerdoelen-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-i18n="objectives">Na dit hoofdstuk kun je</span></div>
+  <ul>
+    <li><span class="lang-block active" data-lang="nl">tekst als geometrie maken met ShapeString</span><span class="lang-block" data-lang="fr">créer du texte-géométrie avec ShapeString</span><span class="lang-block" data-lang="en">create text geometry with ShapeString</span></li>
+    <li><span class="lang-block active" data-lang="nl">tekst verhogen (embossen) of verzinken (graveren)</span><span class="lang-block" data-lang="fr">emboss ou graver le texte</span><span class="lang-block" data-lang="en">emboss or engrave the text</span></li>
+    <li><span class="lang-block active" data-lang="nl">tekst leesbaar én printbaar op een paneel plaatsen</span><span class="lang-block" data-lang="fr">placer un texte lisible et imprimable</span><span class="lang-block" data-lang="en">place legible, printable text on a panel</span></li>
+  </ul>
+</div>
+
+<div class="howto">
+  <div class="howto-h"><span class="lang-block active" data-lang="nl">⚙️ Zo doe je het in FreeCAD 1.1.1</span><span class="lang-block" data-lang="fr">⚙️ Comment faire dans FreeCAD 1.1.1</span><span class="lang-block" data-lang="en">⚙️ How to do it in FreeCAD 1.1.1</span></div>
+  <div class="howto-body">
+    <p><span class="lang-block active" data-lang="nl">Tekst maak je in de <strong>Draft</strong>-workbench; verhogen/verzinken doe je in <strong>Part Design</strong>.</span><span class="lang-block" data-lang="fr">Texte dans l'atelier <strong>Draft</strong> ; relief/creux dans <strong>Part Design</strong>.</span><span class="lang-block" data-lang="en">Make text in the <strong>Draft</strong> workbench; raise/recess in <strong>Part Design</strong>.</span></p>
+    <ol>
+      <li><span class="lang-block active" data-lang="nl">Schakel naar <strong>Draft</strong> → <span class="path">Hulpmiddelen → Vorm uit tekst (ShapeString)</span>. Typ je tekst, kies een <strong>lettertype</strong> en <strong>hoogte</strong> (later wijzigbaar).</span><span class="lang-block" data-lang="fr">Atelier <strong>Draft</strong> → <span class="path">Forme depuis texte</span>. Texte + police + hauteur.</span><span class="lang-block" data-lang="en">Switch to <strong>Draft</strong> → <span class="path">Tools → Shape from text (ShapeString)</span>. Type the text, pick a <strong>font</strong> and <strong>height</strong>.</span></li>
+      <li><span class="lang-block active" data-lang="nl"><strong>Positioneer</strong> de tekst op het frontpaneel-vlak (via attachment of constraints).</span><span class="lang-block" data-lang="fr"><strong>Positionnez</strong> sur la face (attachment).</span><span class="lang-block" data-lang="en"><strong>Position</strong> the text on the panel face (via attachment or constraints).</span></li>
+      <li><span class="lang-block active" data-lang="nl">Schakel naar <strong>Part Design</strong>, selecteer de tekst en kies <span class="path">Vlak (Pad)</span> voor <strong>verhoogd</strong> of <span class="path">Uitsparing (Pocket)</span> voor <strong>verzonken</strong>. Geef de hoogte/diepte.</span><span class="lang-block" data-lang="fr"><strong>Part Design</strong> : <span class="path">Pad</span> (relief) ou <span class="path">Cavité</span> (creux) + hauteur/profondeur.</span><span class="lang-block" data-lang="en">In <strong>Part Design</strong>, select the text and use <span class="path">Pad</span> (raised) or <span class="path">Pocket</span> (recessed). Set the height/depth.</span></li>
+    </ol>
+  </div>
+</div>
+
+<h2><span class="section-num">01</span><span class="lang-block active" data-lang="nl">Tekst als geometrie (ShapeString)</span><span class="lang-block" data-lang="fr">Texte-géométrie (ShapeString)</span><span class="lang-block" data-lang="en">Text as geometry (ShapeString)</span></h2>
+<p><span class="lang-block active" data-lang="nl"><strong>ShapeString</strong> ("vorm uit tekst") zet letters om in <strong>echte contouren</strong> — net als lijnen in een schets. Daardoor kun je die contouren gebruiken als profiel voor een Pad of een Pocket, precies zoals elke andere vorm. Lettertype en hoogte zijn parameters die je achteraf nog kunt aanpassen.</span><span class="lang-block" data-lang="fr"><strong>ShapeString</strong> convertit les lettres en <strong>contours réels</strong>, utilisables comme profil pour Pad/Cavité. Police et hauteur restent paramétrables.</span><span class="lang-block" data-lang="en"><strong>ShapeString</strong> turns letters into <strong>real outlines</strong> — like sketch lines — so you can use them as a profile for a Pad or Pocket. Font and height stay editable parameters.</span></p>
+
+<h2><span class="section-num">02</span><span class="lang-block active" data-lang="nl">Embossen (verhoogd) of graveren (verzonken)</span><span class="lang-block" data-lang="fr">Emboss ou graver</span><span class="lang-block" data-lang="en">Emboss or engrave</span></h2>
+<p><span class="lang-block active" data-lang="nl">Twee keuzes, één principe. <strong>Embossen</strong> = de tekst <strong>verhogen</strong> met een Pad (letters steken uit het paneel). <strong>Graveren</strong> = de tekst <strong>verzinken</strong> met een Pocket (letters liggen in het paneel). Voor 3D-print is verzonken vaak het netst, en met een tweede kleur filament op de eerste lagen krijg je leesbare, contrasterende tekst.</span><span class="lang-block" data-lang="fr"><strong>Emboss</strong> = relief (Pad) ; <strong>graver</strong> = creux (Cavité). En impression, le creux est souvent plus net ; un changement de filament donne du contraste.</span><span class="lang-block" data-lang="en"><strong>Emboss</strong> = raise it with a Pad; <strong>engrave</strong> = recess it with a Pocket. For printing, recessed is often cleanest; a filament colour change gives readable, contrasting text.</span></p>
+<div class="figure">
+  <img src="../assets/img/h17/h17-shapestring.png" alt="De tekst FreeCAD als 3D-geometrie, verhoogd uit een vlak">
+  <div class="figcaption"><span class="fignum">Fig. 17.1</span><span class="lang-block active" data-lang="nl">Tekst via <strong>ShapeString</strong>, verhoogd tot 3D-letters met een Pad (embossen). Met een Pocket zou dezelfde tekst net <strong>verzonken</strong> in het paneel liggen (graveren).</span><span class="lang-block" data-lang="fr">Texte ShapeString en relief (Pad) ; en Cavité, il serait creusé.</span><span class="lang-block" data-lang="en"><strong>ShapeString</strong> text raised into 3D letters with a Pad (emboss); a Pocket would recess it (engrave).</span><span class="source-credit">© FreeCAD-documentatie, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href="../bronnen.html">Bronnen</a></span></div>
+</div>
+
+<h2><span class="section-num">03</span><span class="lang-block active" data-lang="nl">Op het frontpaneel plaatsen</span><span class="lang-block" data-lang="fr">Placer sur la façade</span><span class="lang-block" data-lang="en">Placing it on the panel</span></h2>
+<p><span class="lang-block active" data-lang="nl">Plaats de tekst op het <strong>platte</strong> frontpaneel-vlak (op een gebogen vlak lukt het niet — zie H09/H14). Lijn labels uit met je knoppen en gaten, en hou de tekst <strong>groot genoeg</strong>: te dunne of te kleine letters komen er bij het printen niet leesbaar uit. Een verzonken diepte (of verhoogde hoogte) van ongeveer een halve millimeter is een goede startwaarde — <em>richtwaarde, testen op de clubprinter</em>.</span><span class="lang-block" data-lang="fr">Sur une face <strong>plane</strong> (pas courbe — H14). Alignez avec boutons/trous ; gardez le texte <strong>assez grand</strong>. ≈0,5&nbsp;mm de profondeur — valeur indicative, à tester.</span><span class="lang-block" data-lang="en">Place on the <strong>flat</strong> panel face (not curved — H14). Align with knobs/holes and keep text <strong>large enough</strong>. About half a millimetre depth/height is a good start — <em>guide value, test on the club printer</em>.</span></p>
+
+<div class="callout callout-key">
+  <div class="callout-header">🔑 <span data-i18n="key_title">Kernregel</span></div>
+  <p><span class="lang-block active" data-lang="nl"><strong>ShapeString = tekst als geometrie.</strong> Eens het tekst-geometrie is, behandel je het als elk ander profiel: <strong>Pad</strong> om te verhogen (embossen) of <strong>Pocket</strong> om te verzinken (graveren).</span><span class="lang-block" data-lang="fr"><strong>ShapeString = texte-géométrie</strong>, traité comme un profil : Pad (relief) ou Cavité (creux).</span><span class="lang-block" data-lang="en"><strong>ShapeString = text as geometry.</strong> Then treat it like any profile: <strong>Pad</strong> to emboss or <strong>Pocket</strong> to engrave.</span></p>
+</div>
+
+<div class="callout callout-tip">
+  <div class="callout-header">💡 <span class="lang-block active" data-lang="nl">Tip — leesbaar &amp; printbaar</span><span class="lang-block" data-lang="fr">Astuce — lisible &amp; imprimable</span><span class="lang-block" data-lang="en">Tip — legible &amp; printable</span></div>
+  <p><span class="lang-block active" data-lang="nl">Lettertype en hoogte blijven achteraf wijzigbaar, dus experimenteer gerust. Kies een <strong>stevig, schreefloos lettertype</strong> en vermijd heel dunne letters: die vallen bij kleine afmetingen weg. Test een klein labelstrookje vóór je het hele paneel print.</span><span class="lang-block" data-lang="fr">Police et hauteur restent éditables. Préférez une police <strong>sans empattement</strong> et épaisse ; testez un petit échantillon.</span><span class="lang-block" data-lang="en">Font and height stay editable. Pick a <strong>solid sans-serif</strong> font and avoid very thin letters; test a small label strip first.</span></p>
+</div>
+
+<div class="callout callout-shack">
+  <div class="callout-header">📻 <span class="lang-block active" data-lang="nl">In de shack</span><span class="lang-block" data-lang="fr">En pratique</span><span class="lang-block" data-lang="en">In the shack</span></div>
+  <p><span class="lang-block active" data-lang="nl">Graveer de functielabels naast elke knop ("VOL", "SQL", "PTT"), een kleine schaalverdeling rond een draaiknop, of je <strong>roepnaam ON3VZ</strong> in de hoek van het paneel. Eén keer goed gemaakt, en elk volgend toestel oogt meteen professioneel.</span><span class="lang-block" data-lang="fr">Gravez "VOL", "SQL", "PTT", une échelle, ou votre <strong>indicatif</strong> sur la façade.</span><span class="lang-block" data-lang="en">Engrave function labels ("VOL", "SQL", "PTT"), a small dial scale, or your <strong>callsign</strong> in the panel corner.</span></p>
+</div>
+
+<div class="doe-opdracht">
+  <div class="do-head">🛠️ <span data-i18n="task_title">Doe-opdracht</span></div>
+  <p><span class="lang-block active" data-lang="nl">Maak met ShapeString het label <strong>"ON3VZ"</strong> en plaats het op je frontpaneel. Graveer het ongeveer 0,5&nbsp;mm diep met een Pocket. Print een klein testlabel en controleer of het leesbaar is; pas anders de hoogte of het lettertype aan.</span><span class="lang-block" data-lang="fr">Créez "ON3VZ" en ShapeString, gravez ~0,5&nbsp;mm (Cavité), testez la lisibilité.</span><span class="lang-block" data-lang="en">Make the label <strong>"ON3VZ"</strong> with ShapeString, engrave it ~0.5&nbsp;mm deep (Pocket), and test-print for legibility.</span></p>
+</div>
+
+<h2><span class="section-num">04</span><span class="lang-block active" data-lang="nl">Veelgemaakte fouten</span><span class="lang-block" data-lang="fr">Erreurs fréquentes</span><span class="lang-block" data-lang="en">Common mistakes</span></h2>
+<ul>
+  <li><span class="lang-block active" data-lang="nl"><strong>Te kleine of te dunne letters.</strong> Onleesbaar na het printen. Maak ze groter of kies een steviger lettertype.</span><span class="lang-block" data-lang="fr"><strong>Lettres trop petites/fines.</strong> Agrandissez.</span><span class="lang-block" data-lang="en"><strong>Letters too small/thin.</strong> Unreadable when printed. Enlarge or pick a bolder font.</span></li>
+  <li><span class="lang-block active" data-lang="nl"><strong>Op een gebogen vlak willen schetsen.</strong> Tekst hoort op een plat vlak; maak anders eerst een referentievlak (H14).</span><span class="lang-block" data-lang="fr"><strong>Face courbe.</strong> Utilisez une face plane (H14).</span><span class="lang-block" data-lang="en"><strong>Trying a curved face.</strong> Text needs a flat face; else make a datum plane (H14).</span></li>
+  <li><span class="lang-block active" data-lang="nl"><strong>Vergeten van workbench te wisselen.</strong> ShapeString zit in Draft; Pad/Pocket in Part Design.</span><span class="lang-block" data-lang="fr"><strong>Oubli d'atelier.</strong> ShapeString = Draft ; Pad/Cavité = Part Design.</span><span class="lang-block" data-lang="en"><strong>Forgot to switch workbench.</strong> ShapeString is in Draft; Pad/Pocket in Part Design.</span></li>
+</ul>
+
+<div class="callout callout-tip">
+  <div class="callout-header">🎨 <span class="lang-block active" data-lang="nl">Een logo via Inkscape (SVG)</span><span class="lang-block" data-lang="fr">Un logo via Inkscape (SVG)</span><span class="lang-block" data-lang="en">A logo via Inkscape (SVG)</span></div>
+  <p><span class="lang-block active" data-lang="nl">ShapeString is voor tekst; voor een echt <strong>logo</strong> (bv. het clublogo ON6WL) gebruik je <strong>Inkscape</strong>, een gratis SVG-tekenprogramma. Teken of bewerk je logo daar, bewaar als <strong>SVG</strong>, en importeer dat in FreeCAD. Je krijgt dan geometrie die je net als een schets kunt <strong>padden</strong> (verhoogd) of <strong>pocketten</strong> (verzonken) op je paneel. Hou ook hier de lijnen niet te fijn, zodat het printbaar blijft.</span><span class="lang-block" data-lang="fr">Pour un vrai <strong>logo</strong> : dessinez-le dans <strong>Inkscape</strong>, exportez en <strong>SVG</strong>, importez dans FreeCAD, puis pad/pocket. Évitez les traits trop fins.</span><span class="lang-block" data-lang="en">ShapeString is for text; for a real <strong>logo</strong> (e.g. the club logo) use <strong>Inkscape</strong>, a free SVG editor. Draw it, save as <strong>SVG</strong>, import into FreeCAD, then <strong>pad</strong> or <strong>pocket</strong> it. Keep lines not too thin so it stays printable.</span></p>
+</div>
+
+<h2><span class="section-num">05</span><span data-i18n="summary_title">Samenvatting</span></h2>
+<p><span class="lang-block active" data-lang="nl"><strong>ShapeString</strong> (Draft) maakt van tekst echte geometrie. Die <strong>verhoog</strong> je met een Pad (embossen) of <strong>verzink</strong> je met een Pocket (graveren) in Part Design. Plaats de tekst op een plat vlak, hou de letters groot en stevig genoeg, en test de leesbaarheid met een kleine print. Zo krijgt je frontpaneel nette labels, een schaalverdeling of je roepnaam.</span><span class="lang-block" data-lang="fr"><strong>ShapeString</strong> (Draft) → géométrie ; Pad (relief) ou Cavité (creux). Face plane, lettres assez grandes, testez.</span><span class="lang-block" data-lang="en"><strong>ShapeString</strong> (Draft) makes text into geometry; <strong>Pad</strong> to emboss or <strong>Pocket</strong> to engrave (Part Design). Flat face, large enough letters, test legibility.</span></p>
+
+<div class="callout callout-key memory-box">
+  <div class="callout-header">🧠 <span data-i18n="memory_title">Onthoud dit</span></div>
+  <ul>
+    <li><span class="lang-block active" data-lang="nl"><strong>ShapeString</strong> (Draft) = tekst → geometrie.</span><span class="lang-block" data-lang="fr"><strong>ShapeString</strong> (Draft) = texte → géométrie.</span><span class="lang-block" data-lang="en"><strong>ShapeString</strong> (Draft) = text → geometry.</span></li>
+    <li><span class="lang-block active" data-lang="nl"><strong>Pad</strong> = verhoogd (embossen); <strong>Pocket</strong> = verzonken (graveren).</span><span class="lang-block" data-lang="fr"><strong>Pad</strong> = relief ; <strong>Cavité</strong> = creux.</span><span class="lang-block" data-lang="en"><strong>Pad</strong> = emboss; <strong>Pocket</strong> = engrave.</span></li>
+    <li><span class="lang-block active" data-lang="nl">Plat vlak, stevige letters, leesbaarheid <strong>testprinten</strong>.</span><span class="lang-block" data-lang="fr">Face plane, lettres épaisses, testez.</span><span class="lang-block" data-lang="en">Flat face, bold letters, <strong>test-print</strong> legibility.</span></li>
+  </ul>
+</div>
+
+<div class="complete-area" style="text-align:center;margin:34px 0 10px"><button id="btn-complete" class="btn btn-complete" data-chid="h17">✓ Markeer als voltooid</button></div>
+<div class="chapter-nav-footer"><a class="ch-nav-btn" href="h16-dfam.html"><span data-i18n="prev">← Vorige</span></a><a class="ch-nav-btn" href="h18-sweep-pipe.html"><span data-i18n="next">Volgende →</span></a></div>
+
+</div></main>
+<footer class="app-footer"><div class="footer-logo-row"><span class="footer-wld">WLD</span><div class="footer-sep"></div><div class="footer-info">ON6WL · Waaslandse Radio Amateurs · <a href="https://on6wl.be">on6wl.be</a></div></div><div class="footer-right">FreeCAD-cursus · 1.1.1 · <a href="../bronnen.html">Bronnen</a></div></footer>
+<script src="../assets/js/app.js"></script><script src="../assets/js/sidebar.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{ renderSidebar('h17'); });</script>
+</body></html>

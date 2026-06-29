@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H07 · Parametrisch wijzigen — FreeCAD voor Radioamateurs</title>
+<link rel="stylesheet" href="../assets/css/freecad.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="header-logo"><a href="../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;"><span class="header-logo-wld">WLD</span><div class="header-logo-sep"></div></a>
+  <span class="header-logo-title"><span class="lang-block active" data-lang="nl">FreeCAD voor Radioamateurs</span><span class="lang-block" data-lang="fr">FreeCAD pour Radioamateurs</span><span class="lang-block" data-lang="en">FreeCAD for Radio Amateurs</span></span></div>
+  <div class="header-center"><div class="header-progress-wrap"><div class="header-progress-label"><span data-i18n="progress">Voortgang</span><span class="header-progress-done">0 / 23</span></div><div class="header-progress-track"><div class="header-progress-fill" style="width:0%"></div></div></div></div>
+  <div class="header-right"><span class="header-callsign" id="hCallsign">—</span><div class="lang-switcher"><button class="lang-switch-btn active" data-lang="nl">NL</button><button class="lang-switch-btn" data-lang="fr">FR</button><button class="lang-switch-btn" data-lang="en">EN</button></div><button class="menu-toggle" id="menu-toggle">☰</button></div>
+</header>
+<nav class="app-sidebar"></nav>
+<main class="app-main"><div class="main-inner">
+
+<div class="chapter-header">
+  <div class="ch-header-meta">
+    <div class="ch-breadcrumb"><a href="../index.html"><span class="lang-block active" data-lang="nl">Overzicht</span><span class="lang-block" data-lang="fr">Aperçu</span><span class="lang-block" data-lang="en">Overview</span></a><span>›</span><span class="lang-block active" data-lang="nl">Niveau 2 — Medior</span><span class="lang-block" data-lang="fr">Niveau 2 — Médior</span><span class="lang-block" data-lang="en">Level 2 — Medior</span></div>
+    <span class="ch-badge ch-badge-num">H07</span><span class="ch-badge ch-badge-level medior"><span class="lang-block active" data-lang="nl">Medior</span><span class="lang-block" data-lang="fr">Médior</span><span class="lang-block" data-lang="en">Medior</span></span>
+  </div>
+  <h1><span class="lang-block active" data-lang="nl">Parametrisch wijzigen</span><span class="lang-block" data-lang="fr">Modification paramétrique</span><span class="lang-block" data-lang="en">Parametric editing</span></h1>
+  <p class="intro"><span class="lang-block active" data-lang="nl">Hier plukken we de vruchten van parametrisch werken. Je hoeft niets opnieuw te tekenen: je opent een bestaande stap in de modelboom, verandert een getal, en het hele model past zich aan. Zo maak je van je bakje in seconden een versie voor een andere printplaat.</span><span class="lang-block" data-lang="fr">Ici, on récolte les fruits du paramétrique. Rien à redessiner : on ouvre une étape de l'arbre, on change un nombre, et tout le modèle s'adapte. Votre boîtier devient en quelques secondes une version pour un autre circuit.</span><span class="lang-block" data-lang="en">Here we reap the rewards of parametric work. No redrawing: open a step in the model tree, change a number, and the whole model adapts. Your box becomes a version for another PCB in seconds.</span></p>
+  <svg class="ch-header-waves" viewBox="0 0 820 44" preserveAspectRatio="none"><path class="rf-w3" fill="none" stroke="#00B4CC" stroke-width="1" d="M0,28 Q41,34 82,28 Q123,22 164,28 Q205,34 246,28 Q287,22 328,28 Q369,34 410,28 Q451,22 492,28 Q533,34 574,28 Q615,22 656,28 Q697,34 738,28 Q779,22 820,26"/><path class="rf-w1" fill="none" stroke="#00B4CC" stroke-width="1.8" d="M0,34 Q20,40 41,34 Q61,28 82,34 Q102,40 123,34 Q143,28 164,34 Q184,40 205,34 Q225,28 246,34 Q266,40 287,34 Q307,28 328,34 Q348,40 369,34 Q389,28 410,34 Q430,40 451,34 Q471,28 492,34 Q512,40 533,34 Q553,28 574,34 Q594,40 615,34 Q635,28 656,34 Q676,40 697,34 Q717,28 738,34 Q758,40 779,34 Q799,28 820,32"/></svg>
+</div>
+
+<div class="chapter-body">
+
+<div class="leerdoelen">
+  <div class="leerdoelen-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-i18n="objectives">Na dit hoofdstuk kun je</span></div>
+  <ul>
+    <li><span class="lang-block active" data-lang="nl">een bestaande feature (zoals Pad) bewerken via de modelboom</span><span class="lang-block" data-lang="fr">éditer une fonction existante (Pad) via l'arbre</span><span class="lang-block" data-lang="en">edit an existing feature (Pad) via the tree</span></li>
+    <li><span class="lang-block active" data-lang="nl">een maat in een onderliggende schets aanpassen</span><span class="lang-block" data-lang="fr">modifier une cote dans le croquis sous-jacent</span><span class="lang-block" data-lang="en">change a dimension in the underlying sketch</span></li>
+    <li><span class="lang-block active" data-lang="nl">begrijpen waarom goede constraints wijzigingen veilig maken</span><span class="lang-block" data-lang="fr">comprendre pourquoi de bonnes contraintes sécurisent les modifications</span><span class="lang-block" data-lang="en">understand why good constraints make edits safe</span></li>
+  </ul>
+</div>
+
+<div class="howto">
+  <div class="howto-h"><span class="lang-block active" data-lang="nl">⚙️ Zo doe je het in FreeCAD 1.1.1</span><span class="lang-block" data-lang="fr">⚙️ Comment faire dans FreeCAD 1.1.1</span><span class="lang-block" data-lang="en">⚙️ How to do it in FreeCAD 1.1.1</span></div>
+  <div class="howto-body">
+    <p><span class="lang-block active" data-lang="nl"><strong>Workbench:</strong> de <strong>Modelboom</strong> (tab <strong>Model</strong>).</span><span class="lang-block" data-lang="fr"><strong>Atelier :</strong> l'<strong>arbre</strong> (onglet <strong>Modèle</strong>).</span><span class="lang-block" data-lang="en"><strong>Workbench:</strong> the <strong>model tree</strong> (<strong>Model</strong> tab).</span></p>
+    <p><span class="lang-block active" data-lang="nl"><strong>Wijzigen:</strong> <strong>dubbelklik</strong> een feature → <strong>Taken</strong>-paneel heropent. Voor maten: klap open met <strong>▸</strong> en dubbelklik de <strong>Schets</strong>.</span><span class="lang-block" data-lang="fr"><strong>Modifier :</strong> <strong>double-clic</strong> → <strong>Tâches</strong>. Cotes : <strong>▸</strong> + double-clic <strong>croquis</strong>.</span><span class="lang-block" data-lang="en"><strong>Edit:</strong> <strong>double-click</strong> → <strong>Tasks</strong> reopens. Dimensions: <strong>▸</strong> + double-click the <strong>Sketch</strong>.</span></p>
+    <ol>
+      <li><span class="lang-block active" data-lang="nl"><strong>Dubbelklik</strong> de <strong>Pad</strong>.</span><span class="lang-block" data-lang="fr"><strong>Double-clic</strong> le <strong>Pad</strong>.</span><span class="lang-block" data-lang="en"><strong>Double-click</strong> the <strong>Pad</strong>.</span></li>
+      <li><span class="lang-block active" data-lang="nl"><strong>Lengte</strong> 25 → 30 → OK.</span><span class="lang-block" data-lang="fr"><strong>Longueur</strong> 25 → 30.</span><span class="lang-block" data-lang="en"><strong>Length</strong> 25 → 30.</span></li>
+      <li><span class="lang-block active" data-lang="nl">Breedte: <strong>▸</strong> → dubbelklik <strong>Schets</strong> → dubbelklik maat → <strong>90</strong> → OK.</span><span class="lang-block" data-lang="fr">Largeur : <strong>▸</strong> → <strong>croquis</strong> → cote → <strong>90</strong>.</span><span class="lang-block" data-lang="en">Width: <strong>▸</strong> → <strong>Sketch</strong> → dimension → <strong>90</strong>.</span></li>
+    </ol>
+  </div>
+</div>
+
+<h2><span class="section-num">01</span><span class="lang-block active" data-lang="nl">Wijzig de bron, niet het resultaat</span><span class="lang-block" data-lang="fr">Modifier la source, pas le résultat</span><span class="lang-block" data-lang="en">Edit the source, not the result</span></h2>
+<p><span class="lang-block active" data-lang="nl">Het 3D-volume dat je ziet, is het <em>resultaat</em> van een keten stappen in de modelboom (schets → Pad). Je wijzigt zo'n model nooit door aan het eindresultaat te "duwen", maar door terug te gaan naar de stap die je wil veranderen. Verander je die stap, dan herrekent FreeCAD de hele keten erna.</span><span class="lang-block" data-lang="fr">Le volume affiché est le <em>résultat</em> d'une chaîne d'étapes (croquis → Pad). On ne modifie jamais en « poussant » le résultat, mais en revenant à l'étape voulue. FreeCAD recalcule alors toute la suite.</span><span class="lang-block" data-lang="en">The solid you see is the <em>result</em> of a chain of steps (sketch → Pad). You never edit by "pushing" the result, but by going back to the step you want to change. FreeCAD then recomputes the whole chain.</span></p>
+
+<h2><span class="section-num">02</span><span class="lang-block active" data-lang="nl">Een feature bewerken (de hoogte)</span><span class="lang-block" data-lang="fr">Éditer une fonction (la hauteur)</span><span class="lang-block" data-lang="en">Editing a feature (the height)</span></h2>
+<ol class="stappenplan">
+  <li><span class="wb">1</span><span class="lang-block active" data-lang="nl"><strong>Dubbelklik</strong> op de <strong>Pad</strong> in de modelboom.<span class="waarom">Waarom: dubbelklikken opent de instellingen van die bewerking opnieuw.</span></span><span class="lang-block" data-lang="fr"><strong>Double-cliquez</strong> sur le <strong>Pad</strong> dans l'arbre.<span class="waarom">Pourquoi : cela rouvre les réglages de l'opération.</span></span><span class="lang-block" data-lang="en"><strong>Double-click</strong> the <strong>Pad</strong> in the tree.<span class="waarom">Why: it reopens that operation's settings.</span></span></li>
+  <li><span class="wb">2</span><span class="lang-block active" data-lang="nl">Geef een nieuwe <strong>hoogte</strong> (bv. 30&nbsp;mm) en bevestig.<span class="waarom">Waarom: het volume groeit of krimpt mee; je footprint blijft gelijk.</span></span><span class="lang-block" data-lang="fr">Entrez une nouvelle <strong>hauteur</strong> (30&nbsp;mm), validez.<span class="waarom">Pourquoi : le volume change, l'empreinte reste.</span></span><span class="lang-block" data-lang="en">Enter a new <strong>height</strong> (30&nbsp;mm), confirm.<span class="waarom">Why: the solid grows/shrinks; the footprint stays.</span></span></li>
+</ol>
+
+<div class="figure screencap">
+  <span class="screencap-badge"><span class="lang-block active" data-lang="nl">tijdelijk · 1.1</span><span class="lang-block" data-lang="fr">temporaire · 1.1</span><span class="lang-block" data-lang="en">temporary · 1.1</span></span>
+  <img src="../assets/img/h07/h07-modelboom.png" alt="De modelboom met de volledige opbouw: Body, Pad, Sketch, Pocket, Fillet">
+  <div class="figcaption"><span class="fignum">Fig. 7.1</span><span class="lang-block active" data-lang="nl">De <strong>modelboom</strong> (tab <strong>Model</strong>) toont je volledige opbouw: Body → Pad → Sketch → Pocket → Fillet … <strong>Dubbelklik</strong> een feature om ze opnieuw te bewerken, of klap ze open (<strong>▸</strong>) voor de onderliggende schets.</span><span class="lang-block" data-lang="fr">L'<strong>arbre du modèle</strong> (onglet <strong>Modèle</strong>) montre tout l'historique : Body → Pad → … <strong>Double-cliquez</strong> une fonction pour l'éditer.</span><span class="lang-block" data-lang="en">The <strong>model tree</strong> (<strong>Model</strong> tab) shows your full history: Body → Pad → Sketch → Pocket → Fillet … <strong>Double-click</strong> a feature to edit it, or expand it (<strong>▸</strong>) for its sketch.</span><span class="source-credit"><span class="lang-block active" data-lang="nl">Tijdelijke schermopname uit de CAD CAM Lessons-tutorial (FreeCAD, open source; donker thema/Blender-nav) — wordt vervangen door een eigen 1.1.1-opname (licht thema, Gesture, NL).</span><span class="lang-block" data-lang="fr">Capture temporaire du tutoriel CAD CAM Lessons (FreeCAD, open source) — à remplacer par une capture 1.1.1 maison.</span><span class="lang-block" data-lang="en">Temporary capture from the CAD CAM Lessons tutorial (FreeCAD, open source) — to be replaced by an own 1.1.1 capture.</span></span></div>
+</div>
+
+<h2><span class="section-num">03</span><span class="lang-block active" data-lang="nl">Een maat in de schets aanpassen</span><span class="lang-block" data-lang="fr">Modifier une cote du croquis</span><span class="lang-block" data-lang="en">Changing a sketch dimension</span></h2>
+<p><span class="lang-block active" data-lang="nl">Wil je de afmetingen van de bodem wijzigen, dan ga je een stap dieper: klap de Pad open, dubbelklik de onderliggende <strong>schets</strong>, en dubbelklik daar de maat die je wil veranderen. Je typt een nieuwe waarde in en bevestigt — net als bij het wijzigen van een straal in de figuur hieronder.</span><span class="lang-block" data-lang="fr">Pour changer les dimensions du fond, allez plus profond : dépliez le Pad, double-cliquez le <strong>croquis</strong>, puis la cote à modifier. Saisissez une valeur, comme pour le rayon ci-dessous.</span><span class="lang-block" data-lang="en">To change the bottom's size, go one level deeper: expand the Pad, double-click the underlying <strong>sketch</strong>, then double-click the dimension to change. Type a new value, like the radius below.</span></p>
+
+<div class="figure">
+  <img src="../assets/img/h07/h07-maat-wijzigen.png" alt="Een maatwaarde wijzigen in een schets via een invoerdialoog (rayon 8 mm)">
+  <div class="figcaption"><span class="fignum">Fig. 7.2</span><span class="lang-block active" data-lang="nl">Een maatwaarde aanpassen via de invoerdialoog (hier een straal). De nieuwe waarde stuurt onmiddellijk het model.</span><span class="lang-block" data-lang="fr">Modifier une cote via la boîte de saisie (ici un rayon). La nouvelle valeur pilote le modèle.</span><span class="lang-block" data-lang="en">Changing a dimension via the input dialog (here a radius). The new value drives the model immediately.</span><span class="source-credit">© Dominique Lachiver — <em>Parcours guidé FreeCAD</em>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. FreeCAD 1.0/1.1 (FR). <a href="../bronnen.html">Bronnen</a></span></div>
+</div>
+
+<div class="callout callout-key">
+  <div class="callout-header">🔑 <span data-i18n="key_title">Kernregel</span></div>
+  <p><span class="lang-block active" data-lang="nl">Een goed bepaalde (groene) schets wijzigt voorspelbaar: verander je de breedte van 80 naar 90&nbsp;mm, dan blijft de rest netjes vastliggen. Bij een nog niet vastgelegde schets kan een wijziging dingen onverwacht laten verspringen — vandaar het belang van H05.</span><span class="lang-block" data-lang="fr">Un croquis vert se modifie de façon prévisible. Un croquis sous-contraint peut faire « sauter » des éléments — d'où l'importance du H05.</span><span class="lang-block" data-lang="en">A fully constrained (green) sketch edits predictably. An under-constrained one can make things jump unexpectedly — hence the importance of H05.</span></p>
+</div>
+
+<div class="callout callout-shack">
+  <div class="callout-header">📻 <span class="lang-block active" data-lang="nl">In de shack</span><span class="lang-block" data-lang="fr">En pratique</span><span class="lang-block" data-lang="en">In the shack</span></div>
+  <p><span class="lang-block active" data-lang="nl">Dit is precies waarom we parametrisch tekenen: krijg je een andere printplaat, dan pas je twee maten aan (breedte en diepte) en je bakje klopt weer. Geen nieuw ontwerp nodig. In H20–H21 maken we hier zelfs kant-en-klare varianten van.</span><span class="lang-block" data-lang="fr">C'est tout l'intérêt du paramétrique : nouveau circuit → deux cotes à changer. En H20–H21, on en fera des variantes prêtes à l'emploi.</span><span class="lang-block" data-lang="en">This is exactly why we model parametrically: a different PCB → change two dimensions. In H20–H21 we'll even turn this into ready-made variants.</span></p>
+</div>
+
+<div class="doe-opdracht">
+  <div class="do-head">🛠️ <span data-i18n="task_title">Doe-opdracht</span></div>
+  <p><span class="lang-block active" data-lang="nl">Open je bakje uit H06. Wijzig via de Pad de hoogte van 25 naar 30&nbsp;mm. Open daarna de schets en verander de breedte van 80 naar 90&nbsp;mm. Controleer dat het volume netjes meegroeit en de schets <strong>groen</strong> blijft. Exporteer eventueel een nieuwe STL.</span><span class="lang-block" data-lang="fr">Ouvrez le boîtier (H06). Hauteur 25 → 30&nbsp;mm via le Pad, puis largeur 80 → 90&nbsp;mm dans le croquis. Vérifiez que tout suit et reste <strong>vert</strong>.</span><span class="lang-block" data-lang="en">Open your H06 box. Change the height 25 → 30&nbsp;mm via the Pad, then the width 80 → 90&nbsp;mm in the sketch. Check it updates and stays <strong>green</strong>.</span></p>
+</div>
+
+<h2><span class="section-num">04</span><span class="lang-block active" data-lang="nl">Veelgemaakte fouten</span><span class="lang-block" data-lang="fr">Erreurs fréquentes</span><span class="lang-block" data-lang="en">Common mistakes</span></h2>
+<ul>
+  <li><span class="lang-block active" data-lang="nl"><strong>De STL willen wijzigen.</strong> Dat kan niet parametrisch — werk altijd in je .FCStd en exporteer daarna opnieuw.</span><span class="lang-block" data-lang="fr"><strong>Vouloir modifier le STL.</strong> Impossible : travaillez dans le .FCStd, puis réexportez.</span><span class="lang-block" data-lang="en"><strong>Trying to edit the STL.</strong> Not parametric — work in your .FCStd, then re-export.</span></li>
+  <li><span class="lang-block active" data-lang="nl"><strong>Een wijziging breekt de schets.</strong> Vaak omdat ze nog niet vastgelegd was. Maak ze eerst volledig bepaald (H05).</span><span class="lang-block" data-lang="fr"><strong>Une modif casse le croquis.</strong> Souvent sous-contraint : contraignez-le d'abord (H05).</span><span class="lang-block" data-lang="en"><strong>An edit breaks the sketch.</strong> Often because it was under-constrained. Fully constrain it first (H05).</span></li>
+</ul>
+
+<h2><span class="section-num">05</span><span data-i18n="summary_title">Samenvatting</span></h2>
+<p><span class="lang-block active" data-lang="nl">Parametrisch wijzigen betekent: ga terug naar de juiste stap in de modelboom en verander daar de waarde. <strong>Dubbelklik een feature</strong> (zoals Pad) om bijvoorbeeld de hoogte aan te passen, of klap hem open en wijzig een <strong>maat in de schets</strong>. Een groene schets garandeert dat zulke wijzigingen voorspelbaar verlopen.</span><span class="lang-block" data-lang="fr">Modifier = revenir à la bonne étape et changer la valeur. <strong>Double-cliquez une fonction</strong> (Pad) ou modifiez une <strong>cote du croquis</strong>. Un croquis vert rend tout prévisible.</span><span class="lang-block" data-lang="en">Parametric editing means: go back to the right step and change the value. <strong>Double-click a feature</strong> (Pad) or change a <strong>sketch dimension</strong>. A green sketch keeps edits predictable.</span></p>
+
+<div class="callout callout-key memory-box">
+  <div class="callout-header">🧠 <span data-i18n="memory_title">Onthoud dit</span></div>
+  <ul>
+    <li><span class="lang-block active" data-lang="nl">Wijzig de <strong>bron</strong> (schets/feature), niet het eindresultaat.</span><span class="lang-block" data-lang="fr">Modifiez la <strong>source</strong>, pas le résultat.</span><span class="lang-block" data-lang="en">Edit the <strong>source</strong>, not the result.</span></li>
+    <li><span class="lang-block active" data-lang="nl"><strong>Dubbelklik</strong> in de modelboom om te bewerken.</span><span class="lang-block" data-lang="fr"><strong>Double-clic</strong> dans l'arbre pour éditer.</span><span class="lang-block" data-lang="en"><strong>Double-click</strong> in the tree to edit.</span></li>
+    <li><span class="lang-block active" data-lang="nl">Groene schets = veilige, voorspelbare wijzigingen.</span><span class="lang-block" data-lang="fr">Croquis vert = modifications sûres.</span><span class="lang-block" data-lang="en">Green sketch = safe, predictable edits.</span></li>
+  </ul>
+</div>
+
+<div class="complete-area" style="text-align:center;margin:34px 0 10px"><button id="btn-complete" class="btn btn-complete" data-chid="h07">✓ Markeer als voltooid</button></div>
+<div class="chapter-nav-footer"><a class="ch-nav-btn" href="h06-bakje-export-stl.html"><span data-i18n="prev">← Vorige</span></a><a class="ch-nav-btn" href="h08-constraints.html"><span data-i18n="next">Volgende →</span></a></div>
+
+</div></main>
+<footer class="app-footer"><div class="footer-logo-row"><span class="footer-wld">WLD</span><div class="footer-sep"></div><div class="footer-info">ON6WL · Waaslandse Radio Amateurs · <a href="https://on6wl.be">on6wl.be</a></div></div><div class="footer-right">FreeCAD-cursus · 1.1.1 · <a href="../bronnen.html">Bronnen</a></div></footer>
+<script src="../assets/js/app.js"></script><script src="../assets/js/sidebar.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{ renderSidebar('h07'); });</script>
+</body></html>

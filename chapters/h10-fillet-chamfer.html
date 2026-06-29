@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H10 · Fillet & chamfer — FreeCAD voor Radioamateurs</title>
+<link rel="stylesheet" href="../assets/css/freecad.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="header-logo"><a href="../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;"><span class="header-logo-wld">WLD</span><div class="header-logo-sep"></div></a>
+  <span class="header-logo-title"><span class="lang-block active" data-lang="nl">FreeCAD voor Radioamateurs</span><span class="lang-block" data-lang="fr">FreeCAD pour Radioamateurs</span><span class="lang-block" data-lang="en">FreeCAD for Radio Amateurs</span></span></div>
+  <div class="header-center"><div class="header-progress-wrap"><div class="header-progress-label"><span data-i18n="progress">Voortgang</span><span class="header-progress-done">0 / 23</span></div><div class="header-progress-track"><div class="header-progress-fill" style="width:0%"></div></div></div></div>
+  <div class="header-right"><span class="header-callsign" id="hCallsign">—</span><div class="lang-switcher"><button class="lang-switch-btn active" data-lang="nl">NL</button><button class="lang-switch-btn" data-lang="fr">FR</button><button class="lang-switch-btn" data-lang="en">EN</button></div><button class="menu-toggle" id="menu-toggle">☰</button></div>
+</header>
+<nav class="app-sidebar"></nav>
+<main class="app-main"><div class="main-inner">
+
+<div class="chapter-header">
+  <div class="ch-header-meta">
+    <div class="ch-breadcrumb"><a href="../index.html"><span class="lang-block active" data-lang="nl">Overzicht</span><span class="lang-block" data-lang="fr">Aperçu</span><span class="lang-block" data-lang="en">Overview</span></a><span>›</span><span class="lang-block active" data-lang="nl">Niveau 2 — Medior</span><span class="lang-block" data-lang="fr">Niveau 2 — Médior</span><span class="lang-block" data-lang="en">Level 2 — Medior</span></div>
+    <span class="ch-badge ch-badge-num">H10</span><span class="ch-badge ch-badge-level medior"><span class="lang-block active" data-lang="nl">Medior</span><span class="lang-block" data-lang="fr">Médior</span><span class="lang-block" data-lang="en">Medior</span></span>
+  </div>
+  <h1><span class="lang-block active" data-lang="nl">Afronden &amp; afkanten (fillet &amp; chamfer)</span><span class="lang-block" data-lang="fr">Congés &amp; chanfreins (fillet &amp; chamfer)</span><span class="lang-block" data-lang="en">Fillets &amp; chamfers</span></h1>
+  <p class="intro"><span class="lang-block active" data-lang="nl">Scherpe randen voelen niet alleen onaangenaam aan, ze zijn ook zwakker en printen minder mooi. Met <strong>fillet</strong> (afronden) en <strong>chamfer</strong> (afkanten) werk je je behuizing af: comfortabeler in de hand, sterker op de kritieke plekken, en beter printbaar.</span><span class="lang-block" data-lang="fr">Les arêtes vives sont désagréables, plus fragiles et s'impriment moins bien. Avec <strong>congé</strong> (arrondi) et <strong>chanfrein</strong> (biseau), on finit le boîtier : plus agréable, plus solide, mieux imprimable.</span><span class="lang-block" data-lang="en">Sharp edges feel unpleasant, are weaker, and print less cleanly. With <strong>fillet</strong> (rounding) and <strong>chamfer</strong> (bevelling) you finish your enclosure: nicer to hold, stronger where it matters, and better to print.</span></p>
+  <svg class="ch-header-waves" viewBox="0 0 820 44" preserveAspectRatio="none"><path class="rf-w3" fill="none" stroke="#00B4CC" stroke-width="1" d="M0,28 Q41,34 82,28 Q123,22 164,28 Q205,34 246,28 Q287,22 328,28 Q369,34 410,28 Q451,22 492,28 Q533,34 574,28 Q615,22 656,28 Q697,34 738,28 Q779,22 820,26"/><path class="rf-w1" fill="none" stroke="#00B4CC" stroke-width="1.8" d="M0,34 Q20,40 41,34 Q61,28 82,34 Q102,40 123,34 Q143,28 164,34 Q184,40 205,34 Q225,28 246,34 Q266,40 287,34 Q307,28 328,34 Q348,40 369,34 Q389,28 410,34 Q430,40 451,34 Q471,28 492,34 Q512,40 533,34 Q553,28 574,34 Q594,40 615,34 Q635,28 656,34 Q676,40 697,34 Q717,28 738,34 Q758,40 779,34 Q799,28 820,32"/></svg>
+</div>
+
+<div class="chapter-body">
+
+<div class="leerdoelen">
+  <div class="leerdoelen-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-i18n="objectives">Na dit hoofdstuk kun je</span></div>
+  <ul>
+    <li><span class="lang-block active" data-lang="nl">randen afronden met fillet (straal)</span><span class="lang-block" data-lang="fr">arrondir des arêtes avec un congé (rayon)</span><span class="lang-block" data-lang="en">round edges with a fillet (radius)</span></li>
+    <li><span class="lang-block active" data-lang="nl">randen afkanten met chamfer (afstand)</span><span class="lang-block" data-lang="fr">biseauter des arêtes avec un chanfrein (distance)</span><span class="lang-block" data-lang="en">bevel edges with a chamfer (distance)</span></li>
+    <li><span class="lang-block active" data-lang="nl">meerdere randen tegelijk selecteren</span><span class="lang-block" data-lang="fr">sélectionner plusieurs arêtes à la fois</span><span class="lang-block" data-lang="en">select several edges at once</span></li>
+    <li><span class="lang-block active" data-lang="nl">fillet/chamfer slim inzetten voor een beter printresultaat</span><span class="lang-block" data-lang="fr">utiliser congé/chanfrein pour mieux imprimer</span><span class="lang-block" data-lang="en">use fillet/chamfer for a better print</span></li>
+  </ul>
+</div>
+
+<div class="howto">
+  <div class="howto-h"><span class="lang-block active" data-lang="nl">⚙️ Zo doe je het in FreeCAD 1.1.1</span><span class="lang-block" data-lang="fr">⚙️ Comment faire dans FreeCAD 1.1.1</span><span class="lang-block" data-lang="en">⚙️ How to do it in FreeCAD 1.1.1</span></div>
+  <div class="howto-body">
+    <p><span class="lang-block active" data-lang="nl"><strong>Workbench:</strong> <strong>Part Design</strong>. Werk op <strong>randen</strong> of een vlak.</span><span class="lang-block" data-lang="fr"><strong>Atelier :</strong> <strong>Part Design</strong>. Arêtes/face.</span><span class="lang-block" data-lang="en"><strong>Workbench:</strong> <strong>Part Design</strong>. Edges or a face.</span></p>
+    <p><span class="lang-block active" data-lang="nl"><strong>Commando:</strong> <span class="path">Part Design → Een opmaakfunctie toepassen → Afronding</span> of <span class="path">… → Afkanting</span>. Typ <strong>straal</strong> (fillet) of <strong>afstand</strong> (chamfer).</span><span class="lang-block" data-lang="fr"><strong>Commande :</strong> <span class="path">Part Design → Habillage → Congé</span> ou <span class="path">… → Chanfrein</span>. <strong>Rayon</strong> ou <strong>distance</strong>.</span><span class="lang-block" data-lang="en"><strong>Command:</strong> <span class="path">Part Design → Apply a dress-up feature → Fillet</span> or <span class="path">… → Chamfer</span>. <strong>Radius</strong> or <strong>distance</strong>.</span></p>
+    <ol>
+      <li><span class="lang-block active" data-lang="nl">Klik een <strong>rand</strong> (<strong>Ctrl</strong> voor meer, of een <strong>vlak</strong>).</span><span class="lang-block" data-lang="fr"><strong>Arête</strong> (<strong>Ctrl</strong>/face).</span><span class="lang-block" data-lang="en"><strong>Edge</strong> (<strong>Ctrl</strong>/face).</span></li>
+      <li><span class="lang-block active" data-lang="nl">Kies <strong>Afronding</strong> of <strong>Afkanting</strong>.</span><span class="lang-block" data-lang="fr"><strong>Congé</strong> ou <strong>Chanfrein</strong>.</span><span class="lang-block" data-lang="en"><strong>Fillet</strong> or <strong>Chamfer</strong>.</span></li>
+      <li><span class="lang-block active" data-lang="nl"><strong>Straal</strong> 2,5 of <strong>afstand</strong> 0,6 → OK.</span><span class="lang-block" data-lang="fr"><strong>Rayon</strong> 2,5 / <strong>distance</strong> 0,6.</span><span class="lang-block" data-lang="en"><strong>Radius</strong> 2.5 / <strong>distance</strong> 0.6.</span></li>
+    </ol>
+  </div>
+</div>
+
+<h2><span class="section-num">01</span><span class="lang-block active" data-lang="nl">Fillet: randen afronden</span><span class="lang-block" data-lang="fr">Congé : arrondir</span><span class="lang-block" data-lang="en">Fillet: rounding edges</span></h2>
+<p><span class="lang-block active" data-lang="nl">Een <strong>fillet</strong> vervangt een scherpe rand door een afgeronde overgang met een bepaalde <strong>straal</strong>. Je selecteert één of meer randen (of een heel vlak), kiest de fillet-functie en geeft een straal op. Hoe je selecteert: klik een rand aan; houd <strong>Ctrl</strong> ingedrukt om meerdere randen toe te voegen. Lachiver rondt zo bijvoorbeeld vier verticale randen tegelijk af.</span><span class="lang-block" data-lang="fr">Un <strong>congé</strong> remplace une arête vive par un arrondi d'un certain <strong>rayon</strong>. Sélectionnez une ou plusieurs arêtes (avec <strong>Ctrl</strong>), choisissez Congé et donnez le rayon.</span><span class="lang-block" data-lang="en">A <strong>fillet</strong> replaces a sharp edge with a rounded transition of a given <strong>radius</strong>. Select one or more edges (hold <strong>Ctrl</strong> to add more), choose Fillet and give the radius.</span></p>
+
+<div class="figure">
+  <img src="../assets/img/h10/h10-afrondingen.png" alt="Technische tekening van een behuizing met afgeronde buitenhoeken, wanddikte 2 mm en bevestigingsbusjes">
+  <div class="figcaption"><span class="fignum">Fig. 10.1</span><span class="lang-block active" data-lang="nl">Onze behuizing met <strong>afgeronde buitenhoeken</strong> (congés). Je ziet ook al de wanddikte (2&nbsp;mm) en de bevestigingsbusjes — die busjes maken we in H12.</span><span class="lang-block" data-lang="fr">Le boîtier aux <strong>angles arrondis</strong> (congés), avec l'épaisseur (2&nbsp;mm) et les bossages de fixation (voir H12).</span><span class="lang-block" data-lang="en">Our enclosure with <strong>rounded outer corners</strong> (fillets), plus the wall thickness (2&nbsp;mm) and mounting bosses (made in H12).</span><span class="source-credit">© Dominique Lachiver — <em>Parcours guidé FreeCAD</em>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. FreeCAD 1.0/1.1 (FR). <a href="../bronnen.html">Bronnen</a></span></div>
+</div>
+
+<div class="figure screencap">
+  <span class="screencap-badge"><span class="lang-block active" data-lang="nl">tijdelijk · 1.1</span><span class="lang-block" data-lang="fr">temporaire · 1.1</span><span class="lang-block" data-lang="en">temporary · 1.1</span></span>
+  <img src="../assets/img/h10/h10-fillet-paneel.png" alt="Het Fillet-paneel met geselecteerde randen, het Radius-veld en Use all edges">
+  <div class="figcaption"><span class="fignum">Fig. 10.2</span><span class="lang-block active" data-lang="nl">Het <strong>Fillet-paneel</strong> (Taken): de geselecteerde randen (Edge2, Edge5), het veld <strong>Radius</strong> en de optie <strong>Use all edges</strong>. Bij Chamfer werkt hetzelfde paneel met een <strong>afstand</strong> i.p.v. een straal.</span><span class="lang-block" data-lang="fr">Le <strong>panneau Congé</strong> (Tâches) : arêtes sélectionnées, champ <strong>Rayon</strong>, option <strong>toutes les arêtes</strong>. Le chanfrein utilise une <strong>distance</strong>.</span><span class="lang-block" data-lang="en">The <strong>Fillet panel</strong> (Tasks): the selected edges, the <strong>Radius</strong> field and <strong>Use all edges</strong>. Chamfer uses a <strong>distance</strong> instead of a radius.</span><span class="source-credit"><span class="lang-block active" data-lang="nl">Tijdelijke schermopname uit de CAD CAM Lessons-tutorial (FreeCAD, open source; donker thema/Blender-nav) — wordt vervangen door een eigen 1.1.1-opname (licht thema, Gesture, NL).</span><span class="lang-block" data-lang="fr">Capture temporaire du tutoriel CAD CAM Lessons (FreeCAD, open source) — à remplacer par une capture 1.1.1 maison.</span><span class="lang-block" data-lang="en">Temporary capture from the CAD CAM Lessons tutorial (FreeCAD, open source) — to be replaced by an own 1.1.1 capture.</span></span></div>
+</div>
+
+<h2><span class="section-num">02</span><span class="lang-block active" data-lang="nl">Chamfer: randen afkanten</span><span class="lang-block" data-lang="fr">Chanfrein : biseauter</span><span class="lang-block" data-lang="en">Chamfer: bevelling edges</span></h2>
+<p><span class="lang-block active" data-lang="nl">Een <strong>chamfer</strong> vervangt een scherpe rand door een schuin afgesneden vlakje. In plaats van een straal geef je een <strong>afstand</strong> op (hoe ver het vlakje "inhapt"). De selectie werkt net als bij fillet: één of meer randen, eventueel met Ctrl. Fillet geeft een ronde overgang, chamfer een rechte schuine kant.</span><span class="lang-block" data-lang="fr">Un <strong>chanfrein</strong> remplace l'arête par un petit pan coupé : on donne une <strong>distance</strong>, pas un rayon. Sélection identique (Ctrl). Congé = arrondi, chanfrein = pan droit.</span><span class="lang-block" data-lang="en">A <strong>chamfer</strong> replaces a sharp edge with a flat angled face: you give a <strong>distance</strong>, not a radius. Selection works like fillet (Ctrl). Fillet = rounded, chamfer = straight bevel.</span></p>
+
+<div class="callout callout-key">
+  <div class="callout-header">🔑 <span data-i18n="key_title">Kernregel</span></div>
+  <p><span class="lang-block active" data-lang="nl"><strong>Fillet = straal (rond)</strong>, <strong>chamfer = afstand (recht schuin)</strong>. Beide werken op geselecteerde randen of vlakken. Voeg ze toe ná je vorm grotendeels af is — ze staan als aparte stappen in de modelboom en blijven wijzigbaar.</span><span class="lang-block" data-lang="fr"><strong>Congé = rayon</strong>, <strong>chanfrein = distance</strong>. Ajoutez-les en fin de modélisation ; ce sont des étapes modifiables.</span><span class="lang-block" data-lang="en"><strong>Fillet = radius (round)</strong>, <strong>chamfer = distance (straight bevel)</strong>. Add them late; they're separate, editable tree steps.</span></p>
+</div>
+
+<h2><span class="section-num">03</span><span class="lang-block active" data-lang="nl">Slim afronden/afkanten voor de printer</span><span class="lang-block" data-lang="fr">Congé/chanfrein malins pour l'impression</span><span class="lang-block" data-lang="en">Smart fillets/chamfers for printing</span></h2>
+<p><span class="lang-block active" data-lang="nl">Afrondingen en afkantingen zijn niet enkel cosmetisch — ze helpen je print. Een kleine <strong>chamfer op de onderrand</strong> verzacht de "olifantsvoet" (het lichte uitspreiden van de eerste laag) en geeft nettere passingen. Een <strong>fillet in binnenhoeken</strong> vermindert spanningsconcentratie, waar een onderdeel anders zou scheuren. En een <strong>schuine kant (chamfer) i.p.v. een overhangende rand</strong> kan support overbodig maken.</span><span class="lang-block" data-lang="fr">Ce n'est pas que cosmétique. Un petit <strong>chanfrein en bas</strong> atténue le « pied d'éléphant ». Un <strong>congé en angle interne</strong> réduit les concentrations de contrainte. Un <strong>pan coupé</strong> au lieu d'un surplomb évite le support.</span><span class="lang-block" data-lang="en">Not just cosmetic. A small <strong>chamfer on the bottom edge</strong> softens "elephant's foot". A <strong>fillet in inner corners</strong> reduces stress concentration. A <strong>chamfer instead of an overhang</strong> can remove the need for support.</span></p>
+
+<div class="callout callout-warning">
+  <div class="callout-header">⚠️ <span class="lang-block active" data-lang="nl">Let op</span><span class="lang-block" data-lang="fr">Attention</span><span class="lang-block" data-lang="en">Watch out</span></div>
+  <p><span class="lang-block active" data-lang="nl">Een te grote straal die niet "past" op de rand laat de fillet mislukken. Begin klein. En rond geen randen af die je later <em>vlak</em> nodig hebt — bijvoorbeeld de bovenrand waar straks het deksel op moet sluiten (H12).</span><span class="lang-block" data-lang="fr">Un rayon trop grand fait échouer le congé. Et n'arrondissez pas les arêtes qui doivent rester <em>planes</em> (le bord où vient le couvercle, H12).</span><span class="lang-block" data-lang="en">A radius too large for the edge makes the fillet fail. And don't round edges you'll need <em>flat</em> later — like the top rim where the lid will seat (H12).</span></p>
+</div>
+
+<div class="callout callout-shack">
+  <div class="callout-header">📻 <span class="lang-block active" data-lang="nl">In de shack</span><span class="lang-block" data-lang="fr">En pratique</span><span class="lang-block" data-lang="en">In the shack</span></div>
+  <p><span class="lang-block active" data-lang="nl">Rond de vier verticale buitenhoeken van je behuizing licht af (bv. 2–3&nbsp;mm) voor een fijne, professionele look in de hand. Geef de onderrand een kleine chamfer voor een nette eerste laag. Zo ziet je vossenjacht-ontvanger er meteen afgewerkt uit.</span><span class="lang-block" data-lang="fr">Arrondissez les angles verticaux (2–3&nbsp;mm) et chanfreinez le bas. Votre récepteur ARDF paraît fini.</span><span class="lang-block" data-lang="en">Round the four vertical corners (2–3&nbsp;mm) and chamfer the bottom edge. Your ARDF receiver instantly looks finished.</span></p>
+</div>
+
+<div class="doe-opdracht">
+  <div class="do-head">🛠️ <span data-i18n="task_title">Doe-opdracht</span></div>
+  <p><span class="lang-block active" data-lang="nl">Selecteer de vier <strong>verticale buitenranden</strong> van je bak (Ctrl-klik) en geef ze een <strong>fillet</strong> van 2–3&nbsp;mm. Selecteer daarna de <strong>onderrand</strong> en geef die een <strong>chamfer</strong> van ~0,6&nbsp;mm. Bekijk het verschil tussen de ronde en de schuine afwerking, en exporteer eventueel een STL.</span><span class="lang-block" data-lang="fr">Congé de 2–3&nbsp;mm sur les 4 arêtes verticales (Ctrl), puis chanfrein de ~0,6&nbsp;mm sur l'arête du bas. Comparez.</span><span class="lang-block" data-lang="en">Fillet the four <strong>vertical outer edges</strong> (Ctrl-click) at 2–3&nbsp;mm, then chamfer the <strong>bottom edge</strong> at ~0.6&nbsp;mm. Compare the round vs bevelled finish.</span></p>
+</div>
+
+<h2><span class="section-num">04</span><span class="lang-block active" data-lang="nl">Veelgemaakte fouten</span><span class="lang-block" data-lang="fr">Erreurs fréquentes</span><span class="lang-block" data-lang="en">Common mistakes</span></h2>
+<ul>
+  <li><span class="lang-block active" data-lang="nl"><strong>Straal/afstand te groot.</strong> De bewerking mislukt of vervormt het deel. Begin klein en verhoog stapsgewijs.</span><span class="lang-block" data-lang="fr"><strong>Valeur trop grande.</strong> L'opération échoue. Commencez petit.</span><span class="lang-block" data-lang="en"><strong>Radius/distance too large.</strong> The op fails or distorts the part. Start small.</span></li>
+  <li><span class="lang-block active" data-lang="nl"><strong>Randen afronden die vlak moeten blijven.</strong> Denk aan de pasvlakken voor het deksel.</span><span class="lang-block" data-lang="fr"><strong>Arrondir des faces d'appui.</strong> Pensez au plan du couvercle.</span><span class="lang-block" data-lang="en"><strong>Rounding mating edges.</strong> Keep the lid's seating faces flat.</span></li>
+  <li><span class="lang-block active" data-lang="nl"><strong>Te veel randen in één bewerking.</strong> Bij problemen: splits in meerdere fillet-/chamfer-stappen, dan zie je welke rand faalt.</span><span class="lang-block" data-lang="fr"><strong>Trop d'arêtes d'un coup.</strong> Séparez en plusieurs étapes pour isoler l'erreur.</span><span class="lang-block" data-lang="en"><strong>Too many edges at once.</strong> Split into several steps to find the failing edge.</span></li>
+</ul>
+
+<div class="callout callout-tip">
+  <div class="callout-header">💡 <span class="lang-block active" data-lang="nl">Randen makkelijker selecteren</span><span class="lang-block" data-lang="fr">Sélectionner les arêtes plus facilement</span><span class="lang-block" data-lang="en">Selecting edges more easily</span></div>
+  <p><span class="lang-block active" data-lang="nl">Moeilijk om een rand te raken die achter andere ligt? Schakel naar de <strong>draadmodel-weergave</strong> (wireframe). Dan zie je álle randen — ook de achterliggende — en selecteer je ze vlot voor je fillet of chamfer.</span><span class="lang-block" data-lang="fr">Difficile d'attraper une arête cachée ? Passez en <strong>vue fil de fer</strong> : toutes les arêtes deviennent sélectionnables.</span><span class="lang-block" data-lang="en">Hard to click an edge hidden behind others? Switch to <strong>wireframe view</strong>: all edges (including those behind) become selectable.</span></p>
+</div>
+
+<h2><span class="section-num">05</span><span data-i18n="summary_title">Samenvatting</span></h2>
+<p><span class="lang-block active" data-lang="nl"><strong>Fillet</strong> rondt randen af (je geeft een <em>straal</em>), <strong>chamfer</strong> kant ze af (je geeft een <em>afstand</em>). Selecteer randen of vlakken (Ctrl voor meerdere) en voeg de bewerking als aparte, wijzigbare stap toe. Naast de mooiere afwerking helpen ze ook bij het printen: chamfer onderaan tegen olifantsvoet, fillet in binnenhoeken tegen scheuren, en schuine kanten i.p.v. overhangen.</span><span class="lang-block" data-lang="fr"><strong>Congé</strong> (rayon) arrondit, <strong>chanfrein</strong> (distance) biseaute. Sélection (Ctrl), étape modifiable. Aident aussi à l'impression.</span><span class="lang-block" data-lang="en"><strong>Fillet</strong> rounds (a <em>radius</em>), <strong>chamfer</strong> bevels (a <em>distance</em>). Select edges/faces (Ctrl), add as an editable step. They also help printing.</span></p>
+
+<div class="callout callout-key memory-box">
+  <div class="callout-header">🧠 <span data-i18n="memory_title">Onthoud dit</span></div>
+  <ul>
+    <li><span class="lang-block active" data-lang="nl"><strong>Fillet = straal (rond)</strong>, <strong>chamfer = afstand (schuin)</strong>.</span><span class="lang-block" data-lang="fr"><strong>Congé = rayon</strong>, <strong>chanfrein = distance</strong>.</span><span class="lang-block" data-lang="en"><strong>Fillet = radius</strong>, <strong>chamfer = distance</strong>.</span></li>
+    <li><span class="lang-block active" data-lang="nl"><strong>Ctrl</strong> = meerdere randen selecteren.</span><span class="lang-block" data-lang="fr"><strong>Ctrl</strong> = plusieurs arêtes.</span><span class="lang-block" data-lang="en"><strong>Ctrl</strong> = select several edges.</span></li>
+    <li><span class="lang-block active" data-lang="nl">Chamfer onderrand = nettere eerste laag; pasvlakken vlak laten.</span><span class="lang-block" data-lang="fr">Chanfrein en bas = meilleure 1ʳᵉ couche.</span><span class="lang-block" data-lang="en">Bottom chamfer = cleaner first layer; keep mating faces flat.</span></li>
+  </ul>
+</div>
+
+<div class="complete-area" style="text-align:center;margin:34px 0 10px"><button id="btn-complete" class="btn btn-complete" data-chid="h10">✓ Markeer als voltooid</button></div>
+<div class="chapter-nav-footer"><a class="ch-nav-btn" href="h09-uitsparingen-gaten.html"><span data-i18n="prev">← Vorige</span></a><a class="ch-nav-btn" href="h11-externe-geometrie.html"><span data-i18n="next">Volgende →</span></a></div>
+
+</div></main>
+<footer class="app-footer"><div class="footer-logo-row"><span class="footer-wld">WLD</span><div class="footer-sep"></div><div class="footer-info">ON6WL · Waaslandse Radio Amateurs · <a href="https://on6wl.be">on6wl.be</a></div></div><div class="footer-right">FreeCAD-cursus · 1.1.1 · <a href="../bronnen.html">Bronnen</a></div></footer>
+<script src="../assets/js/app.js"></script><script src="../assets/js/sidebar.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{ renderSidebar('h10'); });</script>
+</body></html>

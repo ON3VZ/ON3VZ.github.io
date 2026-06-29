@@ -1,0 +1,16 @@
+<svg viewBox="0 0 620 250" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+  <style>.part{fill:#cfe0ea;stroke:#0B2138;stroke-width:2;}.sup{stroke:#00B4CC;stroke-width:1.4;}.plate{stroke:#43586b;stroke-width:2;}.lab{fill:#0B2138;font-size:13px;}.bad{fill:#c0392b;font-size:13px;font-weight:700;}.good{fill:#1a8f4a;font-size:13px;font-weight:700;}.dim{fill:#43586b;font-size:12px;}</style>
+  <!-- build plate -->
+  <line class="plate" x1="20" y1="205" x2="600" y2="205"/>
+  <g><line class="plate" x1="40" y1="205" x2="30" y2="215"/><line class="plate" x1="80" y1="205" x2="70" y2="215"/><line class="plate" x1="120" y1="205" x2="110" y2="215"/><line class="plate" x1="160" y1="205" x2="150" y2="215"/><line class="plate" x1="200" y1="205" x2="190" y2="215"/></g>
+  <!-- LEFT: steep overhang needing support -->
+  <path class="part" d="M70,205 L70,90 L210,90 L210,120 L100,120 L100,205 Z"/>
+  <g class="sup"><line x1="112" y1="120" x2="112" y2="205"/><line x1="126" y1="120" x2="126" y2="205"/><line x1="140" y1="120" x2="140" y2="205"/><line x1="154" y1="120" x2="154" y2="205"/><line x1="168" y1="120" x2="168" y2="205"/><line x1="182" y1="120" x2="182" y2="205"/><line x1="196" y1="120" x2="196" y2="205"/></g>
+  <text class="bad" x="140" y="74" text-anchor="middle">✗ steile overhang</text>
+  <text class="dim" x="153" y="235" text-anchor="middle">support nodig (kost tijd + ruw vlak)</text>
+  <!-- RIGHT: self-supporting chamfer ~45 -->
+  <path class="part" d="M380,205 L380,90 L500,90 L500,120 L410,205 Z"/>
+  <text class="good" x="440" y="74" text-anchor="middle">✓ zelfdragend ≤ ~45°</text>
+  <path d="M410,205 L410,170 A35,35 0 0,1 426,176" fill="none" stroke="#FF6B35" stroke-width="1.5"/>
+  <text class="dim" x="455" y="235" text-anchor="middle">afkanting i.p.v. overhang</text>
+</svg>

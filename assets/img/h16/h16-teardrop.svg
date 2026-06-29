@@ -1,0 +1,14 @@
+<svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+  <style>.body{fill:#eef3f6;stroke:#0B2138;stroke-width:2;}.hole{fill:#fff;stroke:#0B2138;stroke-width:2;}.sag{fill:none;stroke:#c0392b;stroke-width:2;stroke-dasharray:4 4;}.lab{fill:#0B2138;font-size:13px;font-weight:700;}.bad{fill:#c0392b;font-size:12px;font-weight:700;}.good{fill:#1a8f4a;font-size:12px;font-weight:700;}.dim{fill:#43586b;font-size:11px;}</style>
+  <!-- left: round horizontal hole sags at top -->
+  <rect class="body" x="30" y="60" width="170" height="150" rx="6"/>
+  <circle class="hole" cx="115" cy="135" r="48"/>
+  <path class="sag" d="M75,118 Q115,150 155,118"/>
+  <text class="bad" x="115" y="44" text-anchor="middle">✗ rond gat (horizontaal)</text>
+  <text class="dim" x="115" y="226" text-anchor="middle">bovenkant zakt in</text>
+  <!-- right: teardrop -->
+  <rect class="body" x="260" y="60" width="170" height="150" rx="6"/>
+  <path class="hole" d="M345,87 L388,150 A45,45 0 1,1 302,150 Z"/>
+  <text class="good" x="345" y="44" text-anchor="middle">✓ teardrop-vorm</text>
+  <text class="dim" x="345" y="226" text-anchor="middle">print zonder support</text>
+</svg>
