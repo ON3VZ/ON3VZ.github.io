@@ -866,12 +866,12 @@ function renderMap(qsos) {
       .attr('class', 'qso-arc')
       .attr('d', path)
       .attr('stroke', colour)
-      .attr('stroke-width', 1.6)
+      .attr('stroke-width', 1.05)
       .attr('fill', 'none')
       .attr('opacity', 0.6)
-      .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('opacity', 1).attr('stroke-width', 2.2); })
+      .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('opacity', 1).attr('stroke-width', 1.45); })
       .on('mousemove', moveTooltip)
-      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', 0.45).attr('stroke-width', 1.2); });
+      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', 0.45).attr('stroke-width', 0.8); });
   });
 
   // DX dots — clustered by on-screen proximity, per band (updated 2026-07-05).
