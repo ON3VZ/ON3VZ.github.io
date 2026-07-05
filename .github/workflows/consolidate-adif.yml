@@ -1,0 +1,50 @@
+name: Consolidate ADIF Snapshots
+
+# Merges every assets/data/*.adi upload into a single deduplicated
+# assets/data/archive.adi, then removes snapshot files older than 30 days.
+# The full logbook is never lost: everything is merged into archive.adi
+# BEFORE any old file is deleted, and the script aborts without changing
+# anything if the merge looks incomplete. See scripts/consolidate_adif.py.
+
+on:
+  schedule:
+    - cron: '0 3 1 * *'   # 03:00 UTC on the 1st of every month
+  workflow_dispatch:        # allow manual runs from the Actions tab
+
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run consolidation script
+        run: python3 scripts/consolidate_adif.py
+
+      - name: Regenerate manifest.json
+        run: |
+          cd assets/data
+          FILES=()
+          for f in *; do
+            [ "$f" = "manifest.json" ] && continue
+            [ "$f" = ".gitkeep" ] && continue
+            if [[ "$f" == *.adi ]] || grep -qi "<eor>" "$f" 2>/dev/null; then
+              FILES+=("\"$f\"")
+            fi
+          done
+          JSON_FILES=$(IFS=','; echo "${FILES[*]}")
+          DATE=$(date -u +%Y-%m-%d)
+          echo "{\"files\":[${JSON_FILES}],\"updated\":\"${DATE}\"}" > manifest.json
+          cat manifest.json
+
+      - name: Commit changes
+        run: |
+          git config user.email "on3vz@uba.be"
+          git config user.name "ON3VZ"
+          git add assets/data/
+          git diff --staged --quiet || (git commit -m "chore: consolidate ADIF snapshots, prune files older than 30 days" && git push)
