@@ -157,6 +157,7 @@ let allQsos   = [];
 let sortCol = 'date';
 let sortDir = 'desc';
 let tableSearch = {};
+let globalSearch = '';
 const PAGE_SIZE = 25;
 let currentPage = 1;
 let activeYears  = new Set();
@@ -586,6 +587,13 @@ function applyFilters() {
       const ym = (q.date || '').slice(0, 6);
       if (!activeMonths.has(ym)) return false;
     }
+    // Free-text station search (added 2026-07-05): matches call, DXCC,
+    // band or mode. Does not affect the map/stats scope beyond the normal
+    // filters — it's an extra narrowing step on top of them.
+    if (globalSearch) {
+      const hay = `${q.call || ''} ${q.dxcc || ''} ${q.band || ''} ${q.mode || ''}`.toLowerCase();
+      if (!hay.includes(globalSearch)) return false;
+    }
     return true;
   });
   updateStats(filtered);
@@ -593,6 +601,9 @@ function applyFilters() {
   renderTable(filtered);
   if (geoReady) renderMap(filtered);
   else if (!geoReady && d3Loaded) { /* wait */ }
+
+  const searchCount = document.getElementById('qsoSearchCount');
+  if (searchCount) searchCount.textContent = globalSearch ? `${filtered.length} match${filtered.length === 1 ? '' : 'es'}` : '';
 }
 
 /* ── STATS ── */
@@ -633,6 +644,15 @@ function setupTableControls() {
       applyFilters();
     });
   });
+
+  // Station search bar (added 2026-07-05)
+  const stationSearch = document.getElementById('qsoSearch');
+  if (stationSearch) {
+    stationSearch.addEventListener('input', () => {
+      globalSearch = stationSearch.value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
 }
 
 /* ── TABLE ── */
@@ -854,49 +874,50 @@ function renderMap(qsos) {
       .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', 0.45).attr('stroke-width', 1.2); });
   });
 
-  // DX dots — clustered by on-screen proximity (added 2026-07-05).
+  // DX dots — clustered by on-screen proximity, per band (updated 2026-07-05).
   // Stations closer together than CFG.clusterThresholdPx collapse into one
-  // dot with a count badge, so the map stays readable as the log grows.
-  // Delete this block and restore the one above (see git history) to revert
-  // to one dot per station.
-  const dotPoints = [];
+  // dot with a count badge (shown only when count > 1). Clustering runs
+  // separately per band so the dot colour always matches a single band,
+  // same as the arcs — a location worked on several bands gets one small
+  // dot per band instead of one mixed grey blob.
+  const byBand = new Map();
   unique.forEach(q => {
     const [dxLat, dxLng] = getLatLng(q);
     if (!dxLat && !dxLng) return;
     const xy = projection([dxLng, dxLat]);
     if (!xy) return;
-    dotPoints.push({ q, x: xy[0], y: xy[1] });
+    if (!byBand.has(q.band)) byBand.set(q.band, []);
+    byBand.get(q.band).push({ q, x: xy[0], y: xy[1] });
   });
-  const clusters = clusterDotPoints(dotPoints, CFG.clusterThresholdPx);
 
-  clusters.forEach(c => {
-    const count = c.items.length;
-    // Dominant band decides colour; mixed clusters fall back to neutral.
-    const bandCounts = {};
-    c.items.forEach(q => { bandCounts[q.band] = (bandCounts[q.band] || 0) + 1; });
-    const bands = Object.keys(bandCounts);
-    const colour = bands.length === 1 ? (CFG.bandColours[bands[0]] || '#adb5bd') : '#e9ecef';
-    const r = count > 1 ? Math.min(9, 4.5 + Math.sqrt(count)) : 3.5;
+  byBand.forEach((points, band) => {
+    const clusters = clusterDotPoints(points, CFG.clusterThresholdPx);
+    const colour = CFG.bandColours[band] || '#adb5bd';
 
-    const g = svgG.append('g').attr('class', 'dx-dot').attr('transform', `translate(${c.cx},${c.cy})`);
-    g.append('circle')
-      .attr('r', r)
-      .attr('fill', colour)
-      .attr('opacity', 0.8)
-      .on('mouseover', function(event) { showClusterTip(event, c); d3.select(this).attr('r', r + 0.6); })
-      .on('mousemove', moveTooltip)
-      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('r', r); });
-    if (count > 1) {
-      g.append('text')
-        .attr('class', 'dx-dot-count')
-        .attr('text-anchor', 'middle')
-        .attr('dy', '0.32em')
-        .attr('font-size', Math.min(9, 6 + r * 0.25))
-        .attr('font-family', 'var(--f-mono)')
-        .attr('fill', '#0a0e14')
-        .attr('pointer-events', 'none')
-        .text(count);
-    }
+    clusters.forEach(c => {
+      const count = c.items.length;
+      const r = count > 1 ? Math.min(6.5, 3.2 + Math.sqrt(count) * 0.9) : 3;
+
+      const g = svgG.append('g').attr('class', 'dx-dot').attr('transform', `translate(${c.cx},${c.cy})`);
+      g.append('circle')
+        .attr('r', r)
+        .attr('fill', colour)
+        .attr('opacity', 0.8)
+        .on('mouseover', function(event) { showClusterTip(event, c); d3.select(this).attr('r', r + 0.6); })
+        .on('mousemove', moveTooltip)
+        .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('r', r); });
+      if (count > 1) {
+        g.append('text')
+          .attr('class', 'dx-dot-count')
+          .attr('text-anchor', 'middle')
+          .attr('dy', '0.32em')
+          .attr('font-size', Math.min(7, 5 + r * 0.18))
+          .attr('font-family', 'var(--f-mono)')
+          .attr('fill', '#0a0e14')
+          .attr('pointer-events', 'none')
+          .text(count);
+      }
+    });
   });
 
   // Home marker
