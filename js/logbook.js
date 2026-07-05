@@ -85,7 +85,14 @@ const CFG = {
   contNames: {
     NA: 'North America', SA: 'South America', EU: 'Europe',
     AF: 'Africa', AS: 'Asia', OC: 'Oceania', AN: 'Antarctica'
-  }
+  },
+  /* MAP DOT CLUSTERING (added 2026-07-05): delete this key to revert to
+     one dot per station. Distance is measured in projected SVG units at
+     the base (unzoomed) map scale, not in lat/lng degrees, so it isn't
+     skewed by projection distortion near the poles. Two stations closer
+     together than this on screen get merged into one dot with a count
+     badge; increase for fewer/bigger clusters, decrease for more/smaller. */
+  clusterThresholdPx: 14
 };
 
 /* ── DXCC → continent + approximate lat/lng lookup (compact table) ──
@@ -847,22 +854,49 @@ function renderMap(qsos) {
       .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', 0.45).attr('stroke-width', 1.2); });
   });
 
-  // DX dots
+  // DX dots — clustered by on-screen proximity (added 2026-07-05).
+  // Stations closer together than CFG.clusterThresholdPx collapse into one
+  // dot with a count badge, so the map stays readable as the log grows.
+  // Delete this block and restore the one above (see git history) to revert
+  // to one dot per station.
+  const dotPoints = [];
   unique.forEach(q => {
     const [dxLat, dxLng] = getLatLng(q);
     if (!dxLat && !dxLng) return;
     const xy = projection([dxLng, dxLat]);
     if (!xy) return;
-    const colour = CFG.bandColours[q.band] || '#adb5bd';
-    svgG.append('circle')
-      .attr('class', 'dx-dot')
-      .attr('cx', xy[0]).attr('cy', xy[1])
-      .attr('r', 3.5)
+    dotPoints.push({ q, x: xy[0], y: xy[1] });
+  });
+  const clusters = clusterDotPoints(dotPoints, CFG.clusterThresholdPx);
+
+  clusters.forEach(c => {
+    const count = c.items.length;
+    // Dominant band decides colour; mixed clusters fall back to neutral.
+    const bandCounts = {};
+    c.items.forEach(q => { bandCounts[q.band] = (bandCounts[q.band] || 0) + 1; });
+    const bands = Object.keys(bandCounts);
+    const colour = bands.length === 1 ? (CFG.bandColours[bands[0]] || '#adb5bd') : '#e9ecef';
+    const r = count > 1 ? Math.min(9, 4.5 + Math.sqrt(count)) : 3.5;
+
+    const g = svgG.append('g').attr('class', 'dx-dot').attr('transform', `translate(${c.cx},${c.cy})`);
+    g.append('circle')
+      .attr('r', r)
       .attr('fill', colour)
       .attr('opacity', 0.8)
-      .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('r', 4); })
+      .on('mouseover', function(event) { showClusterTip(event, c); d3.select(this).attr('r', r + 0.6); })
       .on('mousemove', moveTooltip)
-      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('r', 2.5); });
+      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('r', r); });
+    if (count > 1) {
+      g.append('text')
+        .attr('class', 'dx-dot-count')
+        .attr('text-anchor', 'middle')
+        .attr('dy', '0.32em')
+        .attr('font-size', Math.min(9, 6 + r * 0.25))
+        .attr('font-family', 'var(--f-mono)')
+        .attr('fill', '#0a0e14')
+        .attr('pointer-events', 'none')
+        .text(count);
+    }
   });
 
   // Home marker
@@ -912,6 +946,41 @@ function showTooltip(event, q) {
   tooltip.classList.add('visible');
   moveTooltip(event);
 }
+
+/* MAP DOT CLUSTERING (added 2026-07-05) — delete both functions below and
+   the CFG.clusterThresholdPx key to fully revert to one dot per station. */
+function clusterDotPoints(points, thresholdPx) {
+  const clusters = [];
+  points.forEach(p => {
+    let target = null;
+    for (const c of clusters) {
+      const dx = c.cx - p.x, dy = c.cy - p.y;
+      if (Math.sqrt(dx * dx + dy * dy) <= thresholdPx) { target = c; break; }
+    }
+    if (target) {
+      target.items.push(p.q);
+      const n = target.items.length;
+      target.cx = (target.cx * (n - 1) + p.x) / n;
+      target.cy = (target.cy * (n - 1) + p.y) / n;
+    } else {
+      clusters.push({ cx: p.x, cy: p.y, items: [p.q] });
+    }
+  });
+  return clusters;
+}
+
+function showClusterTip(event, cluster) {
+  ensureTooltip();
+  const items = cluster.items;
+  if (items.length === 1) { showTooltip(event, items[0]); return; }
+  const shown = items.slice(0, 6);
+  const rows = shown.map(q => `${q.call} · ${q.band.toUpperCase()}`).join('<br>');
+  const more = items.length > shown.length ? `<br><span style="color:var(--c-text-3)">+${items.length - shown.length} more</span>` : '';
+  tooltip.innerHTML = `<strong>${items.length} stations</strong><br>${rows}${more}`;
+  tooltip.classList.add('visible');
+  moveTooltip(event);
+}
+
 function moveTooltip(event) {
   if (!tooltip) return;
   tooltip.style.left = (event.clientX + 14) + 'px';
