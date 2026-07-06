@@ -1,0 +1,53 @@
+---
+layout: default
+title: ON3VZ — QSL Wall
+extra_css:
+  - /css/qsl-wall.css
+extra_js:
+  - /js/qsl-wall.js
+---
+
+<div class="qw-wrap">
+
+  <!-- HERO -->
+  <div class="qw-hero container anim-1">
+    <a class="qw-back" href="/logbook/">&#8592; Back to Logbook</a>
+    <div class="section-label">ON3VZ &middot; LOGBOOK</div>
+    <h1 class="section-title">QSL Wall</h1>
+    <div class="qw-badge">digital eQSL album &middot; not the paper bureau log</div>
+    <p class="qw-sub">A digital photo album of the eQSL cards I receive electronically from other stations. Physical cards that arrive through the UBA bureau are logged separately in the <a href="/logbook/">Logbook</a> and never appear here.</p>
+
+    <div class="qw-stats">
+      <div class="qw-stat"><span class="qw-stat-val" id="qwStatCards">&mdash;</span><span class="qw-stat-lbl">Cards</span></div>
+      <div class="qw-stat"><span class="qw-stat-val" id="qwStatCountries">&mdash;</span><span class="qw-stat-lbl">Countries</span></div>
+      <div class="qw-stat"><span class="qw-stat-val" id="qwStatCalls">&mdash;</span><span class="qw-stat-lbl">Callsigns</span></div>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="qw-controls container anim-2">
+    <input type="search" id="qwSearch" class="qw-search" placeholder="Search callsign, name, country, band…">
+    <select id="qwSort" class="qw-select">
+      <option value="date-desc">Sort: Newest first</option>
+      <option value="date-asc">Sort: Oldest first</option>
+      <option value="country">Sort: Country A&ndash;Z</option>
+    </select>
+  </div>
+
+  <!-- GROUPED GALLERY -->
+  <div class="qw-groups container anim-2" id="qwGroups">
+    <!-- populated by js/qsl-wall.js -->
+  </div>
+
+  <div class="qw-empty" id="qwEmpty" hidden>No cards match your search.</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="qw-lightbox" id="qwLightbox" hidden>
+  <button class="qw-lb-close" id="qwLbClose" aria-label="Close">&times;</button>
+  <div class="qw-lb-inner">
+    <img id="qwLbImg" src="" alt="">
+    <div class="qw-lb-meta" id="qwLbMeta"></div>
+  </div>
+</div>

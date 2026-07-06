@@ -1,0 +1,61 @@
+[
+  {
+    "id": "ve9cf-2026-05-31",
+    "image": "/assets/images/qsl/ve9cf-2026-05-31.jpg",
+    "fromCall": "VE9CF",
+    "fromName": "Stuart Crawford",
+    "qth": "Saint-Antoine-Nord, New Brunswick",
+    "country": "Canada",
+    "continent": "North America",
+    "date": "2026-05-31",
+    "time": "23:12z",
+    "band": "20m",
+    "mode": "SSB",
+    "rst": "53"
+  },
+  {
+    "id": "ii1a-2026-06-29",
+    "image": "/assets/images/qsl/ii1a-2026-06-29.jpg",
+    "fromCall": "II1A",
+    "fromName": "Special Event Station",
+    "qth": "Casalborgone (TO)",
+    "country": "Italy",
+    "continent": "Europe",
+    "date": "2026-06-29",
+    "time": "19:48z",
+    "band": "20m",
+    "mode": "SSB",
+    "freq": "14.253",
+    "rst": "59"
+  },
+  {
+    "id": "ii1a-2026-07-06",
+    "image": "/assets/images/qsl/ii1a-2026-07-06.jpg",
+    "fromCall": "II1A",
+    "fromName": "Special Event Station",
+    "qth": "Casalborgone (TO)",
+    "country": "Italy",
+    "continent": "Europe",
+    "date": "2026-07-06",
+    "time": "20:33z",
+    "band": "20m",
+    "mode": "SSB",
+    "freq": "14.250",
+    "rst": "59"
+  },
+  {
+    "id": "iz1zhg-2026-07-06",
+    "image": "/assets/images/qsl/iz1zhg-2026-07-06.jpg",
+    "fromCall": "IZ1ZHG",
+    "fromName": "Andrea",
+    "qth": "Cavagnolo",
+    "country": "Italy",
+    "continent": "Europe",
+    "date": "2026-07-06",
+    "time": "20:34z",
+    "band": "20m",
+    "mode": "SSB",
+    "freq": "14.270",
+    "rst": "59"
+  }
+]
