@@ -233,6 +233,7 @@
   z-index: 200;
   padding: 2rem;
 }
+.qw-lightbox[hidden] { display: none; }
 .qw-lb-inner {
   max-width: min(900px, 92vw);
   max-height: 90vh;
