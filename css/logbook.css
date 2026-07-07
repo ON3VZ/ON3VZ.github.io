@@ -650,6 +650,9 @@
 }
 
 /* ── DISTANCE COLUMN ── */
+.qso-table thead th[data-col="dist"] {
+  text-align: right;
+}
 .qso-dist {
   font-family: var(--f-mono);
   font-size: 0.72rem;
