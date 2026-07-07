@@ -660,7 +660,7 @@ function renderTable(qsos) {
   const tbody = document.getElementById('qsoTbody');
   const pgEl  = document.getElementById('qso-pagination');
   if (!qsos.length) {
-    tbody.innerHTML = '<tr><td colspan="10" class="tbl-empty">No QSOs match the selected filters.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="9" class="tbl-empty">No QSOs match the selected filters.</td></tr>';
     if (pgEl) pgEl.innerHTML = '';
     return;
   }
@@ -684,11 +684,9 @@ function renderTable(qsos) {
   tbody.innerHTML = rows.map(q => {
     const colour = CFG.bandColours[q.band] || '#adb5bd';
     const dateStr = q.date ? q.date.slice(0,4)+'-'+q.date.slice(4,6)+'-'+q.date.slice(6,8) : '';
-    const timeStr = q.time ? q.time.slice(0,2)+':'+q.time.slice(2,4) : '';
     const distStr = q.dist ? `${q.dist.toLocaleString()} km` : '';
     return `<tr>
       <td>${dateStr}</td>
-      <td>${timeStr}</td>
       <td class="qso-call">${q.call}</td>
       <td><span class="qso-band" style="background:${colour}22;border:1px solid ${colour}66;color:${colour}">${q.band.toUpperCase()}</span></td>
       <td>${q.mode}</td>
