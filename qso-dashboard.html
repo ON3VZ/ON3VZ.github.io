@@ -1,0 +1,112 @@
+---
+layout: default
+title: ON3VZ - QSO Dashboard
+extra_css:
+  - /css/qso-dashboard.css
+extra_js:
+  - /js/qso-dashboard.js
+---
+
+<div class="qd-wrap">
+
+  <!-- HERO -->
+  <div class="qd-hero container anim-1">
+    <a class="qd-back" href="/logbook/">&#8592; Back to Logbook</a>
+    <div class="section-label">ON3VZ &middot; LOGBOOK</div>
+    <h1 class="section-title">QSO Dashboard</h1>
+    <p class="qd-sub">Station statistics, trends and personal records computed live from the same ADIF data as the logbook. All times are aggregated per hour block (UTC), individual QSO times are never shown.</p>
+    <div class="qd-updated" id="qdUpdated">Loading&hellip;</div>
+  </div>
+
+  <!-- KPI STRIP -->
+  <div class="container anim-2">
+    <div class="qd-kpis" id="qdKpis"></div>
+  </div>
+
+  <!-- ACTIVITY CALENDAR -->
+  <div class="container anim-2">
+    <div class="qd-grid">
+      <div class="qd-panel qd-panel--full">
+        <div class="qd-panel-title">Activity &middot; one square per day</div>
+        <div class="qd-cal" id="qdCal"></div>
+        <div class="qd-cal-legend">
+          <span>less</span>
+          <span class="qd-cal-cell"></span>
+          <span class="qd-cal-cell" data-lvl="1"></span>
+          <span class="qd-cal-cell" data-lvl="2"></span>
+          <span class="qd-cal-cell" data-lvl="3"></span>
+          <span class="qd-cal-cell" data-lvl="4"></span>
+          <span>more</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TREND + GROWTH -->
+  <div class="container anim-3">
+    <div class="qd-grid">
+      <div class="qd-panel">
+        <div class="qd-panel-title" id="qdTrendTitle">QSO trend</div>
+        <div class="qd-chart-box"><canvas id="qdTrendChart"></canvas></div>
+      </div>
+      <div class="qd-panel">
+        <div class="qd-panel-title">DXCC growth &middot; cumulative</div>
+        <div class="qd-chart-box"><canvas id="qdDxccChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BAND x HOUR FINGERPRINT -->
+  <div class="container anim-3">
+    <div class="qd-grid">
+      <div class="qd-panel qd-panel--full">
+        <div class="qd-panel-title">Band activity fingerprint &middot; QSOs per hour block (UTC)</div>
+        <div class="qd-fp" id="qdFingerprint"></div>
+        <div class="qd-panel-note">Shows when each band works best from this station. Counts are aggregated per hour, no individual QSO times are exposed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREAKDOWNS -->
+  <div class="container anim-3">
+    <div class="qd-grid">
+      <div class="qd-panel">
+        <div class="qd-panel-title">Distance per band &middot; total km</div>
+        <div class="qd-chart-box"><canvas id="qdBandDistChart"></canvas></div>
+      </div>
+      <div class="qd-panel">
+        <div class="qd-panel-title">QSO distance spread</div>
+        <div class="qd-chart-box"><canvas id="qdDistChart"></canvas></div>
+      </div>
+      <div class="qd-panel">
+        <div class="qd-panel-title">By continent</div>
+        <div class="qd-chart-box"><canvas id="qdContChart"></canvas></div>
+      </div>
+      <div class="qd-panel">
+        <div class="qd-panel-title">Mode split</div>
+        <div class="qd-chart-box"><canvas id="qdModeChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILESTONES -->
+  <div class="container anim-4">
+    <div class="qd-grid">
+      <div class="qd-panel qd-panel--full">
+        <div class="qd-panel-title">Milestones &middot; generated from the log</div>
+        <div class="qd-miles" id="qdMiles"><div class="qd-loading">Loading&hellip;</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATION NOTE (same panel as logbook / DXCC matrix) -->
+  <div class="dm-station container anim-4">
+    <div class="dm-station-label">Station &middot; Class C</div>
+    <p class="dm-station-text">
+      Every number on this dashboard was worked with the same modest setup:
+      an <strong>ICOM IC-7300 MkII</strong> feeding a <strong>groundplane multiband
+      vertical</strong> antenna, at just <strong>25 W</strong> output.
+    </p>
+  </div>
+
+</div>

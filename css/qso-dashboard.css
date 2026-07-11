@@ -1,0 +1,288 @@
+/* ============================================================
+   ON3VZ - QSO Dashboard  (subpage of /logbook/)
+   Added 2026-07-12. Self-contained: delete qso-dashboard.{html,js,css}
+   and the logbook.html link block to revert.
+   ============================================================ */
+
+.qd-wrap { padding-bottom: 5rem; }
+
+/* ── HERO ── */
+.qd-hero {
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.qd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-family: var(--f-mono);
+  font-size: .72rem;
+  letter-spacing: .08rem;
+  color: var(--c-text-3);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color var(--t);
+}
+.qd-back:hover { color: var(--c-primary); }
+.qd-sub {
+  color: var(--c-text-2);
+  font-size: .9rem;
+  max-width: 62ch;
+  margin-top: .35rem;
+}
+.qd-updated {
+  font-family: var(--f-mono);
+  font-size: .62rem;
+  letter-spacing: .1rem;
+  color: var(--c-text-3);
+  margin-top: .8rem;
+  text-transform: uppercase;
+}
+
+/* ── KPI GRID ── */
+.qd-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: .8rem;
+  padding: 1.6rem 0 0;
+}
+.qd-kpi {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 2px solid var(--c-primary);
+  border-radius: 0 10px 10px 0;
+  padding: .9rem 1rem .85rem;
+  transition: border-color var(--t), box-shadow var(--t), transform var(--t);
+}
+.qd-kpi:hover {
+  border-color: var(--c-border-hard);
+  border-left-color: var(--c-primary);
+  box-shadow: var(--glow-sm);
+  transform: translateY(-2px);
+}
+.qd-kpi--cyan  { border-left-color: var(--c-cyan); }
+.qd-kpi--amber { border-left-color: var(--c-amber); }
+.qd-kpi-lbl {
+  font-family: var(--f-mono);
+  font-size: .58rem;
+  letter-spacing: .14rem;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+}
+.qd-kpi-val {
+  font-family: var(--f-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  line-height: 1.15;
+  margin-top: .3rem;
+  text-shadow: var(--glow-sm);
+  word-break: break-word;
+}
+.qd-kpi--cyan  .qd-kpi-val { color: var(--c-cyan);  text-shadow: var(--glow-cyan); }
+.qd-kpi--amber .qd-kpi-val { color: var(--c-amber); text-shadow: 0 0 12px rgba(240,165,0,0.4); }
+.qd-kpi-sub {
+  font-family: var(--f-mono);
+  font-size: .62rem;
+  letter-spacing: .04rem;
+  color: var(--c-text-3);
+  margin-top: .35rem;
+  line-height: 1.4;
+}
+.qd-kpi-sub .up   { color: var(--c-primary); }
+.qd-kpi-sub .down { color: var(--c-red); }
+
+/* ── PANELS ── */
+.qd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.qd-grid--three { grid-template-columns: 1fr 1fr 1fr; }
+.qd-panel {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem 1.2rem;
+  transition: border-color var(--t), box-shadow var(--t);
+  min-width: 0;
+}
+.qd-panel:hover { border-color: var(--c-border-hard); box-shadow: var(--glow-sm); }
+.qd-panel--full { grid-column: 1 / -1; }
+.qd-panel-title {
+  font-family: var(--f-mono);
+  font-size: .62rem;
+  letter-spacing: .18rem;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-bottom: .9rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.qd-panel-title::before {
+  content: '';
+  display: block;
+  width: 14px; height: 1px;
+  background: var(--c-primary);
+  box-shadow: var(--glow-sm);
+}
+.qd-panel-note {
+  font-family: var(--f-mono);
+  font-size: .58rem;
+  letter-spacing: .04rem;
+  color: var(--c-text-3);
+  margin-top: .7rem;
+  opacity: .8;
+}
+.qd-chart-box { position: relative; height: 190px; }
+.qd-chart-box--tall { height: 230px; }
+
+/* ── ACTIVITY HEATMAP (calendar) ── */
+.qd-cal {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 3px;
+  overflow-x: auto;
+  padding-bottom: .3rem;
+}
+.qd-cal-cell {
+  width: 13px; height: 13px;
+  border-radius: 2.5px;
+  background: rgba(0,255,136,0.05);
+  border: 1px solid rgba(0,255,136,0.07);
+}
+.qd-cal-cell[data-lvl="1"] { background: rgba(0,255,136,0.18); }
+.qd-cal-cell[data-lvl="2"] { background: rgba(0,255,136,0.38); }
+.qd-cal-cell[data-lvl="3"] { background: rgba(0,255,136,0.62); }
+.qd-cal-cell[data-lvl="4"] { background: var(--c-primary); box-shadow: 0 0 6px rgba(0,255,136,0.55); }
+.qd-cal-cell.qd-cal-future { opacity: 0; pointer-events: none; }
+.qd-cal-legend {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  margin-top: .6rem;
+  font-family: var(--f-mono);
+  font-size: .58rem;
+  color: var(--c-text-3);
+}
+.qd-cal-legend .qd-cal-cell { width: 10px; height: 10px; }
+
+/* ── BAND x HOUR FINGERPRINT ── */
+.qd-fp {
+  display: grid;
+  gap: 2px;
+  font-family: var(--f-mono);
+}
+.qd-fp-row { display: contents; }
+.qd-fp-band {
+  font-size: .62rem;
+  color: var(--c-text-2);
+  letter-spacing: .05rem;
+  align-self: center;
+  padding-right: .5rem;
+  text-align: right;
+}
+.qd-fp-cell {
+  aspect-ratio: 1.35;
+  min-width: 0;
+  border-radius: 2px;
+  background: rgba(0,212,255,0.05);
+  border: 1px solid rgba(0,212,255,0.06);
+}
+.qd-fp-cell[data-lvl="1"] { background: rgba(0,212,255,0.16); }
+.qd-fp-cell[data-lvl="2"] { background: rgba(0,212,255,0.34); }
+.qd-fp-cell[data-lvl="3"] { background: rgba(0,212,255,0.58); }
+.qd-fp-cell[data-lvl="4"] { background: var(--c-cyan); box-shadow: 0 0 6px rgba(0,212,255,0.5); }
+.qd-fp-hour {
+  font-size: .52rem;
+  color: var(--c-text-3);
+  text-align: center;
+  padding-top: .2rem;
+}
+
+/* ── MILESTONES ── */
+.qd-miles { display: flex; flex-direction: column; }
+.qd-mile {
+  display: flex;
+  gap: 1rem;
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(0,255,136,0.06);
+  font-family: var(--f-mono);
+  font-size: .74rem;
+  align-items: baseline;
+}
+.qd-mile:last-child { border-bottom: none; }
+.qd-mile-date {
+  color: var(--c-amber);
+  min-width: 6.4rem;
+  font-size: .68rem;
+  letter-spacing: .04rem;
+  flex-shrink: 0;
+}
+.qd-mile-text { color: var(--c-text-2); line-height: 1.5; }
+.qd-mile-text .hl { color: var(--c-cyan); }
+
+/* ── TOOLTIP (shared, plain DOM) ── */
+.qd-tip {
+  position: fixed;
+  z-index: 2000;
+  pointer-events: none;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border-hard);
+  border-radius: 6px;
+  padding: .4rem .6rem;
+  font-family: var(--f-mono);
+  font-size: .66rem;
+  color: var(--c-text);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  white-space: nowrap;
+  display: none;
+}
+
+/* ── LOADING / EMPTY ── */
+.qd-loading {
+  font-family: var(--f-mono);
+  font-size: .74rem;
+  color: var(--c-text-3);
+  text-align: center;
+  padding: 3rem 0;
+  letter-spacing: .08rem;
+}
+
+/* ── STATION NOTE (copied from dxcc-matrix.css so this page stays
+      self-contained; same visual as logbook / matrix) ── */
+.dm-station {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-amber);
+  border-radius: 10px;
+}
+.dm-station-label {
+  font-family: var(--f-mono);
+  font-size: .62rem;
+  letter-spacing: .14rem;
+  color: var(--c-amber);
+  text-transform: uppercase;
+  margin-bottom: .45rem;
+}
+.dm-station-text {
+  color: var(--c-text-2);
+  font-size: .85rem;
+  line-height: 1.55;
+  max-width: 70ch;
+  margin: 0;
+}
+.dm-station-text strong { color: var(--c-text); font-weight: 600; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .qd-grid, .qd-grid--three { grid-template-columns: 1fr; }
+  .qd-kpis { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .qd-fp-band { font-size: .55rem; }
+  .qd-fp-hour { font-size: .45rem; }
+}
