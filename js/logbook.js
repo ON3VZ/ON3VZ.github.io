@@ -105,9 +105,9 @@ const CFG = {
   },
   modeFallbackColours: { phone: '#ffd43b', cw: '#e599f7', digi: '#74c0fc' },
   modeArcStyle: {
-    phone: { dash: null,  opacity: 0.6,  hoverOpacity: 1.0,  restOpacity: 0.45 },
-    cw:    { dash: '7 4', opacity: 0.55, hoverOpacity: 1.0,  restOpacity: 0.42 },
-    digi:  { dash: '2 4', opacity: 0.35, hoverOpacity: 0.85, restOpacity: 0.28 },
+    phone: { dash: null,  width: 1.05, hoverWidth: 1.45, restWidth: 0.8,  opacity: 0.6,  hoverOpacity: 1.0,  restOpacity: 0.45 },
+    cw:    { dash: '6 4', width: 0.85, hoverWidth: 1.25, restWidth: 0.7,  opacity: 0.55, hoverOpacity: 1.0,  restOpacity: 0.42 },
+    digi:  { dash: '1 3', width: 0.5,  hoverWidth: 0.95, restWidth: 0.45, opacity: 0.35, hoverOpacity: 0.85, restOpacity: 0.28 },
   },
   /* MAP DOT CLUSTERING (added 2026-07-05): delete this key to revert to
      one dot per station. Distance is measured in projected SVG units at
@@ -924,12 +924,12 @@ function renderMap(qsos) {
       .attr('class', 'qso-arc')
       .attr('d', path)
       .attr('stroke', colour)
-      .attr('stroke-width', 1.05)
+      .attr('stroke-width', st.width)
       .attr('fill', 'none')
       .attr('opacity', st.opacity)
-      .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('opacity', st.hoverOpacity).attr('stroke-width', 1.45); })
+      .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('opacity', st.hoverOpacity).attr('stroke-width', st.hoverWidth); })
       .on('mousemove', moveTooltip)
-      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', st.restOpacity).attr('stroke-width', 0.8); });
+      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', st.restOpacity).attr('stroke-width', st.restWidth); });
     if (st.dash) arcPath.attr('stroke-dasharray', st.dash);
   });
 
@@ -979,13 +979,13 @@ function renderMap(qsos) {
     });
   });
 
-  // Home marker
+  // Home marker (shrunk 2026-07-12: was r 5 / ring 10, too dominant)
   if (homeXY) {
     const hg = svgG.append('g').attr('class', 'home-marker').attr('transform', `translate(${homeXY})`);
-    hg.append('circle').attr('r', 5).attr('fill', 'var(--c-primary)').attr('opacity', 0.9)
-      .attr('filter', 'drop-shadow(0 0 4px #00ff88)');
-    hg.append('circle').attr('r', 10).attr('fill', 'none').attr('stroke', 'var(--c-primary)')
-      .attr('stroke-width', 1).attr('opacity', 0.4);
+    hg.append('circle').attr('r', 3).attr('fill', 'var(--c-primary)').attr('opacity', 0.9)
+      .attr('filter', 'drop-shadow(0 0 3px #00ff88)');
+    hg.append('circle').attr('r', 6).attr('fill', 'none').attr('stroke', 'var(--c-primary)')
+      .attr('stroke-width', 0.8).attr('opacity', 0.4);
   }
 
   // Legend
