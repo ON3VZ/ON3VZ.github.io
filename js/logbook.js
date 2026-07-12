@@ -86,6 +86,29 @@ const CFG = {
     NA: 'North America', SA: 'South America', EU: 'Europe',
     AF: 'Africa', AS: 'Asia', OC: 'Oceania', AN: 'Antarctica'
   },
+  /* MODE FILTER + LINE STYLES (added 2026-07-12): delete this block,
+     the msMode group in logbook.html and the marked sections below to
+     revert. Pill colours per mode; on the map the mode changes the arc
+     LINE STYLE (phone solid, CW dashed, digital dotted + weaker) while
+     the COLOUR keeps encoding the band, so both are readable at once. */
+  modeColours: {
+    'SSB':  '#ffd43b',
+    'FM':   '#ff922b',
+    'AM':   '#ff8787',
+    'CW':   '#e599f7',
+    'FT8':  '#74c0fc',
+    'FT4':  '#a5d8ff',
+    'RTTY': '#63e6be',
+    'PSK31':'#96f2d7',
+    'JS8':  '#91a7ff',
+    'SSTV': '#faa2c1',
+  },
+  modeFallbackColours: { phone: '#ffd43b', cw: '#e599f7', digi: '#74c0fc' },
+  modeArcStyle: {
+    phone: { dash: null,  opacity: 0.6,  hoverOpacity: 1.0,  restOpacity: 0.45 },
+    cw:    { dash: '7 4', opacity: 0.55, hoverOpacity: 1.0,  restOpacity: 0.42 },
+    digi:  { dash: '2 4', opacity: 0.35, hoverOpacity: 0.85, restOpacity: 0.28 },
+  },
   /* MAP DOT CLUSTERING (added 2026-07-05): delete this key to revert to
      one dot per station. Distance is measured in projected SVG units at
      the base (unzoomed) map scale, not in lat/lng degrees, so it isn't
@@ -164,6 +187,7 @@ let activeYears  = new Set();
 let activeMonths = new Set();
 let activeBands  = new Set();
 let activeCont   = new Set();
+let activeModes  = new Set();   // MODE FILTER (added 2026-07-12)
 const ALL_YEARS_THRESHOLD = 2; // show month filter only when ≤ this many years selected
 let d3Loaded = false;
 let geoReady = false;
@@ -327,7 +351,7 @@ function normaliseQso(f) {
     date:    f.QSO_DATE   || '',
     time:    f.TIME_ON    || '',
     band:    band,
-    mode:    f.MODE       || '',
+    mode:    normaliseMode(f.MODE),   // MODE FILTER (added 2026-07-12): USB/LSB folded into SSB
     rstS:    f.RST_SENT   || '',
     rstR:    f.RST_RCVD   || '',
     dxcc:    f.COUNTRY    || f.DXCC || '',
@@ -438,6 +462,21 @@ function isBlankEntity(v) {
   return !s || s === 'NON-DXCC' || s === 'NONE';
 }
 
+/* MODE FILTER helpers (added 2026-07-12): delete to revert. USB and LSB
+   are sideband variants of SSB and are folded together, same convention
+   as the QSO dashboard. Category drives the arc line style on the map. */
+function normaliseMode(m) {
+  const v = (m || '').toUpperCase().trim();
+  if (v === 'USB' || v === 'LSB') return 'SSB';
+  return v || 'UNKNOWN';
+}
+const PHONE_MODES = new Set(['SSB','FM','AM','DV','DSTAR','DMR','C4FM','FUSION','DIGITALVOICE']);
+function modeCategory(m) {
+  if (m === 'CW') return 'cw';
+  if (PHONE_MODES.has(m) || m === 'UNKNOWN') return 'phone';
+  return 'digi';   // FT8, FT4, RTTY, PSK, JS8, SSTV, ... and future digital modes
+}
+
 function backfillEntities(qsos) {
   const learned = {};
   qsos.forEach(q => {
@@ -468,18 +507,27 @@ function buildFilters() {
   const bands  = [...new Set(allQsos.map(q => q.band))]
     .sort((a,b) => (CFG.bandOrder.indexOf(a)+99) - (CFG.bandOrder.indexOf(b)+99));
   const conts  = [...new Set(allQsos.map(q => q.cont))].sort();
+  // MODE FILTER (added 2026-07-12): phone first, then CW, then digital
+  const modes = [...new Set(allQsos.map(q => q.mode))]
+    .sort((a, b) => {
+      const rank = { phone: 0, cw: 1, digi: 2 };
+      return (rank[modeCategory(a)] - rank[modeCategory(b)]) || a.localeCompare(b);
+    });
 
   activeYears  = new Set(years);
   activeMonths = new Set();
   activeBands  = new Set(bands);
   activeCont   = new Set(conts);
+  activeModes  = new Set(modes);
 
   buildPills('msYear', years, activeYears, v => {
     toggle(activeYears, v);
     rebuildMonthFilter();
     applyFilters();
   });
-  buildPills('msBand', bands, activeBands, v => { toggle(activeBands, v); applyFilters(); });
+  buildPills('msBand', bands, activeBands, v => { toggle(activeBands, v); applyFilters(); }, CFG.bandColours);
+  buildPills('msMode', modes, activeModes, v => { toggle(activeModes, v); applyFilters(); },
+    m => CFG.modeColours[m] || CFG.modeFallbackColours[modeCategory(m)]);
   buildPills('msCont', conts,  activeCont,  v => { toggle(activeCont, v);  applyFilters(); });
   rebuildMonthFilter();
 }
@@ -536,7 +584,7 @@ function rebuildMonthFilter() {
   group.style.display = '';
 }
 
-function buildPills(containerId, values, activeSet, onToggle) {
+function buildPills(containerId, values, activeSet, onToggle, colours) {
   const wrap = document.getElementById(containerId);
   wrap.innerHTML = '';
   values.forEach(v => {
@@ -544,10 +592,14 @@ function buildPills(containerId, values, activeSet, onToggle) {
     pill.className = 'ms-pill active';
     pill.textContent = v.toUpperCase();
     pill.dataset.val = v;
-    // Apply band colour if this is the band filter
-    const bandColour = CFG.bandColours[v];
-    if (bandColour) {
-      pill.style.setProperty('--pill-colour', bandColour);
+    // Colour lookup: band filter passes CFG.bandColours (object), the
+    // mode filter passes a resolver function (added 2026-07-12). Both
+    // reuse the same --pill-colour styling from .ms-pill--band.
+    const colour = typeof colours === 'function' ? colours(v)
+                 : colours ? colours[v]
+                 : CFG.bandColours[v];
+    if (colour) {
+      pill.style.setProperty('--pill-colour', colour);
       pill.classList.add('ms-pill--band');
     }
     pill.addEventListener('click', () => {
@@ -563,7 +615,7 @@ function toggle(set, val) {
 }
 
 function selectAll() {
-  allQsos.forEach(q => { activeYears.add(q.year); activeBands.add(q.band); activeCont.add(q.cont); });
+  allQsos.forEach(q => { activeYears.add(q.year); activeBands.add(q.band); activeCont.add(q.cont); activeModes.add(q.mode); });
   activeMonths.clear();
   document.querySelectorAll('.ms-pill').forEach(p => p.classList.add('active'));
   rebuildMonthFilter();
@@ -571,7 +623,7 @@ function selectAll() {
 }
 
 function clearAll() {
-  activeYears.clear(); activeBands.clear(); activeCont.clear(); activeMonths.clear();
+  activeYears.clear(); activeBands.clear(); activeCont.clear(); activeMonths.clear(); activeModes.clear();
   document.querySelectorAll('.ms-pill').forEach(p => p.classList.remove('active'));
   document.getElementById('monthGroup').style.display = 'none';
   applyFilters();
@@ -582,6 +634,7 @@ function applyFilters() {
     if (!activeYears.has(q.year)) return false;
     if (!activeBands.has(q.band)) return false;
     if (!activeCont.has(q.cont))  return false;
+    if (!activeModes.has(q.mode)) return false;   // MODE FILTER (added 2026-07-12)
     // Month filter only active when visible
     if (activeMonths.size && document.getElementById('monthGroup').style.display !== 'none') {
       const ym = (q.date || '').slice(0, 6);
@@ -850,7 +903,9 @@ function renderMap(qsos) {
   // Draw arcs
   const arcGen = d3.geoPath().projection(projection);
 
-  // Group by callsign to avoid duplicate arcs — keep one per call
+  // Group by callsign to avoid duplicate arcs, keep one per call.
+  // Note: a call worked in several modes keeps the mode of its first
+  // record; the table below still shows every QSO.
   const unique = new Map();
   qsos.forEach(q => { if (!unique.has(q.call)) unique.set(q.call, q); });
 
@@ -858,18 +913,24 @@ function renderMap(qsos) {
     const [dxLat, dxLng] = getLatLng(q);
     if (!dxLat && !dxLng) return;
     const colour = CFG.bandColours[q.band] || '#adb5bd';
+    // MODE LINE STYLE (added 2026-07-12): colour = band, line style = mode.
+    // Phone solid, CW dashed, digital dotted in a weaker opacity, so both
+    // dimensions are readable at once. Delete this block + modeArcStyle in
+    // CFG to revert to uniform solid arcs.
+    const st = CFG.modeArcStyle[modeCategory(q.mode)] || CFG.modeArcStyle.phone;
     const arc = { type: 'LineString', coordinates: [[homeLng, homeLat], [dxLng, dxLat]] };
-    svgG.append('path')
+    const arcPath = svgG.append('path')
       .datum(arc)
       .attr('class', 'qso-arc')
       .attr('d', path)
       .attr('stroke', colour)
       .attr('stroke-width', 1.05)
       .attr('fill', 'none')
-      .attr('opacity', 0.6)
-      .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('opacity', 1).attr('stroke-width', 1.45); })
+      .attr('opacity', st.opacity)
+      .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('opacity', st.hoverOpacity).attr('stroke-width', 1.45); })
       .on('mousemove', moveTooltip)
-      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', 0.45).attr('stroke-width', 0.8); });
+      .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('opacity', st.restOpacity).attr('stroke-width', 0.8); });
+    if (st.dash) arcPath.attr('stroke-dasharray', st.dash);
   });
 
   // DX dots — clustered by on-screen proximity, per band (updated 2026-07-05).
@@ -934,10 +995,18 @@ function renderMap(qsos) {
 function buildLegend(qsos) {
   const usedBands = [...new Set(qsos.map(q => q.band))];
   const legend = document.getElementById('mapLegend');
-  legend.innerHTML = usedBands.map(b => {
+  let html = usedBands.map(b => {
     const c = CFG.bandColours[b] || '#adb5bd';
     return `<div class="legend-item"><div class="legend-line" style="background:${c}"></div>${b.toUpperCase()}</div>`;
-  }).join('') + '<div class="legend-item"><div class="legend-line" style="background:var(--c-primary);border-radius:50%;width:8px;height:8px;flex-shrink:0"></div>ON3VZ</div>';
+  }).join('');
+  // MODE LINE-STYLE LEGEND (added 2026-07-12): only shown when CW or
+  // digital modes are present in the current selection. Delete to revert.
+  const cats = new Set(qsos.map(q => modeCategory(q.mode)));
+  if (cats.has('cw'))
+    html += `<div class="legend-item"><div class="legend-line" style="background:none;border-top:2px dashed var(--c-text-2)"></div>CW</div>`;
+  if (cats.has('digi'))
+    html += `<div class="legend-item"><div class="legend-line" style="background:none;border-top:2px dotted var(--c-text-3);opacity:.7"></div>DIGI</div>`;
+  legend.innerHTML = html + '<div class="legend-item"><div class="legend-line" style="background:var(--c-primary);border-radius:50%;width:8px;height:8px;flex-shrink:0"></div>ON3VZ</div>';
 }
 
 /* ── TOOLTIP ── */
