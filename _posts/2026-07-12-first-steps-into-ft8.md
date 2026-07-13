@@ -64,6 +64,8 @@ Not every line in the log needed that twilight trick, though. The contacts out t
 
 Every FT8 line comes with a timestamp and a distance, so you can watch this rhythm build up in the log all by yourself.
 
+Late in the evening I also stumbled onto a tool that makes all of this visible without even needing a QSO: [PSK Reporter](https://pskreporter.info/). Thousands of stations running WSJT-X and similar software quietly upload every callsign they decode to a shared database, and the site plots the whole lot on a live world map. Switch on the reporting option, send a single CQ, and within a minute or two you can watch pins light up everywhere your signal landed, including all the stations that heard you perfectly well but never came back. For someone still learning how the bands behave, it is the closest thing to seeing your own signal spread out across the planet: pick a band, pick a mode, and the openings of the moment are right there in front of you.
+
 ## So what do I make of it?
 
 Honestly, I'm not entirely sure yet. A computer talking to another computer over radio waves. It sounds barely interactive... and maybe it isn't. There's no voice from the other side of the ocean, no accent, no chat about the weather in Buenos Aires. Jorge and I exchanged exactly two numbers and a polite 73, all negotiated by software.
