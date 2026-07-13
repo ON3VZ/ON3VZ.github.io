@@ -48,6 +48,8 @@ In SSB, I had managed Canada and Brazil before, but those were lucky shots, caug
 
 Every one of these contacts is now sitting in my [live logbook](/logbook/), plotted on the world map right next to the SSB QSOs that got me started. Same 25 W station, a very different reach.
 
+It also took patience. With my 15 to 25 watts I was rarely the strongest signal in anyone's waterfall, and getting through often meant calling the same station over and over before I was finally picked out and answered. Low power on FT8 works, but it is a numbers game: you hold your slot, you keep calling, and you wait for your turn to come up.
+
 Four continents in one evening, on a groundplane vertical, with less power than a light bulb. Am I pulling top-tier receive numbers? Certainly not: some of those exchanges happened at -16, -21 dB, signal levels where SSB would be dead silence. But that's exactly the point: FT8 digs conversations out of the noise floor that phone could never touch.
 
 ## So what do I make of it?
