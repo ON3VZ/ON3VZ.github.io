@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First Steps into FT8: When 15 Watts Suddenly Reaches Argentina"
+title: "First Steps into FT8: When 25 Watts Suddenly Reaches Argentina"
 tags: [FT8, Digital Modes, HF, IC-7300, WSJT-X, DX, Beginners]
 ---
 
@@ -60,7 +60,7 @@ The reason lives in the ionosphere, the charged layers high overhead that bend H
 
 That sunset window has a name worth knowing: the grayline, the moving ribbon of twilight where day meets night around the planet. Along it the absorbing D layer has already faded while the reflecting F layer is still charged, so for a while there is a low-loss corridor that signals can ride for enormous distances. It works best when both ends of the path sit near their own dawn or dusk, and that is exactly what happened with my longest contacts. When it was sunset here, Argentina and Brazil were sliding toward their own sunset too, so the whole path lay close to the grayline, and that is very likely how 25 watts on 20 metres crossed the Atlantic to Buenos Aires. Once you know the grayline is there, the trick is to aim your operating at your own sunrise and sunset and let it do the heavy lifting.
 
-Not every line in the log needed that twilight trick, though. The contacts out to the east, Turkey at a couple of thousand kilometres, then western Siberia, and the Gulf a bit past five thousand, are everyday 20 metre DX: one or two hops off the F layer while the band was still open in that direction, no grayline required. Distances like that are routine on 20 metres when the band is up, and FT8 just made them easy to catch at 25 watts.
+Not every line in the log needed that twilight trick, though. The contacts out to the east, Turkey at a couple of thousand kilometres, then western Siberia, and the Gulf a bit past five thousand, are everyday 20 metre DX: one or two hops off the F layer while the band was still open in that direction, no grayline required. Distances like that are routine on 20 metres when the band is up, and FT8 made them easy to catch, with Turkey and western Siberia both worked on just 15 watts.
 
 Every FT8 line comes with a timestamp and a distance, so you can watch this rhythm build up in the log all by yourself.
 
@@ -68,7 +68,7 @@ Every FT8 line comes with a timestamp and a distance, so you can watch this rhyt
 
 Honestly, I'm not entirely sure yet. A computer talking to another computer over radio waves. It sounds barely interactive... and maybe it isn't. There's no voice from the other side of the ocean, no accent, no chat about the weather in Buenos Aires. Jorge and I exchanged exactly two numbers and a polite 73, all negotiated by software.
 
-And yet. There's something undeniably fascinating about watching your 15 watts crawl across the Atlantic and come back confirmed. It's a different kind of magic: propagation in its purest, most measurable form. A great way to see what your antenna and the ionosphere are really capable of, any evening, regardless of conditions.
+And yet. There's something undeniably fascinating about watching your 25 watts crawl across the Atlantic and come back confirmed. It's a different kind of magic: propagation in its purest, most measurable form. A great way to see what your antenna and the ionosphere are really capable of, any evening, regardless of conditions.
 
 So no, FT8 won't replace phone for me. A real voice QSO remains my absolute favorite. But as a complement? It's a fun change of pace, and, I'll admit it, already slightly addictive.
 
