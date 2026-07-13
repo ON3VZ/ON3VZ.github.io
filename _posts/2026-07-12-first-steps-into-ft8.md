@@ -60,6 +60,8 @@ The reason lives in the ionosphere, the charged layers high overhead that bend H
 
 That sunset window has a name worth knowing: the grayline, the moving ribbon of twilight where day meets night around the planet. Along it the absorbing D layer has already faded while the reflecting F layer is still charged, so for a while there is a low-loss corridor that signals can ride for enormous distances. It works best when both ends of the path sit near their own dawn or dusk, and that is exactly what happened with my longest contacts. When it was sunset here, Argentina and Brazil were sliding toward their own sunset too, so the whole path lay close to the grayline, and that is very likely how 25 watts on 20 metres crossed the Atlantic to Buenos Aires. Once you know the grayline is there, the trick is to aim your operating at your own sunrise and sunset and let it do the heavy lifting.
 
+Not every line in the log needed that twilight trick, though. The contacts out to the east, Turkey at a couple of thousand kilometres, then western Siberia, and the Gulf a bit past five thousand, are everyday 20 metre DX: one or two hops off the F layer while the band was still open in that direction, no grayline required. Distances like that are routine on 20 metres when the band is up, and FT8 just made them easy to catch at 25 watts.
+
 Every FT8 line comes with a timestamp and a distance, so you can watch this rhythm build up in the log all by yourself.
 
 ## So what do I make of it?
