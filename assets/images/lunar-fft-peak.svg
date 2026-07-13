@@ -1,0 +1,61 @@
+<svg viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of a sharp FFT peak from a full-length chirp versus a broad, fuzzy peak from a 14-sample zero-padded chirp.">
+  <defs>
+    <style>
+      .lbl{font-family:'Share Tech Mono',monospace;fill:#b0c4d8}
+      .ttl{font-family:'Orbitron',monospace;fill:#e2eaf5;font-weight:700}
+      .kick{font-family:'Share Tech Mono',monospace;fill:#7a96b0;letter-spacing:.12em}
+      .axis{stroke:#7a96b0;stroke-width:1}
+      .grid{stroke:rgba(122,150,176,0.18);stroke-width:1}
+    </style>
+    <linearGradient id="gOk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00ff88" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#00ff88" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="gBad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff4466" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ff4466" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="360" rx="14" fill="#0d1428" stroke="rgba(0,255,136,0.14)"/>
+  <text x="24" y="34" class="kick" font-size="12">WHY VELOCITY BREAKS · FFT PEAK SHAPE</text>
+
+  <!-- LEFT PANEL: sharp -->
+  <text x="60" y="70" class="ttl" font-size="13">MODE 9–12</text>
+  <text x="60" y="90" class="lbl" font-size="11">8192 real samples · full chirp</text>
+  <!-- grid -->
+  <line x1="60" y1="120" x2="60" y2="280" class="axis"/>
+  <line x1="60" y1="280" x2="440" y2="280" class="axis"/>
+  <line x1="150" y1="120" x2="150" y2="280" class="grid"/><line x1="250" y1="120" x2="250" y2="280" class="grid"/>
+  <line x1="350" y1="120" x2="350" y2="280" class="grid"/>
+  <!-- sharp peak -->
+  <path d="M60 278 L232 276 Q248 276 250 130 Q252 276 268 278 L440 278 Z" fill="url(#gOk)" stroke="#00ff88" stroke-width="2"/>
+  <line x1="250" y1="130" x2="250" y2="280" stroke="#00ff88" stroke-width="1" stroke-dasharray="3 4" opacity="0.7"/>
+  <text x="250" y="150" text-anchor="middle" class="lbl" font-size="10.5" fill="#00ff88">1 bin wide</text>
+  <text x="250" y="300" text-anchor="middle" class="lbl" font-size="11">peak location certain</text>
+  <text x="250" y="318" text-anchor="middle" class="lbl" font-size="10.5" fill="#00ff88">→ velocity trustworthy</text>
+  <text x="60" y="272" class="lbl" font-size="9" fill="#7a96b0">FFT bin →</text>
+
+  <!-- divider -->
+  <line x1="480" y1="60" x2="480" y2="320" stroke="rgba(122,150,176,0.25)" stroke-width="1" stroke-dasharray="4 6"/>
+
+  <!-- RIGHT PANEL: broad -->
+  <text x="520" y="70" class="ttl" font-size="13">MODE 0</text>
+  <text x="520" y="90" class="lbl" font-size="11">14 samples · zero-padded to 8192</text>
+  <line x1="520" y1="120" x2="520" y2="280" class="axis"/>
+  <line x1="520" y1="280" x2="900" y2="280" class="axis"/>
+  <line x1="610" y1="120" x2="610" y2="280" class="grid"/><line x1="710" y1="120" x2="710" y2="280" class="grid"/>
+  <line x1="810" y1="120" x2="810" y2="280" class="grid"/>
+  <!-- broad fuzzy peak -->
+  <path d="M520 278 Q620 270 710 190 Q740 165 770 200 Q800 235 830 210 Q860 190 900 276 L900 278 Z" fill="url(#gBad)" stroke="#ff4466" stroke-width="2"/>
+  <!-- uncertainty band -->
+  <rect x="655" y="120" width="130" height="160" fill="rgba(255,68,102,0.08)"/>
+  <line x1="655" y1="120" x2="655" y2="280" stroke="#ff4466" stroke-width="1" stroke-dasharray="3 4" opacity="0.7"/>
+  <line x1="785" y1="120" x2="785" y2="280" stroke="#ff4466" stroke-width="1" stroke-dasharray="3 4" opacity="0.7"/>
+  <text x="720" y="150" text-anchor="middle" class="lbl" font-size="10.5" fill="#ff4466">peak could be anywhere here</text>
+  <text x="710" y="300" text-anchor="middle" class="lbl" font-size="11">position wrong by ± several bins</text>
+  <text x="710" y="318" text-anchor="middle" class="lbl" font-size="10.5" fill="#ff4466">→ velocity error up to ±30 m/s</text>
+  <text x="520" y="272" class="lbl" font-size="9" fill="#7a96b0">FFT bin →</text>
+
+  <text x="24" y="346" class="lbl" font-size="10.5">Altitude uses the sum of the two peaks and survives the blur. Velocity uses their difference, so a fuzzy peak wrecks it.</text>
+</svg>

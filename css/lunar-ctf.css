@@ -1,0 +1,235 @@
+/* ============================================================
+   lunar-ctf.css  ·  graphical layer for the Lunar Descent CTF post
+   Loaded only on that post via front-matter extra_css.
+   Uses Dark Signal tokens. Revert: remove this file + the
+   extra_css line + the inline HTML blocks in the post.
+   ============================================================ */
+
+/* readability: a touch more air in the prose */
+.post-body p{ line-height: 1.72; }
+.post-body li{ line-height: 1.66; margin: 0.3rem 0; }
+
+/* section headings get a signal-bar kicker */
+.post-body h2{
+  position: relative;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--c-primary);
+  line-height: 1.25;
+}
+.post-body h2::before{
+  content: "";
+  position: absolute; left: -3px; top: 0; bottom: 0;
+  width: 3px; box-shadow: var(--glow-sm);
+}
+
+/* ---- mission brief hero ---------------------------------- */
+.lc-hero{
+  background: linear-gradient(180deg, var(--c-surface-2), var(--c-surface));
+  border: 1px solid var(--c-border-hard);
+  border-radius: 14px;
+  padding: 1.5rem 1.6rem;
+  margin: 1.6rem 0 2rem;
+  box-shadow: var(--glow-md);
+}
+.lc-hero .lc-kick{ color: var(--c-primary); }
+.lc-hero p{
+  font-family: var(--f-display);
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--c-text);
+  margin: 0.6rem 0 0;
+}
+.lc-hero .lc-why{
+  font-family: var(--f-mono);
+  color: var(--c-amber);
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+/* shared kicker label */
+.lc-kick{
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--c-text-3);
+  text-transform: uppercase;
+  display: block;
+}
+
+/* ---- table of contents ----------------------------------- */
+.lc-toc{
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem 1.3rem;
+  margin: 1.8rem 0;
+}
+.lc-toc ol{
+  list-style: none; margin: 0.8rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem 1.4rem;
+  counter-reset: toc;
+}
+.lc-toc li{ margin: 0; counter-increment: toc; }
+.lc-toc a{
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 0.82rem;
+  color: var(--c-text-2);
+  text-decoration: none;
+  padding: 0.35rem 0.2rem;
+  border-bottom: 1px solid transparent;
+  transition: color var(--t), border-color var(--t);
+}
+.lc-toc a::before{
+  content: counter(toc, decimal-leading-zero) "  ";
+  color: var(--c-primary); opacity: 0.7;
+}
+.lc-toc a:hover{ color: var(--c-primary); border-bottom-color: var(--c-border-hard); }
+
+/* ---- concept aside cards --------------------------------- */
+.lc-concept{
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-cyan);
+  border-radius: 10px;
+  padding: 1rem 1.2rem 1.05rem;
+  margin: 1.5rem 0;
+}
+.lc-concept .lc-tag{
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--c-cyan);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.lc-concept p{ margin: 0; color: var(--c-text-2); line-height: 1.65; }
+.lc-concept p + p{ margin-top: 0.6rem; }
+
+/* ---- stat chips ------------------------------------------ */
+.lc-stats{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+  margin: 1.8rem 0;
+}
+.lc-stat{
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  padding: 0.9rem 0.8rem;
+  text-align: center;
+}
+.lc-stat b{
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--c-primary);
+  display: block;
+}
+.lc-stat span{
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--c-text-3);
+  display: block;
+  margin-top: 0.45rem;
+  line-height: 1.35;
+}
+.lc-stat.is-red b{ color: var(--c-red); }
+.lc-stat.is-amber b{ color: var(--c-amber); }
+.lc-stat.is-cyan b{ color: var(--c-cyan); }
+
+/* ---- fault / danger box ---------------------------------- */
+.lc-fault{
+  background: rgba(255,68,102,0.07);
+  border: 1px solid rgba(255,68,102,0.4);
+  border-left: 4px solid var(--c-red);
+  border-radius: 10px;
+  padding: 1.05rem 1.25rem;
+  margin: 1.7rem 0;
+}
+.lc-fault .lc-tag{
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--c-red);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.45rem;
+}
+.lc-fault p{ margin: 0; color: var(--c-text); line-height: 1.66; }
+.lc-fault p + p{ margin-top: 0.6rem; }
+
+/* ---- flags scoreboard ------------------------------------ */
+.lc-flags{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin: 1.6rem 0 0.6rem;
+}
+.lc-flag{
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-top: 3px solid var(--c-primary);
+  border-radius: 10px;
+  padding: 1rem 1rem 1.1rem;
+}
+.lc-flag .lc-name{
+  display: block;
+  font-family: var(--f-display);
+  font-size: 0.95rem;
+  color: var(--c-text);
+  letter-spacing: 0.03em;
+}
+.lc-flag .lc-task{ display: block; }
+.lc-flag .lc-pts{
+  font-family: var(--f-display);
+  font-size: 1.7rem;
+  color: var(--c-primary);
+  display: block;
+  margin: 0.35rem 0 0.55rem;
+  text-shadow: var(--glow-sm);
+}
+.lc-flag .lc-task{
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  color: var(--c-text-2);
+  line-height: 1.5;
+}
+.lc-flags-total{
+  font-family: var(--f-mono);
+  font-size: 0.82rem;
+  color: var(--c-text-3);
+  text-align: right;
+  margin: 0.2rem 0 1.8rem;
+}
+.lc-flags-total b{ color: var(--c-amber); }
+.lc-flags-total .zero{ color: var(--c-red); }
+
+/* ---- figures --------------------------------------------- */
+.lc-fig{ margin: 1.9rem 0; }
+.lc-fig img{
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  background: var(--c-bg);
+}
+.lc-fig figcaption{
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  color: var(--c-text-3);
+  margin-top: 0.55rem;
+  padding-left: 0.2rem;
+  line-height: 1.5;
+}
+.lc-fig figcaption b{ color: var(--c-cyan); font-weight: 400; }
+
+/* ---- responsive ------------------------------------------ */
+@media (max-width: 620px){
+  .lc-toc ol{ grid-template-columns: 1fr; }
+  .lc-stats{ grid-template-columns: repeat(2, 1fr); }
+  .lc-flags{ grid-template-columns: 1fr; }
+  .lc-hero p{ font-size: 1rem; }
+}

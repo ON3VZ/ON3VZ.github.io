@@ -1,0 +1,40 @@
+<svg viewBox="0 0 960 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FMCW radar: transmitted up-chirp and down-chirp in frequency versus time, with the delayed and Doppler-shifted echo.">
+  <defs>
+    <style>
+      .lbl{font-family:'Share Tech Mono',monospace;fill:#b0c4d8}
+      .ttl{font-family:'Orbitron',monospace;fill:#e2eaf5;font-weight:700}
+      .kick{font-family:'Share Tech Mono',monospace;fill:#7a96b0;letter-spacing:.12em}
+      .axis{stroke:#7a96b0;stroke-width:1}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="960" height="320" rx="14" fill="#0d1428" stroke="rgba(0,255,136,0.14)"/>
+  <text x="24" y="34" class="kick" font-size="12">FMCW CHIRP · FREQUENCY vs TIME</text>
+
+  <!-- axes -->
+  <line x1="80" y1="60" x2="80" y2="250" class="axis"/>
+  <line x1="80" y1="250" x2="900" y2="250" class="axis"/>
+  <text x="70" y="66" text-anchor="end" class="lbl" font-size="10">freq</text>
+  <text x="898" y="270" text-anchor="end" class="lbl" font-size="10">time →</text>
+
+  <!-- transmitted: up-chirp then down-chirp -->
+  <polyline points="110,230 330,90 550,230" fill="none" stroke="#00d4ff" stroke-width="2.5"/>
+  <polyline points="550,90 770,230" fill="none" stroke="#00d4ff" stroke-width="2.5"/>
+  <text x="220" y="150" class="lbl" font-size="11" fill="#00d4ff" transform="rotate(-32 220 150)">up-chirp</text>
+  <text x="660" y="150" class="lbl" font-size="11" fill="#00d4ff" transform="rotate(32 660 150)">down-chirp</text>
+
+  <!-- echo: delayed + doppler-shifted -->
+  <polyline points="150,244 370,104 590,244" fill="none" stroke="#00ff88" stroke-width="2" stroke-dasharray="5 5" opacity="0.9"/>
+  <polyline points="590,104 810,244" fill="none" stroke="#00ff88" stroke-width="2" stroke-dasharray="5 5" opacity="0.9"/>
+  <text x="150" y="278" class="lbl" font-size="10.5" fill="#00ff88">echo = transmitted, delayed and Doppler-shifted</text>
+
+  <!-- gap markers -->
+  <line x1="110" y1="230" x2="150" y2="244" stroke="#f0a500" stroke-width="1.5"/>
+  <circle cx="110" cy="230" r="3" fill="#00d4ff"/><circle cx="150" cy="244" r="3" fill="#00ff88"/>
+  <text x="130" y="222" text-anchor="middle" class="lbl" font-size="10" fill="#f0a500">Δt</text>
+
+  <!-- readout cards -->
+  <rect x="80" y="288" width="400" height="24" rx="5" fill="rgba(0,255,136,0.08)"/>
+  <text x="92" y="304" class="lbl" font-size="11"><tspan fill="#00ff88">RANGE</tspan>  ∝  sum of the two beat frequencies</text>
+  <rect x="500" y="288" width="400" height="24" rx="5" fill="rgba(0,212,255,0.08)"/>
+  <text x="512" y="304" class="lbl" font-size="11"><tspan fill="#00d4ff">DOPPLER</tspan>  ∝  difference of the two beat frequencies</text>
+</svg>

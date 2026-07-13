@@ -2,6 +2,8 @@
 layout: post
 title: "How to (Almost) Crash a Lunar Lander: The Lunar Descent CTF Explained"
 tags: [Radar, Signal Processing, FMCW, FFT, CTF, DSP, Beginners]
+extra_css:
+  - /css/lunar-ctf.css
 ---
 
 A little while ago, [ON4AOL](https://www.qrz.com/db/ON4AOL) (Luc) forwarded me a link to an article by Daniel Estévez (EA4GPZ/M0HXM), *ORI's lunar descent CTF*, with the simple question of whether this might be something for me.
@@ -10,25 +12,52 @@ Curious about what it was actually about, I read the article and immediately fol
 
 Here is the puzzle in one sentence:
 
-> Imagine you are handed the complete software of a lunar lander, and you know that this lander keeps crashing. The radar that measures altitude works perfectly. Yet the craft crashes every single time, right before touchdown. Why?
+<div class="lc-hero">
+<span class="lc-kick">Mission brief</span>
+<p>Imagine you are handed the complete software of a lunar lander, and you know that this lander keeps crashing. The radar that measures altitude works perfectly. Yet the craft crashes every single time, right before touchdown. Why?</p>
+<p class="lc-why">A perfect altimeter, a guaranteed crash. The whole answer hides in one number: the velocity.</p>
+</div>
 
-## An unusual kind of Capture The Flag
+<nav class="lc-toc" aria-label="Contents">
+<span class="lc-kick">Contents</span>
+<ol>
+<li><a href="#ctf">An unusual kind of Capture The Flag</a></li>
+<li><a href="#setting">Chandrayaan-3 and the KaRA radar</a></li>
+<li><a href="#flights">Three test flights</a></li>
+<li><a href="#chirp">How the radar measures: the chirp</a></li>
+<li><a href="#modes">The 13 modes, and short-chirp error</a></li>
+<li><a href="#problem">The problem: velocity is noise</a></li>
+<li><a href="#qualifier">The MeasurementQualifier</a></li>
+<li><a href="#flags">The puzzle and the flags</a></li>
+<li><a href="#solutions">How it was solved: two levels</a></li>
+<li><a href="#estevez">What Daniel Estevez did</a></li>
+<li><a href="#code">What I found in the code</a></li>
+<li><a href="#why">Why this matters for us</a></li>
+<li><a href="#glossary">Glossary</a></li>
+<li><a href="#sources">Sources</a></li>
+</ol>
+</nav>
+
+## An unusual kind of Capture The Flag {#ctf}
 
 This is the puzzle that the Open Research Institute (ORI), an American non-profit that develops open-source technology for spaceflight and radio amateurs, put in front of visitors at BSides San Diego 2026, a security and hacker conference. It is a so-called CTF, short for Capture The Flag: a puzzle contest where you earn "flags" (code words, points) step by step by solving a technical problem. This CTF is not about classic computer hacking, but about radar and signal processing. That is exactly what makes it so recognisable for radio amateurs.
 
-## The setting: Chandrayaan-3 and the KaRA radar
+## The setting: Chandrayaan-3 and the KaRA radar {#setting}
 
 The puzzle is not a fantasy story. It is based on real, existing technology. Chandrayaan-3 was the third Indian lunar mission of the Indian space organisation ISRO. On 23 August 2023, the lander of that mission, Vikram, became the first ever to make a soft landing near the south pole of the Moon. With that, India became the fourth country ever to land softly on the Moon.
 
 To know how high it was still hovering above the ground and how fast it was approaching, Vikram used an instrument called KaRA: the Ka-band Radar Altimeter.
 
-> "Ka-band" is the name of a specific slice of the radio spectrum, roughly between 26.5 and 40 GHz. That is much higher than the bands radio amateurs usually sit on, but the underlying physics is the same. At such high frequencies you can use very small, precise antennas, and you can still measure accurately with little transmit power, which makes the instrument well suited to carry on a spacecraft.
+<aside class="lc-concept">
+<span class="lc-tag">Signal 101 &middot; Ka-band</span>
+<p>"Ka-band" is the name of a specific slice of the radio spectrum, roughly between 26.5 and 40 GHz. That is much higher than the bands radio amateurs usually sit on, but the underlying physics is the same. At such high frequencies you can use very small, precise antennas, and you can still measure accurately with little transmit power, which makes the instrument well suited to carry on a spacecraft.</p>
+</aside>
 
 According to the documentation for this CTF, the real KaRA processing software ran on a single Xilinx Virtex-5 FPGA, a kind of reprogrammable chip.
 
 The CTF is a Python re-creation of that KaRA radar, based on a scientific publication about the real design (Sharma et al., IEEE Aerospace and Electronic Systems Magazine, January 2026). That simulation in turn drives a rebuilt autopilot, which has to decide how the lander corrects its course. You get to see all of the code, so there is no hidden secret in a chip. You simply have to understand the logic.
 
-## Three test flights
+## Three test flights {#flights}
 
 The puzzle tests your solution against three different descent profiles.
 
@@ -38,13 +67,21 @@ The puzzle tests your solution against three different descent profiles.
 
 Without any modification, the lander crashes in all three cases. The altitude measurement itself is correct down to the last metre. The problem lies somewhere else.
 
-## How does a radar like this measure altitude, and what is a chirp?
+## How does a radar like this measure altitude, and what is a chirp? {#chirp}
 
 Compare the radar to a bat flying with echolocation: it sends out a sound signal and listens for the reflection. How long it takes for the echo to come back tells it how far away an object is.
 
 KaRA does something similar, but with radio waves. Instead of sending one fixed tone, the radar sends a chirp: a signal whose frequency slides evenly from low to high within a short, fixed span of time. The name comes from the bird sound that does the same thing, a short tone that quickly changes pitch, like a bird chirping.
 
-> This type of radar is called FMCW, for Frequency-Modulated Continuous Wave: it transmits continuously, and while doing so it constantly changes frequency.
+<aside class="lc-concept">
+<span class="lc-tag">Signal 101 &middot; FMCW</span>
+<p>This type of radar is called FMCW, for Frequency-Modulated Continuous Wave: it transmits continuously, and while doing so it constantly changes frequency.</p>
+</aside>
+
+<figure class="lc-fig">
+<img src="/assets/images/lunar-chirp.svg" alt="FMCW up-chirp and down-chirp in frequency versus time with the delayed echo.">
+<figcaption><b>FMCW.</b> One up-chirp, one down-chirp. Range comes from the sum of the two beat frequencies, Doppler (velocity) from their difference.</figcaption>
+</figure>
 
 The clever thing about such a chirp is that, by comparing the reflected signal with what you just transmitted yourself, you can derive two things at once:
 
@@ -55,9 +92,12 @@ That is the same effect that makes an ambulance siren sound higher as it approac
 
 The reflected signal is digitised and then run through a mathematical operation called an FFT, short for Fast Fourier Transform.
 
-> Think of a graphic equaliser on a sound system, showing how much bass, midrange and treble a sound contains. An FFT does exactly that for the radar signal: it divides the signal into 8192 small frequency bins, and finds which bin holds the strongest signal. That bin reveals the frequency of the echo, and therefore the altitude and the speed.
+<aside class="lc-concept">
+<span class="lc-tag">Signal 101 &middot; FFT</span>
+<p>Think of a graphic equaliser on a sound system, showing how much bass, midrange and treble a sound contains. An FFT does exactly that for the radar signal: it divides the signal into 8192 small frequency bins, and finds which bin holds the strongest signal. That bin reveals the frequency of the echo, and therefore the altitude and the speed.</p>
+</aside>
 
-## The 13 measurement modes, and why measuring briefly is less accurate
+## The 13 measurement modes, and why measuring briefly is less accurate {#modes}
 
 How long a chirp may last depends on how high the lander is flying. High above the ground a chirp may last a long time, almost a tenth of a second, but just above the ground it has to be lightning fast, barely one and a half microseconds, otherwise the echo is already back before the radar has finished transmitting. That is why the radar has 13 fixed measurement modes, each with its own chirp duration, suited to a different altitude range. A few examples from the table the CTF code can print itself with the command `python lunar_descent_ctf.py --modes`:
 
@@ -75,7 +115,19 @@ The key things to remember:
 - At the high modes, 9 through 12, the chirp actually delivers that. But at the low modes, just above the ground, where it matters most, the chirp delivers only a handful of real samples, 14 in the worst case, and the rest of the 8192 bins are simply filled with zeros.
 - That filling with zeros, called "zero padding", is technically fine for still being able to run an FFT, but it makes the peak in the FFT broad and fuzzy instead of sharp. And a broad, fuzzy peak is hard to pin down precisely.
 
-## The problem: altitude is right, velocity is not
+## The problem: altitude is right, velocity is not {#problem}
+
+<figure class="lc-fig">
+<img src="/assets/images/lunar-fft-peak.svg" alt="A sharp FFT peak from a full chirp versus a broad, fuzzy peak from a 14-sample zero-padded chirp.">
+<figcaption><b>The whole bug in one picture.</b> A full chirp gives a needle-sharp peak. Fourteen samples give a broad smear, so the peak position, and the velocity read from it, becomes a guess.</figcaption>
+</figure>
+
+<div class="lc-stats">
+<div class="lc-stat is-red"><b>14 / 8192</b><span>real samples at mode 0, the rest zero-padded</span></div>
+<div class="lc-stat is-cyan"><b>40 bins</b><span>qualifier reject threshold, about 50 kHz</span></div>
+<div class="lc-stat is-red"><b>&plusmn;30 m/s</b><span>velocity error at the lowest modes</span></div>
+<div class="lc-stat is-amber"><b>0 / 1000</b><span>score with the code left unchanged</span></div>
+</div>
 
 Here is the heart of the matter:
 
@@ -98,34 +150,40 @@ This is literally visible in the simulation output from the original article. A 
 
 That is exactly the problem that needs solving.
 
-## What decides what the pilot sees: the MeasurementQualifier
+## What decides what the pilot sees: the MeasurementQualifier {#qualifier}
 
 The raw radar measurements do not go straight to the autopilot. They first pass through a piece of software that decides which measurements are reliable enough: the MeasurementQualifier. This is the only place in the whole CTF code that you, as a participant, are allowed to change. Everything outside it, the radar simulation, the autopilot, the scoring, is off limits.
+
+<figure class="lc-fig">
+<img src="/assets/images/lunar-signal-chain.svg" alt="Signal chain from radar to RAP to the editable MeasurementQualifier to autopilot to landing, with the velocity fault path in red.">
+<figcaption><b>The whole pipeline.</b> The MeasurementQualifier is the one block you may edit. Altitude (green) is fine everywhere. The velocity path (red) is where noise slips through to the autopilot.</figcaption>
+</figure>
 
 To be sure how that starting code looks exactly, I pulled it straight from the official GitHub repository. It is indeed very simple, exactly as the article describes:
 
 - there is only one check. If the difference between the up-chirp and down-chirp peaks, expressed in FFT bins, is larger than a fixed threshold of 40 bins (about 50 kHz), the measurement is rejected.
 - If the difference stays under that threshold, the measurement, altitude and velocity both, passes through to the pilot without any further questions.
 
-And that is where the problem sits.
+<div class="lc-fault">
+<span class="lc-tag">&#9888; Fault &middot; this is the crash</span>
+<p>And that is where the problem sits. At the shortest mode, with 14 real measurements, the measured speed can deviate by tens of metres per second from reality, without the difference between the two peaks becoming large enough to cross that fixed threshold of 40 bins.</p>
+<p>So for this simple check the measurement looks valid, while the value internally is mostly noise. That noise then passes unfiltered to the autopilot. Just above the ground it sees a nonsensically high speed, thinks it is drifting sideways and needs to correct, gives full sideways thrust because of that, and precisely because of that it tips over. That is how the crash happens.</p>
+</div>
 
-At the shortest mode, with 14 real measurements, the measured speed can deviate by tens of metres per second from reality, without the difference between the two peaks becoming large enough to cross that fixed threshold of 40 bins.
-
-So for this simple check the measurement looks valid, while the value internally is mostly noise. That noise then passes unfiltered to the autopilot. Just above the ground it sees a nonsensically high speed, thinks it is drifting sideways and needs to correct, gives full sideways thrust because of that, and precisely because of that it tips over. That is how the crash happens.
-
-## The puzzle and the flags
+## The puzzle and the flags {#flags}
 
 Participants could earn three flags, together worth 1000 points.
 
-| Flag | Points | Task |
-|---|---|---|
-| RECON | 100 | Explain to the organisers what exactly is wrong |
-| FIRST LIGHT | 500 | Land all three scenarios without crashing |
-| NO GAPS | 400 | Do that without wrongly rejecting a single valid measurement |
+<div class="lc-flags">
+<div class="lc-flag"><span class="lc-name">RECON</span><span class="lc-pts">100</span><span class="lc-task">Explain to the organisers what exactly is wrong</span></div>
+<div class="lc-flag"><span class="lc-name">FIRST LIGHT</span><span class="lc-pts">500</span><span class="lc-task">Land all three scenarios without crashing</span></div>
+<div class="lc-flag"><span class="lc-name">NO GAPS</span><span class="lc-pts">400</span><span class="lc-task">Do that without wrongly rejecting a single valid measurement</span></div>
+</div>
+<p class="lc-flags-total">Total 1000 points &middot; unmodified code scores <span class="zero">0 / 1000</span></p>
 
-Without any modifications you score 0 of the 1000 points. The lander crashes guaranteed, in all three scenarios.
+The lander crashes guaranteed, in all three scenarios.
 
-## How was it solved? Two levels
+## How was it solved? Two levels {#solutions}
 
 After the event was over, ORI released two example solutions, which nicely show how you first solve a problem coarsely, and only then finely.
 
@@ -134,7 +192,7 @@ After the event was over, ORI released two example solutions, which nicely show 
   - First, the threshold above which a velocity difference is rejected as "too large to be true" is adjusted per mode: for modes with many samples, high above the ground, where high speeds are normal and reliable, the threshold may be generous; for modes with few samples it has to be strict.
   - Next, instead of simply filling in 0 on an unreliable measurement, the system holds on to the last known good velocity: a kind of educated guess based on what you already knew, a very simple cousin of the Kalman filter covered further on, with just one remembered value instead of a full probability distribution. That way the system never again wrongly rejects a valid measurement (flag 3), while the speed estimate still stays reasonably right.
 
-## And what did Daniel Estévez himself do?
+## And what did Daniel Estévez himself do? {#estevez}
 
 In his article, Estévez goes a step further than these two official solutions. What is interesting is not only what he built, but also how he worked towards it step by step.
 
@@ -150,7 +208,7 @@ That work paid off. In his simulations the estimated altitude and velocity track
 
 Estévez underlines a point that comes straight from engineering practice: the easy solution, simply ignoring the velocity when it is wrong, gets the full score in this game, but is technically unsatisfying. A slightly harder approach, where you really learn to deal with uncertain sensor data, as with a well-tuned Kalman filter, delivers a far more usable and realistic result, exactly the way it is done in real spaceflight engineering too.
 
-## A correction, and what else I found in the code
+## What I found in the code {#code}
 
 While reading through the source code, there are a few more things that can be found directly in the official code, and that are worth mentioning even though they are not stated so explicitly in the article.
 
@@ -159,7 +217,7 @@ While reading through the source code, there are a few more things that can be f
 - Furthermore, the repository turns out to contain a second, separate Python file, `kara_rap_reference.py`, that is not used by the actual CTF code. It is a more extensive, more faithful re-creation of the full KaRA system from the scientific publication, including things like automatic gain control that were left out of the CTF itself. This file apparently serves as a piece of evidence that the underlying physical model of the CTF matches the publication, separate from the puzzle itself.
 - Finally, the code itself also gives hints if you score low. At a score of 0, for example, the tip appears: "The altitude readings are fine. Look at the velocity. How many signal samples does mode 0 have?" A small nudge in the right direction for anyone who is stuck.
 
-## Why this is interesting for us too
+## Why this is interesting for us too {#why}
 
 This puzzle revolves around a question that shows up everywhere in radio technology, far beyond spaceflight: when do you trust a measurement, and when do you not? That same trade-off plays out in weather radars, in automotive radars for adaptive cruise control, in GPS receivers that have to judge whether the satellite geometry is good enough to rely on, and in every homebrew project where you try to measure a weak or noisy signal. FMCW radar itself, with chirps, FFTs and bins, is moreover technology that a radio amateur may well encounter one day when experimenting with radar or Doppler measurements, even though we ourselves usually sit on much lower frequencies than the Ka-band.
 
@@ -167,7 +225,7 @@ For me this was a good reminder that a lot of what happens inside a spacecraft a
 
 *73, Kristof, ON3VZ*
 
-## Glossary
+## Glossary {#glossary}
 
 | Term | Explanation |
 |---|---|
@@ -187,7 +245,7 @@ For me this was a good reminder that a lot of what happens inside a spacecraft a
 | ISRO | The Indian space organisation (Indian Space Research Organisation). |
 | Vikram | The name of the lander of the Chandrayaan-3 mission. |
 
-## Sources
+## Sources {#sources}
 
 - Daniel Estévez (EA4GPZ/M0HXM), *ORI's lunar descent CTF*, destevez.net, July 2026: [destevez.net/2026/07/oris-lunar-descent-ctf](https://destevez.net/2026/07/oris-lunar-descent-ctf/)
 - Open Research Institute, *OpenResearchInstitute/lunar-descent-ctf* (source code, README and official solutions), GitHub: [github.com/OpenResearchInstitute/lunar-descent-ctf](https://github.com/OpenResearchInstitute/lunar-descent-ctf)
