@@ -52,6 +52,12 @@ It also took patience. With my 15 to 25 watts I was rarely the strongest signal 
 
 Four continents in one evening, on a groundplane vertical, with less power than a light bulb. Am I pulling top-tier receive numbers? Certainly not: some of those exchanges happened at -16, -21 dB, signal levels where SSB would be dead silence. But that's exactly the point: FT8 digs conversations out of the noise floor that phone could never touch.
 
+## Four continents at night, barely Europe by morning
+
+That evening haul turned out to be a lesson in its own right: FT8 is one of the clearest ways to actually watch propagation instead of just reading about it. The proof came the next morning. Same rig, same antenna, same 25 watts, and in the late morning I could barely scrape together a handful of European stations. The four continents had simply vanished.
+
+The reason lives in the ionosphere, the charged layers high overhead that bend HF signals back to Earth and let them skip across the world. The sun builds those layers up through the day and lets them fade at night, so conditions change from one hour to the next and every band has its own best time. A long DX path only works when the ionosphere is cooperating along the whole route between me and the far station, and since that route runs partly through daylight and partly through darkness and drifts along with the sun, the window for any given path is narrow. The hours around sunset are a classic sweet spot, which is about when my four continents rolled in. By late morning that alignment was gone, and the same power that reached Argentina after dark could barely clear my own continent. Every FT8 line comes with a timestamp and a distance, so you can watch this rhythm build up in the log all by yourself.
+
 ## So what do I make of it?
 
 Honestly, I'm not entirely sure yet. A computer talking to another computer over radio waves. It sounds barely interactive... and maybe it isn't. There's no voice from the other side of the ocean, no accent, no chat about the weather in Buenos Aires. Jorge and I exchanged exactly two numbers and a polite 73, all negotiated by software.
