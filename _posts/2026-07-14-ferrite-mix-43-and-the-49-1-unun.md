@@ -20,7 +20,7 @@ That is the UNUN's job (UNUN means unbalanced to unbalanced). It is a transforme
 
 ## The build and the bench test
 
-ON4BB wound his UNUN on an FT240-43 core. His honest reason for that choice: he had one lying around. It happens to be a very defensible choice too, as we will see. FT240 is the large 2.4 inch size, and 43 is the ferrite material mix. Big core, popular mix, the combination you will find in most commercial EFHW transformers.
+ON4BB wound his UNUN on an FT240-43 core. His honest reason for that choice: he had one lying around. It happens to be an excellent choice too, as we will see. FT240 is the large 2.4 inch size, and 43 is the ferrite material mix. Big core, popular mix, the combination you will find in most commercial EFHW transformers.
 
 To test it without hanging a wire in the air, he terminated the output with a metal film resistor of about 2500 ohms, a dummy stand-in for the EFHW feedpoint, and swept it with a DG8SAQ VNWA from 3 to 28.8 MHz using roughly 2000 measurement points. A small compensation capacitance across the input flattens the response at the high end of HF, a common trick in these designs.
 
@@ -41,7 +41,7 @@ Everything under 2:1. The real part of the impedance tracked the magnitude close
 
 ## The question that started the rabbit hole
 
-Looking at those curves, something nagged at me, and I asked it in the chat: does a low SWR actually prove the transformer is good? I had read somewhere that a VNA only looks at what comes back. Power that does not reflect is not necessarily radiated. Part of it can simply stay behind as heat in the core.
+Looking at those curves, I got curious about something, and purely out of curiosity I asked it in the chat: does a low SWR actually prove the transformer is good? I had read somewhere that a VNA only looks at what comes back. Power that does not reflect is not necessarily radiated. Part of it can simply stay behind as heat in the core.
 
 ON4BB's answer was refreshingly direct: correct. The VSWR is a value computed from the real and complex components of the reflection. Core losses are not measured here at all. The SWR curve tells you how the transformer behaves as a match across frequency. Nothing more.
 
@@ -101,7 +101,7 @@ This is also why clip-on and sleeve ferrites do not belong in a high-power signa
 
 The practical checklist I took away:
 
-- Pick the mix for the job (transformer versus choke) and the bands, not for what the junk box offers. Although, like ON4BB, you might get lucky with the junk box.
+- Pick the mix for the job (transformer versus choke) and the bands. Although as ON4BB proves, sometimes the junk box holds exactly the right core.
 - Bigger cores run cooler: more cross-section means more thermal mass and lower flux density per ampere-turn. FT240 or stacked cores for 100 W and up.
 - Use heat as your instrument. After a long transmission, feel the core (carefully). The RF.Guru rule: if you cannot keep a finger on it for 2 seconds, you are in the danger zone. Repeated overheating permanently degrades ferrite.
 - A low SWR that slowly drifts during transmission is a classic hint that a core is heating up.
@@ -109,7 +109,7 @@ The practical checklist I took away:
 
 ## Takeaways for fellow beginners
 
-The SWR meter is the first instrument every ham learns to read, and it is genuinely useful. But it answers exactly one question: how much power came back. It says nothing about where the rest went. ON4BB's UNUN measures beautifully as a match, and mix 43 on a big FT240 core is a sensible, proven recipe for an EFHW at typical power levels. The point of this whole rabbit hole is not that the build is wrong. It is that now we know what the curve does and does not prove, and how we would measure the rest.
+The SWR meter is the first instrument every ham learns to read, and it is genuinely useful. But it answers exactly one question: how much power came back. It says nothing about where the rest went. ON4BB's UNUN measures beautifully as a match, and mix 43 on a big FT240 core is a sensible, proven recipe for an EFHW at typical power levels. What this deep dive gave me personally: I started out knowing next to nothing about ferrite, had picked up bits and pieces here and there, and by looking it up and reading along I now understand what the curve does and does not prove, and how the rest could be measured. That is exactly what a club chat is for.
 
 ## Credits and sources
 
