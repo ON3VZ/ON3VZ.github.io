@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+  <rect width="980" height="560" rx="10" fill="#0b1220"/>
+  <text x="490" y="32" text-anchor="middle" fill="#e8f0f2" font-size="19">Which ferrite mix for which job?</text>
+  <text x="490" y="54" text-anchor="middle" fill="#8fa3b8" font-size="13">practical working ranges as reported by builders (RF.Guru) &#183; indicative, always verify temperature rise</text>
+
+  <!-- legend -->
+  <rect x="280" y="72" width="26" height="14" fill="#00ff9d" opacity="0.9"/>
+  <text x="314" y="84" fill="#e8f0f2" font-size="13">EFHW transformer duty</text>
+  <rect x="530" y="72" width="26" height="14" fill="#38e1ff" opacity="0.9"/>
+  <text x="564" y="84" fill="#e8f0f2" font-size="13">common-mode choke duty</text>
+
+  <!-- axis -->
+  <line x1="120" y1="470" x2="940" y2="470" stroke="#1c2a40" stroke-width="2"/>
+  <line x1="120" y1="110" x2="120" y2="470" stroke="#1c2a40" stroke-width="1"/>
+  <line x1="393" y1="110" x2="393" y2="470" stroke="#1c2a40" stroke-width="1"/>
+  <line x1="667" y1="110" x2="667" y2="470" stroke="#1c2a40" stroke-width="1"/>
+  <line x1="940" y1="110" x2="940" y2="470" stroke="#1c2a40" stroke-width="1"/>
+  <text x="120" y="492" text-anchor="middle" fill="#8fa3b8" font-size="13">1 MHz</text>
+  <text x="393" y="492" text-anchor="middle" fill="#8fa3b8" font-size="13">10 MHz</text>
+  <text x="667" y="492" text-anchor="middle" fill="#8fa3b8" font-size="13">100 MHz</text>
+  <text x="940" y="492" text-anchor="middle" fill="#8fa3b8" font-size="13">1 GHz</text>
+
+  <!-- amateur band ticks -->
+  <line x1="269" y1="464" x2="269" y2="476" stroke="#ffbf47" stroke-width="2"/>
+  <line x1="351" y1="464" x2="351" y2="476" stroke="#ffbf47" stroke-width="2"/>
+  <line x1="433" y1="464" x2="433" y2="476" stroke="#ffbf47" stroke-width="2"/>
+  <line x1="481" y1="464" x2="481" y2="476" stroke="#ffbf47" stroke-width="2"/>
+  <line x1="515" y1="464" x2="515" y2="476" stroke="#ffbf47" stroke-width="2"/>
+  <line x1="711" y1="464" x2="711" y2="476" stroke="#ffbf47" stroke-width="2"/>
+  <text x="269" y="512" text-anchor="middle" fill="#ffbf47" font-size="11">80m</text>
+  <text x="351" y="512" text-anchor="middle" fill="#ffbf47" font-size="11">40m</text>
+  <text x="433" y="512" text-anchor="middle" fill="#ffbf47" font-size="11">20m</text>
+  <text x="481" y="512" text-anchor="middle" fill="#ffbf47" font-size="11">15m</text>
+  <text x="515" y="512" text-anchor="middle" fill="#ffbf47" font-size="11">10m</text>
+  <text x="711" y="512" text-anchor="middle" fill="#ffbf47" font-size="11">2m</text>
+
+  <!-- mix 77 -->
+  <text x="100" y="140" text-anchor="end" fill="#e8f0f2" font-size="16">77</text>
+  <rect x="120" y="122" width="231" height="16" rx="4" fill="#00ff9d" opacity="0.9"/>
+  <text x="130" y="135" fill="#06281a" font-size="11">1 to 7 MHz (160/80m)</text>
+  <text x="360" y="157" fill="#8fa3b8" font-size="11">choke: not recommended at HF</text>
+
+  <!-- mix 31 -->
+  <text x="100" y="210" text-anchor="end" fill="#e8f0f2" font-size="16">31</text>
+  <text x="130" y="205" fill="#8fa3b8" font-size="11">transformer: rarely used</text>
+  <rect x="190" y="212" width="166" height="16" rx="4" fill="#38e1ff" opacity="0.9"/>
+  <text x="198" y="225" fill="#062330" font-size="11">1.8 to 7.3 MHz (160/80/40m)</text>
+
+  <!-- mix 43 -->
+  <text x="100" y="280" text-anchor="end" fill="#e8f0f2" font-size="16">43</text>
+  <rect x="311" y="262" width="165" height="16" rx="4" fill="#00ff9d" opacity="0.9"/>
+  <text x="319" y="275" fill="#06281a" font-size="11">5 to 20 MHz</text>
+  <rect x="351" y="282" width="173" height="16" rx="4" fill="#38e1ff" opacity="0.9"/>
+  <text x="359" y="295" fill="#062330" font-size="11">7 to 30 MHz (40 to 10m)</text>
+
+  <!-- mix 52 -->
+  <text x="100" y="350" text-anchor="end" fill="#e8f0f2" font-size="16">52</text>
+  <rect x="433" y="332" width="91" height="16" rx="4" fill="#00ff9d" opacity="0.9"/>
+  <text x="441" y="345" fill="#06281a" font-size="11">14 to 30</text>
+  <rect x="351" y="352" width="173" height="16" rx="4" fill="#38e1ff" opacity="0.9"/>
+  <text x="359" y="365" fill="#062330" font-size="11">7 to 30 (80m w/ turns)</text>
+
+  <!-- mix 61 -->
+  <text x="100" y="420" text-anchor="end" fill="#e8f0f2" font-size="16">61</text>
+  <rect x="584" y="402" width="274" height="16" rx="4" fill="#00ff9d" opacity="0.9"/>
+  <text x="592" y="415" fill="#06281a" font-size="11">50 to 500 MHz (VHF/UHF)</text>
+  <text x="592" y="437" fill="#8fa3b8" font-size="11">choke: too little loss at HF</text>
+
+  <text x="490" y="545" text-anchor="middle" fill="#8fa3b8" font-size="13">rule of thumb: a transformer wants LOW loss in its band, a choke wants HIGH loss in its band</text>
+</svg>
