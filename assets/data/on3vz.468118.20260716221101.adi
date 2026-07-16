@@ -1,0 +1,78 @@
+QRZLogbook download for on3vz
+    Date: Thu Jul 16 22:11:01 2026
+    Bookid: 468118
+    Records: 1
+    <ADIF_VER:5>3.1.1
+    <PROGRAMID:10>QRZLogbook
+    <PROGRAMVERSION:3>2.0
+    <eoh>
+<freq:6>14.275
+<my_rig:17>Icom IC-7300 MKII
+<hamqth_qso_upload_status:1>N
+<lotw_qsl_sent:1>Y
+<gridsquare:6>GJ35qd
+<address:43>19 Rue De La Duee Bte 11 Paris 75020 France
+<band_rx:3>20m
+<qrzcom_qso_download_status:1>Y
+<my_lon:11>E004 22.500
+<hrdlog_qso_download_status:1>N
+<qrzcom_qso_download_date:8>20260716
+<my_street:27>Joost van Vlaanderenlaan 18
+<my_city:7>Hoboken
+<lotw_qsl_rcvd:1>N
+<my_postal_code:4>2660
+<freq_rx:6>14.275
+<name:58>Radio Amateurs Club De Kourou - Qsl Manager : Laurent Haas
+<clublog_qso_download_status:1>N
+<my_antenna:9>IronWave6
+<qrzcom_qso_upload_status:1>Y
+<eqsl_qsl_sent:1>N
+<cont:2>SA
+<lon:11>W052 37.500
+<qrzcom_qso_upload_date:8>20260716
+<dxcc:2>63
+<programversion:8>2.40.0.0
+<distance:4>7272
+<operator:5>ON3VZ
+<eqsl_qsl_rcvd:1>N
+<my_itu_zone:2>27
+<rst_rcvd:2>59
+<owner_callsign:5>ON3VZ
+<tx_pwr:2>25
+<qsl_via:58>Self Addressed Envelop + 3 US$ for return postage (NO.IRC)
+<qso_date:8>20260716
+<my_name:16>Kristof Cornelis
+<qsl_sent:1>N
+<mode:3>USB
+<station_callsign:5>ON3VZ
+<my_gridsquare:6>JO20ee
+<qso_random:1>Y
+<ituz:2>12
+<programid:7>LOG4OM2
+<time_on:4>2201
+<qsl_rcvd_via:1>E
+<country:13>French Guiana
+<clublog_qso_upload_status:1>N
+<my_country:7>Belgium
+<my_iota:4>none
+<lat:11>N005 08.749
+<my_lat:11>N050 11.250
+<app_qrzlog_logid:10>1479225509
+<lotw_qslsdate:8>20260716
+<qth:5>PARIS
+<time_off:4>2201
+<call:5>FY5KE
+<rst_sent:2>59
+<qsl_rcvd:1>N
+<my_cq_zone:2>14
+<qso_complete:1>Y
+<hamqth_qso_download_status:1>N
+<band:3>20m
+<app_qrzlog_status:1>N
+<pfx:3>FY5
+<qsl_sent_via:1>E
+<cqz:1>9
+<qso_date_off:8>20260716
+<hrdlog_qso_upload_status:1>N
+<eor>
+
