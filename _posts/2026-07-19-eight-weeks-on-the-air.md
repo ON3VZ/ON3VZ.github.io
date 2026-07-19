@@ -44,7 +44,7 @@ Fifty-four days ago I keyed the microphone for the first time and said my own ca
 
 Today I exported the logbook, ran the numbers, and sat looking at the screen for a while. Two hundred and forty-seven contacts. Fifty-two DXCC entities. And something I did not expect to see in a beginner's log: a total path length that has just passed the distance to the Moon.
 
-This post is the evaluation I owe myself. What worked, what did not, what the bands actually taught me, and where the plan goes next. All figures come from the QRZ Logbook ADIF export of 19 July 2026, station JO21EE in Hoboken, IC-7300 MkII at 25 W into a groundplane multiband vertical.
+This post is the evaluation I owe myself. What worked, what did not, what the bands actually taught me, and where the plan goes next. All figures come from the QRZ Logbook ADIF export of 19 July 2026, station JO21EE in Hoboken, IC-7300 MkII into a groundplane multiband vertical, 25 W on 242 of the 247 contacts and on every contact beyond 3,000 km.
 
 <div class="eval26" markdown="0">
 
@@ -53,7 +53,7 @@ This post is the evaluation I owe myself. What worked, what did not, what the ba
   <div class="k"><div class="n cy">52</div><div class="l">DXCC entities</div><div class="s">5 continents</div></div>
   <div class="k"><div class="n">390,218</div><div class="l">km worked</div><div class="s">Moon distance: 384,400</div></div>
   <div class="k"><div class="n am">11,280</div><div class="l">km best DX</div><div class="s">LU1DA, Argentina</div></div>
-  <div class="k"><div class="n">451</div><div class="l">km per watt</div><div class="s">at 25 W maximum</div></div>
+  <div class="k"><div class="n">451</div><div class="l">km per watt</div><div class="s">LU1DA at 25 W, logged</div></div>
   <div class="k"><div class="n cy">44</div><div class="l">active days</div><div class="s">of 54, avg 5.6 QSOs</div></div>
   <div class="k"><div class="n">7</div><div class="l">bands used</div><div class="s">80m to 2m</div></div>
   <div class="k"><div class="n am">71</div><div class="l">LoTW confirmed</div><div class="s">29% of the log</div></div>
@@ -78,6 +78,59 @@ This post is the evaluation I owe myself. What worked, what did not, what the ba
 </div>
 
 </div>
+
+## Station, power, and where these numbers come from
+
+Before any of the conclusions, the boring part, because a claim about distance is worthless without the power it was made with.
+
+<div class="eval26" markdown="0">
+<div class="panel">
+  <h4>Station record</h4>
+  <table>
+    <tbody>
+      <tr><td>Callsign</td><td class="dx">ON3VZ</td></tr>
+      <tr><td>Licence</td><td>Belgium, Class C</td></tr>
+      <tr><td>Locator</td><td>JO21EE, Hoboken, Antwerp</td></tr>
+      <tr><td>Transceiver</td><td>Icom IC-7300 MkII, commercial equipment, unmodified</td></tr>
+      <tr><td>Antenna</td><td>IronWave6 groundplane multiband vertical, garden mounted</td></tr>
+      <tr><td>Amplifier</td><td>none</td></tr>
+      <tr><td>Data source</td><td>QRZ Logbook ADIF export, 19 Jul 2026, 247 records</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel">
+  <h4>Transmit power, as logged, per QSO</h4>
+  <div class="bars">
+    <div class="bar"><span>25 W</span><span class="track"><span class="fill" style="width:100%;background:var(--c-primary);box-shadow:var(--glow-sm)"></span></span><span class="val">242 · 98%</span></div>
+    <div class="bar"><span>50 W</span><span class="track"><span class="fill" style="width:1.7%;background:var(--c-amber)"></span></span><span class="val">4 · 1.6%</span></div>
+    <div class="bar"><span>20 W</span><span class="track"><span class="fill" style="width:0.4%;background:var(--c-cyan)"></span></span><span class="val">1 · 0.4%</span></div>
+  </div>
+  <div class="note">Every one of the 247 records carries a <code>TX_PWR</code> field. The four 50 W entries are two local 2m FM contacts and two European HF contacts on 30 June. The single 20 W entry is my very first FT8 QSO, TA1SMO, while I was still setting the drive level. <strong>All 19 contacts beyond 3,000 km, including both 11,000 km paths, are logged at 25 W.</strong></div>
+</div>
+
+<div class="panel">
+  <h4>Independent confirmation</h4>
+  <table>
+    <thead><tr><th>Contact</th><th>km</th><th>Mode</th><th>LoTW</th></tr></thead>
+    <tbody>
+      <tr><td class="dx">LU1DA, Argentina</td><td>11,280</td><td>FT8</td><td>confirmed</td></tr>
+      <tr><td class="dx">CX6TU, Uruguay</td><td>11,070</td><td>FT8</td><td>confirmed</td></tr>
+      <tr><td class="dx">NV1U, United States</td><td>5,796</td><td>FT8</td><td>confirmed</td></tr>
+      <tr><td class="dx">VE9CF, Canada</td><td>4,904</td><td>SSB</td><td>confirmed</td></tr>
+      <tr><td class="dx">A71UN, Qatar</td><td>4,818</td><td>FT8</td><td>confirmed</td></tr>
+      <tr><td class="dx">9K2ES, Kuwait</td><td>4,304</td><td>SSB</td><td>confirmed</td></tr>
+    </tbody>
+  </table>
+  <div class="note">71 of 247 QSOs (29%) are confirmed on Logbook of The World, including both ends of the two longest paths in this log. LoTW is a two-sided match: the other station uploaded the same contact independently. My log is also uploaded to QRZ, Clublog, eQSL and HRDLog.</div>
+</div>
+</div>
+
+I want to be plain about something, because a beginner's log full of long distances invites a raised eyebrow, and it should.
+
+**None of this is remarkable.** Twenty-five watts of FT8 on 20m into South America during the evening grey line is an ordinary evening for thousands of stations. FT8 works reliably down to around 24 dB below the noise floor, which is roughly 20 dB of margin that SSB simply does not have. The far ends of my longest paths are not casual operators with wire antennas: FY5KE is a well-known contest station in French Guiana, and several of my DX phone contacts are special-event or contest stations with tall towers, stacked beams and excellent receivers. A large part of what looks like my achievement is really their antenna farm doing the heavy lifting, and I would rather say that out loud than let anyone wonder.
+
+What 25 W genuinely does not do is win a pile-up, punch through marginal conditions, or make an ocean path work on voice outside a favourable window. That limitation shows up clearly in the numbers further down, and it is the most useful thing this log has taught me.
 
 ## Phase one: learning to be heard
 
