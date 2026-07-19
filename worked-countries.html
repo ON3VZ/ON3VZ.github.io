@@ -1,0 +1,100 @@
+---
+layout: default
+title: ON3VZ — Worked Countries
+extra_css:
+  - /css/worked-countries.css
+extra_js:
+  - /js/worked-countries.js
+---
+
+<div class="wc-wrap">
+
+  <!-- HERO -->
+  <div class="wc-hero container anim-1">
+    <a class="wc-back" href="/logbook/">&#8592; Back to Logbook</a>
+    <div class="section-label">ON3VZ &middot; LOGBOOK</div>
+    <h1 class="section-title">Worked Countries Map</h1>
+    <p class="wc-sub">Every country on Earth that ON3VZ has completed at least one QSO with, filled in on a world map. Same ADIF data as the logbook. Hover a country for its entities, bands and QSO count.</p>
+
+    <div class="wc-stats">
+      <div class="wc-stat"><span class="wc-stat-val" id="wcStatCountries">&mdash;</span><span class="wc-stat-lbl">Countries lit</span></div>
+      <div class="wc-stat"><span class="wc-stat-val" id="wcStatEntities">&mdash;</span><span class="wc-stat-lbl">DXCC entities</span></div>
+      <div class="wc-stat"><span class="wc-stat-val" id="wcStatQsos">&mdash;</span><span class="wc-stat-lbl">QSOs</span></div>
+      <div class="wc-stat"><span class="wc-stat-val" id="wcStatCont">&mdash;</span><span class="wc-stat-lbl">Continents</span></div>
+      <div class="wc-stat"><span class="wc-stat-val" id="wcStatPct">&mdash;</span><span class="wc-stat-lbl">Of world map</span></div>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="wc-controls container anim-2">
+    <div class="wc-ctrl-group">
+      <label>Band</label>
+      <div class="wc-chips" id="wcBandChips"></div>
+    </div>
+    <div class="wc-ctrl-group">
+      <label>Mode</label>
+      <div class="wc-chips" id="wcModeChips"></div>
+    </div>
+    <div class="wc-ctrl-group wc-ctrl-toggles">
+      <label>View</label>
+      <label class="wc-switch"><input type="checkbox" id="wcHeat" checked> Shade by QSO count</label>
+      <label class="wc-switch"><input type="checkbox" id="wcGrat" checked> Graticule</label>
+      <label class="wc-switch"><input type="checkbox" id="wcHome" checked> Home marker</label>
+    </div>
+    <div class="wc-ctrl-group">
+      <label>Find</label>
+      <input type="search" id="wcSearch" class="wc-search" placeholder="Highlight a country&hellip;">
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="wc-map-section container anim-3">
+    <div class="wc-map-inner">
+      <svg id="wcMap" class="wc-map"></svg>
+
+      <div class="wc-legend" id="wcLegend">
+        <div class="wc-legend-title">QSOs per country</div>
+        <div class="wc-legend-scale" id="wcLegendScale"></div>
+        <div class="wc-legend-ends"><span id="wcLegendMin">1</span><span id="wcLegendMax">&mdash;</span></div>
+        <div class="wc-legend-row"><span class="wc-legend-swatch wc-legend-swatch--none"></span> Not worked</div>
+      </div>
+
+      <div class="wc-zoom">
+        <button type="button" class="wc-zoom-btn" id="wcZoomIn" title="Zoom in" aria-label="Zoom in">+</button>
+        <button type="button" class="wc-zoom-btn" id="wcZoomOut" title="Zoom out" aria-label="Zoom out">&minus;</button>
+        <button type="button" class="wc-zoom-btn wc-zoom-btn--reset" id="wcZoomReset" title="Reset view" aria-label="Reset view">&#8635;</button>
+      </div>
+
+      <div class="wc-loading" id="wcLoading">
+        <div class="wc-loading-inner">
+          <svg width="30" height="34" viewBox="0 0 28 32" fill="none"><line x1="14" y1="2" x2="14" y2="28" stroke="#00ff88" stroke-width="2"/><line x1="8" y1="14" x2="20" y2="14" stroke="#00ff88" stroke-width="1.5"/><circle cx="14" cy="2" r="2.5" fill="#00ff88"/></svg>
+          <span id="wcLoadingText">Loading logbook&hellip;</span>
+        </div>
+      </div>
+
+      <div class="wc-tip" id="wcTip"></div>
+    </div>
+    <p class="wc-map-note">Borders are drawn at country level. A DXCC entity that is politically part of another country (for example the Canary Islands, or Alaska) fills that country on the map, while the logbook and the DXCC matrix still count it as its own entity.</p>
+  </div>
+
+  <!-- WORKED LIST -->
+  <div class="wc-list-section container anim-3">
+    <div class="wc-list-head">
+      <h2 class="wc-list-title">Countries worked</h2>
+      <div class="wc-sort">
+        <select id="wcSort" class="wc-select">
+          <option value="qso">Sort: QSOs</option>
+          <option value="alpha">Sort: A&ndash;Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="wc-country-grid" id="wcCountryGrid"></div>
+
+    <div class="wc-unmapped" id="wcUnmapped" hidden>
+      <div class="wc-unmapped-title">Worked entities without a country outline on this map</div>
+      <div class="wc-unmapped-list" id="wcUnmappedList"></div>
+      <p class="wc-unmapped-note">These are typically small islands or micro-states that are not drawn as separate shapes at this map resolution. They are still counted in the entity total above.</p>
+    </div>
+  </div>
+
+</div>
