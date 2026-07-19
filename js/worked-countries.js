@@ -1,12 +1,21 @@
 /* ============================================================
    ON3VZ — Worked Countries Map  (subpage of /logbook/)
-   Added 2026-07-20. Self-contained: reads the SAME ADIF files as
-   the logbook via assets/data/manifest.json. No dependency on
-   logbook.js.
+   Added 2026-07-20.
+
+   2026-07-20 (rev 2): colouring and outlining is now per DXCC ENTITY
+   instead of per country. Each country outline from Natural Earth is
+   exploded into its individual polygons, and every polygon is attributed
+   to the DXCC entity that actually occupies it. Separate island entities
+   (Canary Islands, Balearic Islands, Azores, Sardinia, Northern Ireland,
+   French Guiana, ...) therefore get their own fill and outline instead of
+   inheriting their parent country. Entities that share one landmass with
+   their parent (England/Scotland/Wales on Great Britain, European and
+   Asiatic Russia) cannot be split at this resolution and are shown as one
+   shape listing every entity worked on it.
 
    TO REVERT: delete worked-countries.html, js/worked-countries.js,
-   css/worked-countries.css and the "WORKED COUNTRIES LINK" <a>
-   block in logbook.html. Nothing else is touched.
+   css/worked-countries.css and the "WORKED COUNTRIES LINK" <a> block in
+   logbook.html. Nothing else is touched.
    ============================================================ */
 
 'use strict';
@@ -23,21 +32,44 @@ const WC = {
                AS:'Asia', AF:'Africa', OC:'Oceania', AN:'Antarctica', '':'Unknown' },
 };
 
-/* Natural Earth (world-atlas) names differ from the DXCC entity names QRZ puts
-   in the ADIF. Coordinates are the primary match; this table is the fallback
-   for entities whose QSOs carry no usable position. */
+/* DXCC entities that are politically part of another country but are a
+   separate landmass, so they can be given their own outline. A polygon whose
+   centroid falls in the box below belongs to that entity and never inherits
+   its parent country. Each box was checked against the Natural Earth 50m
+   polygons; add a row here to split another entity out. */
+const ENTITY_REGIONS = [
+  { entity: 'Canary Islands',   country: 'Spain',                    w: -18.5, e: -13.0, s:  27.3, n:  29.6 },
+  { entity: 'Balearic Islands', country: 'Spain',                    w:   1.0, e:   4.5, s:  38.5, n:  40.2 },
+  { entity: 'Azores',           country: 'Portugal',                 w: -31.5, e: -24.5, s:  36.5, n:  40.0 },
+  { entity: 'Madeira Islands',  country: 'Portugal',                 w: -17.5, e: -15.9, s:  32.3, n:  33.2 },
+  { entity: 'Sardinia',         country: 'Italy',                    w:   8.0, e:  10.0, s:  38.7, n:  41.4 },
+  { entity: 'African Italy',    country: 'Italy',                    w:  11.8, e:  12.8, s:  35.3, n:  37.0 },
+  { entity: 'Northern Ireland', country: 'United Kingdom',           w:  -8.3, e:  -5.3, s:  54.0, n:  55.4 },
+  { entity: 'French Guiana',    country: 'France',                   w: -55.0, e: -51.0, s:   1.8, n:   6.2 },
+  { entity: 'Guadeloupe',       country: 'France',                   w: -61.9, e: -61.0, s:  15.8, n:  16.6 },
+  { entity: 'Martinique',       country: 'France',                   w: -61.3, e: -60.7, s:  14.3, n:  15.0 },
+  { entity: 'Reunion',          country: 'France',                   w:  55.1, e:  55.9, s: -21.5, n: -20.8 },
+  { entity: 'Mayotte',          country: 'France',                   w:  44.9, e:  45.4, s: -13.1, n: -12.5 },
+  { entity: 'Alaska',           country: 'United States of America', w:-180.0, e:-129.0, s:  51.0, n:  72.0 },
+  { entity: 'Hawaii',           country: 'United States of America', w:-161.0, e:-154.0, s:  18.5, n:  22.5 },
+  { entity: 'Svalbard',         country: 'Norway',                   w:  10.0, e:  36.0, s:  74.0, n:  81.5 },
+  { entity: 'Jan Mayen',        country: 'Norway',                   w:  -9.5, e:  -7.5, s:  70.6, n:  71.4 },
+  { entity: 'Kaliningrad',      country: 'Russia',                   w:  19.5, e:  23.0, s:  54.2, n:  55.4 },
+];
+
+/* Natural Earth country names differ from the DXCC entity names QRZ writes in
+   the ADIF. Coordinates are the primary match; this is the fallback for QSOs
+   that carry no usable position. */
 const NAME_ALIAS = {
   'united states':'United States of America', 'usa':'United States of America',
-  'alaska':'United States of America', 'hawaii':'United States of America',
   'czech republic':'Czechia', 'slovak republic':'Slovakia',
   'russia':'Russia', 'european russia':'Russia', 'asiatic russia':'Russia',
-  'kaliningrad':'Russia',
-  'england':'United Kingdom', 'scotland':'United Kingdom',
-  'wales':'United Kingdom', 'northern ireland':'United Kingdom',
+  'england':'United Kingdom', 'scotland':'United Kingdom', 'wales':'United Kingdom',
+  'northern ireland':'United Kingdom',
   'fed. rep. of germany':'Germany',
   'canary islands':'Spain', 'balearic islands':'Spain', 'ceuta & melilla':'Spain',
   'sardinia':'Italy', 'sicily':'Italy', 'african italy':'Italy',
-  'corsica':'France',
+  'corsica':'France', 'french guiana':'France',
   'azores':'Portugal', 'madeira islands':'Portugal',
   'crete':'Greece', 'dodecanese':'Greece', 'mount athos':'Greece',
   'european turkey':'Turkey', 'asiatic turkey':'Turkey',
@@ -45,7 +77,6 @@ const NAME_ALIAS = {
   'macedonia':'North Macedonia',
   'dominican republic':'Dominican Rep.',
   'republic of korea':'South Korea', 'south korea':'South Korea',
-  'democratic people\u2019s rep. of korea':'North Korea',
   'ivory coast':'C\u00f4te d\u2019Ivoire',
   'democratic republic of the congo':'Dem. Rep. Congo',
   'republic of the congo':'Congo',
@@ -55,14 +86,16 @@ const NAME_ALIAS = {
   'solomon islands':'Solomon Is.', 'falkland islands':'Falkland Is.',
   'faroe islands':'Faeroe Is.',
   'trinidad & tobago':'Trinidad and Tobago',
-  'united arab emirates':'United Arab Emirates',
+  'alaska':'United States of America', 'hawaii':'United States of America',
 };
 
 /* ── STATE ── */
 let allQsos = [];
-let features = [];                  // GeoJSON country features + cached bounds
-let byFeature = new Map();          // feature key -> aggregate for current filter
-let unmapped = [];                  // entities with no polygon
+let units = [];                     // one entry per polygon of the world map
+let unitsByCountry = new Map();     // country name -> [unit]
+let entityAgg = new Map();          // entity -> aggregate for the current filter
+let unitEntities = new Map();       // unit key -> Map(entity -> qso count)
+let unmapped = [];
 let hiddenBands = new Set();
 let hiddenModes = new Set();
 let allBands = [], allModes = [];
@@ -89,15 +122,7 @@ function loadLibs() {
       setLoading('Loading world map\u2026');
       fetch(WC.worldUrl)
         .then(r => r.json())
-        .then(world => {
-          const fc = topojson.feature(world, world.objects.countries);
-          features = fc.features.map((f, i) => {
-            const b = d3.geoBounds(f);
-            return { key: String(f.id || i), name: (f.properties && f.properties.name) || 'Unknown',
-                     feature: f, w: b[0][0], s: b[0][1], e: b[1][0], n: b[1][1] };
-          });
-          loadAdif();
-        })
+        .then(world => { buildUnits(world); loadAdif(); })
         .catch(err => fail('World map could not be loaded \u00b7 ' + err.message));
     };
     s2.onerror = () => fail('TopoJSON could not be loaded');
@@ -105,6 +130,42 @@ function loadLibs() {
   };
   s1.onerror = () => fail('D3 could not be loaded');
   document.head.appendChild(s1);
+}
+
+/* ── EXPLODE COUNTRIES INTO POLYGONS ── */
+function buildUnits(world) {
+  const fc = topojson.feature(world, world.objects.countries);
+  units = [];
+  unitsByCountry = new Map();
+  fc.features.forEach((f, fi) => {
+    const g = f.geometry;
+    if (!g) return;
+    const country = (f.properties && f.properties.name) || 'Unknown';
+    const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
+    polys.forEach((coords, pi) => {
+      const feature = { type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: coords } };
+      const b = d3.geoBounds(feature);
+      const cen = d3.geoCentroid(feature);
+      const u = {
+        key: `${f.id || fi}-${pi}`,
+        country, feature,
+        w: b[0][0], s: b[0][1], e: b[1][0], n: b[1][1],
+        area: d3.geoArea(feature),
+        forced: forcedEntity(country, cen),
+      };
+      units.push(u);
+      if (!unitsByCountry.has(country)) unitsByCountry.set(country, []);
+      unitsByCountry.get(country).push(u);
+    });
+  });
+}
+
+function forcedEntity(country, cen) {
+  for (const r of ENTITY_REGIONS) {
+    if (r.country !== country) continue;
+    if (cen[0] >= r.w && cen[0] <= r.e && cen[1] >= r.s && cen[1] <= r.n) return r.entity;
+  }
+  return null;
 }
 
 /* ── LOAD ADIF (same manifest the logbook uses) ── */
@@ -120,7 +181,7 @@ function loadAdif() {
       ));
     })
     .then(texts => {
-      allQsos = dedup(parseAdif(texts.join('\n')));
+      allQsos = backfillEntities(dedup(parseAdif(texts.join('\n'))));
       if (!allQsos.length) throw new Error('No QSOs found');
       allBands = uniqueSorted(allQsos.map(q => q.band), WC.bandOrder);
       allModes = uniqueSorted(allQsos.map(q => q.mode), []);
@@ -157,7 +218,7 @@ function parseAdif(raw) {
       time: f.TIME_ON || '',
       band: normBand(f.BAND || f.FREQ || ''),
       mode: normMode(f.MODE || ''),
-      entity: f.COUNTRY || '',
+      entity: f.COUNTRY || 'Unknown',
       cont: (f.CONT || '').toUpperCase(),
       lat: real ? lat : (grid ? grid[0] : null),
       lng: real ? lng : (grid ? grid[1] : null),
@@ -250,95 +311,172 @@ function uniqueSorted(vals, order) {
   return set.sort((a, b) => a.localeCompare(b));
 }
 
-/* ── POINT -> COUNTRY ── */
+
+/* ── ENTITY BACKFILL ──────────────────────────────────────────────────────
+   Mirrors the logic in js/logbook.js and js/dxcc-matrix.js so this map, the
+   logbook table and the DXCC matrix always agree on which entity a call
+   belongs to. QRZ sometimes exports COUNTRY="NON-DXCC" or blank, or tags a
+   call with an entity that contradicts its own gridsquare. Unknown prefixes
+   are left exactly as QRZ sent them and are never invented. */
+const PFX_SUFFIXES = new Set(['P', 'M', 'MM', 'AM', 'A', 'QRP']);
+function callPrefix(call) {
+  call = (call || '').toUpperCase();
+  let parts = call.split('/').filter(Boolean);
+  if (!parts.length) return '';
+  if (parts.length > 1) {
+    const core = parts.filter(p => !PFX_SUFFIXES.has(p) && !/^\d+$/.test(p));
+    if (core.length) parts = core;
+    parts.sort((a, b) => a.length - b.length);
+  }
+  const m = parts[0].match(/^(\d?[A-Z]+)/);
+  return m ? m[1] : parts[0];
+}
+const CALL_OVERRIDES = {
+  // Tagged "Balearic Islands" by QRZ, but gridsquare IN52pk = Galicia (mainland).
+  EG60BRILAT: { entity: 'Spain', cont: 'EU' },
+};
+const PREFIX_OVERRIDES = {
+  // Portugal mainland special-event prefixes (CT / CR / CQ / CS all = Portugal).
+  CS: { entity: 'Portugal', cont: 'EU' },
+  CR: { entity: 'Portugal', cont: 'EU' },
+  CQ: { entity: 'Portugal', cont: 'EU' },
+};
+function isBlankEntity(v) {
+  const s = (v || '').trim().toUpperCase();
+  return !s || s === 'NON-DXCC' || s === 'NONE' || s === 'UNKNOWN';
+}
+function backfillEntities(qsos) {
+  const learned = {};
+  qsos.forEach(q => {
+    if (!isBlankEntity(q.entity)) {
+      const p = callPrefix(q.call);
+      if (p && !learned[p]) learned[p] = { entity: q.entity, cont: q.cont };
+    }
+  });
+  qsos.forEach(q => {
+    const forced = CALL_OVERRIDES[(q.call || '').toUpperCase()];
+    if (forced) {
+      q.entity = forced.entity;
+      if (forced.cont) q.cont = forced.cont;
+      return;
+    }
+    if (!isBlankEntity(q.entity) && q.cont) return;
+    const src = learned[callPrefix(q.call)] || PREFIX_OVERRIDES[callPrefix(q.call)];
+    if (!src) return;
+    if (isBlankEntity(q.entity) && src.entity) q.entity = src.entity;
+    if (!q.cont && src.cont) q.cont = src.cont;
+  });
+  return qsos;
+}
+
+/* ── POINT -> POLYGON ── */
 const pointCache = new Map();
 
-function featureAt(lat, lng) {
+function unitAt(lat, lng) {
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
   const key = lat.toFixed(3) + ',' + lng.toFixed(3);
   if (pointCache.has(key)) return pointCache.get(key);
   let hit = null;
-  for (const f of features) {
-    const inLng = (f.w > f.e) ? (lng >= f.w || lng <= f.e) : (lng >= f.w && lng <= f.e);
-    if (!inLng || lat < f.s || lat > f.n) continue;
-    if (d3.geoContains(f.feature, [lng, lat])) { hit = f; break; }
+  for (const u of units) {
+    const inLng = (u.w > u.e) ? (lng >= u.w || lng <= u.e) : (lng >= u.w && lng <= u.e);
+    if (!inLng || lat < u.s || lat > u.n) continue;
+    if (d3.geoContains(u.feature, [lng, lat])) { hit = u; break; }
   }
   pointCache.set(key, hit);
   return hit;
 }
 
-/* ── AGGREGATION FOR CURRENT FILTER ── */
+function largestUnit(list) {
+  return list && list.length ? list.reduce((a, b) => (b.area > a.area ? b : a)) : null;
+}
+
+/* ── AGGREGATION FOR THE CURRENT FILTER ── */
 function recompute() {
   const qsos = allQsos.filter(q => !hiddenBands.has(q.band) && !hiddenModes.has(q.mode));
-  byFeature = new Map();
-  const entityHits = new Map();   // entity -> feature key (learned from coords)
-  const entitySeen = new Map();   // entity -> { count, cont }
+  entityAgg = new Map();
+  unitEntities = new Map();
+  const entityUnits = new Map();     // entity -> Set(unit)
+  const pending = [];
 
   /* Pass 1: place every QSO that carries a usable position. */
-  const pending = [];
   qsos.forEach(q => {
-    const ent = q.entity || 'Unknown';
-    const rec = entitySeen.get(ent) || { count: 0, cont: q.cont };
-    rec.count++; entitySeen.set(ent, rec);
-
-    const f = featureAt(q.lat, q.lng);
-    if (f) { entityHits.set(ent, f); addHit(f, q, ent); }
+    const u = unitAt(q.lat, q.lng);
+    if (u) { tally(q, u, entityUnits); }
     else { pending.push(q); }
   });
 
-  /* Pass 2: a QSO with no position (or one that lands just offshore) inherits
-     the country its own entity was already resolved to. If the entity never
-     resolved by coordinate, fall back to a name match against the Natural
-     Earth country names. Anything still unresolved is listed as unmapped so
-     no worked entity ever disappears silently. */
-  const noEntity = new Set();
+  /* Pass 2: a QSO with no position, or one landing just offshore, goes to a
+     polygon its own entity already occupies. Failing that, to the largest
+     polygon of the country its entity name maps to. */
+  const orphan = new Map();
   pending.forEach(q => {
-    const ent = q.entity || 'Unknown';
-    let f = entityHits.get(ent);
-    if (!f) {
-      f = matchByName(ent);
-      if (f) entityHits.set(ent, f);
+    let u = largestUnit([...(entityUnits.get(q.entity) || [])]);
+    if (!u) {
+      /* Prefer a polygon that ENTITY_REGIONS reserves for this very entity,
+         so an offshore Balearic or Canary coordinate lands on its own island
+         group instead of on the Spanish mainland. */
+      u = largestUnit(units.filter(x => x.forced === q.entity));
     }
-    if (f) addHit(f, q, ent);
-    else noEntity.add(ent);
+    if (!u) {
+      const country = NAME_ALIAS[q.entity.toLowerCase()] || q.entity;
+      const list = (unitsByCountry.get(country) || []).filter(x => !x.forced);
+      u = largestUnit(list);
+    }
+    if (u) tally(q, u, entityUnits);
+    else orphan.set(q.entity, (orphan.get(q.entity) || 0) + 1);
+  });
+
+  /* Inheritance: a polygon nobody was worked on inherits its country's main
+     entity, unless it is reserved for a separate DXCC entity by
+     ENTITY_REGIONS. That keeps Sicily part of Italy while leaving the Canary
+     Islands dark until they are actually worked. */
+  unitsByCountry.forEach((list, country) => {
+    const direct = list.filter(u => unitEntities.has(u.key) && !u.forced);
+    if (!direct.length) return;
+    const votes = new Map();
+    direct.forEach(u => unitEntities.get(u.key).forEach((c, e) => votes.set(e, (votes.get(e) || 0) + c)));
+    const main = [...votes.entries()].sort((a, b) => b[1] - a[1])[0][0];
+    list.forEach(u => {
+      if (unitEntities.has(u.key) || u.forced) return;
+      unitEntities.set(u.key, new Map([[main, 0]]));   // lit, but adds no count
+    });
   });
 
   unmapped = [];
-  noEntity.forEach(ent => {
-    const rec = entitySeen.get(ent);
-    if (rec) unmapped.push({ entity: ent, count: rec.count, cont: rec.cont });
-  });
+  orphan.forEach((count, entity) => unmapped.push({ entity, count }));
 
   maxCount = 1;
-  byFeature.forEach(v => { if (v.count > maxCount) maxCount = v.count; });
+  entityAgg.forEach(a => { if (a.count > maxCount) maxCount = a.count; });
 
   paintMap();
-  renderStats(qsos, entitySeen);
+  renderStats(qsos);
   renderList();
   renderUnmapped();
   renderLegend();
 }
 
-function addHit(f, q, ent) {
-  let a = byFeature.get(f.key);
+function tally(q, u, entityUnits) {
+  const ent = q.entity;
+  let a = entityAgg.get(ent);
   if (!a) {
-    a = { key: f.key, name: f.name, count: 0, entities: new Map(),
-          bands: new Set(), modes: new Set(), first: q.date, last: q.date, cont: q.cont };
-    byFeature.set(f.key, a);
+    a = { entity: ent, country: u.country, count: 0, bands: new Set(), modes: new Set(),
+          first: q.date, last: q.date, cont: q.cont, units: new Set() };
+    entityAgg.set(ent, a);
   }
   a.count++;
-  a.entities.set(ent, (a.entities.get(ent) || 0) + 1);
   if (q.band) a.bands.add(q.band);
   if (q.mode) a.modes.add(q.mode);
   if (q.date && q.date < a.first) a.first = q.date;
   if (q.date && q.date > a.last)  a.last  = q.date;
   if (!a.cont && q.cont) a.cont = q.cont;
-}
+  a.units.add(u);
 
-function matchByName(entity) {
-  const raw = String(entity).toLowerCase().trim();
-  const target = (NAME_ALIAS[raw] || entity).toLowerCase();
-  return features.find(f => f.name.toLowerCase() === target) || null;
+  if (!unitEntities.has(u.key)) unitEntities.set(u.key, new Map());
+  const m = unitEntities.get(u.key);
+  m.set(ent, (m.get(ent) || 0) + 1);
+
+  if (!entityUnits.has(ent)) entityUnits.set(ent, new Set());
+  entityUnits.get(ent).add(u);
 }
 
 /* ── MAP ── */
@@ -352,22 +490,15 @@ function drawBaseMap() {
 
   svgG = svgEl.append('g').attr('class', 'wc-map-g');
 
-  projection = d3.geoNaturalEarth1()
-    .scale(W / 6.1)
-    .translate([W / 2, H * 0.53]);
+  projection = d3.geoNaturalEarth1().scale(W / 6.1).translate([W / 2, H * 0.53]);
   geoPath = d3.geoPath().projection(projection);
 
-  svgG.append('path')
-    .attr('class', 'wc-sphere')
-    .attr('d', geoPath({ type: 'Sphere' }));
-
-  svgG.append('path')
-    .attr('class', 'wc-graticule')
-    .attr('d', geoPath(d3.geoGraticule()()));
+  svgG.append('path').attr('class', 'wc-sphere').attr('d', geoPath({ type: 'Sphere' }));
+  svgG.append('path').attr('class', 'wc-graticule').attr('d', geoPath(d3.geoGraticule()()));
 
   svgG.append('g').attr('class', 'wc-countries')
     .selectAll('path')
-    .data(features)
+    .data(units)
     .join('path')
       .attr('class', 'wc-country')
       .attr('data-key', d => d.key)
@@ -379,12 +510,9 @@ function drawBaseMap() {
   svgG.append('g').attr('class', 'wc-home-layer');
 
   zoomer = d3.zoom()
-    .scaleExtent([1, 10])
+    .scaleExtent([1, 12])
     .translateExtent([[0, 0], [W, H]])
-    .on('zoom', ev => {
-      svgG.attr('transform', ev.transform);
-      hideTip();
-    });
+    .on('zoom', ev => { svgG.attr('transform', ev.transform); hideTip(); });
   svgEl.call(zoomer);
 
   document.getElementById('wcZoomIn').onclick =
@@ -410,30 +538,42 @@ function drawHome() {
   g.append('text').attr('class', 'wc-home-lbl').attr('x', 10).attr('y', 3.5).text('ON3VZ');
 }
 
-/* Soft fill for a worked country. Muted green base so the map reads calmly,
+/* Soft fill for a worked entity. Muted green base so the map reads calmly,
    rising towards the Dark Signal neon for the most-worked entities. */
 function workedFill(count) {
   if (!heat) return '#2fd98a';
-  const t = Math.sqrt(count) / Math.sqrt(maxCount);
+  const t = Math.sqrt(Math.max(count, 1)) / Math.sqrt(maxCount);
   return d3.interpolateRgb('#1a4738', '#3ce89b')(0.22 + 0.78 * t);
+}
+
+/* Total QSOs represented by a polygon: the sum over every entity on it. */
+function unitCount(key) {
+  const m = unitEntities.get(key);
+  if (!m) return 0;
+  let n = 0;
+  m.forEach((_, e) => { const a = entityAgg.get(e); if (a) n += a.count; });
+  return n;
+}
+
+function unitEntityNames(key) {
+  const m = unitEntities.get(key);
+  return m ? [...m.keys()] : [];
 }
 
 function paintMap() {
   if (!svgG) return;
   svgG.select('.wc-graticule').style('display', showGrat ? null : 'none');
   const term = searchTerm.trim().toLowerCase();
-  /* FIX 2026-07-20: the fill must be set as an inline STYLE, not as an
-     attribute. A stylesheet rule (.wc-country { fill: ... }) always beats an
-     SVG presentation attribute, so an attribute fill stayed invisible and only
-     the outline showed. An inline style wins, so the shading actually renders. */
+  /* The fill must be an inline STYLE: a stylesheet rule always beats an SVG
+     presentation attribute, so an attribute fill would stay invisible. */
   svgG.selectAll('.wc-country')
-    .style('fill', d => {
-      const a = byFeature.get(d.key);
-      if (!a) return null;                       // CSS handles "not worked"
-      return workedFill(a.count);
-    })
-    .classed('is-worked', d => byFeature.has(d.key))
-    .classed('is-found', d => !!term && d.name.toLowerCase().includes(term));
+    .style('fill', d => (unitEntities.has(d.key) ? workedFill(unitCount(d.key)) : null))
+    .classed('is-worked', d => unitEntities.has(d.key))
+    .classed('is-found', d => {
+      if (!term) return false;
+      if (d.country.toLowerCase().includes(term)) return true;
+      return unitEntityNames(d.key).some(e => e.toLowerCase().includes(term));
+    });
   drawHome();
 }
 
@@ -441,7 +581,7 @@ function zoomTo(d) {
   if (!svgEl || !zoomer) return;
   const [[x0, y0], [x1, y1]] = geoPath.bounds(d.feature);
   const box = svgEl.node().viewBox.baseVal;
-  const k = Math.min(9, 0.7 / Math.max((x1 - x0) / box.width, (y1 - y0) / box.height));
+  const k = Math.min(11, 0.7 / Math.max((x1 - x0) / box.width, (y1 - y0) / box.height));
   const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
   svgEl.transition().duration(600).call(
     zoomer.transform,
@@ -452,19 +592,34 @@ function zoomTo(d) {
 /* ── TOOLTIP ── */
 function showTip(event, d) {
   const tip = document.getElementById('wcTip');
-  const a = byFeature.get(d.key);
-  let html = `<div class="wc-tip-name">${esc(d.name)}</div>`;
-  if (a) {
-    const ents = [...a.entities.entries()].sort((x, y) => y[1] - x[1]);
-    html += `<div class="wc-tip-row"><span>QSOs</span><b>${a.count}</b></div>`;
-    html += `<div class="wc-tip-row"><span>Bands</span><b>${uniqueSorted([...a.bands], WC.bandOrder).join(' \u00b7 ') || '\u2014'}</b></div>`;
-    html += `<div class="wc-tip-row"><span>Modes</span><b>${[...a.modes].sort().join(' \u00b7 ') || '\u2014'}</b></div>`;
-    html += `<div class="wc-tip-row"><span>First</span><b>${fmtDate(a.first)}</b></div>`;
-    if (ents.length > 1 || (ents.length === 1 && ents[0][0].toLowerCase() !== d.name.toLowerCase())) {
-      html += `<div class="wc-tip-ents">${ents.map(e => `${esc(e[0])} <i>${e[1]}</i>`).join('<br>')}</div>`;
+  const ents = unitEntityNames(d.key)
+    .map(e => entityAgg.get(e))
+    .filter(Boolean)
+    .sort((a, b) => b.count - a.count);
+
+  let html;
+  if (ents.length) {
+    html = `<div class="wc-tip-name">${ents.map(a => esc(a.entity)).join(' \u00b7 ')}</div>`;
+    if (!ents.some(a => a.entity.toLowerCase() === d.country.toLowerCase())) {
+      html += `<div class="wc-tip-parent">${esc(d.country)}</div>`;
+    }
+    const bands = new Set(), modes = new Set();
+    let total = 0, first = null;
+    ents.forEach(a => {
+      total += a.count;
+      a.bands.forEach(b => bands.add(b));
+      a.modes.forEach(m => modes.add(m));
+      if (!first || (a.first && a.first < first)) first = a.first;
+    });
+    html += `<div class="wc-tip-row"><span>QSOs</span><b>${total}</b></div>`;
+    html += `<div class="wc-tip-row"><span>Bands</span><b>${uniqueSorted([...bands], WC.bandOrder).join(' \u00b7 ') || '\u2014'}</b></div>`;
+    html += `<div class="wc-tip-row"><span>Modes</span><b>${[...modes].sort().join(' \u00b7 ') || '\u2014'}</b></div>`;
+    html += `<div class="wc-tip-row"><span>First</span><b>${fmtDate(first)}</b></div>`;
+    if (ents.length > 1) {
+      html += `<div class="wc-tip-ents">${ents.map(a => `${esc(a.entity)} <i>${a.count}</i>`).join('<br>')}</div>`;
     }
   } else {
-    html += `<div class="wc-tip-none">Not worked yet</div>`;
+    html = `<div class="wc-tip-name">${esc(d.country)}</div><div class="wc-tip-none">Not worked yet</div>`;
   }
   tip.innerHTML = html;
   tip.classList.add('is-on');
@@ -478,45 +633,50 @@ function showTip(event, d) {
 }
 
 function hideTip() {
-  document.getElementById('wcTip').classList.remove('is-on');
+  const t = document.getElementById('wcTip');
+  if (t) t.classList.remove('is-on');
 }
 
 /* ── STATS / LIST / LEGEND ── */
-function renderStats(qsos, entitySeen) {
+function renderStats(qsos) {
   const conts = new Set(qsos.map(q => q.cont).filter(Boolean));
-  set('wcStatCountries', byFeature.size);
-  set('wcStatEntities', entitySeen.size);
+  const countries = new Set();
+  units.forEach(u => { if (unitEntities.has(u.key)) countries.add(u.country); });
+  set('wcStatEntities', entityAgg.size);
+  set('wcStatCountries', countries.size);
   set('wcStatQsos', qsos.length);
   set('wcStatCont', conts.size);
-  const pct = features.length ? (byFeature.size / features.length) * 100 : 0;
-  set('wcStatPct', pct.toFixed(0) + '%');
+  set('wcStatBands', new Set(qsos.map(q => q.band).filter(Boolean)).size);
 }
 
 function renderList() {
   const grid = document.getElementById('wcCountryGrid');
   const term = searchTerm.trim().toLowerCase();
-  let rows = [...byFeature.values()];
-  rows.sort(sortMode === 'alpha'
-    ? (a, b) => a.name.localeCompare(b.name)
-    : (a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  const rows = [...entityAgg.values()].sort(sortMode === 'alpha'
+    ? (a, b) => a.entity.localeCompare(b.entity)
+    : (a, b) => b.count - a.count || a.entity.localeCompare(b.entity));
   if (!rows.length) {
-    grid.innerHTML = '<div class="wc-empty">No countries match the current filter.</div>';
+    grid.innerHTML = '<div class="wc-empty">No entities match the current filter.</div>';
     return;
   }
   grid.innerHTML = rows.map(a => {
-    const hit = term && a.name.toLowerCase().includes(term);
-    return `<button type="button" class="wc-country-card${hit ? ' is-found' : ''}" data-key="${esc(a.key)}">
-      <span class="wc-cc-name">${esc(a.name)}</span>
-      <span class="wc-cc-meta">${WC.contNames[a.cont] || ''}</span>
+    const hit = term && a.entity.toLowerCase().includes(term);
+    const sub = a.country && a.country.toLowerCase() !== a.entity.toLowerCase()
+      ? `${WC.contNames[a.cont] || ''} \u00b7 ${esc(a.country)}`
+      : (WC.contNames[a.cont] || '');
+    return `<button type="button" class="wc-country-card${hit ? ' is-found' : ''}" data-entity="${esc(a.entity)}">
+      <span class="wc-cc-name">${esc(a.entity)}</span>
+      <span class="wc-cc-meta">${sub}</span>
       <span class="wc-cc-count">${a.count}</span>
     </button>`;
   }).join('');
   grid.querySelectorAll('.wc-country-card').forEach(btn => {
     btn.onclick = () => {
-      const f = features.find(x => x.key === btn.dataset.key);
-      if (!f) return;
+      const a = entityAgg.get(btn.dataset.entity);
+      const u = a ? largestUnit([...a.units]) : null;
+      if (!u) return;
       document.querySelector('.wc-map-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => zoomTo(f), 300);
+      setTimeout(() => zoomTo(u), 300);
     };
   });
 }

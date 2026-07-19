@@ -13,15 +13,15 @@ extra_js:
   <div class="wc-hero container anim-1">
     <a class="wc-back" href="/logbook/">&#8592; Back to Logbook</a>
     <div class="section-label">ON3VZ &middot; LOGBOOK</div>
-    <h1 class="section-title">Worked Countries Map</h1>
-    <p class="wc-sub">Every country on Earth that ON3VZ has completed at least one QSO with, filled in on a world map. Same ADIF data as the logbook. Hover a country for its entities, bands and QSO count.</p>
+    <h1 class="section-title">Worked Entities Map</h1>
+    <p class="wc-sub">Every DXCC entity ON3VZ has completed at least one QSO with, filled in and outlined on a world map. Colour and outline follow the DXCC entity, not the country, so islands such as the Canary Islands, the Azores or Sardinia carry their own shading. Same ADIF data as the logbook.</p>
 
     <div class="wc-stats">
-      <div class="wc-stat"><span class="wc-stat-val" id="wcStatCountries">&mdash;</span><span class="wc-stat-lbl">Countries lit</span></div>
       <div class="wc-stat"><span class="wc-stat-val" id="wcStatEntities">&mdash;</span><span class="wc-stat-lbl">DXCC entities</span></div>
+      <div class="wc-stat"><span class="wc-stat-val" id="wcStatCountries">&mdash;</span><span class="wc-stat-lbl">Countries touched</span></div>
       <div class="wc-stat"><span class="wc-stat-val" id="wcStatQsos">&mdash;</span><span class="wc-stat-lbl">QSOs</span></div>
       <div class="wc-stat"><span class="wc-stat-val" id="wcStatCont">&mdash;</span><span class="wc-stat-lbl">Continents</span></div>
-      <div class="wc-stat"><span class="wc-stat-val" id="wcStatPct">&mdash;</span><span class="wc-stat-lbl">Of world map</span></div>
+      <div class="wc-stat"><span class="wc-stat-val" id="wcStatBands">&mdash;</span><span class="wc-stat-lbl">Bands</span></div>
     </div>
   </div>
 
@@ -43,7 +43,7 @@ extra_js:
     </div>
     <div class="wc-ctrl-group">
       <label>Find</label>
-      <input type="search" id="wcSearch" class="wc-search" placeholder="Highlight a country&hellip;">
+      <input type="search" id="wcSearch" class="wc-search" placeholder="Highlight an entity&hellip;">
     </div>
   </div>
 
@@ -53,7 +53,7 @@ extra_js:
       <svg id="wcMap" class="wc-map"></svg>
 
       <div class="wc-legend" id="wcLegend">
-        <div class="wc-legend-title">QSOs per country</div>
+        <div class="wc-legend-title">QSOs per entity</div>
         <div class="wc-legend-scale" id="wcLegendScale"></div>
         <div class="wc-legend-ends"><span id="wcLegendMin">1</span><span id="wcLegendMax">&mdash;</span></div>
         <div class="wc-legend-row"><span class="wc-legend-swatch wc-legend-swatch--none"></span> Not worked</div>
@@ -74,13 +74,13 @@ extra_js:
 
       <div class="wc-tip" id="wcTip"></div>
     </div>
-    <p class="wc-map-note">Borders are drawn at country level. A DXCC entity that is politically part of another country (for example the Canary Islands, or Alaska) fills that country on the map, while the logbook and the DXCC matrix still count it as its own entity.</p>
+    <p class="wc-map-note">Each country outline is split into its separate landmasses, and every landmass is coloured for the DXCC entity that occupies it. Two cases cannot be separated at this map resolution: England, Scotland and Wales share the single outline of Great Britain, and European and Asiatic Russia share one continuous landmass. Those shapes list every entity worked on them in the tooltip. A landmass belonging to a country you have worked but reserved for a different DXCC entity, such as the Canary Islands under Spain, stays dark until that entity itself is worked.</p>
   </div>
 
   <!-- WORKED LIST -->
   <div class="wc-list-section container anim-3">
     <div class="wc-list-head">
-      <h2 class="wc-list-title">Countries worked</h2>
+      <h2 class="wc-list-title">Entities worked</h2>
       <div class="wc-sort">
         <select id="wcSort" class="wc-select">
           <option value="qso">Sort: QSOs</option>
@@ -91,9 +91,9 @@ extra_js:
     <div class="wc-country-grid" id="wcCountryGrid"></div>
 
     <div class="wc-unmapped" id="wcUnmapped" hidden>
-      <div class="wc-unmapped-title">Worked entities without a country outline on this map</div>
+      <div class="wc-unmapped-title">Worked entities without an outline on this map</div>
       <div class="wc-unmapped-list" id="wcUnmappedList"></div>
-      <p class="wc-unmapped-note">These are typically small islands or micro-states that are not drawn as separate shapes at this map resolution. They are still counted in the entity total above.</p>
+      <p class="wc-unmapped-note">These are typically small islands or micro-states that are not drawn at this map resolution. They are still counted in the entity total above.</p>
     </div>
   </div>
 
