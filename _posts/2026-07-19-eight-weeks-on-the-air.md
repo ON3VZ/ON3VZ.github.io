@@ -56,7 +56,7 @@ This post is the evaluation I owe myself. What worked, what did not, what the ba
   <div class="k"><div class="n">451</div><div class="l">km per watt</div><div class="s">LU1DA at 25 W, logged</div></div>
   <div class="k"><div class="n cy">44</div><div class="l">active days</div><div class="s">of 54, avg 5.6 QSOs</div></div>
   <div class="k"><div class="n">7</div><div class="l">bands used</div><div class="s">80m to 2m</div></div>
-  <div class="k"><div class="n am">71</div><div class="l">LoTW confirmed</div><div class="s">29% of the log</div></div>
+  <div class="k"><div class="n am">99</div><div class="l">confirmed QSOs</div><div class="s">40%, LoTW and QRZ.com</div></div>
 </div>
 
 <div class="panel">
@@ -114,23 +114,33 @@ Before any of the conclusions, the boring part, because a claim about distance i
       <tr><td>VHF · 2m</td><td>4</td><td class="dx">2 at 50 W, 2 at 25 W</td><td>50 W</td></tr>
     </tbody>
   </table>
-  <div class="note">Every one of the 247 records carries a <code>TX_PWR</code> field, so this is not an estimate. Not a single HF contact in this log was made above 25 W, and not a single VHF contact above 50 W. The one 20 W entry is my very first FT8 QSO, TA1SMO, made while I was still setting the drive level. <strong>All 19 contacts beyond 3,000 km, including both 11,000 km paths, are logged at 25 W.</strong></div>
+  <div class="note">Every one of the 247 records carries a <code>TX_PWR</code> field, so this is not an estimate. Not a single HF contact in this log was made above 25 W, and not a single VHF contact above 50 W. The one 20 W entry is my very first FT8 QSO, TA1SMO, made while I was still setting the drive level.</div>
 </div>
 
 <div class="panel">
-  <h4>Independent confirmation</h4>
-  <table>
-    <thead><tr><th>Contact</th><th>km</th><th>Mode</th><th>LoTW</th></tr></thead>
+  <h4>Confirmations</h4>
+  <div class="bars">
+    <div class="bar"><span>Total</span><span class="track"><span class="fill" style="width:40.1%;background:var(--c-primary);box-shadow:var(--glow-sm)"></span></span><span class="val">99 · 40%</span></div>
+    <div class="bar"><span>QRZ.com</span><span class="track"><span class="fill" style="width:40.1%;background:var(--c-cyan)"></span></span><span class="val">99</span></div>
+    <div class="bar"><span>LoTW</span><span class="track"><span class="fill" style="width:28.7%;background:var(--c-amber)"></span></span><span class="val">71</span></div>
+  </div>
+  <div class="note">99 of 247 contacts are confirmed by the other station, 40% of the log. Every LoTW match is also matched on QRZ.com, so the combined total is 99 rather than 170: these are two views of the same set of confirmed contacts, not two separate stacks. Between them they cover 42 of my 52 entities and all five continents in the log.</div>
+  <table style="margin-top:1rem">
+    <thead><tr><th>Contact</th><th>km</th><th>Mode</th><th>Confirmed via</th></tr></thead>
     <tbody>
-      <tr><td class="dx">LU1DA, Argentina</td><td>11,280</td><td>FT8</td><td>confirmed</td></tr>
-      <tr><td class="dx">CX6TU, Uruguay</td><td>11,070</td><td>FT8</td><td>confirmed</td></tr>
-      <tr><td class="dx">NV1U, United States</td><td>5,796</td><td>FT8</td><td>confirmed</td></tr>
-      <tr><td class="dx">VE9CF, Canada</td><td>4,904</td><td>SSB</td><td>confirmed</td></tr>
-      <tr><td class="dx">A71UN, Qatar</td><td>4,818</td><td>FT8</td><td>confirmed</td></tr>
-      <tr><td class="dx">9K2ES, Kuwait</td><td>4,304</td><td>SSB</td><td>confirmed</td></tr>
+      <tr><td class="dx">LU1DA, Argentina</td><td>11,280</td><td>FT8</td><td>LoTW + QRZ</td></tr>
+      <tr><td class="dx">CX6TU, Uruguay</td><td>11,070</td><td>FT8</td><td>LoTW + QRZ</td></tr>
+      <tr><td class="dx">HS0ZOY, Thailand</td><td>9,361</td><td>FT8</td><td>QRZ</td></tr>
+      <tr><td class="dx">PT7PT, Brazil</td><td>7,553</td><td>FT8</td><td>QRZ</td></tr>
+      <tr><td class="dx">NV1U, United States</td><td>5,796</td><td>FT8</td><td>LoTW + QRZ</td></tr>
+      <tr><td class="dx">A61DD, United Arab Emirates</td><td>5,229</td><td>FT8</td><td>QRZ</td></tr>
+      <tr><td class="dx">VE9CF, Canada</td><td>4,904</td><td>SSB</td><td>LoTW + QRZ</td></tr>
+      <tr><td class="dx">A71UN, Qatar</td><td>4,818</td><td>FT8</td><td>LoTW + QRZ</td></tr>
+      <tr><td class="dx">A71AT, Qatar</td><td>4,818</td><td>FT8</td><td>QRZ</td></tr>
+      <tr><td class="dx">9K2ES, Kuwait</td><td>4,304</td><td>SSB</td><td>LoTW + QRZ</td></tr>
     </tbody>
   </table>
-  <div class="note">71 of 247 QSOs (29%) are confirmed on Logbook of The World, including both ends of the two longest paths in this log. LoTW is a two-sided match: the other station uploaded the same contact independently. My log is also uploaded to QRZ, Clublog, eQSL and HRDLog.</div>
+  <div class="note">12 of my 19 contacts beyond 3,000 km are confirmed, including both 11,000 km paths. A confirmation is a two-sided match: the other station uploaded the same contact, independently, from their own log. My log is uploaded in full to QRZ.com and LoTW.</div>
 </div>
 </div>
 
