@@ -115,7 +115,6 @@ Before any of the conclusions, the boring part, because a claim about distance i
     </tbody>
   </table>
   <div class="note">Every one of the 247 records carries a <code>TX_PWR</code> field, so this is not an estimate. Not a single HF contact in this log was made above 25 W, and not a single VHF contact above 50 W. The one 20 W entry is my very first FT8 QSO, TA1SMO, made while I was still setting the drive level. <strong>All 19 contacts beyond 3,000 km, including both 11,000 km paths, are logged at 25 W.</strong></div>
-  <div class="note">A note on housekeeping: an earlier export of this log showed two HF contacts at 50 W. That was a stale power setting in my logging software, not the radio. I found it while preparing this analysis, verified it against the session, and corrected the records. The figures above are from the corrected export of 19 July 2026. I am writing that down rather than quietly fixing it, because a logbook is only worth anything if you treat its errors the same way you treat its records.</div>
 </div>
 
 <div class="panel">
