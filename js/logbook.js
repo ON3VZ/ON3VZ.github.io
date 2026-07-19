@@ -109,6 +109,12 @@ const CFG = {
     cw:    { dash: '6 4', width: 0.85, hoverWidth: 1.25, restWidth: 0.7,  opacity: 0.55, hoverOpacity: 1.0,  restOpacity: 0.42 },
     digi:  { dash: '1 3', width: 0.5,  hoverWidth: 0.95, restWidth: 0.45, opacity: 0.35, hoverOpacity: 0.85, restOpacity: 0.28 },
   },
+  /* FT8 ARC WIDTH (added 2026-07-19): FT8 dominates the digital arcs by
+     count, which makes the map read as a solid fan. This scale factor is
+     applied to the stroke widths of FT8 arcs only; every other digital
+     mode keeps the full modeArcStyle.digi width. Set to 1 or delete this
+     key to revert to uniform digital arc widths. */
+  ft8WidthScale: 0.35,
   /* MAP DOT CLUSTERING (added 2026-07-05): delete this key to revert to
      one dot per station. Distance is measured in projected SVG units at
      the base (unzoomed) map scale, not in lat/lng degrees, so it isn't
@@ -917,7 +923,18 @@ function renderMap(qsos) {
     // Phone solid, CW dashed, digital dotted in a weaker opacity, so both
     // dimensions are readable at once. Delete this block + modeArcStyle in
     // CFG to revert to uniform solid arcs.
-    const st = CFG.modeArcStyle[modeCategory(q.mode)] || CFG.modeArcStyle.phone;
+    let st = CFG.modeArcStyle[modeCategory(q.mode)] || CFG.modeArcStyle.phone;
+    // FT8 ARC WIDTH (added 2026-07-19): thin FT8 arcs only, so they stop
+    // swamping the other digital modes. Remove this block and restore
+    // `const st = ...` above to revert.
+    if (q.mode === 'FT8' && CFG.ft8WidthScale != null) {
+      const k = CFG.ft8WidthScale;
+      st = Object.assign({}, st, {
+        width:      st.width      * k,
+        hoverWidth: st.hoverWidth * k,
+        restWidth:  st.restWidth  * k,
+      });
+    }
     const arc = { type: 'LineString', coordinates: [[homeLng, homeLat], [dxLng, dxLat]] };
     const arcPath = svgG.append('path')
       .datum(arc)
