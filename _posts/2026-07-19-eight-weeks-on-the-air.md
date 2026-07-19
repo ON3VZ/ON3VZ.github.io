@@ -44,7 +44,7 @@ Fifty-four days ago I keyed the microphone for the first time and said my own ca
 
 Today I exported the logbook, ran the numbers, and sat looking at the screen for a while. Two hundred and forty-seven contacts. Fifty-two DXCC entities. And something I did not expect to see in a beginner's log: a total path length that has just passed the distance to the Moon.
 
-This post is the evaluation I owe myself. What worked, what did not, what the bands actually taught me, and where the plan goes next. All figures come from the QRZ Logbook ADIF export of 19 July 2026, station JO21EE in Hoboken, IC-7300 MkII into a groundplane multiband vertical, 25 W on 242 of the 247 contacts and on every contact beyond 3,000 km.
+This post is the evaluation I owe myself. What worked, what did not, what the bands actually taught me, and where the plan goes next. All figures come from the QRZ Logbook ADIF export of 19 July 2026, station JO21EE in Hoboken, IC-7300 MkII into a groundplane multiband vertical, 25 W on every HF contact in this log and on every contact beyond 3,000 km.
 
 <div class="eval26" markdown="0">
 
@@ -94,6 +94,7 @@ Before any of the conclusions, the boring part, because a claim about distance i
       <tr><td>Transceiver</td><td>Icom IC-7300 MkII, commercial equipment, unmodified</td></tr>
       <tr><td>Antenna</td><td>IronWave6 groundplane multiband vertical, garden mounted</td></tr>
       <tr><td>Amplifier</td><td>none</td></tr>
+      <tr><td>Power used</td><td>25 W on HF, up to 50 W on 2m, within Class C limits</td></tr>
       <tr><td>Data source</td><td>QRZ Logbook ADIF export, 19 Jul 2026, 247 records</td></tr>
     </tbody>
   </table>
@@ -102,11 +103,19 @@ Before any of the conclusions, the boring part, because a claim about distance i
 <div class="panel">
   <h4>Transmit power, as logged, per QSO</h4>
   <div class="bars">
-    <div class="bar"><span>25 W</span><span class="track"><span class="fill" style="width:100%;background:var(--c-primary);box-shadow:var(--glow-sm)"></span></span><span class="val">242 · 98%</span></div>
-    <div class="bar"><span>50 W</span><span class="track"><span class="fill" style="width:1.7%;background:var(--c-amber)"></span></span><span class="val">4 · 1.6%</span></div>
+    <div class="bar"><span>25 W</span><span class="track"><span class="fill" style="width:100%;background:var(--c-primary);box-shadow:var(--glow-sm)"></span></span><span class="val">244 · 98.8%</span></div>
+    <div class="bar"><span>50 W</span><span class="track"><span class="fill" style="width:0.8%;background:var(--c-amber)"></span></span><span class="val">2 · 0.8%</span></div>
     <div class="bar"><span>20 W</span><span class="track"><span class="fill" style="width:0.4%;background:var(--c-cyan)"></span></span><span class="val">1 · 0.4%</span></div>
   </div>
-  <div class="note">Every one of the 247 records carries a <code>TX_PWR</code> field. The four 50 W entries are two local 2m FM contacts and two European HF contacts on 30 June. The single 20 W entry is my very first FT8 QSO, TA1SMO, while I was still setting the drive level. <strong>All 19 contacts beyond 3,000 km, including both 11,000 km paths, are logged at 25 W.</strong></div>
+  <table style="margin-top:1rem">
+    <thead><tr><th>Segment</th><th>QSOs</th><th>Power as logged</th><th>Class C limit</th></tr></thead>
+    <tbody>
+      <tr><td>HF · 80m to 10m</td><td>243</td><td class="dx">25 W, one at 20 W</td><td>25 W</td></tr>
+      <tr><td>VHF · 2m</td><td>4</td><td class="dx">2 at 50 W, 2 at 25 W</td><td>50 W</td></tr>
+    </tbody>
+  </table>
+  <div class="note">Every one of the 247 records carries a <code>TX_PWR</code> field, so this is not an estimate. Not a single HF contact in this log was made above 25 W, and not a single VHF contact above 50 W. The one 20 W entry is my very first FT8 QSO, TA1SMO, made while I was still setting the drive level. <strong>All 19 contacts beyond 3,000 km, including both 11,000 km paths, are logged at 25 W.</strong></div>
+  <div class="note">A note on housekeeping: an earlier export of this log showed two HF contacts at 50 W. That was a stale power setting in my logging software, not the radio. I found it while preparing this analysis, verified it against the session, and corrected the records. The figures above are from the corrected export of 19 July 2026. I am writing that down rather than quietly fixing it, because a logbook is only worth anything if you treat its errors the same way you treat its records.</div>
 </div>
 
 <div class="panel">
