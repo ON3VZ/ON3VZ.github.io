@@ -89,8 +89,17 @@
   stroke-width: .4;
   transition: filter var(--t);
 }
-.wc-country.is-worked { stroke: rgba(0,255,136,.55); stroke-width: .5; }
-.wc-country:hover { filter: brightness(1.45); }
+/* SOFT FILL (added 2026-07-20): worked countries are filled by JS as an inline
+   style; this keeps that fill gentle and lets the outline stay subordinate.
+   Delete this block to go back to outline-only. */
+.wc-country.is-worked {
+  stroke: rgba(0,255,136,.45);
+  stroke-width: .45;
+  fill-opacity: .82;
+  transition: fill-opacity var(--t), filter var(--t);
+}
+.wc-country.is-worked:hover { fill-opacity: 1; }
+.wc-country:hover { filter: brightness(1.35); }
 .wc-country.is-found {
   stroke: var(--c-cyan); stroke-width: 1.4;
   filter: drop-shadow(0 0 6px rgba(0,212,255,.8));

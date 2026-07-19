@@ -410,17 +410,27 @@ function drawHome() {
   g.append('text').attr('class', 'wc-home-lbl').attr('x', 10).attr('y', 3.5).text('ON3VZ');
 }
 
+/* Soft fill for a worked country. Muted green base so the map reads calmly,
+   rising towards the Dark Signal neon for the most-worked entities. */
+function workedFill(count) {
+  if (!heat) return '#2fd98a';
+  const t = Math.sqrt(count) / Math.sqrt(maxCount);
+  return d3.interpolateRgb('#1a4738', '#3ce89b')(0.22 + 0.78 * t);
+}
+
 function paintMap() {
   if (!svgG) return;
   svgG.select('.wc-graticule').style('display', showGrat ? null : 'none');
   const term = searchTerm.trim().toLowerCase();
+  /* FIX 2026-07-20: the fill must be set as an inline STYLE, not as an
+     attribute. A stylesheet rule (.wc-country { fill: ... }) always beats an
+     SVG presentation attribute, so an attribute fill stayed invisible and only
+     the outline showed. An inline style wins, so the shading actually renders. */
   svgG.selectAll('.wc-country')
-    .attr('fill', d => {
+    .style('fill', d => {
       const a = byFeature.get(d.key);
       if (!a) return null;                       // CSS handles "not worked"
-      if (!heat) return '#00ff88';
-      const t = Math.sqrt(a.count) / Math.sqrt(maxCount);
-      return d3.interpolateRgb('#0d5c3a', '#00ff88')(0.18 + 0.82 * t);
+      return workedFill(a.count);
     })
     .classed('is-worked', d => byFeature.has(d.key))
     .classed('is-found', d => !!term && d.name.toLowerCase().includes(term));
@@ -526,7 +536,7 @@ function renderLegend() {
   const scale = document.getElementById('wcLegendScale');
   scale.innerHTML = '';
   if (!heat) {
-    scale.innerHTML = '<span class="wc-legend-flat"></span>';
+    scale.innerHTML = `<span class="wc-legend-flat" style="background:${workedFill(maxCount)}"></span>`;
     document.getElementById('wcLegendMin').textContent = 'Worked';
     document.getElementById('wcLegendMax').textContent = '';
     return;
@@ -534,7 +544,7 @@ function renderLegend() {
   for (let i = 0; i < 12; i++) {
     const t = i / 11;
     const sp = document.createElement('span');
-    sp.style.background = d3.interpolateRgb('#0d5c3a', '#00ff88')(0.18 + 0.82 * t);
+    sp.style.background = workedFill(1 + t * (maxCount - 1));
     scale.appendChild(sp);
   }
   document.getElementById('wcLegendMin').textContent = '1';
