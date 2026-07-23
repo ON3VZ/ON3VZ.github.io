@@ -12,9 +12,9 @@ tags: ['Projects', 'Field Day', 'N1MM', 'Software', 'WLD']
   <div style="font-family:var(--f-display);font-size:clamp(1.5rem,4.5vw,2.2rem);font-weight:900;color:var(--c-primary);text-shadow:0 0 30px rgba(0,255,136,0.4);letter-spacing:0.06rem;line-height:1.15;margin-bottom:0.6rem;">N1MM Field Day Tracker</div>
   <div style="color:var(--c-text-2);font-size:0.95rem;max-width:520px;margin:0 auto 1.5rem;">Live matrix of which participating stations you have worked, on which bands, fed straight from N1MM Logger+. No spreadsheet. No shouting across the tent.</div>
   <div style="display:flex;gap:0.7rem;flex-wrap:wrap;justify-content:center;">
-    <a href="https://github.com/ON3VZ/n1mm-fieldday-tracker/releases/latest" target="_blank" rel="noopener"
+    <a href="https://on3vz.github.io/n1mm-fieldday-tracker/" target="_blank" rel="noopener"
        style="display:inline-block;background:var(--c-primary);color:#080d18;font-family:var(--f-display);font-size:0.8rem;font-weight:700;letter-spacing:0.1rem;padding:0.75rem 1.8rem;border-radius:6px;text-decoration:none;box-shadow:0 0 24px rgba(0,255,136,0.35);">
-      DOWNLOAD v1.1.0 →
+      DOWNLOAD →
     </a>
     <a href="https://github.com/ON3VZ/n1mm-fieldday-tracker" target="_blank" rel="noopener"
        style="display:inline-block;background:transparent;color:var(--c-primary);border:1px solid var(--c-border-hard);font-family:var(--f-display);font-size:0.8rem;font-weight:700;letter-spacing:0.1rem;padding:0.75rem 1.8rem;border-radius:6px;text-decoration:none;">
@@ -258,10 +258,10 @@ The interface starts in English and switches to Dutch, French or Spanish.
 
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0.8rem;">
 
-    <a href="https://github.com/ON3VZ/n1mm-fieldday-tracker/releases/latest" target="_blank" rel="noopener"
+    <a href="https://on3vz.github.io/n1mm-fieldday-tracker/" target="_blank" rel="noopener"
        style="display:block;background:var(--c-surface);border:1px solid var(--c-border-hard);border-radius:10px;padding:1rem 1.1rem;text-decoration:none;">
-      <div style="font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.16rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.35rem;">Latest release</div>
-      <div style="font-family:var(--f-display);font-size:0.9rem;font-weight:700;color:var(--c-primary);">Download v1.1.0 →</div>
+      <div style="font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.16rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.35rem;">Download page</div>
+      <div style="font-family:var(--f-display);font-size:0.9rem;font-weight:700;color:var(--c-primary);">Get the tracker →</div>
       <div style="font-size:0.78rem;color:var(--c-text-3);margin-top:0.3rem;">Windows installer · Linux tar.gz</div>
     </a>
 
