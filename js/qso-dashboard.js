@@ -19,11 +19,31 @@ const QD = {
   homeLatLng: [51.178, 4.347],                 // Hoboken, Antwerpen (JO21EE)
   earthCircumferenceKm: 40075,                  // equatorial circumference
   bandOrder: ['160m','80m','60m','40m','30m','20m','17m','15m','12m','10m','6m','2m','70cm'],
+  /* VISUAL OVERHAUL 2026-07-24 (revert: git revert <sha>)
+     Band palette ordered by wavelength, long waves warm and short waves
+     cool. 160m, 60m and 'other' were missing before and silently fell
+     back to a flat green, which is why the band charts were hard to
+     read. Every band that can appear now has its own colour. */
   bandColours: {
-    '80m': '#ff6b6b', '40m': '#ffa94d', '30m': '#ffe066', '20m': '#69db7c',
-    '17m': '#63e6be', '15m': '#4dabf7', '12m': '#b197fc', '10m': '#da77f2',
-    '6m': '#ff8787', '2m': '#00d4ff', '70cm': '#f783ac',
+    '160m': '#e03131', '80m': '#ff6b6b', '60m': '#ff922b', '40m': '#ffa94d',
+    '30m': '#ffe066', '20m': '#69db7c', '17m': '#63e6be', '15m': '#4dabf7',
+    '12m': '#b197fc', '10m': '#da77f2', '6m': '#ff8787', '2m': '#00d4ff',
+    '70cm': '#f783ac', 'other': '#8fa6bd',
   },
+  /* One distinct colour per continent, shared by every continent view
+     instead of the single amber that made all bars look identical. */
+  contColours: {
+    EU: '#00ff88', NA: '#4dabf7', SA: '#da77f2',
+    AS: '#f0a500', AF: '#ff6b6b', OC: '#00d4ff', AN: '#b0c4d8',
+  },
+  modeColours: {
+    SSB: '#00ff88', FT8: '#00d4ff', CW: '#f0a500', FM: '#da77f2',
+    RTTY: '#ff922b', PSK31: '#4dabf7', FT4: '#63e6be', UNKNOWN: '#8fa6bd',
+  },
+  /* Six-step heat ramp, deep navy through teal and green to hot lime.
+     Shared by the activity calendar and the band fingerprint so both
+     grids are read on the same visual scale. */
+  heatRamp: ['#141f38', '#0f4f68', '#0d8a8a', '#14b877', '#63e06a', '#c8ff66'],
   contNames: {
     EU: 'Europe', NA: 'N. America', SA: 'S. America',
     AS: 'Asia', AF: 'Africa', OC: 'Oceania', AN: 'Antarctica',
@@ -37,6 +57,7 @@ const QD = {
 
 /* ── STATE ── */
 let qdQsos = [];
+let qdMeta = { files: 0, updated: '' };
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -59,6 +80,7 @@ function loadAdif() {
     .then(r => (r.ok ? r.json() : null))
     .then(manifest => {
       const files = manifest ? manifest.files : ['logbook.adi'];
+      qdMeta = { files: files.length, updated: (manifest && manifest.updated) || '' };
       return Promise.all(files.map(f =>
         fetch(QD.adifDir + f + ts).then(r => (r.ok ? r.text() : '')).catch(() => '')
       ));
@@ -188,6 +210,46 @@ function fmtDate(yyyymmdd) {
 }
 function addDays(d, n) { const c = new Date(d); c.setUTCDate(c.getUTCDate() + n); return c; }
 
+/* ── HEAT SCALE ──
+   The grids used to scale linearly against the single highest value, so
+   one busy day or one busy hour pushed everything else down into the
+   lowest step and the whole grid looked flat. Breaks are now quantiles
+   of the non-zero values, so every colour step actually carries data. */
+function heatBreaks(values, steps) {
+  const nz = values.filter(v => v > 0).sort((a, b) => a - b);
+  if (!nz.length) return [];
+  const uniq = [...new Set(nz)];
+  if (uniq.length <= steps) return uniq;
+  const out = [];
+  for (let i = 1; i <= steps; i++) {
+    const idx = Math.min(nz.length - 1, Math.ceil(i / steps * nz.length) - 1);
+    out.push(nz[idx]);
+  }
+  return [...new Set(out)];
+}
+function heatLevel(n, breaks) {
+  if (!n) return 0;
+  for (let i = 0; i < breaks.length; i++) if (n <= breaks[i]) return i + 1;
+  return breaks.length;
+}
+/* Legend that spells out the value range behind every colour step,
+   so the reader never has to guess what a shade means. */
+function renderHeatScale(elId, breaks, unit) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  if (!breaks.length) { el.innerHTML = ''; return; }
+  let prev = 0;
+  let html = `<span class="qd-scale-cap">${unit}</span>` +
+             `<span class="qd-scale-item"><span class="qd-scale-step" data-lvl="0"></span><span class="qd-scale-num">0</span></span>`;
+  breaks.forEach((b, i) => {
+    const from = prev + 1;
+    html += `<span class="qd-scale-item"><span class="qd-scale-step" data-lvl="${i + 1}"></span>` +
+            `<span class="qd-scale-num">${from === b ? b : from + '-' + b}</span></span>`;
+    prev = b;
+  });
+  el.innerHTML = html;
+}
+
 /* ── RENDER ALL ── */
 function renderAll() {
   const stats = computeStats(qdQsos);
@@ -195,8 +257,10 @@ function renderAll() {
     `${qdQsos.length.toLocaleString('en-GB')} QSOs · ${fmtDate(qdQsos[0].date)} to ${fmtDate(qdQsos[qdQsos.length - 1].date)}`;
   renderKpis(stats);
   renderCalendar(stats);
+  renderSource();
   renderTrendChart(stats);
   renderDxccChart(stats);
+  renderBandMixChart(stats);
   renderFingerprint(stats);
   renderBandDistChart(stats);
   renderDistSpreadChart(stats);
@@ -339,15 +403,16 @@ function renderCalendar(s) {
   let start = addDays(today, -(spanDays - 1));
   while (start.getUTCDay() !== 1) start = addDays(start, -1);
 
-  const max = Math.max(1, ...s.perDay.values());
-  const lvl = n => n === 0 ? 0 : Math.min(4, Math.ceil(n / max * 4));
+  const breaks = heatBreaks([...s.perDay.values()], 5);
+  const lvl = n => heatLevel(n, breaks);
+  const todayKey = dateKey(today);
 
   let html = '';
   for (let d = new Date(start); ; d = addDays(d, 1)) {
     const k = dateKey(d);
     const future = d > today;
     const n = s.perDay.get(k) || 0;
-    html += `<div class="qd-cal-cell${future ? ' qd-cal-future' : ''}" data-lvl="${lvl(n)}" data-tip="${fmtDate(k)} · ${n} QSO${n === 1 ? '' : 's'}"></div>`;
+    html += `<div class="qd-cal-cell${future ? ' qd-cal-future' : ''}${k === todayKey ? ' qd-cal-today' : ''}" data-lvl="${lvl(n)}" data-tip="${fmtDate(k)} · ${n} QSO${n === 1 ? '' : 's'}"></div>`;
     if (dateKey(d) === dateKey(today)) {
       /* pad the final column to a full 7-row week */
       let pad = (7 - ((Math.round((d - start) / 86400000) + 1) % 7)) % 7;
@@ -356,6 +421,7 @@ function renderCalendar(s) {
     }
   }
   el.innerHTML = html;
+  renderHeatScale('qdCalScale', breaks, 'QSOs per day');
   attachTips(el);
 }
 
@@ -402,10 +468,28 @@ function renderTrendChart(s) {
 
   document.getElementById('qdTrendTitle').textContent = `QSO trend · ${granularity}`;
   chartDefaults();
+  /* Raw counts are spiky and hard to read on their own, so a 7 point
+     trailing average is drawn over them to show the actual direction. */
+  const roll = data.map((_, i) => {
+    const w = data.slice(Math.max(0, i - 6), i + 1);
+    return +(w.reduce((a, b) => a + b, 0) / w.length).toFixed(2);
+  });
   new Chart(document.getElementById('qdTrendChart'), {
     type: 'bar',
-    data: { labels, datasets: [{ data, backgroundColor: QD.colors.green, borderRadius: 3, maxBarThickness: 22 }] },
+    data: {
+      labels,
+      datasets: [
+        { label: `QSOs per ${granularity.replace('ly', '')}`, data,
+          backgroundColor: ctx => vGradient(ctx, 'rgba(0,255,136,0.95)', 'rgba(0,255,136,0.20)'),
+          borderRadius: 3, maxBarThickness: 22, order: 2 },
+        { label: '7 point average', data: roll, type: 'line',
+          borderColor: QD.colors.amber, borderWidth: 2, tension: 0.35,
+          pointRadius: 0, fill: false, order: 1 },
+      ],
+    },
     options: baseOpts({
+      plugins: { legend: { display: true, position: 'top', align: 'end',
+        labels: { boxWidth: 10, boxHeight: 10, padding: 12, usePointStyle: true, pointStyle: 'rectRounded' } } },
       scales: {
         x: { grid: { display: false }, ticks: { maxTicksLimit: 14, maxRotation: 0 } },
         y: { grid: { color: QD.colors.grid }, beginAtZero: true, ticks: { precision: 0 } },
@@ -430,9 +514,10 @@ function renderDxccChart(s) {
   new Chart(document.getElementById('qdDxccChart'), {
     type: 'line',
     data: { labels, datasets: [{ data, borderColor: QD.colors.cyan,
-      backgroundColor: 'rgba(0,212,255,0.08)', fill: true, stepped: true,
-      pointRadius: 0, borderWidth: 2 }] },
+      backgroundColor: ctx => vGradient(ctx, 'rgba(0,212,255,0.42)', 'rgba(0,212,255,0.00)'),
+      fill: true, stepped: true, pointRadius: 0, borderWidth: 2.2 }] },
     options: baseOpts({
+      plugins: { tooltip: { callbacks: { label: c => ' ' + c.parsed.y + ' DXCC entities' } } },
       scales: {
         x: { grid: { display: false }, ticks: { maxTicksLimit: 10, maxRotation: 0 } },
         y: { grid: { color: QD.colors.grid }, beginAtZero: true, ticks: { precision: 0 } },
@@ -448,24 +533,79 @@ function renderFingerprint(s) {
     .concat([...s.fingerprint.keys()].filter(b => !QD.bandOrder.includes(b)));
   if (!bands.length) { el.innerHTML = '<div class="qd-loading">No hour data in log</div>'; return; }
 
-  const max = Math.max(1, ...bands.flatMap(b => [...s.fingerprint.get(b)]));
-  const lvl = n => n === 0 ? 0 : Math.min(4, Math.ceil(n / max * 4));
+  const all = bands.flatMap(b => [...s.fingerprint.get(b)]);
+  const breaks = heatBreaks(all, 5);
+  const max = Math.max(1, ...all);
 
-  el.style.gridTemplateColumns = `3.2rem repeat(24, 1fr)`;
+  el.style.gridTemplateColumns = `4.2rem repeat(24, 1fr) 2.4rem`;
   let html = '';
   bands.forEach(b => {
-    html += `<div class="qd-fp-band">${b}</div>`;
+    const colour = QD.bandColours[b] || QD.bandColours.other;
     const arr = s.fingerprint.get(b);
+    let rowTotal = 0;
+    for (let h = 0; h < 24; h++) rowTotal += arr[h];
+    html += `<div class="qd-fp-band"><i style="background:${colour}"></i>${b}</div>`;
     for (let h = 0; h < 24; h++) {
-      html += `<div class="qd-fp-cell" data-lvl="${lvl(arr[h])}" data-tip="${b} &middot; ${String(h).padStart(2, '0')}:00-${String(h).padStart(2, '0')}:59 UTC &middot; ${arr[h]} QSO${arr[h] === 1 ? '' : 's'}"></div>`;
+      const n = arr[h];
+      const peak = n === max && n > 0 ? ' qd-fp-peak' : '';
+      html += `<div class="qd-fp-cell${peak}" data-lvl="${heatLevel(n, breaks)}" data-tip="${b} &middot; ${String(h).padStart(2, '0')}:00-${String(h).padStart(2, '0')}:59 UTC &middot; ${n} QSO${n === 1 ? '' : 's'}"></div>`;
     }
+    html += `<div class="qd-fp-total" data-tip="${b} &middot; ${rowTotal} QSOs with a logged hour">${rowTotal}</div>`;
   });
   html += '<div></div>';
   for (let h = 0; h < 24; h++) {
     html += `<div class="qd-fp-hour">${h % 3 === 0 ? String(h).padStart(2, '0') : ''}</div>`;
   }
+  html += '<div class="qd-fp-hour qd-fp-hour--tot">tot</div>';
   el.innerHTML = html;
+  renderHeatScale('qdFpScale', breaks, 'QSOs per hour block');
   attachTips(el);
+}
+
+/* ── DATA SOURCE / FRESHNESS LINE ──
+   Makes it visible that the page is computed from the live ADIF set on
+   every single load, so a new import shows up here immediately. */
+function renderSource() {
+  const el = document.getElementById('qdSource');
+  if (!el) return;
+  const parts = [`${qdMeta.files} ADIF file${qdMeta.files === 1 ? '' : 's'} in the manifest`];
+  if (qdMeta.updated) parts.push(`manifest synced ${qdMeta.updated}`);
+  parts.push('recomputed in your browser on every visit');
+  el.textContent = parts.join(' · ');
+}
+
+/* ── QSOs PER BAND (new 2026-07-24) ──
+   The dashboard previously only showed distance per band, never the plain
+   QSO count per band, which is the number an operator actually wants. */
+function renderBandMixChart(s) {
+  const canvas = document.getElementById('qdBandMixChart');
+  if (!canvas) return;
+  const rows = QD.bandOrder.filter(b => s.perBand.has(b))
+    .concat([...s.perBand.keys()].filter(b => !QD.bandOrder.includes(b)))
+    .map(b => [b, s.perBand.get(b).count]);
+  const total = rows.reduce((a, r) => a + r[1], 0) || 1;
+  chartDefaults();
+  new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels: rows.map(r => r[0]),
+      datasets: [{ data: rows.map(r => r[1]),
+        backgroundColor: rows.map(r => QD.bandColours[r[0]] || QD.bandColours.other),
+        borderRadius: 4, maxBarThickness: 26 }],
+    },
+    options: baseOpts({
+      indexAxis: 'y',
+      layout: { padding: { right: 56 } },
+      plugins: {
+        tooltip: { callbacks: { label: c => ` ${c.parsed.x} QSOs · ${Math.round(c.parsed.x / total * 100)}%` } },
+        qdValueLabels: { enabled: true, fmt: v => `${v}  (${Math.round(v / total * 100)}%)` },
+      },
+      scales: {
+        x: { grid: { color: QD.colors.grid }, beginAtZero: true, ticks: { precision: 0 } },
+        y: { grid: { display: false }, ticks: { font: { size: 11 } } },
+      },
+    }),
+  });
 }
 
 /* ── DISTANCE PER BAND ── */
@@ -484,7 +624,11 @@ function renderBandDistChart(s) {
     },
     options: baseOpts({
       indexAxis: 'y',
-      plugins: { tooltip: { callbacks: { label: c => ' ' + Math.round(c.parsed.x).toLocaleString('en-GB') + ' km' } } },
+      layout: { padding: { right: 52 } },
+      plugins: {
+        tooltip: { callbacks: { label: c => ' ' + Math.round(c.parsed.x).toLocaleString('en-GB') + ' km' } },
+        qdValueLabels: { enabled: true, fmt: fmtKm },
+      },
       scales: {
         x: { grid: { color: QD.colors.grid }, ticks: { callback: v => v >= 1e6 ? (v / 1e6) + 'M' : (v / 1e3) + 'k' } },
         y: { grid: { display: false } },
@@ -500,11 +644,20 @@ function renderDistSpreadChart(s) {
     type: 'bar',
     data: {
       labels: ['<100 km', '100-1k', '1k-5k', '5k+'],
-      datasets: [{ data: s.distBuckets, backgroundColor: QD.colors.cyan, borderRadius: 3, maxBarThickness: 34 }],
+      /* Near to far now reads as its own colour ramp instead of four
+         identical cyan bars. */
+      datasets: [{ data: s.distBuckets,
+        backgroundColor: ['#63e6be', '#00d4ff', '#b197fc', '#f0a500'],
+        borderRadius: 4, maxBarThickness: 42 }],
     },
     options: baseOpts({
+      layout: { padding: { top: 18 } },
+      plugins: {
+        tooltip: { callbacks: { label: c => ` ${c.parsed.y} QSOs · ${Math.round(c.parsed.y / (s.distCount || 1) * 100)}% of located QSOs` } },
+        qdValueLabels: { enabled: true },
+      },
       scales: {
-        x: { grid: { display: false } },
+        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
         y: { grid: { color: QD.colors.grid }, beginAtZero: true, ticks: { precision: 0 } },
       },
     }),
@@ -519,10 +672,17 @@ function renderContChart(s) {
     type: 'bar',
     data: {
       labels: rows.map(c => QD.contNames[c] || c),
-      datasets: [{ data: rows.map(c => s.perCont.get(c)), backgroundColor: QD.colors.amber, borderRadius: 3, maxBarThickness: 20 }],
+      datasets: [{ data: rows.map(c => s.perCont.get(c)),
+        backgroundColor: rows.map(c => QD.contColours[c] || QD.colors.amber),
+        borderRadius: 4, maxBarThickness: 22 }],
     },
     options: baseOpts({
       indexAxis: 'y',
+      layout: { padding: { right: 56 } },
+      plugins: {
+        tooltip: { callbacks: { label: c => ` ${c.parsed.x} QSOs · ${Math.round(c.parsed.x / s.qsos.length * 100)}%` } },
+        qdValueLabels: { enabled: true, fmt: v => `${v}  (${Math.round(v / s.qsos.length * 100)}%)` },
+      },
       scales: {
         x: { grid: { color: QD.colors.grid }, beginAtZero: true, ticks: { precision: 0 } },
         y: { grid: { display: false } },
@@ -534,19 +694,21 @@ function renderContChart(s) {
 /* ── MODE SPLIT ── */
 function renderModeChart(s) {
   const rows = [...s.perMode.entries()].sort((a, b) => b[1] - a[1]);
-  const palette = [QD.colors.green, QD.colors.cyan, QD.colors.amber, '#da77f2', '#ffa94d', '#4dabf7'];
+  const fallback = ['#00ff88', '#00d4ff', '#f0a500', '#da77f2', '#ffa94d', '#4dabf7'];
   chartDefaults();
   new Chart(document.getElementById('qdModeChart'), {
     type: 'doughnut',
     data: {
       labels: rows.map(r => r[0]),
       datasets: [{ data: rows.map(r => r[1]),
-        backgroundColor: rows.map((_, i) => palette[i % palette.length]),
-        borderColor: '#0d1428', borderWidth: 3 }],
+        backgroundColor: rows.map((r, i) => QD.modeColours[r[0]] || fallback[i % fallback.length]),
+        borderColor: '#0d1428', borderWidth: 3, hoverOffset: 6 }],
     },
     options: baseOpts({
-      cutout: '62%',
+      cutout: '66%',
       plugins: {
+        qdDoughnutCentre: { enabled: true, value: s.qsos.length.toLocaleString('en-GB'), label: 'QSOs' },
+        tooltip: { callbacks: { label: c => ` ${c.parsed} QSOs · ${Math.round(c.parsed / s.qsos.length * 100)}%` } },
         legend: { display: true, position: 'right',
           labels: { boxWidth: 10, padding: 10,
             generateLabels: chart => chart.data.labels.map((l, i) => ({
@@ -611,19 +773,111 @@ function renderMilestones(s) {
 }
 
 /* ── CHART HELPERS ── */
+
+/* Vertical gradient helper. Chart.js hands the scriptable colour callback
+   a context without a chart area on the very first pass, so fall back to
+   the solid top colour until the layout is known. */
+function vGradient(ctx, top, bottom) {
+  const area = ctx.chart.chartArea;
+  if (!area) return top;
+  const g = ctx.chart.ctx.createLinearGradient(0, area.top, 0, area.bottom);
+  g.addColorStop(0, top);
+  g.addColorStop(1, bottom);
+  return g;
+}
+
+/* Draws the value straight onto each bar. Reading a chart should not
+   require hovering every single bar. No external plugin needed. */
+const qdValueLabels = {
+  id: 'qdValueLabels',
+  afterDatasetsDraw(chart, _args, opts) {
+    if (!opts || !opts.enabled) return;
+    const ctx = chart.ctx;
+    const horizontal = chart.options.indexAxis === 'y';
+    ctx.save();
+    ctx.font = "10px 'Share Tech Mono', monospace";
+    ctx.fillStyle = opts.color || '#b0c4d8';
+    chart.data.datasets.forEach((ds, di) => {
+      if (ds.type === 'line') return;
+      const meta = chart.getDatasetMeta(di);
+      if (meta.hidden) return;
+      meta.data.forEach((el, i) => {
+        const v = ds.data[i];
+        if (!v) return;
+        const txt = opts.fmt ? opts.fmt(v) : String(v);
+        if (horizontal) {
+          ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+          ctx.fillText(txt, el.x + 7, el.y);
+        } else {
+          ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+          ctx.fillText(txt, el.x, el.y - 5);
+        }
+      });
+    });
+    ctx.restore();
+  },
+};
+
+/* Puts the grand total in the hole of the doughnut. */
+const qdDoughnutCentre = {
+  id: 'qdDoughnutCentre',
+  afterDatasetsDraw(chart, _args, opts) {
+    if (!opts || !opts.enabled) return;
+    const area = chart.chartArea;
+    if (!area) return;
+    const meta = chart.getDatasetMeta(0);
+    const arc = meta && meta.data && meta.data[0];
+    const cx = arc ? arc.x : (area.left + area.right) / 2;
+    const cy = arc ? arc.y : (area.top + area.bottom) / 2;
+    const ctx = chart.ctx;
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#e6f1ff';
+    ctx.font = "700 20px 'Orbitron', 'Share Tech Mono', monospace";
+    ctx.fillText(opts.value, cx, cy - 6);
+    ctx.fillStyle = '#7a96b0';
+    ctx.font = "9px 'Share Tech Mono', monospace";
+    ctx.fillText(opts.label, cx, cy + 12);
+    ctx.restore();
+  },
+};
+
+let qdPluginsRegistered = false;
 function chartDefaults() {
   Chart.defaults.color = QD.colors.text3;
   Chart.defaults.font.family = "'Share Tech Mono', monospace";
   Chart.defaults.font.size = 10;
   Chart.defaults.borderColor = QD.colors.grid;
+  if (!qdPluginsRegistered) {
+    Chart.register(qdValueLabels, qdDoughnutCentre);
+    qdPluginsRegistered = true;
+  }
 }
 function baseOpts(extra) {
   const o = Object.assign({
     responsive: true,
     maintainAspectRatio: false,
-    animation: { duration: 500 },
+    animation: { duration: 550 },
+    interaction: { intersect: false, mode: 'nearest' },
   }, extra);
-  o.plugins = Object.assign({ legend: { display: false } }, (extra && extra.plugins) || {});
+  o.plugins = Object.assign({
+    legend: { display: false },
+    qdValueLabels: { enabled: false },
+    qdDoughnutCentre: { enabled: false },
+    tooltip: {
+      backgroundColor: 'rgba(8,13,24,0.96)',
+      borderColor: 'rgba(0,255,136,0.28)',
+      borderWidth: 1,
+      titleColor: '#e6f1ff',
+      bodyColor: '#b0c4d8',
+      titleFont: { family: "'Share Tech Mono', monospace", size: 11 },
+      bodyFont: { family: "'Share Tech Mono', monospace", size: 11 },
+      padding: 10,
+      cornerRadius: 6,
+      displayColors: false,
+    },
+  }, (extra && extra.plugins) || {});
   return o;
 }
 

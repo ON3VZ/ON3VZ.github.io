@@ -286,3 +286,122 @@
   .qd-fp-band { font-size: .55rem; }
   .qd-fp-hour { font-size: .45rem; }
 }
+
+/* ============================================================
+   VISUAL OVERHAUL 2026-07-24
+   Manual removal block: delete everything from this banner to the
+   end of the file, or use git revert <sha>. These rules only
+   restyle existing components and add the new scale legend, band
+   dots and fingerprint totals. Nothing above is deleted.
+   ============================================================ */
+
+/* Data freshness line under the hero subtitle */
+.qd-source {
+  font-family: var(--f-mono);
+  font-size: .58rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-top: .35rem;
+  opacity: .85;
+}
+
+/* ── HEAT RAMP ──
+   Six perceptual steps instead of four alpha values of one hue. The
+   old single-hue ramp made a busy day and a quiet day look nearly
+   identical on a dark background. */
+.qd-cal-cell,
+.qd-fp-cell,
+.qd-scale-step {
+  background: #101a2e;
+  border: 1px solid rgba(122,150,176,0.10);
+}
+.qd-cal-cell[data-lvl="1"], .qd-fp-cell[data-lvl="1"], .qd-scale-step[data-lvl="1"] { background: #0f4f68; border-color: rgba(15,79,104,0.9); }
+.qd-cal-cell[data-lvl="2"], .qd-fp-cell[data-lvl="2"], .qd-scale-step[data-lvl="2"] { background: #0d8a8a; border-color: rgba(13,138,138,0.9); }
+.qd-cal-cell[data-lvl="3"], .qd-fp-cell[data-lvl="3"], .qd-scale-step[data-lvl="3"] { background: #14b877; border-color: rgba(20,184,119,0.9); }
+.qd-cal-cell[data-lvl="4"], .qd-fp-cell[data-lvl="4"], .qd-scale-step[data-lvl="4"] { background: #63e06a; border-color: rgba(99,224,106,0.9); }
+.qd-cal-cell[data-lvl="5"], .qd-fp-cell[data-lvl="5"], .qd-scale-step[data-lvl="5"] {
+  background: #c8ff66;
+  border-color: rgba(200,255,102,0.95);
+  box-shadow: 0 0 7px rgba(200,255,102,0.45);
+}
+.qd-cal-cell { width: 14px; height: 14px; border-radius: 3px; }
+.qd-cal-cell.qd-cal-future { opacity: 0; }
+.qd-cal-today { outline: 1px solid var(--c-primary); outline-offset: 1px; }
+
+/* ── SCALE LEGEND (replaces the wordless less/more strip) ── */
+.qd-scale {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .85rem;
+  font-family: var(--f-mono);
+}
+.qd-scale-cap {
+  font-size: .55rem;
+  letter-spacing: .14rem;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-right: .35rem;
+  padding-bottom: 2px;
+}
+.qd-scale-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.qd-scale-step {
+  width: 24px;
+  height: 11px;
+  border-radius: 2px;
+  display: block;
+}
+.qd-scale-num {
+  font-size: .53rem;
+  letter-spacing: .04rem;
+  color: var(--c-text-3);
+}
+
+/* ── FINGERPRINT: band colour key + row totals ── */
+.qd-fp-band {
+  display: flex;
+  align-items: center;
+  gap: .32rem;
+  padding-right: .35rem;
+}
+.qd-fp-band i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  box-shadow: 0 0 5px currentColor;
+}
+.qd-fp-total {
+  font-size: .6rem;
+  color: var(--c-text-2);
+  text-align: right;
+  align-self: center;
+  padding-left: .35rem;
+  border-left: 1px solid var(--c-border);
+}
+.qd-fp-hour--tot {
+  font-size: .5rem;
+  text-align: right;
+  color: var(--c-text-3);
+}
+.qd-fp-peak {
+  outline: 1px solid rgba(255,255,255,0.55);
+  outline-offset: 0;
+}
+
+/* ── CHARTS: more breathing room so labels are legible ── */
+.qd-chart-box { height: 215px; }
+.qd-chart-box--bands { height: 260px; }
+@media (max-width: 640px) {
+  .qd-chart-box { height: 195px; }
+  .qd-chart-box--bands { height: 230px; }
+  .qd-cal-cell { width: 11px; height: 11px; }
+  .qd-scale-step { width: 18px; }
+}

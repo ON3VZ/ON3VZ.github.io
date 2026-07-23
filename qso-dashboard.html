@@ -16,6 +16,7 @@ extra_js:
     <h1 class="section-title">QSO Dashboard</h1>
     <p class="qd-sub">Station statistics, trends and personal records computed live from the same ADIF data as the logbook. All times are aggregated per hour block (UTC), individual QSO times are never shown.</p>
     <div class="qd-updated" id="qdUpdated">Loading&hellip;</div>
+    <div class="qd-source" id="qdSource"></div>
   </div>
 
   <!-- KPI STRIP -->
@@ -29,15 +30,7 @@ extra_js:
       <div class="qd-panel qd-panel--full">
         <div class="qd-panel-title">Activity &middot; one square per day</div>
         <div class="qd-cal" id="qdCal"></div>
-        <div class="qd-cal-legend">
-          <span>less</span>
-          <span class="qd-cal-cell"></span>
-          <span class="qd-cal-cell" data-lvl="1"></span>
-          <span class="qd-cal-cell" data-lvl="2"></span>
-          <span class="qd-cal-cell" data-lvl="3"></span>
-          <span class="qd-cal-cell" data-lvl="4"></span>
-          <span>more</span>
-        </div>
+        <div class="qd-scale" id="qdCalScale"></div>
       </div>
     </div>
   </div>
@@ -62,7 +55,19 @@ extra_js:
       <div class="qd-panel qd-panel--full">
         <div class="qd-panel-title">Band activity fingerprint &middot; QSOs per hour block (UTC)</div>
         <div class="qd-fp" id="qdFingerprint"></div>
+        <div class="qd-scale" id="qdFpScale"></div>
         <div class="qd-panel-note">Shows when each band works best from this station. Counts are aggregated per hour, no individual QSO times are exposed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BAND MIX (added 2026-07-24) -->
+  <div class="container anim-3">
+    <div class="qd-grid">
+      <div class="qd-panel qd-panel--full">
+        <div class="qd-panel-title">QSOs per band &middot; share of the log</div>
+        <div class="qd-chart-box qd-chart-box--bands"><canvas id="qdBandMixChart"></canvas></div>
+        <div class="qd-panel-note">Bar colours follow the band palette used across the whole site: long wavelengths warm, short wavelengths cool.</div>
       </div>
     </div>
   </div>

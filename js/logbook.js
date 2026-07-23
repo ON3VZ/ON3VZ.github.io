@@ -81,6 +81,15 @@ const CFG = {
     '10m':  '#da77f2',
     '2m':   '#00d4ff',
     '70cm': '#f783ac',
+    /* Added 2026-07-24: bands that were not in the list fell back to a
+       flat grey on the map. These entries only take effect once such a
+       band actually appears in the log. No existing colour is changed.
+       Values match QD.bandColours in js/qso-dashboard.js. */
+    '160m': '#e03131',
+    '60m':  '#ff922b',
+    '17m':  '#63e6be',
+    '12m':  '#b197fc',
+    '6m':   '#ff8787',
   },
   contNames: {
     NA: 'North America', SA: 'South America', EU: 'Europe',
