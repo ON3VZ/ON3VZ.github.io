@@ -394,3 +394,154 @@
   .qd-cal-cell { width: 11px; height: 11px; }
   .qd-scale-step { width: 18px; }
 }
+
+/* ============================================================
+   SLICERS + REPORT POLISH 2026-07-24
+   Manual removal block: delete from this banner to the end of the
+   file, or git revert <sha>.
+   ============================================================ */
+
+:root { --cal-cell: 14px; --cal-gap: 3px; }
+
+/* ── SLICER BAR (page level filters, BI report style) ── */
+.qd-slicers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.4rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-top: 2px solid var(--c-primary);
+  border-radius: 4px 4px 12px 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.4rem;
+}
+.qd-slicer { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+.qd-slicer--end { margin-left: auto; align-items: flex-end; justify-content: center; gap: .6rem; }
+.qd-slicer-lbl {
+  font-family: var(--f-mono);
+  font-size: .55rem;
+  letter-spacing: .18rem;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+}
+
+/* Segmented period control */
+.qd-seg { display: inline-flex; border: 1px solid var(--c-border); border-radius: 7px; overflow: hidden; }
+.qd-seg-btn {
+  font-family: var(--f-mono);
+  font-size: .64rem;
+  letter-spacing: .05rem;
+  padding: .42rem .8rem;
+  background: transparent;
+  color: var(--c-text-3);
+  border: none;
+  border-right: 1px solid var(--c-border);
+  cursor: pointer;
+  transition: color var(--t), background var(--t);
+}
+.qd-seg-btn:last-child { border-right: none; }
+.qd-seg-btn:hover { color: var(--c-text); background: rgba(0,255,136,0.06); }
+.qd-seg-btn.is-on { background: rgba(0,255,136,0.14); color: var(--c-primary); }
+
+/* Multi select pills, coloured by band or mode */
+.qd-pills { display: flex; flex-wrap: wrap; gap: .38rem; }
+.qd-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .34rem;
+  font-family: var(--f-mono);
+  font-size: .64rem;
+  letter-spacing: .04rem;
+  padding: .36rem .62rem;
+  border-radius: 20px;
+  background: transparent;
+  color: var(--c-text-3);
+  border: 1px solid var(--c-border);
+  cursor: pointer;
+  transition: all var(--t);
+}
+.qd-pill i {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--pill, var(--c-primary));
+  flex: 0 0 auto;
+}
+.qd-pill span { font-size: .55rem; opacity: .6; }
+.qd-pill:hover { color: var(--c-text); border-color: var(--c-border-hard); }
+.qd-pill.is-on {
+  color: var(--c-text);
+  border-color: var(--pill, var(--c-primary));
+  background: color-mix(in srgb, var(--pill, #00ff88) 14%, transparent);
+}
+.qd-pill.is-on i { box-shadow: 0 0 7px var(--pill, var(--c-primary)); }
+
+.qd-filter-state {
+  font-family: var(--f-mono);
+  font-size: .62rem;
+  color: var(--c-text-3);
+  white-space: nowrap;
+}
+.qd-filter-state strong { color: var(--c-primary); font-weight: 400; }
+.qd-reset {
+  font-family: var(--f-mono);
+  font-size: .6rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  padding: .4rem .8rem;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--c-text-3);
+  border: 1px solid var(--c-border);
+  cursor: pointer;
+  transition: all var(--t);
+}
+.qd-reset:hover { color: var(--c-primary); border-color: var(--c-primary); }
+
+/* ── PANEL LEAD TEXT (explains a visual before you have to guess) ── */
+.qd-panel-lead {
+  font-size: .78rem;
+  line-height: 1.6;
+  color: var(--c-text-2);
+  margin: -.2rem 0 .9rem;
+  max-width: 62ch;
+}
+
+/* ── CALENDAR WITH LABELLED AXES ── */
+.qd-cal-wrap { overflow-x: auto; padding-bottom: .2rem; }
+.qd-cal-months {
+  display: grid;
+  gap: var(--cal-gap);
+  margin-left: calc(2.1rem + var(--cal-gap));
+  margin-bottom: .3rem;
+  font-family: var(--f-mono);
+  font-size: .55rem;
+  letter-spacing: .08rem;
+  color: var(--c-text-3);
+}
+.qd-cal-months span { white-space: nowrap; overflow: visible; }
+.qd-cal-body { display: flex; gap: var(--cal-gap); align-items: flex-start; }
+.qd-cal-days {
+  display: grid;
+  grid-template-rows: repeat(7, var(--cal-cell));
+  gap: var(--cal-gap);
+  width: 2.1rem;
+  font-family: var(--f-mono);
+  font-size: .55rem;
+  color: var(--c-text-3);
+}
+.qd-cal-days span { display: flex; align-items: center; height: var(--cal-cell); }
+.qd-cal { grid-template-rows: repeat(7, var(--cal-cell)); gap: var(--cal-gap); }
+.qd-cal-cell { width: var(--cal-cell); height: var(--cal-cell); }
+
+/* ── REPORT POLISH ── */
+.qd-panel { border-radius: 4px 4px 12px 12px; border-top: 2px solid var(--c-border-hard); }
+.qd-panel:hover { border-top-color: var(--c-primary); }
+.qd-kpi { border-radius: 4px 10px 10px 4px; }
+
+@media (max-width: 720px) {
+  .qd-slicers { gap: 1rem; padding: .9rem 1rem; }
+  .qd-slicer--end { margin-left: 0; align-items: flex-start; }
+  .qd-seg { flex-wrap: wrap; }
+  :root { --cal-cell: 11px; }
+}

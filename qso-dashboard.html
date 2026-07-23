@@ -18,6 +18,29 @@ extra_js:
     <div class="qd-updated" id="qdUpdated">Loading&hellip;</div>
   </div>
 
+  <!-- SLICERS (added 2026-07-24). Manual removal block: delete this
+       container, the .qd-slicer* CSS and the SLICERS section in the JS. -->
+  <div class="container anim-2">
+    <div class="qd-slicers">
+      <div class="qd-slicer">
+        <div class="qd-slicer-lbl">Period</div>
+        <div class="qd-seg" id="qdPeriod"></div>
+      </div>
+      <div class="qd-slicer">
+        <div class="qd-slicer-lbl">Band</div>
+        <div class="qd-pills" id="qdBandPills"></div>
+      </div>
+      <div class="qd-slicer">
+        <div class="qd-slicer-lbl">Mode</div>
+        <div class="qd-pills" id="qdModePills"></div>
+      </div>
+      <div class="qd-slicer qd-slicer--end">
+        <div class="qd-filter-state" id="qdFilterState"></div>
+        <button type="button" class="qd-reset" id="qdReset">Clear filters</button>
+      </div>
+    </div>
+  </div>
+
   <!-- KPI STRIP -->
   <div class="container anim-2">
     <div class="qd-kpis" id="qdKpis"></div>
@@ -27,8 +50,15 @@ extra_js:
   <div class="container anim-2">
     <div class="qd-grid">
       <div class="qd-panel qd-panel--full">
-        <div class="qd-panel-title">Activity &middot; one square per day</div>
-        <div class="qd-cal" id="qdCal"></div>
+        <div class="qd-panel-title">Activity calendar &middot; QSOs per day</div>
+        <div class="qd-panel-lead">Every small square is one calendar day. Columns run left to right week by week, rows are the days of the week. The darker and brighter the square, the more QSOs were logged that day. Empty squares are days with no radio activity. Hover a square for the exact date and count.</div>
+        <div class="qd-cal-wrap">
+          <div class="qd-cal-months" id="qdCalMonths"></div>
+          <div class="qd-cal-body">
+            <div class="qd-cal-days" id="qdCalDays"></div>
+            <div class="qd-cal" id="qdCal"></div>
+          </div>
+        </div>
         <div class="qd-scale" id="qdCalScale"></div>
       </div>
     </div>
@@ -98,6 +128,7 @@ extra_js:
     <div class="qd-grid">
       <div class="qd-panel qd-panel--full">
         <div class="qd-panel-title">Milestones &middot; generated from the log</div>
+        <div class="qd-panel-lead">Milestones always cover the complete logbook and ignore the filters above, because a record is a record.</div>
         <div class="qd-miles" id="qdMiles"><div class="qd-loading">Loading&hellip;</div></div>
       </div>
     </div>

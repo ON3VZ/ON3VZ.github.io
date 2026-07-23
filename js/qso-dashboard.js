@@ -57,6 +57,12 @@ const QD = {
 
 /* ── STATE ── */
 let qdQsos = [];
+/* SLICERS + CHART REGISTRY (added 2026-07-24, revert: git revert <sha>).
+   An empty Set means "no restriction on this dimension". */
+const qdFilter = { period: 'all', bands: new Set(), modes: new Set() };
+const qdCharts = {};
+let qdFullStats = null;
+let qdSlicersBuilt = false;
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -248,11 +254,131 @@ function renderHeatScale(elId, breaks, unit) {
   el.innerHTML = html;
 }
 
+/* ── SLICERS ──
+   Page level filters in the spirit of a BI report: pick a period, one or
+   more bands, one or more modes, and every visual on the page recomputes
+   from the filtered set. An empty selection means everything. */
+const QD_PERIODS = [['30', 'Last 30 days'], ['90', 'Last 90 days'],
+                    ['365', 'Last 12 months'], ['all', 'All time']];
+
+function filteredQsos() {
+  let cutoff = null;
+  if (qdFilter.period !== 'all') cutoff = dateKey(addDays(new Date(), -(+qdFilter.period - 1)));
+  return qdQsos.filter(q =>
+    (!qdFilter.bands.size || qdFilter.bands.has(q.band)) &&
+    (!qdFilter.modes.size || qdFilter.modes.has(q.mode)) &&
+    (!cutoff || q.date >= cutoff));
+}
+
+function buildSlicers() {
+  if (qdSlicersBuilt) return;
+  const seg = document.getElementById('qdPeriod');
+  const bandBox = document.getElementById('qdBandPills');
+  const modeBox = document.getElementById('qdModePills');
+  if (!seg || !bandBox || !modeBox) return;
+
+  seg.innerHTML = QD_PERIODS.map(([v, lbl]) =>
+    `<button type="button" class="qd-seg-btn" data-v="${v}">${lbl}</button>`).join('');
+
+  const bandCounts = new Map();
+  const modeCounts = new Map();
+  qdQsos.forEach(q => {
+    bandCounts.set(q.band, (bandCounts.get(q.band) || 0) + 1);
+    modeCounts.set(q.mode, (modeCounts.get(q.mode) || 0) + 1);
+  });
+  const bands = QD.bandOrder.filter(b => bandCounts.has(b))
+    .concat([...bandCounts.keys()].filter(b => !QD.bandOrder.includes(b)));
+  bandBox.innerHTML = bands.map(b => {
+    const c = QD.bandColours[b] || QD.bandColours.other;
+    return `<button type="button" class="qd-pill" data-v="${b}" style="--pill:${c}">` +
+           `<i></i>${b}<span>${bandCounts.get(b)}</span></button>`;
+  }).join('');
+
+  const modes = [...modeCounts.entries()].sort((a, b) => b[1] - a[1]).map(m => m[0]);
+  modeBox.innerHTML = modes.map(m => {
+    const c = QD.modeColours[m] || QD.bandColours.other;
+    return `<button type="button" class="qd-pill" data-v="${m}" style="--pill:${c}">` +
+           `<i></i>${m}<span>${modeCounts.get(m)}</span></button>`;
+  }).join('');
+
+  seg.addEventListener('click', e => {
+    const b = e.target.closest('[data-v]');
+    if (!b) return;
+    qdFilter.period = b.dataset.v;
+    renderView();
+  });
+  const toggler = set => e => {
+    const b = e.target.closest('[data-v]');
+    if (!b) return;
+    const v = b.dataset.v;
+    if (set.has(v)) set.delete(v); else set.add(v);
+    renderView();
+  };
+  bandBox.addEventListener('click', toggler(qdFilter.bands));
+  modeBox.addEventListener('click', toggler(qdFilter.modes));
+
+  const reset = document.getElementById('qdReset');
+  if (reset) reset.addEventListener('click', () => {
+    qdFilter.period = 'all';
+    qdFilter.bands.clear();
+    qdFilter.modes.clear();
+    renderView();
+  });
+
+  qdSlicersBuilt = true;
+}
+
+/* Reflect the current selection in the slicer controls. */
+function paintSlicers(shown) {
+  const mark = (boxId, set) => {
+    const box = document.getElementById(boxId);
+    if (!box) return;
+    box.querySelectorAll('[data-v]').forEach(b => {
+      b.classList.toggle('is-on', set.has(b.dataset.v));
+    });
+  };
+  const seg = document.getElementById('qdPeriod');
+  if (seg) seg.querySelectorAll('[data-v]').forEach(b => {
+    b.classList.toggle('is-on', b.dataset.v === qdFilter.period);
+  });
+  mark('qdBandPills', qdFilter.bands);
+  mark('qdModePills', qdFilter.modes);
+
+  const st = document.getElementById('qdFilterState');
+  if (st) {
+    const active = (qdFilter.period !== 'all') + (qdFilter.bands.size ? 1 : 0) + (qdFilter.modes.size ? 1 : 0);
+    st.innerHTML = active
+      ? `<strong>${shown.toLocaleString('en-GB')}</strong> of ${qdQsos.length.toLocaleString('en-GB')} QSOs · ${active} filter${active === 1 ? '' : 's'} active`
+      : `<strong>${qdQsos.length.toLocaleString('en-GB')}</strong> QSOs · no filters`;
+  }
+}
+
 /* ── RENDER ALL ── */
 function renderAll() {
-  const stats = computeStats(qdQsos);
-  document.getElementById('qdUpdated').textContent =
-    `${qdQsos.length.toLocaleString('en-GB')} QSOs · ${fmtDate(qdQsos[0].date)} to ${fmtDate(qdQsos[qdQsos.length - 1].date)}`;
+  qdFullStats = computeStats(qdQsos);
+  buildSlicers();
+  renderView();
+}
+
+/* Everything below the slicers, rebuilt on every filter change. */
+function renderView() {
+  const qsos = filteredQsos();
+  paintSlicers(qsos.length);
+  const head = document.getElementById('qdUpdated');
+
+  if (!qsos.length) {
+    head.textContent = 'No QSOs match the current filters';
+    document.getElementById('qdKpis').innerHTML =
+      '<div class="qd-loading">Nothing to show. Clear a filter to bring the data back.</div>';
+    Object.keys(qdCharts).forEach(k => { qdCharts[k].destroy(); delete qdCharts[k]; });
+    ['qdCal', 'qdFingerprint', 'qdCalScale', 'qdFpScale', 'qdCalMonths', 'qdCalDays']
+      .forEach(id => { const e = document.getElementById(id); if (e) e.innerHTML = ''; });
+    return;
+  }
+
+  const stats = computeStats(qsos);
+  head.textContent =
+    `${qsos.length.toLocaleString('en-GB')} QSOs · ${fmtDate(qsos[0].date)} to ${fmtDate(qsos[qsos.length - 1].date)}`;
   renderKpis(stats);
   renderCalendar(stats);
   renderTrendChart(stats);
@@ -263,7 +389,7 @@ function renderAll() {
   renderDistSpreadChart(stats);
   renderContChart(stats);
   renderModeChart(stats);
-  renderMilestones(stats);
+  renderMilestones(qdFullStats);   // records always cover the whole log
 }
 
 /* ── STATS ENGINE ── */
@@ -404,6 +530,30 @@ function renderCalendar(s) {
   const lvl = n => heatLevel(n, breaks);
   const todayKey = dateKey(today);
 
+  /* Weekday labels for the seven rows. Only alternate rows are labelled,
+     the same convention the GitHub contribution graph uses. */
+  const daysEl = document.getElementById('qdCalDays');
+  if (daysEl) {
+    daysEl.innerHTML = ['Mon', '', 'Wed', '', 'Fri', '', 'Sun']
+      .map(l => `<span>${l}</span>`).join('');
+  }
+
+  /* Month header, one cell per week column, labelled at the first week
+     that falls in a new month. */
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const monthsEl = document.getElementById('qdCalMonths');
+  if (monthsEl) {
+    let mHtml = '', weeks = 0, lastMonth = -1;
+    for (let d = new Date(start); d <= today; d = addDays(d, 7)) {
+      const m = d.getUTCMonth();
+      mHtml += `<span>${m !== lastMonth ? MONTHS[m] : ''}</span>`;
+      lastMonth = m;
+      weeks++;
+    }
+    monthsEl.style.gridTemplateColumns = `repeat(${weeks}, var(--cal-cell))`;
+    monthsEl.innerHTML = mHtml;
+  }
+
   let html = '';
   for (let d = new Date(start); ; d = addDays(d, 1)) {
     const k = dateKey(d);
@@ -471,7 +621,7 @@ function renderTrendChart(s) {
     const w = data.slice(Math.max(0, i - 6), i + 1);
     return +(w.reduce((a, b) => a + b, 0) / w.length).toFixed(2);
   });
-  new Chart(document.getElementById('qdTrendChart'), {
+  mkChart('qdTrendChart', {
     type: 'bar',
     data: {
       labels,
@@ -508,7 +658,7 @@ function renderDxccChart(s) {
     lastKey = d;
   });
   chartDefaults();
-  new Chart(document.getElementById('qdDxccChart'), {
+  mkChart('qdDxccChart', {
     type: 'line',
     data: { labels, datasets: [{ data, borderColor: QD.colors.cyan,
       backgroundColor: ctx => vGradient(ctx, 'rgba(0,212,255,0.42)', 'rgba(0,212,255,0.00)'),
@@ -563,14 +713,13 @@ function renderFingerprint(s) {
    The dashboard previously only showed distance per band, never the plain
    QSO count per band, which is the number an operator actually wants. */
 function renderBandMixChart(s) {
-  const canvas = document.getElementById('qdBandMixChart');
-  if (!canvas) return;
+  if (!document.getElementById('qdBandMixChart')) return;
   const rows = QD.bandOrder.filter(b => s.perBand.has(b))
     .concat([...s.perBand.keys()].filter(b => !QD.bandOrder.includes(b)))
     .map(b => [b, s.perBand.get(b).count]);
   const total = rows.reduce((a, r) => a + r[1], 0) || 1;
   chartDefaults();
-  new Chart(canvas, {
+  mkChart('qdBandMixChart', {
     type: 'bar',
     data: {
       labels: rows.map(r => r[0]),
@@ -599,7 +748,7 @@ function renderBandDistChart(s) {
     .filter(([, v]) => v.distKm > 0)
     .sort((a, b) => b[1].distKm - a[1].distKm);
   chartDefaults();
-  new Chart(document.getElementById('qdBandDistChart'), {
+  mkChart('qdBandDistChart', {
     type: 'bar',
     data: {
       labels: rows.map(r => r[0]),
@@ -625,7 +774,7 @@ function renderBandDistChart(s) {
 /* ── DISTANCE SPREAD ── */
 function renderDistSpreadChart(s) {
   chartDefaults();
-  new Chart(document.getElementById('qdDistChart'), {
+  mkChart('qdDistChart', {
     type: 'bar',
     data: {
       labels: ['<100 km', '100-1k', '1k-5k', '5k+'],
@@ -653,7 +802,7 @@ function renderDistSpreadChart(s) {
 function renderContChart(s) {
   const rows = QD.contOrder.filter(c => s.perCont.has(c));
   chartDefaults();
-  new Chart(document.getElementById('qdContChart'), {
+  mkChart('qdContChart', {
     type: 'bar',
     data: {
       labels: rows.map(c => QD.contNames[c] || c),
@@ -681,7 +830,7 @@ function renderModeChart(s) {
   const rows = [...s.perMode.entries()].sort((a, b) => b[1] - a[1]);
   const fallback = ['#00ff88', '#00d4ff', '#f0a500', '#da77f2', '#ffa94d', '#4dabf7'];
   chartDefaults();
-  new Chart(document.getElementById('qdModeChart'), {
+  mkChart('qdModeChart', {
     type: 'doughnut',
     data: {
       labels: rows.map(r => r[0]),
@@ -758,6 +907,16 @@ function renderMilestones(s) {
 }
 
 /* ── CHART HELPERS ── */
+
+/* Every visual is rebuilt whenever a slicer changes, so the previous
+   Chart.js instance on that canvas has to be destroyed first. */
+function mkChart(id, cfg) {
+  const el = document.getElementById(id);
+  if (!el) return null;
+  if (qdCharts[id]) { qdCharts[id].destroy(); delete qdCharts[id]; }
+  qdCharts[id] = new Chart(el, cfg);
+  return qdCharts[id];
+}
 
 /* Vertical gradient helper. Chart.js hands the scriptable colour callback
    a context without a chart area on the very first pass, so fall back to
