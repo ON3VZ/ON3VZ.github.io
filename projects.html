@@ -13,7 +13,7 @@ extra_css:
     <h1 class="section-title">My Projects.<br><span style="color:var(--c-primary);">Radio meets code.</span></h1>
     <p class="section-sub">Amateur radio software projects — built in the open, deployed on GitHub Pages. No installation, no server, no account. Just a browser and a callsign.</p>
     <div class="hero-badges">
-      <span class="hero-badge hero-badge--green">● 5 active projects</span>
+      <span class="hero-badge hero-badge--green">● 6 active projects</span>
       <span class="hero-badge hero-badge--cyan">Open Source · GitHub Pages</span>
       <span class="hero-badge hero-badge--amber">Class C · ON3VZ</span>
     </div>
@@ -326,6 +326,87 @@ extra_css:
           <!-- WSPR dot -->
           <circle cx="188" cy="144" r="3" fill="rgba(0,212,255,0.5)" stroke="#00d4ff" stroke-width="1"/>
           <text x="196" y="148" fill="rgba(0,212,255,0.5)" font-family="'Share Tech Mono',monospace" font-size="7">WSPR</text>
+        </svg>
+      </div>
+    </article>
+
+    <!-- ── PROJECT 6: N1MM Field Day Tracker ── -->
+    <!-- Manual removal block: delete this whole <article> to remove the card. -->
+    <article class="proj-card" data-index="06">
+      <div class="proj-card__index">06</div>
+      <div class="proj-card__body">
+        <div class="proj-card__meta">
+          <span class="proj-tag proj-tag--green">Field Day</span>
+          <span class="proj-tag proj-tag--cyan">N1MM Logger+</span>
+          <span class="proj-tag proj-tag--amber">WLD Club</span>
+        </div>
+        <h2 class="proj-card__title">N1MM Field Day Tracker</h2>
+        <p class="proj-card__desc">The Excel sheet on the field day table, replaced by a live scoreboard. N1MM Logger+ broadcasts every logged QSO over UDP, and the tracker fills in a station-by-band matrix in real time. ADIF import as a safety net, manual overrides for paper QSOs, and a public read-only snapshot on GitHub Pages so everyone can follow along. Runs on Windows and Linux, fully offline, plain JSON storage.</p>
+        <div class="proj-card__links">
+          <a href="https://on3vz.github.io/n1mm-fieldday-tracker/" class="proj-btn proj-btn--primary" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download
+          </a>
+          <a href="https://on3vz.github.io/2026/07/23/n1mm-field-day-tracker/" class="proj-btn proj-btn--ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Read Post
+          </a>
+          <a href="https://github.com/ON3VZ/n1mm-fieldday-tracker" class="proj-btn proj-btn--ghost" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Source
+          </a>
+        </div>
+      </div>
+      <div class="proj-card__visual proj-card__visual--fdt">
+        <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" class="proj-svg">
+          <defs>
+            <radialGradient id="fdtglow" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#00ff88" stop-opacity="0.13"/>
+              <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="220" height="160" fill="url(#fdtglow)"/>
+
+          <!-- Band header -->
+          <text x="18" y="26" fill="rgba(122,150,176,0.75)" font-family="'Share Tech Mono',monospace" font-size="7" letter-spacing="1">STATION</text>
+          <text x="112" y="26" fill="#00d4ff" font-family="'Share Tech Mono',monospace" font-size="7.5" text-anchor="middle">160</text>
+          <text x="152" y="26" fill="#00d4ff" font-family="'Share Tech Mono',monospace" font-size="7.5" text-anchor="middle">80</text>
+          <text x="192" y="26" fill="#00d4ff" font-family="'Share Tech Mono',monospace" font-size="7.5" text-anchor="middle">40</text>
+          <line x1="16" y1="32" x2="206" y2="32" stroke="rgba(0,255,136,0.30)" stroke-width="0.9"/>
+
+          <!-- Station labels -->
+          <g fill="rgba(176,196,216,0.8)" font-family="'Share Tech Mono',monospace" font-size="7.5">
+            <text x="18" y="49">ON4XYZ/P</text>
+            <text x="18" y="72">ON6ABC/P</text>
+            <text x="18" y="95">ON7DEF/P</text>
+            <text x="18" y="118">ON5GHI/P</text>
+          </g>
+
+          <!-- Matrix cells -->
+          <g>
+            <rect x="96" y="40" width="32" height="13" rx="3" fill="rgba(0,255,136,0.28)" stroke="#00ff88" stroke-width="1"/>
+            <rect x="136" y="40" width="32" height="13" rx="3" fill="rgba(0,255,136,0.28)" stroke="#00ff88" stroke-width="1"/>
+            <rect x="176" y="40" width="32" height="13" rx="3" fill="none" stroke="rgba(122,150,176,0.35)" stroke-width="1" stroke-dasharray="2.5 2.5"/>
+
+            <rect x="96" y="63" width="32" height="13" rx="3" fill="rgba(0,255,136,0.28)" stroke="#00ff88" stroke-width="1"/>
+            <rect x="136" y="63" width="32" height="13" rx="3" fill="none" stroke="rgba(122,150,176,0.35)" stroke-width="1" stroke-dasharray="2.5 2.5"/>
+            <rect x="176" y="63" width="32" height="13" rx="3" fill="rgba(240,165,0,0.24)" stroke="#f0a500" stroke-width="1"/>
+            <text x="192" y="73" fill="#f0a500" font-family="'Share Tech Mono',monospace" font-size="8" text-anchor="middle">M</text>
+
+            <rect x="96" y="86" width="32" height="13" rx="3" fill="none" stroke="rgba(122,150,176,0.35)" stroke-width="1" stroke-dasharray="2.5 2.5"/>
+            <rect x="136" y="86" width="32" height="13" rx="3" fill="rgba(0,255,136,0.28)" stroke="#00ff88" stroke-width="1"/>
+            <rect x="176" y="86" width="32" height="13" rx="3" fill="rgba(0,255,136,0.28)" stroke="#00ff88" stroke-width="1"/>
+
+            <rect x="96" y="109" width="32" height="13" rx="3" fill="rgba(0,255,136,0.28)" stroke="#00ff88" stroke-width="1"/>
+            <rect x="136" y="109" width="32" height="13" rx="3" fill="none" stroke="rgba(122,150,176,0.35)" stroke-width="1" stroke-dasharray="2.5 2.5"/>
+            <rect x="176" y="109" width="32" height="13" rx="3" fill="none" stroke="rgba(122,150,176,0.35)" stroke-width="1" stroke-dasharray="2.5 2.5"/>
+          </g>
+
+          <!-- UDP feed indicator -->
+          <line x1="16" y1="136" x2="206" y2="136" stroke="rgba(0,255,136,0.12)" stroke-width="0.8"/>
+          <circle cx="22" cy="148" r="3.5" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="1.2" class="proj-pulse"/>
+          <text x="32" y="151" fill="rgba(0,255,136,0.7)" font-family="'Share Tech Mono',monospace" font-size="7">N1MM UDP :12060</text>
+          <text x="206" y="151" fill="rgba(0,212,255,0.55)" font-family="'Share Tech Mono',monospace" font-size="7" text-anchor="end">LIVE</text>
         </svg>
       </div>
     </article>
