@@ -295,17 +295,6 @@
    dots and fingerprint totals. Nothing above is deleted.
    ============================================================ */
 
-/* Data freshness line under the hero subtitle */
-.qd-source {
-  font-family: var(--f-mono);
-  font-size: .58rem;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  color: var(--c-text-3);
-  margin-top: .35rem;
-  opacity: .85;
-}
-
 /* ── HEAT RAMP ──
    Six perceptual steps instead of four alpha values of one hue. The
    old single-hue ramp made a busy day and a quiet day look nearly

@@ -57,7 +57,6 @@ const QD = {
 
 /* ── STATE ── */
 let qdQsos = [];
-let qdMeta = { files: 0, updated: '' };
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -80,7 +79,6 @@ function loadAdif() {
     .then(r => (r.ok ? r.json() : null))
     .then(manifest => {
       const files = manifest ? manifest.files : ['logbook.adi'];
-      qdMeta = { files: files.length, updated: (manifest && manifest.updated) || '' };
       return Promise.all(files.map(f =>
         fetch(QD.adifDir + f + ts).then(r => (r.ok ? r.text() : '')).catch(() => '')
       ));
@@ -257,7 +255,6 @@ function renderAll() {
     `${qdQsos.length.toLocaleString('en-GB')} QSOs · ${fmtDate(qdQsos[0].date)} to ${fmtDate(qdQsos[qdQsos.length - 1].date)}`;
   renderKpis(stats);
   renderCalendar(stats);
-  renderSource();
   renderTrendChart(stats);
   renderDxccChart(stats);
   renderBandMixChart(stats);
@@ -560,18 +557,6 @@ function renderFingerprint(s) {
   el.innerHTML = html;
   renderHeatScale('qdFpScale', breaks, 'QSOs per hour block');
   attachTips(el);
-}
-
-/* ── DATA SOURCE / FRESHNESS LINE ──
-   Makes it visible that the page is computed from the live ADIF set on
-   every single load, so a new import shows up here immediately. */
-function renderSource() {
-  const el = document.getElementById('qdSource');
-  if (!el) return;
-  const parts = [`${qdMeta.files} ADIF file${qdMeta.files === 1 ? '' : 's'} in the manifest`];
-  if (qdMeta.updated) parts.push(`manifest synced ${qdMeta.updated}`);
-  parts.push('recomputed in your browser on every visit');
-  el.textContent = parts.join(' · ');
 }
 
 /* ── QSOs PER BAND (new 2026-07-24) ──
