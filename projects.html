@@ -13,7 +13,7 @@ extra_css:
     <h1 class="section-title">My Projects.<br><span style="color:var(--c-primary);">Radio meets code.</span></h1>
     <p class="section-sub">Amateur radio software projects — built in the open, deployed on GitHub Pages. No installation, no server, no account. Just a browser and a callsign.</p>
     <div class="hero-badges">
-      <span class="hero-badge hero-badge--green">● 6 active projects</span>
+      <span class="hero-badge hero-badge--green">● 7 active projects</span>
       <span class="hero-badge hero-badge--cyan">Open Source · GitHub Pages</span>
       <span class="hero-badge hero-badge--amber">Class C · ON3VZ</span>
     </div>
@@ -260,9 +260,6 @@ extra_css:
       </div>
     </article>
 
-  </div>
-</section>
-
     <!-- ── PROJECT 5: HF Band Scout ── -->
     <article class="proj-card proj-card--reverse" data-index="05">
       <div class="proj-card__index">05</div>
@@ -407,6 +404,110 @@ extra_css:
           <circle cx="22" cy="148" r="3.5" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="1.2" class="proj-pulse"/>
           <text x="32" y="151" fill="rgba(0,255,136,0.7)" font-family="'Share Tech Mono',monospace" font-size="7">N1MM UDP :12060</text>
           <text x="206" y="151" fill="rgba(0,212,255,0.55)" font-family="'Share Tech Mono',monospace" font-size="7" text-anchor="end">LIVE</text>
+        </svg>
+      </div>
+    </article>
+
+    <!-- ── PROJECT 7: QSObridge ── -->
+    <!-- Manual removal block: delete this whole <article> to remove the card. -->
+    <article class="proj-card proj-card--reverse" data-index="07">
+      <div class="proj-card__index">07</div>
+      <div class="proj-card__body">
+        <div class="proj-card__meta">
+          <span class="proj-tag proj-tag--green">Log Converter</span>
+          <span class="proj-tag proj-tag--cyan">ADIF · Cabrillo · EDI</span>
+          <span class="proj-tag proj-tag--amber">100% Client-Side</span>
+        </div>
+        <h2 class="proj-card__title">QSObridge</h2>
+        <p class="proj-card__desc">Read a log in almost any common format, edit it in a live grid, validate it against a contest or activation profile, and export a clean file with one click. Import ADIF, Cabrillo, EDI/REG1TEST, SOTA-CSV, FLE and generic CSV/TSV/XLSX. Split and merge columns, catch dupes, fill in DXCC and CQ/ITU zones from the callsign, and export to ADIF, Cabrillo, EDI, SOTA-CSV, JSON and more. Eighteen built-in profiles for POTA, WWFF, SOTA and the big contests. Everything runs in the browser, offline, with no backend and no telemetry. Your files never leave the device.</p>
+        <div class="proj-card__links">
+          <a href="https://on3vz.github.io/QSOBridge/" class="proj-btn proj-btn--primary" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Launch App
+          </a>
+          <a href="https://on3vz.github.io/2026/07/30/qsobridge-log-converter/" class="proj-btn proj-btn--ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Read Post
+          </a>
+          <a href="https://github.com/ON3VZ/QSOBridge" class="proj-btn proj-btn--ghost" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Source
+          </a>
+        </div>
+      </div>
+      <div class="proj-card__visual proj-card__visual--qsobridge">
+        <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" class="proj-svg">
+          <defs>
+            <radialGradient id="qsbglow" cx="50%" cy="42%" r="60%">
+              <stop offset="0%" stop-color="#f0a500" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="220" height="160" fill="url(#qsbglow)"/>
+
+          <!-- Left format labels (inputs) -->
+          <g font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(122,150,176,0.85)">
+            <rect x="10" y="34" width="42" height="14" rx="3" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+            <text x="31" y="43.5" fill="#00d4ff" text-anchor="middle">ADIF</text>
+            <rect x="10" y="56" width="42" height="14" rx="3" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+            <text x="31" y="65.5" fill="#00d4ff" text-anchor="middle">Cabrillo</text>
+            <rect x="10" y="78" width="42" height="14" rx="3" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+            <text x="31" y="87.5" fill="#00d4ff" text-anchor="middle">EDI</text>
+            <rect x="10" y="100" width="42" height="14" rx="3" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+            <text x="31" y="109.5" fill="#00d4ff" text-anchor="middle">CSV</text>
+          </g>
+
+          <!-- Convergence lines into the bridge -->
+          <g stroke="rgba(0,255,136,0.35)" stroke-width="1" fill="none">
+            <path d="M52 41 C 78 41, 82 74, 100 78"/>
+            <path d="M52 63 C 78 63, 84 76, 100 79"/>
+            <path d="M52 85 C 78 85, 84 82, 100 81"/>
+            <path d="M52 107 C 78 107, 82 86, 100 82"/>
+          </g>
+
+          <!-- Bridge core node -->
+          <g>
+            <circle cx="110" cy="80" r="16" fill="rgba(240,165,0,0.14)" stroke="#f0a500" stroke-width="1.4"/>
+            <path d="M101 84 v-3 a9 5 0 0 1 18 0 v3" fill="none" stroke="#f0a500" stroke-width="1.4"/>
+            <line x1="101" y1="84" x2="119" y2="84" stroke="#f0a500" stroke-width="1.4"/>
+            <line x1="106" y1="81" x2="106" y2="84" stroke="#f0a500" stroke-width="1"/>
+            <line x1="114" y1="81" x2="114" y2="84" stroke="#f0a500" stroke-width="1"/>
+            <circle cx="110" cy="80" r="16" fill="none" stroke="rgba(240,165,0,0.3)" stroke-width="1" class="proj-pulse"/>
+          </g>
+
+          <!-- Diverging lines to grid -->
+          <g stroke="rgba(0,255,136,0.4)" stroke-width="1" fill="none">
+            <path d="M126 76 C 146 70, 150 58, 168 56"/>
+            <path d="M126 84 C 146 90, 150 100, 168 102"/>
+          </g>
+
+          <!-- Validated grid (output) -->
+          <g>
+            <rect x="164" y="40" width="46" height="80" rx="4" fill="rgba(0,255,136,0.05)" stroke="rgba(0,255,136,0.35)" stroke-width="1"/>
+            <line x1="164" y1="56" x2="210" y2="56" stroke="rgba(0,255,136,0.25)" stroke-width="0.8"/>
+            <line x1="164" y1="72" x2="210" y2="72" stroke="rgba(0,255,136,0.25)" stroke-width="0.8"/>
+            <line x1="164" y1="88" x2="210" y2="88" stroke="rgba(0,255,136,0.25)" stroke-width="0.8"/>
+            <line x1="164" y1="104" x2="210" y2="104" stroke="rgba(0,255,136,0.25)" stroke-width="0.8"/>
+            <line x1="187" y1="40" x2="187" y2="120" stroke="rgba(0,255,136,0.25)" stroke-width="0.8"/>
+            <!-- header row highlighted amber = required field -->
+            <rect x="164" y="40" width="46" height="16" fill="rgba(240,165,0,0.16)"/>
+            <text x="176" y="51" fill="#f0a500" font-family="'Share Tech Mono',monospace" font-size="6" text-anchor="middle">RST</text>
+            <text x="199" y="51" fill="#f0a500" font-family="'Share Tech Mono',monospace" font-size="6" text-anchor="middle">ZN</text>
+            <!-- valid check marks -->
+            <g stroke="#00ff88" stroke-width="1.2" fill="none">
+              <path d="M168 65 l2 2 l3.5 -4"/>
+              <path d="M168 81 l2 2 l3.5 -4"/>
+              <path d="M168 113 l2 2 l3.5 -4"/>
+            </g>
+            <!-- one flagged cell (red) -->
+            <rect x="190" y="88" width="20" height="16" fill="none" stroke="#ff5470" stroke-width="1.1"/>
+          </g>
+
+          <!-- Footer status -->
+          <line x1="10" y1="134" x2="210" y2="134" stroke="rgba(0,255,136,0.12)" stroke-width="0.8"/>
+          <circle cx="16" cy="147" r="3.5" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="1.2" class="proj-pulse"/>
+          <text x="26" y="150" fill="rgba(0,255,136,0.7)" font-family="'Share Tech Mono',monospace" font-size="7">ALL LOCAL · IN BROWSER</text>
+          <text x="210" y="150" fill="rgba(0,212,255,0.55)" font-family="'Share Tech Mono',monospace" font-size="7" text-anchor="end">v2</text>
         </svg>
       </div>
     </article>
