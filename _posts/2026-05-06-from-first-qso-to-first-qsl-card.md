@@ -219,11 +219,11 @@ Name:           Kristof
 QTH:            Hoboken
 DXCC:           Belgium / ON
 Grid Locator:   JO21EE
-ITU Zone:       14
+ITU Zone:       27
 CQ Zone:        14
 ```
 
-> 🇧🇪 **Belgian-specific:** Belgium falls in ITU Zone 14 and CQ Zone 14. Verify your grid locator at [https://www.levinecentral.com/ham/grid_square.php](https://www.levinecentral.com/ham/grid_square.php). Always use 6 characters (JO21EE), not 4 (JO21).
+> 🇧🇪 **Belgian-specific:** Belgium falls in CQ Zone 14 and ITU Zone 27. Verify your grid locator at [https://www.levinecentral.com/ham/grid_square.php](https://www.levinecentral.com/ham/grid_square.php). Always use 6 characters (JO21EE), not 4 (JO21).
 
 ### Setting Up the CAT Link
 
@@ -364,7 +364,7 @@ Open TQSL → Station Locations → Add:
 Callsign:     ON3VZ
 DXCC Entity:  Belgium
 Grid:         JO21EE
-ITU Zone:     14
+ITU Zone:     27
 CQ Zone:      14
 ```
 → Save the generated `.tq5` file.
@@ -766,7 +766,7 @@ Configuration wizard:
 ```
 Callsign:        ON3VZ
 CQ Zone:         14
-ITU Zone:        14
+ITU Zone:        27
 Grid:            JO21EE
 ARRL Section:    DX  (for non-US stations)
 ```
@@ -880,7 +880,7 @@ A **QSL card** is the physical confirmation of a radio contact — in use since 
 - Grid locator (JO21EE)
 - DXCC country / prefix (Belgium / ON)
 - Club memberships (UBA Member / WLD / ON6WL)
-- CQ Zone and ITU Zone (14 / 14)
+- CQ Zone and ITU Zone (14 / 27)
 - Visual design (photo, illustration)
 
 **Back (QSO fill-in fields):**
