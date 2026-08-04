@@ -190,7 +190,7 @@ A handful of bureaus you will meet most often as a beginner. When in doubt, alwa
 | VA – VG, VE, VO, VY | Canada | VE |
 | JA – JS, 7J – 7N | Japan | JA |
 | VK, VH – VN, AX | Australia | VK |
-| PP – PY, PZ | Brazil | PY |
+| PP – PY | Brazil | PY |
 
 > 💡 Exotic prefix you don't recognise? QBuS will handle it. Also cross-check with the [IARU list of QSL bureaus](https://www.iaru.org/reference/qsl-bureau-2/) to confirm the bureau is still active.
 

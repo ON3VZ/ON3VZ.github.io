@@ -1241,7 +1241,7 @@ STEP 2: OmniRig
 
 STEP 3: Log4OM 2
 [ ] Download log4om.com → install
-[ ] Wizard: ON3VZ, Kristof, Hoboken, Belgium, JO21EE, ITU 14, CQ 14
+[ ] Wizard: ON3VZ, Kristof, Hoboken, Belgium, JO21EE, CQ 14, ITU 27
 [ ] Settings → CAT → OmniRig Rig 1 → Test → frequency follows? ✅
 [ ] Settings → Online Services → QRZ.com XML API key → Test lookup? ✅
 [ ] Settings → Online Services → QRZ.com Logbook API key
