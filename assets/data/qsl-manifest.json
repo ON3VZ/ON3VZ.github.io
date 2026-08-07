@@ -57,5 +57,20 @@
     "mode": "SSB",
     "freq": "14.270",
     "rst": "59"
+  },
+  {
+    "id": "ea8at-2026-07-28",
+    "image": "/assets/images/qsl/ea8at-2026-07-28.jpg",
+    "fromCall": "EA8AT",
+    "fromName": "Oscar",
+    "qth": "Mar de las Calmas, El Hierro",
+    "country": "Canary Islands",
+    "continent": "Africa",
+    "date": "2026-07-28",
+    "time": "12:47z",
+    "band": "20m",
+    "mode": "FT8",
+    "freq": "14.075",
+    "rst": "-09"
   }
 ]
