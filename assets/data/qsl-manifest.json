@@ -72,5 +72,19 @@
     "mode": "FT8",
     "freq": "14.075",
     "rst": "-09"
+  },
+  {
+    "id": "on6lc-p-2026-08-02",
+    "image": "/assets/images/qsl/on6lc-p-2026-08-02.jpg",
+    "fromCall": "ON6LC/P",
+    "fromName": "Pajottenlandse Radio Amateurs",
+    "qth": "Wolvertemse Beemden (ONFF-0499), Meise",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-08-02",
+    "time": "08:07z",
+    "band": "40m",
+    "mode": "SSB",
+    "rst": "59"
   }
 ]
