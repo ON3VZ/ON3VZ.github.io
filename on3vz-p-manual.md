@@ -267,6 +267,19 @@ Log4OM v2's Configuration Manager lets you clone a full settings profile.
 
 ### 7a. Logging a live activation directly in Log4OM, without PoLo
 
+<div class="onm-note">
+<strong>In short — what to change in Log4OM for a WWFF activation:</strong>
+In the active <strong>ON3VZ-P portable</strong> configuration, Station
+Information tab: set <code>MyGridsquare</code> to today's grid,
+<code>MY_SIG</code> to <code>WWFF</code>, and <code>MY_SIG_INFO</code> to
+the ONFF reference. If uploading to LoTW, also switch the Station ID
+(External Services → LOTW) to the matching Station Location. Every QSO
+logged while these are set inherits them, including FT8 — there's no
+per-QSO option. Clear <code>MY_SIG</code> / <code>MY_SIG_INFO</code> back
+to blank once the activation is over, or the next ordinary portable QSO
+gets tagged as WWFF too.
+</div>
+
 FT8 QSOs (via WSJT-X's UDP forwarding) land in Log4OM straight away —
 there's no ADIF import step, which also means there's no per-QSO
 opportunity to set anything. Every field that matters comes from whatever
