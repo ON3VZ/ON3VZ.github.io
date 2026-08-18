@@ -138,10 +138,12 @@ between the two calls wrong is the easiest way to end up with QSOs stuck
 in the wrong place.
 
 **QRZ.com** treats any call with an added prefix or suffix as a distinct
-call with its own logbook. I created a secondary page for ON3VZ/P, gave it
-its own logbook with a non-overlapping validity date, and generated a
-dedicated API key — with "Force Station Callsign" set to ON3VZ/P as a
-safety net against anything ever slipping through with the wrong call.
+call with its own logbook — but it's all the same account throughout, no
+second login. I added ON3VZ/P as a secondary callsign to get it its own
+bio page, then created a separate logbook tied to that callsign with a
+non-overlapping validity date, and generated a dedicated API key — with
+"Force Station Callsign" set to ON3VZ/P as a safety net against anything
+ever slipping through with the wrong call.
 
 **LoTW** works differently: one certificate per call, but they can share a
 single LoTW account. In TQSL, requesting a new certificate for ON3VZ/P

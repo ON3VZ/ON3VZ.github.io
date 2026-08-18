@@ -188,6 +188,10 @@
 
 .status-badge { display:inline-flex; align-items:center; gap:.35rem; font-family:var(--f-mono); font-size:.58rem; letter-spacing:.1rem; text-transform:uppercase; padding:.2rem .65rem; border-radius:999px; border:1px solid; }
 .status-badge--active { color:var(--c-primary); border-color:rgba(0,255,136,0.4); background:rgba(0,255,136,0.08); }
+.status-badge--qrp { color:var(--c-amber); border-color:rgba(240,165,0,0.4); background:rgba(240,165,0,0.08); }
+.equip-featured--amber::before { background:radial-gradient(ellipse at top left,rgba(240,165,0,0.06),transparent 60%); }
+.equip-featured--amber { border-left:3px solid var(--c-amber); }
+.info-callout--amber { background:rgba(240,165,0,0.05); border-left:3px solid rgba(240,165,0,0.35); }
 
 .fact-item { font-family:var(--f-mono); font-size:.63rem; color:var(--c-text-3); background:var(--c-surface-2); border:1px solid var(--c-border); padding:.2rem .6rem; border-radius:6px; }
 

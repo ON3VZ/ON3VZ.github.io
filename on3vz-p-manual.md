@@ -164,11 +164,16 @@ relationship is different on every platform:
 
 ## 3. QRZ.com
 
-1. Add ON3VZ/P as a secondary callsign under the main account (Account →
-   add callsign). It inherits the XML subscription automatically.
-2. Create a new, separate **logbook** for ON3VZ/P (Logbook → new
-   logbook). QRZ treats any prefix or suffix as a distinct call, so this
-   is not optional.
+Everything below happens inside the **same QRZ account** — one login, one
+XML subscription. Nothing here creates a second account.
+
+1. Account → **Secondary Callsigns** → add ON3VZ/P. This is what gives
+   the call its own bio page under the existing login.
+2. Logbook → new **logbook**, tied to ON3VZ/P. This step matters
+   regardless of step 1: QRZ ties every logbook to exactly one callsign,
+   one location and one date range, and a slashed variant is a distinct
+   callsign for that purpose — so it needs its own logbook even though
+   it's the same account and the same person behind both calls.
 3. Set a non-overlapping **Valid-From / Valid-To** date range for the new
    logbook, and set DXCC, grid, etc.
 4. Copy the logbook's own **API key** into a password manager — never
@@ -260,6 +265,58 @@ Log4OM v2's Configuration Manager lets you clone a full settings profile.
    (`STATION_CALLSIGN`, `OPERATOR`, `MY_GRIDSQUARE`, `TX_PWR`,
    `MY_SIG`/`MY_SIG_INFO`), then delete it.
 
+### 7a. Logging a live activation directly in Log4OM, without PoLo
+
+FT8 QSOs (via WSJT-X's UDP forwarding) land in Log4OM straight away —
+there's no ADIF import step, which also means there's no per-QSO
+opportunity to set anything. Every field that matters comes from whatever
+is sitting in the **active configuration's Station Information tab** at
+the moment the QSO is logged, not from anything typed per contact. That
+changes the workflow compared to a PoLo session:
+
+**Before the session:**
+1. Load the **ON3VZ-P portable** configuration (check the title bar).
+2. Station Information: update **`MyGridsquare`** to today's location.
+   This is easy to confuse with the plain `Gridsquare` field, which is
+   the *other* station's grid, not yours — Log4OM's own bulk QSO editor
+   has both fields side by side for exactly this reason.
+3. If, and only if, this session is an actual WWFF activation: in
+   Station Information / My References (Award Manager), set
+   `MY_SIG = WWFF` and `MY_SIG_INFO = ONFF-xxxx`. Leave both blank for
+   ordinary portable operating that isn't a registered activation.
+4. Confirm WSJT-X's UDP forwarding still points at this configuration
+   (§8.5) — a fresh clone occasionally reverts the address/port.
+
+**After the session:**
+5. If `MY_SIG` / `MY_SIG_INFO` were filled in for the activation, clear
+   them again once it's over — the ON3VZ-P portable configuration is
+   shared with ordinary (non-activation) portable operating, and the
+   next QSO logged with those fields still set would be mistakenly
+   tagged as a WWFF contact too.
+6. Switch the LoTW Station ID dropdown to match today's location before
+   uploading (§7.7, §10) — a separate fixed field from the grid in step
+   2, and the one that actually signs the QSOs.
+
+<div class="onm-table-wrap" markdown="1">
+
+| Question | Short answer |
+|---|---|
+| Does PoLo need a new activation set up every time? | Yes — that's inherent to how PoLo works: every session is a new "Operation," with the WWFF/POTA/SOTA reference attached to it. |
+| Does Log4OM need anything set "per activation" too? | Yes, but differently: no Operation concept — just `MyGridsquare` and `MY_SIG`/`MY_SIG_INFO` in Station Information, valid for every QSO logged until changed back. |
+| How is an FT8 QSO marked as a WWFF activation, since the mode can't carry it? | It isn't marked per QSO at all — the whole session inherits whatever `MY_SIG`/`MY_SIG_INFO` was set in Station Information before the first QSO. |
+
+</div>
+
+<div class="onm-note">
+Some activators sidestep steps 2, 3 and 5 entirely by cloning a fresh
+Log4OM configuration <em>per site</em> — a "Roy" configuration, an
+"Alouette" configuration, each with its own fixed grid and reference —
+instead of reusing one shared portable configuration. More
+configurations to keep track of, but nothing to remember to reset
+afterward. Worth considering once activations become more frequent than
+"once every few weeks."
+</div>
+
 ## 8. WSJT-X: portable configuration
 
 1. **File → Settings → Configurations → Clone**, rename to `Portable`.
@@ -291,9 +348,12 @@ Log4OM v2's Configuration Manager lets you clone a full settings profile.
    **per activation/operation**, not as a single global field, since the
    station call can change between activations.
 2. Default power = 5 W; optionally a fixed `5W QRP` note.
-3. New Activation: choose type (WWFF/POTA/SOTA/none), enter the
-   reference and gridsquare. For ordinary portable operating without a
-   reference, leave the activation field blank.
+3. Every session in PoLo is a new **Operation** — add one, then attach
+   the specific activation(s) to it (WWFF/POTA/SOTA reference and
+   gridsquare; a single outing can carry more than one, e.g. a WWFF
+   reference that's also a POTA park). For ordinary portable operating
+   without any reference, create the Operation and leave the activation
+   field blank.
 4. **Data Files**: Settings → Data Settings → Data Files → refresh. These
    are the official WWFF/POTA/SOTA reference lists, maintained by those
    programmes — PoLo only downloads them; nothing here is user-authored.
@@ -335,7 +395,12 @@ not the risky step; the upload afterwards is.
    configuration (check the title bar).
 2. Import the ADIF file (File → Import ADIF).
 3. Spot-check two or three imported records for `STATION_CALLSIGN =
-   ON3VZ/P`.
+   ON3VZ/P`. For a WWFF session, check `MY_SIG` and `MY_SIG_INFO` on the
+   same records too — PoLo's export does include the WWFF fields, but
+   Log4OM's ADIF import doesn't always carry Ham2K-formatted SIG data
+   through cleanly on every version; other Log4OM/PoLo users have
+   reported needing to fix these fields via QSO Manager after import, so
+   it's worth confirming rather than assuming.
 4. The QRZ "Force Station Callsign" setting (§3.5) acts as a backstop
    even if something slipped through.
 5. Upload to QRZ: select the imported QSOs, right-click, upload selection
@@ -380,6 +445,10 @@ optional — it's the core strategy.
   one. Re-posting out of impatience does nothing.
 
 ## 12. WWFF submission
+
+<div class="onm-note">
+<strong>In short:</strong> export an ADIF of just that activation, name it exactly right, attach photos, and email it to the ONFF coordinator. No web upload tool — it's a person, not a form.
+</div>
 
 1. Confirm activation validity: **minimum 60 minutes** on air from the
    first logged QSO; **44 QSOs** normally required, with a QRP exception
@@ -454,4 +523,6 @@ optional — it's the core strategy.
 .onm-rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.6rem 0 2rem;}
 .onm-rel-card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:0.8rem;}
 .onm-rel-label{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.06rem;color:var(--c-text-3);text-align:center;margin-top:0.4rem;text-transform:uppercase;}
+.onm-note{border-left:3px solid var(--c-amber);background:rgba(240,165,0,0.06);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0 1.8rem;font-size:0.92rem;color:var(--c-text-2);}
+.onm-note strong{color:var(--c-amber);}
 </style>
