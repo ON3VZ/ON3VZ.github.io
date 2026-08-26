@@ -315,6 +315,10 @@ These are the things I want to have internalised before I care about contacts. M
 <li><strong>Watch the USB side.</strong> A laptop connected by USB shares a ground with the radio, and that connection can carry RF back into the audio chain. Short cable, ferrites on the coax, and if strange things happen on transmit, suspect common mode before you suspect the software.</li>
 <li><strong>Set the microphone level deliberately.</strong> The QMX has mic gain, equalisation and compression settings for SSB. Too much gain on a 5 watt signal makes you harder to copy, not louder. Set it once, at home, and leave it.</li>
 <li><strong>Use practice mode for testing.</strong> The QMX can go through the motions without radiating, which is exactly what you want while learning the menus.</li>
+<li><strong>Enable the SWR cutout in software too.</strong> "Halt Tx when SWR is above 2.5" in WSJT-X, on top of the QMX's own sweep before the first transmission on every band.</li>
+<li><strong>Poll fast enough to keep up with yourself.</strong> Two to three seconds, not the default ten, so the software never lags a band change made on the radio.</li>
+<li><strong>Do not take a release candidate into a field.</strong> Revert Hamlib to the last stable version before an activation, or test the candidate at home first.</li>
+<li><strong>Check the callsign and grid in the title bar before transmitting.</strong> A wrong grid is a silent error: everything works, and every distance and every confirmation is simply wrong.</li>
 </ul>
 
 ## Extra ferrites on the feedline
@@ -335,6 +339,27 @@ This deserves its own heading, because in a field, at dusk, with cold hands, mem
 - **Put a card in the bag.** A laminated card with the band and link table, the trim link answer once I have measured it, and the start up order: check converter output, connect radio, check SWR, then transmit.
 
 Everything on that list costs a few minutes at the kitchen table and prevents the kind of error that only reveals itself as a mysterious high SWR when you are already set up.
+
+## Setting up WSJT-X for the portable station
+
+The other half of a portable station is the software, and it deserves its own configuration rather than a handful of settings changed by hand each time. WSJT-X can clone a configuration, so the shack setup stays untouched and a separate **Portable** profile carries the callsign, the grid and the radio settings for the QMX.
+
+**The QMX needs no interface hardware at all.** One USB-C cable carries CAT control, transmit audio and receive audio. The Hamlib entry is `QRPLabs QMX`, PTT method is CAT, and the serial parameters are the ordinary 8 data bits, 1 stop bit, no handshake. The baud rate is nominal, because the port is a virtual USB serial device rather than a real line. The COM port will not be the one the shack radio uses, so it is worth checking rather than assuming.
+
+**Two settings matter more than the rest here:**
+
+- **Poll interval.** The default of 10 seconds suits a station that sits on one band all evening. Portable operating is the opposite, and with a slow poll, WSJT-X can be up to ten seconds behind after a band change made on the radio. That is precisely the window in which a transmission goes out on the wrong dial frequency. Two to three seconds closes it.
+- **Halt Tx when SWR is above 2.5.** With a linked dipole, a forgotten link means a badly mismatched antenna, and the QMX has no ATU to hide behind. This one checkbox stops the transmission before the PA has to deal with it. It sits alongside the manual SWR sweep rather than replacing it.
+
+**Two settings worth testing rather than trusting.** The WSJT-X defaults for Mode and Split Operation were designed around conventional SSB radios. The point of split is to keep the transmit audio between 1500 and 2000 Hz so that audio harmonics cannot pass through the transmit sideband filter. The QMX does not work that way: it measures the frequency of the incoming audio tone and synthesises the RF directly, so there is no sideband filter for harmonics to slip past. The defaults may work perfectly well, but if the radio drops out of digital mode on transmit, set Mode to None, and if VFO B misbehaves, switch Split to Fake It.
+
+**And one that answers my actual question.** On the Reporting tab there is an option to spot to PSK Reporter. This is the cheapest reach measurement a QRP station has, and it needs no contacts whatsoever. Call CQ, and within a few minutes pskreporter.info shows every station that decoded the signal, with distance and report, whether or not anybody came back. For a brand new antenna that is exactly the right question: not "did someone answer", but "where is this station actually being heard". It also separates two problems that feel identical from the operating position, namely nobody hearing you and nobody replying.
+
+One more thing that belongs in a field kit rather than a settings dialog: WSJT-X can update Hamlib from inside its own Radio tab, and a version string ending in "rc" is a release candidate. It may well fix something specific, but an activation is not the place to discover what else it changed.
+
+<div class="qrp-note">
+<strong>The full workflow:</strong> callsign handling across QRZ, LoTW, Club Log and QRZCQ, the two Log4OM configurations, PoLo for SSB, spotting and the WWFF submission procedure all live in the <a href="/on3vz-p-manual/">ON3VZ/P portable manual</a>, together with a printable field checklist in English and Dutch. This post is the story of the hardware; that document is the reference to come back to.
+</div>
 
 ## First power up in the field
 
@@ -397,11 +422,39 @@ This was a build and shakedown, nothing more. No QSOs were logged, deliberately.
 
 1. **First portable contacts.** Getting the callsign out on 40 m and 20 m and finding out what 5 watts into an inverted V actually achieves from JO21EE.
 2. **Making the range visible.** Every contact goes into the logbook on this site, and the map with its great circle arcs will show exactly how far this station reaches. I am genuinely curious how the QRP arcs compare with the 25 watt home station arcs.
-3. **A logging setup for portable.** I am currently configuring logging software specifically for the portable configuration, separate from the home station setup, with the right station data so nothing needs cleaning up afterwards. More on that in a later post.
-4. **Measuring the 80 m trim link** and writing the result on the card in the antenna bag.
+3. **A first PSK Reporter map.** Call CQ on 40 m and 20 m and let the reception reports draw the coverage, before a single contact is in the log.
+4. **Running the portable logging setup for real.** The configurations are built and written up in the [portable manual](/on3vz-p-manual/). What remains is using them under field conditions and finding out which steps I forget.
+5. **Measuring the 80 m trim link** and writing the result on the card in the antenna bag.
 
 There is something appealing about the fact that this is roughly how amateur radio started: a wire between two supports, a small box, and a battery. Everything else is refinement.
 
 More soon, once the log has some entries in it.
+
+<!-- ON3VZ/P downloads panel. Reversible: delete everything between
+     ONP:DL14:START and ONP:DL14:END to remove this component. -->
+<!-- ONP:DL14:START -->
+<div style="background:linear-gradient(135deg,rgba(0,255,136,0.06),rgba(0,212,255,0.04));border:1px solid rgba(0,255,136,0.22);border-radius:14px;padding:1.8rem;margin:2.5rem 0;">
+  <div style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.2rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.5rem;">Reference &amp; downloads</div>
+  <div style="font-family:var(--f-display);font-size:1.15rem;font-weight:700;color:var(--c-text);margin-bottom:0.8rem;">Take the checklist into the field.</div>
+  <p style="font-size:0.9rem;color:var(--c-text-2);margin:0 0 1.4rem;">Everything in this post that has to happen in a fixed order, on one printable sheet: the 11.50 V supply check, the link symmetry rule, the SWR sweep after every band change, and the WSJT-X settings.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0.8rem;">
+    <a href="/on3vz-p-manual/" style="display:block;background:var(--c-surface);border:1px solid var(--c-border-hard);border-radius:10px;padding:1rem 1.1rem;text-decoration:none;">
+      <div style="font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.16rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.35rem;">Reference page</div>
+      <div style="font-family:var(--f-display);font-size:0.9rem;font-weight:700;color:var(--c-primary);">Technical manual &rarr;</div>
+      <div style="font-size:0.78rem;color:var(--c-text-3);margin-top:0.3rem;">Every platform, step by step</div>
+    </a>
+    <a href="/assets/files/on3vz-p-field-checklist-en.pdf" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1rem 1.1rem;text-decoration:none;">
+      <div style="font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.16rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.35rem;">PDF &middot; English</div>
+      <div style="font-family:var(--f-display);font-size:0.9rem;font-weight:700;color:var(--c-cyan);">Field checklist (EN) &rarr;</div>
+      <div style="font-size:0.78rem;color:var(--c-text-3);margin-top:0.3rem;">Printable, WWFF / ONFF</div>
+    </a>
+    <a href="/assets/files/on3vz-p-veldchecklist-nl.pdf" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1rem 1.1rem;text-decoration:none;">
+      <div style="font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.16rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.35rem;">PDF &middot; Nederlands</div>
+      <div style="font-family:var(--f-display);font-size:0.9rem;font-weight:700;color:var(--c-cyan);">Veldchecklist (NL) &rarr;</div>
+      <div style="font-size:0.78rem;color:var(--c-text-3);margin-top:0.3rem;">Printbaar, WWFF / ONFF</div>
+    </a>
+  </div>
+</div>
+<!-- ONP:DL14:END -->
 
 73 de ON3VZ

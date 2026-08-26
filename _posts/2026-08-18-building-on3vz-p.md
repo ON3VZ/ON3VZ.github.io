@@ -22,7 +22,7 @@ tags: ['Portable', 'QRP', 'WWFF', 'ONFF', 'POTA', 'Log4OM', 'WSJT-X', 'QMX', 'Be
 .onp-inline-img figure{flex:1 1 280px;margin:0;}
 .onp-inline-img img{width:100%;height:auto;border-radius:12px;border:1px solid var(--c-border);display:block;}
 .onp-inline-img figcaption{font-family:var(--f-mono);font-size:0.68rem;color:var(--c-text-3);margin-top:0.5rem;}
-/* Flora & fauna accent — reserved for the QRZ.com card embed only */
+/* Flora & fauna accent, reserved for the QRZ.com card embed only */
 .onp-qrz-wrap{margin:2rem 0;}
 .onp-qrz-label{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.18rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.8rem;}
 </style>
@@ -44,12 +44,12 @@ tags: ['Portable', 'QRP', 'WWFF', 'ONFF', 'POTA', 'Log4OM', 'WSJT-X', 'QMX', 'Be
 For the last while, most of my radio energy has gone into the shack: sorting
 out the antenna, chasing down noise, getting the logging chain between
 Log4OM, QRZ.com, Club Log and LoTW to run cleanly. That part is done now,
-and it left me with an itch I hadn't expected — I wanted to take a station
+and it left me with an itch I hadn't expected, I wanted to take a station
 *outside*.
 
 Two things pulled me in that direction at the same time. With my family,
 we go every summer to our holiday house in Roy, near Marche-en-Famenne,
-in the Belgian Ardennes — an obvious place to operate from on quiet
+in the Belgian Ardennes, an obvious place to operate from on quiet
 afternoons. And somewhere on
 Facebook I kept running into activation reports from the WWFF (Worldwide
 Flora & Fauna) programme: people setting up in forests and nature reserves,
@@ -62,27 +62,27 @@ that out, from a complete standing start.
 I didn't want a scaled-down version of the shack. I wanted something built
 for the constraint of a backpack:
 
-- **QRP Labs QMX**, 5 W, covering 60/40/30/20/17/15 m — CW, digital and SSB
+- **QRP Labs QMX**, 5 W, covering 60/40/30/20/17/15 m, CW, digital and SSB
   in one small radio with a single USB-C connection for both CAT and audio.
 - **SOTAbeams Band Hopper IV** linked dipole, run as an inverted V on a
   10 m mast. I already owned the IV (20/30/40/80 m); the 80 m section
   stays coiled on its winder since the QMX doesn't cover that band and an
   80 m dipole needs more clear span than most forest clearings offer.
   Effectively I run it as a III: 40/30/20 m, full size, no ATU, no loading
-  coils — every milliwatt of those 5 watts goes into the air, not into a
+  coils, every milliwatt of those 5 watts goes into the air, not into a
   matching network.
 - A **G7UFO Turret** mini microphone for SSB.
 - Logging on the same laptop that runs my shack station, plus an iPad and
   phone for sessions where the laptop stays home.
 
-5 watts is not a limit imposed by my licence — it's the radio. That single
+5 watts is not a limit imposed by my licence, it's the radio. That single
 fact shaped almost every decision downstream: which mode to start with,
 how the antenna gets built, and how I present myself on the air.
 
 <div class="onp-inline-img">
   <figure>
     <img src="/assets/images/qrp-portable-qmx-closeup.jpg" alt="QRP Labs QMX transceiver in the field with RG174 feedline and clip-on ferrites">
-    <figcaption>The QMX itself — same radio, same feedline, now carrying a second callsign.</figcaption>
+    <figcaption>The QMX itself, same radio, same feedline, now carrying a second callsign.</figcaption>
   </figure>
   <figure>
     <svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0d1428;border:1px solid rgba(0,255,136,0.10);border-radius:12px;">
@@ -118,11 +118,11 @@ how the antenna gets built, and how I present myself on the air.
 
 ## Why /P, and not /QRP
 
-My first instinct was to operate as ON3VZ/QRP — it felt descriptive. It
+My first instinct was to operate as ON3VZ/QRP, it felt descriptive. It
 turns out that's the wrong call for this. ONFF's activator ranking
 requires a station to sign /p or /m; /QRP isn't a recognised suffix and
 wouldn't count toward that ranking, on top of which every additional
-variant call multiplies the administration — a separate QRZ logbook, a
+variant call multiplies the administration, a separate QRZ logbook, a
 separate LoTW certificate, a separate entry in Club Log.
 
 So I operate as **ON3VZ/P**, and I make the QRP status visible another
@@ -132,28 +132,28 @@ and it's stated plainly on my QRZ.com page.
 
 ## Getting the accounts right
 
-A portable call isn't just a label — on most of these platforms it's a
+A portable call isn't just a label, on most of these platforms it's a
 second identity that needs its own setup, and getting the relationship
 between the two calls wrong is the easiest way to end up with QSOs stuck
 in the wrong place.
 
 **QRZ.com** treats any call with an added prefix or suffix as a distinct
-call with its own logbook — but it's all the same account throughout, no
+call with its own logbook, but it's all the same account throughout, no
 second login. I added ON3VZ/P as a secondary callsign to get it its own
 bio page, then created a separate logbook tied to that callsign with a
-non-overlapping validity date, and generated a dedicated API key — with
+non-overlapping validity date, and generated a dedicated API key, with
 "Force Station Callsign" set to ON3VZ/P as a safety net against anything
 ever slipping through with the wrong call.
 
 **LoTW** works differently: one certificate per call, but they can share a
 single LoTW account. In TQSL, requesting a new certificate for ON3VZ/P
-means answering "what is this for?" — the correct answer is **None of
+means answering "what is this for?". The correct answer is **None of
 these apply** (not "replaces my existing callsign", which would retire
 ON3VZ). Because the request is signed with my existing ON3VZ certificate,
 it skips the manual paperwork entirely and typically clears in a few days.
 
 **Club Log** flips the QRZ logic: one account, multiple calls added under
-it, optionally linked together for combined DXCC credit — never a second
+it, optionally linked together for combined DXCC credit, never a second
 account.
 
 **QRZCQ.com** got the same treatment as QRZ: an alias callsign, its own
@@ -161,7 +161,7 @@ profile text, `5W QRP` in the short comment field so it travels with
 lookups.
 
 I built the ON3VZ/P QRZ.com bio page as its own thing rather than a copy
-of my home page — dark green, flora-and-fauna palette, the field station
+of my home page, dark green, flora-and-fauna palette, the field station
 photo as the header image, the 5 W QRP badge as the one warm accent on
 the page. It's meant to look, at a glance, like a different kind of
 station than the shack.
@@ -201,8 +201,8 @@ station than the shack.
 ## One master log, two configurations
 
 The temptation with a second call is to think you need a second logbook.
-You don't, and you don't want one. Log4OM holds a single database — my
-entire operating history in one place — and I run **two configurations**
+You don't, and you don't want one. Log4OM holds a single database with my
+entire operating history in one place, and I run **two configurations**
 against it: the shack configuration (ON3VZ, IC-7300, home grid) and a
 portable one (ON3VZ/P, QMX, whichever grid I'm operating from that day).
 
@@ -210,7 +210,7 @@ Switching configuration switches everything that matters: station call,
 operator call, gridsquare, default TX power (5 W), the QRZ API key it
 uploads to, and which LoTW/TQSL Station Location it signs with. WWFF's
 `MY_SIG` / `MY_SIG_INFO` fields stay empty for ordinary portable operating
-and only get filled in — `WWFF` / `ONFF-xxxx` — for an actual activation.
+and only get filled in as `WWFF` / `ONFF-xxxx` for an actual activation.
 
 The one habit this setup demands, without exception: **check the title
 bar before you touch the key.** Forgetting to switch configuration is the
@@ -238,7 +238,7 @@ the wrong call, signed by the wrong certificate.
 
     <!-- log4om -->
     <rect x="140" y="162" width="360" height="100" rx="8" fill="#111d35" stroke="rgba(0,255,136,0.6)" stroke-width="1.5"/>
-    <text x="320" y="196" text-anchor="middle" fill="#00ff88" font-family="Orbitron, monospace" font-size="15">Log4OM — master log</text>
+    <text x="320" y="196" text-anchor="middle" fill="#00ff88" font-family="Orbitron, monospace" font-size="15">Log4OM, master log</text>
     <text x="320" y="218" text-anchor="middle" fill="#b0c4d8" font-family="Share Tech Mono, monospace" font-size="11">one database, two configurations</text>
     <text x="320" y="238" text-anchor="middle" fill="#7a96b0" font-family="Share Tech Mono, monospace" font-size="10">shack (ON3VZ) &middot; portable (ON3VZ/P)</text>
 
@@ -289,19 +289,19 @@ the wrong call, signed by the wrong certificate.
   <figcaption>Two sources, one master log, five destinations. Only the WWFF path is a manual step.</figcaption>
 </figure>
 
-The full breakdown of each platform's setup — and the horizontal version of
-this diagram with every field explained — is in the
+The full breakdown of each platform's setup, and the horizontal version of
+this diagram with every field explained, is in the
 [technical manual](/on3vz-p-manual/), linked again at the bottom of this
 post.
 
 ## WSJT-X, and a myth about /P in FT8
 
 I'd assumed a compound call like ON3VZ/P would drop out of FT8's grid
-field entirely — that turned out to be wrong. ON3VZ/P is a *type-2*
+field entirely, that turned out to be wrong. ON3VZ/P is a *type-2*
 compound callsign, and WSJT-X's "Full call in Tx3" message generation
 handles it as such: my CQ actually reads `CQ ON3VZ/P JO20`, grid and all.
 
-What FT8 genuinely can't do is carry `5W QRP` inside the exchange — a
+What FT8 genuinely can't do is carry `5W QRP` inside the exchange. A
 message is 77 bits, already spent on callsigns and a grid. That
 information travels a different way: through the spot, not the signal.
 
@@ -309,19 +309,19 @@ The portable WSJT-X configuration mirrors Log4OM: My Call ON3VZ/P, grid
 set per location, the QMX selected as rig, UDP forwarding into Log4OM so
 a field QSO lands straight in the master log without a manual import
 step. A separate configuration also means the Reporting tab needed a
-second look — automatic logging in WSJT-X only fires with "Contesting
+second look, automatic logging in WSJT-X only fires with "Contesting
 only" switched off, which is worth checking on the home configuration too.
 
 ## PoLo for the SSB sessions
 
-For the sessions where the laptop stays home, I use **PoLo — Ham2K
-Portable Logger** on an iPad and phone: operator/station call set the
+For the sessions where the laptop stays home, I use **PoLo** (Ham2K
+Portable Logger) on an iPad and phone: operator/station call set the
 same way as everywhere else, 5 W as the default power, offline data files
 refreshed at home over wifi (there's no signal in most of these forests
 to fetch them later), and the built-in "Hams of Note" file for
 recognising other activators and volunteers on sight.
 
-PoLo has no live link to Log4OM the way WSJT-X does — it exports ADIF,
+PoLo has no live link to Log4OM the way WSJT-X does. It exports ADIF,
 and that file gets imported by hand afterwards. Multi-device sync between
 phone and iPad exists (Ham2K Log Filer / "LoFi") but only for QSO data,
 not settings, and it's young enough that I don't fully trust it yet for a
@@ -334,7 +334,7 @@ found *is* the strategy, and that happens through spotting, not through
 signal strength.
 
 WWFF runs its own service, **Spotline** (spots.wwff.co), released in
-2025 — log in with your callsign, post frequency, mode, and a comment
+2025, log in with your callsign, post frequency, mode, and a comment
 carrying the reference and `5W QRP`. Registering the activation on the
 WWFF agenda beforehand means Spotline can auto-populate spots during the
 scheduled window, and once I'm operating CW, the Reverse Beacon Network
@@ -342,17 +342,17 @@ will spot me automatically without me touching a keyboard. There's also
 a **smartWWFF** app for phone and tablet, and PoLo can spot directly to
 Spotline and POTA. One rule worth knowing: a spot counts as a duplicate
 at the same frequency (±1 kHz), same call and reference, within 10
-minutes of the last one — re-clicking out of nerves does nothing.
+minutes of the last one, re-clicking out of nerves does nothing.
 
 ## The gotcha that would have bitten me later
 
 Here's the one mistake I'm glad I caught before it happened rather than
 after: Log4OM's LoTW/TQSL link points at **one fixed Station Location**
-per configuration — for me, "Roy vakantiehuis JO20qe". It doesn't read
+per configuration, for me, "Roy vakantiehuis JO20qe". It doesn't read
 the grid out of each QSO and pick the right location automatically.
 
 <div class="onp-note">
-<strong>That's harmless while every activation happens from Roy.</strong> It stops being harmless the day I drive out to an actual ONFF reference, log a session there, and upload without first switching that Station Location field — Log4OM would sign those QSOs with Roy's grid, and LoTW would carry the wrong location for every one of them. So that switch is now a fixed step in my post-activation routine, done before any upload, every time the location has changed.
+<strong>That's harmless while every activation happens from Roy.</strong> It stops being harmless the day I drive out to an actual ONFF reference, log a session there, and upload without first switching that Station Location field, Log4OM would sign those QSOs with Roy's grid, and LoTW would carry the wrong location for every one of them. So that switch is now a fixed step in my post-activation routine, done before any upload, every time the location has changed.
 </div>
 
 ## What's next
@@ -360,7 +360,7 @@ the grid out of each QSO and pick the right location automatically.
 The KMZ file with all official ONFF reference boundaries is going onto
 my phone and iPad, so I can confirm I'm actually inside a reference
 before I ever key up. First real target: **ONFF-0599, Carrière de
-l'Alouette**. And CW is the next mode to bring into the mix — between the
+l'Alouette**. And CW is the next mode to bring into the mix, between the
 Reverse Beacon Network's automatic spotting and roughly two S-points of
 QRP advantage over SSB, it's the natural next step for a 5-watt station.
 
@@ -373,7 +373,7 @@ in English, and a printable field checklist in both English and Dutch.
 <div style="background:linear-gradient(135deg,rgba(0,255,136,0.06),rgba(0,212,255,0.04));border:1px solid rgba(0,255,136,0.22);border-radius:14px;padding:1.8rem;margin:2.5rem 0;">
   <div style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.2rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.5rem;">📎 Reference &amp; downloads</div>
   <div style="font-family:var(--f-display);font-size:1.15rem;font-weight:700;color:var(--c-text);margin-bottom:0.8rem;">The full manual, and a checklist for the field.</div>
-  <p style="font-size:0.9rem;color:var(--c-text-2);margin:0 0 1.4rem;">The manual is the complete step-by-step reference behind this build — QRZ, LoTW, Club Log, QRZCQ, Log4OM, WSJT-X and PoLo, spelled out platform by platform. The checklist is the condensed, printable version to fold into the antenna bag.</p>
+  <p style="font-size:0.9rem;color:var(--c-text-2);margin:0 0 1.4rem;">The manual is the complete step-by-step reference behind this build: QRZ, LoTW, Club Log, QRZCQ, Log4OM, WSJT-X and PoLo, spelled out platform by platform. The checklist is the condensed, printable version to fold into the antenna bag.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0.8rem;">
     <a href="/on3vz-p-manual/" style="display:block;background:var(--c-surface);border:1px solid var(--c-border-hard);border-radius:10px;padding:1rem 1.1rem;text-decoration:none;">
       <div style="font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.16rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.35rem;">Reference page</div>

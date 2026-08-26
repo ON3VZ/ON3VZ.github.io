@@ -31,7 +31,7 @@ It helps to keep three things distinct from the start:
 
 </div>
 
-The field log is disposable — it gets absorbed into the master log the
+The field log is disposable. It gets absorbed into the master log the
 moment you're home. The WWFF submission is an *export*, not a separate
 logbook. There is exactly one database that matters long-term: the one in
 Log4OM.
@@ -68,7 +68,7 @@ Log4OM.
     <text x="490" y="197" text-anchor="middle" fill="#b0c4d8" font-family="Share Tech Mono, monospace" font-size="11">two configurations:</text>
     <text x="490" y="217" text-anchor="middle" fill="#7a96b0" font-family="Share Tech Mono, monospace" font-size="10">shack (ON3VZ) / portable (ON3VZ/P)</text>
     <text x="490" y="255" text-anchor="middle" fill="#7a96b0" font-family="Share Tech Mono, monospace" font-size="10">upload routed by active config,</text>
-    <text x="490" y="270" text-anchor="middle" fill="#7a96b0" font-family="Share Tech Mono, monospace" font-size="10">not by the imported grid — see §10</text>
+    <text x="490" y="270" text-anchor="middle" fill="#7a96b0" font-family="Share Tech Mono, monospace" font-size="10">not by the imported grid, see §10</text>
 
     <!-- right targets, stacked -->
     <rect x="700" y="42" width="260" height="76" rx="8" fill="#111d35" stroke="rgba(0,255,136,0.45)"/>
@@ -114,7 +114,7 @@ ONFF requires a station to sign **/p or /m** to count toward the annual
 activator ranking. In the log, the station call is what was actually
 used on air (ON3VZ/P); the operator call is the same person without the
 suffix (ON3VZ). A suffix like /QRP is not a recognised designator and
-does not qualify for that ranking — QRP status is instead carried in the
+does not qualify for that ranking, QRP status is instead carried in the
 `TX_PWR` field, in spot comments, and in profile text, never in the call
 itself.
 
@@ -129,7 +129,7 @@ relationship is different on every platform:
       <text x="50" y="47" text-anchor="middle" fill="#eaf3ec" font-family="Share Tech Mono, monospace" font-size="12">ON3VZ</text>
       <rect x="130" y="20" width="80" height="46" rx="6" fill="#111d35" stroke="#00ff88" stroke-width="1.5"/>
       <text x="170" y="47" text-anchor="middle" fill="#eaf3ec" font-family="Share Tech Mono, monospace" font-size="12">ON3VZ/P</text>
-      <text x="110" y="100" text-anchor="middle" fill="#7a96b0" font-family="Share Tech Mono, monospace" font-size="10">no link — separate</text>
+      <text x="110" y="100" text-anchor="middle" fill="#7a96b0" font-family="Share Tech Mono, monospace" font-size="10">no link, separate</text>
       <text x="110" y="114" text-anchor="middle" fill="#7a96b0" font-family="Share Tech Mono, monospace" font-size="10">logbook each</text>
     </svg>
     <div class="onm-rel-label">QRZ.com</div>
@@ -164,7 +164,7 @@ relationship is different on every platform:
 
 ## 3. QRZ.com
 
-Everything below happens inside the **same QRZ account** — one login, one
+Everything below happens inside the **same QRZ account**, one login, one
 XML subscription. Nothing here creates a second account.
 
 1. Account → **Secondary Callsigns** → add ON3VZ/P. This is what gives
@@ -172,18 +172,17 @@ XML subscription. Nothing here creates a second account.
 2. Logbook → new **logbook**, tied to ON3VZ/P. This step matters
    regardless of step 1: QRZ ties every logbook to exactly one callsign,
    one location and one date range, and a slashed variant is a distinct
-   callsign for that purpose — so it needs its own logbook even though
+   callsign for that purpose, so it needs its own logbook even though
    it's the same account and the same person behind both calls.
 3. Set a non-overlapping **Valid-From / Valid-To** date range for the new
    logbook, and set DXCC, grid, etc.
-4. Copy the logbook's own **API key** into a password manager — never
+4. Copy the logbook's own **API key** into a password manager, never
    into a plain text file on a laptop that travels.
 5. In Log4OM's External Services → QRZ.COM tab, set **Force Station
    Callsign** to `ON3VZ/P`. QRZ silently discards QSOs whose station call
    doesn't match the registered call for that logbook; this field is the
    safety net against anything slipping through with the wrong call.
-6. Write the bio page as its own page, not a copy of the home page —
-   distinct visual identity, `5W QRP` stated up front, equipment list for
+6. Write the bio page as its own page, not a copy of the home page, distinct visual identity, `5W QRP` stated up front, equipment list for
    the field station.
 
 ## 4. LoTW (via TQSL)
@@ -192,10 +191,10 @@ XML subscription. Nothing here creates a second account.
 2. Callsign `ON3VZ/P`, DXCC Belgium, QSO begin date = today or first
    planned activation, end date left blank.
 3. On the "What is this Callsign Certificate for?" screen, select
-   **None of these apply**. (Not "replaces my existing callsign" — that
+   **None of these apply**. (Not "replaces my existing callsign". That
    would retire the original call. Not "former callsign" either.)
 4. When asked whether to add this to an existing LoTW account, select the
-   existing **ON3VZ** account rather than creating a new one — this keeps
+   existing **ON3VZ** account rather than creating a new one. This keeps
    DXCC/WAS progress unified under one login.
 5. Sign the request with the existing ON3VZ certificate. This routes it
    through automatic processing (no manual ID/licence upload needed);
@@ -205,7 +204,7 @@ XML subscription. Nothing here creates a second account.
    Downloads afterwards.
 7. Create a **Station Location** per operating location, named by place
    and grid rather than by call (e.g. "Roy vakantiehuis JO20qe",
-   "ONFF-0599 Alouette JO20xx") — DXCC Belgium, CQ 14, ITU 27, correct
+   "ONFF-0599 Alouette JO20xx"), DXCC Belgium, CQ 14, ITU 27, correct
    gridsquare.
 8. Back up certificates and station locations (File → Backup) to
    somewhere off the laptop.
@@ -217,7 +216,7 @@ Unlike QRZ, Club Log keeps **one account, multiple calls**:
 1. Settings → Callsigns → add `ON3VZ/P`.
 2. Settings → Linking → link ON3VZ/P to ON3VZ for combined DXCC credit in
    league tables (only possible within the same DXCC entity).
-3. Logs stay separate per call automatically — never manually move QSOs
+3. Logs stay separate per call automatically, never manually move QSOs
    between them.
 4. No separate API key: Log4OM uses the same Club Log email/password for
    every call; the callsign in the active configuration determines which
@@ -228,7 +227,7 @@ Unlike QRZ, Club Log keeps **one account, multiple calls**:
 1. Account → add ON3VZ/P as a secondary/alias callsign.
 2. Switch to it via the callsign picker and confirm DXCC and profile
    details.
-3. Put `5W QRP portable — WWFF/ONFF` in the short comment/description
+3. Put `5W QRP portable, WWFF/ONFF` in the short comment/description
    field (this is what shows up in lookups); the fuller station and
    equipment description goes in Biography/Equipment.
 
@@ -236,7 +235,7 @@ Unlike QRZ, Club Log keeps **one account, multiple calls**:
 
 Log4OM v2's Configuration Manager lets you clone a full settings profile.
 
-1. **Back up first** — copy the whole Log4OM data folder somewhere safe
+1. **Back up first**, copy the whole Log4OM data folder somewhere safe
    before touching anything.
 2. Clone the existing configuration, name the copy `ON3VZ-P portable`.
 3. **Station Information**: Station Callsign `ON3VZ/P`, Operator Callsign
@@ -245,19 +244,18 @@ Log4OM v2's Configuration Manager lets you clone a full settings profile.
 4. **Station configuration**: add the QMX + Band Hopper IV as a distinct
    rig/antenna pair (separate from the shack's IC-7300 + HyEndFed), with
    default TX power **5 W**.
-5. **Confirmations** tab: set the default confirmation type per service —
-   LOTW and QRZCOM should be `Sent = Requested` (this must match the
+5. **Confirmations** tab: set the default confirmation type per service, LOTW and QRZCOM should be `Sent = Requested` (this must match the
    upload flag configured under External Services, or new QSOs won't be
    picked up for automatic upload); QSL (paper) stays `No` unless you
-   intend to send a card for every contact. `Rcvd` always stays `No` — it
+   intend to send a card for every contact. `Rcvd` always stays `No`. It
    gets filled by the confirmation service itself, never set manually in
-   advance. Click the save (floppy disk) icon for each type — this is a
+   advance. Click the save (floppy disk) icon for each type. This is a
    separate save from the top-level "Save config".
 6. **External Services → QRZ.COM**: paste the ON3VZ/P logbook's API key,
    set Force Station Callsign to `ON3VZ/P`.
 7. **External Services → LOTW**: point the Station ID dropdown at the
    correct TQSL Station Location for the current operating location.
-   **This field does not update itself per QSO** — see §10 below for why
+   **This field does not update itself per QSO**, see §10 below for why
    that matters.
 8. Leave `MY_SIG` / `MY_SIG_INFO` empty by default; fill them in
    (`WWFF` / `ONFF-xxxx`) only for an actual WWFF activation.
@@ -268,20 +266,19 @@ Log4OM v2's Configuration Manager lets you clone a full settings profile.
 ### 7a. Logging a live activation directly in Log4OM, without PoLo
 
 <div class="onm-note">
-<strong>In short — what to change in Log4OM for a WWFF activation:</strong>
+<strong>In short, what to change in Log4OM for a WWFF activation:</strong>
 In the active <strong>ON3VZ-P portable</strong> configuration, Station
 Information tab: set <code>MyGridsquare</code> to today's grid,
 <code>MY_SIG</code> to <code>WWFF</code>, and <code>MY_SIG_INFO</code> to
 the ONFF reference. If uploading to LoTW, also switch the Station ID
 (External Services → LOTW) to the matching Station Location. Every QSO
-logged while these are set inherits them, including FT8 — there's no
+logged while these are set inherits them, including FT8, there's no
 per-QSO option. Clear <code>MY_SIG</code> / <code>MY_SIG_INFO</code> back
 to blank once the activation is over, or the next ordinary portable QSO
 gets tagged as WWFF too.
 </div>
 
-FT8 QSOs (via WSJT-X's UDP forwarding) land in Log4OM straight away —
-there's no ADIF import step, which also means there's no per-QSO
+FT8 QSOs (via WSJT-X's UDP forwarding) land in Log4OM straight away, there's no ADIF import step, which also means there's no per-QSO
 opportunity to set anything. Every field that matters comes from whatever
 is sitting in the **active configuration's Station Information tab** at
 the moment the QSO is logged, not from anything typed per contact. That
@@ -291,40 +288,39 @@ changes the workflow compared to a PoLo session:
 1. Load the **ON3VZ-P portable** configuration (check the title bar).
 2. Station Information: update **`MyGridsquare`** to today's location.
    This is easy to confuse with the plain `Gridsquare` field, which is
-   the *other* station's grid, not yours — Log4OM's own bulk QSO editor
+   the *other* station's grid, not yours, Log4OM's own bulk QSO editor
    has both fields side by side for exactly this reason.
 3. If, and only if, this session is an actual WWFF activation: in
    Station Information / My References (Award Manager), set
    `MY_SIG = WWFF` and `MY_SIG_INFO = ONFF-xxxx`. Leave both blank for
    ordinary portable operating that isn't a registered activation.
 4. Confirm WSJT-X's UDP forwarding still points at this configuration
-   (§8.5) — a fresh clone occasionally reverts the address/port.
+   (§8.5), a fresh clone occasionally reverts the address/port.
 
 **After the session:**
 5. If `MY_SIG` / `MY_SIG_INFO` were filled in for the activation, clear
-   them again once it's over — the ON3VZ-P portable configuration is
+   them again once it's over, the ON3VZ-P portable configuration is
    shared with ordinary (non-activation) portable operating, and the
    next QSO logged with those fields still set would be mistakenly
    tagged as a WWFF contact too.
 6. Switch the LoTW Station ID dropdown to match today's location before
-   uploading (§7.7, §10) — a separate fixed field from the grid in step
+   uploading (§7.7, §10), a separate fixed field from the grid in step
    2, and the one that actually signs the QSOs.
 
 <div class="onm-table-wrap" markdown="1">
 
 | Question | Short answer |
 |---|---|
-| Does PoLo need a new activation set up every time? | Yes — that's inherent to how PoLo works: every session is a new "Operation," with the WWFF/POTA/SOTA reference attached to it. |
-| Does Log4OM need anything set "per activation" too? | Yes, but differently: no Operation concept — just `MyGridsquare` and `MY_SIG`/`MY_SIG_INFO` in Station Information, valid for every QSO logged until changed back. |
-| How is an FT8 QSO marked as a WWFF activation, since the mode can't carry it? | It isn't marked per QSO at all — the whole session inherits whatever `MY_SIG`/`MY_SIG_INFO` was set in Station Information before the first QSO. |
+| Does PoLo need a new activation set up every time? | Yes, that's inherent to how PoLo works: every session is a new "Operation," with the WWFF/POTA/SOTA reference attached to it. |
+| Does Log4OM need anything set "per activation" too? | Yes, but differently: no Operation concept, just `MyGridsquare` and `MY_SIG`/`MY_SIG_INFO` in Station Information, valid for every QSO logged until changed back. |
+| How is an FT8 QSO marked as a WWFF activation, since the mode can't carry it? | It isn't marked per QSO at all, the whole session inherits whatever `MY_SIG`/`MY_SIG_INFO` was set in Station Information before the first QSO. |
 
 </div>
 
 <div class="onm-note">
 Some activators sidestep steps 2, 3 and 5 entirely by cloning a fresh
-Log4OM configuration <em>per site</em> — a "Roy" configuration, an
-"Alouette" configuration, each with its own fixed grid and reference —
-instead of reusing one shared portable configuration. More
+Log4OM configuration <em>per site</em>, a "Roy" configuration, an
+"Alouette" configuration, each with its own fixed grid and reference, instead of reusing one shared portable configuration. More
 configurations to keep track of, but nothing to remember to reset
 afterward. Worth considering once activations become more frequent than
 "once every few weeks."
@@ -335,33 +331,113 @@ afterward. Worth considering once activations become more frequent than
 1. **File → Settings → Configurations → Clone**, rename to `Portable`.
 2. **General tab**: My Call `ON3VZ/P`, My Grid = grid of the day (6
    characters). Message generation for type-2 compound callsign holders
-   should be set to include the full call in Tx3 — this is what makes
+   should be set to include the full call in Tx3. This is what makes
    `CQ ON3VZ/P` carry the grid, since ON3VZ/P is a type-2 compound call,
    not a fully "nonstandard" one.
 3. **Radio tab**: select the QMX and its COM port. This will differ from
-   the shack radio's COM port — check Device Manager when the QMX is
+   the shack radio's COM port, check Device Manager when the QMX is
    plugged in, and don't assume it reuses the same port.
 4. **Audio tab**: select the QMX's USB sound card for both input and
-   output — one USB-C cable carries CAT and audio together.
+   output, one USB-C cable carries CAT and audio together.
 5. **Reporting tab**: switch **off** "Contesting only" (this also needs
-   checking on the home configuration — with it on, automatic logging
+   checking on the home configuration, with it on, automatic logging
    only fires in contest mode); fill in **Op Call** = `ON3VZ` so the
    ADIF `OPERATOR` field is correct; confirm UDP forwarding to Log4OM is
    enabled on the same address/port the home configuration uses
    (typically `127.0.0.1:2237`), with "Accept UDP requests" on.
-6. There is no message slot for `5W QRP` inside an FT8 exchange — the
+6. There is no message slot for `5W QRP` inside an FT8 exchange. The
    77-bit message is already full with call and grid. QRP status travels
    via the spot comment instead, or occasionally via a Tx5 free-text
    macro (`5W QRP TU`) sent in place of `73`.
 7. Confirm the title bar reads `ON3VZ/P` and the grid before transmitting.
 
-## 9. PoLo (Ham2K Portable Logger) — for SSB and CW sessions
+### 8.1 Radio tab in detail: CAT, PTT and rig data
 
-1. Settings: Operator `ON3VZ`, Station Call `ON3VZ/P` — this is set
+The Radio tab is where the portable configuration most obviously differs
+from the shack configuration. Worth writing the working values down
+rather than rediscovering them in a field.
+
+<div class="onm-table-wrap" markdown="1">
+
+| Setting | Value | Why |
+|---|---|---|
+| Rig | `QRPLabs QMX` | Native Hamlib entry. No Kenwood TS-480 emulation needed. |
+| Serial Port | the QMX's COM port | Differs from the shack radio. Check Device Manager with the QMX plugged in. |
+| Baud Rate | 9600 | Nominal only. The QMX presents a virtual USB CDC port, so this is not a real line speed. |
+| Data / Stop / Handshake | 8 / 1 / None | Standard. Nothing to force on DTR or RTS. |
+| Poll Interval | 2 to 3 s | See below. |
+| PTT Method | CAT | Everything travels over the one USB-C cable. |
+| Mode | Data/Pkt | Verify empirically, see below. |
+| Split Operation | Rig | Verify empirically, see below. |
+| Read and display PWR and SWR | on | Puts the QMX's own SWR reading in front of you while operating. |
+| Halt Tx when SWR > 2.5 | on | The most valuable single checkbox on this tab. |
+
+</div>
+
+**Poll interval.** The default of 10 seconds suits a fixed station that
+stays on one band all evening. Portable operating is the opposite: band
+hopping is the point, and with a 10 second poll, WSJT-X can be up to ten
+seconds behind the radio after a band change made on the QMX itself.
+That is exactly the window in which a transmission goes out on the wrong
+dial frequency. Two to three seconds closes it, and the extra USB
+traffic is irrelevant.
+
+<div class="onm-note">
+<strong>Halt Tx when SWR &gt; 2.5</strong> belongs in the same category as
+the SWR check after a band change (§13): with a linked dipole, a
+forgotten link means a badly mismatched antenna, and the QMX has no ATU
+to hide behind. This setting stops the transmission before the PA has to
+deal with it. It complements the manual check, it does not replace it.
+</div>
+
+**Mode and Split.** Both defaults were designed around conventional SSB
+transceivers. The purpose of split operation in WSJT-X is to keep the
+transmit audio between 1500 and 2000 Hz so that audio harmonics cannot
+pass through the transmitter's sideband filter. The QMX does not work
+that way: it measures the frequency of the incoming audio tone and
+synthesises the RF directly, so there is no sideband filter for
+harmonics to slip past. The settings above may work perfectly well, but
+they are worth confirming rather than assuming:
+
+- If the QMX drops out of its digital mode on transmit, set
+  **Mode = None** and select the mode on the radio itself.
+- If VFO B behaves oddly on transmit, set **Split Operation = Fake It**.
+- Use **Test CAT** and **Test PTT** to confirm both directions before
+  trusting the configuration, with an antenna or dummy load connected.
+
+**Hamlib version.** WSJT-X can update Hamlib from within the Radio tab
+and keeps a backup of the previous version. A version string ending in
+`~rc` is a release candidate, which is pre-release software. It may fix
+something specific, but an activation is not the place to find out what
+else it changed. Before a field day or a WWFF activation, either revert
+to the last stable release or confirm the RC has been tested at home
+across every band you intend to use.
+
+### 8.2 PSK Reporter: reach without a single QSO
+
+On the Reporting tab, enable spotting to PSK Reporter. This is the
+cheapest reach measurement available to a QRP station and it needs no
+contacts at all.
+
+Call CQ. Within a few minutes [pskreporter.info](https://pskreporter.info)
+shows every station that decoded the signal, with distance and signal
+report, whether or not anybody answered. For a new portable antenna that
+answers the real question directly: not "did someone come back to me",
+but "where is this station actually being heard". It also separates two
+problems that feel identical from the operating position, namely nobody
+hearing you and nobody replying.
+
+It is passive: enabled once in the portable configuration, it needs no
+per-activation action. It is already listed as such in the spotting
+summary in §11.
+
+## 9. PoLo (Ham2K Portable Logger), for SSB and CW sessions
+
+1. Settings: Operator `ON3VZ`, Station Call `ON3VZ/P`. This is set
    **per activation/operation**, not as a single global field, since the
    station call can change between activations.
 2. Default power = 5 W; optionally a fixed `5W QRP` note.
-3. Every session in PoLo is a new **Operation** — add one, then attach
+3. Every session in PoLo is a new **Operation**, add one, then attach
    the specific activation(s) to it (WWFF/POTA/SOTA reference and
    gridsquare; a single outing can carry more than one, e.g. a WWFF
    reference that's also a POTA park). For ordinary portable operating
@@ -369,17 +445,17 @@ afterward. Worth considering once activations become more frequent than
    field blank.
 4. **Data Files**: Settings → Data Settings → Data Files → refresh. These
    are the official WWFF/POTA/SOTA reference lists, maintained by those
-   programmes — PoLo only downloads them; nothing here is user-authored.
+   programmes, PoLo only downloads them; nothing here is user-authored.
    Do this at home over wifi, since most activation sites have no signal.
 5. **Callsign Notes** (optional, unrelated to the above): a separate,
    user-editable text file of notes tied to specific callsigns, shown
    automatically when that call is logged again. PoLo ships with a
    built-in file ("Ham2K's Hams of Note"). A custom file can be hosted
-   anywhere that serves a direct plain-text link — Dropbox, OneDrive,
+   anywhere that serves a direct plain-text link, Dropbox, OneDrive,
    Google Drive/Docs, or a GitHub Gist's raw URL all qualify, added via
    Settings → Data Settings → Callsign Notes → **+ Add a new file**.
 6. **Lookups**: enter QRZ XML credentials under account/lookup settings
-   for full callsign lookups — without them PoLo falls back to HamDB,
+   for full callsign lookups, without them PoLo falls back to HamDB,
    which only covers the US, Canada and Germany.
 7. **Spotting**: log in to Spotline/POTA directly from PoLo using
    `ON3VZ/P` as the username; test this at home over wifi before relying
@@ -387,7 +463,7 @@ afterward. Worth considering once activations become more frequent than
 8. **Multi-device sync** (phone + iPad): Ham2K Log Filer ("LoFi")
    provides genuine two-way sync of QSO data (free tier: 7-day history,
    slower; paid tier ~€2.99/month: unlimited history, faster, more
-   reliable across devices) — but it syncs **QSO data only, never
+   reliable across devices), but it syncs **QSO data only, never
    settings**, and it's young enough that a manual ADIF export/import
    remains the dependable fallback. Each device still needs Operator
    call, Station call, power default, and QRZ lookup credentials
@@ -395,12 +471,12 @@ afterward. Worth considering once activations become more frequent than
 9. Test with one fictitious QSO, export as ADIF, verify the same fields
    as in §7 step 9, delete the test QSO.
 10. **Workflow**: PoLo has no live link to Log4OM. Export ADIF after the
-    session and import it by hand — see §10.
+    session and import it by hand, see §10.
 
 ## 10. After a PoLo import: the sequence that matters
 
 Log4OM does not route a QSO to the correct logbook based on what's
-written in an imported ADIF file — it uploads based on **which
+written in an imported ADIF file. It uploads based on **which
 configuration is active** at the moment of upload. The import itself is
 not the risky step; the upload afterwards is.
 
@@ -409,50 +485,49 @@ not the risky step; the upload afterwards is.
 2. Import the ADIF file (File → Import ADIF).
 3. Spot-check two or three imported records for `STATION_CALLSIGN =
    ON3VZ/P`. For a WWFF session, check `MY_SIG` and `MY_SIG_INFO` on the
-   same records too — PoLo's export does include the WWFF fields, but
+   same records too, PoLo's export does include the WWFF fields, but
    Log4OM's ADIF import doesn't always carry Ham2K-formatted SIG data
    through cleanly on every version; other Log4OM/PoLo users have
    reported needing to fix these fields via QSO Manager after import, so
    it's worth confirming rather than assuming.
 4. The QRZ "Force Station Callsign" setting (§3.5) acts as a backstop
    even if something slipped through.
-5. Upload to QRZ: select the imported QSOs, right-click, upload selection
-   — don't rely on "automatic upload on new QSO", which is designed for
+5. Upload to QRZ: select the imported QSOs, right-click, upload selection, don't rely on "automatic upload on new QSO", which is designed for
    live logging, not batch import.
 6. **Before uploading to LoTW**, check the Station ID field in External
    Services → LOTW. It is a single fixed value per configuration, not
    read per-QSO from the grid field. If the last activation was at a
    different location than the one just imported, **switch it manually**
-   to the correct Station Location before uploading — otherwise TQSL
+   to the correct Station Location before uploading, otherwise TQSL
    signs the new QSOs with the previous location's grid. This is the
    single easiest mistake to make in the whole workflow, and the reason
    it now sits as a fixed step in the field checklist rather than
    something to remember on the fly.
-7. Upload to Club Log and QRZCQ the same way — select and upload, don't
+7. Upload to Club Log and QRZCQ the same way, select and upload, don't
    assume an automatic trigger fired on import.
 
 ## 11. Spotting
 
 At 5 W, being found matters more than being loud. Self-spotting is not
-optional — it's the core strategy.
+optional, it's the core strategy.
 
 - **Where**: [Spotline](https://spots.wwff.co) (WWFF's own spotting
-  service, launched June 2025) — log in with your callsign as username.
+  service, launched June 2025), log in with your callsign as username.
   The **smartWWFF** app (phone/tablet) offers the same, plus spot
   browsing. PoLo can spot directly to Spotline and POTA. For non-WWFF
   portable operating, the ordinary DX cluster via Log4OM works, though
   self-spotting is more broadly accepted on nature-activation clusters
   than on general DX clusters.
 - **What**: call, frequency, mode, and a comment carrying the reference
-  and `5W QRP` — this is where QRP status becomes visible to hunters,
+  and `5W QRP`. This is where QRP status becomes visible to hunters,
   since it can't fit inside an FT8 exchange.
-- **How**: from a phone, not the laptop — Spotline and smartWWFF are
+- **How**: from a phone, not the laptop, Spotline and smartWWFF are
   built for that.
 - **When**: register the activation on the WWFF **agenda** ahead of
   time (spots auto-populate during the scheduled window); post the first
   spot at the first QSO; re-spot after every band change. Once operating
   CW, the Reverse Beacon Network spots automatically when it hears the
-  call during an active agenda window — no manual step needed.
+  call during an active agenda window, no manual step needed.
 - **Duplicate rule**: a spot counts as duplicate at the same frequency
   (±1 kHz), same call and reference, within 10 minutes of the previous
   one. Re-posting out of impatience does nothing.
@@ -460,28 +535,28 @@ optional — it's the core strategy.
 ## 12. WWFF submission
 
 <div class="onm-note">
-<strong>In short:</strong> export an ADIF of just that activation, name it exactly right, attach photos, and email it to the ONFF coordinator. No web upload tool — it's a person, not a form.
+<strong>In short:</strong> export an ADIF of just that activation, name it exactly right, attach photos, and email it to the ONFF coordinator. No web upload tool, it's a person, not a form.
 </div>
 
 1. Confirm activation validity: **minimum 60 minutes** on air from the
    first logged QSO; **44 QSOs** normally required, with a QRP exception
    (confirm the exact reduced threshold directly with the ONFF
-   coordinator, `onfflogapproval@gmail.com`) — QSOs below 44 can also be
+   coordinator, `onfflogapproval@gmail.com`), QSOs below 44 can also be
    accumulated across multiple activations of the same reference.
 2. Export an ADIF containing **only** the QSOs from this activation.
-3. Filename exactly: `on3vz_p@ONFF-xxxx YYYYMMDD.adi` — this filename is
+3. Filename exactly: `on3vz_p@ONFF-xxxx YYYYMMDD.adi`, this filename is
    used as the duplicate check, so don't deviate from it.
 4. Attach at least two relevant photos (max 600 px) or one photo carrying
-   GPS metadata — logs without proof are rejected.
+   GPS metadata, logs without proof are rejected.
 5. Email to `onfflogapproval@gmail.com`, mentioning `5W QRP` explicitly
    if claiming the QRP exception.
 6. If the reference also has a POTA number, upload to POTA separately.
 7. Verify position against the **official ONFF KMZ** file (available via
-   the BOS group on groups.io) before and during the activation — this
+   the BOS group on groups.io) before and during the activation. This
    is the file ONFF verifies activator position against, not a general
    map.
 
-## 13. The five most common mistakes
+## 13. The most common mistakes
 
 <div class="onm-table-wrap" markdown="1">
 
@@ -490,8 +565,12 @@ optional — it's the core strategy.
 | Forgetting to switch Log4OM/WSJT-X configuration | QSOs land in the wrong logbook, wrong call sent to LoTW |
 | Leaving an old gridsquare in place | Wrong distances, wrong location in confirmations |
 | Taking no activation photos | ONFF rejects the log |
-| Wrong WWFF filename | Log isn't processed — filename is the duplicate check |
-| Transmitting without checking SWR after a band change | Risk of PA damage — the QMX has no ATU |
+| Wrong WWFF filename | Log isn't processed, filename is the duplicate check |
+| Transmitting without checking SWR after a band change | Risk of PA damage. The QMX has no ATU |
+| Connecting the radio straight to the battery | Over 13 V into a radio rated 6.0 to 12.0 V. Regulate to 11.50 V first |
+| Different links closed on the two dipole legs | Not a dipole any more. High SWR and common mode current on the coax |
+| Leaving the WSJT-X poll interval at 10 s | Transmitting on the previous band's dial frequency after a band change |
+| Running a Hamlib release candidate on an activation | Rig control fails in the field, with no way to debug it there |
 
 </div>
 
@@ -503,14 +582,18 @@ optional — it's the core strategy.
 |---|---|
 | Which logbook a QSO belongs to | Active Log4OM configuration at upload time |
 | Station call, operator call, grid | Log4OM / WSJT-X / PoLo, set per configuration or activation |
-| QRP status (5 W) | `TX_PWR` field, spot comments, profile text — never the callsign suffix |
+| QRP status (5 W) | `TX_PWR` field, spot comments, profile text, never the callsign suffix |
 | WWFF reference | `MY_SIG` / `MY_SIG_INFO`, filled only for an actual activation |
-| LoTW signing location | Station ID dropdown in Log4OM's LOTW tab — fixed per configuration, must be switched manually per location |
+| LoTW signing location | Station ID dropdown in Log4OM's LOTW tab, fixed per configuration, must be switched manually per location |
+| Which COM port the QMX uses | Device Manager, checked with the QMX plugged in, never assumed |
+| Supply voltage to the radio | The buck converter, set and read at 11.50 V, never the battery directly |
+| Proof that the signal got out | PSK Reporter, enabled once in the portable WSJT-X configuration (§8.2) |
 
 </div>
 
 <div style="background:linear-gradient(135deg,rgba(0,255,136,0.06),rgba(0,212,255,0.04));border:1px solid rgba(0,255,136,0.22);border-radius:14px;padding:1.6rem 1.8rem;margin:2.5rem 0;">
   <div style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.2rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.5rem;">📎 Downloads</div>
+  <p style="font-size:0.88rem;color:var(--c-text-2);margin:0.4rem 0 0;">Both checklists carry the WSJT-X radio settings from §8.1, the 11.50 V supply check, and the link symmetry rule.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0.8rem;margin-top:0.8rem;">
     <a href="/assets/files/on3vz-p-field-checklist-en.pdf" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1rem 1.1rem;text-decoration:none;">
       <div style="font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.16rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.35rem;">PDF · English</div>
