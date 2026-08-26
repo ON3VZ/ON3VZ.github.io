@@ -348,10 +348,67 @@ afterward. Worth considering once activations become more frequent than
 6. There is no message slot for `5W QRP` inside an FT8 exchange. The
    77-bit message is already full with call and grid. QRP status travels
    via the spot comment instead, or occasionally via a Tx5 free-text
-   macro (`5W QRP TU`) sent in place of `73`.
+   macro (`5W QRP TU`) sent in place of `73`, see §8.1 for the correct
+   procedure, since this does not work as a simple set and forget
+   macro.
 7. Confirm the title bar reads `ON3VZ/P` and the grid before transmitting.
 
-### 8.1 Radio tab in detail: CAT, PTT and rig data
+### 8.1 Auto Seq: keep it on
+
+**Auto Seq should stay enabled for normal operating.** It is what drives
+the automatic message sequencing through a QSO and, combined with the
+setting in §8.2, what allows WSJT-X to keep calling CQ automatically
+between contacts without any manual intervention. Turning it off as a
+permanent setting is not the fix for anything covered here.
+
+The one place Auto Seq gets in the way is the reference macro described
+in step 6 above. With Auto Seq on, WSJT-X regenerates the standard
+message on every received decode, which silently resets any custom
+free-text message typed into the Tx5 slot back to "(his call) (own call)
+73", often without warning that it was dropped. This is a long-standing,
+documented WSJT-X behaviour, not a bug specific to one setup.
+
+To actually send a custom reference message (for example `ONFF-0123 73`)
+instead of the standard 73:
+
+1. Type the custom message into the free-text field only once the QSO
+   has reached the point where Tx5/73 would normally go, not earlier,
+   since Auto Seq will overwrite an earlier entry on the next decode.
+2. **Uncheck Auto Seq** for that one transmission.
+3. Let the custom message transmit.
+4. **Re-enable Auto Seq immediately afterwards**, before the next call.
+   Forgetting this step is the most common mistake: normal automatic
+   sequencing then quietly stops working for the rest of the session.
+
+<div class="onm-note">
+Because of that manual toggle, treat this as an occasional courtesy for a
+hunter who specifically wants on-air confirmation of the reference, not a
+routine step for every QSO. Spotting (§11) is what actually brings in new
+callers. The in-QSO macro only reaches the one station already in
+contact.
+</div>
+
+### 8.2 Making WSJT-X call CQ again automatically after a QSO
+
+If a QSO always ends and transmission simply stops with no automatic new
+CQ, the cause is almost always **Settings → General → Behavior →
+"Disable Tx after sending 73."** When this is checked, WSJT-X disables
+Enable Tx the moment it sends the final 73, and every following CQ has to
+be started by hand.
+
+**Uncheck it** to get continuous automatic operation: after 73, WSJT-X
+moves on to Tx6 (the CQ message) and keeps transmitting automatically,
+ready for the next station, with no manual click needed between contacts.
+
+One related setting worth knowing about once CQ is running automatically
+and unattended: **Tx Watchdog** (also on the General tab, default 6
+minutes) stops transmission on its own if there has been no operator
+interaction for that long. That is a safety feature against a runaway
+transmitter, not a fault. If CQ calling stops after several quiet minutes
+with no takers, this is very likely why, and it needs a manual click to
+resume rather than a configuration change.
+
+### 8.3 Radio tab in detail: CAT, PTT and rig data
 
 The Radio tab is where the portable configuration most obviously differs
 from the shack configuration. Worth writing the working values down
@@ -413,7 +470,7 @@ else it changed. Before a field day or a WWFF activation, either revert
 to the last stable release or confirm the RC has been tested at home
 across every band you intend to use.
 
-### 8.2 PSK Reporter: reach without a single QSO
+### 8.4 PSK Reporter: reach without a single QSO
 
 On the Reporting tab, enable spotting to PSK Reporter. This is the
 cheapest reach measurement available to a QRP station and it needs no
@@ -571,6 +628,7 @@ optional, it's the core strategy.
 | Different links closed on the two dipole legs | Not a dipole any more. High SWR and common mode current on the coax |
 | Leaving the WSJT-X poll interval at 10 s | Transmitting on the previous band's dial frequency after a band change |
 | Running a Hamlib release candidate on an activation | Rig control fails in the field, with no way to debug it there |
+| Leaving Auto Seq off after sending a custom Tx5 message | Automatic sequencing stops silently for the rest of the session |
 
 </div>
 
@@ -587,13 +645,13 @@ optional, it's the core strategy.
 | LoTW signing location | Station ID dropdown in Log4OM's LOTW tab, fixed per configuration, must be switched manually per location |
 | Which COM port the QMX uses | Device Manager, checked with the QMX plugged in, never assumed |
 | Supply voltage to the radio | The buck converter, set and read at 11.50 V, never the battery directly |
-| Proof that the signal got out | PSK Reporter, enabled once in the portable WSJT-X configuration (§8.2) |
+| Proof that the signal got out | PSK Reporter, enabled once in the portable WSJT-X configuration (§8.4) |
 
 </div>
 
 <div style="background:linear-gradient(135deg,rgba(0,255,136,0.06),rgba(0,212,255,0.04));border:1px solid rgba(0,255,136,0.22);border-radius:14px;padding:1.6rem 1.8rem;margin:2.5rem 0;">
   <div style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.2rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.5rem;">📎 Downloads</div>
-  <p style="font-size:0.88rem;color:var(--c-text-2);margin:0.4rem 0 0;">Both checklists carry the WSJT-X radio settings from §8.1, the 11.50 V supply check, and the link symmetry rule.</p>
+  <p style="font-size:0.88rem;color:var(--c-text-2);margin:0.4rem 0 0;">Both checklists carry the WSJT-X radio settings from §8.3, the 11.50 V supply check, and the link symmetry rule.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0.8rem;margin-top:0.8rem;">
     <a href="/assets/files/on3vz-p-field-checklist-en.pdf" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1rem 1.1rem;text-decoration:none;">
       <div style="font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.16rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.35rem;">PDF · English</div>
