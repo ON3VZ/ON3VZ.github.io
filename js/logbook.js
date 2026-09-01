@@ -859,6 +859,7 @@ function initMap() {
      drag-to-pan only does something once you have zoomed in with the + button.
 ============================================================================ */
 let mapZoom = null;
+let currentZoomK = 1;
 function setupMapZoom(W, H) {
   if (!svgEl || !svgG || typeof d3.zoom !== 'function') return;
 
@@ -866,7 +867,12 @@ function setupMapZoom(W, H) {
     .scaleExtent([1, 8])
     .translateExtent([[0, 0], [W, H]])
     .filter(event => event.type !== 'wheel' && !event.ctrlKey && !event.button)
-    .on('zoom', event => { svgG.attr('transform', event.transform); });
+    .on('zoom', event => {
+      svgG.attr('transform', event.transform);
+      // ZOOM-INVARIANT SIZING (added 2026-09-01): see rescaleZoomInvariant().
+      currentZoomK = event.transform.k;
+      rescaleZoomInvariant();
+    });
 
   svgEl.call(mapZoom);
   svgEl.on('dblclick.zoom', null); // no double-click zoom, buttons only
@@ -908,6 +914,41 @@ function setHomeStartView(W, H) {
 }
 /* === END INITIAL HOME VIEW =============================================== */
 /* === END MAP ZOOM ======================================================== */
+
+/* === ZOOM-INVARIANT DOT/MARKER SIZING (added 2026-09-01) ==================
+   svgG's zoom transform (including the 3.2x default start view above)
+   scales EVERYTHING inside it, so the DX-dot cluster radius and the home
+   marker size were getting blown up by the same factor as the map itself
+   — at the default 3.2x start zoom, a 6.5-unit cluster dot rendered at
+   ~21 units on screen, big enough to cover several countries and sit on
+   top of (and hide) short nearby arcs, e.g. 80m contacts to neighbouring
+   countries. Arc stroke width has the same problem, fixed separately via
+   vector-effect="non-scaling-stroke" on each arc path.
+   Fix: dots and the home marker store their intended radius (and the dot
+   count label's font size) as `data-base-*` attributes computed at k=1,
+   and this function re-derives the on-screen radius as base/k every time
+   the zoom level changes, so their apparent screen size stays constant.
+   Revert: delete this function, its calls, and the data-base-* attributes
+   below; change dot/home-marker `r`/`font-size` back to the plain values. */
+function rescaleZoomInvariant() {
+  const k = currentZoomK || 1;
+  svgG.selectAll('.dx-dot circle').each(function() {
+    const el = d3.select(this);
+    const baseR = parseFloat(el.attr('data-base-r'));
+    if (!isNaN(baseR)) el.attr('r', baseR / k);
+  });
+  svgG.selectAll('.dx-dot-count').each(function() {
+    const el = d3.select(this);
+    const baseFs = parseFloat(el.attr('data-base-fs'));
+    if (!isNaN(baseFs)) el.attr('font-size', baseFs / k);
+  });
+  svgG.selectAll('.home-marker circle').each(function() {
+    const el = d3.select(this);
+    const baseR = parseFloat(el.attr('data-base-r'));
+    if (!isNaN(baseR)) el.attr('r', baseR / k);
+  });
+}
+/* === END ZOOM-INVARIANT DOT/MARKER SIZING ================================= */
 
 function renderMap(qsos) {
   if (!geoReady || !svgG) return;
@@ -970,6 +1011,12 @@ function renderMap(qsos) {
       .attr('d', path)
       .attr('stroke', colour)
       .attr('stroke-width', st.width)
+      // ZOOM-INVARIANT SIZING (added 2026-09-01): keep the line's on-screen
+      // thickness constant regardless of the map's zoom transform (default
+      // start view is already 3.2x), so short local arcs don't get thick
+      // enough to visually merge with the DX dots. Native SVG feature, no
+      // JS needed. Revert: delete this line.
+      .attr('vector-effect', 'non-scaling-stroke')
       .attr('fill', 'none')
       .attr('opacity', st.opacity)
       .on('mouseover', function(event) { showTooltip(event, q); d3.select(this).attr('opacity', st.hoverOpacity).attr('stroke-width', st.hoverWidth); })
@@ -1001,21 +1048,30 @@ function renderMap(qsos) {
     clusters.forEach(c => {
       const count = c.items.length;
       const r = count > 1 ? Math.min(6.5, 3.2 + Math.sqrt(count) * 0.9) : 3;
+      const fs = Math.min(7, 5 + r * 0.18);
 
       const g = svgG.append('g').attr('class', 'dx-dot').attr('transform', `translate(${c.cx},${c.cy})`);
       g.append('circle')
-        .attr('r', r)
+        // ZOOM-INVARIANT SIZING (added 2026-09-01): `r` here is the base
+        // radius at k=1; data-base-r + rescaleZoomInvariant() derive the
+        // actual displayed radius as base/k so dots don't balloon at the
+        // 3.2x default start zoom (or any further zoom-in) and swallow
+        // nearby short arcs. Revert: drop the data-base-r attr + call
+        // below and go back to plain `.attr('r', r)`.
+        .attr('data-base-r', r)
+        .attr('r', r / (currentZoomK || 1))
         .attr('fill', colour)
         .attr('opacity', 0.8)
-        .on('mouseover', function(event) { showClusterTip(event, c); d3.select(this).attr('r', r + 0.6); })
+        .on('mouseover', function(event) { showClusterTip(event, c); d3.select(this).attr('r', (r + 0.6) / (currentZoomK || 1)); })
         .on('mousemove', moveTooltip)
-        .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('r', r); });
+        .on('mouseout',  function()       { hideTooltip(); d3.select(this).attr('r', r / (currentZoomK || 1)); });
       if (count > 1) {
         g.append('text')
           .attr('class', 'dx-dot-count')
           .attr('text-anchor', 'middle')
           .attr('dy', '0.32em')
-          .attr('font-size', Math.min(7, 5 + r * 0.18))
+          .attr('data-base-fs', fs)
+          .attr('font-size', fs / (currentZoomK || 1))
           .attr('font-family', 'var(--f-mono)')
           .attr('fill', '#0a0e14')
           .attr('pointer-events', 'none')
@@ -1027,10 +1083,15 @@ function renderMap(qsos) {
   // Home marker (shrunk 2026-07-12: was r 5 / ring 10, too dominant)
   if (homeXY) {
     const hg = svgG.append('g').attr('class', 'home-marker').attr('transform', `translate(${homeXY})`);
-    hg.append('circle').attr('r', 3).attr('fill', 'var(--c-primary)').attr('opacity', 0.9)
+    // ZOOM-INVARIANT SIZING (added 2026-09-01): same base/k pattern as the
+    // DX dots above, so the home marker doesn't balloon at the 3.2x
+    // default start zoom either. Revert: drop data-base-r + go back to
+    // the plain `.attr('r', 3)` / `.attr('r', 6)` calls.
+    const k = currentZoomK || 1;
+    hg.append('circle').attr('data-base-r', 3).attr('r', 3 / k).attr('fill', 'var(--c-primary)').attr('opacity', 0.9)
       .attr('filter', 'drop-shadow(0 0 3px #00ff88)');
-    hg.append('circle').attr('r', 6).attr('fill', 'none').attr('stroke', 'var(--c-primary)')
-      .attr('stroke-width', 0.8).attr('opacity', 0.4);
+    hg.append('circle').attr('data-base-r', 6).attr('r', 6 / k).attr('fill', 'none').attr('stroke', 'var(--c-primary)')
+      .attr('stroke-width', 0.8).attr('vector-effect', 'non-scaling-stroke').attr('opacity', 0.4);
   }
 
   // Legend
