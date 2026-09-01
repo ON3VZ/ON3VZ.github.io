@@ -41,12 +41,25 @@ def parse_records(text):
 
 
 def dedup_key(f):
-    """Mirror js/logbook.js:deduplicateQsos() exactly."""
+    """Mirror js/logbook.js:deduplicateQsos() exactly.
+
+    FIXED 2026-09-01: previously rounded TIME_ON to a ~10-minute bucket
+    (t[:3]), which collapsed genuinely different QSOs with the same call
+    on the same band/mode within that window (e.g. two separate FT8
+    contacts with the same station a minute apart) into a single record.
+    That silently dropped real QSOs and tripped this script's own safety
+    check every month (merged count < newest snapshot count), aborting
+    the whole consolidation run. The only thing this key needs to catch
+    is the SAME QSO appearing in multiple cumulative QRZ exports, and
+    re-exports always carry an identical TIME_ON for a given QSO, so the
+    full timestamp is used with no rounding.
+    Revert: change `t` back to `t[:3]` below.
+    """
     t = f.get('TIME_ON', '0000')
     return (
         f.get('CALL', '').lower(),
         f.get('QSO_DATE', ''),
-        t[:3],
+        t,
         f.get('BAND', '').lower(),
         f.get('MODE', '').lower(),
     )
@@ -69,8 +82,16 @@ def file_age_days(filename):
 
 
 def main():
+    # FIXED 2026-09-01: previously globbed every file in assets/data/ and
+    # excluded only a fixed set of names by exact match. Any other non-ADIF
+    # file dropped into that folder (e.g. qsl-manifest.json, which lives
+    # there for the QSL wall) was silently treated as a source snapshot:
+    # merged as if it were ADIF (contributing nothing, since it has no
+    # <eor> records) and then deleted during pruning, since its filename
+    # never matches the timestamp pattern. Only ever touch *.adi files.
+    # Revert: change the glob back to '*' and drop the .adi filter.
     all_files = sorted(
-        f for f in glob.glob(os.path.join(DATA_DIR, '*'))
+        f for f in glob.glob(os.path.join(DATA_DIR, '*.adi'))
         if os.path.basename(f) not in ('manifest.json', '.gitkeep', ARCHIVE_NAME)
     )
     if not all_files:

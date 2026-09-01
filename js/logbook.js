@@ -290,14 +290,22 @@ function loadAdif() {
 }
 
 /* ── DEDUPLICATE QSOs ──
-   Key: call + date + time (±1 min) + band + mode
-   Keeps the QSO with the most filled-in fields.           */
+   Key: call + date + exact time + band + mode.
+   Keeps the QSO with the most filled-in fields.
+   FIXED 2026-09-01: this used to round TIME_ON down to a ~10-minute
+   bucket (t.slice(0,3)), which merged genuinely different QSOs with the
+   same call on the same band/mode within that window into one record
+   (e.g. two separate FT8 contacts a minute apart), silently dropping
+   real logged QSOs from the table and map. Mirrors the same fix in
+   scripts/consolidate_adif.py:dedup_key(). The only case this key needs
+   to catch — the same QSO appearing in more than one cumulative QRZ
+   export — always has an identical TIME_ON, so no rounding is needed.
+   Revert: change `t` back to `t.slice(0,3)` below.               */
 function deduplicateQsos(qsos) {
   const map = new Map();
   qsos.forEach(q => {
-    // Round time to nearest 5 minutes to catch slight differences
     const t = q.time ? q.time.slice(0,4) : '0000';
-    const key = [q.call, q.date, t.slice(0,3), q.band, q.mode]
+    const key = [q.call, q.date, t, q.band, q.mode]
       .join('|').toLowerCase();
     if (!map.has(key)) {
       map.set(key, q);
