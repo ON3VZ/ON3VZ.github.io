@@ -926,11 +926,22 @@ function renderMap(qsos) {
   // Draw arcs
   const arcGen = d3.geoPath().projection(projection);
 
-  // Group by callsign to avoid duplicate arcs, keep one per call.
-  // Note: a call worked in several modes keeps the mode of its first
-  // record; the table below still shows every QSO.
+  // Group by callsign + band to avoid duplicate arcs, keep one per
+  // call/band pair. Note: a call worked in several modes on the same
+  // band keeps the mode of its first record on that band; the table
+  // below still shows every QSO.
+  // FIXED 2026-09-01: this used to key on callsign alone, so a station
+  // worked on more than one band (very common) only ever got ONE arc —
+  // whichever band's record happened to load first — and every other
+  // band's arc to that same call was silently never drawn. Keying on
+  // call+band instead means each band gets its own arc, coloured
+  // correctly for that band.
+  // Revert: change the key back to `q.call` (drop the `|${q.band}`) below.
   const unique = new Map();
-  qsos.forEach(q => { if (!unique.has(q.call)) unique.set(q.call, q); });
+  qsos.forEach(q => {
+    const key = `${q.call}|${q.band}`;
+    if (!unique.has(key)) unique.set(key, q);
+  });
 
   unique.forEach(q => {
     const [dxLat, dxLng] = getLatLng(q);
