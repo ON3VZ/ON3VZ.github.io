@@ -86,5 +86,19 @@
     "band": "40m",
     "mode": "SSB",
     "rst": "59"
+  },
+  {
+    "id": "kg4ojt-2026-09-02",
+    "image": "/assets/images/qsl/kg4ojt-2026-09-02.jpg",
+    "fromCall": "KG4OJT",
+    "fromName": "Pete Norloff",
+    "qth": "Oakton, Fairfax County, Virginia",
+    "country": "United States",
+    "continent": "North America",
+    "date": "2026-09-02",
+    "time": "15:21z",
+    "band": "15m",
+    "mode": "FT4",
+    "rst": "-12"
   }
 ]
