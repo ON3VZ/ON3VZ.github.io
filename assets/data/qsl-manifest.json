@@ -100,5 +100,19 @@
     "band": "15m",
     "mode": "FT4",
     "rst": "-12"
+  },
+  {
+    "id": "it9gjk-p-2026-09-08",
+    "image": "/assets/images/qsl/it9gjk-p-2026-09-08.jpg",
+    "fromCall": "IT9GJK/P",
+    "fromName": "Giuseppe Russo",
+    "qth": "DRI-SI022, JM77NS",
+    "country": "Italy",
+    "continent": "Europe",
+    "date": "2026-09-08",
+    "time": "12:00z",
+    "band": "20m",
+    "mode": "FT8",
+    "rst": "-10"
   }
 ]
