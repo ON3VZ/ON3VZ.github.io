@@ -114,5 +114,35 @@
     "band": "20m",
     "mode": "FT8",
     "rst": "-10"
+  },
+  {
+    "id": "iu2tfn-2026-09-21",
+    "image": "/assets/images/qsl/iu2tfn-2026-09-21.jpg",
+    "fromCall": "IU2TFN",
+    "fromName": "Gerardo Cavadini",
+    "qth": "Villasanta",
+    "country": "Italy",
+    "continent": "Europe",
+    "date": "2026-09-21",
+    "time": "16:57z",
+    "band": "40m",
+    "mode": "SSB",
+    "freq": "7.112",
+    "rst": "59"
+  },
+  {
+    "id": "iu1rvt-2026-09-21",
+    "image": "/assets/images/qsl/iu1rvt-2026-09-21.jpg",
+    "fromCall": "IU1RVT",
+    "fromName": "Luca",
+    "qth": "Divignano",
+    "country": "Italy",
+    "continent": "Europe",
+    "date": "2026-09-21",
+    "time": "16:47z",
+    "band": "40m",
+    "mode": "SSB",
+    "freq": "7.1720",
+    "rst": "59"
   }
 ]
