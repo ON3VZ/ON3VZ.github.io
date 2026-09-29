@@ -37,13 +37,21 @@ Reports: **53 sent, 53 received**. Not a strong signal, and hard work to copy th
 | Other station power | 100 W |
 | Conditions | SSN 67, MUF 22.25 MHz, path reliability 35 % |
 
+<!-- BORNEO-15M 2026-09-29: path map. Revert by deleting this line and assets/images/borneo-15m-path-map.svg. -->
+![World map with the great-circle path from ON3VZ in Hoboken to YC7ONI on Borneo, with the night side shaded](/assets/images/borneo-15m-path-map.svg)
+
 ## How was this possible with 25 watts?
 
-**1. The frequency sat just below the MUF.** My frequency was at about 96 % of the predicted MUF. There, absorption in the low D layer is minimal and the signal is reflected at a low angle. Long hops mean fewer hops, and every hop you save is loss you do not suffer. Over 11,450 km there were still at least three.
+<!-- BORNEO-15M 2026-09-29: propagation diagram. Revert by deleting this line and assets/images/borneo-15m-propagation.svg. -->
+![Schematic cross-section of the path: the signal hops between the F2 layer and the ground, losing a little in the D layer on the day side and none on the night side](/assets/images/borneo-15m-propagation.svg)
+
+The numbers in the drawing match the points below.
+
+**1. The frequency sat just below the MUF.** My frequency was at about 96 % of the predicted MUF. There, absorption in the low D layer is minimal and the signal is reflected at a low angle. Long hops mean fewer hops, and every hop you save is loss you do not suffer. Over 11,450 km there were still three to four.
 
 **2. The equinox.** Around the equinox both hemispheres receive the same amount of sunlight. That gives the best conditions of the year for 15 metres, especially on paths heading towards the equator.
 
-**3. Timing along the path.** Here it was mid-afternoon. The midpoint of the path, over the Karakoram and the western Himalaya, had just passed sunset, and on Borneo it was already after nine in the evening. The eastern half of the path was in darkness. There the absorbing D layer disappears quickly, while the higher F2 layer stays active for a long time.
+**3. Timing along the path.** Here it was mid-afternoon. The midpoint of the path, over the Karakoram and the western Himalaya, had seen sunset about an hour earlier, and on Borneo it was already after nine in the evening. Roughly the eastern two thirds of the path lay in darkness. There the absorbing D layer disappears quickly, while the higher F2 layer stays active for a long time.
 
 **4. The equatorial effect.** Borneo lies right on the equator. After sunset the F layer there gets an extra lift and ionisation stays high well into the evening. That effect is strongest in the hours after local sunset, which is exactly when my contact happened.
 
