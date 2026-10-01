@@ -173,5 +173,20 @@
     "band": "20m",
     "mode": "SSB",
     "rst": "59"
+  },
+  {
+    "id": "dk7zt-2026-09-24",
+    "image": "/assets/images/qsl/dk7zt-2026-09-24.jpg",
+    "fromCall": "DK7ZT",
+    "fromName": "Bernd Müller",
+    "qth": "Marburg, JO40HT",
+    "country": "Germany",
+    "continent": "Europe",
+    "date": "2026-09-24",
+    "time": "21:57z",
+    "band": "80m",
+    "mode": "FT8",
+    "freq": "3.574144",
+    "rst": "+01"
   }
 ]
