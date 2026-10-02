@@ -2,7 +2,7 @@
 layout: post
 title: "Measuring is Knowing: the NanoVNA-H4 and tinySA for New Radio Amateurs"
 tags: ['Measurement', 'NanoVNA', 'tinySA', 'Antennas', 'SWR', 'Smith Chart', 'Beginners']
-excerpt: "A complete beginner's guide to the NanoVNA-H4 and the tinySA: safety, calibration, reading SWR, return loss and the Smith chart, a band-by-band SWR sweep plan, harmonics and chokes. With 53 annotated screens and downloadable PDFs in English and Dutch."
+excerpt: "A complete beginner's guide to the NanoVNA-H4 and the tinySA: safety, calibration, reading SWR, return loss and the Smith chart, a band-by-band SWR sweep plan, harmonics and chokes. With 55 annotated figures and downloadable PDFs in English and Dutch."
 ---
 <!-- MEASURING-IS-KNOWING 2026-09-28: new post. Revert by deleting this file, assets/images/measuring-is-knowing/ and the four PDFs in assets/files/. -->
 <style>
@@ -68,7 +68,7 @@ ol.mk-steps>li::before{content:"Step " counter(mkstep);position:absolute;left:0.
   <div class="mk-specs">
     <div class="mk-spec"><div class="mk-spec__k">NanoVNA-H4</div><div class="mk-spec__v">50 kHz to 1.5 GHz</div></div>
     <div class="mk-spec"><div class="mk-spec__k">tinySA</div><div class="mk-spec__v">0.1 to 960 MHz</div></div>
-    <div class="mk-spec"><div class="mk-spec__k">Figures</div><div class="mk-spec__v">53 screens</div></div>
+    <div class="mk-spec"><div class="mk-spec__k">Figures</div><div class="mk-spec__v">55 figures</div></div>
     <div class="mk-spec"><div class="mk-spec__k">Downloads</div><div class="mk-spec__v">4 PDFs · EN / NL</div></div>
   </div>
 </div>
@@ -80,6 +80,11 @@ There is a Dutch saying that sums up this entire article: ***meten is weten***, 
 The good news is that measuring has never been cheaper. A **NanoVNA-H4** and a **tinySA** together cost less than a decent SWR/power meter, and between them they answer almost every question a starting amateur has about antennas, feedlines, filters, chokes and transmitters. The bad news is that both instruments assume you already know what a Smith chart is, why calibration matters, and why you must never, ever put RF power into them.
 
 This guide assumes nothing. It started life as two Dutch manuals I wrote for myself while learning these instruments: a main manual and a practical band-by-band SWR sweep plan. Both are merged and translated here into one article. Every action comes with *how* to do it, not just *what* to do: not only "discharge the coax", but exactly which part touches which. Every screen is annotated with numbered red markers and a table that explains each number. Both original manuals are available as PDF downloads, in English and in Dutch, at the [end of this article](#downloads).
+
+<div class="mk-callout mk-caution">
+  <div class="mk-callout__k">Updated 2 October 2026</div>
+  <p>After a hands-on calibration session the <a href="#calibration">calibration chapter</a> was reworked: where to calibrate, the female-female coupler, recognising the caps, how many memory slots your unit really has, changing bands with RECALL without mistakes, and a <a href="#result-check">checklist for every result</a>. The <a href="#band-plan">band sheets</a> now run from 160 m to 6 m. The PDFs below are updated too.</p>
+</div>
 
 <div class="mk-callout mk-tip">
   <div class="mk-callout__k">How the figures work</div>
@@ -338,7 +343,7 @@ Phase 1 total: roughly €65, plus shipping. Useful to have (you probably do alr
 | <kbd>MARKER</kbd> | Reading off points | SELECT MARKER, SEARCH |
 | <kbd>STIMULUS</kbd> | Frequency range | START, STOP, CENTER, SPAN, SWEEP POINTS |
 | <kbd>CALIBRATE</kbd> (or CAL) | Calibrating | CALIBRATE, SAVE, RESET |
-| <kbd>RECALL</kbd> | Load a saved setup | RECALL 0 to 4 |
+| <kbd>RECALL</kbd> | Load a saved setup | RECALL 0 to 6 (the number varies per firmware, 3.8) |
 | <kbd>CONFIG</kbd> | Instrument settings | TOUCH CAL, TOUCH TEST, SAVE, VERSION, DFU |
 
 ### 3.4 Setting the frequency range
@@ -379,35 +384,82 @@ A **trace** is one line on the screen. The NanoVNA can show four at once, each i
 <ol class="mk-steps">
 <li><strong>Choose the trace you want to change:</strong> <kbd>DISPLAY &gt; TRACE &gt; TRACE 0</kbd>. At the top of the screen, a small triangle now appears in front of trace 0's line: that is the active trace.</li>
 <li><strong>Tap <kbd>&larr; BACK</kbd> and choose the format:</strong> <kbd>FORMAT &gt; SWR</kbd> for antennas, <kbd>SMITH</kbd> for impedance, <kbd>LOGMAG</kbd> for filters and chokes.</li>
-<li><strong>Choose the channel:</strong> <kbd>DISPLAY &gt; CHANNEL &gt; CH0 REFLECT</kbd> for antennas, <kbd>CH1 THROUGH</kbd> for filters and chokes.</li>
+<li><strong>Choose the channel:</strong> <kbd>DISPLAY &gt; CHANNEL &gt; CH0 REFLECT</kbd> for antennas, <kbd>CH1 THROUGH</kbd> for filters and chokes. Some units call these Port 1 (S11) and Port 2 (S21); appendix F has the full list.</li>
 <li><strong>Choose the scale:</strong> <kbd>DISPLAY &gt; SCALE &gt; SCALE/DIV</kbd>, type <kbd>1</kbd> and <kbd>x1</kbd> for SWR, or <kbd>10</kbd> and <kbd>x1</kbd> for LOGMAG.</li>
 <li><strong>Choose the reference line:</strong> <kbd>DISPLAY &gt; SCALE &gt; REFERENCE POSITION</kbd>, type <kbd>1</kbd> and <kbd>x1</kbd> for SWR (second grid line from the bottom), or <kbd>7</kbd> and <kbd>x1</kbd> for LOGMAG (near the top).</li>
 <li><strong>Repeat for trace 1</strong> if you want a second line, for example the Smith chart next to the SWR.</li>
 </ol>
 
+#### Why SCALE/DIV 1 and REFERENCE POSITION 1 for SWR?
+
+- **SCALE/DIV = 1:** the screen has 8 horizontal divisions. With SCALE/DIV at 1, every division is 1 SWR unit. That gives a usable range from SWR 1.0 (perfect) up to about 8 (very poor), and SWR 1.5 is easy to read: half a division above the reference line.
+- **REFERENCE POSITION = 1:** decides which horizontal grid line stands for SWR 1.0, the lowest possible value. At position 1 (the first line above the bottom edge) the reference line stays clearly visible with a little room below the curve. At position 0 everything would be squashed against the bottom edge.
+- **Zooming in on a dip you have already found**, for example to see the difference between SWR 1.3 and 1.5: set SCALE/DIV to <kbd>0.5</kbd>. Everything above about SWR 4.5 then falls off the top of the screen.
+
 ### 3.6 Calibration: the single most important step {#calibration}
 
-Calibration teaches the NanoVNA what a "perfect open", a "perfect short" and a "perfect 50 ohm load" look like **at the end of your cable**. From then on it automatically subtracts the influence of that cable from every measurement. Without calibration, you are mostly measuring your own test cable.
+Calibration teaches the NanoVNA what a "perfect open", a "perfect short" and a "perfect 50 ohm load" look like **at the exact point where you screw on the caps**. That point is called the **reference plane**. From then on the NanoVNA subtracts everything between its port and that point (test cable, coupler) from every measurement. Without calibration, you are mostly measuring your own test cable.
 
-#### Recognising the three caps
-
-| Cap | How to recognise it | What it simulates |
-|---|---|---|
-| **OPEN** | Only white insulating material inside, no metal pin in the middle. Sometimes marked O | A cable connected to nothing |
-| **SHORT** | All metal inside, pin and rim joined. Sometimes marked S | A short circuit |
-| **LOAD** | A small pin inside, often silver rather than gold. Sometimes marked L or 50&#8239;&Omega; | A perfect 50 ohm load |
+#### Where to calibrate: where the antenna will be connected
 
 <div class="mk-callout mk-tip">
   <div class="mk-callout__k">Golden rule</div>
-  <p>Calibrate at the point where the device under test will be connected. For an antenna that is the end of the SMA cable. You can add the small SO-239 adapter afterwards: on HF its effect is negligible.</p>
+  <p>Calibrate exactly at the point where you will connect the antenna (or the filter, or the choke) afterwards. Everything between the port and that point must be in place while you calibrate, and must stay in place while you measure. Add or remove a cable afterwards and that piece is no longer in the calibration.</p>
 </div>
+
+| How you work | Where the caps go | Is that OK? |
+|---|---|---|
+| Antenna coax via the SMA test cable (the usual way: the cable takes the strain off the port, 2.4) | On the coupler at the end of the test cable | **Yes.** This is the method in this guide |
+| Caps directly on the NanoVNA port, and later the antenna adapter also directly on the port | On the port itself | **Yes.** Calibration and measurement use the same point. Mind the strain on the port: never let a heavy coax hang from it |
+| Caps directly on the port, but measuring through the test cable afterwards | On the port itself | **No.** The test cable is not in the calibration. Its loss and delay end up in your reading: the Smith chart rotates and the SWR and impedance are off, more so on the higher bands. Calibrate again at the end of the cable |
+
+#### What screws onto what: the coupler
+
+SMA connectors come in two genders. **Male** has a **pin** in the middle, **female** has a **hole** (a small sleeve). Not sure? Look at the centre of each part: pin or hole. Two males never fit together, and neither do two females.
+
+| Part | Gender | Comment |
+|---|---|---|
+| NanoVNA port CH0 (Port 1) | female | Hole in the middle |
+| Supplied SMA test cable | male at both ends | Pin at both ends |
+| Calibration caps (OPEN, SHORT, LOAD) | male | They fit on the port, but not on the cable |
+| SMA coupler (in the box) | female at both ends | The link between cable and cap |
+
+Because the test cable and the caps are both male, the caps do **not** fit directly onto the cable. The chain during calibration is therefore: **Port 1, test cable, SMA female-female coupler, cap.**
+
+<figure class="mk-fig"><img src="/assets/images/measuring-is-knowing/55-calibration-chain.png" alt="Calibration chain: Port 1, SMA test cable, female-female coupler, OSL cap; and during measurement the SO-239 adapter on the coupler" loading="lazy"><figcaption>Top: the chain during calibration. Bottom: the same chain while measuring.</figcaption></figure>
+
+| No. | What you see here |
+|---|---|
+| **1** | **Port 1 (CH0)** of the NanoVNA: the test cable stays screwed in here. |
+| **2** | **The SMA test cable**, male at both ends. |
+| **3** | **The female-female coupler.** It stays on the cable for the whole calibration; only the cap on top of it is swapped. |
+| **4** | **The cap.** The red dashed line is the reference plane: everything to the left of it is calibrated out. |
+
+After calibrating, what goes on the coupler depends on your SO-239 adapter:
+
+- **Adapter with an SMA male side (pin):** screw it onto the coupler. The coupler stays where it is, exactly as during calibration.
+- **Adapter with an SMA female side (hole)**, like the one in the kit list (2.1): it fits straight onto the cable end. Remove the coupler first. The coupler is only about a centimetre long; on HF leaving it out of the measurement makes no visible difference. On VHF and UHF, keep the chain identical: calibrate and measure through the same parts.
+
+#### Recognising the three caps
+
+Mixing up the caps is the most common calibration mistake. Not every set is marked, so learn to recognise them by what you see inside.
+
+<figure class="mk-fig mk-fig--narrow"><img src="/assets/images/measuring-is-knowing/54-osl-caps.png" alt="The three calibration caps seen from the front: OPEN white, SHORT all metal, LOAD white with a small pin" loading="lazy"><figcaption>Look into the cap from the front.</figcaption></figure>
+
+| No. | Cap | What you see inside | Letter (if marked) | How to remember it |
+|---|---|---|---|---|
+| **1** | **OPEN** | Only white plastic. No metal, no pin | O | "Open": nothing connected, you see nothing but white |
+| **2** | **SHORT** | All metal. No opening, no white plastic | S | "Short": shorted, everything is one piece of metal |
+| **3** | **LOAD** | A thin metal pin in the middle, with white plastic around it (often smaller or more silvery than a normal pin) | L or 50&#8239;&Omega; | "Load": looks like a real load, with a mini pin |
+
+**No marking?** Shine a torch into the cap, or hold it against the light. Only white: OPEN. A small pin: LOAD. Only metal, no white and no pin: SHORT.
 
 <div class="mk-callout mk-caution">
-  <div class="mk-callout__k">Caution</div>
-  <p>A calibration is only valid for the frequency range in which you made it. If you change START or STOP, calibrate again or load a saved calibration.</p>
+  <div class="mk-callout__k">What a calibration belongs to</div>
+  <p>A calibration belongs to a <strong>frequency range</strong> and a <strong>connection path</strong> (cable, coupler, adapter). It does not belong to an antenna. A 40 m calibration therefore works for every antenna you connect through the same PL adapter. But change START or STOP, or add or remove a cable, and you must calibrate again or load a matching saved calibration.</p>
 </div>
 
-#### Step A: clear the old calibration
+#### Step A: set up and clear the old calibration
 
 <figure class="mk-fig"><img src="/assets/images/measuring-is-knowing/12-calibrate-menu.png" alt="The CALIBRATE menu with RESET highlighted" loading="lazy"><figcaption>The CALIBRATE menu.</figcaption></figure>
 
@@ -417,11 +469,18 @@ Calibration teaches the NanoVNA what a "perfect open", a "perfect short" and a "
 | **2** | <kbd>RESET</kbd>: clears the current calibration. Always do this first. |
 
 <ol class="mk-steps">
-<li>First set the range, formats and channel (3.4 and 3.5). The calibration stores those settings along with it.</li>
-<li>Tap <kbd>CALIBRATE &gt; RESET</kbd>. The letters on the left of the screen (C0, D, R, S, T, X) disappear.</li>
+<li><strong>Prepare the hardware:</strong> the test cable in Port 1 (CH0), the female-female coupler on its free end, the three caps within reach.</li>
+<li><strong>Range:</strong> <kbd>STIMULUS &gt; START</kbd>, type the frequency and end with <kbd>M</kbd> (MHz) or <kbd>k</kbd> (kHz). Then <kbd>STIMULUS &gt; STOP</kbd> the same way (3.4).</li>
+<li><strong>Traces:</strong> <kbd>DISPLAY &gt; TRACE</kbd>. For a plain SWR sweep, leave only TRACE 0 on (coloured background = on, grey = off; tap to switch).</li>
+<li><strong>Format:</strong> <kbd>DISPLAY &gt; FORMAT &gt; SWR</kbd>.</li>
+<li><strong>Channel:</strong> <kbd>DISPLAY &gt; CHANNEL &gt; CH0 REFLECT</kbd> (on some units this is called Port 1, see appendix F).</li>
+<li><strong>Scale:</strong> <kbd>DISPLAY &gt; SCALE &gt; SCALE/DIV</kbd>, tap <kbd>1</kbd> and <kbd>x1</kbd>. Then <kbd>REFERENCE POSITION</kbd>, tap <kbd>1</kbd> and <kbd>x1</kbd>. Why these values: see 3.5.</li>
+<li><strong>Clear:</strong> tap <kbd>CALIBRATE &gt; RESET</kbd>. The letters on the left of the screen (C, D, R, S, T, X) disappear.</li>
 </ol>
 
-#### Step B: open, short, load
+The calibration stores all of these settings along with it, so set them first and calibrate last.
+
+#### Step B: short, open, load
 
 <figure class="mk-fig"><img src="/assets/images/measuring-is-knowing/13-calibration-steps.png" alt="Calibration menu: OPEN done in black, SHORT next in green" loading="lazy"><figcaption>OPEN is done (black), SHORT is the next step (green).</figcaption></figure>
 
@@ -434,14 +493,19 @@ Calibration teaches the NanoVNA what a "perfect open", a "perfect short" and a "
 
 <ol class="mk-steps">
 <li>Tap <kbd>CALIBRATE &gt; CALIBRATE</kbd>.</li>
-<li>Screw the <strong>OPEN</strong> cap onto the end of the SMA cable with your fingers. Lay the cable down and do not touch it. Wait 2 seconds and tap <kbd>OPEN</kbd>.</li>
-<li>Unscrew the OPEN cap and screw on the <strong>SHORT</strong> cap. Wait 2 seconds, tap <kbd>SHORT</kbd>.</li>
-<li>Replace it with the <strong>LOAD</strong> cap. Wait 2 seconds, tap <kbd>LOAD</kbd>.</li>
-<li>Only for filters and chokes: screw the LOAD onto the end of the second cable (the one on CH1) and tap <kbd>ISOLN</kbd>. Then join both cable ends with the SMA female-female coupler and tap <kbd>THRU</kbd>.</li>
+<li>Screw the <strong>SHORT</strong> cap onto the coupler, finger-tight. Lay the cable down and do not touch it. Wait 2 seconds until the trace stops moving, then tap <kbd>SHORT</kbd>.</li>
+<li>Unscrew the SHORT and screw on the <strong>OPEN</strong> cap. Wait 2 seconds, tap <kbd>OPEN</kbd>.</li>
+<li>Unscrew the OPEN and screw on the <strong>LOAD</strong> cap. Wait 2 seconds, tap <kbd>LOAD</kbd>.</li>
+<li>Only for filters and chokes: screw the LOAD onto the end of the second cable (the one on CH1) and tap <kbd>ISOLN</kbd>. Then join both cable ends with the coupler and tap <kbd>THRU</kbd>.</li>
 <li>Tap <kbd>DONE</kbd>.</li>
 </ol>
 
-#### Step C: save
+<div class="mk-callout mk-tip">
+  <div class="mk-callout__k">The order of the caps does not matter</div>
+  <p>Short, open, load or open, short, load: both are correct, as long as you do all three before you tap <kbd>DONE</kbd>. The figure above happens to start with OPEN; the steps start with SHORT. What matters is that the cap you tap matches the cap that is screwed on.</p>
+</div>
+
+#### Step C: save and connect
 
 <figure class="mk-fig"><img src="/assets/images/measuring-is-knowing/14-save-slot.png" alt="Choosing a memory slot after DONE" loading="lazy"><figcaption>Choosing a memory slot after DONE.</figcaption></figure>
 
@@ -451,8 +515,10 @@ Calibration teaches the NanoVNA what a "perfect open", a "perfect short" and a "
 | **2** | **The selected slot** (green). Tap to save. |
 
 <ol class="mk-steps">
-<li>Tap the slot from your memory plan (3.8).</li>
-<li>The left edge of the screen now shows C with the number of that slot, for example C1.</li>
+<li>Tap the slot from your memory plan (3.8), for example <kbd>SAVE 2</kbd> for 40 m.</li>
+<li>The left edge of the screen now shows C with the number of that slot, for example C2.</li>
+<li>Unscrew the LOAD cap. Discharge the antenna coax (0.3). Fit the SO-239 adapter (on the coupler or straight on the cable, see above) and screw the PL-259 of the antenna coax onto it.</li>
+<li><strong>Read the result.</strong> The NanoVNA measures continuously and refreshes the curve by itself; there is no separate Sweep button as in the PC software.</li>
 </ol>
 
 #### Step D: verify
@@ -468,22 +534,67 @@ Temporarily set a trace to Smith (<kbd>DISPLAY &gt; FORMAT &gt; SMITH</kbd>) and
 | What you see | What it means | What you do |
 |---|---|---|
 | All three in the right place | The calibration is good | Measure |
-| The dot is off, or it jumps around | Cap not tight, cable moved, or wrong order | Tighten the caps, keep the cable still, RESET and start again |
+| The dot is off, or it jumps around | Cap not tight, cable moved, or caps mixed up | Tighten the caps, keep the cable still, RESET and start again |
 | The letters C, D, R, S are missing on the left | No calibration is active | Calibrate, or load a saved calibration via RECALL |
 
-### 3.7 Loading a saved calibration
+Faster, and without switching to Smith: the **LOAD test** in the checklist of 3.10.
 
-Tap <kbd>RECALL &gt; RECALL 1</kbd> (or the number you need). Range, formats and calibration all come back. At power-up the NanoVNA automatically loads slot 0.
+### 3.7 Changing bands with RECALL {#recall}
 
-### 3.8 Memory plan (a suggestion)
+**What RECALL does:** one tap brings back the **range** (START/STOP), the **display settings** (TRACE, FORMAT, SCALE, CHANNEL) **and the calibration**, exactly as they were when you saved them. At power-up the NanoVNA loads slot 0 by itself.
 
-| Slot | Range and format | Connection | Use |
-|---|---|---|---|
-| **SAVE 0** | 6.9 to 7.3 MHz, SWR + Smith | SMA cable + PL | Loaded at power-up |
-| **SAVE 1** | 1 to 30 MHz, SWR | SMA cable + PL | All HF bands |
-| **SAVE 2** | 144 to 146 MHz, SWR | SMA cable + N | 2 m antennas |
-| **SAVE 3** | 1 to 60 MHz, LOGMAG CH1 | two SMA cables | Filters |
-| **SAVE 4** | 1 to 30 MHz, LOGMAG CH1 | clip leads | Chokes (phase 3) |
+#### The routine for changing bands (on the unit)
+
+<ol class="mk-steps">
+<li>Tap <kbd>RECALL</kbd>, then the number of the band you want, for example <kbd>RECALL 2</kbd> for 40 m (memory plan, 3.8).</li>
+<li>Check the first three points of the checklist in 3.10: format, range and calibration status.</li>
+<li>All correct? Discharge the coax, connect the antenna and read. You do not need to re-enter a single setting.</li>
+</ol>
+
+<div class="mk-callout mk-caution">
+  <div class="mk-callout__k">How to avoid mistakes when changing bands</div>
+  <p><strong>The mistake:</strong> changing a setting by hand <em>after</em> a RECALL (for example FORMAT or SCALE) and then switching to another band without saving. The saved slot does not change until you save again, but the screen has. A few band changes later you no longer know which settings belong to which calibration, and you see a dip on the wrong frequency, a flat line, or a jagged curve.</p>
+  <p><strong>The rule:</strong> keep the screen and the slot identical. Changed anything by hand after a RECALL? Save again in the <em>same</em> slot (<kbd>CALIBRATE &gt; SAVE &gt; SAVE</kbd> plus the number) before you switch to another band.</p>
+</div>
+
+On the PC there is no one-click equivalent of RECALL: there you enter Start/Stop and load the calibration file as two separate actions (8.4 and 8.9).
+
+### 3.8 Memory plan {#memory-plan}
+
+#### How many slots does your unit have?
+
+That depends on the firmware. My NanoVNA-H4 with DiSlord firmware has **7 slots: SAVE 0 to SAVE 6**. Other firmware versions have 5 or 6. Do not assume a number; count your own:
+
+<ol class="mk-steps">
+<li>Tap <kbd>RECALL</kbd>.</li>
+<li>Look at the list of buttons: <kbd>RECALL 0</kbd>, <kbd>RECALL 1</kbd> and so on. If there is a <kbd>MORE</kbd> button, tap it to see the rest.</li>
+<li>The highest number you find is your last slot. Write it down; you will need it for your own memory plan.</li>
+</ol>
+
+#### The plan I use (7 slots)
+
+| Slot | Use | START | STOP | Sweep points |
+|---|---|---|---|---|
+| **SAVE 0** | Wide sweep, all HF bands (loaded at power-up) | 1 MHz | 30 MHz | **401** |
+| **SAVE 1** | 80 m | 3.5 MHz | 3.8 MHz | 101 |
+| **SAVE 2** | 40 m | 6.9 MHz | 7.3 MHz | 101 |
+| **SAVE 3** | 30 m | 10.0 MHz | 10.2 MHz | 101 |
+| **SAVE 4** | 20 m | 13.9 MHz | 14.5 MHz | 101 |
+| **SAVE 5** | 15 m | 20.9 MHz | 21.5 MHz | 101 |
+| **SAVE 6** | 10 m | 28.0 MHz | 29.7 MHz | 101 (201 if too coarse) |
+
+All slots: SWR format, CH0 REFLECT, SCALE/DIV 1, REFERENCE POSITION 1, calibrated with the test cable and coupler (3.6). Each range is a little wider than the band itself, so you still see a dip that sits just outside it.
+
+- **SAVE 0, sweep points:** set <kbd>STIMULUS &gt; SWEEP POINTS</kbd> to <kbd>401</kbd> <em>before</em> you calibrate. With the default 101 points over 1 to 30 MHz the unit only measures every 290 kHz, and a narrow dip can fall between two points.
+- **SAVE 6, sweep points:** 10 m is 1.7 MHz wide, much wider than the other bands (0.2 to 0.6 MHz). If the curve looks coarse with 101 points, set 201 and calibrate again.
+- **Fewer slots on your unit?** Drop the bands you do not use, or keep them as files on the PC.
+
+**Bands that are not in the plan** (160 m, 60 m, 17 m, 12 m, 6 m, and 11 m to check a CB antenna) and the **filter and choke measurements** (7.2, 10) live as files in NanoVNA-Saver on the PC, where there is no limit (8.4 and 8.9). Need one on the unit, without a PC? Calibrate on the spot and measure without saving, or temporarily overwrite a slot and recalibrate that band afterwards.
+
+<div class="mk-callout mk-tip">
+  <div class="mk-callout__k">Check your licence</div>
+  <p>The table lists ranges to <em>measure</em>. Which bands you may <em>transmit</em> on depends on your licence class. Check your own licence conditions before you build a plan around a band.</p>
+</div>
 
 ### 3.9 Using the marker
 
@@ -494,6 +605,24 @@ Tap <kbd>RECALL &gt; RECALL 1</kbd> (or the number you need). Range, formats and
 <li><strong>Automatically find the lowest SWR:</strong> <kbd>MARKER &gt; SEARCH &gt; MINIMUM</kbd>. Switch <kbd>TRACKING</kbd> on and the marker follows the minimum while you work on the antenna.</li>
 <li><strong>A second marker:</strong> <kbd>MARKER &gt; SELECT MARKER &gt; MARKER 2</kbd>. Handy for marking the start and end of a band.</li>
 </ol>
+
+### 3.10 Is my result right? The checklist after every sweep {#result-check}
+
+Run through these five points after every measurement, on the unit and on the PC. It takes ten seconds and catches almost every mistake before you start cutting wire.
+
+| No. | Check | Good | Not good: what to do |
+|---|---|---|---|
+| **1** | **Format.** What does the trace header say? | SWR (or the format you chose) | It says PHASE, LOGMAG or something else: <kbd>DISPLAY &gt; FORMAT &gt; SWR</kbd>, then save again in the same slot (3.7) |
+| **2** | **Range.** What do START and STOP at the bottom say? | The band you think you are measuring | Wrong band: RECALL the right slot, or load the right <code>.cal</code> file on the PC |
+| **3** | **Calibration status** (unit only). What is on the left edge? | C with a digit, for example C2 | Nothing there: no active calibration. RECALL a slot or calibrate (3.6) |
+| **4** | **Shape of the curve** | A smooth V-shaped dip | See the table below |
+| **5** | **LOAD test.** Screw the LOAD cap where the antenna normally goes | A flat line at SWR 1.0 (for example 1.002) | Clearly higher: the calibration itself is wrong. Calibrate again |
+
+| What the curve looks like | Probable cause |
+|---|---|
+| A smooth V-shaped dip | Normal. A good measurement |
+| A flat, high line across the whole band | An open connection, a cap still screwed on instead of the antenna, or a wrong or missing calibration |
+| A jagged, jumpy line | Wrong format (for example PHASE instead of SWR), a loose connector, or interference from a strong local signal |
 
 
 ## 4. Reading the graphs {#reading-graphs}
@@ -701,10 +830,11 @@ With a manual antenna tuner you can watch live how the knobs move the dot across
 #### Procedure
 
 <ol class="mk-steps">
-<li><strong>Load your setup:</strong> <kbd>RECALL &gt; RECALL 0</kbd>. Nothing saved yet? Set 6.9 to 7.3 MHz (3.4), trace 0 to SWR and trace 1 to SMITH, both CH0 REFLECT (3.5), and calibrate (3.6).</li>
+<li><strong>Load your setup:</strong> <kbd>RECALL &gt; RECALL 2</kbd> (40 m in the memory plan, 3.8). Nothing saved yet? Set 6.9 to 7.3 MHz (3.4), trace 0 to SWR, CH0 REFLECT (3.5), and calibrate with the test cable and coupler (3.6).</li>
 <li><strong>Disconnect the transceiver</strong> from the antenna switch (0.4) and set the switch to the antenna you want to measure.</li>
 <li><strong>Discharge the coax</strong> as described in 0.3: hold the centre pin of the PL-259 against the metal nut for 2 seconds, with a wire or an insulated screwdriver.</li>
-<li><strong>Screw the SO-239 adapter</strong> onto the end of the SMA cable, and the coax's PL-259 onto that (2.4).</li>
+<li><strong>Screw the SO-239 adapter</strong> onto the coupler at the end of the SMA cable (or straight onto the cable if your adapter has an SMA female side, 3.6), and the coax's PL-259 onto that (2.4).</li>
+<li><strong>Check the result</strong> with points 1 to 4 of the checklist in 3.10: format, range, calibration status and the shape of the curve.</li>
 <li>Tap <kbd>MARKER &gt; SEARCH &gt; MINIMUM</kbd>. The marker jumps to the lowest point.</li>
 <li><strong>Read</strong> the frequency and SWR of marker 1 at the top and write them down.</li>
 <li><strong>Usable bandwidth:</strong> choose <kbd>MARKER &gt; SELECT MARKER &gt; MARKER 2</kbd> and move it left with the jog switch until the top line shows SWR 2.0. Do the same with marker 3 to the right. The frequency difference between them is the bandwidth below SWR 2.</li>
@@ -740,7 +870,7 @@ With a manual antenna tuner you can watch live how the knobs move the dot across
 <figure class="mk-fig"><img src="/assets/images/measuring-is-knowing/33-multiband-sweep.png" alt="SWR sweep from 1 to 30 MHz showing several dips" loading="lazy"><figcaption>1 to 30 MHz. Every dip is a band on which the antenna resonates.</figcaption></figure>
 
 <ol class="mk-steps">
-<li>Load <kbd>RECALL &gt; RECALL 1</kbd>, or set START <kbd>1 M</kbd>, STOP <kbd>30 M</kbd> and <kbd>SWEEP POINTS &gt; 401</kbd>, and calibrate.</li>
+<li>Load <kbd>RECALL &gt; RECALL 0</kbd> (the wide sweep in the memory plan, 3.8), or set START <kbd>1 M</kbd>, STOP <kbd>30 M</kbd> and <kbd>SWEEP POINTS &gt; 401</kbd>, and calibrate.</li>
 <li>Connect the antenna as in 6.1 (discharge first).</li>
 <li>Put markers 1 to 4 on the dips of the bands you expect (<kbd>MARKER &gt; SELECT MARKER</kbd>, then move them with the jog switch).</li>
 <li>Is there a dip in every band the antenna is supposed to cover? Then zoom in band by band using the START/STOP values in appendix B.</li>
@@ -761,7 +891,7 @@ In the shack you measure the **complete system** as your transceiver sees it: an
 
 <ol class="mk-steps">
 <li>Take the NanoVNA, the SMA cable, the adapter and the caps to the antenna.</li>
-<li>Calibrate on the spot (3.6).</li>
+<li>Calibrate on the spot, at the point where the balun will be connected (3.6).</li>
 <li>Disconnect the coax from the balun and connect the VNA directly to the balun.</li>
 <li>Measure as in 6.1.</li>
 </ol>
@@ -770,10 +900,10 @@ In the shack you measure the **complete system** as your transceiver sees it: an
 
 <ol class="mk-steps">
 <li>Set the range: <kbd>STIMULUS</kbd> <kbd>144 M</kbd> to <kbd>146 M</kbd> for 2 m, or <kbd>430 M</kbd> to <kbd>440 M</kbd> for 70 cm.</li>
-<li>Calibrate at the end of the SMA cable (the caps are SMA).</li>
-<li>Screw the SMA female-female coupler onto the end of the SMA cable, and the N female/SMA male adapter onto that.</li>
+<li>Screw the SMA female-female coupler onto the end of the SMA cable and calibrate there, exactly as in 3.6.</li>
+<li>Remove the LOAD cap and screw the N female/SMA male adapter onto the coupler. The coupler stays on: on VHF and UHF the chain must be exactly as during calibration.</li>
 <li>Push the N plug of the VHF coax straight onto the adapter and turn the nut clockwise until hand-tight.</li>
-<li>Save as <kbd>SAVE 2</kbd> and measure as in 6.1. On 70 cm the adapter can slightly distort the SWR value; the position of the dip remains reliable.</li>
+<li>Measure as in 6.1. If all your slots are taken (3.8), measure without saving, or keep this calibration as a file in NanoVNA-Saver. On 70 cm the adapter can slightly distort the SWR value; the position of the dip remains reliable.</li>
 </ol>
 
 ## 7. Phase 1: coax and filters {#coax-filters}
@@ -814,7 +944,7 @@ With TDR (Time Domain Reflectometry) the NanoVNA converts the measurement into a
 <ol class="mk-steps">
 <li><strong>Set up:</strong> START <kbd>1 M</kbd>, STOP <kbd>60 M</kbd>, trace 0 to <kbd>LOGMAG</kbd> and <kbd>CH1 THROUGH</kbd>, scale 10, reference 7.</li>
 <li>Screw the second SMA cable onto CH1.</li>
-<li><strong>Full calibration:</strong> OPEN, SHORT, LOAD at the end of cable 1; LOAD on the end of cable 2 and tap <kbd>ISOLN</kbd>; join both cable ends with the coupler and tap <kbd>THRU</kbd>; then <kbd>DONE &gt; SAVE 3</kbd>.</li>
+<li><strong>Full calibration:</strong> OPEN, SHORT, LOAD on the coupler at the end of cable 1; LOAD on the coupler at the end of cable 2 and tap <kbd>ISOLN</kbd>; join both cable ends with the coupler and tap <kbd>THRU</kbd>; then <kbd>DONE</kbd>. All seven slots in use (3.8)? Measure without saving, or overwrite a slot temporarily and recalibrate that band later.</li>
 <li><strong>Check:</strong> with the cables still joined, the line must sit at 0 dB.</li>
 <li>Remove the coupler and put the filter between the two cables (if the filter has other connectors, use suitable adapters).</li>
 <li>Marker 1 on 14.1 MHz (2nd harmonic), marker 2 on 7.05 MHz (operating frequency).</li>
@@ -920,14 +1050,29 @@ NanoVNA-Saver is free, open-source software without a digital signature from a l
 
 ### 8.4 Calibrating in the software
 
-You can use the calibration stored in the instrument itself (then do nothing here), or calibrate in NanoVNA-Saver. The latter has the advantage that the calibration applies to all segments, so a wide multi-segment sweep stays accurate.
+You can use the calibration stored in the instrument itself (then do nothing here), or calibrate in NanoVNA-Saver. The latter has the advantage that the calibration applies to all segments, so a wide multi-segment sweep stays accurate, and that you can keep as many calibrations as you like, as files.
+
+#### On the unit or on the PC?
+
+| Aspect | On the unit (standalone) | In NanoVNA-Saver (PC) |
+|---|---|---|
+| Number of saved setups | Limited: 7 on my unit (SAVE 0 to 6), fewer on some firmware (3.8) | Unlimited, as files |
+| Everything back in one go | Yes, with RECALL: range, display and calibration together (3.7) | No: enter Start/Stop and load the <code>.cal</code> file separately |
+| Measuring | Continuous, the curve refreshes by itself | Only after you click <strong>Sweep</strong>, after every change |
+| Calibrating | <kbd>CALIBRATE</kbd> menu on the unit (3.6) | <strong>Calibration assistant</strong> only (see the caution below) |
+| Best for | Quick checks, out in the field, no laptop | At home: more accurate reading, combining graphs, extra bands that do not fit on the unit |
 
 <ol class="mk-steps">
-<li>Click <strong>Calibration</strong>, bottom left.</li>
-<li>Click <strong>Calibration assistant</strong>. The program asks you to connect open, short and load one at a time; each time, screw the right cap onto the end of the SMA cable and click OK.</li>
-<li>For filters and chokes, also do through (and isolation) as the assistant asks.</li>
-<li>Click <strong>Apply</strong>, then <strong>Save calibration</strong> to keep it for next time (use a name with band and connection, e.g. <code>40m_PL.cal</code>).</li>
+<li>Click <strong>Calibration</strong>, bottom left. If there is a <strong>Reset</strong> button, click it first to clear an old calibration.</li>
+<li>Click <strong>Calibration assistant</strong>. The program asks you to connect short, open and load one at a time (the order may differ). Each time, screw the right cap onto the coupler at the end of the SMA cable (3.6), wait 2 seconds until the reading is stable, and click OK.</li>
+<li>Asked for <strong>Through</strong>? For an antenna (Port 1 only) click <strong>Cancel</strong>. Only for filters and chokes do you complete it, with both cable ends joined by the coupler.</li>
+<li>Click <strong>Apply</strong>, then <strong>Save</strong> to keep it for next time (use a name with band and connection, e.g. <code>40m_PL.cal</code>).</li>
 </ol>
+
+<div class="mk-callout mk-caution">
+  <div class="mk-callout__k">Use the assistant, not the loose buttons</div>
+  <p>The Calibration window also has separate <strong>Open</strong>, <strong>Short</strong>, <strong>Load</strong> and <strong>Through</strong> buttons. Do not use them. The program itself warns that they do not run a sweep and do not interact with the NanoVNA's own calibration. Always use the <strong>Calibration assistant</strong>: it runs the sweep for each cap and guides you through the whole sequence.</p>
+</div>
 
 #### One calibration per band, or one wide calibration?
 
@@ -941,8 +1086,10 @@ You can use the calibration stored in the instrument itself (then do nothing her
 This example shows the calibration for 40 m (6.9 to 7.3 MHz). For any other band you repeat the same steps with the range from the band sheet in 8.9.
 
 <ol class="mk-steps">
-<li>Enter Start and Stop for the band you want to calibrate (for 40 m: <code>6.9M</code> and <code>7.3M</code>).</li>
-<li>Click <strong>Calibration</strong>, bottom left, then <strong>Calibration assistant</strong>.</li>
+<li>Enter Start and Stop for the band you want to calibrate (for 40 m: <code>6.9M</code> and <code>7.3M</code>). Always end with the letter <code>M</code>.</li>
+<li><strong>Segments:</strong> leave at 1 for every band up to 0.6 MHz wide. Set 2 for 6 m (2 MHz wide). Each segment is 101 measuring points.</li>
+<li>Click <strong>Calibration</strong>, bottom left. Click <strong>Reset</strong> (if present) to clear an old calibration.</li>
+<li>Click <strong>Calibration assistant</strong>.</li>
 </ol>
 
 <div class="mk-grid">
@@ -956,11 +1103,14 @@ This example shows the calibration for 40 m (6.9 to 7.3 MHz). For any other band
 | **2** | Only click the next button once the reading on screen is stable (about 2 seconds). When all three steps are done, click **Apply**. |
 
 <ol class="mk-steps">
-<li>Screw the <strong>OPEN</strong> cap onto the end of your SMA cable. Wait until the reading is stable and continue.</li>
-<li>Remove the OPEN cap and screw on the <strong>SHORT</strong> cap. Wait and continue.</li>
-<li>Remove the SHORT cap and screw on the <strong>LOAD</strong> cap. Wait and continue.</li>
+<li>Screw the cap the assistant asks for (here <strong>OPEN</strong>) onto the <strong>coupler</strong> at the end of your SMA cable: the test cable and the caps are both male and do not fit together directly (3.6). Wait 2 seconds until the reading is stable and click OK.</li>
+<li>Swap to the next cap it asks for (<strong>SHORT</strong>), wait and click OK. The coupler stays on; only the cap changes.</li>
+<li>Swap to <strong>LOAD</strong>, wait and click OK.</li>
+<li>Asked for <strong>Through</strong>? Click <strong>Cancel</strong> for an antenna measurement (Port 1 only).</li>
 <li>Click <strong>Apply</strong>. The calibration is now active for this frequency range.</li>
 </ol>
+
+The assistant may ask for the caps in the order short, open, load or open, short, load. Both are fine, as long as the cap on the coupler is the one it asks for. Never use the separate Open, Short, Load and Through buttons (see 8.4).
 
 #### Saving the calibration as a file
 
@@ -1088,8 +1238,10 @@ This is the practical routine: the same fixed method for every band, followed by
 <li>Set the antenna switch to the antenna you want to measure.</li>
 <li>In NanoVNA-Saver, enter Start and Stop from the band sheet below.</li>
 <li>Under Calibration, click <strong>Load</strong> and choose that band's <code>.cal</code> file (or the wide HF file).</li>
-<li>Connect the antenna coax to the NanoVNA (via the SMA cable and the SO-239 adapter).</li>
-<li>Click <strong>Sweep</strong>.</li>
+<li>Check that Start and Stop still show the band's values after loading. If they do not match the file, the calibration does not fit the range.</li>
+<li>Connect the antenna coax to the NanoVNA (via the SMA cable, the coupler if your adapter needs it, and the SO-239 adapter, exactly as when you calibrated).</li>
+<li>Click <strong>Sweep</strong>. The software only measures when you click; after every change, click Sweep again.</li>
+<li>Run the checklist in 3.10 (format, range, shape of the curve).</li>
 <li>Click the lowest point of the curve in the VSWR graph to put a marker on it, or read the value in the marker table on the left.</li>
 <li>Write down the frequency and the SWR at the lowest point.</li>
 <li>Compare with the "expected dip" column in the band sheet and with the "what if I see this" table below.</li>
@@ -1098,23 +1250,33 @@ This is the practical routine: the same fixed method for every band, followed by
 
 #### Band sheets
 
-| Band | Start | Stop | Calibration file | Expected dip |
-|---|---|---|---|---|
-| **80 m** | <code>3.5M</code> | <code>3.8M</code> | <code>80m_PL.cal</code> | around 3.65 MHz (depends on the antenna length) |
-| **40 m** | <code>6.9M</code> | <code>7.3M</code> | <code>40m_PL.cal</code> | around 7.1 MHz |
-| **30 m** | <code>10.0M</code> | <code>10.2M</code> | <code>30m_PL.cal</code> | around 10.12 MHz |
-| **20 m** | <code>13.9M</code> | <code>14.5M</code> | <code>20m_PL.cal</code> | around 14.15 MHz |
-| **15 m** | <code>20.9M</code> | <code>21.5M</code> | <code>15m_PL.cal</code> | around 21.2 MHz |
-| **10 m** | <code>28.0M</code> | <code>29.7M</code> | <code>10m_PL.cal</code> | depends strongly on the antenna; multiband antennas are often tuned broader here |
+Set the range with Start and Stop, **or** with Center and Span, never both one after the other: entering one pair recalculates the other. Center is the middle frequency, Span the total width. All values in MHz, ending with the letter <code>M</code>.
+
+| Band | Start / Stop | Center / Span | Segments | Calibration file | Expected dip |
+|---|---|---|---|---|---|
+| **160 m** | <code>1.8M</code> / <code>2.0M</code> | <code>1.9M</code> / <code>0.2M</code> | 1 | <code>160m_PL.cal</code> | inside 1.81 to 2.0 MHz |
+| **80 m** | <code>3.5M</code> / <code>3.8M</code> | <code>3.65M</code> / <code>0.3M</code> | 1 | <code>80m_PL.cal</code> | around 3.65 MHz (depends on the antenna length) |
+| **60 m** | <code>5.3M</code> / <code>5.4M</code> | <code>5.35M</code> / <code>0.1M</code> | 1 | <code>60m_PL.cal</code> | around 5.36 MHz (check your national allocation) |
+| **40 m** | <code>6.9M</code> / <code>7.3M</code> | <code>7.1M</code> / <code>0.4M</code> | 1 | <code>40m_PL.cal</code> | around 7.1 MHz |
+| **30 m** | <code>10.0M</code> / <code>10.2M</code> | <code>10.1M</code> / <code>0.2M</code> | 1 | <code>30m_PL.cal</code> | around 10.12 MHz |
+| **20 m** | <code>13.9M</code> / <code>14.5M</code> | <code>14.2M</code> / <code>0.6M</code> | 1 | <code>20m_PL.cal</code> | around 14.15 MHz |
+| **17 m** | <code>18.0M</code> / <code>18.2M</code> | <code>18.1M</code> / <code>0.2M</code> | 1 | <code>17m_PL.cal</code> | around 18.12 MHz |
+| **15 m** | <code>20.9M</code> / <code>21.5M</code> | <code>21.2M</code> / <code>0.6M</code> | 1 | <code>15m_PL.cal</code> | around 21.2 MHz |
+| **12 m** | <code>24.8M</code> / <code>25.0M</code> | <code>24.9M</code> / <code>0.2M</code> | 1 | <code>12m_PL.cal</code> | around 24.94 MHz |
+| **11 m** (CB, not an amateur band) | <code>26.9M</code> / <code>27.4M</code> | <code>27.15M</code> / <code>0.5M</code> | 1 | <code>11m_PL.cal</code> | only to check a CB antenna |
+| **10 m** | <code>28.0M</code> / <code>29.7M</code> | <code>28.85M</code> / <code>1.7M</code> | 1 or 2 | <code>10m_PL.cal</code> | depends strongly on the antenna; multiband antennas are often tuned broader here |
+| **6 m** | <code>50.0M</code> / <code>52.0M</code> | <code>51.0M</code> / <code>2.0M</code> | 2 | <code>6m_PL.cal</code> | around 50.5 MHz |
+
+On my own unit the wide sweep and 80, 40, 30, 20, 15 and 10 m also live in its memory slots (3.8); the PC files are there for everything else. Which of these bands you may transmit on depends on your licence class.
 
 <div class="mk-callout mk-caution">
   <div class="mk-callout__k">30 m is narrow</div>
-  <p>The 30 m band is only 50 kHz wide (10.100 to 10.150 MHz); the sheet sweeps 200 kHz around it. Calibrate extra carefully here and use at least 4 segments for a sharp curve.</p>
+  <p>The 30 m band is only 50 kHz wide (10.100 to 10.150 MHz); the sheet sweeps 200 kHz around it. With 101 points that is a point every 2 kHz, sharp enough with one segment. Calibrate extra carefully here: on a narrow band every small error shows.</p>
 </div>
 
 <div class="mk-callout mk-tip">
-  <div class="mk-callout__k">10 m is wide</div>
-  <p>10 m is 1.7 MHz wide. If your antenna is narrowband here, measure in two steps, <code>28.0M</code> to <code>28.7M</code> and <code>28.7M</code> to <code>29.7M</code>, for a sharper picture of each part.</p>
+  <div class="mk-callout__k">10 m and 6 m are wide</div>
+  <p>10 m is 1.7 MHz wide and 6 m 2 MHz. Use 2 segments for a sharper curve, or measure 10 m in two steps, <code>28.0M</code> to <code>28.7M</code> and <code>28.7M</code> to <code>29.7M</code>, if your antenna is narrowband there.</p>
 </div>
 
 #### What if I see this? (applies to every band)
@@ -1126,6 +1288,7 @@ This is the practical routine: the same fixed method for every band, followed by
 | **Dip in the band, SWR 1.0 to 1.5** | Good | Nothing; save the result (8.7) |
 | **Dip in the band, SWR above 2** | Resonant, but the wrong impedance | Check the balun or matching (Smith chart, 5.4) |
 | **No dip, high and flat everywhere** | Open circuit, short circuit, or the wrong calibration loaded | Check which <code>.cal</code> file is loaded, check the coax |
+| **A jagged, jumpy line** | Wrong format (PHASE instead of VSWR), a loose connector, or interference | Check the graph type, tighten the connectors, measure again |
 | **The curve looks different from the last measurement of the same band** | Calibration for a different range loaded, or the antenna has physically changed | Load the right <code>.cal</code> file and measure again |
 
 ### 8.10 All bands in one sweep {#all-bands}
@@ -1336,7 +1499,7 @@ A choke lets the normal signal *inside* the coax pass, but blocks current flowin
 
 <ol class="mk-steps">
 <li><strong>Set up:</strong> START <kbd>1 M</kbd>, STOP <kbd>30 M</kbd>, <kbd>LOGMAG</kbd>, <kbd>CH1 THROUGH</kbd>, scale 10, reference 7.</li>
-<li><strong>Calibration without the choke:</strong> clip red to red and black to black. Tap <kbd>CALIBRATE &gt; RESET</kbd>, then <kbd>CALIBRATE &gt; CALIBRATE &gt; THRU</kbd>, then <kbd>DONE &gt; SAVE 4</kbd>. The line must now sit at 0 dB.</li>
+<li><strong>Calibration without the choke:</strong> clip red to red and black to black. Tap <kbd>CALIBRATE &gt; RESET</kbd>, then <kbd>CALIBRATE &gt; CALIBRATE &gt; THRU</kbd>, then <kbd>DONE</kbd> (save it only if you have a free slot, 3.8). The line must now sit at 0 dB.</li>
 <li>Clip the choke in between, as in 10.2.</li>
 <li>Put marker 1 on 7.1 MHz (or the band with the interference) and read the attenuation at the top.</li>
 </ol>
@@ -1384,7 +1547,8 @@ If you want to go deeper into ferrite materials, my post on [ferrite mix 43 and 
 ### A. Quick card: measuring an antenna {#appendix-a}
 
 <ol class="mk-steps">
-<li><kbd>RECALL &gt; RECALL 0</kbd> (or set up and calibrate, 3.6).</li>
+<li><kbd>RECALL</kbd> plus the slot of your band, for example <kbd>RECALL 2</kbd> for 40 m (or set up and calibrate, 3.6).</li>
+<li>Check format, range and the C on the left edge (3.10).</li>
 <li>Disconnect the transceiver (0.4).</li>
 <li>Discharge the coax: centre pin against the nut for 2 seconds (0.3).</li>
 <li>Connect the coax via the SO-239 adapter.</li>
@@ -1406,6 +1570,7 @@ If you want to go deeper into ferrite materials, my post on [ferrite mix 43 and 
 | 17 m | 18.0 M | 18.2 M |
 | 15 m | 20.9 M | 21.5 M |
 | 12 m | 24.8 M | 25.0 M |
+| 11 m (CB, check only) | 26.9 M | 27.4 M |
 | 10 m | 28.0 M | 29.7 M |
 | 6 m | 50.0 M | 52.0 M |
 | 2 m | 144 M | 146 M |
@@ -1471,11 +1636,21 @@ Depending on the firmware on your unit, a menu may have a slightly different nam
 |---|---|---|
 | <kbd>CALIBRATE</kbd> | <kbd>CAL</kbd> | Same menu |
 | <kbd>CALIBRATE &gt; CALIBRATE</kbd> | <kbd>CAL &gt; CALIBRATE</kbd> | Open, short, load, isoln, thru, done |
-| <kbd>RECALL</kbd> | <kbd>RECALL</kbd> or <kbd>RECALL/SAVE</kbd> | Same function |
+| <kbd>RECALL</kbd> | <kbd>RECALL</kbd> or <kbd>RECALL/SAVE</kbd> | Same function. The number of slots differs: 5, 6 or 7 (SAVE 0 to 6). Count yours (3.8) |
+| <kbd>CALIBRATE &gt; SAVE</kbd> | <kbd>SAVE</kbd> in the main menu | Saves range, display and calibration in a slot |
 | <kbd>STIMULUS &gt; SWEEP POINTS</kbd> | not present | Older firmware always measures 101 points |
 | <kbd>MARKER &gt; SEARCH</kbd> | not present | Move the marker manually |
 | <kbd>DISPLAY &gt; TRANSFORM</kbd> | sometimes not present | Use TDR in NanoVNA-Saver instead (8.6) |
 | <kbd>FORMAT &gt; MORE &gt; RESISTANCE / REACTANCE</kbd> | <kbd>FORMAT &gt; MORE</kbd> | Names may be abbreviated (R, X) |
+
+#### CH0 and CH1, Port 1 and Port 2, S11 and S21
+
+The two ports go by different names depending on the unit, the firmware and the software. They are the same two ports.
+
+| Name on one unit | Name on another unit or in software | What it is | What you use it for |
+|---|---|---|---|
+| <kbd>CH0</kbd> (<kbd>CH0 REFLECT</kbd>) | Port 1, with S11 next to it | The reflection port | Measuring antennas; the source port for filters and chokes |
+| <kbd>CH1</kbd> (<kbd>CH1 THROUGH</kbd>) | Port 2, with S21 next to it | The through port | Only filters and chokes; not needed for an ordinary antenna measurement |
 
 ## Download the PDFs {#downloads}
 
