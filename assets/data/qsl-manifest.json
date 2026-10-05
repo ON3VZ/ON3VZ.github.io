@@ -216,5 +216,19 @@
     "band": "40m",
     "mode": "SSB",
     "rst": "59"
+  },
+  {
+    "id": "or80af-2026-10-05",
+    "image": "/assets/images/qsl/or80af-2026-10-05.jpg",
+    "fromCall": "OR80AF",
+    "fromName": "OR80AF",
+    "qth": "Headquarters station",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-05",
+    "time": "21:59z",
+    "band": "80m",
+    "mode": "SSB",
+    "rst": "59"
   }
 ]
