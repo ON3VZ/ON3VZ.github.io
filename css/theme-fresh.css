@@ -1029,3 +1029,154 @@ html[data-theme="fresh"] .blog-card__excerpt { font-size: 0.95rem; color: var(--
   html[data-theme="fresh"] .post-header { padding: 1.6rem 1.3rem; }
   html[data-theme="fresh"] .post-body { padding: 1.4rem 1.2rem; font-size: 1.03rem; }
 }
+
+
+/* ============================================================
+   STEP 6 (2026-10-06): mockup details
+   ============================================================ */
+
+/* ── 17. STATION BAND + STICKY MENU BAR ──
+   Two-layer header like the mockup: the station band scrolls away,
+   the menu bar sticks to the top. The band is inserted by the layout
+   (.fx-brandbar) and stays hidden in the old theme. */
+.fx-brandbar { display: none; }
+html[data-theme="fresh"] { --nav-h: 50px; }
+html[data-theme="fresh"] .fx-brandbar {
+  display: block;
+  position: relative;
+  z-index: 1001;
+  background: linear-gradient(180deg, var(--fx-head-1), var(--fx-head-2));
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, var(--c-primary) 0 78%, #F0B323 78% 100%) 1;
+  color: var(--fx-head-text);
+}
+html[data-theme="fresh"] .fx-brandbar__inner {
+  max-width: 1100px; margin: 0 auto; padding: 1.15rem 2rem 1rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+html[data-theme="fresh"] .fx-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit; }
+html[data-theme="fresh"] .fx-brand__logo {
+  width: 52px; height: 52px; flex: none; border-radius: 50%;
+  border: 2px solid #2FD68A; display: grid; place-items: center; color: #2FD68A;
+}
+html[data-theme="fresh"] .fx-brand__logo svg { width: 26px; height: 26px; }
+html[data-theme="fresh"] .fx-brand__txt { display: flex; flex-direction: column; gap: 0.1rem; }
+html[data-theme="fresh"] .fx-brand__sub {
+  font-family: var(--f-mono); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--fx-head-dim);
+}
+html[data-theme="fresh"] .fx-brand__name {
+  font-family: var(--f-display); font-size: 2.15rem; font-weight: 700; line-height: 1;
+  letter-spacing: 0.05em; text-transform: uppercase; color: #FFFFFF;
+}
+html[data-theme="fresh"] .fx-brand__name b { color: #F0B323; font-weight: 700; }
+html[data-theme="fresh"] .fx-brand__meta {
+  margin-left: auto; text-align: right;
+  font-family: var(--f-mono); font-size: 0.78rem; line-height: 1.5; color: var(--fx-head-dim);
+}
+html[data-theme="fresh"] body.landing .fx-brandbar { display: none; }
+
+/* menu bar: sticky instead of fixed, aligned with the content */
+html[data-theme="fresh"] .site-nav {
+  position: sticky; top: 0;
+  height: var(--nav-h);
+  border-top: 0;
+  border-image: none;
+  background: #0E2638;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+html[data-theme="fresh"] body.landing .site-nav {
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, var(--c-primary) 0 78%, #F0B323 78% 100%) 1;
+}
+html[data-theme="fresh"] .page-wrap { padding-top: 0; }
+html[data-theme="fresh"] .nav-inner { max-width: 1100px; padding: 0 2rem; gap: 0; }
+html[data-theme="fresh"] .nav-brand { display: none; }
+html[data-theme="fresh"] body.landing .nav-brand { display: flex; margin-right: 1.5rem; }
+html[data-theme="fresh"] .nav-links { flex: 0 1 auto; justify-content: flex-start; gap: 0; }
+html[data-theme="fresh"] .nav-links a { padding: 0 0.95rem; font-size: 1.02rem; }
+html[data-theme="fresh"] .nav-right { display: none; }
+html[data-theme="fresh"] .fx-mode-btn { margin-left: auto; width: 32px; height: 32px; }
+html[data-theme="fresh"] .nav-drawer { top: var(--fx-drawer-top, var(--nav-h)); }
+
+/* pages that added the old fixed-nav height themselves */
+html[data-theme="fresh"] .lb-wrap { padding-top: 0; }
+html[data-theme="fresh"] .proj-hero { padding-top: 3.5rem; }
+
+@media (max-width: 900px) {
+  html[data-theme="fresh"] .fx-brandbar__inner { padding: 0.8rem 1rem; }
+  html[data-theme="fresh"] .fx-brand__logo { width: 40px; height: 40px; }
+  html[data-theme="fresh"] .fx-brand__logo svg { width: 20px; height: 20px; }
+  html[data-theme="fresh"] .fx-brand__name { font-size: 1.6rem; }
+  html[data-theme="fresh"] .fx-brand__sub { font-size: 0.6rem; letter-spacing: 0.12em; }
+  html[data-theme="fresh"] .fx-brand__meta { display: none; }
+  html[data-theme="fresh"] .nav-inner { padding: 0 1rem; }
+  html[data-theme="fresh"] .nav-burger { margin-left: 1rem; }
+}
+
+
+/* ── 18. KEY FIGURE TILES (logbook, DXCC matrix, worked countries, QSL wall, dashboard) ── */
+html[data-theme="fresh"] :is(.lb-stats, .dm-stats, .wc-stats, .qw-stats) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+html[data-theme="fresh"] :is(.lb-stat, .dm-stat, .wc-stat, .qw-stat),
+html[data-theme="fresh"] .qd-kpi {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 4px solid var(--c-primary);
+  border-radius: var(--fx-radius);
+  padding: 0.8rem 1rem;
+  box-shadow: none;
+  transform: none;
+}
+html[data-theme="fresh"] .qd-kpi:hover { box-shadow: var(--fx-shadow); transform: none; }
+html[data-theme="fresh"] .qd-kpi--cyan { border-left-color: var(--c-cyan); }
+html[data-theme="fresh"] .qd-kpi--amber { border-left-color: var(--c-amber); }
+html[data-theme="fresh"] :is(.lb-stat-val, .dm-stat-val, .wc-stat-val, .qw-stat-val, .qd-kpi-val) {
+  font-family: var(--f-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-text) !important;
+  text-shadow: none !important;
+}
+html[data-theme="fresh"] .qd-kpi-val { font-size: 1.8rem; }
+html[data-theme="fresh"] :is(.lb-stat-lbl, .dm-stat-lbl, .wc-stat-lbl, .qw-stat-lbl, .qd-kpi-lbl) {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+}
+
+
+/* ── 19. PANELS WITH A NAVY TITLE STRIP ── */
+html[data-theme="fresh"] .qd-panel {
+  border-radius: var(--fx-radius);
+  border-top: 1px solid var(--c-border);
+  padding-top: 0;
+  overflow: hidden;
+}
+html[data-theme="fresh"] .qd-panel:hover { box-shadow: var(--fx-shadow); }
+html[data-theme="fresh"] .qd-panel-title {
+  margin: 0 -1.2rem 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #0F2A42;
+  color: #E6F0F8;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+html[data-theme="fresh"] .qd-panel-title::before { display: none; }
+html[data-theme="fresh"] .lb-tab-bar {
+  background: #0F2A42;
+  border-bottom: 0;
+  border-radius: var(--fx-radius) var(--fx-radius) 0 0;
+  margin-bottom: 1.2rem;
+}
+html[data-theme="fresh"] .lb-tab { color: #9DBBD4; font-weight: 600; letter-spacing: 0.12em; border-bottom: 3px solid transparent; }
+html[data-theme="fresh"] .lb-tab:hover { color: #FFFFFF; }
+html[data-theme="fresh"] .lb-tab.active { color: #FFFFFF; border-bottom-color: var(--c-primary); background: rgba(255,255,255,0.07); }

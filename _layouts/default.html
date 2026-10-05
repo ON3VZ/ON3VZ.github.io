@@ -45,6 +45,23 @@
 </head>
 <body class="grid-bg {{ page.body_class }}">
 
+  <!-- FRESH THEME TEST 2026-10-06 (start): station band, only visible in the fresh theme -->
+  <div class="fx-brandbar">
+    <div class="fx-brandbar__inner">
+      <a class="fx-brand" href="/inner/">
+        <span class="fx-brand__logo" aria-hidden="true">
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 4 L6 24 H22 Z"/><path d="M9 17 H19 M11 12 H17"/><circle cx="14" cy="4" r="1.6" fill="currentColor"/></svg>
+        </span>
+        <span class="fx-brand__txt">
+          <span class="fx-brand__sub">Amateur radio &middot; Hoboken, Belgium</span>
+          <span class="fx-brand__name">ON3VZ <b>Station</b></span>
+        </span>
+      </a>
+      <div class="fx-brand__meta">JO21EE &middot; Class C<br><span id="fxClock">--:--:-- UTC</span></div>
+    </div>
+  </div>
+  <!-- FRESH THEME TEST 2026-10-06 (end) -->
+
   <!-- NAVIGATIE -->
   <nav class="site-nav">
     <div class="nav-inner">
@@ -75,7 +92,7 @@
         <li><a href="/shack/">Shack</a></li>
         <li><a href="/mobile/">Mobile</a></li>
         <li><a href="/portable/">Portable</a></li>
-        <li><a href="/cw">CW</a></li>
+        <!-- CW hidden from menu 2026-10-06, page /cw stays; restore: un-comment --><!-- <li><a href="/cw">CW</a></li> -->
         <li><a href="/projects/">Projects</a></li>
         <li><a href="/logbook/">Logbook</a></li>
         <li><a href="/qsl-wall/">QSL Wall</a></li>
@@ -102,7 +119,7 @@
     <li><a href="/shack/">Shack</a></li>
     <li><a href="/mobile/">Mobile</a></li>
     <li><a href="/portable/">Portable</a></li>
-    <li><a href="/cw">CW</a></li>
+    <!-- CW hidden from menu 2026-10-06, page /cw stays; restore: un-comment --><!-- <li><a href="/cw">CW</a></li> -->
     <li><a href="/projects/">Projects</a></li>
     <li><a href="/logbook/">Logbook</a></li>
     <li><a href="/qsl-wall/">QSL Wall</a></li>
@@ -180,6 +197,19 @@
         }
         if (badge) badge.style.display = on ? 'block' : 'none';
       }
+
+      // station band clock (mirrors the nav clock from main.js)
+      var fxClock = document.getElementById('fxClock');
+      if (fxClock) setInterval(function () {
+        var n = new Date(), p = function (x) { return String(x).padStart(2, '0'); };
+        fxClock.textContent = p(n.getUTCHours()) + ':' + p(n.getUTCMinutes()) + ':' + p(n.getUTCSeconds()) + ' UTC';
+      }, 1000);
+
+      // mobile drawer opens right under the sticky menu bar
+      if (burger) burger.addEventListener('click', function () {
+        var nav = document.querySelector('.site-nav');
+        if (nav && root.getAttribute('data-theme') === 'fresh') root.style.setProperty('--fx-drawer-top', Math.max(0, nav.getBoundingClientRect().bottom) + 'px');
+      });
 
       // press "v" three times to swap old/new
       var hits = [];
