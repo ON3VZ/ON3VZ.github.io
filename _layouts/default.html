@@ -4,11 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title | default: site.title }}</title>
+  <!-- FRESH THEME TEST 2026-10-06 (start): hidden switch, remove to revert -->
+  <script>
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search).get('theme');
+        if (q === 'fresh') localStorage.setItem('on3vz-theme', 'fresh');
+        if (q === 'off') localStorage.removeItem('on3vz-theme');
+        if (localStorage.getItem('on3vz-theme') === 'fresh') document.documentElement.setAttribute('data-theme', 'fresh');
+      } catch (e) {}
+    })();
+  </script>
+  <!-- FRESH THEME TEST 2026-10-06 (end) -->
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
   {% if page.layout == 'post' %}
   <link rel="stylesheet" href="{{ '/css/post.css' | relative_url }}">
   {% endif %}
   {% if page.extra_css %}{% for css in page.extra_css %}<link rel="stylesheet" href="{{ css | relative_url }}?v={{ site.time | date: '%s' }}">{% endfor %}{% endif %}
+  <!-- FRESH THEME TEST 2026-10-06: overlay stylesheet, inactive unless html[data-theme="fresh"] -->
+  <link rel="stylesheet" href="{{ '/css/theme-fresh.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body class="grid-bg {{ page.body_class }}">
 
@@ -100,5 +114,40 @@
   <script src="{{ '/js/main.js' | relative_url }}"></script>
   {% if page.extra_js %}{% for js in page.extra_js %}<script src="{{ js | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endfor %}{% endif %}
   <script defer src="https://cloud.umami.is/script.js" data-website-id="650cd9dd-aad7-485c-bf6b-be7af3003223"></script>
+  <!-- FRESH THEME TEST 2026-10-06 (start): test badge + "vvv" quick swap, remove to revert -->
+  <script>
+    (function () {
+      var root = document.documentElement, badge = null;
+      function sync() {
+        var on = root.getAttribute('data-theme') === 'fresh';
+        if (on && !badge) {
+          badge = document.createElement('div');
+          badge.textContent = 'FRESH';
+          badge.setAttribute('style', 'position:fixed;left:8px;bottom:8px;z-index:99999;padding:3px 7px;border-radius:3px;background:#F0B323;color:#0B1E30;font:600 10px/1.2 monospace;letter-spacing:.12em;pointer-events:none;opacity:.85');
+          document.body.appendChild(badge);
+        }
+        if (badge) badge.style.display = on ? 'block' : 'none';
+      }
+      var hits = [];
+      document.addEventListener('keydown', function (e) {
+        var t = e.target;
+        if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+        if (e.key !== 'v' && e.key !== 'V') { hits = []; return; }
+        var now = Date.now();
+        hits = hits.filter(function (x) { return now - x < 1200; });
+        hits.push(now);
+        if (hits.length >= 3) {
+          hits = [];
+          try {
+            if (root.getAttribute('data-theme') === 'fresh') { root.removeAttribute('data-theme'); localStorage.removeItem('on3vz-theme'); }
+            else { root.setAttribute('data-theme', 'fresh'); localStorage.setItem('on3vz-theme', 'fresh'); }
+          } catch (err) {}
+          sync();
+        }
+      });
+      sync();
+    })();
+  </script>
+  <!-- FRESH THEME TEST 2026-10-06 (end) -->
 </body>
 </html>
