@@ -484,7 +484,7 @@ html[data-theme="fresh"] .site-nav {
   border-image: linear-gradient(90deg, var(--c-primary) 0 70%, #F0B323 70% 100%) 1;
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
-html[data-theme="fresh"] .nav-inner { gap: 1.5rem; }
+html[data-theme="fresh"] .nav-inner { gap: 1.5rem; max-width: 1440px; }
 
 html[data-theme="fresh"] .nav-brand svg [stroke="#00ff88"] { stroke: var(--c-primary); filter: none; }
 html[data-theme="fresh"] .nav-brand svg [fill="#00ff88"]   { fill: var(--c-primary); filter: none; }
@@ -497,7 +497,7 @@ html[data-theme="fresh"] .nav-brand-call {
   text-shadow: none;
 }
 
-html[data-theme="fresh"] .nav-links { align-self: stretch; align-items: stretch; gap: 0; min-width: 0; }
+html[data-theme="fresh"] .nav-links { align-self: stretch; align-items: stretch; justify-content: center; gap: clamp(0rem, 0.4vw, 0.4rem); min-width: 0; }
 html[data-theme="fresh"] .nav-links li { display: flex; }
 html[data-theme="fresh"] .nav-links li::before { top: 4px; color: var(--fx-head-dim); text-shadow: none; }
 html[data-theme="fresh"] .nav-links li:hover::before { top: 5px; }
@@ -505,7 +505,7 @@ html[data-theme="fresh"] .nav-links a {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 0.65rem;
+  padding: 0 clamp(0.55rem, 1.15vw, 1.15rem);  /* more breathing room on wide screens */
   white-space: nowrap;
   border-radius: 0;
   font-family: var(--f-display);
