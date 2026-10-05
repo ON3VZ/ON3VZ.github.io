@@ -1,0 +1,16 @@
+/* ============================================================
+   ON3VZ  |  "Fresh" theme (TEST, added 2026-10-06)
+   ------------------------------------------------------------
+   Overlay on top of the Dark Signal theme. Every rule in this
+   file MUST be scoped to html[data-theme="fresh"] so regular
+   visitors never see it.
+
+   Activate:   add ?theme=fresh to any URL (remembered)
+   Deactivate: add ?theme=off to any URL
+   Quick swap: press "v" three times on any page
+
+   To remove completely: delete this file and the blocks marked
+   "FRESH THEME TEST 2026-10-06" in _layouts/default.html.
+   ============================================================ */
+
+/* Step 2: switch only. The new look is added in step 3. */
