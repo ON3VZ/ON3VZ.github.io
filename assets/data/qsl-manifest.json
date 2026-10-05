@@ -230,5 +230,19 @@
     "band": "80m",
     "mode": "SSB",
     "rst": "59"
+  },
+  {
+    "id": "os7p-2026-10-05",
+    "image": "/assets/images/qsl/os7p-2026-10-05.jpg",
+    "fromCall": "OS7P",
+    "fromName": "OS7P",
+    "qth": "BAFARA member station",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-05",
+    "time": "22:24z",
+    "band": "40m",
+    "mode": "FT8",
+    "rst": "-07"
   }
 ]
