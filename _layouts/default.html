@@ -229,6 +229,16 @@
           sync();
         }
       });
+      // timeline items fade in while scrolling (fresh theme only)
+      (function () {
+        var items = document.querySelectorAll('.rtl-item');
+        if (!items.length || !('IntersectionObserver' in window)) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('fx-pre'); e.target.classList.add('fx-in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        items.forEach(function (el, i) { if (i > 0) { el.classList.add('fx-pre'); io.observe(el); } });
+      })();
       sync();
     })();
   </script>
