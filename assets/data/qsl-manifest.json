@@ -188,5 +188,33 @@
     "mode": "FT8",
     "freq": "3.574144",
     "rst": "+01"
+  },
+  {
+    "id": "on8lx-2026-10-04",
+    "image": "/assets/images/qsl/on8lx-2026-10-04.jpg",
+    "fromCall": "ON8LX",
+    "fromName": "ON8LX",
+    "qth": "BAFARA member station",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-04",
+    "time": "06:13z",
+    "band": "80m",
+    "mode": "SSB",
+    "rst": "59"
+  },
+  {
+    "id": "on4bfs-2026-10-04",
+    "image": "/assets/images/qsl/on4bfs-2026-10-04.jpg",
+    "fromCall": "ON4BFS",
+    "fromName": "ON4BFS",
+    "qth": "Belgian Air Force base station",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-04",
+    "time": "09:55z",
+    "band": "40m",
+    "mode": "SSB",
+    "rst": "59"
   }
 ]
