@@ -225,3 +225,5 @@
   .sk-svx__body { grid-column: 1 / -1; order: -1; }
 }
 @media (max-width: 560px) { .sk-svx { grid-template-columns: 1fr; } }
+
+.sk-operator__more { margin-top: 1.1rem; }
