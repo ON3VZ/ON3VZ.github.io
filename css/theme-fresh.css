@@ -823,6 +823,7 @@ html[data-theme="fresh"] :is(
   .proj-card__visual,
   .lb-map-section,
   .wc-map-inner,
+  .qd-panel,
   .canvas-wrapper
 ) {
   border-radius: var(--fx-radius);
@@ -848,6 +849,7 @@ html[data-theme="fresh"][data-mode="light"] :is(
   .proj-card__visual,
   .lb-map-section,
   .wc-map-inner,
+  .qd-panel,
   .canvas-wrapper
 ) {
   --c-bg:           #0E1A26;
@@ -1342,3 +1344,11 @@ html[data-theme="fresh"] .tile-sub { font-size: 0.88rem; color: var(--c-text-2);
 html[data-theme="fresh"][data-mode="light"] { --c-text-3: #475E72; }
 html[data-theme="fresh"] .section-label { font-size: 0.78rem; color: var(--c-text-2); }
 html[data-theme="fresh"] .id-email { font-size: 0.82rem; white-space: nowrap; }
+
+/* ── 26. QSO DASHBOARD: chart panels on dark plates ── */
+html[data-theme="fresh"][data-mode="light"] .qd-panel {
+  background: #142334;
+  border-color: rgba(148,180,210,0.22);
+  box-shadow: var(--fx-shadow);
+}
+html[data-theme="fresh"][data-mode="light"] .qd-panel-title { background: #0B1A2B; border-bottom: 1px solid rgba(148,180,210,0.18); }
