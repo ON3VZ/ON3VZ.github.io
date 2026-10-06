@@ -1352,3 +1352,11 @@ html[data-theme="fresh"][data-mode="light"] .qd-panel {
   box-shadow: var(--fx-shadow);
 }
 html[data-theme="fresh"][data-mode="light"] .qd-panel-title { background: #0B1A2B; border-bottom: 1px solid rgba(148,180,210,0.18); }
+
+/* 27 · Home: tighter vertical rhythm between sections */
+html[data-theme="fresh"] .section { padding: 3.5rem 0; }
+html[data-theme="fresh"] .page-hero { padding: 4rem 0 2.5rem; }
+@media (max-width: 640px) {
+  html[data-theme="fresh"] .section { padding: 2.25rem 0; }
+  html[data-theme="fresh"] .page-hero { padding: 3rem 0 1.75rem; }
+}
