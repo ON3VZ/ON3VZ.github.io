@@ -1,315 +1,198 @@
 ---
 layout: default
-title: ON3VZ — Portable
-extra_css: ["/css/portable.css"]
+title: ON3VZ · Portable
+extra_css:
+  - /css/shack.css
 ---
 
-<!-- PAGE HERO -->
-<div class="portable-hero">
-  <div class="container">
+<!-- ============================================================
+     PORTABLE PAGE v3 (2026-10-06)
+     Same layout and styles as the Shack and Mobile pages
+     (css/shack.css, sk-* classes). No SVG drawings.
+     The previous version with css/portable.css is in the git history.
+     Photos: /assets/images/portable/ plus the existing QRP photos.
+     ============================================================ -->
+
+<div class="sk-page">
+
+  <!-- ── HERO ── -->
+  <section class="sk-hero container anim-1">
     <div class="section-label">ON3VZ · Portable</div>
-    <h1 class="section-title">On the air.<br><span style="color:var(--c-primary);">Anywhere, anytime.</span></h1>
-    <p class="section-sub">WWFF activations and field operations. Two portable HF stations — a 25 W IC-7300 setup and a 5 W QRP setup — built to operate far from the shack.</p>
-    <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.25rem;">
-      <a href="#portable" class="btn btn-primary">Portable HF Station</a>
-      <a href="#qrp-portable" class="btn btn-ghost" style="border-color:rgba(240,165,0,0.4); color:var(--c-amber);">QRP Portable ↓</a>
+    <h1 class="section-title">The outdoor shack</h1>
+    <p class="section-sub sk-lead">WWFF activations and field operations, from a 25 W HF station on a battery to a 5 W QRP kit that fits in a backpack. On VHF and UHF, a handheld and the Belgian SvxLink network.</p>
+
+    <figure class="sk-hero__photo">
+      <img src="/assets/images/qrp-portable-station-overview.jpg" width="1600" height="715" alt="The complete QRP portable station in the field: battery, buck converter at 11.50 V, QMX transceiver and speaker" fetchpriority="high">
+      <figcaption>ON3VZ/P in the field: LiFePO4 battery, buck converter at 11.50 V, the QMX and a speaker.</figcaption>
+    </figure>
+
+    <div class="sk-figures">
+      <div class="sk-fig"><span class="sk-fig__val">25 W</span><span class="sk-fig__lbl">HF portable</span></div>
+      <div class="sk-fig"><span class="sk-fig__val">5 W</span><span class="sk-fig__lbl">QRP on foot</span></div>
+      <div class="sk-fig"><span class="sk-fig__val">WWFF</span><span class="sk-fig__lbl">Flora and fauna</span></div>
+      <div class="sk-fig"><span class="sk-fig__val">SvxLink</span><span class="sk-fig__lbl">Belgian network</span></div>
     </div>
-  </div>
+  </section>
+
+  <!-- ── AT A GLANCE ── -->
+  <section class="sk-section container anim-2">
+    <div class="sk-glance sk-glance--3">
+      <div class="sk-glance__card">
+        <div class="sk-glance__head"><span class="sk-tag">HF · 25 W</span></div>
+        <ul class="sk-list sk-list--plain">
+          <li><b>ICOM IC-7300 MK II</b><span>The shack radio, taken outside</span></li>
+          <li><b>LiFePO4 50 Ah</b><span>Battery for a full day</span></li>
+          <li><b>Band Hopper IV</b><span>Linked dipole, 80 to 20 m</span></li>
+          <li><b>40 m dipole</b><span>Homebrew monoband wire</span></li>
+        </ul>
+      </div>
+      <div class="sk-glance__card sk-glance__card--amber">
+        <div class="sk-glance__head"><span class="sk-tag sk-tag--amber">QRP · 5 W</span></div>
+        <ul class="sk-list sk-list--plain">
+          <li><b>QRP Labs QMX</b><span>CW, digital and SSB</span></li>
+          <li><b>QRP Labs QDX</b><span>5-band digital transceiver</span></li>
+          <li><b>Band Hopper IV</b><span>Inverted V, 40, 30 and 20 m</span></li>
+          <li><b>Tactical 7000hds</b><span>Lightweight fibreglass mast</span></li>
+        </ul>
+      </div>
+      <div class="sk-glance__card sk-glance__card--vhf">
+        <div class="sk-glance__head"><span class="sk-tag sk-tag--cyan">VHF / UHF</span></div>
+        <ul class="sk-list sk-list--plain">
+          <li><b>Yaesu FT-65</b><span>Dual-band handheld</span></li>
+          <li><b>SvxLink app</b><span>Belgian SVX Reflector network</span></li>
+          <li><b>ABBREE BT mic</b><span>Bluetooth speaker microphone</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTABLE HF ── -->
+  <section class="sk-section container" id="portable">
+    <header class="sk-chapter">
+      <span class="sk-tag">HF · 25 W</span>
+      <h2 class="sk-h2">Portable HF station</h2>
+      <p class="sk-intro">The same radio as the shack, deployed in the field from a LiFePO4 battery, with a resonant wire antenna for quick WWFF setups.</p>
+    </header>
+
+    <div class="sk-cards3">
+      <article class="sk-card sk-card--green">
+        <div class="sk-kicker">Transceiver · HF / 6 m</div>
+        <h3 class="sk-h3">ICOM IC-7300 MK II</h3>
+        <p>The shack transceiver doubles as the portable rig. Compact, with a low receive current of about 0.7 A, and the spectrum scope finds activity fast in the field. Runs 25 W on Class C.</p>
+      </article>
+      <article class="sk-card sk-card--green">
+        <div class="sk-kicker">Field power</div>
+        <h3 class="sk-h3">LiFePO4 · 50 Ah</h3>
+        <p>A lithium iron phosphate battery: a flat voltage curve near 13.2 V until almost empty, more than 2000 cycles and a safe chemistry. At 25 W and a typical WWFF duty cycle, one charge lasts a full day.</p>
+      </article>
+      <article class="sk-card sk-card--green">
+        <div class="sk-kicker">Antennas</div>
+        <h3 class="sk-h3">Two wire antennas</h3>
+        <p><b>SOTAbeams Band Hopper IV.</b> Linked dipole for 80, 40, 30 and 20 m, full size and resonant on every band, no tuner needed.</p>
+        <p><b>Homebrew 40 m dipole.</b> A simple monoband wire dipole for 40 m, built at home.</p>
+        <div class="sk-bands"><span>80 m</span><span>40 m</span><span>30 m</span><span>20 m</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── QRP ON FOOT ── -->
+  <section class="sk-section container" id="qrp-portable">
+    <header class="sk-chapter">
+      <span class="sk-tag sk-tag--amber">QRP · ON3VZ/P</span>
+      <h2 class="sk-h2">5 watts, on foot</h2>
+      <p class="sk-intro">A second, much smaller station built for WWFF and ONFF activations. Everything fits in a backpack, and it runs under its own callsign, ON3VZ/P.</p>
+    </header>
+
+    <div class="sk-item">
+      <figure class="sk-item__photo"><img src="/assets/images/portable/qmx-field.jpg" width="1600" height="748" alt="QRP Labs QMX in the field on 14.200 MHz, with the coax and clip-on ferrites" loading="lazy"></figure>
+      <div class="sk-item__body">
+        <div class="sk-kicker sk-kicker--amber">Transceiver · HF QRP</div>
+        <h3 class="sk-h3">QRP Labs QMX</h3>
+        <p>A five-band QRP transceiver about the size of a pack of cards, 220 g with its enclosure, for CW, digital modes and SSB at 5 W. One USB-C cable carries both CAT control and audio.</p>
+        <p>It runs from a LiFePO4 pack regulated down to 11.50 V by an adjustable buck converter, because the QMX accepts 6.0 to 12.0 V only.</p>
+        <ul class="sk-list">
+          <li><b>Bands</b><span>80, 60, 40, 30, 20 m</span></li>
+          <li><b>Power</b><span>5 W</span></li>
+          <li><b>Supply</b><span>11.50 V via buck converter</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sk-item sk-item--reverse">
+      <figure class="sk-item__photo sk-item__photo--tall"><img src="/assets/images/qrp-portable-mast-bandhopper.jpg" width="1200" height="2682" alt="Tactical 7000hds mast in a field carrying the Band Hopper IV linked dipole" loading="lazy"></figure>
+      <div class="sk-item__body">
+        <div class="sk-kicker sk-kicker--amber">Antenna and mast</div>
+        <h3 class="sk-h3">Band Hopper IV on a Tactical 7000hds</h3>
+        <p>The SOTAbeams Band Hopper IV runs as an inverted V on the lightweight fibreglass mast. The 40, 30 and 20 m links do the work: full size, no tuner and no loading coils. The 80 m section stays on its winder.</p>
+        <p>The dipole legs double as guys for the mast, so both sides need the same tension. And the golden rule: the same number of links closed on both legs, counted on both sides.</p>
+        <div class="sk-bands sk-bands--amber"><span>40 m</span><span>30 m</span><span>20 m</span></div>
+      </div>
+    </div>
+
+    <div class="sk-cards2">
+      <article class="sk-card sk-card--amber">
+        <div class="sk-kicker sk-kicker--amber">Digital transceiver</div>
+        <h3 class="sk-h3">QRP Labs QDX</h3>
+        <p>A 5-band digital-modes transceiver at 5 W, made for FT8 and the other digital modes. A small, dedicated companion next to the QMX.</p>
+      </article>
+      <article class="sk-card sk-card--amber">
+        <div class="sk-kicker sk-kicker--amber">A separate identity</div>
+        <h3 class="sk-h3">ON3VZ/P</h3>
+        <p>ON3VZ/P has its own QRZ.com logbook, LoTW certificate and Log4OM configuration, kept apart from the shack log. QRP is shown through the power field, spot comments and the profile, not through a callsign suffix.</p>
+      </article>
+    </div>
+
+    <figure class="sk-video">
+      <video controls preload="metadata" poster="/assets/video/qrp-portable-first-setup-poster.jpg">
+        <source src="/assets/video/qrp-portable-first-setup.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>The first QRP field test: building the station, powering it and checking the whole chain.</figcaption>
+    </figure>
+
+    <div class="sk-links">
+      <a class="sk-link" href="/2026/08/14/first-qrp-portable-test-setup/"><span>Blog</span>The first QRP test setup, with video</a>
+      <a class="sk-link" href="/2026/08/18/building-on3vz-p/"><span>Blog</span>Setting up ON3VZ/P</a>
+      <a class="sk-link" href="/on3vz-p-manual/"><span>Manual</span>ON3VZ/P technical manual</a>
+    </div>
+  </section>
+
+  <!-- ── VHF / UHF ── -->
+  <section class="sk-section container" id="vhf">
+    <header class="sk-chapter">
+      <span class="sk-tag sk-tag--cyan">VHF / UHF</span>
+      <h2 class="sk-h2">Handheld</h2>
+    </header>
+    <div class="sk-item sk-item--reverse">
+      <figure class="sk-item__photo sk-item__photo--hand"><img src="/assets/images/mobile/ft65.jpg" width="800" height="920" alt="Yaesu FT-65 handheld tuned to 144.675 MHz, the WLD club frequency" loading="lazy"></figure>
+      <div class="sk-item__body">
+        <div class="sk-kicker sk-kicker--cyan">Dual-band handheld</div>
+        <h3 class="sk-h3">Yaesu FT-65</h3>
+        <p>A rugged 2 m and 70 cm handheld for WWFF and outdoor walk-around use, and the backup for the FTM-510DE ASP in the car. Here on 144.675 MHz, the WLD club frequency.</p>
+        <p>With an SMA to PL-259 pigtail it connects straight to the Komunica magnet mount: a full-size antenna with handheld convenience.</p>
+        <div class="sk-bands sk-bands--cyan"><span>2 m</span><span>70 cm</span><span>Diamond SRJ-701A</span><span>Diamond SRJ-77</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SVXLINK ── -->
+  <section class="sk-section container" id="svxlink">
+    <header class="sk-chapter">
+      <span class="sk-tag sk-tag--cyan">NETWORK</span>
+      <h2 class="sk-h2">SvxLink in the pocket</h2>
+      <p class="sk-intro">The Belgian SVX Reflector network links repeaters and hotspots across the country. With the app on my smartphone and a Bluetooth speaker microphone, it works just like a handheld, wherever there is mobile data.</p>
+    </header>
+    <div class="sk-svx">
+      <figure class="sk-svx__app"><img src="/assets/images/portable/svxlink-app.jpg" width="700" height="896" alt="The SvxLink app connected as ON3VZ-D, active talkgroup TG 8, 70 cm repeaters" loading="lazy"></figure>
+      <div class="sk-svx__body">
+        <div class="sk-kicker sk-kicker--cyan">How it works</div>
+        <h3 class="sk-h3">App, talkgroup, PTT</h3>
+        <p>The app connects to the reflector as <b>ON3VZ-D</b>. I pick a talkgroup, for example TG 8 for the 70 cm repeaters, and press PTT on the screen or on the microphone.</p>
+        <p>The <b>ABBREE Bluetooth speaker microphone</b> pairs with the phone, so the phone stays in the pocket while the mic clips onto a jacket or a bag strap.</p>
+        <a class="sk-link sk-link--wide" href="https://portal.be.svx.link/" target="_blank" rel="noopener"><span>Network</span>SVX Reflector Belgium: live dashboard and apps</a>
+      </div>
+      <figure class="sk-svx__mic"><img src="/assets/images/portable/abbree-bt-mic.jpg" width="900" height="900" alt="ABBREE Bluetooth speaker microphone" loading="lazy"></figure>
+    </div>
+  </section>
+
 </div>
-
-<!-- ══════════════════════════════════════
-     PORTABLE HF STATION
-     ══════════════════════════════════════ -->
-<section class="port-section" id="portable">
-  <div class="container">
-
-    <div class="chapter-header">
-      <div class="chapter-header__accent chapter-header__accent--green"></div>
-      <div>
-        <div class="chapter-header__label">Portable HF Station</div>
-        <h2 class="chapter-header__title">Field-Ready HF</h2>
-        <p class="chapter-header__sub">The same radio as the shack — the IC-7300 MK II — deployed in the field from a LiFePO4 battery, into a resonant multiband dipole for quick WWFF setups.</p>
-      </div>
-    </div>
-
-    <!-- Transceiver -->
-    <div class="equip-featured equip-featured--green" style="margin-bottom:1.5rem;">
-      <div class="equip-featured__body">
-        <div class="equip-featured__top">
-          <div class="status-badge status-badge--active">● Active</div>
-          <div class="equip-featured__cat">Transceiver · HF / 6m</div>
-        </div>
-        <h3 class="equip-featured__model">ICOM IC-7300 MK II</h3>
-        <p class="equip-featured__desc">The same transceiver as the shack — doubles as the portable rig. The IC-7300 MK II's compact form factor and low RX current (0.7A standby) make it a natural fit for battery-powered field operation. The real-time spectrum scope is invaluable in the field for finding activity fast.</p>
-        <div class="spec-grid">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">160m – 6m (+ 4m EU)</span></div>
-          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">100W max · runs 25W on Class C</span></div>
-          <div class="spec-row"><span class="spec-key">RX standby</span><span class="spec-val">0.7A — efficient on battery</span></div>
-          <div class="spec-row"><span class="spec-key">Built-in ATU</span><span class="spec-val">Yes — handy on other bands</span></div>
-          <div class="spec-row"><span class="spec-key">Display</span><span class="spec-val">4.3″ touch + spectrum scope</span></div>
-        </div>
-      </div>
-      <div class="equip-featured__img-wrap">
-        <img src="/assets/images/ic7300mkii.svg" alt="ICOM IC-7300 MK II" class="equip-featured__img">
-        <div class="equip-featured__img-label">ICOM IC-7300 MK II</div>
-      </div>
-    </div>
-
-    <!-- Power -->
-    <div class="equip-card equip-card--active equip-card--wide" style="margin-bottom:1.5rem;">
-      <div class="equip-card__top">
-        <div class="equip-card__icon" style="background:rgba(0,212,255,0.08);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <rect x="3" y="8" width="20" height="14" rx="3" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-            <rect x="23" y="12" width="3" height="6" rx="1" fill="#00d4ff"/>
-            <line x1="7" y1="15" x2="11" y2="11" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="11" y1="11" x2="11" y2="15" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="11" y1="15" x2="15" y2="11" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="15" y1="11" x2="15" y2="15" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="15" y1="15" x2="19" y2="11" stroke="rgba(0,212,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <span class="status-badge status-badge--active">● Active</span>
-      </div>
-      <div class="equip-card__name">Field Power Supply</div>
-      <div class="equip-card__model">LiFePO4 · 50Ah</div>
-      <div class="equip-card__desc">A 50Ah lithium iron phosphate battery is the backbone of the portable station. LiFePO4 chemistry is the smart choice for portable radio: flat voltage discharge curve (stays near 13.2V until nearly empty), high cycle life (2000+ cycles), and safe chemistry — no thermal runaway. At 25W TX with typical WWFF duty cycles, a single charge supports a full day of field operation with plenty of margin.</div>
-      <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:0 2rem; max-width:560px;">
-        <div class="spec-row"><span class="spec-key">Capacity</span><span class="spec-val">50Ah</span></div>
-        <div class="spec-row"><span class="spec-key">Chemistry</span><span class="spec-val">LiFePO4 — safe &amp; stable</span></div>
-        <div class="spec-row"><span class="spec-key">Voltage</span><span class="spec-val">12.8V nominal · flat curve</span></div>
-        <div class="spec-row"><span class="spec-key">Cycle life</span><span class="spec-val">2000+ full cycles</span></div>
-      </div>
-      <div class="equip-card__facts" style="margin-top:.75rem;">
-        <div class="fact-item">⚡ Flat discharge = stable voltage</div>
-        <div class="fact-item">🔁 2000+ cycles</div>
-        <div class="fact-item">🏕️ Full day WWFF on one charge</div>
-        <div class="fact-item">🔒 Safe chemistry · no thermal runaway</div>
-      </div>
-    </div>
-
-    <!-- Antennas -->
-    <div class="section-sublabel" style="margin:2.5rem 0 1.25rem;">Portable Antenna System</div>
-    <div class="equip-grid equip-grid--2col">
-
-      <!-- Band Hopper IV -->
-      <div class="equip-card equip-card--active">
-        <div class="equip-card__top">
-          <div class="equip-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <line x1="2" y1="14" x2="26" y2="14" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="14" y1="14" x2="14" y2="24" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="10" y1="24" x2="18" y2="24" stroke="rgba(0,255,136,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="14" cy="14" r="2.5" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="equip-card__badges">
-            <span class="status-badge status-badge--active">● Active</span>
-          </div>
-        </div>
-        <div class="equip-card__name">Multi-band Dipole</div>
-        <div class="equip-card__model">Band Hopper IV</div>
-        <div class="equip-card__desc">A four-band resonant dipole covering 20m, 30m, 40m, and 80m with no tuner required on any of the supported bands. Purpose-built for portable and WWFF use: hangs between two trees or supports, deploys in minutes, and delivers true resonant performance on all four bands thanks to its fan dipole construction. The go-to antenna for quick WWFF activations.</div>
-        <div class="info-callout" style="margin:1rem 0;">
-          <p>Resonant on all four bands — no ATU needed. That means maximum efficiency at the antenna itself, with no matching loss. Easy to deploy solo in the field.</p>
-        </div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">20m · 30m · 40m · 80m</span></div>
-          <div class="spec-row"><span class="spec-key">Type</span><span class="spec-val">Fan dipole · resonant per band</span></div>
-          <div class="spec-row"><span class="spec-key">Tuner</span><span class="spec-val">Not required</span></div>
-          <div class="spec-row"><span class="spec-key">Deploy</span><span class="spec-val">Between trees or portable masts</span></div>
-        </div>
-        <div class="equip-card__facts" style="margin-top:.75rem;">
-          <div class="fact-item">🌲 Hangs between trees</div>
-          <div class="fact-item">🎯 Resonant · no tuner loss</div>
-          <div class="fact-item">🏕️ WWFF-ready</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- WWFF Locations -->
-    <div class="section-sublabel" style="margin:2.5rem 0 1.25rem;">WWFF Locations Near Hoboken</div>
-    <div style="background:var(--c-surface); border:1px solid var(--c-border); border-radius:16px; padding:1.5rem;">
-      <div style="display:grid; gap:1rem;">
-        <div style="display:flex; align-items:flex-start; gap:1rem; padding-bottom:1rem; border-bottom:1px solid var(--c-border);">
-          <div style="font-size:1.5rem; flex-shrink:0;">🏰</div>
-          <div>
-            <div style="font-family:var(--f-mono); font-size:.7rem; color:var(--c-primary); margin-bottom:.2rem;">~6 km from home</div>
-            <div style="font-weight:600; font-size:.95rem; margin-bottom:.2rem;">Fort 5 Edegem</div>
-            <div style="font-size:.82rem; color:var(--c-text-2);">Historic Brialmont fort — quiet grounds, trees for antenna supports, open air. Solid WWFF activation spot within easy reach. The Band Hopper IV fits well between the perimeter trees.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     QRP PORTABLE STATION — ON3VZ/P
-     ══════════════════════════════════════ -->
-<section class="port-section" id="qrp-portable" style="border-top:1px solid var(--c-border);">
-  <div class="container">
-
-    <div class="chapter-header">
-      <div class="chapter-header__accent" style="background:linear-gradient(180deg,var(--c-amber),transparent);"></div>
-      <div>
-        <div class="chapter-header__label">QRP Portable Station · ON3VZ/P</div>
-        <h2 class="chapter-header__title">5 Watts, <span style="color:var(--c-amber);">on foot</span></h2>
-        <p class="chapter-header__sub">A second, much smaller portable station built specifically for WWFF/ONFF activations: a QRP Labs QMX at 5 W into a SOTAbeams Band Hopper IV, run as an inverted V on a lightweight mast. Everything fits in a backpack, and it operates under a separate callsign, <strong style="color:var(--c-text);">ON3VZ/P</strong>.</p>
-      </div>
-    </div>
-
-    <!-- Transceiver -->
-    <div class="equip-featured equip-featured--amber" style="margin-bottom:1.5rem;">
-      <div class="equip-featured__body">
-        <div class="equip-featured__top">
-          <div class="status-badge status-badge--qrp">● 5 W QRP</div>
-          <div class="equip-featured__cat">Transceiver · HF QRP</div>
-        </div>
-        <h3 class="equip-featured__model">QRP Labs QMX</h3>
-        <p class="equip-featured__desc">A five-band QRP transceiver about the size of a pack of cards, 220 g including its enclosure, doing CW, digital modes and SSB at 5 W. A single USB-C cable carries both CAT control and audio, so the whole rig-to-laptop interface is one cable. Runs from a LiFePO4 pack regulated down to 11.50 V through an adjustable buck converter — the QMX's supply range is a strict 6.0–12.0 V.</p>
-        <div class="spec-grid">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">80 / 60 / 40 / 30 / 20 m</span></div>
-          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">5 W QRP</span></div>
-          <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">220 g incl. enclosure</span></div>
-          <div class="spec-row"><span class="spec-key">Supply</span><span class="spec-val">6.0–12.0 V · runs at 11.50 V</span></div>
-          <div class="spec-row"><span class="spec-key">Interface</span><span class="spec-val">USB-C · CAT + audio combined</span></div>
-        </div>
-      </div>
-      <div class="equip-featured__img-wrap">
-        <img src="/assets/images/qrp-portable-qmx-closeup.jpg" alt="QRP Labs QMX transceiver in the field" class="equip-featured__img">
-        <div class="equip-featured__img-label">QRP Labs QMX</div>
-      </div>
-    </div>
-
-    <!-- Antenna -->
-    <div class="section-sublabel" style="margin:2.5rem 0 1.25rem;">QRP Antenna &amp; Mast</div>
-    <div class="equip-grid equip-grid--2col">
-
-      <div class="equip-card equip-card--active" style="border-left-color:var(--c-amber);">
-        <div class="equip-card__top">
-          <div class="equip-card__icon" style="background:rgba(240,165,0,0.08);">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <line x1="2" y1="14" x2="26" y2="14" stroke="#f0a500" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="14" y1="14" x2="14" y2="24" stroke="#f0a500" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="14" cy="14" r="2.5" fill="rgba(240,165,0,0.3)" stroke="#f0a500" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="equip-card__badges">
-            <span class="status-badge status-badge--qrp">● 5 W QRP</span>
-          </div>
-        </div>
-        <div class="equip-card__name">Linked Dipole</div>
-        <div class="equip-card__model">SOTAbeams Band Hopper IV</div>
-        <div class="equip-card__desc">Run as an inverted V on a 10 m mast, and effectively used as a III: the 40/30/20 m links do the work, full size, no ATU, no loading coils. The 80 m section stays coiled on its winder and hangs unused, since the QMX doesn't cover that band and 80 m needs more clear span than most forest clearings offer.</div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands used</span><span class="spec-val">40 · 30 · 20 m</span></div>
-          <div class="spec-row"><span class="spec-key">Type</span><span class="spec-val">Linked half-wave dipole</span></div>
-          <div class="spec-row"><span class="spec-key">Tuner</span><span class="spec-val">Not required</span></div>
-          <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">Under 475 g complete</span></div>
-        </div>
-      </div>
-
-      <div class="equip-card equip-card--active" style="border-left-color:var(--c-amber);">
-        <div class="equip-card__top">
-          <div class="equip-card__icon" style="background:rgba(240,165,0,0.08);">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <line x1="14" y1="2" x2="14" y2="26" stroke="#f0a500" stroke-width="2" stroke-linecap="round"/>
-              <line x1="14" y1="26" x2="6" y2="26" stroke="rgba(240,165,0,0.5)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="14" y1="26" x2="22" y2="26" stroke="rgba(240,165,0,0.5)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="equip-card__badges">
-            <span class="status-badge status-badge--active">● Active</span>
-          </div>
-        </div>
-        <div class="equip-card__name">Portable Mast</div>
-        <div class="equip-card__model">SOTAbeams Tactical 7000hds</div>
-        <div class="equip-card__desc">A lightweight fibreglass mast that carries the Band Hopper IV's centre and balun. Guyed by the dipole legs themselves, so tension has to stay even on both sides or the mast bends and the antenna pattern goes asymmetric. Ground spike or tripod base depending on terrain.</div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Height</span><span class="spec-val">~7 m extended</span></div>
-          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Fibreglass, telescopic</span></div>
-          <div class="spec-row"><span class="spec-key">Guying</span><span class="spec-val">Dipole legs double as guys</span></div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="info-callout info-callout--amber" style="margin-top:1.5rem;">
-      <p><strong>A separate identity, on purpose.</strong> ON3VZ/P has its own QRZ.com logbook, LoTW certificate and Log4OM configuration, kept deliberately apart from the shack's ON3VZ log. QRP status travels through <code>TX_PWR = 5</code>, spot comments, and profile text — never through a callsign suffix like /QRP, which ONFF doesn't recognise for activator credit.</p>
-    </div>
-
-    <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.5rem;">
-      <a href="/2026/08/14/first-qrp-portable-test-setup/" class="btn btn-ghost" style="border-color:rgba(240,165,0,0.4); color:var(--c-amber);">Read the QMX build →</a>
-      <a href="/2026/08/18/building-on3vz-p/" class="btn btn-ghost">Setting up ON3VZ/P →</a>
-      <a href="/on3vz-p-manual/" class="btn btn-ghost">Technical manual →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     VHF / UHF — PORTABLE
-     ══════════════════════════════════════ -->
-<section class="port-section" style="border-top:1px solid var(--c-border);">
-  <div class="container">
-
-    <div class="chapter-header">
-      <div class="chapter-header__accent" style="background:linear-gradient(180deg,var(--c-cyan),transparent);"></div>
-      <div>
-        <div class="chapter-header__label">Portable VHF &amp; UHF</div>
-        <h2 class="chapter-header__title" style="color:var(--c-text);">VHF / <span style="color:var(--c-cyan);">UHF</span></h2>
-        <p class="chapter-header__sub">A dual-band handheld for POTA walk-around use and as a backup for the mobile rig. Lightweight, rugged, and compatible with the car's magnet mount antenna via a simple pigtail.</p>
-      </div>
-    </div>
-
-    <div class="equip-featured" style="border-left:3px solid var(--c-cyan); background:var(--c-surface);">
-      <div class="equip-featured__body" style="position:relative;">
-        <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at top left,rgba(0,212,255,0.06),transparent 60%);border-radius:inherit;"></div>
-        <div class="equip-featured__top">
-          <span class="status-badge" style="color:var(--c-amber);border-color:rgba(240,165,0,0.4);background:rgba(240,165,0,0.07);">◌ Planned</span>
-          <div class="equip-featured__cat">Dual Band Handheld · VHF/UHF</div>
-        </div>
-        <h3 class="equip-featured__model" style="color:var(--c-text);">Yaesu FT-65</h3>
-        <p class="equip-featured__desc">A rugged 2m/70cm handheld — the portable VHF/UHF companion. Primary radio for POTA walk-around use on site, and a solid backup for the FTM-510DE ASP when not in the car. A key trick: via a SMA-to-PL259 pigtail it connects directly to the Komunica BM-1 magnet mount — giving the handheld the benefit of a full-size rooftop antenna with no extra hardware.</p>
-        <div class="spec-grid" style="max-width:420px;">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">2m · 70cm (VHF/UHF)</span></div>
-          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">5W</span></div>
-          <div class="spec-row"><span class="spec-key">Role</span><span class="spec-val">POTA walk-around · mobile backup</span></div>
-          <div class="spec-row"><span class="spec-key">Antenna trick</span><span class="spec-val">SMA→PL259 pigtail → BM-1 mag mount</span></div>
-        </div>
-        <div class="equip-card__facts" style="margin-top:1rem;">
-          <div class="fact-item">📡 FT-65</div>
-          <div class="fact-item">📡 Diamond SRJ-701A</div>
-          <div class="fact-item">📡 Diamond SRJ-77</div>
-          <div class="fact-item">🔌 Auto pigtail</div>
-        </div>
-      </div>
-      <div class="equip-featured__img-wrap">
-        <img src="/assets/images/ft65.svg" alt="Yaesu FT-65" class="equip-featured__img" style="max-height:220px;">
-        <div class="equip-featured__img-label">Yaesu FT-65</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- 11m CB section removed 2026-10-06 (kept in git history) -->
-
-<script>
-// Submenu active tab on scroll
-(function(){
-  const tabs = { current: document.getElementById('tab-current'), future: document.getElementById('tab-future'), cb: document.getElementById('tab-cb') };
-  const sections = ['current','future','cb'].map(id => document.getElementById(id));
-  function onScroll(){
-    const scrollY = window.scrollY + window.innerHeight * 0.3;
-    let active = 'current';
-    sections.forEach(s => { if(s && s.offsetTop <= scrollY) active = s.id; });
-    Object.entries(tabs).forEach(([id,el]) => { if(el) el.classList.toggle('active', id === active); });
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
-</script>

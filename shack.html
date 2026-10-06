@@ -1,424 +1,213 @@
 ---
 layout: default
-title: ON3VZ — Shack
+title: ON3VZ · Shack
 extra_css:
   - /css/shack.css
 ---
 
-<!-- PAGE HERO -->
-<div class="shack-hero">
-  <div class="shack-hero__bg-grid"></div>
-  <div class="shack-hero__glow"></div>
-  <div class="container" style="position:relative; z-index:1;">
+<!-- ============================================================
+     SHACK PAGE v3 (2026-10-06)
+     Rebuilt around real photos of the station. The old version with
+     SVG equipment drawings is in the git history (shack.html and
+     css/shack.css before 2026-10-06) if it is ever needed again.
+     Photos: /assets/images/shack/
+     ============================================================ -->
+
+<div class="sk-page">
+
+  <!-- ── HERO ── -->
+  <section class="sk-hero container anim-1">
     <div class="section-label">ON3VZ · Shack</div>
-    <h1 class="section-title">The Fixed Station.<br><span style="color:var(--c-primary);">Built to last.</span></h1>
-    <p class="section-sub">A deliberate, dual-band shack — HF and VHF/UHF — each with its own dedicated antenna system. Class C licence, operating with purpose.</p>
-    <div class="hero-badges">
-      <span class="hero-badge hero-badge--green">● Active · Class C</span>
-      <span class="hero-badge hero-badge--cyan">80m · 40m · 30m · 20m · 15m · 10m · 2m · 70cm</span>
-      <span class="hero-badge hero-badge--amber">HF + VHF/UHF</span>
+    <h1 class="section-title">The home station</h1>
+    <p class="section-sub sk-lead">An HF and VHF/UHF station in an urban garden in Hoboken, built step by step with one goal in mind: a clean signal on 25 W.</p>
+
+    <figure class="sk-hero__photo">
+      <img src="/assets/images/shack/shack-desk.jpg" width="1800" height="1035" alt="The ON3VZ operating desk: IC-7300 MK II, AetherSDR on the left screen, the radio's spectrum scope on the right screen and Log4OM on the laptop" fetchpriority="high">
+      <figcaption>The operating desk: AetherSDR on the left screen, the IC-7300 MK II scope on the right, Log4OM on the laptop.</figcaption>
+    </figure>
+
+    <div class="sk-figures">
+      <div class="sk-fig"><span class="sk-fig__val">25 W</span><span class="sk-fig__lbl">HF output, Class C</span></div>
+      <div class="sk-fig"><span class="sk-fig__val">80 to 10 m</span><span class="sk-fig__lbl">HF bands</span></div>
+      <div class="sk-fig"><span class="sk-fig__val">50 W</span><span class="sk-fig__lbl">VHF/UHF output, Class C</span></div>
+      <div class="sk-fig"><span class="sk-fig__val">2 m · 70 cm</span><span class="sk-fig__lbl">VHF / UHF bands</span></div>
     </div>
-  </div>
+  </section>
+
+  <!-- ── AT A GLANCE ── -->
+  <section class="sk-section container anim-2">
+    <div class="sk-glance">
+      <div class="sk-glance__card sk-glance__card--hf">
+        <div class="sk-glance__head"><span class="sk-tag">HF</span><span>80 to 10 m</span></div>
+        <ul class="sk-list">
+          <li><b>ICOM IC-7300 MK II</b><span>Transceiver, 25 W</span></li>
+          <li><b>RF.Guru IronWave 6</b><span>Vertical for 20, 15 and 10 m, the DX antenna</span></li>
+          <li><b>HyEndFed 5 Band</b><span>End-fed wire for 80 and 40 m, temporary</span></li>
+          <li><b>Log4OM</b><span>Logging</span></li>
+          <li><b>AetherSDR</b><span>Second receive screen</span></li>
+          <li><b>Heil Pro Set Elite iC</b><span>Headset with foot switch</span></li>
+        </ul>
+      </div>
+      <div class="sk-glance__card sk-glance__card--vhf">
+        <div class="sk-glance__head"><span class="sk-tag sk-tag--cyan">VHF / UHF</span><span>2 m · 70 cm</span></div>
+        <ul class="sk-list">
+          <li><b>Maas AMT-920-UV</b><span>Dual-band transceiver, 50 W</span></li>
+          <li><b>Diamond X50</b><span>Collinear, about 9 m above ground</span></li>
+        </ul>
+        <p class="sk-glance__note">On the road, VHF/UHF runs on the Yaesu FTM-510DE in the car. See <a href="/mobile/">Mobile</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OPERATOR ── -->
+  <section class="sk-section container anim-3">
+    <div class="sk-operator">
+      <figure class="sk-operator__photo">
+        <img src="/assets/images/shack/shack-operator.jpg" width="1400" height="999" alt="Kristof, ON3VZ, at the operating desk with the Heil headset on" loading="lazy">
+      </figure>
+      <div class="sk-operator__text">
+        <div class="section-label">Behind the mic</div>
+        <h2 class="sk-h2">Kristof, ON3VZ</h2>
+        <p>This is where it happens. Heil headset on, the IC-7300 MK II on the desk, AetherSDR on one screen and Log4OM on the laptop.</p>
+        <p>On FT8 the vertical usually reaches furthest. On SSB, stations regularly tell me I sound clean and loud, both with the stock hand microphone and with the Heil headset. That feedback made me curious about why, and it shaped how this station is built.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HF ── -->
+  <section class="sk-section container" id="hf">
+    <header class="sk-chapter">
+      <span class="sk-tag">HF</span>
+      <h2 class="sk-h2">HF station</h2>
+      <p class="sk-intro">One radio, two antennas: a vertical for DX on the higher bands and a wire for 80 and 40 m.</p>
+    </header>
+
+    <div class="sk-item">
+      <figure class="sk-item__photo"><img src="/assets/images/shack/ic7300-tx-eq.jpg" width="1200" height="675" alt="The TX equalizer menu on the IC-7300 MK II" loading="lazy"></figure>
+      <div class="sk-item__body">
+        <div class="sk-kicker">Transceiver</div>
+        <h3 class="sk-h3">ICOM IC-7300 MK II</h3>
+        <p>The heart of the HF station, used at 25 W, the Class C limit. Its built-in scope runs on the large screen next to it.</p>
+        <p>The transmit audio is tuned with the radio's own equalizer and a quiet ALC.</p>
+      </div>
+    </div>
+
+    <div class="sk-item sk-item--reverse">
+      <figure class="sk-item__photo sk-item__photo--tall"><img src="/assets/images/shack/heil-headset.jpg" width="787" height="1400" alt="Heil Pro Set Elite iC headset hanging next to the desk" loading="lazy"></figure>
+      <div class="sk-item__body">
+        <div class="sk-kicker">On the desk</div>
+        <h3 class="sk-h3">Software and audio</h3>
+        <ul class="sk-list sk-list--plain">
+          <li><b>Log4OM</b><span>Logging program on the laptop.</span></li>
+          <li><b>AetherSDR</b><span>A second view of the band on its own screen, used for receive.</span></li>
+          <li><b>Heil Pro Set Elite iC</b><span>Headset with a Heil foot switch, hands free on the keyboard.</span></li>
+          <li><b>Stock hand microphone</b><span>Still in use, and it gets good audio reports too.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sk-h3 sk-h3--section">Antennas</h3>
+    <div class="sk-antennas">
+      <article class="sk-ant">
+        <div class="sk-ant__photos">
+          <figure><img src="/assets/images/shack/ironwave6-garden.jpg" width="900" height="1597" alt="The IronWave 6 vertical standing free in the middle of the garden" loading="lazy"></figure>
+          <figure><img src="/assets/images/shack/ironwave6-base.jpg" width="900" height="1600" alt="The base of the IronWave 6: 4:1 unun on the mast, 32 radials on the radial plate and the RF.Guru line isolator" loading="lazy"></figure>
+        </div>
+        <div class="sk-ant__body">
+          <div class="sk-kicker">DX antenna · 20, 15, 10 m</div>
+          <h3 class="sk-h3">RF.Guru IronWave 6</h3>
+          <p>A free-standing vertical of about 6 m in the middle of the garden. At the base sit a 4:1 unun from RF.Guru and a radial plate with 32 radials, now buried in the lawn. A line isolator follows right after the base.</p>
+          <p>It is the antenna for DX on 20, 15 and 10 m, and it works on 30 m with extra tuning.</p>
+          <div class="sk-bands"><span>20 m</span><span>15 m</span><span>10 m</span><span class="sk-bands__extra">30 m, tuned</span></div>
+        </div>
+      </article>
+
+      <article class="sk-ant sk-ant--text">
+        <div class="sk-ant__body">
+          <div class="sk-kicker sk-kicker--amber">Temporary · 80 and 40 m</div>
+          <h3 class="sk-h3">HyEndFed 5 Band</h3>
+          <p>A 23 m end-fed wire. The feed point sits about 9 m up on the flat roof, and the wire slopes down across the garden to a short pole.</p>
+          <p>It came from the portable kit to add 80 and 40 m at home. Once the permanent low-band antenna is ready, it goes back into the portable bag.</p>
+          <div class="sk-bands sk-bands--amber"><span>80 m</span><span>40 m</span><span>20 m</span><span>15 m</span><span>10 m</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── CLEAN SIGNAL ── -->
+  <section class="sk-section container" id="clean-signal">
+    <header class="sk-chapter">
+      <span class="sk-tag sk-tag--amber">EMC</span>
+      <h2 class="sk-h2">A clean signal on 25 W</h2>
+      <p class="sk-intro">There is no single trick. Every cable that enters the shack is a door for RF and noise, in both directions, so every door gets its own filter or choke. Together they keep my own signal in the antenna and the neighbourhood noise out of the receiver.</p>
+    </header>
+
+    <div class="sk-doors">
+      <article class="sk-door">
+        <figure><img src="/assets/images/shack/line-isolator.jpg" width="788" height="1400" alt="RF.Guru HF line isolator on the coax just before the radio" loading="lazy"></figure>
+        <div class="sk-door__body">
+          <div class="sk-kicker">Door 1 · Coax</div>
+          <h3 class="sk-h3">Chokes along every feed line</h3>
+          <p>RF.Guru chokes at the antenna, along the line and before the radio, so the outside of the coax stays quiet.</p>
+        </div>
+      </article>
+      <article class="sk-door">
+        <figure><img src="/assets/images/shack/antenna-box.jpg" width="900" height="1200" alt="The antenna box on the outside wall where both feed lines come in" loading="lazy"></figure>
+        <div class="sk-door__body">
+          <div class="sk-kicker">Door 2 · Earthing</div>
+          <h3 class="sk-h3">Antenna box and busbar</h3>
+          <p>Both feed lines enter through one box on the outside wall. Inside the shack, everything is bonded to one busbar.</p>
+        </div>
+      </article>
+      <article class="sk-door">
+        <figure><img src="/assets/images/shack/mains-filter.jpg" width="1200" height="630" alt="Schaffner mains filter in its own enclosure next to the shack sub panel" loading="lazy"></figure>
+        <div class="sk-door__body">
+          <div class="sk-kicker">Door 3 · Mains</div>
+          <h3 class="sk-h3">A filtered circuit of its own</h3>
+          <p>The shack has its own sub panel with a Schaffner mains filter. A second filter sits on the solar inverter.</p>
+        </div>
+      </article>
+      <article class="sk-door sk-door--text">
+        <div class="sk-door__body">
+          <div class="sk-kicker">Door 4 · Equipment cables</div>
+          <h3 class="sk-h3">Ferrites on HDMI, USB and audio</h3>
+          <p>Every cable between devices can act as an antenna, so each one gets a ferrite.</p>
+        </div>
+      </article>
+      <article class="sk-door sk-door--text">
+        <div class="sk-door__body">
+          <div class="sk-kicker">Door 5 · Network</div>
+          <h3 class="sk-h3">Shielded network cable</h3>
+          <p>The network enters the shack on a shielded cable, one less path for noise from computers and routers.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sk-more">
+      <span class="sk-more__label">The full story, with the theory behind every choice</span>
+      <span class="sk-more__btn" aria-disabled="true">Blog article coming soon</span>
+    </div>
+  </section>
+
+  <!-- ── VHF / UHF ── -->
+  <section class="sk-section container" id="vhf">
+    <header class="sk-chapter">
+      <span class="sk-tag sk-tag--cyan">VHF / UHF</span>
+      <h2 class="sk-h2">2 m and 70 cm</h2>
+      <p class="sk-intro">VHF and UHF from the shack, with the antenna high above the garden.</p>
+    </header>
+    <div class="sk-vhf">
+      <article class="sk-card">
+        <div class="sk-kicker sk-kicker--cyan">Transceiver</div>
+        <h3 class="sk-h3">Maas AMT-920-UV</h3>
+        <p>Dual-band VHF/UHF transceiver in the shack. Class C allows up to 50 W on VHF and UHF.</p>
+      </article>
+      <article class="sk-card">
+        <div class="sk-kicker sk-kicker--cyan">Antenna</div>
+        <h3 class="sk-h3">Diamond X50</h3>
+        <p>Dual-band collinear for 2 m and 70 cm, mounted about 9 m above the ground.</p>
+      </article>
+    </div>
+  </section>
+
 </div>
-
-<!-- BAND + RANGE VISUAL -->
-<section style="padding:2rem 0 0;">
-  <div class="container">
-    <div class="section-label" style="margin-bottom:1rem;">Band coverage &amp; expected range — Class C licence</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:2rem;">
-
-      <!-- HF bands -->
-      <div style="background:var(--c-surface); border:1px solid var(--c-border); border-radius:12px; padding:1.25rem;">
-        <div style="font-family:var(--f-mono); font-size:.65rem; letter-spacing:.12rem; color:var(--c-primary); margin-bottom:1rem;">HF · IC-7300 MK II · 25W Class C</div>
-        <svg viewBox="0 0 420 130" style="width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Share Tech Mono',monospace">
-          <!-- 80m -->
-          <rect x="4" y="10" width="57" height="32" rx="4" fill="rgba(0,255,136,0.13)" stroke="rgba(0,255,136,0.4)" stroke-width="1.5"/>
-          <text x="33" y="31" fill="rgba(0,255,136,0.75)" font-size="11" text-anchor="middle">80m</text>
-          <!-- 40m POTA -->
-          <rect x="69" y="4" width="72" height="40" rx="4" fill="rgba(0,255,136,0.22)" stroke="rgba(0,255,136,0.85)" stroke-width="2"/>
-          <text x="105" y="22" fill="#00ff88" font-size="13" text-anchor="middle" font-weight="700">40m</text>
-          <text x="105" y="37" fill="rgba(0,255,136,0.75)" font-size="9" text-anchor="middle">POTA ★</text>
-          <!-- 30m -->
-          <rect x="149" y="10" width="57" height="32" rx="4" fill="rgba(0,255,136,0.12)" stroke="rgba(0,255,136,0.35)" stroke-width="1.5"/>
-          <text x="178" y="31" fill="rgba(0,255,136,0.65)" font-size="11" text-anchor="middle">30m</text>
-          <!-- 20m DX -->
-          <rect x="214" y="4" width="72" height="40" rx="4" fill="rgba(0,255,136,0.22)" stroke="rgba(0,255,136,0.85)" stroke-width="2"/>
-          <text x="250" y="22" fill="#00ff88" font-size="13" text-anchor="middle" font-weight="700">20m</text>
-          <text x="250" y="37" fill="rgba(0,255,136,0.75)" font-size="9" text-anchor="middle">DX ★</text>
-          <!-- 15m -->
-          <rect x="294" y="10" width="57" height="32" rx="4" fill="rgba(0,255,136,0.22)" stroke="rgba(0,255,136,0.85)" stroke-width="2"/>
-          <text x="323" y="22" fill="#00ff88" font-size="13" text-anchor="middle" font-weight="700">15m</text>
-          <text x="323" y="37" fill="rgba(0,255,136,0.75)" font-size="9" text-anchor="middle">Class C ★</text>
-          <!-- 10m -->
-          <rect x="359" y="10" width="57" height="32" rx="4" fill="rgba(0,255,136,0.22)" stroke="rgba(0,255,136,0.85)" stroke-width="2"/>
-          <text x="388" y="22" fill="#00ff88" font-size="13" text-anchor="middle" font-weight="700">10m</text>
-          <text x="388" y="37" fill="rgba(0,255,136,0.75)" font-size="9" text-anchor="middle">Class C ★</text>
-
-          <!-- Range label -->
-          <text x="4" y="62" fill="rgba(0,255,136,0.6)" font-size="10">Range @ 25W IC-7300 MK II FT8 / SSB</text>
-          <!-- Range bar -->
-          <rect x="4" y="72" width="412" height="18" rx="4" fill="rgba(0,0,0,0.35)" stroke="rgba(0,255,136,0.1)" stroke-width="1"/>
-          <rect x="4" y="72" width="52" height="18" rx="4" fill="rgba(0,255,136,0.2)"/>
-          <text x="30" y="85" fill="rgba(0,255,136,0.9)" font-size="9" text-anchor="middle">Local</text>
-          <rect x="56" y="72" width="114" height="18" fill="rgba(0,255,136,0.38)"/>
-          <text x="113" y="85" fill="#00ff88" font-size="9" text-anchor="middle">Regional · 500–2000 km</text>
-          <rect x="170" y="72" width="246" height="18" rx="4" fill="rgba(0,255,136,0.55)"/>
-          <text x="293" y="85" fill="#001a08" font-size="10" text-anchor="middle" font-weight="700">DX · worldwide on 20m FT8</text>
-          <!-- Scale ticks + labels -->
-          <line x1="56" y1="91" x2="56" y2="104" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
-          <line x1="170" y1="91" x2="170" y2="104" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
-          <text x="4" y="116" fill="rgba(0,255,136,0.4)" font-size="9">0 km</text>
-          <text x="56" y="116" fill="rgba(0,255,136,0.4)" font-size="9" text-anchor="middle">100</text>
-          <text x="170" y="116" fill="rgba(0,255,136,0.4)" font-size="9" text-anchor="middle">500 km</text>
-          <text x="293" y="116" fill="rgba(0,255,136,0.4)" font-size="9" text-anchor="middle">2000 km</text>
-          <text x="416" y="116" fill="rgba(0,255,136,0.4)" font-size="9" text-anchor="end">DX</text>
-        </svg>
-      </div>
-
-      <!-- VHF/UHF bands -->
-      <div style="background:var(--c-surface); border:1px solid var(--c-border); border-radius:12px; padding:1.25rem;">
-        <div style="font-family:var(--f-mono); font-size:.65rem; letter-spacing:.12rem; color:var(--c-cyan); margin-bottom:1rem;">VHF/UHF · FTM-510DE ASP (mobile &amp; shack)</div>
-        <svg viewBox="0 0 420 130" style="width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Share Tech Mono',monospace">
-          <!-- 2m band -->
-          <rect x="4" y="6" width="120" height="38" rx="4" fill="rgba(0,212,255,0.18)" stroke="rgba(0,212,255,0.65)" stroke-width="2"/>
-          <text x="64" y="24" fill="#00d4ff" font-size="16" text-anchor="middle" font-weight="700">2m</text>
-          <text x="64" y="38" fill="rgba(0,212,255,0.7)" font-size="9" text-anchor="middle">144–148 MHz</text>
-          <!-- 70cm band -->
-          <rect x="130" y="12" width="100" height="28" rx="4" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.38)" stroke-width="1.5"/>
-          <text x="180" y="26" fill="rgba(0,212,255,0.75)" font-size="13" text-anchor="middle">70cm</text>
-          <text x="180" y="37" fill="rgba(0,212,255,0.5)" font-size="8" text-anchor="middle">430–440 MHz</text>
-          <!-- Yagi -->
-          <rect x="240" y="6" width="170" height="38" rx="4" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.5)" stroke-width="1.5"/>
-          <text x="325" y="24" fill="#00d4ff" font-size="11" text-anchor="middle">Yagi · Flexa FX-210</text>
-          <text x="325" y="38" fill="rgba(0,212,255,0.6)" font-size="9" text-anchor="middle">11.2 dBi · directional · 2m</text>
-          <!-- Range label -->
-          <text x="4" y="62" fill="rgba(0,212,255,0.6)" font-size="10">Range @ 50–55W FM / C4FM</text>
-          <!-- Range bar -->
-          <rect x="4" y="72" width="412" height="18" rx="4" fill="rgba(0,0,0,0.35)" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
-          <rect x="4" y="72" width="80" height="18" rx="4" fill="rgba(0,212,255,0.25)"/>
-          <text x="42" y="85" fill="rgba(0,212,255,0.9)" font-size="9" text-anchor="middle">Omni · ~25 km</text>
-          <rect x="84" y="72" width="150" height="18" fill="rgba(0,212,255,0.48)"/>
-          <text x="159" y="85" fill="#00d4ff" font-size="9.5" text-anchor="middle" font-weight="700">Yagi · 60–80 km</text>
-
-          <!-- Scale -->
-          <line x1="84" y1="91" x2="84" y2="104" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
-          <line x1="234" y1="91" x2="234" y2="104" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
-          <text x="4" y="116" fill="rgba(0,212,255,0.4)" font-size="9">0 km</text>
-          <text x="84" y="116" fill="rgba(0,212,255,0.4)" font-size="9" text-anchor="middle">60 km</text>
-          <text x="234" y="116" fill="rgba(0,212,255,0.4)" font-size="9" text-anchor="middle">200 km</text>
-
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     CHAPTER I — VHF & UHF
-     ══════════════════════════════════════════ -->
-<section class="shack-chapter shack-chapter--vhf">
-  <div class="container">
-    <div class="chapter-header">
-      <div class="chapter-header__accent chapter-header__accent--cyan"></div>
-      <div>
-        <div class="chapter-header__label">Chapter I</div>
-        <h2 class="chapter-header__title">VHF <span>&amp;</span> UHF</h2>
-        <p class="chapter-header__sub">2m and 70cm — local and regional coverage. Dual antenna system on the roof: a collinear for everyday coverage and a 6-element Yagi for extended directional reach.</p>
-      </div>
-    </div>
-
-    <!-- Transceiver -->
-    <div class="equip-featured equip-featured--cyan">
-      <div class="equip-featured__body">
-        <div class="equip-featured__top">
-          <div class="status-badge status-badge--active">● Active</div>
-          <div class="equip-featured__cat">Transceiver · VHF/UHF</div>
-        </div>
-        <h3 class="equip-featured__model">Yaesu FTM-510DE ASP</h3>
-        <p class="equip-featured__desc">The dual-band flagship from Yaesu — C4FM digital and FM analogue on 2m and 70cm. The <strong>Super-DX</strong> mode boosts RF amplifier sensitivity for weak-signal reception, while the built-in <strong>ASP</strong> (Audio Digital Signal Processor) digitally removes noise from FM audio — crucial for fringe-area contacts. APRS is fully integrated with GPS. Installed both as mobile and shack radio.</p>
-        <div class="spec-grid">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">144–146 MHz · 430–440 MHz</span></div>
-          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">55W (2m) · 50W (70cm)</span></div>
-          <div class="spec-row"><span class="spec-key">Modes</span><span class="spec-val">C4FM · FM · APRS</span></div>
-          <div class="spec-row"><span class="spec-key">Features</span><span class="spec-val">Super-DX · ASP · PMG/MAG</span></div>
-          <div class="spec-row"><span class="spec-key">Display</span><span class="spec-val">Colour touchscreen</span></div>
-        </div>
-      </div>
-      <div class="equip-featured__img-wrap">
-        <img src="/assets/images/ftm510de.svg"
-             alt="Yaesu FTM-510DE ASP"
-             class="equip-featured__img"
-             onerror="this.style.display='none'; this.parentElement.classList.add('equip-featured__img-wrap--fallback');">
-        <div class="equip-featured__img-label">Yaesu FTM-510DE ASP</div>
-      </div>
-    </div>
-
-    <!-- Antenna grid -->
-    <div class="section-sublabel" style="margin:2.5rem 0 1.25rem;">Roof Antenna System</div>
-    <div class="equip-grid equip-grid--2col">
-
-      <!-- Diamond X-50N -->
-      <div class="equip-card equip-card--cyan equip-card--active">
-        <div class="equip-card__top">
-          <div class="equip-card__icon equip-card__icon--cyan">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <line x1="14" y1="2" x2="14" y2="26" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round"/>
-              <ellipse cx="14" cy="10" rx="5" ry="2.5" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-              <ellipse cx="14" cy="18" rx="5" ry="2.5" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="equip-card__badges">
-            <span class="status-badge status-badge--active">● Active</span>
-          </div>
-        </div>
-        <div class="equip-card__name">Collinear Omni · Primary</div>
-        <div class="equip-card__model">Diamond X-50N</div>
-        <div class="equip-card__desc">The go-to rooftop dual-band collinear — mounted high for maximum horizon coverage. Pre-tuned, zero-adjustment, always-on. Covers all local repeaters on 2m and 70cm reliably. Also broadband enough for scanner use.</div>
-        <div class="equip-card__img-wrap">
-          <img src="/assets/images/x50n.svg"
-               alt="Diamond X-50N"
-               class="equip-card__img equip-card__img--tall"
-               onerror="this.style.display='none'">
-        </div>
-        <div style="margin-top:1rem;">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">2m / 70cm</span></div>
-          <div class="spec-row"><span class="spec-key">Gain</span><span class="spec-val">4.5 dBi (2m) · 7.2 dBi (70cm)</span></div>
-          <div class="spec-row"><span class="spec-key">Length</span><span class="spec-val">1.7 m</span></div>
-          <div class="spec-row"><span class="spec-key">Connector</span><span class="spec-val">N-Type</span></div>
-          <div class="spec-row"><span class="spec-key">Construction</span><span class="spec-val">Fiberglass · one-piece · stainless</span></div>
-          <div class="spec-row"><span class="spec-key">SWR</span><span class="spec-val">Pre-tuned · no adjustment needed</span></div>
-        </div>
-        <div class="equip-card__facts">
-          <div class="fact-item">🔌 DC-grounded</div>
-          <div class="fact-item">💨 Wind-resistant</div>
-          <div class="fact-item">📡 Broadband / scanner-ready</div>
-          <div class="fact-item">🔒 Waterproof connections</div>
-        </div>
-      </div>
-
-      <!-- Flexa FX-210 -->
-      <div class="equip-card equip-card--cyan equip-card--active">
-        <div class="equip-card__top">
-          <div class="equip-card__icon equip-card__icon--cyan">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <line x1="2" y1="14" x2="26" y2="14" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
-              <line x1="4" y1="9" x2="4" y2="19" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="9" y1="10.5" x2="9" y2="17.5" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
-              <line x1="15" y1="11.5" x2="15" y2="16.5" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="20" y1="12" x2="20" y2="16" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="25" y1="12.5" x2="25" y2="15.5" stroke="rgba(0,212,255,0.5)" stroke-width="1" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="equip-card__badges">
-            <span class="status-badge status-badge--active">● Active</span>
-          </div>
-        </div>
-        <div class="equip-card__name">6-Element Yagi · Directional</div>
-        <div class="equip-card__model">Flexa FX-210</div>
-        <div class="equip-card__desc">A dedicated 2m Yagi for long-range, directional VHF work. Six elements on a 215 cm boom give a serious 11.2 dBi gain. Vertically polarized — ideal for FM repeater DX and SSB/FT8 weak-signal work on 144 MHz. Extends reach well beyond the omni.</div>
-        <div class="equip-card__img-wrap">
-          <img src="/assets/images/fx210.svg"
-               alt="Flexa FX-210 Yagi"
-               class="equip-card__img"
-               onerror="this.style.display='none'">
-        </div>
-        <div style="margin-top:1rem;">
-          <div class="spec-row"><span class="spec-key">Band</span><span class="spec-val">2m (144 MHz)</span></div>
-          <div class="spec-row"><span class="spec-key">Elements</span><span class="spec-val">6</span></div>
-          <div class="spec-row"><span class="spec-key">Boom</span><span class="spec-val">215 cm</span></div>
-          <div class="spec-row"><span class="spec-key">Gain</span><span class="spec-val">11.2 dBi</span></div>
-          <div class="spec-row"><span class="spec-key">Polarisation</span><span class="spec-val">Vertical</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- IC-9700 planned -->
-    <div class="section-sublabel" style="margin:2.5rem 0 1.25rem;">On the Horizon</div>
-    <div class="equip-card equip-card--planned equip-card--wide">
-      <div class="equip-card__top">
-        <div class="equip-card__icon equip-card__icon--cyan">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <rect x="3" y="8" width="22" height="12" rx="3" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-            <line x1="7" y1="14" x2="21" y2="14" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
-            <circle cx="8" cy="11" r="1.2" fill="#00d4ff"/>
-            <rect x="6" y="16.5" width="6" height="1.5" rx="1" fill="rgba(0,212,255,0.4)"/>
-          </svg>
-        </div>
-        <div class="equip-card__badges">
-          <span class="status-badge status-badge--planned">◌ Planned</span>
-        </div>
-      </div>
-      <div class="equip-card__name">VHF/UHF/SHF Transceiver</div>
-      <div class="equip-card__model">ICOM IC-9700</div>
-      <div class="equip-card__desc">The next step for the VHF/UHF station. A full SDR-based transceiver for 2m, 70cm, and 23cm — direct sampling architecture, built-in real-time spectrum scope, and D-STAR digital voice. Built for serious VHF/UHF operation.</div>
-      <div class="equip-card__img-wrap equip-card__img-wrap--right">
-        <img src="/assets/images/ic9700.svg"
-             alt="ICOM IC-9700"
-             class="equip-card__img"
-             onerror="this.style.display='none'">
-      </div>
-      <div style="margin-top:1rem; max-width:480px;">
-        <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">2m · 70cm · 23cm</span></div>
-        <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">100W (2m) · 75W (70cm) · 10W (23cm)</span></div>
-        <div class="spec-row"><span class="spec-key">Architecture</span><span class="spec-val">Direct sampling SDR</span></div>
-        <div class="spec-row"><span class="spec-key">Features</span><span class="spec-val">Spectrum scope · D-STAR · Satellite mode</span></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     CHAPTER II — HF
-     ══════════════════════════════════════════ -->
-<section class="shack-chapter shack-chapter--hf">
-  <div class="container">
-    <div class="chapter-header">
-      <div class="chapter-header__accent chapter-header__accent--green"></div>
-      <div>
-        <div class="chapter-header__label">Chapter II</div>
-        <h2 class="chapter-header__title">HF</h2>
-        <p class="chapter-header__sub">Two antennas. Two jobs. A dedicated low-band horizontal for 80m and 40m, and a full-size vertical for 20m through 10m DX. Class C licence active on 10m, 15m and 20m.</p>
-      </div>
-    </div>
-
-    <!-- Transceiver + PSU side by side -->
-    <div class="equip-featured equip-featured--green">
-      <div class="equip-featured__body">
-        <div class="equip-featured__top">
-          <div class="status-badge status-badge--active">● Active</div>
-          <div class="equip-featured__cat">Transceiver · HF / 6m</div>
-        </div>
-        <h3 class="equip-featured__model">ICOM IC-7300 MK II</h3>
-        <p class="equip-featured__desc">The heart of the HF shack. The IC-7300 MK II is a direct-sampling SDR HF transceiver covering 160m through 6m (including the 4m band in the European version). Compared to the original IC-7300 it adds an <strong>HDMI output</strong> for an external monitor, a <strong>LAN port</strong> for PC-less remote control, a second USB-C port with dual COM + audio, dedicated RX antenna inputs (SMA), a built-in <strong>CW decoder</strong>, and lower power consumption. The real-time spectrum scope and waterfall make band-hunting intuitive. The definitive compact HF station.</p>
-        <div class="spec-grid">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">160m – 6m (+ 4m EU)</span></div>
-          <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">100W · 25W with Class C</span></div>
-          <div class="spec-row"><span class="spec-key">Architecture</span><span class="spec-val">RF direct sampling SDR</span></div>
-          <div class="spec-row"><span class="spec-key">Display</span><span class="spec-val">4.3″ colour touch + HDMI out</span></div>
-          <div class="spec-row"><span class="spec-key">Connectivity</span><span class="spec-val">LAN · USB-C · USB-A · SMA RX</span></div>
-          <div class="spec-row"><span class="spec-key">CW Decoder</span><span class="spec-val">Built-in</span></div>
-        </div>
-      </div>
-      <div class="equip-featured__img-wrap">
-        <img src="/assets/images/ic7300mkii.svg"
-             alt="ICOM IC-7300 MK II"
-             class="equip-featured__img"
-             onerror="this.style.display='none'; this.parentElement.classList.add('equip-featured__img-wrap--fallback');">
-        <div class="equip-featured__img-label">ICOM IC-7300 MK II</div>
-      </div>
-    </div>
-
-    <!-- PSU card -->
-    <div class="equip-card equip-card--active equip-card--wide" style="margin-top:1.25rem;">
-      <div class="equip-card__top">
-        <div class="equip-card__icon" style="background:rgba(240,165,0,0.1);">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <rect x="3" y="7" width="22" height="14" rx="3" fill="none" stroke="#f0a500" stroke-width="1.5"/>
-            <line x1="8" y1="7" x2="8" y2="21" stroke="rgba(240,165,0,0.3)" stroke-width="1"/>
-            <circle cx="17" cy="14" r="3" fill="none" stroke="#f0a500" stroke-width="1.5"/>
-            <line x1="24" y1="12" x2="27" y2="12" stroke="#f0a500" stroke-width="1.5"/>
-            <line x1="24" y1="16" x2="27" y2="16" stroke="#f0a500" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <div style="display:flex; gap:.5rem; align-items:center;">
-          <span class="status-badge status-badge--active">● Active</span>
-        </div>
-      </div>
-      <div class="equip-card__name">Power Supply</div>
-      <div class="equip-card__model">Mean Well · 26A / 360W Industrial</div>
-      <div class="equip-card__desc">Industrial-grade switching PSU delivering a clean 13.8V at up to 26A. Ultra-low ripple — important for a noise-sensitive SDR receiver. Built for continuous duty: no fans kicking in and out, designed to run 24/7. Overkill for 25W Class C — but leaves plenty of headroom for 100W when the licence allows it.</div>
-      <div style="margin:1rem 0; border-radius:10px; overflow:hidden; background:rgba(0,0,0,0.2);">
-        <img src="/assets/images/meanwell.svg" alt="Mean Well PSU" style="width:100%; height:auto; display:block;">
-      </div>
-      <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:0 2rem; max-width:560px;">
-        <div class="spec-row"><span class="spec-key">Output</span><span class="spec-val">13.8V DC regulated</span></div>
-        <div class="spec-row"><span class="spec-key">Current</span><span class="spec-val">26A continuous</span></div>
-        <div class="spec-row"><span class="spec-key">Power</span><span class="spec-val">360W</span></div>
-        <div class="spec-row"><span class="spec-key">Grade</span><span class="spec-val">Industrial · continuous duty</span></div>
-      </div>
-    </div>
-
-    <!-- HF Antenna System -->
-    <div class="section-sublabel" style="margin:2.5rem 0 1.25rem;">HF Antenna System</div>
-    <div class="equip-grid equip-grid--2col">
-
-      <!-- Low-band antenna -->
-      <div class="equip-card equip-card--planned">
-        <div class="equip-card__top">
-          <div class="equip-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <line x1="2" y1="14" x2="26" y2="14" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="14" y1="14" x2="14" y2="24" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="10" y1="24" x2="18" y2="24" stroke="rgba(0,255,136,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="equip-card__badges">
-            <span class="status-badge status-badge--planned">● planned for Q4 2026</span>
-            <span class="band-badge band-badge--dim">80m · 40m</span>
-          </div>
-        </div>
-        <div class="equip-card__name">Low-Band HF Antenna</div>
-        <div class="equip-card__model">Dedicated 80m / 40m Horizontal</div>
-        <div class="equip-card__desc">A purpose-built horizontal antenna designed specifically for 80m and 40m — not a multiband compromise. Installed flat on the rooftop in a horizontal configuration, it radiates a low-angle pattern well-suited for regional DX and reliable NVIS communication on the low bands.</div>
-        <div class="info-callout" style="margin:1rem 0;">
-          <p>Horizontal polarisation, combined with height above ground, gives this antenna a clean radiation pattern on 40m and 80m that a vertical simply can't match on these bands.</p>
-        </div>
-        <div style="margin:.75rem 0; border-radius:10px; overflow:hidden; background:rgba(0,0,0,0.2);">
-          <img src="/assets/images/lowband_ant.svg" alt="Low-band horizontal antenna" style="width:100%; height:auto; display:block;">
-        </div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">80m · 40m (primary)</span></div>
-          <div class="spec-row"><span class="spec-key">Polarisation</span><span class="spec-val">Horizontal</span></div>
-          <div class="spec-row"><span class="spec-key">Installation</span><span class="spec-val">Rooftop · horizontal</span></div>
-          <div class="spec-row"><span class="spec-key">Future</span><span class="spec-val">160m active with HAREC / Class A</span></div>
-        </div>
-        <div class="equip-card__facts" style="margin-top:.75rem;">
-          <div class="fact-item">🎯 Dedicated low-band design</div>
-          <div class="fact-item">📻 NVIS-capable on 80m</div>
-          <div class="fact-item">🔮 160m-ready with Class A</div>
-        </div>
-      </div>
-
-      <!-- IronWave 6 -->
-      <div class="equip-card equip-card--active">
-        <div class="equip-card__top">
-          <div class="equip-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <line x1="14" y1="2" x2="14" y2="26" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="6" y1="24" x2="22" y2="24" stroke="rgba(0,255,136,0.3)" stroke-width="1" stroke-linecap="round"/>
-              <line x1="5" y1="22" x2="23" y2="22" stroke="rgba(0,255,136,0.3)" stroke-width="1" stroke-linecap="round"/>
-              <circle cx="14" cy="8" r="2" fill="none" stroke="#00ff88" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div class="equip-card__badges">
-            <span class="status-badge status-badge--active">● Active</span>
-            <span class="band-badge band-badge--bright">10m · 15m · 20m ★</span>
-          </div>
-        </div>
-        <div class="equip-card__name">Upper HF · DX Vertical</div>
-        <div class="equip-card__model">IronWave 6</div>
-        <div class="equip-card__desc">A true DX-oriented vertical for the upper HF bands — 10m, 12m, 15m, 17m, 20m, and usually 30m as well. The full-size radiator and a ground system of <strong>32 buried radials</strong> give it a genuinely low RF ground loss, translating to low-angle vertical radiation and excellent DX performance. No tuner needed on the target bands.</div>
-        <div class="info-callout" style="margin:1rem 0;">
-          <p>32 buried radials form a high-quality RF ground plane — the foundation of any good ground-mounted vertical. This is what separates a "DX vertical" from a compromise stick.</p>
-        </div>
-        <div style="margin:.75rem 0; text-align:center; background:rgba(0,0,0,0.2); border-radius:10px; padding:.5rem;">
-          <img src="/assets/images/ironwave6.svg" alt="IronWave 6 vertical" style="height:240px; width:auto; display:inline-block;">
-        </div>
-        <div style="margin-top:.75rem;">
-          <div class="spec-row"><span class="spec-key">Bands</span><span class="spec-val">10 · 12 · 15 · 17 · 20m + usually 30m</span></div>
-          <div class="spec-row"><span class="spec-key">Class C bands</span><span class="spec-val">10m · 15m · 20m (active now)</span></div>
-          <div class="spec-row"><span class="spec-key">Ground system</span><span class="spec-val">32 buried radials</span></div>
-          <div class="spec-row"><span class="spec-key">Polarisation</span><span class="spec-val">Vertical → low-angle DX radiation</span></div>
-          <div class="spec-row"><span class="spec-key">Tuner</span><span class="spec-val">Not required on target bands</span></div>
-        </div>
-        <div class="equip-card__facts" style="margin-top:.75rem;">
-          <div class="fact-item">📡 32-radial ground system</div>
-          <div class="fact-item">🌍 Low-angle DX radiation</div>
-          <div class="fact-item">⚡ No tuner needed</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
