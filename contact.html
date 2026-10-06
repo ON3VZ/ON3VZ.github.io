@@ -17,6 +17,41 @@ extra_js:
       <p class="section-sub">Get in touch, check my profile or download your eQSL card for our QSO.</p>
     </div>
 
+<!-- ── eQSL DOWNLOAD (2026-10-06, replaces the QSL card generator) ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap">
+    <!-- ── eQSL DOWNLOAD (moved to the top 2026-10-06) ── -->
+    <div class="eq-top">
+
+    <div class="qsl-intro anim-3">
+      <div>
+        <div class="section-label">eQSL</div>
+        <h2 class="section-title" style="font-size:clamp(1.4rem,3vw,2rem);">Download your eQSL card</h2>
+        <p class="section-sub" style="font-size:0.92rem;">
+          Worked ON3VZ? Enter your callsign to find our QSOs in my log and download your eQSL as a JPG, ready to print or share.
+        </p>
+      </div>
+      <div class="qsl-badge">Free · No registration</div>
+    </div>
+
+    <div class="eq-layout anim-4">
+      <div class="eq-card-wrap">
+        <canvas id="eqPreview" class="eq-preview" width="1564" height="1006" aria-label="ON3VZ eQSL card, empty preview"></canvas>
+        <p class="eq-caption">140 × 90 mm · 1564 × 1006 px · JPG</p>
+      </div>
+
+      <form id="eqForm" class="eq-search" autocomplete="off">
+        <label for="eqCall">Your callsign</label>
+        <div class="eq-search-row">
+          <input id="eqCall" type="text" placeholder="ON4XYZ" maxlength="15" spellcheck="false" autocapitalize="characters">
+          <button type="submit" class="btn btn-primary">Find my QSOs</button>
+        </div>
+      </form>
+
+      <div id="eqResults" class="eq-results" aria-live="polite"></div>
+    </div>
+    </div>
+
     <!-- ── IDENTITY BLOCK ── -->
     <div class="identity-block anim-2">
       <div class="id-item">
@@ -47,6 +82,11 @@ extra_js:
     </div>
 
     <!-- ── CONTACT TILES ── -->
+    <div class="links-intro anim-3">
+      <div class="section-label">Around the web</div>
+      <h2 class="section-title" style="font-size:clamp(1.4rem,3vw,2rem);">Links</h2>
+      <p class="section-sub" style="font-size:0.92rem;">Where to find me and the sites I use and recommend.</p>
+    </div>
     <div class="contact-grid anim-3">
 
       <a class="contact-tile" href="https://www.qrz.com/db/ON3VZ" target="_blank" rel="noopener">
@@ -134,45 +174,6 @@ extra_js:
       </a>
 
     </div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- ── eQSL DOWNLOAD (2026-10-06, replaces the QSL card generator) ── -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap">
-<section class="qsl-section eq-section">
-  <div class="container">
-
-    <div class="qsl-intro anim-3">
-      <div>
-        <div class="section-label">eQSL</div>
-        <h2 class="section-title" style="font-size:clamp(1.4rem,3vw,2rem);">Download your eQSL card</h2>
-        <p class="section-sub" style="font-size:0.92rem;">
-          Worked ON3VZ? Enter your callsign to find our QSOs in my log and download your eQSL as a JPG, ready to print or share.
-        </p>
-      </div>
-      <div class="qsl-badge">Free · No registration</div>
-    </div>
-
-    <div class="eq-layout anim-4">
-      <div class="eq-card-wrap">
-        <canvas id="eqPreview" class="eq-preview" width="1564" height="1006" aria-label="ON3VZ eQSL card, empty preview"></canvas>
-        <p class="eq-caption">140 × 90 mm · 1564 × 1006 px · JPG</p>
-      </div>
-
-      <form id="eqForm" class="eq-search" autocomplete="off">
-        <label for="eqCall">Your callsign</label>
-        <div class="eq-search-row">
-          <input id="eqCall" type="text" placeholder="ON4XYZ" maxlength="15" spellcheck="false" autocapitalize="characters">
-          <button type="submit" class="btn btn-primary">Find my QSOs</button>
-        </div>
-      </form>
-
-      <div id="eqResults" class="eq-results" aria-live="polite"></div>
-    </div>
-
   </div>
 </section>
 

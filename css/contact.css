@@ -459,3 +459,11 @@
 html[data-theme="fresh"] .eq-btn--go,
 html[data-theme="fresh"] .eq-btn--go:hover { color: var(--fx-on-primary); }
 html[data-theme="fresh"] .eq-count { text-transform: uppercase; letter-spacing: 0.02em; }
+
+/* eQSL at the top, same width as the link tiles (2026-10-06) */
+.eq-top { margin: 1.5rem 0 2.5rem; }
+.eq-card-wrap { max-width: none; }
+.eq-search { max-width: none; }
+.eq-top .qsl-intro { margin-bottom: 1.2rem; }
+
+.links-intro { margin: 2.5rem 0 0.4rem; }
