@@ -1333,3 +1333,12 @@ html[data-theme="fresh"] .dm-station.container {
   padding-left: 1.4rem; padding-right: 1.4rem;
 }
 @media (max-width: 640px) { html[data-theme="fresh"] .dm-station.container { width: calc(100% - 2rem); } }
+
+/* ── 25. READABILITY: small mono labels were too pale and tiny ── */
+html[data-theme="fresh"] .id-label { font-size: 0.7rem; letter-spacing: 0.14em; color: var(--c-text-2); }
+html[data-theme="fresh"] .tile-label { font-size: 0.7rem; letter-spacing: 0.12em; }
+html[data-theme="fresh"] .tile-value { font-size: 1rem; }
+html[data-theme="fresh"] .tile-sub { font-size: 0.88rem; color: var(--c-text-2); }
+html[data-theme="fresh"][data-mode="light"] { --c-text-3: #475E72; }
+html[data-theme="fresh"] .section-label { font-size: 0.78rem; color: var(--c-text-2); }
+html[data-theme="fresh"] .id-email { font-size: 0.82rem; white-space: nowrap; }

@@ -467,3 +467,8 @@ html[data-theme="fresh"] .eq-count { text-transform: uppercase; letter-spacing: 
 .eq-top .qsl-intro { margin-bottom: 1.2rem; }
 
 .links-intro { margin: 2.5rem 0 0.4rem; }
+
+.contact-intro { margin: 3rem 0 1.2rem; }
+.contact-oneline { max-width: none; }
+.links-intro { margin: 3rem 0 1rem; }
+.eq-top { margin-top: 0.5rem; }
