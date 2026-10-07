@@ -80,13 +80,13 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
 <div class="cs-article" markdown="1">
 <div class="cs-hero">
 <p class="cs-kicker">ON3VZ · Technical article</p>
-<p class="cs-lead">Why stations keep telling me I sound clean and loud, from a city garden on 25 W.</p>
+<p class="cs-lead">Why stations keep telling me I sound clean and loud, from a city garden on 25 W.</p>
 <p class="cs-byline">Kristof Cornelis, ON3VZ · Belgian radio amateur, Class C licence · about 40 minutes reading, with fold-out deep dives</p>
 <figure class="cs-fig cs-hero-img"><img src="/assets/images/clean-signal/cover-hero.jpg" alt="The radial plate at the base of the IronWave 6 with its 32 radials" loading="eager"></figure>
 </div>
 
 <div class="cs-glance">
-<div class="cs-stat"><b>25 W</b><span>maximum HF power, Class C</span></div>
+<div class="cs-stat"><b>25 W</b><span>maximum HF power, Class C</span></div>
 <div class="cs-stat"><b>77</b><span>DXCC entities in four months</span></div>
 <div class="cs-stat"><b>52</b><span>contacts beyond 5,000 km</span></div>
 <div class="cs-stat"><b>−10 dB</b><span>median FT8 report received</span></div>
@@ -115,7 +115,7 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
 
 Stations keep telling me, without being asked, that I sound unusually clean and loud. "It sounds like you are standing next to me." "What antenna are you using?" "You come in very clean and strong." Recently a station in Oman picked me out of a pileup and told me I was coming through clearly over everyone else.
 
-I hold a Belgian Class C licence, which means 25 W on HF. My station sits in an ordinary city garden, surrounded by houses, industry, rooftops and all the electronics that come with them. So the compliments made me curious. Why would a small station in a noisy urban location get this kind of feedback?
+I hold a Belgian Class C licence, which means 25 W on HF. My station sits in an ordinary city garden, surrounded by houses, industry, rooftops and all the electronics that come with them. So the compliments made me curious. Why would a small station in a noisy urban location get this kind of feedback?
 
 This article is my attempt to answer that question honestly and thoroughly. I describe what I built, why I built it that way, and the physics behind each choice, including the formulas. I also want to be clear about what I can and cannot say: I have not measured any of this in a laboratory way. What follows is a careful description of a setup, the observations I made, and the mechanisms that may explain them.
 
@@ -131,7 +131,7 @@ Each chapter looks at one or more of these domains in depth. Chapter 13 brings t
 
 ## <span class="cs-num">1</span>The situation {#ch-1}
 
-My home station is built around an Icom IC-7300 MkII. On HF I run at most 25 W. The antennas stand in and above a city garden, with neighbours close by on all sides.
+My home station is built around an Icom IC-7300 MkII. On HF I run at most 25 W. The antennas stand in and above a city garden, with neighbours close by on all sides.
 
 What I notice on the air:
 
@@ -203,7 +203,7 @@ I use the IronWave on 20, 15 and 10 m, and on 30 m with extra tuning.
 
 ### The HyEndFed wire
 
-The HyEndFed 5 Band Black Clamp MK3 is a 23 m end-fed wire for 80, 40, 20, 15 and 10 m. The manufacturer rates it at 200 W PEP on SSB and 35 W on digital modes, so 25 W is well within its limits. It was originally part of my portable kit. Because I missed 40 and 80 m at home, I installed it as a temporary solution, until the definitive low-band setup that I am planning together with RF.Guru is in place. After that, it goes back into the portable kit case where it belongs. :-)
+The HyEndFed 5 Band Black Clamp MK3 is a 23 m end-fed wire for 80, 40, 20, 15 and 10 m. The manufacturer rates it at 200 W PEP on SSB and 35 W on digital modes, so 25 W is well within its limits. It was originally part of my portable kit. Because I missed 40 and 80 m at home, I installed it as a temporary solution, until the definitive low-band setup that I am planning together with RF.Guru is in place. After that, it goes back into the portable kit case where it belongs. :-)
 
 Its feedpoint sits about 9 m above the ground: the flat roof is about 8.5 m high, and a small tripod mast of roughly 1 m carries the feedpoint. From there the wire slopes down over the garden to a pole of about 2 m. At the feedpoint there is a separate counterpoise: a horizontal wire of roughly 4.2 to 4.4 m, about 1 m above the roof, deliberately routed away from the coax.
 
@@ -325,7 +325,7 @@ What I can say: 32 radials is a sensible choice for a ground-mounted vertical, a
 <aside class="cs-why" markdown="1">
 <p class="cs-why-label">Why this contributes to a clean signal</p>
 
-For **loud**: a free-standing vertical with 32 radials loses less power in the soil, so more of the 25 W leaves as radiation, at the low angles that matter for DX. For **clean**: both antennas have a deliberately chosen return path (radials and a counterpoise) and stand clear of the house. The antenna current therefore stays in the antenna instead of running over the coax, the house wiring or the radio's case, and less RF comes back into the shack where it could disturb the audio. On 80 m you see the opposite: there the end-fed antenna itself is the weak link.
+For **loud**: a free-standing vertical with 32 radials loses less power in the soil, so more of the 25 W leaves as radiation, at the low angles that matter for DX. For **clean**: both antennas have a deliberately chosen return path (radials and a counterpoise) and stand clear of the house. The antenna current therefore stays in the antenna instead of running over the coax, the house wiring or the radio's case, and less RF comes back into the shack where it could disturb the audio. On 80 m you see the opposite: there the end-fed antenna itself is the weak link.
 
 </aside>
 
@@ -631,7 +631,7 @@ These are my SSB transmit settings:
 
 | Setting | Value |
 |---|---|
-| RF power | 25 % (25 W) |
+| RF power | 25 % (25 W) |
 | Mic gain | 40 % |
 | Speech compressor | off |
 | Transmit bandwidth | wide (100 to 2900 Hz) |
@@ -659,7 +659,7 @@ Keeping the drive moderate and the ALC calm keeps the transmitter in its linear 
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>Speech intelligibility, and why less bass helps</strong></summary>
 
-Most of the energy in speech sits in the vowels, largely below about 1 kHz. Most of the intelligibility sits in the consonants, roughly between 1 and 4 kHz. An SSB transmitter has a limited peak power, and every watt spent on low frequencies is a watt not spent on the frequencies that make words understandable. Reducing the bass shifts the available peak power towards intelligibility, which at the other end sounds both clearer and, for the same 25 W, effectively louder.
+Most of the energy in speech sits in the vowels, largely below about 1 kHz. Most of the intelligibility sits in the consonants, roughly between 1 and 4 kHz. An SSB transmitter has a limited peak power, and every watt spent on low frequencies is a watt not spent on the frequencies that make words understandable. Reducing the bass shifts the available peak power towards intelligibility, which at the other end sounds both clearer and, for the same 25 W, effectively louder.
 
 A typical SSB transmit passband runs from about 100 to 300 Hz at the bottom up to about 2.7 to 3 kHz at the top. A wider setting sounds more natural on a quiet band; a narrower one concentrates the energy and holds up better in a pileup.
 
@@ -776,7 +776,7 @@ The total line loss with mismatch follows from the standard expression (as used 
 {: .cs-formula}
 `= 10 log₁₀ [ (1.105 − 0.276) / (1.051 × 0.724) ] ≈ 10 log₁₀ (1.089) ≈ 0.37 dB`
 {: .cs-formula}
-So about 0.37 dB in total, of which about 0.15 dB is due to the mismatch. That is about 8 % of the power, roughly 2 W of 25 W. Two notes: the SWR at the antenna end is slightly worse than what the radio shows, because the cable hides a little of it; and connector and patch-cable losses come on top. The conclusion stands: on 80 m, the cable is a small factor.
+So about 0.37 dB in total, of which about 0.15 dB is due to the mismatch. That is about 8 % of the power, roughly 2 W of 25 W. Two notes: the SWR at the antenna end is slightly worse than what the radio shows, because the cable hides a little of it; and connector and patch-cable losses come on top. The conclusion stands: on 80 m, the cable is a small factor.
 
 </details>
 
@@ -785,19 +785,19 @@ So about 0.37 dB in total, of which about 0.15 dB is due to the mismatch. That i
 
 Using the same datasheet (2.2 dB per 100 m at 14 MHz, 2.6 at 21 MHz, 3.0 at 28 MHz) and my cable lengths, with a near-perfect match:
 
-| Line | Band | Matched loss | Power at antenna from 25 W |
+| Line | Band | Matched loss | Power at antenna from 25 W |
 |---|---|---|---|
 | IronWave, about 28 m | 20 m | 0.62 dB | about 21.7 W |
 | IronWave, about 28 m | 10 m | 0.84 dB | about 20.6 W |
 | HyEndFed, about 16 m | 20 m | 0.36 dB | about 23.0 W |
 | HyEndFed, about 16 m | 10 m | 0.49 dB | about 22.4 W |
 
-The general rule: a loss of `L` dB leaves a fraction `10^(−L/10)` of the power. 1 dB means about 20 % lost, roughly 5 W at 25 W. These figures show the cable losses only. They say nothing about the efficiency of the antennas themselves, and connector and switch losses come on top.
+The general rule: a loss of `L` dB leaves a fraction `10^(−L/10)` of the power. 1 dB means about 20 % lost, roughly 5 W at 25 W. These figures show the cable losses only. They say nothing about the efficiency of the antennas themselves, and connector and switch losses come on top.
 
 </details>
 
 <details class="cs-deep" markdown="1">
-<summary><span class="cs-chip">Deep dive</span> <strong>A link budget, or how 25 W can compete with 100 W</strong></summary>
+<summary><span class="cs-chip">Deep dive</span> <strong>A link budget, or how 25 W can compete with 100 W</strong></summary>
 
 A link budget is simply a sum, in decibels, of everything that adds or removes signal between my transmitter and the other station's receiver. Because decibels add and subtract, you can follow the signal step by step, like a bank statement.
 
@@ -807,15 +807,15 @@ and what decides readability at the other end:
 
 `SNR = P_rx − N`
 {: .cs-formula}
-- `P_tx` is my transmitter power: `25 W = 10 log₁₀(25 000 mW) ≈ 44 dBm`. 100 W is about 50 dBm, so the difference is 6 dB, which is one S-unit on a standard S-meter.
+- `P_tx` is my transmitter power: `25 W = 10 log₁₀(25 000 mW) ≈ 44 dBm`. 100 W is about 50 dBm, so the difference is 6 dB, which is one S-unit on a standard S-meter.
 - `L_line` is my feedline loss: from 0.2 to about 0.8 dB, depending on band and antenna (calculated above).
 - `G_tx` is the gain of my antenna in the direction and at the angle of the path, including all its losses. An antenna that loses 3 dB in a coil, the soil or a radiating coax costs as much as halving the transmitter power.
 - `L_path` is the path loss. On HF it is large and changes from minute to minute, but it is essentially the same in both directions.
 - `G_rx`, `L_rx` and `N` belong to the receiving station: its antenna, its cable and the noise in its environment.
 
-The only terms I control are `P_tx` (fixed at 25 W), `L_line`, `G_tx` and, for my own reception, my local noise. A station running 100 W into a lossy antenna with a radiating coax can easily lose more than the 6 dB I am missing. That is the whole logic behind putting effort into the antenna, the feedline and the return path rather than into power.
+The only terms I control are `P_tx` (fixed at 25 W), `L_line`, `G_tx` and, for my own reception, my local noise. A station running 100 W into a lossy antenna with a radiating coax can easily lose more than the 6 dB I am missing. That is the whole logic behind putting effort into the antenna, the feedline and the return path rather than into power.
 
-My FT8 reports give a hint. On the bands where I use the IronWave, the median report I received was −10 dB, and the median report I sent was −4 dB: a gap of about 6 dB. If the other stations typically run 100 W, that is roughly what the power difference alone predicts. It is a hint, not proof: I do not know their power, antennas or local noise.
+My FT8 reports give a hint. On the bands where I use the IronWave, the median report I received was −10 dB, and the median report I sent was −4 dB: a gap of about 6 dB. If the other stations typically run 100 W, that is roughly what the power difference alone predicts. It is a hint, not proof: I do not know their power, antennas or local noise.
 
 </details>
 
@@ -824,14 +824,14 @@ My FT8 reports give a hint. On the bands where I use the IronWave, the median re
 
 Power lost as heat in any resistive part follows `P = I² × R`, using the RMS current. Doubling the current quadruples the heat. Loss hides in conductors and coils (skin effect raises their RF resistance), contacts and connectors, the dielectric of the cable, ferrites and transformers, and the soil around a vertical.
 
-At 25 W there is little to spare. One decibel of avoidable loss costs about a fifth of the power. That is why a clean, well-matched feed system matters more at low power.
+At 25 W there is little to spare. One decibel of avoidable loss costs about a fifth of the power. That is why a clean, well-matched feed system matters more at low power.
 
 </details>
 
 <aside class="cs-why" markdown="1">
 <p class="cs-why-label">Why this contributes to a clean signal</p>
 
-This chapter contributes to "loud". Because the antennas are well matched without a tuner on most bands and the coax has little loss, about 21 to 23 W of the 25 W still reaches the antenna on the higher bands. At low power every half decibel counts. The same chapter explains why 80 m sounds weaker: there the window is narrow and the shortened antenna itself is the limiting factor, not the cable.
+This chapter contributes to "loud". Because the antennas are well matched without a tuner on most bands and the coax has little loss, about 21 to 23 W of the 25 W still reaches the antenna on the higher bands. At low power every half decibel counts. The same chapter explains why 80 m sounds weaker: there the window is narrow and the shortened antenna itself is the limiting factor, not the cable.
 
 </aside>
 
@@ -845,7 +845,7 @@ How much can I conclude from all those nice reports? Less than I would like.
 
 ### What my logbook shows
 
-To put the compliments in context, I went through my own logbook: 633 contacts between 27 May and 4 October 2026, of which 628 on HF. All HF contacts were made with at most 25 W.
+To put the compliments in context, I went through my own logbook: 633 contacts between 27 May and 4 October 2026, of which 628 on HF. All HF contacts were made with at most 25 W.
 
 | Logbook | Value |
 |---|---|
@@ -858,7 +858,7 @@ To put the compliments in context, I went through my own logbook: 633 contacts b
 
 On SSB outside contests, 112 of the 143 reports I received on 20 m were 59, and 43 of 51 on 40 m. On 10 m the reports were more mixed. That looks good, but I want to be careful: a 59 is often given as a formality, and contest reports are always 59, so I left contests out. These numbers show that the station works well, not why.
 
-FT8 gives a more objective number than a 59. Every FT8 report is a signal-to-noise ratio measured by the software, referred to a 2.5 kHz bandwidth, and FT8 can still decode signals down to roughly −20 dB. My log does not record the antenna for every contact, but I use the IronWave for FT8 on 30, 20, 15 and 10 m. On those bands I have 218 FT8 and FT4 contacts. The median report I received was −10 dB, with half of all reports between −14 and −5 dB, over a median distance of about 1,560 km. For the 42 contacts beyond 5,000 km with a report, the median was still −11.5 dB, about 8 to 9 dB above the decoding limit. On 25 W, that is a comfortable margin.
+FT8 gives a more objective number than a 59. Every FT8 report is a signal-to-noise ratio measured by the software, referred to a 2.5 kHz bandwidth, and FT8 can still decode signals down to roughly −20 dB. My log does not record the antenna for every contact, but I use the IronWave for FT8 on 30, 20, 15 and 10 m. On those bands I have 218 FT8 and FT4 contacts. The median report I received was −10 dB, with half of all reports between −14 and −5 dB, over a median distance of about 1,560 km. For the 42 contacts beyond 5,000 km with a report, the median was still −11.5 dB, about 8 to 9 dB above the decoding limit. On 25 W, that is a comfortable margin.
 
 Two contacts with Oman illustrate the point about timing. On 24 September, on 20 m FT8 with the IronWave, both stations reported −16 dB over about 5,460 km. On 4 October, on 20 m SSB, the reports were 59 both ways over about 5,500 km. Same path, same station, different day and conditions.
 
@@ -866,7 +866,7 @@ Two limits of my log are worth stating. It contains no solar flux or K index per
 
 ### Choosing the right moment
 
-A good station only gets you so far. The right band at the right moment matters at least as much. My contact with Borneo on 15 m SSB, over about 11,450 km on 25 W with the HyEndFed, was planned rather than lucky: a few days after the equinox, with the frequency just below the predicted MUF and the path running along the grey line. I described that contact and the reasoning behind it in [25 watts to Borneo](/2026/09/28/25-watts-to-borneo-15m-dx/).
+A good station only gets you so far. The right band at the right moment matters at least as much. My contact with Borneo on 15 m SSB, over about 11,450 km on 25 W with the HyEndFed, was planned rather than lucky: a few days after the equinox, with the frequency just below the predicted MUF and the path running along the grey line. I described that contact and the reasoning behind it in [25 watts to Borneo](/2026/09/28/25-watts-to-borneo-15m-dx/).
 
 That is also why I now note the solar flux and K index with remarkable contacts. A clean station and good timing work together; neither replaces the other.
 
@@ -911,7 +911,7 @@ At 45° that is half the power (3 dB), at 90° in theory nothing. That matters f
 <aside class="cs-why" markdown="1">
 <p class="cs-why-label">Why this contributes to a clean signal</p>
 
-A good station only produces a remarkable signal when the path cooperates. Choosing band and moment, as with the Borneo contact, multiplies the effect of all the measures in the previous chapters. The FT8 reports show that on 25 W a margin of roughly 8 to 10 dB above the decoding limit usually remains: room that exists because little is lost along the way.
+A good station only produces a remarkable signal when the path cooperates. Choosing band and moment, as with the Borneo contact, multiplies the effect of all the measures in the previous chapters. The FT8 reports show that on 25 W a margin of roughly 8 to 10 dB above the decoding limit usually remains: room that exists because little is lost along the way.
 
 </aside>
 
@@ -925,7 +925,7 @@ Here is the whole station in one view. Every row is a layer I treated on purpose
 | Defined return paths | 32 radials, a counterpoise routed away from the coax | Keep antenna current where it belongs | Keep the coax out of the antenna |
 | Chokes along the coax | At the feedpoint, along the line, before the cabinet, after the switch | Keep RF off the shield and out of the shack | Block noise travelling on the shield |
 | Ferrites on the ground cable | Heavy snap-on ferrites with several turns | Limit RF on a long conductor | Close a noise path into the shack |
-| Low-loss coax | Extraflex Bury 7, with calculated losses | Bring more of the 25 W to the antenna | Lose less of weak signals |
+| Low-loss coax | Extraflex Bury 7, with calculated losses | Bring more of the 25 W to the antenna | Lose less of weak signals |
 | Separate filtered circuit | Own sub-board with star-wired sockets | Limit RF onto the house wiring | Reduce noise arriving from the mains |
 | Solar installation | Schaffner filter on the inverter AC side, ferrites on the DC strings | Reduce RF reaching the house network | Reduce inverter noise at its source |
 | Shack mains filter | Second Schaffner filter at the shack sub-board | Keep station RF off the house wiring | Reduce mains-borne noise entering the shack |
