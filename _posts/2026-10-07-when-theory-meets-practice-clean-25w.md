@@ -4,7 +4,7 @@ title: "When Theory Meets Practice: How a Layered Setup Keeps My 25 W Clean"
 tags: ['Station', 'Antennas', 'EMC', 'Common Mode', 'Chokes', 'Grounding', 'IronWave', 'EFHW', 'IC-7300', 'Beginners']
 excerpt: "Why stations keep telling me I sound clean and loud, from a city garden on 25 W. An integrated, multidisciplinary look at antennas, return paths, chokes, ferrites, mains and DC filtering, audio and matching, with the theory, formulas and my own calculations behind every choice."
 ---
-<!-- CLEAN-SIGNAL 2026-10-07: new post. Revert by deleting this file and assets/images/clean-signal/. -->
+<!-- CLEAN-SIGNAL 2026-10-07: new post. Revert by deleting this file and assets/images/clean-signal/... -->
 <style>
 /* CLEAN-SIGNAL article styles, scoped to .cs-article; follows the fresh light/dark tokens */
 .cs-article { --cs-accent: var(--c-cyan, #1E6BA8); --cs-warm: var(--c-amber, #B8791A); --cs-ok: var(--c-primary, #0E8A50); }
