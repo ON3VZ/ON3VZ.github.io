@@ -69,6 +69,13 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
   .cs-lead { font-size: 1.15rem; }
   .cs-num { min-width: 1.8rem; height: 1.8rem; font-size: .9rem; }
 }
+.cs-article table thead th { background: #153B5C !important; color: #FFFFFF !important; border-bottom: 0 !important; }
+.cs-article .cs-deep table thead th { background: #1E6BA8 !important; }
+.cs-dl { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; border: 1px solid var(--c-border); border-radius: 12px; padding: 1rem 1.3rem; margin: 0 0 1.6rem; background: var(--c-surface-2); }
+.cs-dl p { margin: 0 !important; font-size: .95rem; flex: 1 1 260px; color: var(--c-text-2) !important; }
+.cs-dl a { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none !important; font-family: var(--f-mono); font-size: .85rem; padding: .5rem .9rem; border-radius: 8px; border: 1px solid var(--cs-accent); color: var(--cs-accent) !important; }
+.cs-dl-soon { font-family: var(--f-mono); font-size: .85rem; padding: .5rem .9rem; border-radius: 8px; border: 1px dashed var(--c-border-hard); color: var(--c-text-3); }
+.cs-dl a:hover { background: var(--cs-accent); color: #fff !important; }
 </style>
 <div class="cs-article" markdown="1">
 <div class="cs-hero">
@@ -93,6 +100,13 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
 - Chokes, a defined return path and filtered power keep RF out of the audio, which keeps the signal clean.
 - A good match is not the same as efficiency; on 80 m the antenna itself is the weak link.
 - Theory, formulas and my own calculations sit in fold-out deep dives, so you can read at your own depth.
+</div>
+
+<div class="cs-dl">
+<p><strong>Read it offline.</strong> Download this article as a PDF, with all figures and deep dives included.</p>
+<a href="{{ '/assets/files/ON3VZ-when-theory-meets-practice-EN.pdf' | relative_url }}" download>PDF · English</a>
+<span class="cs-dl-soon">PDF · Nederlands, soon</span>
+<span class="cs-dl-soon">PDF · Français, soon</span>
 </div>
 
 <nav class="cs-toc" aria-label="Contents"><p class="cs-toc-label">In this article</p><ol><li><a href="#ch-1"><span>1</span>The situation</a></li><li><a href="#ch-2"><span>2</span>Two compliments, two chains</a></li><li><a href="#ch-3"><span>3</span>Not one trick: think in layers</a></li><li><a href="#ch-4"><span>4</span>The two antennas</a></li><li><a href="#ch-5"><span>5</span>The invisible part: coax has two paths</a></li><li><a href="#ch-6"><span>6</span>Chokes: where and why</a></li><li><a href="#ch-7"><span>7</span>Ground, bonding and the busbar</a></li><li><a href="#ch-8"><span>8</span>Mains and the shack circuit</a></li><li><a href="#ch-9"><span>9</span>DC power, device cables and the network</a></li><li><a href="#ch-10"><span>10</span>The audio chain</a></li><li><a href="#ch-11"><span>11</span>Match is not efficiency</a></li><li><a href="#ch-12"><span>12</span>Reading the reports</a></li><li><a href="#ch-13"><span>13</span>How it all comes together</a></li><li><a href="#ch-14"><span>14</span>If I started again</a></li><li><a href="#ch-15"><span>15</span>What comes next, and thank you</a></li></ol></nav>
@@ -833,7 +847,7 @@ How much can I conclude from all those nice reports? Less than I would like.
 
 To put the compliments in context, I went through my own logbook: 633 contacts between 27 May and 4 October 2026, of which 628 on HF. All HF contacts were made with at most 25 W.
 
-| | |
+| Logbook | Value |
 |---|---|
 | HF contacts | 628 (347 on SSB, 280 on FT8 and FT4) |
 | DXCC entities | 77 |
