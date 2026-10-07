@@ -156,16 +156,19 @@ A third chain matters for every conversation, even though nobody compliments it:
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig9-two-chains-light.svg" alt="Two compliments, two chains: what makes a signal clean, what makes it loud, and what decides how well I hear" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig9-two-chains-dark.svg" alt="Two compliments, two chains: what makes a signal clean, what makes it loud, and what decides how well I hear" loading="lazy"><figcaption>Two compliments, two chains: what makes a signal clean, what makes it loud, and what decides how well I hear</figcaption></figure>
 
-| Measure | Clean | Loud | Hearing others |
-|---|---|---|---|
-| Microphone, equalizer, calm ALC | ✓ | | |
-| Power supply and DC filter | ✓ stable voltage | | ✓ less switching noise |
-| Chokes and ferrites | ✓ no RF in the audio | ✓ coax does not distort the pattern | ✓ less noise along the shield |
-| Busbar, star wiring, filtered circuit | ✓ no loops, no hum | | ✓ less mains noise |
-| Antennas, position, return paths | | ✓ | ✓ |
-| Low-loss coax, good match | | ✓ | small effect |
-| Timing and propagation | | ✓ | ✓ |
-| AetherSDR (receive only) | | | ✓ |
+<table>
+<thead><tr><th>Measure</th><th>Clean</th><th>Loud</th><th>Hearing others</th></tr></thead>
+<tbody>
+<tr><td>Microphone, equalizer, calm ALC</td><td>✓</td><td></td><td></td></tr>
+<tr><td>Power supply and DC filter</td><td>✓ stable voltage</td><td></td><td>✓ less switching noise</td></tr>
+<tr><td>Chokes and ferrites</td><td>✓ no RF in the audio</td><td>✓ coax does not distort the pattern</td><td>✓ less noise along the shield</td></tr>
+<tr><td>Busbar, star wiring, filtered circuit</td><td>✓ no loops, no hum</td><td></td><td>✓ less mains noise</td></tr>
+<tr><td>Antennas, position, return paths</td><td></td><td>✓</td><td>✓</td></tr>
+<tr><td>Low-loss coax, good match</td><td></td><td>✓</td><td>small effect</td></tr>
+<tr><td>Timing and propagation</td><td></td><td>✓</td><td>✓</td></tr>
+<tr><td>AetherSDR (receive only)</td><td></td><td></td><td>✓</td></tr>
+</tbody>
+</table>
 
 Chokes and ferrites appear in all three columns. That is no coincidence: they control the same unwanted current path, in both directions. Keep these three chains in mind; every chapter that follows feeds one or more of them.
 
@@ -213,14 +216,17 @@ Its feedpoint sits about 9 m above the ground: the flat roof is about 8.5 m high
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig2-antennas-side-view-light.svg" alt="Side view of the house, the flat roof with the HyEndFed feedpoint and counterpoise, the sloping wire to a 2 m pole, and the IronWave with radials in the middle of the garden" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig2-antennas-side-view-dark.svg" alt="Side view of the house, the flat roof with the HyEndFed feedpoint and counterpoise, the sloping wire to a 2 m pole, and the IronWave with radials in the middle of the garden" loading="lazy"><figcaption>Side view of the house, the flat roof with the HyEndFed feedpoint and counterpoise, the sloping wire to a 2 m pole, and the IronWave with radials in the middle of the garden</figcaption></figure>
 
-| Band | IronWave 6 | HyEndFed |
-|---|---|---|
-| 80 m | no | yes, with a loading coil |
-| 40 m | not used | yes |
-| 30 m | yes, with extra tuning | no |
-| 20 m | yes | yes |
-| 15 m | yes | yes |
-| 10 m | yes | yes |
+<table>
+<thead><tr><th>Band</th><th>IronWave 6</th><th>HyEndFed</th></tr></thead>
+<tbody>
+<tr><td>80 m</td><td>no</td><td>yes, with a loading coil</td></tr>
+<tr><td>40 m</td><td>not used</td><td>yes</td></tr>
+<tr><td>30 m</td><td>yes, with extra tuning</td><td>no</td></tr>
+<tr><td>20 m</td><td>yes</td><td>yes</td></tr>
+<tr><td>15 m</td><td>yes</td><td>yes</td></tr>
+<tr><td>10 m</td><td>yes</td><td>yes</td></tr>
+</tbody>
+</table>
 
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>Wavelength, and how big these antennas really are</strong></summary>
@@ -231,14 +237,17 @@ Everything in antenna theory starts with wavelength:
 {: .cs-formula}
 where `c` is the speed of light (about 3 × 10⁸ m/s) and `f` the frequency. What matters for an antenna is not its physical length, but its length in wavelengths, its electrical length.
 
-| Frequency | λ | λ/2 | λ/4 | 0.05 λ | IronWave 6 m in λ |
-|---|---|---|---|---|---|
-| 3.6 MHz | 83.3 m | 41.6 m | 20.8 m | 4.2 m | n/a |
-| 7.1 MHz | 42.2 m | 21.1 m | 10.6 m | 2.1 m | 0.14 λ |
-| 10.12 MHz | 29.6 m | 14.8 m | 7.4 m | 1.5 m | 0.20 λ |
-| 14.2 MHz | 21.1 m | 10.6 m | 5.3 m | 1.1 m | 0.28 λ |
-| 21.2 MHz | 14.1 m | 7.1 m | 3.5 m | 0.7 m | 0.43 λ |
-| 28.5 MHz | 10.5 m | 5.3 m | 2.6 m | 0.5 m | 0.57 λ |
+<table>
+<thead><tr><th>Frequency</th><th>λ</th><th>λ/2</th><th>λ/4</th><th>0.05 λ</th><th>IronWave 6 m in λ</th></tr></thead>
+<tbody>
+<tr><td>3.6 MHz</td><td>83.3 m</td><td>41.6 m</td><td>20.8 m</td><td>4.2 m</td><td>n/a</td></tr>
+<tr><td>7.1 MHz</td><td>42.2 m</td><td>21.1 m</td><td>10.6 m</td><td>2.1 m</td><td>0.14 λ</td></tr>
+<tr><td>10.12 MHz</td><td>29.6 m</td><td>14.8 m</td><td>7.4 m</td><td>1.5 m</td><td>0.20 λ</td></tr>
+<tr><td>14.2 MHz</td><td>21.1 m</td><td>10.6 m</td><td>5.3 m</td><td>1.1 m</td><td>0.28 λ</td></tr>
+<tr><td>21.2 MHz</td><td>14.1 m</td><td>7.1 m</td><td>3.5 m</td><td>0.7 m</td><td>0.43 λ</td></tr>
+<tr><td>28.5 MHz</td><td>10.5 m</td><td>5.3 m</td><td>2.6 m</td><td>0.5 m</td><td>0.57 λ</td></tr>
+</tbody>
+</table>
 
 Two things stand out. First, the 6 m IronWave is electrically short on 40 and 30 m (about 0.14 to 0.20 λ). That is why those bands need a tuner or extra radials, and why I do not use it on 40 m. Second, the 0.05 λ value for 80 m, about 4.2 m, is exactly where I placed the second choke on the HyEndFed line, which I explain in chapter 6.
 
@@ -642,14 +651,17 @@ For transmit I use either the stock hand microphone of the IC-7300 MkII or a Hei
 
 These are my SSB transmit settings:
 
-| Setting | Value |
-|---|---|
-| RF power | 25 % (25 W) |
-| Mic gain | 40 % |
-| Speech compressor | off |
-| Transmit bandwidth | wide (100 to 2900 Hz) |
-| TX bass | +1 |
-| TX treble | +2 |
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>RF power</td><td>25 % (25 W)</td></tr>
+<tr><td>Mic gain</td><td>40 %</td></tr>
+<tr><td>Speech compressor</td><td>off</td></tr>
+<tr><td>Transmit bandwidth</td><td>wide (100 to 2900 Hz)</td></tr>
+<tr><td>TX bass</td><td>+1</td></tr>
+<tr><td>TX treble</td><td>+2</td></tr>
+</tbody>
+</table>
 
 In words: a slight lift in both bass and treble, with more emphasis on the treble, a full-width transmit passband, no compression, and a moderate microphone gain that keeps the ALC calm.
 
@@ -724,11 +736,15 @@ From its magnitude follow the familiar quantities:
 {: .cs-formula}
 `mismatch loss (dB) = −10 log₁₀ (1 − ∣Γ∣²)`
 {: .cs-formula}
-| SWR | \|Γ\| | Reflected power | Return loss | Mismatch loss |
-|---|---|---|---|---|
-| 1.5:1 | 0.20 | 4 % | 14.0 dB | 0.18 dB |
-| 2:1 | 0.33 | 11 % | 9.5 dB | 0.51 dB |
-| 3:1 | 0.50 | 25 % | 6.0 dB | 1.25 dB |
+
+<table>
+<thead><tr><th>SWR</th><th>|Γ|</th><th>Reflected power</th><th>Return loss</th><th>Mismatch loss</th></tr></thead>
+<tbody>
+<tr><td>1.5:1</td><td>0.20</td><td>4 %</td><td>14.0 dB</td><td>0.18 dB</td></tr>
+<tr><td>2:1</td><td>0.33</td><td>11 %</td><td>9.5 dB</td><td>0.51 dB</td></tr>
+<tr><td>3:1</td><td>0.50</td><td>25 %</td><td>6.0 dB</td><td>1.25 dB</td></tr>
+</tbody>
+</table>
 
 Two warnings. SWR only keeps the magnitude of the mismatch, not its phase: a 25 Ω load and a 100 Ω load both give 2:1 on a 50 Ω line. And the "mismatch loss" is not heat. It describes how much less power a matched source would deliver into that load. With a tuner that matches the radio, the reflected power is re-reflected towards the antenna; what is really lost is the extra heat in the line, which is calculated below.
 
@@ -753,15 +769,18 @@ I measured the HyEndFed with my NanoVNA from 1 to 30 MHz. The measurement point 
 
 <figure class="cs-fig cs-photo-wide"><img src="/assets/images/clean-signal/cs-hyendfed-sweep.png" alt="SWR sweep of the HyEndFed from 1 to 30 MHz, measured just before the antenna switch; grey bands are the amateur bands" loading="lazy"><figcaption>SWR sweep of the HyEndFed from 1 to 30 MHz, measured just before the antenna switch; grey bands are the amateur bands</figcaption></figure>
 
-| Band | Lowest SWR, read from the plot | Remark |
-|---|---|---|
-| 160 m | about 2.2 near 1.8 to 1.9 MHz | indicative only: not available to me with my Class C licence |
-| 80 m | about 1.55 near 3.6 MHz | a very narrow dip; above about 3.7 MHz the SWR rises quickly past 5 |
-| 40 m | about 1.5 near 7.1 MHz | |
-| 20 m | about 1.6 near 14.1 to 14.2 MHz | |
-| 15 m | about 1.5 just below 21.0 MHz | the dip sits slightly low; the SWR rises towards the top of the band |
-| 12 m | about 4 | indicative only: not available to me with my Class C licence, and not a design band of this antenna |
-| 10 m | about 1.1 near 28.4 MHz | |
+<table>
+<thead><tr><th>Band</th><th>Lowest SWR, read from the plot</th><th>Remark</th></tr></thead>
+<tbody>
+<tr><td>160 m</td><td>about 2.2 near 1.8 to 1.9 MHz</td><td>indicative only: not available to me with my Class C licence</td></tr>
+<tr><td>80 m</td><td>about 1.55 near 3.6 MHz</td><td>a very narrow dip; above about 3.7 MHz the SWR rises quickly past 5</td></tr>
+<tr><td>40 m</td><td>about 1.5 near 7.1 MHz</td><td></td></tr>
+<tr><td>20 m</td><td>about 1.6 near 14.1 to 14.2 MHz</td><td></td></tr>
+<tr><td>15 m</td><td>about 1.5 just below 21.0 MHz</td><td>the dip sits slightly low; the SWR rises towards the top of the band</td></tr>
+<tr><td>12 m</td><td>about 4</td><td>indicative only: not available to me with my Class C licence, and not a design band of this antenna</td></tr>
+<tr><td>10 m</td><td>about 1.1 near 28.4 MHz</td><td></td></tr>
+</tbody>
+</table>
 
 Three things stand out. First, the sweep confirms what I hear on 80 m: the usable window is narrow, and above about 3.7 MHz the antenna falls outside it, exactly where I need the tuner and sound weaker. Second, all design bands except 80 m show a usable match without a tuner, which fits my experience. Third, the sweep is coarse: about 100 points over 29 MHz, or roughly one point every 290 kHz. A narrow dip like the one on 80 m may be deeper than the plot shows. A sweep per band, with the NanoVNA calibrated for that range, would give more precise values.
 
@@ -803,12 +822,15 @@ So about 0.37 dB in total, of which about 0.15 dB is due to the mismatch. That i
 
 Using the same datasheet (2.2 dB per 100 m at 14 MHz, 2.6 at 21 MHz, 3.0 at 28 MHz) and my cable lengths, with a near-perfect match:
 
-| Line | Band | Matched loss | Power at antenna from 25 W |
-|---|---|---|---|
-| IronWave, about 28 m | 20 m | 0.62 dB | about 21.7 W |
-| IronWave, about 28 m | 10 m | 0.84 dB | about 20.6 W |
-| HyEndFed, about 16 m | 20 m | 0.36 dB | about 23.0 W |
-| HyEndFed, about 16 m | 10 m | 0.49 dB | about 22.4 W |
+<table>
+<thead><tr><th>Line</th><th>Band</th><th>Matched loss</th><th>Power at antenna from 25 W</th></tr></thead>
+<tbody>
+<tr><td>IronWave, about 28 m</td><td>20 m</td><td>0.62 dB</td><td>about 21.7 W</td></tr>
+<tr><td>IronWave, about 28 m</td><td>10 m</td><td>0.84 dB</td><td>about 20.6 W</td></tr>
+<tr><td>HyEndFed, about 16 m</td><td>20 m</td><td>0.36 dB</td><td>about 23.0 W</td></tr>
+<tr><td>HyEndFed, about 16 m</td><td>10 m</td><td>0.49 dB</td><td>about 22.4 W</td></tr>
+</tbody>
+</table>
 
 The general rule: a loss of `L` dB leaves a fraction `10^(−L/10)` of the power. 1 dB means about 20 % lost, roughly 5 W at 25 W. These figures show the cable losses only. They say nothing about the efficiency of the antennas themselves, and connector and switch losses come on top.
 
@@ -865,14 +887,17 @@ How much can I conclude from all those nice reports? Less than I would like.
 
 To put the compliments in context, I went through my own logbook: 633 contacts between 27 May and 4 October 2026, of which 628 on HF. All HF contacts were made with at most 25 W.
 
-| Logbook | Value |
-|---|---|
-| HF contacts | 628 (347 on SSB, 280 on FT8 and FT4) |
-| DXCC entities | 77 |
-| Continents | Europe 555, Asia 29, North America 27, South America 12, Africa 7, Oceania 2 |
-| Median distance | about 1,130 km |
-| Contacts beyond 5,000 km | 52 |
-| Contacts beyond 10,000 km | 6, the longest about 11,900 km (Indonesia, FT8) |
+<table>
+<thead><tr><th>Logbook</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>HF contacts</td><td>628 (347 on SSB, 280 on FT8 and FT4)</td></tr>
+<tr><td>DXCC entities</td><td>77</td></tr>
+<tr><td>Continents</td><td>Europe 555, Asia 29, North America 27, South America 12, Africa 7, Oceania 2</td></tr>
+<tr><td>Median distance</td><td>about 1,130 km</td></tr>
+<tr><td>Contacts beyond 5,000 km</td><td>52</td></tr>
+<tr><td>Contacts beyond 10,000 km</td><td>6, the longest about 11,900 km (Indonesia, FT8)</td></tr>
+</tbody>
+</table>
 
 On SSB outside contests, 112 of the 143 reports I received on 20 m were 59, and 43 of 51 on 40 m. On 10 m the reports were more mixed. That looks good, but I want to be careful: a 59 is often given as a formality, and contest reports are always 59, so I left contests out. These numbers show that the station works well, not why.
 
@@ -887,7 +912,6 @@ Two limits of my log are worth stating. It contains no solar flux or K index per
 A good station only gets you so far. The right band at the right moment matters at least as much. My contact with Borneo on 15 m SSB, over about 11,450 km on 25 W with the HyEndFed, was planned rather than lucky: a few days after the equinox, with the frequency just below the predicted MUF and the path running along the grey line. I described that contact and the reasoning behind it in [25 watts to Borneo](/2026/09/28/25-watts-to-borneo-15m-dx/).
 
 That is also why I now note the solar flux and K index with remarkable contacts. A clean station and good timing work together; neither replaces the other.
-
 
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>Noise, and why signal-to-noise ratio is what counts</strong></summary>
@@ -937,21 +961,24 @@ A good station only produces a remarkable signal when the path cooperates. Choos
 
 Here is the whole station in one view. Every row is a layer I treated on purpose. None of them is remarkable on its own. Together they form one consistent approach, from the antennas to the inside of the shack.
 
-| Layer | What I did | On transmit it may | On receive it may |
-|---|---|---|---|
-| Antenna choice and position | Two free-standing antennas, away from structures | Radiate where intended, with less coupling into the house | Pick up less local noise |
-| Defined return paths | 32 radials, a counterpoise routed away from the coax | Keep antenna current where it belongs | Keep the coax out of the antenna |
-| Chokes along the coax | At the feedpoint, along the line, before the cabinet, after the switch | Keep RF off the shield and out of the shack | Block noise travelling on the shield |
-| Ferrites on the ground cable | Heavy snap-on ferrites with several turns | Limit RF on a long conductor | Close a noise path into the shack |
-| Low-loss coax | Extraflex Bury 7, with calculated losses | Bring more of the 25 W to the antenna | Lose less of weak signals |
-| Separate filtered circuit | Own sub-board with star-wired sockets | Limit RF onto the house wiring | Reduce noise arriving from the mains |
-| Solar installation | Schaffner filter on the inverter AC side, ferrites on the DC strings | Reduce RF reaching the house network | Reduce inverter noise at its source |
-| Shack mains filter | Second Schaffner filter at the shack sub-board | Keep station RF off the house wiring | Reduce mains-borne noise entering the shack |
-| One busbar | All equipment bonded at one point | Avoid loops that carry RF | Avoid loops that collect noise |
-| Power supply and DC filter | Mean Well supply plus RF.Guru DC filter | Stable, clean DC under load | Less switching noise |
-| Device and network cables | Ferrites, a shielded network cable | Keep RF out of USB and audio leads | Less noise from computers and network |
-| Audio chain | Calm ALC, treble emphasised over bass, no compression, wide passband | Clean, linear SSB | Not applicable |
-| Tuning | Low SWR on most bands | Less loss in the line | Not applicable |
+<table>
+<thead><tr><th>Layer</th><th>What I did</th><th>On transmit it may</th><th>On receive it may</th></tr></thead>
+<tbody>
+<tr><td>Antenna choice and position</td><td>Two free-standing antennas, away from structures</td><td>Radiate where intended, with less coupling into the house</td><td>Pick up less local noise</td></tr>
+<tr><td>Defined return paths</td><td>32 radials, a counterpoise routed away from the coax</td><td>Keep antenna current where it belongs</td><td>Keep the coax out of the antenna</td></tr>
+<tr><td>Chokes along the coax</td><td>At the feedpoint, along the line, before the cabinet, after the switch</td><td>Keep RF off the shield and out of the shack</td><td>Block noise travelling on the shield</td></tr>
+<tr><td>Ferrites on the ground cable</td><td>Heavy snap-on ferrites with several turns</td><td>Limit RF on a long conductor</td><td>Close a noise path into the shack</td></tr>
+<tr><td>Low-loss coax</td><td>Extraflex Bury 7, with calculated losses</td><td>Bring more of the 25 W to the antenna</td><td>Lose less of weak signals</td></tr>
+<tr><td>Separate filtered circuit</td><td>Own sub-board with star-wired sockets</td><td>Limit RF onto the house wiring</td><td>Reduce noise arriving from the mains</td></tr>
+<tr><td>Solar installation</td><td>Schaffner filter on the inverter AC side, ferrites on the DC strings</td><td>Reduce RF reaching the house network</td><td>Reduce inverter noise at its source</td></tr>
+<tr><td>Shack mains filter</td><td>Second Schaffner filter at the shack sub-board</td><td>Keep station RF off the house wiring</td><td>Reduce mains-borne noise entering the shack</td></tr>
+<tr><td>One busbar</td><td>All equipment bonded at one point</td><td>Avoid loops that carry RF</td><td>Avoid loops that collect noise</td></tr>
+<tr><td>Power supply and DC filter</td><td>Mean Well supply plus RF.Guru DC filter</td><td>Stable, clean DC under load</td><td>Less switching noise</td></tr>
+<tr><td>Device and network cables</td><td>Ferrites, a shielded network cable</td><td>Keep RF out of USB and audio leads</td><td>Less noise from computers and network</td></tr>
+<tr><td>Audio chain</td><td>Calm ALC, treble emphasised over bass, no compression, wide passband</td><td>Clean, linear SSB</td><td>Not applicable</td></tr>
+<tr><td>Tuning</td><td>Low SWR on most bands</td><td>Less loss in the line</td><td>Not applicable</td></tr>
+</tbody>
+</table>
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig8-layers-light.svg" alt="The whole station as layers, from antenna to radio, with each layer from the table marked" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig8-layers-dark.svg" alt="The whole station as layers, from antenna to radio, with each layer from the table marked" loading="lazy"><figcaption>The whole station as layers, from antenna to radio, with each layer from the table marked</figcaption></figure>
 
