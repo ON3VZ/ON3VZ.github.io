@@ -113,7 +113,7 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
 <div class="cs-dl">
 <p><strong>Read it offline.</strong> Download this article as a PDF, with all figures and deep dives included.</p>
 <a href="{{ '/assets/files/ON3VZ-when-theory-meets-practice-EN.pdf' | relative_url }}" download>PDF · English</a>
-<span class="cs-dl-soon">PDF · Nederlands, soon</span>
+<a href="{{ '/assets/files/ON3VZ-theorie-en-praktijk-NL.pdf' | relative_url }}" download>PDF · Nederlands</a>
 <span class="cs-dl-soon">PDF · Français, soon</span>
 </div>
 
