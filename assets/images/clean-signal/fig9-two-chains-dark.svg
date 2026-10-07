@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" role="img" aria-label="Two compliments, two chains: what makes a signal clean, what makes it loud, and what decides how well I hear" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>Two compliments, two chains: what makes a signal clean, what makes it loud, and what decides how well I hear</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A9BDCF"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#F06A7B"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2FD68A"/></marker></defs>
+<rect x="1" y="1" width="998" height="398" rx="16" fill="#142334" stroke="#2E4560" stroke-width="2"/>
+<text x="30" y="56" font-size="14" fill="#2FD68A" text-anchor="start" font-weight="normal">Clean: decided in the station</text>
+<rect x="30" y="70" width="150" height="40" rx="6" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="105.0" y="95" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Microphone</text>
+<line x1="180" y1="90" x2="192" y2="90" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="192" y="70" width="150" height="40" rx="6" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="267.0" y="95" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Audio and EQ</text>
+<line x1="342" y1="90" x2="354" y2="90" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="354" y="70" width="150" height="40" rx="6" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="429.0" y="95" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Drive and ALC</text>
+<line x1="504" y1="90" x2="516" y2="90" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="516" y="70" width="150" height="40" rx="6" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="591.0" y="95" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">PA linearity</text>
+<line x1="666" y1="90" x2="678" y2="90" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="678" y="70" width="150" height="40" rx="6" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="753.0" y="95" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Supply under load</text>
+<line x1="828" y1="90" x2="840" y2="90" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="840" y="70" width="150" height="40" rx="6" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="915.0" y="95" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">No RF in audio</text>
+<text x="30" y="166" font-size="14" fill="#5AB4EA" text-anchor="start" font-weight="normal">Loud: decided after the radio</text>
+<rect x="30" y="180" width="150" height="40" rx="6" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="105.0" y="205" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">25 W</text>
+<line x1="180" y1="200" x2="192" y2="200" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="192" y="180" width="150" height="40" rx="6" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="267.0" y="205" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Feedline loss</text>
+<line x1="342" y1="200" x2="354" y2="200" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="354" y="180" width="150" height="40" rx="6" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="429.0" y="205" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Match</text>
+<line x1="504" y1="200" x2="516" y2="200" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="516" y="180" width="150" height="40" rx="6" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="591.0" y="205" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Antenna efficiency</text>
+<line x1="666" y1="200" x2="678" y2="200" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="678" y="180" width="150" height="40" rx="6" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="753.0" y="205" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Pattern and angle</text>
+<line x1="828" y1="200" x2="840" y2="200" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="840" y="180" width="150" height="40" rx="6" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="915.0" y="205" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Path and noise there</text>
+<text x="30" y="276" font-size="14" fill="#F0B323" text-anchor="start" font-weight="normal">Hearing others: decided by my noise</text>
+<rect x="30" y="290" width="150" height="40" rx="6" fill="#1A2C40" stroke="#F0B323" stroke-width="1.5"/>
+<text x="105.0" y="315" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Local noise</text>
+<line x1="180" y1="310" x2="192" y2="310" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="192" y="290" width="150" height="40" rx="6" fill="#1A2C40" stroke="#F0B323" stroke-width="1.5"/>
+<text x="267.0" y="315" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Coax shield and cables</text>
+<line x1="342" y1="310" x2="354" y2="310" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="354" y="290" width="150" height="40" rx="6" fill="#1A2C40" stroke="#F0B323" stroke-width="1.5"/>
+<text x="429.0" y="315" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Mains and DC</text>
+<line x1="504" y1="310" x2="516" y2="310" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="516" y="290" width="150" height="40" rx="6" fill="#1A2C40" stroke="#F0B323" stroke-width="1.5"/>
+<text x="591.0" y="315" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Antenna</text>
+<line x1="666" y1="310" x2="678" y2="310" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="678" y="290" width="150" height="40" rx="6" fill="#1A2C40" stroke="#F0B323" stroke-width="1.5"/>
+<text x="753.0" y="315" font-size="11" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Receiver</text>
+<text x="30" y="380" font-size="12" fill="#A9BDCF" text-anchor="start" font-weight="normal">Chokes and ferrites act in all three chains: they control the same unwanted current path in both directions.</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 846 320" role="img" aria-label="Signal chain for both antennas with every choke and ferrite" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>Signal chain for both antennas with every choke and ferrite</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3A546B"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C8384B"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0E8A50"/></marker></defs>
+<rect x="1" y="1" width="844" height="318" rx="16" fill="#FFFFFF" stroke="#C9D5DF" stroke-width="2"/>
+<rect x="30" y="92" width="70" height="36" rx="6" fill="#F2F6F9" stroke="#0E8A50" stroke-width="1.5"/>
+<text x="65.0" y="115" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">HyEndFed</text>
+<rect x="100" y="98.8" width="16" height="22.4" rx="4" fill="#B8791A" opacity="0.9"/>
+<text x="108" y="140" font-size="10" fill="#B8791A" text-anchor="middle" font-weight="normal">pigtail</text>
+<line x1="116" y1="110" x2="206" y2="110" stroke="#0B1E30" stroke-width="2"/>
+<text x="161" y="102" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">4.2 m</text>
+<rect x="206" y="98.8" width="16" height="22.4" rx="4" fill="#B8791A" opacity="0.9"/>
+<text x="214" y="140" font-size="10" fill="#B8791A" text-anchor="middle" font-weight="normal">choke</text>
+<line x1="222" y1="110" x2="312" y2="110" stroke="#0B1E30" stroke-width="2"/>
+<text x="267" y="102" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">about 6 m</text>
+<rect x="312" y="98.8" width="16" height="22.4" rx="4" fill="#B8791A" opacity="0.9"/>
+<text x="320" y="140" font-size="10" fill="#B8791A" text-anchor="middle" font-weight="normal">choke</text>
+<rect x="328" y="92" width="70" height="36" rx="6" fill="#F2F6F9" stroke="#0E8A50" stroke-width="1.5"/>
+<text x="363.0" y="115" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">cabinet</text>
+<circle cx="405" cy="110" r="9" fill="none" stroke="#1E6BA8" stroke-width="3"/>
+<text x="405" y="140" font-size="10" fill="#1E6BA8" text-anchor="middle" font-weight="normal">entry</text>
+<line x1="412" y1="110" x2="502" y2="110" stroke="#0B1E30" stroke-width="2"/>
+<text x="457" y="102" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">about 5 m</text>
+<rect x="30" y="242" width="104" height="36" rx="6" fill="#F2F6F9" stroke="#1E6BA8" stroke-width="1.5"/>
+<text x="82.0" y="265" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">IronWave base</text>
+<rect x="134" y="248.8" width="16" height="22.4" rx="4" fill="#B8791A" opacity="0.9"/>
+<text x="142" y="290" font-size="10" fill="#B8791A" text-anchor="middle" font-weight="normal">choke</text>
+<line x1="150" y1="260" x2="240" y2="260" stroke="#0B1E30" stroke-width="2"/>
+<text x="195" y="252" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">about 8 m</text>
+<rect x="240" y="248.8" width="16" height="22.4" rx="4" fill="#B8791A" opacity="0.9"/>
+<text x="248" y="290" font-size="10" fill="#B8791A" text-anchor="middle" font-weight="normal">choke</text>
+<line x1="256" y1="260" x2="346" y2="260" stroke="#0B1E30" stroke-width="2"/>
+<text x="301" y="252" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">about 15 m</text>
+<rect x="346" y="248.8" width="16" height="22.4" rx="4" fill="#B8791A" opacity="0.9"/>
+<text x="354" y="290" font-size="10" fill="#B8791A" text-anchor="middle" font-weight="normal">choke</text>
+<rect x="362" y="242" width="70" height="36" rx="6" fill="#F2F6F9" stroke="#1E6BA8" stroke-width="1.5"/>
+<text x="397.0" y="265" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">cabinet</text>
+<circle cx="439" cy="260" r="9" fill="none" stroke="#1E6BA8" stroke-width="3"/>
+<text x="439" y="290" font-size="10" fill="#1E6BA8" text-anchor="middle" font-weight="normal">entry</text>
+<line x1="446" y1="260" x2="536" y2="260" stroke="#0B1E30" stroke-width="2"/>
+<text x="491" y="252" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">about 5 m</text>
+<line x1="502" y1="110" x2="546" y2="170" stroke="#0B1E30" stroke-width="2"/>
+<line x1="536" y1="260" x2="546" y2="200" stroke="#0B1E30" stroke-width="2"/>
+<rect x="546" y="160" width="90" height="50" rx="6" fill="#F2F6F9" stroke="#0E8A50" stroke-width="1.5"/>
+<text x="591" y="190" font-size="13" fill="#0B1E30" text-anchor="middle" font-weight="normal">switch</text>
+<line x1="636" y1="185" x2="666" y2="185" stroke="#0B1E30" stroke-width="2"/>
+<rect x="665" y="172.4" width="18" height="25.2" rx="4" fill="#B8791A" opacity="0.9"/>
+<text x="674" y="222" font-size="10" fill="#B8791A" text-anchor="middle" font-weight="normal">pigtail choke</text>
+<line x1="682" y1="185" x2="722" y2="185" stroke="#0B1E30" stroke-width="2"/>
+<text x="702" y="177" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">1 m</text>
+<rect x="722" y="160" width="100" height="50" rx="6" fill="#F2F6F9" stroke="#0E8A50" stroke-width="1.5"/>
+<text x="772" y="190" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">IC-7300 MkII</text>
+<text x="30" y="40" font-size="12" fill="#3A546B" text-anchor="start" font-weight="normal">Both feedlines: Extraflex Bury 7, 50 ohm. Amber: choke. Cyan ring: snap-on ferrites at shack entry.</text>
+</svg>

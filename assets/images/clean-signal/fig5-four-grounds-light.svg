@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 340" role="img" aria-label="The four meanings of ground and where each appears in the station" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>The four meanings of ground and where each appears in the station</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3A546B"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C8384B"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0E8A50"/></marker></defs>
+<rect x="1" y="1" width="988" height="338" rx="16" fill="#FFFFFF" stroke="#C9D5DF" stroke-width="2"/>
+<rect x="30" y="60" width="220" height="250" rx="6" fill="#F2F6F9" stroke="#0E8A50" stroke-width="2"/>
+<text x="140" y="95" font-size="16" fill="#0E8A50" text-anchor="middle" font-weight="normal">Protective earth</text>
+<text x="140" y="120" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">safety of the house installation</text>
+<text x="140" y="170" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">In my station:</text>
+<text x="140" y="195" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">Bonded panel in the</text>
+<text x="140" y="215" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">antenna cabinet, intact</text>
+<text x="140" y="235" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">and untouched</text>
+<rect x="270" y="60" width="220" height="250" rx="6" fill="#F2F6F9" stroke="#B8791A" stroke-width="2"/>
+<text x="380" y="95" font-size="16" fill="#B8791A" text-anchor="middle" font-weight="normal">Lightning bonding</text>
+<text x="380" y="120" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">coordinated design, its own rules</text>
+<text x="380" y="170" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">In my station:</text>
+<text x="380" y="195" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">Not a radio topic: no</text>
+<text x="380" y="215" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">transmitting during storms</text>
+<rect x="510" y="60" width="220" height="250" rx="6" fill="#F2F6F9" stroke="#1E6BA8" stroke-width="2"/>
+<text x="620" y="95" font-size="16" fill="#1E6BA8" text-anchor="middle" font-weight="normal">RF return</text>
+<text x="620" y="120" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">part of the antenna</text>
+<text x="620" y="170" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">In my station:</text>
+<text x="620" y="195" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">Counterpoise of the</text>
+<text x="620" y="215" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">HyEndFed, 32 radials of</text>
+<text x="620" y="235" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">the IronWave</text>
+<rect x="750" y="60" width="220" height="250" rx="6" fill="#F2F6F9" stroke="#3A546B" stroke-width="2"/>
+<text x="860" y="95" font-size="16" fill="#3A546B" text-anchor="middle" font-weight="normal">Static drain</text>
+<text x="860" y="120" font-size="11" fill="#3A546B" text-anchor="middle" font-weight="normal">slow path for charge</text>
+<text x="860" y="170" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">In my station:</text>
+<text x="860" y="195" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">Separate job; a choke is</text>
+<text x="860" y="215" font-size="12" fill="#0B1E30" text-anchor="middle" font-weight="normal">not a static drain</text>
+<text x="30" y="35" font-size="14" fill="#0B1E30" text-anchor="start" font-weight="normal">Four different meanings of "ground", four different jobs</text>
+</svg>

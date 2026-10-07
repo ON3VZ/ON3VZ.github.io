@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 576" role="img" aria-label="The whole station as thirteen layers from antenna to radio" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>The whole station as thirteen layers from antenna to radio</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A9BDCF"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#F06A7B"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2FD68A"/></marker></defs>
+<rect x="1" y="1" width="958" height="574" rx="16" fill="#142334" stroke="#2E4560" stroke-width="2"/>
+<rect x="200" y="60" width="560" height="30" rx="5" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="480" y="80" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Antenna choice and position</text>
+<rect x="200" y="98" width="560" height="30" rx="5" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="480" y="118" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Defined return paths</text>
+<rect x="200" y="136" width="560" height="30" rx="5" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="480" y="156" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Chokes along the coax</text>
+<rect x="200" y="174" width="560" height="30" rx="5" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="480" y="194" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Ferrites on the ground cable</text>
+<rect x="200" y="212" width="560" height="30" rx="5" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="480" y="232" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Low-loss coax</text>
+<rect x="200" y="250" width="560" height="30" rx="5" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="480" y="270" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Separate filtered circuit</text>
+<rect x="200" y="288" width="560" height="30" rx="5" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="480" y="308" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Solar installation filtering</text>
+<rect x="200" y="326" width="560" height="30" rx="5" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="480" y="346" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Shack mains filter</text>
+<rect x="200" y="364" width="560" height="30" rx="5" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="480" y="384" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">One busbar</text>
+<rect x="200" y="402" width="560" height="30" rx="5" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="480" y="422" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Power supply and DC filter</text>
+<rect x="200" y="440" width="560" height="30" rx="5" fill="#1A2C40" stroke="#5AB4EA" stroke-width="1.5"/>
+<text x="480" y="460" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Device and network cables</text>
+<rect x="200" y="478" width="560" height="30" rx="5" fill="#1A2C40" stroke="#F0B323" stroke-width="1.5"/>
+<text x="480" y="498" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Audio chain</text>
+<rect x="200" y="516" width="560" height="30" rx="5" fill="#1A2C40" stroke="#F0B323" stroke-width="1.5"/>
+<text x="480" y="536" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Matching</text>
+<text x="180" y="80" font-size="12" fill="#A9BDCF" text-anchor="end" font-weight="normal">antenna</text>
+<text x="180" y="536" font-size="12" fill="#A9BDCF" text-anchor="end" font-weight="normal">radio</text>
+<line x1="190" y1="70" x2="190" y2="536" stroke="#A9BDCF" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="780" y="80" font-size="12" fill="#F0B323" text-anchor="start" font-weight="normal">weakest on 80 m:</text>
+<text x="780" y="98" font-size="12" fill="#F0B323" text-anchor="start" font-weight="normal">the antenna layer</text>
+<text x="480" y="40" font-size="14" fill="#E4EDF5" text-anchor="middle" font-weight="normal">One station, thirteen layers. The result comes from the combination.</text>
+</svg>

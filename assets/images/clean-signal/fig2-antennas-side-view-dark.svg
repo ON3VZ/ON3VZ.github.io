@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" role="img" aria-label="Side view of the HyEndFed sloper with counterpoise and the IronWave vertical with radials" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>Side view of the HyEndFed sloper with counterpoise and the IronWave vertical with radials</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A9BDCF"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#F06A7B"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2FD68A"/></marker></defs>
+<rect x="1" y="1" width="998" height="538" rx="16" fill="#142334" stroke="#2E4560" stroke-width="2"/>
+<line x1="20" y1="480" x2="980" y2="480" stroke="#A9BDCF" stroke-width="2"/>
+<rect x="40" y="225.0" width="200" height="255.0" rx="2" fill="#1A2C40" stroke="#2E4560" stroke-width="1.5"/>
+<text x="140" y="265.0" font-size="13" fill="#A9BDCF" text-anchor="middle" font-weight="normal">house</text>
+<line x1="200" y1="225.0" x2="210" y2="192.0" stroke="#A9BDCF" stroke-width="2"/>
+<line x1="220" y1="225.0" x2="210" y2="192.0" stroke="#A9BDCF" stroke-width="2"/>
+<circle cx="210" cy="210" r="6" fill="#F0B323"/>
+<text x="224" y="194" font-size="12" fill="#F0B323" text-anchor="start" font-weight="normal">feedpoint, about 9 m</text>
+<line x1="210" y1="214" x2="84.0" y2="214" stroke="#5AB4EA" stroke-width="2.5"/>
+<text x="30" y="184" font-size="11" fill="#5AB4EA" text-anchor="start" font-weight="normal">counterpoise</text>
+<text x="30" y="198" font-size="11" fill="#5AB4EA" text-anchor="start" font-weight="normal">about 4.2 to 4.4 m</text>
+<line x1="930" y1="480" x2="930" y2="420" stroke="#A9BDCF" stroke-width="3"/>
+<line x1="210" y1="210" x2="930" y2="420" stroke="#2FD68A" stroke-width="2.5"/>
+<rect x="826.0869565217391" y="386.6086956521739" width="20" height="12" rx="3" fill="#F0B323" transform="rotate(16.3 836.0869565217391 392.6086956521739)"/>
+<text x="822.0869565217391" y="378.6086956521739" font-size="12" fill="#F0B323" text-anchor="end" font-weight="normal">80 m coil at about 20 m</text>
+<text x="930" y="408" font-size="12" fill="#A9BDCF" text-anchor="middle" font-weight="normal">pole about 2 m</text>
+<text x="560" y="270" font-size="13" fill="#2FD68A" text-anchor="middle" font-weight="normal">HyEndFed, 23 m sloping wire</text>
+<line x1="210" y1="216" x2="210" y2="225.0" stroke="#E4EDF5" stroke-width="2"/>
+<line x1="210" y1="225.0" x2="250" y2="225.0" stroke="#E4EDF5" stroke-width="2"/>
+<line x1="250" y1="225.0" x2="250" y2="460" stroke="#E4EDF5" stroke-width="2"/>
+<rect x="204" y="223.6" width="12" height="16.799999999999997" rx="4" fill="#F0B323" opacity="0.9"/>
+<line x1="470" y1="480" x2="470" y2="300" stroke="#5AB4EA" stroke-width="4"/>
+<text x="480" y="340" font-size="13" fill="#5AB4EA" text-anchor="start" font-weight="normal">IronWave 6, about 6 m</text>
+<line x1="470" y1="484" x2="358" y2="494" stroke="#5AB4EA" stroke-width="1.2"/>
+<line x1="470" y1="484" x2="386" y2="494" stroke="#5AB4EA" stroke-width="1.2"/>
+<line x1="470" y1="484" x2="414" y2="494" stroke="#5AB4EA" stroke-width="1.2"/>
+<line x1="470" y1="484" x2="442" y2="494" stroke="#5AB4EA" stroke-width="1.2"/>
+<line x1="470" y1="484" x2="498" y2="494" stroke="#5AB4EA" stroke-width="1.2"/>
+<line x1="470" y1="484" x2="526" y2="494" stroke="#5AB4EA" stroke-width="1.2"/>
+<line x1="470" y1="484" x2="554" y2="494" stroke="#5AB4EA" stroke-width="1.2"/>
+<line x1="470" y1="484" x2="582" y2="494" stroke="#5AB4EA" stroke-width="1.2"/>
+<text x="470" y="514" font-size="12" fill="#A9BDCF" text-anchor="middle" font-weight="normal">32 radials, about 1 cm deep in clay</text>
+<line x1="980" y1="480" x2="992" y2="480" stroke="#A9BDCF" stroke-width="1"/>
+<line x1="980" y1="420" x2="992" y2="420" stroke="#A9BDCF" stroke-width="1"/>
+<line x1="980" y1="300" x2="992" y2="300" stroke="#A9BDCF" stroke-width="1"/>
+<line x1="980" y1="225.0" x2="992" y2="225.0" stroke="#A9BDCF" stroke-width="1"/>
+<line x1="980" y1="210" x2="992" y2="210" stroke="#A9BDCF" stroke-width="1"/>
+<text x="990" y="219.0" font-size="10" fill="#A9BDCF" text-anchor="end" font-weight="normal">8.5 m</text>
+<text x="20" y="25" font-size="12" fill="#A9BDCF" text-anchor="start" font-weight="normal">Schematic side view, heights approximate, horizontal distances not to scale</text>
+</svg>

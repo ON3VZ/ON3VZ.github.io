@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 590" role="img" aria-label="Inside the shack: filtered circuit, star wiring, DC filter, ferrites, shielded network, one busbar" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>Inside the shack: filtered circuit, star wiring, DC filter, ferrites, shielded network, one busbar</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A9BDCF"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#F06A7B"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2FD68A"/></marker></defs>
+<rect x="1" y="1" width="998" height="588" rx="16" fill="#142334" stroke="#2E4560" stroke-width="2"/>
+<rect x="30" y="60" width="180" height="70" rx="6" fill="#1A2C40" stroke="#F0B323" stroke-width="1.5"/>
+<text x="120" y="90" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">House mains</text>
+<text x="120" y="110" font-size="11" fill="#A9BDCF" text-anchor="middle" font-weight="normal">solar inverter filtered at source</text>
+<line x1="210" y1="95" x2="260" y2="95" stroke="#E4EDF5" stroke-width="2"/>
+<rect x="261" y="82.4" width="18" height="25.2" rx="4" fill="#F0B323" opacity="0.9"/>
+<text x="270" y="135" font-size="10" fill="#F0B323" text-anchor="middle" font-weight="normal">Schaffner</text>
+<line x1="280" y1="95" x2="320" y2="95" stroke="#E4EDF5" stroke-width="2"/>
+<rect x="320" y="55" width="170" height="80" rx="6" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="405" y="90" font-size="13" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Shack sub-board</text>
+<text x="405" y="110" font-size="11" fill="#A9BDCF" text-anchor="middle" font-weight="normal">star-wired sockets</text>
+<path d="M405,135 L405,200 L520,200" fill="none" stroke="#E4EDF5" stroke-width="1.6"/>
+<rect x="520" y="180" width="210" height="40" rx="6" fill="#1A2C40" stroke="#2E4560" stroke-width="1.5"/>
+<text x="625" y="205" font-size="12" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Mean Well 13.8 V</text>
+<path d="M405,135 L405,270 L520,270" fill="none" stroke="#E4EDF5" stroke-width="1.6"/>
+<rect x="520" y="250" width="210" height="40" rx="6" fill="#1A2C40" stroke="#2E4560" stroke-width="1.5"/>
+<text x="625" y="275" font-size="12" fill="#E4EDF5" text-anchor="middle" font-weight="normal">PC</text>
+<path d="M405,135 L405,340 L520,340" fill="none" stroke="#E4EDF5" stroke-width="1.6"/>
+<rect x="520" y="320" width="210" height="40" rx="6" fill="#1A2C40" stroke="#2E4560" stroke-width="1.5"/>
+<text x="625" y="345" font-size="12" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Antenna switch, accessories</text>
+<path d="M405,135 L405,410 L520,410" fill="none" stroke="#E4EDF5" stroke-width="1.6"/>
+<rect x="520" y="390" width="210" height="40" rx="6" fill="#1A2C40" stroke="#2E4560" stroke-width="1.5"/>
+<text x="625" y="415" font-size="12" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Network switch</text>
+<line x1="730" y1="200" x2="770" y2="200" stroke="#E4EDF5" stroke-width="2"/>
+<rect x="771" y="187.4" width="18" height="25.2" rx="4" fill="#F0B323" opacity="0.9"/>
+<text x="780" y="240" font-size="10" fill="#F0B323" text-anchor="middle" font-weight="normal">DC filter</text>
+<line x1="790" y1="200" x2="830" y2="200" stroke="#E4EDF5" stroke-width="2"/>
+<rect x="830" y="180" width="140" height="40" rx="6" fill="#1A2C40" stroke="#2FD68A" stroke-width="1.5"/>
+<text x="900" y="205" font-size="12" fill="#E4EDF5" text-anchor="middle" font-weight="normal">IC-7300 MkII</text>
+<line x1="730" y1="270" x2="830" y2="215" stroke="#5AB4EA" stroke-width="1.6"/>
+<circle cx="752" cy="258" r="8" fill="none" stroke="#5AB4EA" stroke-width="3"/>
+<text x="770" y="290" font-size="11" fill="#5AB4EA" text-anchor="start" font-weight="normal">ferrites on USB, HDMI, audio</text>
+<line x1="970" y1="440" x2="735" y2="410" stroke="#5AB4EA" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="745" y="462" font-size="11" fill="#5AB4EA" text-anchor="start" font-weight="normal">shielded network cable</text>
+<rect x="300" y="500" width="440" height="16" rx="4" fill="#F0B323" opacity="0.8"/>
+<text x="520" y="540" font-size="12" fill="#E4EDF5" text-anchor="middle" font-weight="normal">One busbar: all equipment bonded at one point</text>
+<path d="M740,508 L920,508 L920,220" fill="none" stroke="#A9BDCF" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="520" y="560" font-size="11" fill="#A9BDCF" text-anchor="middle" font-weight="normal">every device, including the radio, is bonded to it</text>
+</svg>
