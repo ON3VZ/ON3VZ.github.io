@@ -17,7 +17,7 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
 .cs-byline { font-family: var(--f-mono); font-size: .8rem; color: var(--c-text-3) !important; margin: 0 0 1.2rem !important; }
 .cs-fig { margin: 1.8rem 0 2rem; }
 .cs-fig img { display: block; width: 100%; height: auto; border-radius: 14px !important; border: 1px solid var(--c-border) !important; box-shadow: var(--fx-shadow, 0 4px 16px rgba(0,0,0,.12)); }
-.cs-fig figcaption { font-size: .86rem; line-height: 1.5; color: var(--c-text-3); margin-top: .7rem; padding-left: .9rem; border-left: 2px solid var(--cs-accent); }
+.cs-fig figcaption { font-size: .86rem; line-height: 1.5; color: var(--c-text-3); margin: .75rem auto 0; max-width: 680px; text-align: center; font-style: italic; }
 .cs-hero-img img { aspect-ratio: 16 / 7; object-fit: cover; }
 .cs-diagram img { border: 0 !important; box-shadow: none; }
 .cs-photo img { max-height: 620px; width: auto; max-width: 100%; margin: 0 auto; }
