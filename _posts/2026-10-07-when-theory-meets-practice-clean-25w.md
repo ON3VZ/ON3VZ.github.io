@@ -76,6 +76,9 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
 .cs-dl a { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none !important; font-family: var(--f-mono); font-size: .85rem; padding: .5rem .9rem; border-radius: 8px; border: 1px solid var(--cs-accent); color: var(--cs-accent) !important; }
 .cs-dl-soon { font-family: var(--f-mono); font-size: .85rem; padding: .5rem .9rem; border-radius: 8px; border: 1px dashed var(--c-border-hard); color: var(--c-text-3); }
 .cs-dl a:hover { background: var(--cs-accent); color: #fff !important; }
+.cs-math { font-family: 'Cambria Math', 'STIX Two Math', 'Latin Modern Math', Cambria, Georgia, serif; font-size: 1.05em; color: var(--c-text); white-space: normal; }
+.cs-math sub, .cs-math sup { font-size: .72em; }
+.cs-formula .cs-math { display: inline-block; font-size: 1.15rem; padding: .45rem 1rem; border-radius: 8px; background: var(--c-surface-2); border: 1px solid var(--c-border); }
 </style>
 <div class="cs-article" markdown="1">
 <div class="cs-hero">
@@ -233,9 +236,9 @@ Its feedpoint sits about 9 m above the ground: the flat roof is about 8.5 m high
 
 Everything in antenna theory starts with wavelength:
 
-`λ = c / f`, or in practice `λ (m) ≈ 300 / f (MHz)`
+<span class="cs-math">λ = c / f</span>, or in practice <span class="cs-math">λ (m) ≈ 300 / f (MHz)</span>
 {: .cs-formula}
-where `c` is the speed of light (about 3 × 10⁸ m/s) and `f` the frequency. What matters for an antenna is not its physical length, but its length in wavelengths, its electrical length.
+where <span class="cs-math">c</span> is the speed of light (about 3 × 10⁸ m/s) and <span class="cs-math">f</span> the frequency. What matters for an antenna is not its physical length, but its length in wavelengths, its electrical length.
 
 <table>
 <thead><tr><th>Frequency</th><th>λ</th><th>λ/2</th><th>λ/4</th><th>0.05 λ</th><th>IronWave 6 m in λ</th></tr></thead>
@@ -260,11 +263,11 @@ A real wire is slightly shorter than the free-space half wave for resonance, bec
 
 An antenna radiates because RF current flows in it. The far field in any direction is the sum of the contributions of all small current elements, each with its own amplitude, direction and phase. Two strong currents close together and in opposite directions largely cancel at a distance. This is why a properly working coax line does not radiate: the two currents inside it are equal and opposite.
 
-On a half-wave wire, the current is maximum in the middle and close to zero at the open ends, while the voltage does the opposite. At any point the ratio of voltage to current is the local impedance, so the end of a half-wave wire has a high impedance, typically in the order of a few thousand ohms. An end-fed half-wave (EFHW) is fed at that high-impedance point and needs a transformer, often around 49:1, to bring it towards 50 Ω. An ideal transformer with turns ratio `n` transforms impedance by `n²`, so a 7:1 turns ratio gives 49:1.
+On a half-wave wire, the current is maximum in the middle and close to zero at the open ends, while the voltage does the opposite. At any point the ratio of voltage to current is the local impedance, so the end of a half-wave wire has a high impedance, typically in the order of a few thousand ohms. An end-fed half-wave (EFHW) is fed at that high-impedance point and needs a transformer, often around 49:1, to bring it towards 50 Ω. An ideal transformer with turns ratio <span class="cs-math">n</span> transforms impedance by <span class="cs-math">n²</span>, so a 7:1 turns ratio gives 49:1.
 
 A wire that is about half a wavelength on 40 m is roughly two half waves on 20 m, three on 15 m and four on 10 m:
 
-`L ≈ n × λ/2`
+<span class="cs-math">L ≈ n × λ/2</span>
 {: .cs-formula}
 At each of those frequencies the end of the wire is again a high-impedance point, so the same transformer works on several bands. On the higher bands the wire carries several current maxima with phase reversals between them, so the radiation pattern develops more lobes and nulls. On my antenna, the coil for 80 m sits about 20 m along the wire, roughly where a 40 m half wave ends, and is followed by about 3 m of wire.
 
@@ -275,23 +278,23 @@ At each of those frequencies the end of the wire is again a high-impedance point
 
 At the feedpoint, an antenna presents an impedance:
 
-`Z = R + jX`
+<span class="cs-math">Z = R + jX</span>
 {: .cs-formula}
-The reactive part `X` represents energy that is stored in the near field and returned each cycle. The real part `R` represents power that leaves the feedpoint for good. That real part has two very different components:
+The reactive part <span class="cs-math">X</span> represents energy that is stored in the near field and returned each cycle. The real part <span class="cs-math">R</span> represents power that leaves the feedpoint for good. That real part has two very different components:
 
-`R = R_rad + R_loss`
+<span class="cs-math">R = R<sub>rad</sub> + R<sub>loss</sub></span>
 {: .cs-formula}
-`R_rad`, the radiation resistance, accounts for power that leaves as radiation. `R_loss` accounts for power turned into heat in conductors, coils, transformers, connections and the soil. For the same feed current `I`:
+<span class="cs-math">R<sub>rad</sub></span>, the radiation resistance, accounts for power that leaves as radiation. <span class="cs-math">R<sub>loss</sub></span> accounts for power turned into heat in conductors, coils, transformers, connections and the soil. For the same feed current <span class="cs-math">I</span>:
 
-`P_rad = I² × R_rad` and `P_loss = I² × R_loss`
+<span class="cs-math">P<sub>rad</sub> = I² × R<sub>rad</sub></span> and <span class="cs-math">P<sub>loss</sub> = I² × R<sub>loss</sub></span>
 {: .cs-formula}
 so the radiation efficiency is:
 
-`η = R_rad / (R_rad + R_loss)`
+<span class="cs-math">η = R<sub>rad</sub> / (R<sub>rad</sub> + R<sub>loss</sub>)</span>
 {: .cs-formula}
-An illustrative example (not my antenna): a short antenna with `R_rad = 20 Ω`, a coil with `2.5 Ω` of loss and `5 Ω` of ground and conductor loss gives `η = 20 / 27.5 = 0.73`, so 73 %, or about 1.4 dB below a lossless antenna. The same antenna with `R_rad = 5 Ω` and the same losses gives `η = 5 / 12.5 = 0.40`, a loss of about 4 dB.
+An illustrative example (not my antenna): a short antenna with <span class="cs-math">R<sub>rad</sub> = 20 Ω</span>, a coil with <span class="cs-math">2.5 Ω</span> of loss and <span class="cs-math">5 Ω</span> of ground and conductor loss gives <span class="cs-math">η = 20 / 27.5 = 0.73</span>, so 73 %, or about 1.4 dB below a lossless antenna. The same antenna with <span class="cs-math">R<sub>rad</sub> = 5 Ω</span> and the same losses gives <span class="cs-math">η = 5 / 12.5 = 0.40</span>, a loss of about 4 dB.
 
-The important lesson: an SWR meter cannot distinguish `R_rad` from `R_loss`; chapter 11 comes back to this.
+The important lesson: an SWR meter cannot distinguish <span class="cs-math">R<sub>rad</sub></span> from <span class="cs-math">R<sub>loss</sub></span>; chapter 11 comes back to this.
 
 </details>
 
@@ -300,13 +303,13 @@ The important lesson: an SWR meter cannot distinguish `R_rad` from `R_loss`; cha
 
 A 23 m wire is far too short to be a half wave on 80 m (41.6 m). On its own it would present a capacitive reactance there. The HyEndFed adds a coil to supply inductive reactance, so that the net reactance at the feedpoint becomes zero on 80 m and the antenna is resonant. The reactance of a coil is:
 
-`X_L = 2π f L`
+<span class="cs-math">X<sub>L</sub> = 2π f L</span>
 {: .cs-formula}
 A real coil also has loss resistance, described by its quality factor:
 
-`Q = X_L / R_coil`, so `R_coil = X_L / Q`
+<span class="cs-math">Q = X<sub>L</sub> / R<sub>coil</sub></span>, so <span class="cs-math">R<sub>coil</sub> = X<sub>L</sub> / Q</span>
 {: .cs-formula}
-Illustrative example: a coil that needs to supply 500 Ω of reactance at 3.6 MHz has an inductance of `L = 500 / (2π × 3.6 × 10⁶) ≈ 22 µH`. With a good `Q` of 200, its loss resistance is `500 / 200 = 2.5 Ω`. That loss is in series with a radiation resistance that is much smaller on a short antenna than on a full-size one, so even a good coil can cost a noticeable part of the power.
+Illustrative example: a coil that needs to supply 500 Ω of reactance at 3.6 MHz has an inductance of <span class="cs-math">L = 500 / (2π × 3.6 × 10⁶) ≈ 22 µH</span>. With a good <span class="cs-math">Q</span> of 200, its loss resistance is <span class="cs-math">500 / 200 = 2.5 Ω</span>. That loss is in series with a radiation resistance that is much smaller on a short antenna than on a full-size one, so even a good coil can cost a noticeable part of the power.
 
 Three more consequences follow. The coil itself does not radiate in any useful way; it stores energy and adds loss. The current distribution along the wire changes, which can lower the radiation resistance. And an electrically small antenna has a high Q, so its usable bandwidth is narrow. The manufacturer states about 100 kHz of bandwidth on 80 m without a tuner, which fits that picture. This is consistent with what I hear on 80 m.
 
@@ -361,17 +364,17 @@ That outside current is usually called common-mode current. On transmit, it can 
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>What a coaxial line is, in numbers</strong></summary>
 
-A coax line is defined by its inductance `L'` and capacitance `C'` per metre. For a low-loss line:
+A coax line is defined by its inductance <span class="cs-math">L'</span> and capacitance <span class="cs-math">C'</span> per metre. For a low-loss line:
 
-`Z₀ = √(L' / C')` and `v = 1 / √(L' C')`
+<span class="cs-math">Z₀ = √(L' / C')</span> and <span class="cs-math">v = 1 / √(L' C')</span>
 {: .cs-formula}
-The characteristic impedance `Z₀` is the ratio of voltage to current of a single travelling wave. It is not a resistor inside the cable. For a coax with inner conductor diameter `d`, inner diameter of the shield `D` and dielectric constant `εr`:
+The characteristic impedance <span class="cs-math">Z₀</span> is the ratio of voltage to current of a single travelling wave. It is not a resistor inside the cable. For a coax with inner conductor diameter <span class="cs-math">d</span>, inner diameter of the shield <span class="cs-math">D</span> and dielectric constant <span class="cs-math">εr</span>:
 
-`Z₀ = (60 / √εr) × ln(D / d)`
+<span class="cs-math">Z₀ = (60 / √εr) × ln(D / d)</span>
 {: .cs-formula}
-The velocity factor is `VF = v / c = 1 / √εr`. My cable, Extraflex Bury 7, has a velocity factor of 83 % according to its datasheet, which corresponds to `εr ≈ 1 / 0.83² ≈ 1.45`, consistent with a foamed dielectric. Its capacitance is 75 pF/m and its centre conductor consists of 19 strands with an overall diameter of 1.9 mm.
+The velocity factor is <span class="cs-math">VF = v / c = 1 / √εr</span>. My cable, Extraflex Bury 7, has a velocity factor of 83 % according to its datasheet, which corresponds to <span class="cs-math">εr ≈ 1 / 0.83² ≈ 1.45</span>, consistent with a foamed dielectric. Its capacitance is 75 pF/m and its centre conductor consists of 19 strands with an overall diameter of 1.9 mm.
 
-The wavelength inside the cable is shorter than in free space: `λ_coax = VF × λ`. This matters for anything that depends on electrical length inside the line, but, as explained below, not for the outside of the shield.
+The wavelength inside the cable is shorter than in free space: <span class="cs-math">λ<sub>coax</sub> = VF × λ</span>. This matters for anything that depends on electrical length inside the line, but, as explained below, not for the outside of the shield.
 
 </details>
 
@@ -380,11 +383,11 @@ The wavelength inside the cable is shorter than in free space: `λ_coax = VF × 
 
 ITU-T Recommendation K.10 defines the common-mode current of a group of conductors as the sum of the (phasor) currents in those conductors. Applied to a coax:
 
-`I_CM = I_centre + I_shield,inner + I_shield,outer`
+<span class="cs-math">I<sub>CM</sub> = I<sub>centre</sub> + I<sub>shield,inner</sub> + I<sub>shield,outer</sub></span>
 {: .cs-formula}
-In the wanted transmission-line mode, `I_centre = −I_shield,inner`, so those two terms cancel and:
+In the wanted transmission-line mode, <span class="cs-math">I<sub>centre</sub> = −I<sub>shield,inner</sub></span>, so those two terms cancel and:
 
-`I_CM ≈ I_shield,outer`
+<span class="cs-math">I<sub>CM</sub> ≈ I<sub>shield,outer</sub></span>
 {: .cs-formula}
 Whatever does not cancel must return by another path: the mast, the station, the building, the earth, or simply capacitance to the surroundings.
 
@@ -397,9 +400,9 @@ Two facts are worth stressing. A mismatch on its own does not create common-mode
 
 At radio frequencies, current crowds towards the surface of a conductor. The skin depth is:
 
-`δ = √(2ρ / (ω μ))`, with `ω = 2πf`
+<span class="cs-math">δ = √(2ρ / (ω μ))</span>, with <span class="cs-math">ω = 2πf</span>
 {: .cs-formula}
-For copper this gives approximately `δ ≈ 65 µm / √f(MHz)`: about 34 µm at 3.6 MHz, 17 µm at 14 MHz and 12 µm at 28 MHz. The shield of a coax is many skin depths thick, so the wanted return current flows on the inside surface and an outside current can flow on the outside surface, largely independently.
+For copper this gives approximately <span class="cs-math">δ ≈ 65 µm / √f(MHz)</span>: about 34 µm at 3.6 MHz, 17 µm at 14 MHz and 12 µm at 28 MHz. The shield of a coax is many skin depths thick, so the wanted return current flows on the inside surface and an outside current can flow on the outside surface, largely independently.
 
 Skin effect explains where currents can flow. It does not cause the outside current. Something must launch it: an asymmetric antenna, an undefined return path, a field from a nearby source. A real braided shield is also not perfect: its coupling between inside and outside is described by its transfer impedance, which is why screening quality still matters.
 
@@ -470,15 +473,15 @@ In my case there is also a separate counterpoise and a choke right at the feedpo
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>How much a choke reduces the current</strong></summary>
 
-Model the outside path as a source driving a current through the impedance of that path, `Z_P`. Inserting a choke with impedance `Z_C` in series changes the current from `V / Z_P` to `V / (Z_P + Z_C)`. The reduction is:
+Model the outside path as a source driving a current through the impedance of that path, <span class="cs-math">Z<sub>P</sub></span>. Inserting a choke with impedance <span class="cs-math">Z<sub>C</sub></span> in series changes the current from <span class="cs-math">V / Z<sub>P</sub></span> to <span class="cs-math">V / (Z<sub>P</sub> + Z<sub>C</sub>)</span>. The reduction is:
 
-`reduction (dB) = 20 log₁₀ ∣ 1 + Z_C / Z_P ∣`
+<span class="cs-math">reduction (dB) = 20 log₁₀ ∣ 1 + Z<sub>C</sub> / Z<sub>P</sub> ∣</span>
 {: .cs-formula}
 Both impedances are complex. A few illustrative cases:
 
-- `Z_P = 300 Ω` (resistive) and `Z_C = 3000 Ω` (resistive): `∣1 + 10∣ = 11`, a reduction of about 20.8 dB.
-- `Z_P = 3000 Ω` and `Z_C = 3000 Ω`: `∣1 + 1∣ = 2`, only 6 dB. A good choke in a high-impedance part of the path does little.
-- `Z_P = −j2900 Ω` (capacitive) and `Z_C = +j3000 Ω` (purely inductive): `Z_P + Z_C = +j100 Ω`, so the current becomes 29 times larger. The choke resonates with the path and makes things worse.
+- <span class="cs-math">Z<sub>P</sub> = 300 Ω</span> (resistive) and <span class="cs-math">Z<sub>C</sub> = 3000 Ω</span> (resistive): <span class="cs-math">∣1 + 10∣ = 11</span>, a reduction of about 20.8 dB.
+- <span class="cs-math">Z<sub>P</sub> = 3000 Ω</span> and <span class="cs-math">Z<sub>C</sub> = 3000 Ω</span>: <span class="cs-math">∣1 + 1∣ = 2</span>, only 6 dB. A good choke in a high-impedance part of the path does little.
+- <span class="cs-math">Z<sub>P</sub> = −j2900 Ω</span> (capacitive) and <span class="cs-math">Z<sub>C</sub> = +j3000 Ω</span> (purely inductive): <span class="cs-math">Z<sub>P</sub> + Z<sub>C</sub> = +j100 Ω</span>, so the current becomes 29 times larger. The choke resonates with the path and makes things worse.
 
 That last case is one reason why chokes with a substantial resistive part across the band are often preferred for this job, and why "more turns" is not automatically better.
 
@@ -489,9 +492,9 @@ That last case is one reason why chokes with a substantial resistive part across
 
 A choke that blocks current develops a voltage across itself and dissipates power in its resistive part:
 
-`V_CM = I_CM × ∣Z_C∣` and `P = I_CM² × R_C`
+<span class="cs-math">V<sub>CM</sub> = I<sub>CM</sub> × ∣Z<sub>C</sub>∣</span> and <span class="cs-math">P = I<sub>CM</sub>² × R<sub>C</sub></span>
 {: .cs-formula}
-Illustrative example: if 50 mA of outside current flows through a choke with 2000 Ω of resistance, the choke dissipates `0.05² × 2000 = 5 W` and has about 100 V across it. That is why choke ratings depend on the current that actually flows on the outside, not on the transmitter power, and why a warm choke tells you that something is flowing but not whether it is working well. A cool choke does not prove that the current is low.
+Illustrative example: if 50 mA of outside current flows through a choke with 2000 Ω of resistance, the choke dissipates <span class="cs-math">0.05² × 2000 = 5 W</span> and has about 100 V across it. That is why choke ratings depend on the current that actually flows on the outside, not on the transmitter power, and why a warm choke tells you that something is flowing but not whether it is working well. A cool choke does not prove that the current is low.
 
 </details>
 
@@ -538,7 +541,7 @@ The ground cable from the antenna cabinet into the shack runs through heavy snap
 
 A conductor of a few metres is a significant fraction of a wavelength on the higher HF bands (a quarter wave is 2.6 m at 28.5 MHz). At those lengths its RF impedance has little to do with its DC resistance, and it can carry or radiate RF current like any other wire.
 
-A ferrite around a single conductor adds a series impedance roughly proportional to the number of turns squared at low frequencies, because the inductance scales with `N²`. Winding capacitance limits that effect at higher frequencies and lowers the self-resonant frequency, so more turns are not automatically better across all bands. A ferrite on a protective earth conductor does not affect the 50 Hz fault current in any meaningful way, but it never replaces or interrupts the safety function of that conductor.
+A ferrite around a single conductor adds a series impedance roughly proportional to the number of turns squared at low frequencies, because the inductance scales with <span class="cs-math">N²</span>. Winding capacitance limits that effect at higher frequencies and lowers the self-resonant frequency, so more turns are not automatically better across all bands. A ferrite on a protective earth conductor does not affect the 50 Hz fault current in any meaningful way, but it never replaces or interrupts the safety function of that conductor.
 
 </details>
 
@@ -593,9 +596,9 @@ The performance of such filters is specified with standardised test methods (CIS
 
 The Y capacitors connect the mains to protective earth, so a small current flows to earth continuously:
 
-`I_leak = 2π f C_Y V`
+<span class="cs-math">I<sub>leak</sub> = 2π f C<sub>Y</sub> V</span>
 {: .cs-formula}
-The datasheet of my filter gives a maximum leakage current of 2.6 mA at 250 V and 50 Hz, and notes that it can reach twice that level if the neutral is interrupted. Working backwards, that corresponds to an equivalent capacitance of about `2.6 mA / (2π × 50 Hz × 250 V) ≈ 33 nF`, an estimate derived from the datasheet values.
+The datasheet of my filter gives a maximum leakage current of 2.6 mA at 250 V and 50 Hz, and notes that it can reach twice that level if the neutral is interrupted. Working backwards, that corresponds to an equivalent capacitance of about <span class="cs-math">2.6 mA / (2π × 50 Hz × 250 V) ≈ 33 nF</span>, an estimate derived from the datasheet values.
 
 Leakage currents add up and matter for residual current protection. That, together with the voltage ratings and the requirements of the electrical code, is why filters like this belong in the hands of a qualified electrician. A filter never replaces good earthing or protection.
 
@@ -724,17 +727,17 @@ A dummy load answers the second question perfectly and the third very badly: it 
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>Reflection, SWR, return loss and mismatch loss</strong></summary>
 
-When a line with characteristic impedance `Z₀` is terminated in a load `Z_L`, part of the wave reflects. The reflection coefficient is:
+When a line with characteristic impedance <span class="cs-math">Z₀</span> is terminated in a load <span class="cs-math">Z<sub>L</sub></span>, part of the wave reflects. The reflection coefficient is:
 
-`Γ = (Z_L − Z₀) / (Z_L + Z₀)`
+<span class="cs-math">Γ = (Z<sub>L</sub> − Z₀) / (Z<sub>L</sub> + Z₀)</span>
 {: .cs-formula}
 From its magnitude follow the familiar quantities:
 
-`SWR = (1 + ∣Γ∣) / (1 − ∣Γ∣)` and conversely `∣Γ∣ = (SWR − 1) / (SWR + 1)`
+<span class="cs-math">SWR = (1 + ∣Γ∣) / (1 − ∣Γ∣)</span> and conversely <span class="cs-math">∣Γ∣ = (SWR − 1) / (SWR + 1)</span>
 {: .cs-formula}
-`return loss (dB) = −20 log₁₀ ∣Γ∣`
+<span class="cs-math">return loss (dB) = −20 log₁₀ ∣Γ∣</span>
 {: .cs-formula}
-`mismatch loss (dB) = −10 log₁₀ (1 − ∣Γ∣²)`
+<span class="cs-math">mismatch loss (dB) = −10 log₁₀ (1 − ∣Γ∣²)</span>
 {: .cs-formula}
 
 <table>
@@ -755,11 +758,11 @@ Two warnings. SWR only keeps the magnitude of the mismatch, not its phase: a 25 
 
 Every impedance or SWR value belongs to a reference plane. A line transforms the load impedance along its length:
 
-`Z_in = Z₀ × (Z_L + j Z₀ tan βl) / (Z₀ + j Z_L tan βl)`, with `β = 2π / λ_coax`
+<span class="cs-math">Z<sub>in</sub> = Z₀ × (Z<sub>L</sub> + j Z₀ tan βl) / (Z₀ + j Z<sub>L</sub> tan βl)</span>, with <span class="cs-math">β = 2π / λ<sub>coax</sub></span>
 {: .cs-formula}
-A worked example from my own station: the HyEndFed line is about 16 m of Extraflex Bury 7. At 3.7 MHz the free-space wavelength is 81 m, and inside the cable (velocity factor 0.83) it is about 67 m. The line is therefore about 0.24 λ long, close to a quarter wave. A quarter-wave line turns an impedance into its inverse: `Z_in ≈ Z₀² / Z_L`. A load of 150 Ω at the antenna would look like about 17 Ω at the radio. The magnitude of the mismatch stays almost the same (only reduced by the line loss), but the impedance the radio sees is completely different from the one at the antenna.
+A worked example from my own station: the HyEndFed line is about 16 m of Extraflex Bury 7. At 3.7 MHz the free-space wavelength is 81 m, and inside the cable (velocity factor 0.83) it is about 67 m. The line is therefore about 0.24 λ long, close to a quarter wave. A quarter-wave line turns an impedance into its inverse: <span class="cs-math">Z<sub>in</sub> ≈ Z₀² / Z<sub>L</sub></span>. A load of 150 Ω at the antenna would look like about 17 Ω at the radio. The magnitude of the mismatch stays almost the same (only reduced by the line loss), but the impedance the radio sees is completely different from the one at the antenna.
 
-Resonance and lowest SWR do not have to occur at the same frequency either. A resonant antenna with `75 + j0 Ω` shows 1.5:1, while a slightly non-resonant antenna can be closer to 50 Ω. For a multiband antenna, resonance on every band is neither necessary nor usually possible.
+Resonance and lowest SWR do not have to occur at the same frequency either. A resonant antenna with <span class="cs-math">75 + j0 Ω</span> shows 1.5:1, while a slightly non-resonant antenna can be closer to 50 Ω. For a multiband antenna, resonance on every band is neither necessary nor usually possible.
 
 </details>
 
@@ -801,17 +804,17 @@ This is also the most useful comparison in this article. The radio, microphone, 
 
 Data: about 16.2 m of Extraflex Bury 7, matched loss 1.3 dB per 100 m at 3.5 MHz (datasheet, at 20 °C). At 3.7 MHz I use about 1.33 dB per 100 m, so the matched loss is:
 
-`A ≈ 0.162 × 1.33 ≈ 0.22 dB`, which gives a one-way power ratio `a = 10^(A/10) ≈ 1.051`
+<span class="cs-math">A ≈ 0.162 × 1.33 ≈ 0.22 dB</span>, which gives a one-way power ratio <span class="cs-math">a = 10<sup>A/10</sup> ≈ 1.051</span>
 {: .cs-formula}
-The reflected wave travels the line twice, so the reflection coefficient at the radio is reduced by the factor `a`. From the measured SWR at the radio (3:1, so `∣Γ_in∣ = 0.50`) the reflection at the antenna end is:
+The reflected wave travels the line twice, so the reflection coefficient at the radio is reduced by the factor <span class="cs-math">a</span>. From the measured SWR at the radio (3:1, so <span class="cs-math">∣Γ<sub>in</sub>∣ = 0.50</span>) the reflection at the antenna end is:
 
-`∣Γ_L∣ = ∣Γ_in∣ × a ≈ 0.50 × 1.051 ≈ 0.53`, which corresponds to an SWR of about 3.2:1 at the antenna end of the cable.
+<span class="cs-math">∣Γ<sub>L</sub>∣ = ∣Γ<sub>in</sub>∣ × a ≈ 0.50 × 1.051 ≈ 0.53</span>, which corresponds to an SWR of about 3.2:1 at the antenna end of the cable.
 
 The total line loss with mismatch follows from the standard expression (as used in the ARRL Antenna Book):
 
-`total loss (dB) = 10 log₁₀ [ (a² − ∣Γ_L∣²) / (a × (1 − ∣Γ_L∣²)) ]`
+<span class="cs-math">total loss (dB) = 10 log₁₀ [ (a² − ∣Γ<sub>L</sub>∣²) / (a × (1 − ∣Γ<sub>L</sub>∣²)) ]</span>
 {: .cs-formula}
-`= 10 log₁₀ [ (1.105 − 0.276) / (1.051 × 0.724) ] ≈ 10 log₁₀ (1.089) ≈ 0.37 dB`
+<span class="cs-math">= 10 log₁₀ [ (1.105 − 0.276) / (1.051 × 0.724) ] ≈ 10 log₁₀ (1.089) ≈ 0.37 dB</span>
 {: .cs-formula}
 So about 0.37 dB in total, of which about 0.15 dB is due to the mismatch. That is about 8 % of the power, roughly 2 W of 25 W. Two notes: the SWR at the antenna end is slightly worse than what the radio shows, because the cable hides a little of it; and connector and patch-cable losses come on top. The conclusion stands: on 80 m, the cable is a small factor.
 
@@ -832,7 +835,7 @@ Using the same datasheet (2.2 dB per 100 m at 14 MHz, 2.6 at 21 MHz, 3.0 at 28 M
 </tbody>
 </table>
 
-The general rule: a loss of `L` dB leaves a fraction `10^(−L/10)` of the power. 1 dB means about 20 % lost, roughly 5 W at 25 W. These figures show the cable losses only. They say nothing about the efficiency of the antennas themselves, and connector and switch losses come on top.
+The general rule: a loss of <span class="cs-math">L</span> dB leaves a fraction <span class="cs-math">10<sup>−L/10</sup></span> of the power. 1 dB means about 20 % lost, roughly 5 W at 25 W. These figures show the cable losses only. They say nothing about the efficiency of the antennas themselves, and connector and switch losses come on top.
 
 </details>
 
@@ -841,19 +844,19 @@ The general rule: a loss of `L` dB leaves a fraction `10^(−L/10)` of the power
 
 A link budget is simply a sum, in decibels, of everything that adds or removes signal between my transmitter and the other station's receiver. Because decibels add and subtract, you can follow the signal step by step, like a bank statement.
 
-`P_rx = P_tx − L_line + G_tx − L_path + G_rx − L_rx` (all in dB or dBm)
+<span class="cs-math">P<sub>rx</sub> = P<sub>tx</sub> − L<sub>line</sub> + G<sub>tx</sub> − L<sub>path</sub> + G<sub>rx</sub> − L<sub>rx</sub></span> (all in dB or dBm)
 
 and what decides readability at the other end:
 
-`SNR = P_rx − N`
+<span class="cs-math">SNR = P<sub>rx</sub> − N</span>
 {: .cs-formula}
-- `P_tx` is my transmitter power: `25 W = 10 log₁₀(25 000 mW) ≈ 44 dBm`. 100 W is about 50 dBm, so the difference is 6 dB, which is one S-unit on a standard S-meter.
-- `L_line` is my feedline loss: from 0.2 to about 0.8 dB, depending on band and antenna (calculated above).
-- `G_tx` is the gain of my antenna in the direction and at the angle of the path, including all its losses. An antenna that loses 3 dB in a coil, the soil or a radiating coax costs as much as halving the transmitter power.
-- `L_path` is the path loss. On HF it is large and changes from minute to minute, but it is essentially the same in both directions.
-- `G_rx`, `L_rx` and `N` belong to the receiving station: its antenna, its cable and the noise in its environment.
+- <span class="cs-math">P<sub>tx</sub></span> is my transmitter power: <span class="cs-math">25 W = 10 log₁₀(25 000 mW) ≈ 44 dBm</span>. 100 W is about 50 dBm, so the difference is 6 dB, which is one S-unit on a standard S-meter.
+- <span class="cs-math">L<sub>line</sub></span> is my feedline loss: from 0.2 to about 0.8 dB, depending on band and antenna (calculated above).
+- <span class="cs-math">G<sub>tx</sub></span> is the gain of my antenna in the direction and at the angle of the path, including all its losses. An antenna that loses 3 dB in a coil, the soil or a radiating coax costs as much as halving the transmitter power.
+- <span class="cs-math">L<sub>path</sub></span> is the path loss. On HF it is large and changes from minute to minute, but it is essentially the same in both directions.
+- <span class="cs-math">G<sub>rx</sub></span>, <span class="cs-math">L<sub>rx</sub></span> and <span class="cs-math">N</span> belong to the receiving station: its antenna, its cable and the noise in its environment.
 
-The only terms I control are `P_tx` (fixed at 25 W), `L_line`, `G_tx` and, for my own reception, my local noise. A station running 100 W into a lossy antenna with a radiating coax can easily lose more than the 6 dB I am missing. That is the whole logic behind putting effort into the antenna, the feedline and the return path rather than into power.
+The only terms I control are <span class="cs-math">P<sub>tx</sub></span> (fixed at 25 W), <span class="cs-math">L<sub>line</sub></span>, <span class="cs-math">G<sub>tx</sub></span> and, for my own reception, my local noise. A station running 100 W into a lossy antenna with a radiating coax can easily lose more than the 6 dB I am missing. That is the whole logic behind putting effort into the antenna, the feedline and the return path rather than into power.
 
 My FT8 reports give a hint. On the bands where I use the IronWave, the median report I received was −10 dB, and the median report I sent was −4 dB: a gap of about 6 dB. If the other stations typically run 100 W, that is roughly what the power difference alone predicts. It is a hint, not proof: I do not know their power, antennas or local noise.
 
@@ -862,7 +865,7 @@ My FT8 reports give a hint. On the bands where I use the IronWave, the median re
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>Why every watt counts, and where heat hides</strong></summary>
 
-Power lost as heat in any resistive part follows `P = I² × R`, using the RMS current. Doubling the current quadruples the heat. Loss hides in conductors and coils (skin effect raises their RF resistance), contacts and connectors, the dielectric of the cable, ferrites and transformers, and the soil around a vertical.
+Power lost as heat in any resistive part follows <span class="cs-math">P = I² × R</span>, using the RMS current. Doubling the current quadruples the heat. Loss hides in conductors and coils (skin effect raises their RF resistance), contacts and connectors, the dielectric of the cable, ferrites and transformers, and the soil around a vertical.
 
 At 25 W there is little to spare. One decibel of avoidable loss costs about a fifth of the power. That is why a clean, well-matched feed system matters more at low power.
 
@@ -918,9 +921,9 @@ That is also why I now note the solar flux and K index with remarkable contacts.
 
 What makes a signal readable is not its strength but its ratio to the noise in the same bandwidth:
 
-`SNR (dB) = P_signal (dBm) − P_noise (dBm)`
+<span class="cs-math">SNR (dB) = P<sub>signal</sub> (dBm) − P<sub>noise</sub> (dBm)</span>
 {: .cs-formula}
-The thermal noise floor of a perfect receiver is `kTB`: about −174 dBm per hertz at room temperature, or about −140 dBm in a 2.4 kHz SSB bandwidth. On HF, the external noise is far above that. ITU-R Recommendation P.372 describes man-made noise levels for different environments (city, residential, rural, quiet rural) next to atmospheric and galactic noise, with city environments being the noisiest. In a city, the local noise usually decides what you can hear, not the receiver.
+The thermal noise floor of a perfect receiver is <span class="cs-math">kTB</span>: about −174 dBm per hertz at room temperature, or about −140 dBm in a 2.4 kHz SSB bandwidth. On HF, the external noise is far above that. ITU-R Recommendation P.372 describes man-made noise levels for different environments (city, residential, rural, quiet rural) next to atmospheric and galactic noise, with city environments being the noisiest. In a city, the local noise usually decides what you can hear, not the receiver.
 
 That is why lowering the noise that reaches the receiver can matter more than a better receiver, and why the DC4KU example (about 18 dB less noise on 3.7 MHz with a defined return path and a choke) is so interesting. It also explains a trap: a lower noise floor is only an improvement if the wanted signal does not drop by the same amount. Antennas should be compared by SNR, not by S-meter readings.
 
@@ -931,9 +934,9 @@ That is why lowering the noise that reaches the receiver can matter more than a 
 
 HF skywave works because the ionosphere gradually bends radio waves back to earth. The highest frequency that a path supports is the maximum usable frequency (MUF). For a single hop it is roughly related to the critical frequency of the F2 layer by the secant law:
 
-`MUF ≈ foF2 / cos(φ)`
+<span class="cs-math">MUF ≈ foF2 / cos(φ)</span>
 {: .cs-formula}
-where `φ` is the angle of incidence on the layer. Longer hops, with more oblique incidence, support higher frequencies. At the low end, the lowest usable frequency is set by absorption in the D layer, which is present in daylight and becomes stronger at lower frequencies, roughly inversely with the square of the frequency. That is one reason why 80 m behaves so differently from 20 m during the day.
+where <span class="cs-math">φ</span> is the angle of incidence on the layer. Longer hops, with more oblique incidence, support higher frequencies. At the low end, the lowest usable frequency is set by absorption in the D layer, which is present in daylight and becomes stronger at lower frequencies, roughly inversely with the square of the frequency. That is one reason why 80 m behaves so differently from 20 m during the day.
 
 Space-weather indices give context. The solar flux (F10.7, measured at 2800 MHz) reflects solar activity. The K and Kp indices describe geomagnetic disturbance on a quasi-logarithmic scale from 0 to 9. A solar flare causes immediate extra absorption on the sunlit side. None of these numbers tells you that a specific path is open; real signals do.
 
@@ -944,7 +947,7 @@ Space-weather indices give context. The solar flux (F10.7, measured at 2800 MHz)
 
 For two linearly polarised antennas on a direct path, the coupled power depends on the angle between them:
 
-`coupling factor = cos²(Δψ)`
+<span class="cs-math">coupling factor = cos²(Δψ)</span>
 {: .cs-formula}
 At 45° that is half the power (3 dB), at 90° in theory nothing. That matters for direct VHF and UHF paths. On HF skywave, the ionosphere is a magnetised plasma that splits and rotates the wave, and multipath mixes several arrivals. The polarisation that arrives can change over time and differ from the transmitted one. That is why I do not use polarisation to explain the difference between my FT8 and SSB experiences. What remains are take-off angle, pattern, noise and timing, and comparing them properly requires measuring SNR on both antennas under the same conditions.
 
