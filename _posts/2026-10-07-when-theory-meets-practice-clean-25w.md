@@ -83,6 +83,7 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
 <p class="cs-lead">Why stations keep telling me I sound clean and loud, from a city garden on 25 W.</p>
 <p class="cs-byline">Kristof Cornelis, ON3VZ · Belgian radio amateur, Class C licence · about 40 minutes reading, with fold-out deep dives</p>
 <figure class="cs-fig cs-hero-img"><img src="/assets/images/clean-signal/cover-hero.jpg" alt="The radial plate at the base of the IronWave 6 with its 32 radials" loading="eager"></figure>
+
 </div>
 
 <div class="cs-glance">
@@ -154,6 +155,7 @@ The feedback I get comes in two flavours. Some stations say I sound clean, "like
 A third chain matters for every conversation, even though nobody compliments it: how well I hear the other station. That is decided by the noise that reaches my own receiver.
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig9-two-chains-light.svg" alt="Two compliments, two chains: what makes a signal clean, what makes it loud, and what decides how well I hear" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig9-two-chains-dark.svg" alt="Two compliments, two chains: what makes a signal clean, what makes it loud, and what decides how well I hear" loading="lazy"><figcaption>Two compliments, two chains: what makes a signal clean, what makes it loud, and what decides how well I hear</figcaption></figure>
+
 | Measure | Clean | Loud | Hearing others |
 |---|---|---|---|
 | Microphone, equalizer, calm ALC | ✓ | | |
@@ -181,6 +183,7 @@ My shack has six ways in and out, and I tried to treat each of them:
 - **The network cable**
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig1-six-doors-light.svg" alt="The shack as a room with six doors, each with its own filter or choke. Labels: coax, ground cable, mains, DC, device cables, network" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig1-six-doors-dark.svg" alt="The shack as a room with six doors, each with its own filter or choke. Labels: coax, ground cable, mains, DC, device cables, network" loading="lazy"><figcaption>The shack as a room with six doors, each with its own filter or choke. Labels: coax, ground cable, mains, DC, device cables, network</figcaption></figure>
+
 The goal works both ways. On receive, I want to keep local noise from travelling into the shack along these paths. On transmit, I want my own RF to stay in the antenna instead of coming back into the shack, where it could end up in the microphone or audio and travel out again along other cables. The principle that makes this two-way approach possible is reciprocity: a path that couples energy out also couples energy in.
 
 <aside class="cs-why" markdown="1">
@@ -199,6 +202,7 @@ The RF.Guru IronWave 6 is a vertical with a radiator of about 6 m and a 4:1 tran
 Underneath it lie 32 radials, buried about 1 cm in clay soil. That soil is normally moist, but during the very hot and dry summer it was bone dry, and the antenna seemed to struggle.
 
 <figure class="cs-fig cs-photo"><img src="/assets/images/clean-signal/cs-ironwave-garden.jpg" alt="The IronWave 6 standing free in the middle of the garden, with its ballast base and the radials now buried in the lawn" loading="lazy"><figcaption>The IronWave 6 standing free in the middle of the garden, with its ballast base and the radials now buried in the lawn</figcaption></figure>
+
 I use the IronWave on 20, 15 and 10 m, and on 30 m with extra tuning.
 
 ### The HyEndFed wire
@@ -208,6 +212,7 @@ The HyEndFed 5 Band Black Clamp MK3 is a 23 m end-fed wire for 80, 40, 20, 15 an
 Its feedpoint sits about 9 m above the ground: the flat roof is about 8.5 m high, and a small tripod mast of roughly 1 m carries the feedpoint. From there the wire slopes down over the garden to a pole of about 2 m. At the feedpoint there is a separate counterpoise: a horizontal wire of roughly 4.2 to 4.4 m, about 1 m above the roof, deliberately routed away from the coax.
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig2-antennas-side-view-light.svg" alt="Side view of the house, the flat roof with the HyEndFed feedpoint and counterpoise, the sloping wire to a 2 m pole, and the IronWave with radials in the middle of the garden" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig2-antennas-side-view-dark.svg" alt="Side view of the house, the flat roof with the HyEndFed feedpoint and counterpoise, the sloping wire to a 2 m pole, and the IronWave with radials in the middle of the garden" loading="lazy"><figcaption>Side view of the house, the flat roof with the HyEndFed feedpoint and counterpoise, the sloping wire to a 2 m pole, and the IronWave with radials in the middle of the garden</figcaption></figure>
+
 | Band | IronWave 6 | HyEndFed |
 |---|---|---|
 | 80 m | no | yes, with a loading coil |
@@ -341,6 +346,7 @@ A coaxial cable can carry two very different currents at the same time:
 I picture it as a tube inside a tube. The inner tube carries the signal. The outer tube should carry nothing. When current flows on the outer tube, the coax becomes part of the antenna.
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig3-coax-two-paths-light.svg" alt="Coax as an inner tube and an outer tube. Left: without a choke, current also flows along the outside to the shack. Right: with a choke, the outer current is blocked and the signal stays inside" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig3-coax-two-paths-dark.svg" alt="Coax as an inner tube and an outer tube. Left: without a choke, current also flows along the outside to the shack. Right: with a choke, the outer current is blocked and the signal stays inside" loading="lazy"><figcaption>Coax as an inner tube and an outer tube. Left: without a choke, current also flows along the outside to the shack. Right: with a choke, the outer current is blocked and the signal stays inside</figcaption></figure>
+
 That outside current is usually called common-mode current. On transmit, it can make the coax radiate, bring RF into the shack and distort the antenna pattern. On receive, the same path can pick up local noise from the house and the neighbourhood and carry it to the radio.
 
 <details class="cs-deep" markdown="1">
@@ -429,13 +435,17 @@ A common-mode choke places a high impedance in the path of the outside current, 
 At the base of the IronWave, the RF.Guru 4:1 unun (labelled for the IronWave 6, 20 to 6 m with 40 m as an extra) sits on the mast, the 32 radials are bolted to a stainless radial plate, and the first choke follows directly on the ballast base: an RF.Guru quad-core 1:1 line isolator for 40 to 10 m.
 
 <figure class="cs-fig cs-photo"><img src="/assets/images/clean-signal/cs-ironwave-base.jpg" alt="The base of the IronWave: the 4:1 unun on the mast, the radial plate with the 32 radials, and the quad-core line isolator directly behind it on the ballast base" loading="lazy"><figcaption>The base of the IronWave: the 4:1 unun on the mast, the radial plate with the 32 radials, and the quad-core line isolator directly behind it on the ballast base</figcaption></figure>
+
 Both lines meet at the antenna switch, so the pigtail choke on the switch output serves whichever antenna is selected. All coax is Extraflex Bury 7, a 7.3 mm, 50 Ω cable.
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig4-signal-chain-light.svg" alt="The signal chain for both antennas, with every choke and ferrite marked, plus the antenna cabinet and the antenna switch" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig4-signal-chain-dark.svg" alt="The signal chain for both antennas, with every choke and ferrite marked, plus the antenna cabinet and the antenna switch" loading="lazy"><figcaption>The signal chain for both antennas, with every choke and ferrite marked, plus the antenna cabinet and the antenna switch</figcaption></figure>
+
 <figure class="cs-fig cs-photo"><img src="/assets/images/clean-signal/cs-antenna-cabinet.jpg" alt="The outdoor antenna cabinet where both feedlines enter, with the bonded panel inside and a choke on the feedline next to the cabinet" loading="lazy"><figcaption>The outdoor antenna cabinet where both feedlines enter, with the bonded panel inside and a choke on the feedline next to the cabinet</figcaption></figure>
+
 The pigtail choke on the switch output is an RF.Guru 1:1 line isolator for 1.5 to 30 MHz. Its label states a common-mode impedance above 2 kΩ across that range and an insertion loss below 0.3 dB.
 
 <figure class="cs-fig cs-photo"><img src="/assets/images/clean-signal/cs-line-isolator-switch.jpg" alt="The RF.Guru line isolator on the output of the antenna switch, the last choke before the radio" loading="lazy"><figcaption>The RF.Guru line isolator on the output of the antenna switch, the last choke before the radio</figcaption></figure>
+
 ### Why so many?
 
 Not because more is always better. Every place where the outside current could cross a boundary deserves attention:
@@ -513,6 +523,7 @@ In my station these are clearly separate. The counterpoise of the HyEndFed is an
 The ground cable from the antenna cabinet into the shack runs through heavy snap-on ferrites with several turns, and the line from the busbar to the earthing terminals is treated the same way. A long cable is not invisible to RF: it can act as an antenna or a noise path itself. The ferrites only affect RF current on that cable. The protective connection stays fully intact, and the ferrites have no safety function at all.
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig5-four-grounds-light.svg" alt="The four meanings of &quot;ground&quot; side by side, and where each one appears in my station" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig5-four-grounds-dark.svg" alt="The four meanings of &quot;ground&quot; side by side, and where each one appears in my station" loading="lazy"><figcaption>The four meanings of &quot;ground&quot; side by side, and where each one appears in my station</figcaption></figure>
+
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>A long wire at RF, and what a ferrite adds</strong></summary>
 
@@ -553,6 +564,7 @@ The shack has its own sub-board. All equipment in the shack is powered from that
 On the DC side of the solar installation, the strings from the panels to the inverter have snap-on ferrites. If that ever turns out not to be enough, they can be extended with dedicated Schaffner DC filters, but only if needed. I prefer to add measures when there is a reason, not by default.
 
 <figure class="cs-fig cs-photo-wide"><img src="/assets/images/clean-signal/cs-schaffner-shack.jpg" alt="One of the two Schaffner FN2410H-60-34 filters, in its own enclosure next to the shack sub-board" loading="lazy"><figcaption>One of the two Schaffner FN2410H-60-34 filters, in its own enclosure next to the shack sub-board</figcaption></figure>
+
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>Conducted noise, and what a mains filter does</strong></summary>
 
@@ -598,6 +610,7 @@ I chose a Mean Well 26 A, 13.8 V industrial power supply, followed by an RF.Guru
 Every cable between devices is a conductor that RF can use, so HDMI and other device cables in the shack have ferrites. The network cable enters the shack as a shielded cable. A shield only helps if it is properly connected, otherwise it can carry current itself.
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig6-inside-the-shack-light.svg" alt="Inside the shack: one filtered circuit, star-wired sockets, one busbar, ferrites on device cables, shielded network cable" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig6-inside-the-shack-dark.svg" alt="Inside the shack: one filtered circuit, star-wired sockets, one busbar, ferrites on device cables, shielded network cable" loading="lazy"><figcaption>Inside the shack: one filtered circuit, star-wired sockets, one busbar, ferrites on device cables, shielded network cable</figcaption></figure>
+
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>Why switching supplies make HF noise</strong></summary>
 
@@ -641,8 +654,11 @@ These are my SSB transmit settings:
 In words: a slight lift in both bass and treble, with more emphasis on the treble, a full-width transmit passband, no compression, and a moderate microphone gain that keeps the ALC calm.
 
 <figure class="cs-fig cs-photo-wide"><img src="/assets/images/clean-signal/cs-tx-eq.jpg" alt="The SSB transmit equalizer: TX bass +1, TX treble +2, and the wide and mid transmit bandwidth definitions" loading="lazy"><figcaption>The SSB transmit equalizer: TX bass +1, TX treble +2, and the wide and mid transmit bandwidth definitions</figcaption></figure>
+
 <figure class="cs-fig cs-photo-wide"><img src="/assets/images/clean-signal/cs-function-screen.jpg" alt="The function screen: speech compressor off and transmit bandwidth set to wide" loading="lazy"><figcaption>The function screen: speech compressor off and transmit bandwidth set to wide</figcaption></figure>
+
 <figure class="cs-fig cs-photo"><img src="/assets/images/clean-signal/cs-heil-proset.jpg" alt="The Heil Pro Set Elite iC headset" loading="lazy"><figcaption>The Heil Pro Set Elite iC headset</figcaption></figure>
+
 On receive I use the radio itself or AetherSDR. AetherSDR is used for receive only. It has no influence on how I sound to others: the audio other stations hear comes straight from the radio.
 
 I received the same kind of compliments with both microphones. If the microphone made the big difference, I would expect to hear that difference. The things that stayed the same are the radio, the antennas, the coax with its chokes, the filtered power and the tidy shack. That does not prove that the audio settings do not matter. It does suggest that they are not the main explanation.
@@ -692,6 +708,7 @@ On most bands I hardly need to tune. That is pleasant, but I learned not to read
 A dummy load answers the second question perfectly and the third very badly: it shows 1:1 SWR and radiates almost nothing.
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig7-reference-planes-light.svg" alt="The station chain with its reference planes (antenna, transformer, end of the coax, radio), and the three questions next to it" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig7-reference-planes-dark.svg" alt="The station chain with its reference planes (antenna, transformer, end of the coax, radio), and the three questions next to it" loading="lazy"><figcaption>The station chain with its reference planes (antenna, transformer, end of the coax, radio), and the three questions next to it</figcaption></figure>
+
 <details class="cs-deep" markdown="1">
 <summary><span class="cs-chip">Deep dive</span> <strong>Reflection, SWR, return loss and mismatch loss</strong></summary>
 
@@ -735,6 +752,7 @@ Resonance and lowest SWR do not have to occur at the same frequency either. A re
 I measured the HyEndFed with my NanoVNA from 1 to 30 MHz. The measurement point is important: I measured just before the antenna switch, the easiest access point near the radio, so after about 15 m of coax, three chokes and the snap-on ferrites. The NanoVNA was calibrated directly at its own port, and a short pigtail connected it to the coax, so that pigtail sits outside the calibration and adds a small error. This is therefore the SWR as the station sees it, not the SWR at the antenna.
 
 <figure class="cs-fig cs-photo-wide"><img src="/assets/images/clean-signal/cs-hyendfed-sweep.png" alt="SWR sweep of the HyEndFed from 1 to 30 MHz, measured just before the antenna switch; grey bands are the amateur bands" loading="lazy"><figcaption>SWR sweep of the HyEndFed from 1 to 30 MHz, measured just before the antenna switch; grey bands are the amateur bands</figcaption></figure>
+
 | Band | Lowest SWR, read from the plot | Remark |
 |---|---|---|
 | 160 m | about 2.2 near 1.8 to 1.9 MHz | indicative only: not available to me with my Class C licence |
@@ -936,6 +954,7 @@ Here is the whole station in one view. Every row is a layer I treated on purpose
 | Tuning | Low SWR on most bands | Less loss in the line | Not applicable |
 
 <figure class="cs-fig cs-diagram"><img class="cs-only-light" src="/assets/images/clean-signal/fig8-layers-light.svg" alt="The whole station as layers, from antenna to radio, with each layer from the table marked" loading="lazy"><img class="cs-only-dark" src="/assets/images/clean-signal/fig8-layers-dark.svg" alt="The whole station as layers, from antenna to radio, with each layer from the table marked" loading="lazy"><figcaption>The whole station as layers, from antenna to radio, with each layer from the table marked</figcaption></figure>
+
 The 80 m observation fits this picture. The shack layers are the same on every band, but on 80 m the antenna layer is weaker, and so is my signal. A chain is only as strong as its weakest layer.
 
 ### What each layer protects against
