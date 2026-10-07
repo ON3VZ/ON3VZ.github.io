@@ -79,6 +79,10 @@ html[data-mode="dark"] .cs-article .cs-only-light { display: none; }
 .cs-math { font-family: 'Cambria Math', 'STIX Two Math', 'Latin Modern Math', Cambria, Georgia, serif; font-size: 1.05em; color: var(--c-text); white-space: normal; }
 .cs-math sub, .cs-math sup { font-size: .72em; }
 .cs-formula .cs-math { display: inline-block; font-size: 1.15rem; padding: .45rem 1rem; border-radius: 8px; background: var(--c-surface-2); border: 1px solid var(--c-border); }
+.cs-preview { margin: 1.6rem 0 1.8rem; border: 1px solid var(--c-border); border-top: 3px solid var(--cs-warm); border-radius: 12px; padding: 1rem 1.2rem .4rem; background: var(--c-surface-2); }
+.cs-preview-label { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--cs-warm) !important; margin: 0 0 .3rem !important; }
+.cs-preview-note { font-size: .92rem; color: var(--c-text-2) !important; margin: 0 0 .8rem !important; }
+.cs-preview table { font-size: .84rem !important; margin-top: 0 !important; }
 </style>
 <div class="cs-article" markdown="1">
 <div class="cs-hero">
@@ -130,6 +134,29 @@ One thing I want to say up front: nothing in this station happened by accident. 
 Before you go further, one thing matters more than anything else in this article: my station is the result of an integrated, multidisciplinary approach. I am convinced that no single component, setting or trick explains on its own how it sounds. The result comes from many domains working together, and the article should be read that way. These are the domains it covers:
 
 <div class="cs-domains"><div class="cs-domain"><span>01</span><strong>Antenna design and placement</strong><p>the choice of antennas and where they stand.</p></div><div class="cs-domain"><span>02</span><strong>Return paths and grounding</strong><p>radials, a counterpoise, bonding and what &quot;ground&quot; really means.</p></div><div class="cs-domain"><span>03</span><strong>Transmission lines</strong><p>the coax, its losses and how it transforms impedance.</p></div><div class="cs-domain"><span>04</span><strong>Common-mode control</strong><p>chokes and ferrites along every cable that matters.</p></div><div class="cs-domain"><span>05</span><strong>Electrical installation</strong><p>a separate, filtered circuit for the shack, a filter on the solar inverter and ferrites on its DC strings.</p></div><div class="cs-domain"><span>06</span><strong>DC power</strong><p>a quality power supply followed by a DC filter.</p></div><div class="cs-domain"><span>07</span><strong>Station wiring</strong><p>a busbar, star-wired sockets, ferrites on device cables and a shielded network cable.</p></div><div class="cs-domain"><span>08</span><strong>Audio and transmitter settings</strong><p>microphones, equalizer and a calm ALC.</p></div><div class="cs-domain"><span>09</span><strong>Matching and losses</strong><p>what SWR does and does not tell you, and where power can be lost.</p></div><div class="cs-domain"><span>10</span><strong>Propagation and noise</strong><p>how to read reports, and why signal-to-noise ratio is what counts.</p></div></div>
+
+<div class="cs-preview">
+<p class="cs-preview-label">Preview of the solution: the whole setup at a glance</p>
+<p class="cs-preview-note">Every row is a layer I treated on purpose. Chapter 13 explains how they work together; the chapters before it explain each layer in depth.</p>
+<table>
+<thead><tr><th>Layer</th><th>What I did</th><th>On transmit it may</th><th>On receive it may</th></tr></thead>
+<tbody>
+<tr><td>Antenna choice and position</td><td>Two free-standing antennas, away from structures</td><td>Radiate where intended, with less coupling into the house</td><td>Pick up less local noise</td></tr>
+<tr><td>Defined return paths</td><td>32 radials, a counterpoise routed away from the coax</td><td>Keep antenna current where it belongs</td><td>Keep the coax out of the antenna</td></tr>
+<tr><td>Chokes along the coax</td><td>At the feedpoint, along the line, before the cabinet, after the switch</td><td>Keep RF off the shield and out of the shack</td><td>Block noise travelling on the shield</td></tr>
+<tr><td>Ferrites on the ground cable</td><td>Heavy snap-on ferrites with several turns</td><td>Limit RF on a long conductor</td><td>Close a noise path into the shack</td></tr>
+<tr><td>Low-loss coax</td><td>Extraflex Bury 7, with calculated losses</td><td>Bring more of the 25 W to the antenna</td><td>Lose less of weak signals</td></tr>
+<tr><td>Separate filtered circuit</td><td>Own sub-board with star-wired sockets</td><td>Limit RF onto the house wiring</td><td>Reduce noise arriving from the mains</td></tr>
+<tr><td>Solar installation</td><td>Schaffner filter on the inverter AC side, ferrites on the DC strings</td><td>Reduce RF reaching the house network</td><td>Reduce inverter noise at its source</td></tr>
+<tr><td>Shack mains filter</td><td>Second Schaffner filter at the shack sub-board</td><td>Keep station RF off the house wiring</td><td>Reduce mains-borne noise entering the shack</td></tr>
+<tr><td>One busbar</td><td>All equipment bonded at one point</td><td>Avoid loops that carry RF</td><td>Avoid loops that collect noise</td></tr>
+<tr><td>Power supply and DC filter</td><td>Mean Well supply plus RF.Guru DC filter</td><td>Stable, clean DC under load</td><td>Less switching noise</td></tr>
+<tr><td>Device and network cables</td><td>Ferrites, a shielded network cable</td><td>Keep RF out of USB and audio leads</td><td>Less noise from computers and network</td></tr>
+<tr><td>Audio chain</td><td>Calm ALC, treble emphasised over bass, no compression, wide passband</td><td>Clean, linear SSB</td><td>Not applicable</td></tr>
+<tr><td>Tuning</td><td>Low SWR on most bands</td><td>Less loss in the line</td><td>Not applicable</td></tr>
+</tbody>
+</table>
+</div>
 
 Each chapter looks at one or more of these domains in depth. Chapter 13 brings them back together in one overview. Keep in mind while reading that each layer on its own is modest; it is the combination that I believe makes the difference.
 
