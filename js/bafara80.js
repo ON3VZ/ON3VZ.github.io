@@ -15,7 +15,7 @@ const B80 = {
   endDate: '2026-10-31',
 };
 
-const st = { ref: null, res: null, bands: [], worked: new Map(), band: 'all', view: 'all', q: '', ended: false, wired: false, alertsWired: false };
+const st = { ref: null, res: null, dips: {}, bands: [], worked: new Map(), band: 'all', view: 'all', q: '', ended: false, wired: false, alertsWired: false };
 
 document.addEventListener('DOMContentLoaded', load);
 window.B80_load = load;   // lets the page re-read the data
@@ -25,8 +25,9 @@ function load() {
   return Promise.all([
     fetch(B80.base + 'stations.json' + ts).then(r => r.json()),
     fetch(B80.base + 'result.json' + ts).then(r => (r.ok ? r.json() : { worked: [], score: {}, frozen: false })),
-  ]).then(([ref, res]) => {
-    st.ref = ref; st.res = res; st.worked = new Map();
+    fetch(B80.base + 'diplomas.json' + ts).then(r => (r.ok ? r.json() : {})).catch(() => ({})),
+  ]).then(([ref, res, dips]) => {
+    st.ref = ref; st.res = res; st.dips = dips || {}; st.worked = new Map();
     const today = new Date().toISOString().slice(0, 10);
     st.ended = !!res.frozen || today > B80.endDate;
     st.bands = B80.bands.slice();
@@ -85,7 +86,7 @@ function setPressed(box, v) {
 
 /* ── RENDER ── */
 function renderAll() {
-  renderSummary(); renderRunway(); renderMatrix(); renderTargets(); renderAlerts(); renderLog();
+  renderSummary(); renderRunway(); renderDiplomas(); renderMatrix(); renderTargets(); renderAlerts(); renderLog();
 }
 
 function totals() {
@@ -138,6 +139,23 @@ function renderRunway() {
   h += '<div class="b80-run-track"><div class="b80-run-fill" style="width:' + pct + '%"></div></div>' +
        '<svg class="b80-run-jet" style="left:' + pct + '%" aria-hidden="true"><use href="#b80-jet"/></svg></div>';
   document.getElementById('b80Run').innerHTML = h;
+}
+
+/* earned certificates: one card per grade, image when I have the certificate */
+function renderDiplomas() {
+  const t = totals();
+  document.getElementById('b80Dips').innerHTML = st.ref.grades.map(g => {
+    const d = st.dips[g.name], reached = t.points >= g.points;
+    if (d) {
+      return '<a class="b80-dip b80-dip--have" href="' + d.image + '" target="_blank" rel="noopener">' +
+        '<img src="' + d.image + '" alt="' + (d.alt || (g.name + ' certificate')) + '" loading="lazy">' +
+        '<span class="b80-dip-cap"><b>' + g.name + '</b><span>Issued ' + d.date + '</span></span></a>';
+    }
+    return '<div class="b80-dip b80-dip--empty">' +
+      '<svg class="b80-dip-wings" aria-hidden="true"><use href="#b80-wings"/></svg>' +
+      '<span class="b80-dip-cap"><b>' + g.name + '</b><span>' +
+      (reached ? 'Reached, certificate follows' : g.points + ' points needed') + '</span></span></div>';
+  }).join('');
 }
 
 function renderMatrix() {
