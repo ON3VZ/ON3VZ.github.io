@@ -289,5 +289,20 @@
     "mode": "FT8",
     "freq": "7.074000",
     "rst": "-7"
+  },
+  {
+    "id": "a92ae-2026-07-29",
+    "image": "/assets/images/qsl/a92ae-2026-07-29.jpg",
+    "fromCall": "A92AE",
+    "fromName": "Ali Ebrahim",
+    "qth": "Riffa, LL56GD",
+    "country": "Bahrain",
+    "continent": "Asia",
+    "date": "2026-07-29",
+    "time": "22:35z",
+    "band": "20m",
+    "mode": "FT8",
+    "freq": "14.0753",
+    "rst": "-24"
   }
 ]
