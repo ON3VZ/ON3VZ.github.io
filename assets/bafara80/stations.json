@@ -1,0 +1,42 @@
+{
+  "event": "OR80AF",
+  "points": {
+    "HQ":     {"CW": 10, "PHONE": 10, "DIGI": 5},
+    "AIRBASE":{"CW": 5,  "PHONE": 5,  "DIGI": 3},
+    "MEMBER": {"CW": 2,  "PHONE": 2,  "DIGI": 1}
+  },
+  "grades": [
+    {"name": "Solo", "points": 25, "stars": 0},
+    {"name": "Wingman", "points": 50, "stars": 1},
+    {"name": "Leader", "points": 75, "stars": 2},
+    {"name": "Instructor", "points": 100, "stars": 3}
+  ],
+  "stations": [
+    {"call": "OR80AF", "cat": "HQ"},
+    {"call": "ON4BAF", "cat": "AIRBASE"}, {"call": "ON4BBE", "cat": "AIRBASE"},
+    {"call": "ON4BFS", "cat": "AIRBASE"}, {"call": "ON6BK", "cat": "AIRBASE"},
+    {"call": "ON2MAB", "cat": "MEMBER"},
+    {"call": "ON3ANY", "cat": "MEMBER"}, {"call": "ON3JOL", "cat": "MEMBER"},
+    {"call": "ON3PLE", "cat": "MEMBER"}, {"call": "ON3SOW", "cat": "MEMBER"},
+    {"call": "ON4AHQ", "cat": "MEMBER"}, {"call": "ON4ALV", "cat": "MEMBER"},
+    {"call": "ON4ANE", "cat": "MEMBER"}, {"call": "ON4ATC", "cat": "MEMBER"},
+    {"call": "ON4BZ", "cat": "MEMBER"}, {"call": "ON4CFC", "cat": "MEMBER"},
+    {"call": "ON4CMO", "cat": "MEMBER"}, {"call": "ON4DBB", "cat": "MEMBER"},
+    {"call": "ON4KZF", "cat": "MEMBER"}, {"call": "ON4LN", "cat": "MEMBER"},
+    {"call": "ON4LTW", "cat": "MEMBER"}, {"call": "ON4NY", "cat": "MEMBER"},
+    {"call": "ON4RLI", "cat": "MEMBER"},
+    {"call": "ON5AB", "cat": "MEMBER"}, {"call": "ON5ARE", "cat": "MEMBER"},
+    {"call": "ON5BWE", "cat": "MEMBER"}, {"call": "ON5EN", "cat": "MEMBER"},
+    {"call": "ON5QP", "cat": "MEMBER"},
+    {"call": "ON6CQ", "cat": "MEMBER"}, {"call": "ON6KL", "cat": "MEMBER"},
+    {"call": "ON7AMI", "cat": "MEMBER"}, {"call": "ON7BPS", "cat": "MEMBER"},
+    {"call": "ON7HO", "cat": "MEMBER"}, {"call": "ON7KC", "cat": "MEMBER"},
+    {"call": "ON7MV", "cat": "MEMBER"}, {"call": "ON7NW", "cat": "MEMBER"},
+    {"call": "ON7VZ", "cat": "MEMBER"}, {"call": "ON7WZ", "cat": "MEMBER"},
+    {"call": "ON7YC", "cat": "MEMBER"}, {"call": "ON7YZ", "cat": "MEMBER"},
+    {"call": "ON7ZB", "cat": "MEMBER"},
+    {"call": "ON8DTW", "cat": "MEMBER"}, {"call": "ON8JLR", "cat": "MEMBER"},
+    {"call": "ON8KEV", "cat": "MEMBER"}, {"call": "ON8LX", "cat": "MEMBER"},
+    {"call": "OS7P", "cat": "MEMBER"}
+  ]
+}

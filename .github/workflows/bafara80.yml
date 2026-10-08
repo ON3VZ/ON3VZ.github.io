@@ -1,0 +1,42 @@
+name: BAFARA OR80AF result
+
+# Builds assets/bafara80/result.json from the logbook ADIF files.
+# Only QSOs dated 2026-10-01 to 2026-10-31 are matched. The last matching
+# run may happen on 2026-11-01 (UTC). From 2026-11-02 the script only marks
+# the result as frozen and never reads an ADIF again.
+# Added 2026-10-08. Remove: delete this file (and the other bafara80 files).
+
+on:
+  push:
+    paths:
+      - 'assets/data/*.adi'
+      - 'assets/bafara80/stations.json'
+      - 'scripts/bafara80_build.py'
+  schedule:
+    - cron: '50 23 * 10,11 *'   # daily, 23:50 UTC, October and November only
+  workflow_dispatch:
+
+concurrency:
+  group: bafara80
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build result
+        run: python3 scripts/bafara80_build.py
+
+      - name: Commit result
+        run: |
+          git config user.email "on3vz@uba.be"
+          git config user.name "ON3VZ"
+          git add assets/bafara80/result.json
+          git diff --staged --quiet || (git commit -m "chore: update BAFARA OR80AF result [skip ci]" && git pull --rebase origin main && git push)

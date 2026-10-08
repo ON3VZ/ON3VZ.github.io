@@ -1,0 +1,47 @@
+---
+layout: default
+title: ON3VZ Trackers
+permalink: /trackers/
+---
+<!-- TRACKERS 2026-10-08: overview of live trackers. Revert by deleting this file and the Trackers menu lines in _layouts/default.html -->
+<style>
+.trk-list { padding: 4rem 0 5rem; }
+.trk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.trk-status { font-family: var(--f-mono); font-size: 0.7rem; color: var(--c-primary); }
+.trk-status--end { color: var(--c-text-3); }
+</style>
+<section class="trk-list">
+  <div class="container">
+    <div class="section-label">Trackers</div>
+    <h1 class="section-title">Trackers</h1>
+    <p class="section-sub">Live overviews of the awards and activities I am working on, built from my own log.</p>
+
+    <div class="trk-grid">
+      <a class="blog-card" href="/trackers/or80af/" style="text-decoration:none;">
+        <div class="blog-card__inner">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Award</span>
+            <span class="trk-status" id="trkOr80afStatus">1 to 31 Oct 2026</span>
+          </div>
+          <div class="blog-card__title">BAFARA Award OR80AF</div>
+          <p class="blog-card__excerpt">80 years of the Belgian Air Force. Which stations, bands and modes I have worked, what is still missing, and how far I am towards the next grade.</p>
+        </div>
+        <div class="blog-card__footer">
+          <span class="read-more">Open tracker →</span>
+          <span style="font-family:var(--f-mono);font-size:0.6rem;color:var(--c-text-3);" id="trkOr80afScore"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  // small live summary on the card, silently skipped if the data is not reachable
+  fetch('/assets/bafara80/result.json?t=' + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!d || !d.score) return;
+    document.getElementById('trkOr80afScore').textContent = d.score.points + ' points' + (d.score.grade ? ', ' + d.score.grade : '');
+    var ended = d.frozen || new Date().toISOString().slice(0, 10) > '2026-10-31';
+    if (ended) { var s = document.getElementById('trkOr80afStatus'); s.textContent = 'Ended, final result'; s.className = 'trk-status trk-status--end'; }
+  }).catch(function () {});
+})();
+</script>

@@ -1,0 +1,41 @@
+{
+  "event": "OR80AF",
+  "window": {
+    "start": "2026-10-01",
+    "end": "2026-10-31"
+  },
+  "generated": "2026-10-08T06:04Z",
+  "frozen": false,
+  "score": {
+    "points": 18,
+    "combos": 4,
+    "stations": 4,
+    "grade": null
+  },
+  "worked": [
+    {
+      "call": "ON4BFS",
+      "band": "40m",
+      "mode": "PHONE",
+      "date": "2026-10-04"
+    },
+    {
+      "call": "ON8LX",
+      "band": "80m",
+      "mode": "PHONE",
+      "date": "2026-10-04"
+    },
+    {
+      "call": "OR80AF",
+      "band": "80m",
+      "mode": "PHONE",
+      "date": "2026-10-05"
+    },
+    {
+      "call": "OS7P",
+      "band": "40m",
+      "mode": "DIGI",
+      "date": "2026-10-05"
+    }
+  ]
+}
