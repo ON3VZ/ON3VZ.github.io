@@ -39,4 +39,12 @@ jobs:
           git config user.email "on3vz@uba.be"
           git config user.name "ON3VZ"
           git add assets/bafara80/result.json
-          git diff --staged --quiet || (git commit -m "chore: update BAFARA OR80AF result [skip ci]" && git pull --rebase origin main && git push)
+          if git diff --staged --quiet; then echo "No change"; exit 0; fi
+          git commit -m "chore: update BAFARA OR80AF result [skip ci]"
+          # another workflow (manifest update) may push at the same moment, so retry
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then exit 0; fi
+            echo "Push attempt $i failed, retrying"
+            sleep $((i * 4))
+          done
+          exit 1

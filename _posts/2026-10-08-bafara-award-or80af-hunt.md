@@ -6,6 +6,11 @@ excerpt: "The Belgian Air Force turns 80 and BAFARA celebrates with an award hun
 ---
 <!-- BAFARA-OR80AF 2026-10-08: short story post, the live tracker is on /trackers/or80af/. Revert by deleting this file (see the comment in tracker-or80af.html for the full list) -->
 
+<style>
+/* OR80AF post: darker title row on the points table, same navy as the tracker (this post only) */
+html[data-theme="fresh"] .post-body table.b80-post-table thead th { background: var(--fx-head-1, #0B1E30); color: var(--fx-head-text, #DCE8F3); border-bottom: 1px solid rgba(255,255,255,.12); }
+</style>
+
 The Belgian Air Force is celebrating its 80th anniversary, and the Belgian Air Force Amateur Radio Association (BAFARA) marks it with the BAFARA Award OR80AF, running from 1 to 31 October 2026. The activity was forwarded to us at my radio club WLD for the award hunters among us, and with my long-standing love for aviation I was hooked straight away.
 
 ## How the scoring works
@@ -17,6 +22,7 @@ A contact counts once per station, band and mode, whatever the date. A second co
 | OR80AF (HQ) | 10 | 10 | 5 |
 | Air base station | 5 | 5 | 3 |
 | Member station | 2 | 2 | 1 |
+{: .b80-post-table}
 
 The grades are **Solo** at 25 points, **Wingman** at 50, **Leader** at 75 and **Instructor** at 100. Stations upload their logs after the fact, so contacts only show up in the official standings a day or a few days later. The point scale was still waiting for committee approval when I wrote this, so it may change.
 

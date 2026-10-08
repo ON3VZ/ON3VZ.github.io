@@ -84,11 +84,16 @@ def station_of(call, known):
 
 
 def load_qsos():
+    # Every .adi in the folder counts. The manifest list is only used as an extra source:
+    # it is rewritten by another workflow at the same moment and may lag behind an upload.
+    names = {os.path.basename(p) for p in glob.glob(os.path.join(DATA_DIR, '*.adi'))}
     manifest = os.path.join(DATA_DIR, 'manifest.json')
     if os.path.exists(manifest):
-        names = json.load(open(manifest))['files']
-    else:
-        names = [os.path.basename(p) for p in glob.glob(os.path.join(DATA_DIR, '*.adi'))]
+        try:
+            names |= set(json.load(open(manifest))['files'])
+        except (ValueError, KeyError):
+            pass
+    names = sorted(names)
     seen, qsos = set(), []
     for name in names:
         path = os.path.join(DATA_DIR, name)

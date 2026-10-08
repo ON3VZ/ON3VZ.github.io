@@ -4,13 +4,13 @@
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
-  "generated": "2026-10-08T06:32Z",
+  "generated": "2026-10-08T06:46Z",
   "frozen": false,
   "score": {
-    "points": 18,
-    "combos": 4,
-    "stations": 4,
-    "grade": null
+    "points": 33,
+    "combos": 10,
+    "stations": 5,
+    "grade": "Solo"
   },
   "worked": [
     {
@@ -36,6 +36,42 @@
       "band": "40m",
       "mode": "DIGI",
       "date": "2026-10-05"
+    },
+    {
+      "call": "ON8LX",
+      "band": "80m",
+      "mode": "DIGI",
+      "date": "2026-10-06"
+    },
+    {
+      "call": "ON4CFC",
+      "band": "40m",
+      "mode": "DIGI",
+      "date": "2026-10-07"
+    },
+    {
+      "call": "ON8LX",
+      "band": "40m",
+      "mode": "DIGI",
+      "date": "2026-10-07"
+    },
+    {
+      "call": "ON8LX",
+      "band": "40m",
+      "mode": "PHONE",
+      "date": "2026-10-07"
+    },
+    {
+      "call": "OR80AF",
+      "band": "40m",
+      "mode": "DIGI",
+      "date": "2026-10-07"
+    },
+    {
+      "call": "OR80AF",
+      "band": "80m",
+      "mode": "DIGI",
+      "date": "2026-10-07"
     }
   ]
 }
