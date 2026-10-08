@@ -4,11 +4,11 @@
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
-  "generated": "2026-10-08T06:46Z",
+  "generated": "2026-10-08T18:41Z",
   "frozen": false,
   "score": {
-    "points": 33,
-    "combos": 10,
+    "points": 43,
+    "combos": 11,
     "stations": 5,
     "grade": "Solo"
   },
@@ -72,6 +72,12 @@
       "band": "80m",
       "mode": "DIGI",
       "date": "2026-10-07"
+    },
+    {
+      "call": "OR80AF",
+      "band": "40m",
+      "mode": "PHONE",
+      "date": "2026-10-08"
     }
   ]
 }
