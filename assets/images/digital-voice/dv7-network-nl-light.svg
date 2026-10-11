@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-label="Hoe digitale spraak verder reist dan één repeater: toestel naar hotspot of repeater, via het internet naar een reflector, talkgroup of room, en elders weer de lucht in" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>Hoe digitale spraak verder reist dan één repeater: toestel naar hotspot of repeater, via het internet naar een reflector, talkgroup of room, en elders weer de lucht in</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3A546B"/></marker><marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E6BA8"/></marker></defs>
+<rect x="1" y="1" width="998" height="418" rx="16" fill="#FFFFFF" stroke="#C9D5DF" stroke-width="2"/>
+<text x="500" y="40" font-size="20" fill="#0B1E30" text-anchor="middle" font-weight="600">Van je handheld naar de andere kant van de wereld</text>
+<rect x="40" y="90" width="150" height="70" rx="10" fill="#F2F6F9" stroke="#B8791A" stroke-width="2"/>
+<text x="115.0" y="120" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">Je toestel</text>
+<text x="115.0" y="142" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">DMR, D-STAR, Fusion</text>
+<rect x="40" y="260" width="150" height="70" rx="10" fill="#F2F6F9" stroke="#B8791A" stroke-width="2"/>
+<text x="115.0" y="290" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">Je toestel</text>
+<text x="115.0" y="312" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">thuis</text>
+<rect x="260" y="90" width="160" height="70" rx="10" fill="#F2F6F9" stroke="#1E6BA8" stroke-width="2"/>
+<text x="340.0" y="120" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">Repeater</text>
+<text x="340.0" y="142" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">op een mast in de buurt</text>
+<rect x="260" y="260" width="160" height="70" rx="10" fill="#F2F6F9" stroke="#1E6BA8" stroke-width="2"/>
+<text x="340.0" y="290" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">Hotspot</text>
+<text x="340.0" y="312" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">een klein kastje thuis</text>
+<path d="M480,240 C450,240 445,200 475,193 C470,160 515,150 530,170 C545,140 600,145 600,175 C630,170 645,205 620,220 C640,245 600,262 585,250 C570,272 520,270 510,252 C495,262 470,258 480,240 Z" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="545" y="212" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">internet</text>
+<rect x="680" y="175" width="170" height="70" rx="10" fill="#F2F6F9" stroke="#0E8A50" stroke-width="2"/>
+<text x="765.0" y="205" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">Reflector, room</text>
+<text x="765.0" y="227" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">of talkgroup</text>
+<rect x="800" y="60" width="160" height="70" rx="10" fill="#F2F6F9" stroke="#1E6BA8" stroke-width="2"/>
+<text x="880.0" y="90" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">Andere repeaters</text>
+<text x="880.0" y="112" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">en hotspots</text>
+<rect x="800" y="300" width="160" height="70" rx="10" fill="#F2F6F9" stroke="#B8791A" stroke-width="2"/>
+<text x="880.0" y="330" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">Andere toestellen</text>
+<text x="880.0" y="352" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">overal</text>
+<line x1="190" y1="125" x2="255" y2="125" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)" stroke-dasharray="5 5"/>
+<text x="222" y="115" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">RF</text>
+<line x1="190" y1="295" x2="255" y2="295" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)" stroke-dasharray="5 5"/>
+<text x="222" y="285" font-size="12" fill="#3A546B" text-anchor="middle" font-weight="normal">RF</text>
+<line x1="420" y1="140" x2="478" y2="185" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="420" y1="280" x2="478" y2="240" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="625" y1="210" x2="676" y2="210" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="820" y1="172" x2="860" y2="133" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="820" y1="248" x2="860" y2="297" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="40" y="360" width="380" height="40" rx="8" fill="#FFFFFF" stroke="#C9D5DF" stroke-width="2"/>
+<text x="230" y="385" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">of gewoon toestel naar toestel, zonder netwerk</text>
+</svg>

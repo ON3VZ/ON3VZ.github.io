@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img" aria-label="Twee vangnetten: reservebits herstellen een beschadigde bit, en een verloren blokje wordt vervangen door het laatste goede" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>Twee vangnetten: reservebits herstellen een beschadigde bit, en een verloren blokje wordt vervangen door het laatste goede</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3A546B"/></marker><marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E6BA8"/></marker></defs>
+<rect x="1" y="1" width="998" height="498" rx="16" fill="#FFFFFF" stroke="#C9D5DF" stroke-width="2"/>
+<text x="500" y="40" font-size="20" fill="#0B1E30" text-anchor="middle" font-weight="600">Twee vangnetten als het signaal moeilijk wordt</text>
+<text x="60" y="84" font-size="16" fill="#1E6BA8" text-anchor="start" font-weight="600">1. Voorwaartse foutcorrectie: herstellen zonder opnieuw te vragen</text>
+<text x="170" y="146" font-size="14" fill="#3A546B" text-anchor="end" font-weight="normal">verstuurd</text>
+<rect x="190" y="120" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="209" y="146" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">0</text>
+<rect x="234" y="120" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="253" y="146" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">1</text>
+<rect x="278" y="120" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="297" y="146" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">1</text>
+<rect x="322" y="120" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="341" y="146" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">0</text>
+<rect x="380" y="120" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="399" y="146" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">1</text>
+<rect x="424" y="120" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="443" y="146" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">0</text>
+<rect x="468" y="120" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="487" y="146" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">1</text>
+<text x="170" y="198" font-size="14" fill="#3A546B" text-anchor="end" font-weight="normal">ontvangen</text>
+<rect x="190" y="172" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="209" y="198" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">0</text>
+<rect x="234" y="172" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="253" y="198" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">1</text>
+<rect x="278" y="172" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C8384B" stroke-width="2"/>
+<text x="297" y="198" font-size="18" fill="#C8384B" text-anchor="middle" font-weight="600">0</text>
+<rect x="322" y="172" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="341" y="198" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">0</text>
+<rect x="380" y="172" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="399" y="198" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">1</text>
+<rect x="424" y="172" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="443" y="198" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">0</text>
+<rect x="468" y="172" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="487" y="198" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">1</text>
+<text x="170" y="250" font-size="14" fill="#3A546B" text-anchor="end" font-weight="normal">hersteld</text>
+<rect x="190" y="224" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="209" y="250" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">0</text>
+<rect x="234" y="224" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="253" y="250" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">1</text>
+<rect x="278" y="224" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#0E8A50" stroke-width="2"/>
+<text x="297" y="250" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">1</text>
+<rect x="322" y="224" width="38" height="38" rx="6" fill="#F2F6F9" stroke="#C9D5DF" stroke-width="2"/>
+<text x="341" y="250" font-size="18" fill="#0B1E30" text-anchor="middle" font-weight="600">0</text>
+<rect x="380" y="224" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="399" y="250" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">1</text>
+<rect x="424" y="224" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="443" y="250" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">0</text>
+<rect x="468" y="224" width="38" height="38" rx="6" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="487" y="250" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">1</text>
+<text x="553" y="145" font-size="13" fill="#3A546B" text-anchor="start" font-weight="normal">je data</text>
+<text x="553" y="163" font-size="13" fill="#0E8A50" text-anchor="start" font-weight="normal">+ reservebits daaruit berekend</text>
+<text x="553" y="197" font-size="13" fill="#C8384B" text-anchor="start" font-weight="normal">ruis draait onderweg één bit om</text>
+<text x="553" y="249" font-size="13" fill="#3A546B" text-anchor="start" font-weight="normal">de reservebits kloppen niet meer, dus de</text>
+<text x="553" y="267" font-size="13" fill="#3A546B" text-anchor="start" font-weight="normal">ontvanger rekent uit welke bit fout was</text>
+<text x="60" y="320" font-size="16" fill="#1E6BA8" text-anchor="start" font-weight="600">2. Een heel blokje weg: vul het gat met het laatste goede</text>
+<text x="170" y="376" font-size="14" fill="#3A546B" text-anchor="end" font-weight="normal">ontvangen</text>
+<rect x="190" y="346" width="80" height="44" rx="8" fill="#B8791A" stroke="#B8791A" stroke-width="2" fill-opacity="0.15"/>
+<text x="230" y="374" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">V1</text>
+<rect x="282" y="346" width="80" height="44" rx="8" fill="#B8791A" stroke="#B8791A" stroke-width="2" fill-opacity="0.15"/>
+<text x="322" y="374" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">V2</text>
+<rect x="374" y="346" width="80" height="44" rx="8" fill="#B8791A" stroke="#B8791A" stroke-width="2" fill-opacity="0.15"/>
+<text x="414" y="374" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">V3</text>
+<rect x="466" y="346" width="80" height="44" rx="8" fill="#FFFFFF" stroke="#C8384B" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="506" y="374" font-size="15" fill="#C8384B" text-anchor="middle" font-weight="600">weg</text>
+<rect x="558" y="346" width="80" height="44" rx="8" fill="#B8791A" stroke="#B8791A" stroke-width="2" fill-opacity="0.15"/>
+<text x="598" y="374" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">V5</text>
+<text x="170" y="442" font-size="14" fill="#3A546B" text-anchor="end" font-weight="normal">je hoort</text>
+<rect x="190" y="412" width="80" height="44" rx="8" fill="#B8791A" stroke="#B8791A" stroke-width="2" fill-opacity="0.15"/>
+<text x="230" y="440" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">V1</text>
+<rect x="282" y="412" width="80" height="44" rx="8" fill="#B8791A" stroke="#B8791A" stroke-width="2" fill-opacity="0.15"/>
+<text x="322" y="440" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">V2</text>
+<rect x="374" y="412" width="80" height="44" rx="8" fill="#B8791A" stroke="#B8791A" stroke-width="2" fill-opacity="0.15"/>
+<text x="414" y="440" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">V3</text>
+<rect x="466" y="412" width="80" height="44" rx="8" fill="#0E8A50" stroke="#0E8A50" stroke-width="2" fill-opacity="0.15"/>
+<text x="506" y="440" font-size="14" fill="#0E8A50" text-anchor="middle" font-weight="600">V3 bis</text>
+<rect x="558" y="412" width="80" height="44" rx="8" fill="#B8791A" stroke="#B8791A" stroke-width="2" fill-opacity="0.15"/>
+<text x="598" y="440" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">V5</text>
+<text x="668" y="372" font-size="13" fill="#3A546B" text-anchor="start" font-weight="normal">één gat: je merkt het nauwelijks</text>
+<text x="668" y="438" font-size="13" fill="#3A546B" text-anchor="start" font-weight="normal">veel gaten na elkaar: de robot-</text>
+<text x="668" y="456" font-size="13" fill="#3A546B" text-anchor="start" font-weight="normal">stem, daarna stilte</text>
+</svg>

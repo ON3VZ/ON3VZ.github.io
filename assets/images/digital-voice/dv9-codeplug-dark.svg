@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img" aria-label="Anatomy of a DMR codeplug: a zone groups channels; each channel combines frequencies, color code, timeslot, a contact to transmit to and a receive group list" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>Anatomy of a DMR codeplug: a zone groups channels; each channel combines frequencies, color code, timeslot, a contact to transmit to and a receive group list</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A9BDCF"/></marker><marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5AB4EA"/></marker></defs>
+<rect x="1" y="1" width="998" height="498" rx="16" fill="#142334" stroke="#2E4560" stroke-width="2"/>
+<text x="500" y="40" font-size="20" fill="#E4EDF5" text-anchor="middle" font-weight="600">What is inside a DMR codeplug</text>
+<text x="500" y="64" font-size="14" fill="#A9BDCF" text-anchor="middle" font-weight="normal">a zone holds channels; every channel is a small recipe of a few ingredients</text>
+<rect x="40" y="95" width="230" height="370" rx="10" fill="#142334" stroke="#F0B323" stroke-width="2"/>
+<text x="155" y="125" font-size="16" fill="#F0B323" text-anchor="middle" font-weight="600">Zone "Home"</text>
+<rect x="60" y="145" width="190" height="44" rx="8" fill="#1A2C40" stroke="#5AB4EA" stroke-width="2"/>
+<text x="155" y="173" font-size="14" fill="#E4EDF5" text-anchor="middle" font-weight="600">Repeater TG 206</text>
+<rect x="60" y="205" width="190" height="44" rx="8" fill="#1A2C40" stroke="#2E4560" stroke-width="2"/>
+<text x="155" y="233" font-size="14" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Repeater TG 9990</text>
+<rect x="60" y="265" width="190" height="44" rx="8" fill="#1A2C40" stroke="#2E4560" stroke-width="2"/>
+<text x="155" y="293" font-size="14" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Hotspot</text>
+<rect x="60" y="325" width="190" height="44" rx="8" fill="#1A2C40" stroke="#2E4560" stroke-width="2"/>
+<text x="155" y="353" font-size="14" fill="#E4EDF5" text-anchor="middle" font-weight="normal">Analogue FM 2 m</text>
+<rect x="60" y="385" width="190" height="44" rx="8" fill="#1A2C40" stroke="#2E4560" stroke-width="2"/>
+<text x="155" y="413" font-size="14" fill="#E4EDF5" text-anchor="middle" font-weight="normal">...</text>
+<line x1="252" y1="167" x2="318" y2="167" stroke="#5AB4EA" stroke-width="2" marker-end="url(#arB)"/>
+<rect x="320" y="95" width="330" height="370" rx="10" fill="#1A2C40" stroke="#5AB4EA" stroke-width="2"/>
+<text x="485" y="125" font-size="16" fill="#5AB4EA" text-anchor="middle" font-weight="600">Channel "Repeater TG 206"</text>
+<text x="340" y="164" font-size="14" fill="#E4EDF5" text-anchor="start" font-weight="600">Receive frequency</text>
+<text x="340" y="183" font-size="13" fill="#A9BDCF" text-anchor="start" font-weight="normal">where you listen</text>
+<text x="340" y="214" font-size="14" fill="#E4EDF5" text-anchor="start" font-weight="600">Transmit frequency</text>
+<text x="340" y="233" font-size="13" fill="#A9BDCF" text-anchor="start" font-weight="normal">where you talk (repeater offset)</text>
+<text x="340" y="264" font-size="14" fill="#E4EDF5" text-anchor="start" font-weight="600">Color code</text>
+<text x="340" y="283" font-size="13" fill="#A9BDCF" text-anchor="start" font-weight="normal">which repeater, like a CTCSS tone</text>
+<text x="340" y="314" font-size="14" fill="#E4EDF5" text-anchor="start" font-weight="600">Timeslot</text>
+<text x="340" y="333" font-size="13" fill="#A9BDCF" text-anchor="start" font-weight="normal">TS1 or TS2</text>
+<text x="340" y="364" font-size="14" fill="#2FD68A" text-anchor="start" font-weight="600">Contact</text>
+<text x="340" y="383" font-size="13" fill="#A9BDCF" text-anchor="start" font-weight="normal">the talkgroup you talk to</text>
+<text x="340" y="414" font-size="14" fill="#F0B323" text-anchor="start" font-weight="600">RX group list</text>
+<text x="340" y="433" font-size="13" fill="#A9BDCF" text-anchor="start" font-weight="normal">the talkgroups you hear</text>
+<rect x="720" y="95" width="240" height="170" rx="10" fill="#142334" stroke="#2FD68A" stroke-width="2"/>
+<text x="840" y="125" font-size="16" fill="#2FD68A" text-anchor="middle" font-weight="600">Contacts</text>
+<text x="740" y="155" font-size="13" fill="#E4EDF5" text-anchor="start" font-weight="normal">TG 206 Belgium</text>
+<text x="740" y="181" font-size="13" fill="#E4EDF5" text-anchor="start" font-weight="normal">TG 9990 Parrot (echo test)</text>
+<text x="740" y="207" font-size="13" fill="#E4EDF5" text-anchor="start" font-weight="normal">TG 91 Worldwide</text>
+<text x="740" y="233" font-size="13" fill="#E4EDF5" text-anchor="start" font-weight="normal">a private call to one ID</text>
+<rect x="720" y="290" width="240" height="175" rx="10" fill="#142334" stroke="#F0B323" stroke-width="2"/>
+<text x="840" y="320" font-size="16" fill="#F0B323" text-anchor="middle" font-weight="600">RX group list</text>
+<text x="740" y="350" font-size="13" fill="#E4EDF5" text-anchor="start" font-weight="normal">TG 206 Belgium</text>
+<text x="740" y="374" font-size="13" fill="#E4EDF5" text-anchor="start" font-weight="normal">TG 9990 Parrot</text>
+<text x="740" y="398" font-size="13" fill="#E4EDF5" text-anchor="start" font-weight="normal">your local talkgroup</text>
+<text x="740" y="422" font-size="13" fill="#A9BDCF" text-anchor="start" font-weight="normal">(talkgroups not in the list</text>
+<text x="740" y="446" font-size="13" fill="#A9BDCF" text-anchor="start" font-weight="normal">stay silent on your radio)</text>
+<line x1="600" y1="360" x2="716" y2="210" stroke="#2FD68A" stroke-width="2" stroke-dasharray="5 5"/>
+<line x1="600" y1="410" x2="716" y2="380" stroke="#F0B323" stroke-width="2" stroke-dasharray="5 5"/>
+</svg>

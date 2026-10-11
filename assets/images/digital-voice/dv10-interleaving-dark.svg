@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" role="img" aria-label="Interleaving: the bits of each word are spread out before sending, so a short burst of interference damages a little of every word instead of all of one word" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>Interleaving: the bits of each word are spread out before sending, so a short burst of interference damages a little of every word instead of all of one word</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A9BDCF"/></marker><marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5AB4EA"/></marker></defs>
+<rect x="1" y="1" width="998" height="468" rx="16" fill="#142334" stroke="#2E4560" stroke-width="2"/>
+<text x="500" y="40" font-size="20" fill="#E4EDF5" text-anchor="middle" font-weight="600">Spreading the bits: why a burst of noise does less harm</text>
+<text x="210" y="103" font-size="13" fill="#A9BDCF" text-anchor="end" font-weight="normal">three short words</text>
+<rect x="230" y="80" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="247" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="268" y="80" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="285" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="306" y="80" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="323" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="344" y="80" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="361" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="400" y="80" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="417" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="438" y="80" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="455" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="476" y="80" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="493" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="514" y="80" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="531" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="570" y="80" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="587" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="608" y="80" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="625" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="646" y="80" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="663" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="684" y="80" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="701" y="103" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<text x="500" y="146" font-size="14" fill="#F06A7B" text-anchor="middle" font-weight="600">Sent in order: a burst of noise wipes out one whole word</text>
+<text x="210" y="183" font-size="13" fill="#A9BDCF" text-anchor="end" font-weight="normal">without spreading</text>
+<rect x="230" y="160" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="247" y="183" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="268" y="160" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="285" y="183" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="306" y="160" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="323" y="183" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="344" y="160" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="361" y="183" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="400" y="160" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="417" y="183" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="438" y="160" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="455" y="183" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="476" y="160" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="493" y="183" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="514" y="160" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="531" y="183" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="570" y="160" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="587" y="183" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="608" y="160" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="625" y="183" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="646" y="160" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="663" y="183" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="684" y="160" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="701" y="183" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<text x="474" y="216" font-size="13" fill="#F06A7B" text-anchor="middle" font-weight="normal">word B lost: too much to repair</text>
+<text x="500" y="256" font-size="14" fill="#2FD68A" text-anchor="middle" font-weight="600">Spread out first: the same burst hits a little of every word</text>
+<text x="210" y="293" font-size="13" fill="#A9BDCF" text-anchor="end" font-weight="normal">with spreading</text>
+<rect x="230" y="270" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="247" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="268" y="270" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="285" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="306" y="270" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="323" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="344" y="270" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="361" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="382" y="270" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="399" y="293" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="420" y="270" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="437" y="293" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="458" y="270" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="475" y="293" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="496" y="270" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="513" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="534" y="270" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="551" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="572" y="270" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="589" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="610" y="270" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="627" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="648" y="270" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="665" y="293" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<text x="210" y="383" font-size="13" fill="#A9BDCF" text-anchor="end" font-weight="normal">put back in order</text>
+<rect x="230" y="360" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="247" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="268" y="360" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="285" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="306" y="360" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="323" y="383" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="344" y="360" width="34" height="34" rx="5" fill="#F0B323" stroke="#F0B323" stroke-width="2" fill-opacity="0.2"/>
+<text x="361" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">A</text>
+<rect x="400" y="360" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="417" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="438" y="360" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="455" y="383" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="476" y="360" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="493" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="514" y="360" width="34" height="34" rx="5" fill="#2FD68A" stroke="#2FD68A" stroke-width="2" fill-opacity="0.2"/>
+<text x="531" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">B</text>
+<rect x="570" y="360" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="587" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="608" y="360" width="34" height="34" rx="5" fill="#142334" stroke="#F06A7B" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="625" y="383" font-size="16" fill="#F06A7B" text-anchor="middle" font-weight="600">?</text>
+<rect x="646" y="360" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="663" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<rect x="684" y="360" width="34" height="34" rx="5" fill="#5AB4EA" stroke="#5AB4EA" stroke-width="2" fill-opacity="0.2"/>
+<text x="701" y="383" font-size="15" fill="#E4EDF5" text-anchor="middle" font-weight="600">C</text>
+<text x="500" y="432" font-size="14" fill="#2FD68A" text-anchor="middle" font-weight="600">each word misses only one piece, and error correction can fill that in</text>
+</svg>

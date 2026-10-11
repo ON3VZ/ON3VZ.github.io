@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-label="From your voice to the antenna and back: microphone, codec, error protection, packets, modulator" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif">
+<title>From your voice to the antenna and back: microphone, codec, error protection, packets, modulator</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3A546B"/></marker><marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E6BA8"/></marker></defs>
+<rect x="1" y="1" width="998" height="428" rx="16" fill="#FFFFFF" stroke="#C9D5DF" stroke-width="2"/>
+<text x="500" y="42" font-size="20" fill="#0B1E30" text-anchor="middle" font-weight="600">From your voice to the antenna, and back again</text>
+<rect x="35" y="80" width="160" height="150" rx="10" fill="#F2F6F9" stroke="#3A546B" stroke-width="2"/>
+<text x="115.0" y="108" font-size="17" fill="#0B1E30" text-anchor="middle" font-weight="600">Microphone</text>
+<path d="M60,152 L60.0,152.0 L62.0,150.3 L64.0,148.2 L66.0,146.1 L68.0,143.9 L70.0,142.0 L72.0,140.4 L74.0,139.4 L76.0,139.0 L78.0,139.3 L80.0,140.4 L82.0,142.3 L84.0,144.9 L86.0,148.0 L88.0,151.5 L90.0,155.2 L92.0,158.9 L94.0,162.4 L96.0,165.4 L98.0,167.7 L100.0,169.3 L102.0,170.0 L104.0,169.7 L106.0,168.5 L108.0,166.5 L110.0,163.8 L112.0,160.5 L114.0,156.8 L116.0,153.0 L118.0,149.3 L120.0,145.9 L122.0,143.0 L124.0,140.8 L126.0,139.2 L128.0,138.5 L130.0,138.5 L132.0,139.3 L134.0,140.7 L136.0,142.5 L138.0,144.7 L140.0,147.0 L142.0,149.2 L144.0,151.3 L146.0,153.0 L148.0,154.2 L150.0,155.0 L152.0,155.3 L154.0,155.1 L156.0,154.5 L158.0,153.7 L160.0,152.7 L162.0,151.7 L164.0,150.9 L166.0,150.4 L168.0,150.3 L170.0,150.6" stroke="#3A546B" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="115.0" y="192" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">your voice as a</text>
+<text x="115.0" y="210" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">smooth wave</text>
+<line x1="198" y1="155" x2="222" y2="155" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="225" y="80" width="160" height="150" rx="10" fill="#F2F6F9" stroke="#B8791A" stroke-width="2"/>
+<text x="305.0" y="108" font-size="17" fill="#0B1E30" text-anchor="middle" font-weight="600">Codec</text>
+<text x="305.0" y="158" font-size="18" fill="#B8791A" text-anchor="middle" font-weight="600">0 1 1 0 1 0</text>
+<text x="305.0" y="192" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">squeezes it into</text>
+<text x="305.0" y="210" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">a trickle of bits</text>
+<line x1="388" y1="155" x2="412" y2="155" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="415" y="80" width="160" height="150" rx="10" fill="#F2F6F9" stroke="#0E8A50" stroke-width="2"/>
+<text x="495.0" y="108" font-size="17" fill="#0B1E30" text-anchor="middle" font-weight="600">Protection</text>
+<text x="477.0" y="158" font-size="18" fill="#B8791A" text-anchor="middle" font-weight="600">0110</text>
+<text x="525.0" y="158" font-size="18" fill="#0E8A50" text-anchor="middle" font-weight="600">+ 101</text>
+<text x="495.0" y="192" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">adds spare bits</text>
+<text x="495.0" y="210" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">to repair errors</text>
+<line x1="578" y1="155" x2="602" y2="155" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="605" y="80" width="160" height="150" rx="10" fill="#F2F6F9" stroke="#1E6BA8" stroke-width="2"/>
+<text x="685.0" y="108" font-size="17" fill="#0B1E30" text-anchor="middle" font-weight="600">Packets</text>
+<rect x="623.0" y="140" width="26" height="24" rx="3" fill="#C8384B" opacity="0.85"/>
+<rect x="651.0" y="140" width="20" height="24" rx="3" fill="#B8791A" opacity="0.85"/>
+<rect x="673.0" y="140" width="8" height="24" rx="3" fill="#0E8A50" opacity="0.85"/>
+<rect x="683.0" y="140" width="20" height="24" rx="3" fill="#B8791A" opacity="0.85"/>
+<rect x="705.0" y="140" width="8" height="24" rx="3" fill="#0E8A50" opacity="0.85"/>
+<rect x="715.0" y="140" width="20" height="24" rx="3" fill="#B8791A" opacity="0.85"/>
+<text x="685.0" y="192" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">header, voice, data</text>
+<text x="685.0" y="210" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">in a fixed order</text>
+<line x1="768" y1="155" x2="792" y2="155" stroke="#3A546B" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="795" y="80" width="160" height="150" rx="10" fill="#F2F6F9" stroke="#1E6BA8" stroke-width="2"/>
+<text x="875.0" y="108" font-size="17" fill="#0B1E30" text-anchor="middle" font-weight="600">Modulator</text>
+<path d="M815.0,146 L830.0,146 L830.0,134 L845.0,134 L845.0,158 L860.0,158 L860.0,170 L875.0,170 L875.0,146 L890.0,146 L890.0,158 L905.0,158 L905.0,134 L920.0,134 L920.0,170 L935.0,170 " stroke="#1E6BA8" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="875.0" y="192" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">turns bits into</text>
+<text x="875.0" y="210" font-size="13" fill="#3A546B" text-anchor="middle" font-weight="normal">tones on the air</text>
+<path d="M940,235 C960,280 960,310 920,330 L80,330" stroke="#3A546B" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 6" marker-end="url(#ar)"/>
+<rect x="150" y="348" width="700" height="58" rx="10" fill="#FFFFFF" stroke="#C9D5DF" stroke-width="2"/>
+<text x="500" y="373" font-size="15" fill="#0B1E30" text-anchor="middle" font-weight="600">The receiving radio runs the same chain backwards:</text>
+<text x="500" y="394" font-size="14" fill="#3A546B" text-anchor="middle" font-weight="normal">tones become bits, damaged bits are repaired, the codec rebuilds a voice</text>
+</svg>
