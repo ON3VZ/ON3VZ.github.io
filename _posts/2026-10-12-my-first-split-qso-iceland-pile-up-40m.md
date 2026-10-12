@@ -54,12 +54,14 @@ This is how I did it, step by step:
 1. **Tune VFO A to the DX.** Mode LSB (on 40 m we use the lower sideband), frequency 7.150. Now I hear him.
 2. **Put the same frequency in VFO B** and then move VFO B to 7.154. On my radio that means switching to VFO B with the A/B key and turning the main dial. This is the frequency where I will be sending my callsign.
 3. **Switch on SPLIT** with the SPLIT key. The orange **SPLIT** label lights up on the screen. From now on the radio receives on VFO A and transmits on VFO B.
-4. **Check before you call.** Hold the **XFC** key to listen on your transmit frequency. Is there a clear spot, or is someone already calling there? If it is busy, move VFO B up or down a little.
+4. **Check before you call.** Look at your transmit frequency on the screen. Is there a clear spot, or is someone already calling there? If it is busy, move VFO B up or down a little.
 5. **Call.** Press PTT, give your callsign, release.
+
+The two photos below show the settings only, they were not taken while transmitting.
 
 <figure>
 <img src="/assets/images/split-qso/split-rx-vfo-a.jpg" alt="IC-7300 MkII screen with VFO A on 7.150.00 as the large frequency, 7.154.00 shown small at the right, and the orange SPLIT label lit" loading="lazy">
-<figcaption>Listening: VFO A (7.150.00) is the big frequency, the transmit frequency 7.154.00 sits small at the right, and the orange SPLIT label is on.</figcaption>
+<figcaption>Setting 1: VFO A (7.150.00) is the big frequency, the transmit frequency 7.154.00 sits small at the right, and the orange SPLIT label is on.</figcaption>
 </figure>
 
 <figure>
@@ -83,7 +85,7 @@ The best advice I can give from this first time: **do not call at once. Listen f
 
 - **Listen before you transmit.** Learn how the DX operates: does he take callers one at a time, by call area, by number? Which frequency does he listen on right now?
 - **Check that SPLIT is on.** If it is not, you will call on top of the DX and everybody will hear you. Verify both frequencies on the screen before you press PTT.
-- **Use XFC to check your transmit frequency.** Hold it, listen, and pick a spot that is not already crowded.
+- **Pick a spot for your transmit frequency that is not already crowded.** Many radios have a function to listen on the transmit frequency, check your manual.
 - **Call with your callsign only.** Short, clear, in standard phonetics. No "please", no long text, no name. Everyone is waiting.
 - **Do not call when the DX is working somebody.** Wait until he has finished and asks for the next station. No tail-ending (calling right at the end of someone else's QSO).
 - **Do not call if he is not hearing you.** If you called a few times without a reply, he may be listening to another part of the pile-up. Wait, adjust your frequency a little, try again.
