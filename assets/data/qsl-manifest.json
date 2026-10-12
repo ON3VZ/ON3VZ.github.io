@@ -319,5 +319,18 @@
     "mode": "FT8",
     "freq": "14.074",
     "rst": "-04"
+  },
+  {
+    "id": "on5sel-p-2026-10-09",
+    "image": "/assets/images/qsl/on5sel-p-2026-10-09.jpg",
+    "fromCall": "ON5SEL/P",
+    "qth": "Stuivekenskerke, COTA ON-00470, JO11JB",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-09",
+    "time": "09:45z",
+    "band": "40m",
+    "mode": "SSB",
+    "rst": "59"
   }
 ]
