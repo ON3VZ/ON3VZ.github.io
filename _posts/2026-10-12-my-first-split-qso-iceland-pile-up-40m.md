@@ -12,6 +12,8 @@ excerpt: "I heard it described many times, but today I lived it: a DX station ca
 .sq-article figcaption { font-size: .86rem; line-height: 1.5; color: var(--c-text-3); margin: .75rem auto 0; max-width: 680px; text-align: center; font-style: italic; }
 .sq-article .sq-note { border-left: 3px solid var(--c-cyan, #1E6BA8); padding: .6rem 1rem; margin: 1.4rem 0; background: var(--c-surface); border-radius: 0 8px 8px 0; }
 .sq-article .sq-note p { margin: 0; }
+/* SPLIT-QSO 2026-10-12: table header text in normal text colour for readability (scoped to this post). Revert by deleting these lines. */
+.sq-article table thead th { color: var(--c-text) !important; }
 </style>
 <div class="sq-article" markdown="1">
 
@@ -85,7 +87,6 @@ The best advice I can give from this first time: **do not call at once. Listen f
 
 - **Listen before you transmit.** Learn how the DX operates: does he take callers one at a time, by call area, by number? Which frequency does he listen on right now?
 - **Check that SPLIT is on.** If it is not, you will call on top of the DX and everybody will hear you. Verify both frequencies on the screen before you press PTT.
-- **Pick a spot for your transmit frequency that is not already crowded.** Many radios have a function to listen on the transmit frequency, check your manual.
 - **Call with your callsign only.** Short, clear, in standard phonetics. No "please", no long text, no name. Everyone is waiting.
 - **Do not call when the DX is working somebody.** Wait until he has finished and asks for the next station. No tail-ending (calling right at the end of someone else's QSO).
 - **Keep it short.** A report like 59 and a thank-you is enough. Others are waiting.
