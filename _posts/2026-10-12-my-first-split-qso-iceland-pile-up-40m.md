@@ -88,7 +88,6 @@ The best advice I can give from this first time: **do not call at once. Listen f
 - **Pick a spot for your transmit frequency that is not already crowded.** Many radios have a function to listen on the transmit frequency, check your manual.
 - **Call with your callsign only.** Short, clear, in standard phonetics. No "please", no long text, no name. Everyone is waiting.
 - **Do not call when the DX is working somebody.** Wait until he has finished and asks for the next station. No tail-ending (calling right at the end of someone else's QSO).
-- **Do not call if he is not hearing you.** If you called a few times without a reply, he may be listening to another part of the pile-up. Wait, adjust your frequency a little, try again.
 - **Keep it short.** A report like 59 and a thank-you is enough. Others are waiting.
 - **Switch SPLIT off afterwards.** It is easy to forget. Then you call CQ on the next frequency with your transmit frequency still a few kHz away, and you disturb somebody else. Make it a habit.
 - **Be patient.** Even with 25 W it can work, but you need timing, patience and a clean signal.
@@ -114,7 +113,7 @@ The best advice I can give from this first time: **do not call at once. Listen f
 | Distance | approx. 2,000 km, bearing approx. 326° (NW) |
 | My station | IC-7300 MkII, 25 W |
 
-Iceland on 40 m from a city garden in Hoboken is a good reminder that you do not need a big station for DX. You need to know how it works. Now I do, and next time it will be easier.
+Iceland on 40 m from a city garden in Hoboken is a good reminder that you do not need a big station for DX. You need to know how it works.
 
 If you have a different way of working split, or tips for beginners, I would love to hear them. Thank you, Derk (PD9DX), and 73!
 
