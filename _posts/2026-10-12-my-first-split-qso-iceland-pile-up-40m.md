@@ -102,6 +102,11 @@ The best advice I can give from this first time: **do not call at once. Listen f
 
 ## The QSO
 
+<figure>
+<img src="/assets/images/split-qso/split-log4om.png" alt="Log4OM Edit QSO window for TF/PD9DX with Freq 7154 kHz and RX Freq 7150 kHz, band 40m, mode LSB, country Iceland" loading="lazy">
+<figcaption>How the QSO looks in my log (Log4OM): Freq 7154 is where I transmit, RX Freq 7150 is where I receive.</figcaption>
+</figure>
+
 | | |
 |---|---|
 | Date | 12 October 2026 |
