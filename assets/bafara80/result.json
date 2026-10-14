@@ -4,11 +4,11 @@
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
-  "generated": "2026-10-14T02:10Z",
+  "generated": "2026-10-14T18:55Z",
   "frozen": false,
   "score": {
-    "points": 52,
-    "combos": 16,
+    "points": 56,
+    "combos": 18,
     "stations": 10,
     "grade": "Wingman"
   },
@@ -108,6 +108,18 @@
       "band": "40m",
       "mode": "PHONE",
       "date": "2026-10-11"
+    },
+    {
+      "call": "ON5EN",
+      "band": "80m",
+      "mode": "PHONE",
+      "date": "2026-10-12"
+    },
+    {
+      "call": "ON8KEV",
+      "band": "20m",
+      "mode": "PHONE",
+      "date": "2026-10-13"
     }
   ]
 }
