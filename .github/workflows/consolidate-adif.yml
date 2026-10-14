@@ -47,4 +47,12 @@ jobs:
           git config user.email "on3vz@uba.be"
           git config user.name "ON3VZ"
           git add assets/data/
-          git diff --staged --quiet || (git commit -m "chore: consolidate ADIF snapshots, prune files older than 30 days" && git push)
+          if git diff --staged --quiet; then echo "No change"; exit 0; fi
+          git commit -m "chore: consolidate ADIF snapshots, prune files older than 30 days"
+          # another workflow may push at the same moment, so retry
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then exit 0; fi
+            echo "Push attempt $i failed, retrying"
+            sleep $((i * 4))
+          done
+          exit 1
