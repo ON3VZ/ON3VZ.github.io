@@ -4,12 +4,12 @@
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
-  "generated": "2026-10-15T01:52Z",
+  "generated": "2026-10-15T22:21Z",
   "frozen": false,
   "score": {
-    "points": 56,
-    "combos": 18,
-    "stations": 10,
+    "points": 65,
+    "combos": 21,
+    "stations": 12,
     "grade": "Wingman"
   },
   "worked": [
@@ -120,6 +120,24 @@
       "band": "20m",
       "mode": "PHONE",
       "date": "2026-10-13"
+    },
+    {
+      "call": "ON4BAF",
+      "band": "80m",
+      "mode": "PHONE",
+      "date": "2026-10-14"
+    },
+    {
+      "call": "ON4AHQ",
+      "band": "40m",
+      "mode": "CW",
+      "date": "2026-10-15"
+    },
+    {
+      "call": "ON8KEV",
+      "band": "15m",
+      "mode": "PHONE",
+      "date": "2026-10-15"
     }
   ]
 }
