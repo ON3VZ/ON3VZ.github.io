@@ -377,5 +377,18 @@
     "mode": "FT8",
     "freq": "14.074",
     "rst": "-03"
+  },
+  {
+    "id": "on5sel-p-2026-10-15",
+    "image": "/assets/images/qsl/on5sel-p-2026-10-15.jpg",
+    "fromCall": "ON5SEL/P",
+    "qth": "Diksmuide, ONFF-0916, BOTA B/ON-0154, JO11JA",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-15",
+    "time": "10:58z",
+    "band": "40m",
+    "mode": "SSB",
+    "rst": "59"
   }
 ]
