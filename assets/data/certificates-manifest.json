@@ -22,6 +22,11 @@
       "id": "tota",
       "name": "TOTA Towers on the Air",
       "about": "Contacts linked to towers and transmitter sites."
+    },
+    {
+      "id": "wwa",
+      "name": "WWA World Wide Award",
+      "about": "Contacts with special event stations worldwide during the WWA Sprint."
     }
   ],
   "certificates": [
@@ -57,6 +62,15 @@
       "image": "/assets/images/certificates/tota-liblice-b-okr-1069.jpg",
       "imageLarge": "/assets/images/certificates/tota-liblice-b-okr-1069-large.jpg",
       "alt": "TOTA commemorative certificate Liblice B, OKR-1069, Czech Republic, for ON3VZ"
+    },
+    {
+      "id": "wwa-sprint-2026",
+      "program": "wwa",
+      "title": "WWA Sprint 2026, All Bands SSB",
+      "detail": "245 points, 49 QSOs, 23 special event stations on 3 bands. Position 1111 of 35815.",
+      "image": "/assets/images/certificates/wwa-sprint-2026.jpg",
+      "imageLarge": "/assets/images/certificates/wwa-sprint-2026-large.jpg",
+      "alt": "World Wide Award Sprint 2026 certificate for ON3VZ, All Bands SSB, 245 points, 49 QSOs, 23 special event stations, 3 bands, position 1111 of 35815"
     }
   ]
 }
