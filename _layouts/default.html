@@ -36,6 +36,8 @@
   {% if page.extra_css %}{% for css in page.extra_css %}<link rel="stylesheet" href="{{ css | relative_url }}?v={{ site.time | date: '%s' }}">{% endfor %}{% endif %}
   <!-- FRESH THEME: overlay stylesheet, inactive unless html[data-theme="fresh"] -->
   <link rel="stylesheet" href="{{ '/css/theme-fresh.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <!-- WALL DROPDOWN 2026-10-20 -->
+  <link rel="stylesheet" href="{{ '/css/nav-dropdown.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body class="grid-bg {{ page.body_class }}">
 
@@ -91,7 +93,14 @@
         <!-- TRACKERS 2026-10-08: remove the Trackers line to revert -->
         <li><a href="/trackers/">Trackers</a></li>
         <li><a href="/logbook/">Logbook</a></li>
-        <li><a href="/qsl-wall/">QSL Wall</a></li>
+        <!-- WALL DROPDOWN 2026-10-20: revert by restoring <li><a href="/qsl-wall/">QSL Wall</a></li> -->
+        <li class="nav-dd">
+          <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navWallMenu">Wall<svg class="nav-dd-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+          <ul class="nav-dd-menu" id="navWallMenu" hidden>
+            <li><a href="/qsl-wall/">eQSL Cards</a></li>
+            <li><a href="/certificates/">Awards &amp; Certificates</a></li>
+          </ul>
+        </li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
 
@@ -120,7 +129,14 @@
     <!-- TRACKERS 2026-10-08: remove the Trackers line to revert -->
     <li><a href="/trackers/">Trackers</a></li>
     <li><a href="/logbook/">Logbook</a></li>
-    <li><a href="/qsl-wall/">QSL Wall</a></li>
+    <!-- WALL DROPDOWN 2026-10-20: revert by restoring <li><a href="/qsl-wall/">QSL Wall</a></li> -->
+    <li>
+      <span class="nav-drawer-head">Wall</span>
+      <ul class="nav-drawer-sub">
+        <li><a href="/qsl-wall/">eQSL Cards</a></li>
+        <li><a href="/certificates/">Awards &amp; Certificates</a></li>
+      </ul>
+    </li>
     <li><a href="/contact/">Contact</a></li>
     </ul>
   </div>
@@ -146,6 +162,8 @@
   {% endunless %}
 
   <script src="{{ '/js/main.js' | relative_url }}"></script>
+  <!-- WALL DROPDOWN 2026-10-20 -->
+  <script src="{{ '/js/nav-dropdown.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
   {% if page.extra_js %}{% for js in page.extra_js %}<script src="{{ js | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endfor %}{% endif %}
   <script defer src="https://cloud.umami.is/script.js" data-website-id="650cd9dd-aad7-485c-bf6b-be7af3003223"></script>
   <!-- FRESH THEME (live since 2026-10-06): light/dark button, active nav link -->

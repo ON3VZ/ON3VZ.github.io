@@ -1,0 +1,132 @@
+/* ============================================================
+   WALL DROPDOWN 2026-10-20
+   "Wall" menu item with two sub pages (eQSL Cards, Awards &
+   Certificates). Revert: delete this file, js/nav-dropdown.js and
+   the WALL DROPDOWN blocks in _layouts/default.html.
+   ============================================================ */
+
+/* ── desktop: the Wall button looks like the other menu links ── */
+.nav-dd { position: relative; }
+.nav-dd-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--t), background var(--t);
+}
+.nav-dd-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0.75rem; right: 0.75rem;
+  height: 1.5px;
+  background: var(--c-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-dd-btn:hover, .nav-dd-btn.fx-active, .nav-dd-btn[aria-expanded="true"] { color: var(--c-primary); }
+.nav-dd-btn.fx-active::after { transform: scaleX(1); }
+.nav-dd-chev { width: 0.7em; height: 0.7em; transition: transform 0.2s ease; }
+.nav-dd-btn[aria-expanded="true"] .nav-dd-chev { transform: rotate(180deg); }
+.nav-dd-btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: -2px; }
+
+html[data-theme="fresh"] .nav-dd-btn {
+  height: 100%;
+  padding: 0 0.95rem;
+  white-space: nowrap;
+  border-radius: 0;
+  font-family: var(--f-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  color: var(--fx-head-dim);
+}
+html[data-theme="fresh"] .nav-dd-btn::after { bottom: 0; left: 0; right: 0; height: 3px; }
+html[data-theme="fresh"] .nav-dd-btn:hover,
+html[data-theme="fresh"] .nav-dd-btn[aria-expanded="true"] { color: #FFFFFF; background: rgba(255,255,255,0.04); }
+html[data-theme="fresh"] .nav-dd-btn.fx-active { color: #FFFFFF; background: rgba(255,255,255,0.08); }
+
+/* ── the panel ── */
+.nav-links .nav-dd-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  display: block;
+  background: #0E2638;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-top: 3px solid var(--c-primary);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  z-index: 1002;
+}
+.nav-links .nav-dd-menu[hidden] { display: none; }
+.nav-links .nav-dd-menu li,
+html[data-theme="fresh"] .nav-links .nav-dd-menu li { display: block; }
+.nav-links .nav-dd-menu li::before { content: none; }
+.nav-links .nav-dd-menu a,
+html[data-theme="fresh"] .nav-links .nav-dd-menu a {
+  display: block;
+  height: auto;
+  padding: 0.7rem 1.1rem;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  color: #C9DAE8;
+  background: none;
+  border-radius: 0;
+}
+.nav-links .nav-dd-menu a::after { content: none; }
+.nav-links .nav-dd-menu a:hover,
+.nav-links .nav-dd-menu a:focus-visible,
+html[data-theme="fresh"] .nav-links .nav-dd-menu a:hover { color: #FFFFFF; background: rgba(255,255,255,0.06); }
+.nav-links .nav-dd-menu a.fx-active,
+html[data-theme="fresh"] .nav-links .nav-dd-menu a.fx-active {
+  color: #FFFFFF;
+  background: rgba(255,255,255,0.08);
+  box-shadow: inset 3px 0 0 var(--c-primary);
+}
+.nav-links .nav-dd-menu a:focus-visible { outline: 2px solid var(--c-primary); outline-offset: -2px; }
+
+/* ── mobile drawer: a heading with two indented links ── */
+.nav-drawer .nav-drawer-head {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  padding: 0.85rem 0 0.35rem;
+}
+html[data-theme="fresh"] .nav-drawer .nav-drawer-head {
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #8FA6BA;
+}
+.nav-drawer .nav-drawer-sub { list-style: none; }
+.nav-drawer .nav-drawer-sub a,
+.nav-drawer .nav-drawer-sub a.fx-active,
+html[data-theme="fresh"] .nav-drawer .nav-drawer-sub a,
+html[data-theme="fresh"] .nav-drawer .nav-drawer-sub a.fx-active { padding-left: 1.25rem; }
+.nav-drawer .nav-drawer-sub a:hover { padding-left: 1.5rem; }
+.nav-drawer .nav-drawer-sub a { text-transform: none; letter-spacing: 0.03em; }
+html[data-theme="fresh"] .nav-drawer .nav-drawer-sub a { font-size: 1.05rem; letter-spacing: 0.03em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-dd-chev, .nav-dd-btn, .nav-dd-btn::after { transition: none; }
+}
