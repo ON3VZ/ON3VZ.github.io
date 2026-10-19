@@ -390,5 +390,18 @@
     "band": "40m",
     "mode": "SSB",
     "rst": "59"
+  },
+  {
+    "id": "on5sel-p-2026-10-13",
+    "image": "/assets/images/qsl/on5sel-p-2026-10-13.jpg",
+    "fromCall": "ON5SEL/P",
+    "qth": "Middelkerke, BOTA B/ON-1166 to 1169, JO11JE",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-13",
+    "time": "09:14z",
+    "band": "40m",
+    "mode": "SSB",
+    "rst": "59"
   }
 ]
