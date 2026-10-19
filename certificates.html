@@ -1,0 +1,40 @@
+---
+layout: default
+title: ON3VZ Awards & Certificates
+permalink: /certificates/
+extra_css:
+  - /css/certificates.css
+extra_js:
+  - /js/certificates.js
+---
+<!-- CERTIFICATES 2026-10-20: revert by deleting certificates.html, css/certificates.css,
+     js/certificates.js, assets/data/certificates-manifest.json, assets/images/certificates/
+     and the CERTIFICATES link blocks in qsl-wall.html and trackers.html -->
+
+<div class="ct-wrap">
+
+  <div class="ct-hero container anim-1">
+    <a class="ct-back" href="/qsl-wall/">&#8592; Back to QSL Wall</a>
+    <div class="section-label">ON3VZ &middot; LOGBOOK</div>
+    <h1 class="section-title">Awards &amp; Certificates</h1>
+    <p class="ct-sub">Awards and certificates I have earned on the air, grouped by programme. Select a certificate to see it full size.</p>
+
+    <div class="ct-stats">
+      <div class="ct-stat"><span class="ct-stat-val" id="ctStatCerts">&ndash;</span><span class="ct-stat-lbl">Certificates</span></div>
+      <div class="ct-stat"><span class="ct-stat-val" id="ctStatPrograms">&ndash;</span><span class="ct-stat-lbl">Programmes</span></div>
+    </div>
+  </div>
+
+  <div class="ct-groups container anim-2" id="ctGroups">
+    <!-- populated by js/certificates.js -->
+  </div>
+
+</div>
+
+<div class="ct-lightbox" id="ctLightbox" hidden role="dialog" aria-modal="true" aria-label="Certificate">
+  <button class="ct-lb-close" id="ctLbClose" aria-label="Close">&times;</button>
+  <div class="ct-lb-inner">
+    <img id="ctLbImg" src="" alt="">
+    <div class="ct-lb-meta" id="ctLbMeta"></div>
+  </div>
+</div>

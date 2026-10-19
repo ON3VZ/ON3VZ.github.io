@@ -1,0 +1,62 @@
+{
+  "programs": [
+    {
+      "id": "onff",
+      "name": "ONFF Belgian Flora & Fauna",
+      "about": "Contacts with Belgian nature reserves activated under the ONFF programme."
+    },
+    {
+      "id": "wwff",
+      "name": "WWFF World Wide Flora & Fauna",
+      "about": "Contacts with protected nature areas activated anywhere in the world."
+    },
+    {
+      "id": "bafara",
+      "name": "BAFARA Award OR80AF",
+      "about": "80 years of the Belgian Air Force, October 2026.",
+      "source": "/assets/bafara80/diplomas.json",
+      "link": "/trackers/or80af/",
+      "linkText": "Open the OR80AF tracker"
+    },
+    {
+      "id": "tota",
+      "name": "TOTA Towers on the Air",
+      "about": "Contacts linked to towers and transmitter sites."
+    }
+  ],
+  "certificates": [
+    {
+      "id": "onffa-bronze-1127",
+      "program": "onff",
+      "title": "ONFFA Bronze",
+      "detail": "10 different ONFF references",
+      "number": "Bronze #1127",
+      "date": "2026-10-16",
+      "manager": "ON5SWA",
+      "image": "/assets/images/certificates/onffa-bronze-1127.jpg",
+      "imageLarge": "/assets/images/certificates/onffa-bronze-1127-large.jpg",
+      "alt": "ONFFA Belgian Flora & Fauna Award, Bronze certificate number 1127 for Kristof ON3VZ, 10 different ONFF references"
+    },
+    {
+      "id": "wwff-hunter-10-2188",
+      "program": "wwff",
+      "title": "Hunter Certificate 10",
+      "detail": "10 different WWFF references",
+      "number": "#2188",
+      "date": "2026-10-18",
+      "manager": "CT7AOV",
+      "image": "/assets/images/certificates/wwff-hunter-10-2188.jpg",
+      "imageLarge": "/assets/images/certificates/wwff-hunter-10-2188-large.jpg",
+      "alt": "WWFF Hunter Certificate for ON3VZ, 10 different WWFF references, award number 2188"
+    },
+    {
+      "id": "tota-liblice-b-okr-1069",
+      "program": "tota",
+      "title": "Liblice B commemorative certificate",
+      "detail": "OKR-1069, Liblice B transmitter, Czech Republic, 1976 to 2026",
+      "image": "/assets/images/certificates/tota-liblice-b-okr-1069.jpg",
+      "imageLarge": "/assets/images/certificates/tota-liblice-b-okr-1069-large.jpg",
+      "alt": "TOTA commemorative certificate Liblice B, OKR-1069, Czech Republic, for ON3VZ"
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+/* ============================================================
+   ON3VZ Awards & Certificates
+   Added 2026-10-20. Self-contained: see the revert note at the
+   top of certificates.html.
+   ============================================================ */
+
+.ct-wrap { padding-bottom: 5rem; }
+
+/* hero */
+.ct-hero {
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.ct-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-family: var(--f-mono);
+  font-size: .72rem;
+  letter-spacing: .08rem;
+  color: var(--c-text-3);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color var(--t);
+}
+.ct-back:hover, .ct-back:focus-visible { color: var(--c-primary); }
+.ct-sub {
+  color: var(--c-text-2);
+  font-size: .9rem;
+  max-width: 60ch;
+  margin-top: .35rem;
+}
+
+.ct-stats { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem; }
+.ct-stat { display: flex; flex-direction: column; }
+.ct-stat-val {
+  font-family: var(--f-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  line-height: 1;
+}
+.ct-stat-lbl {
+  font-family: var(--f-mono);
+  font-size: .62rem;
+  letter-spacing: .12rem;
+  color: var(--c-text-3);
+  margin-top: .4rem;
+  text-transform: uppercase;
+}
+
+/* programme groups */
+.ct-groups { padding-top: 2.25rem; }
+.ct-group { margin-bottom: 3.25rem; }
+.ct-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: .9rem;
+  row-gap: .25rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.ct-group-title {
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  color: var(--c-text);
+  letter-spacing: .03rem;
+}
+.ct-group-about {
+  flex: 1 1 240px;
+  font-size: .8rem;
+  color: var(--c-text-2);
+}
+.ct-group-link {
+  font-family: var(--f-mono);
+  font-size: .7rem;
+  color: var(--c-cyan);
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+.ct-group-link:hover, .ct-group-link:focus-visible { color: var(--c-primary); }
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem 1.6rem;
+}
+
+/* certificate: a framed diploma, hung straight */
+.ct-cert {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.ct-frame {
+  display: block;
+  padding: 10px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-hard);
+  border-radius: 2px;
+  box-shadow:
+    inset 0 0 0 4px var(--c-surface-2),
+    0 10px 22px rgba(0,0,0,0.30);
+  transition: border-color var(--t), box-shadow var(--t-slow);
+}
+.ct-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.414 / 1;
+  object-fit: cover;
+  background: var(--c-surface-2);
+}
+.ct-cert:hover .ct-frame,
+.ct-cert:focus-visible .ct-frame {
+  border-color: var(--c-primary);
+  box-shadow:
+    inset 0 0 0 4px var(--c-surface-2),
+    var(--glow-md),
+    0 12px 26px rgba(0,0,0,0.38);
+}
+.ct-cert:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 4px; }
+
+/* the brass plate under the frame */
+.ct-plate {
+  display: block;
+  margin: .8rem auto 0;
+  max-width: 92%;
+  text-align: center;
+}
+.ct-plate-title {
+  display: block;
+  font-family: var(--f-display);
+  font-size: .92rem;
+  color: var(--c-text);
+  letter-spacing: .02rem;
+}
+.ct-plate-detail {
+  display: block;
+  font-size: .76rem;
+  color: var(--c-text-2);
+  margin-top: .25rem;
+}
+.ct-plate-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .4rem;
+  margin-top: .55rem;
+}
+.ct-tag {
+  font-family: var(--f-mono);
+  font-size: .62rem;
+  letter-spacing: .04rem;
+  color: var(--c-text-3);
+  border: 1px solid var(--c-border);
+  border-radius: 3px;
+  padding: .12rem .4rem;
+}
+.ct-tag--number { color: var(--c-text-2); border-color: var(--c-border-hard); font-weight: 700; }
+
+.ct-empty {
+  color: var(--c-text-3);
+  font-family: var(--f-mono);
+  font-size: .85rem;
+  padding: 2rem 0;
+}
+
+/* lightbox */
+.ct-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(4,7,14,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+.ct-lightbox[hidden] { display: none; }
+.ct-lb-inner {
+  max-width: min(1200px, 94vw);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .9rem;
+}
+.ct-lb-inner img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border: 1px solid var(--c-border-hard);
+  border-radius: 2px;
+}
+.ct-lb-meta {
+  font-family: var(--f-mono);
+  font-size: .8rem;
+  color: #c9d3e0;
+  text-align: center;
+  line-height: 1.6;
+}
+.ct-lb-meta strong { color: var(--c-primary); }
+.ct-lb-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.6rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--t);
+}
+.ct-lb-close:hover, .ct-lb-close:focus-visible { color: var(--c-primary); }
+
+/* link block on the QSL Wall and Trackers pages */
+.ct-crosslink {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  background: var(--c-surface);
+}
+.ct-crosslink-text { font-size: .88rem; color: var(--c-text-2); max-width: 60ch; }
+.ct-crosslink-text strong { color: var(--c-text); font-family: var(--f-display); font-weight: 600; }
+.ct-crosslink a {
+  font-family: var(--f-mono);
+  font-size: .75rem;
+  color: var(--c-primary);
+  text-decoration: none;
+  border: 1px solid var(--c-border-hard);
+  border-radius: 3px;
+  padding: .45rem .8rem;
+  transition: border-color var(--t);
+}
+.ct-crosslink a:hover, .ct-crosslink a:focus-visible { border-color: var(--c-primary); }
+
+@media (max-width: 640px) {
+  .ct-grid { grid-template-columns: 1fr; }
+  .ct-lightbox { padding: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-frame, .ct-back, .ct-crosslink a { transition: none; }
+}
