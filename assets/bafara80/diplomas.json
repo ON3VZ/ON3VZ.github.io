@@ -3,5 +3,15 @@
     "image": "/assets/images/bafara80/hunter-solo.jpg",
     "alt": "BAFARA Award OR80AF, Hunter Solo certificate for ON3VZ, 33 points, 10 contacts, 5 stations",
     "date": "2026-10-08"
+  },
+  "Wingman": {
+    "image": "/assets/images/bafara80/hunter-wingman.jpg",
+    "alt": "BAFARA Award OR80AF, Hunter Wingman certificate for ON3VZ, 80 points, 27 contacts, 16 stations",
+    "date": "2026-10-19"
+  },
+  "Leader": {
+    "image": "/assets/images/bafara80/hunter-leader.jpg",
+    "alt": "BAFARA Award OR80AF, Hunter Leader certificate for ON3VZ, 76 points, 25 contacts, 15 stations",
+    "date": "2026-10-18"
   }
 }
