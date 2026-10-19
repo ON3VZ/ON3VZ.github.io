@@ -332,5 +332,50 @@
     "band": "40m",
     "mode": "SSB",
     "rst": "59"
+  },
+  {
+    "id": "on5ea-2026-10-12",
+    "image": "/assets/images/qsl/on5ea-2026-10-12.jpg",
+    "fromCall": "ON5EA",
+    "fromName": "Jean-Marie Franzosi",
+    "qth": "Jambes, JO20KK",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-12",
+    "time": "10:42z",
+    "band": "40m",
+    "mode": "FT8",
+    "freq": "7.074",
+    "rst": "+13"
+  },
+  {
+    "id": "g0rvy-2026-10-15",
+    "image": "/assets/images/qsl/g0rvy-2026-10-15.jpg",
+    "fromCall": "G0RVY",
+    "fromName": "Peter Jarvis",
+    "qth": "Chatham, Kent, JO01GI",
+    "country": "United Kingdom",
+    "continent": "Europe",
+    "date": "2026-10-15",
+    "time": "22:02z",
+    "band": "80m",
+    "mode": "FT8",
+    "freq": "3.574",
+    "rst": "-08"
+  },
+  {
+    "id": "am5gc-2026-10-16",
+    "image": "/assets/images/qsl/am5gc-2026-10-16.jpg",
+    "fromCall": "AM5GC",
+    "fromName": "URE Valencia, Patrona Guardia Civil 2026",
+    "qth": "Valencia, IM99TL",
+    "country": "Spain",
+    "continent": "Europe",
+    "date": "2026-10-16",
+    "time": "09:49z",
+    "band": "20m",
+    "mode": "FT8",
+    "freq": "14.074",
+    "rst": "-03"
   }
 ]
