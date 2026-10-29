@@ -403,5 +403,18 @@
     "band": "40m",
     "mode": "SSB",
     "rst": "59"
+  },
+  {
+    "id": "on4lo-p-2026-10-28",
+    "image": "/assets/images/qsl/on4lo-p-2026-10-28.jpg",
+    "fromCall": "ON4LO/P",
+    "qth": "ON-01047",
+    "country": "Belgium",
+    "continent": "Europe",
+    "date": "2026-10-28",
+    "time": "10:08z",
+    "band": "40m",
+    "mode": "SSB",
+    "rst": "59"
   }
 ]
