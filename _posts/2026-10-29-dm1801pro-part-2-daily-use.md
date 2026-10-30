@@ -171,6 +171,33 @@ You are on Double Wait, A (ON0AND) is the main channel, and someone calls on B (
 After a signal on B the radio stays on B for the Dual Watch Hang Time (500 ms). Whether PTT within that half second already transmits on B, I still have to confirm. Do not count on it: use [A/B].
 </div>
 
+<div class="dm-box" markdown="1">
+<p class="dm-box-label">Situation: listen on A and B, recognise the line, then hear only that one</p>
+You want to monitor two signals (for example the FM repeater on A and TG 206 on B). When something comes in, you first want to know **on which line**, then hear only that line, and if it is B, answer there.
+</div>
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Why it is confusing</p>
+In Double Wait the radio jumps to the line that receives, but only while the signal lasts. After the Dual Watch Hang Time (500 ms) it falls back to the main channel. If the other station has already stopped when you press [A/B], you end up on the wrong line. So: look and press **while the signal is still active**.
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: listen on two, recognise, narrow down, answer</p>
+
+1. Press **SK1 short** until the **DW** icon shows and both A and B are visible. Now you hear both lines. (Menu alternative: [MENU] > Settings > Radio Settings > Display Func > Dual Watch.)
+2. Wait for a signal. Recognise the line by: the **green LED**, the **signal bars** on that line only, and for DMR the **callsign or ID and talkgroup** on that line. The main channel marker may also jump to it.
+3. Is it on **A**? Nothing to switch: PTT already answers on A.
+4. Is it on **B** and you want to answer? Press **[A/B]** (or SK1 long) while the signal is still active. B is now the main channel and PTT transmits on B.
+5. To hear **only this line** from now on: press **SK1 short** until the DW icon disappears (Single Wait: both shown, only the main channel heard). Press again for Single Mode (only the main channel shown).
+6. When finished: **SK1 short** back to Double Wait, and **[A/B]** to make A the main channel again.
+7. Habit: **look at the marker before every PTT.**
+</div>
+
+<div class="dm-box dm-warn" markdown="1">
+<p class="dm-box-label">Tip and watch out (to be tested)</p>
+If the radio falls back too fast for you, raise **Dual Watch Hang Time** in the CPS under Option Feature > Work Mode (try 2 to 3 seconds, if the list allows it) and write it back. The order in which SK1 cycles through the three modes, and whether PTT inside the hang time already transmits on B, I still have to confirm on the radio.
+</div>
+
 <h2 id="dm-p2-4">4. Changing channel and zone</h2>
 
 <div class="dm-box dm-steps" markdown="1">
