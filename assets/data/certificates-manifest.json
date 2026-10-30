@@ -27,6 +27,11 @@
       "id": "wwa",
       "name": "WWA World Wide Award",
       "about": "Contacts with special event stations worldwide during the WWA Sprint."
+    },
+    {
+      "id": "uba-contest",
+      "name": "UBA ON Contest",
+      "about": "The UBA contest for Belgian stations, organised by the UBA Mechelen (MCL) division."
     }
   ],
   "certificates": [
@@ -71,6 +76,15 @@
       "image": "/assets/images/certificates/wwa-sprint-2026.jpg",
       "imageLarge": "/assets/images/certificates/wwa-sprint-2026-large.jpg",
       "alt": "World Wide Award Sprint 2026 certificate for ON3VZ, All Bands SSB, 245 points, 49 QSOs, 23 special event stations, 3 bands, position 1111 of 35815"
+    },
+    {
+      "id": "uba-on-contest-2026-ssb",
+      "program": "uba-contest",
+      "title": "ON Contest 2026, 40/80m SSB",
+      "detail": "ON stations category. Place 35 with 1650 points.",
+      "image": "/assets/images/certificates/uba-on-contest-2026-ssb.jpg",
+      "imageLarge": "/assets/images/certificates/uba-on-contest-2026-ssb-large.jpg",
+      "alt": "UBA ON Contest 2026 certificate for ON3VZ, 40/80m SSB, ON stations, place 35 with 1650 points"
     }
   ]
 }
