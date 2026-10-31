@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="Usage hierarchy: radio, zone, lines A and B, channel, analog or digital">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#153B5C"/></marker></defs>
+<rect width="900" height="640" rx="12" fill="#F7F9FB" stroke="#C9D3DC"/>
+<text x="450" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#153B5C">How to read the radio when using it</text>
+<g font-size="14" fill="#1B2A38">
+<rect x="300" y="55" width="300" height="50" rx="10" fill="#153B5C"/>
+<text x="450" y="86" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">RADIO</text>
+<rect x="250" y="135" width="400" height="75" rx="10" fill="#FBE5E0" stroke="#B3412E" stroke-width="2"/>
+<text x="450" y="162" text-anchor="middle" font-weight="700">ZONE (each line has its own zone)</text>
+<text x="450" y="184" text-anchor="middle">"Where am I?" e.g. Local, Flanders DMR, Hotspot</text>
+<text x="450" y="202" text-anchor="middle" font-size="12">Change: TK long (Zone Up) or [MENU] > Zone, on the main channel</text>
+<rect x="90" y="245" width="320" height="95" rx="10" fill="#E3EEF8" stroke="#1E6BA8" stroke-width="2"/>
+<text x="250" y="272" text-anchor="middle" font-weight="700">LINE A</text>
+<text x="250" y="294" text-anchor="middle">shows 1 channel of the zone</text>
+<text x="250" y="314" text-anchor="middle">the knob picks which one</text>
+<rect x="490" y="245" width="320" height="95" rx="10" fill="#E3EEF8" stroke="#1E6BA8" stroke-width="2"/>
+<text x="650" y="272" text-anchor="middle" font-weight="700">LINE B</text>
+<text x="650" y="294" text-anchor="middle">shows 1 channel of the zone</text>
+<text x="650" y="314" text-anchor="middle">the knob picks which one</text>
+<rect x="250" y="360" width="400" height="55" rx="10" fill="#FBF0DC" stroke="#B8791A" stroke-width="2"/>
+<text x="450" y="383" text-anchor="middle" font-weight="700">One line is the MAIN CHANNEL</text>
+<text x="450" y="403" text-anchor="middle">PTT transmits on it. [A/B] switches. DW listens to both.</text>
+<rect x="250" y="440" width="400" height="55" rx="10" fill="#E6F4EC" stroke="#0E8A50" stroke-width="2"/>
+<text x="450" y="463" text-anchor="middle" font-weight="700">CHANNEL</text>
+<text x="450" y="483" text-anchor="middle">frequency, power, name, scan list</text>
+<rect x="90" y="535" width="320" height="85" rx="10" fill="#FFFFFF" stroke="#1B2A38" stroke-width="2"/>
+<text x="250" y="560" text-anchor="middle" font-weight="700">ANALOG (FM)</text>
+<text x="250" y="582" text-anchor="middle">CTCSS tone, repeater shift,</text>
+<text x="250" y="600" text-anchor="middle">1750 Hz burst. Plain listening.</text>
+<rect x="490" y="535" width="320" height="85" rx="10" fill="#FFFFFF" stroke="#1B2A38" stroke-width="2"/>
+<text x="650" y="560" text-anchor="middle" font-weight="700">DIGITAL (DMR)</text>
+<text x="650" y="582" text-anchor="middle">Timeslot + Colour Code, TX talkgroup,</text>
+<text x="650" y="600" text-anchor="middle">RX group list (what you hear)</text>
+</g>
+<g stroke="#153B5C" stroke-width="2.5" marker-end="url(#a)" fill="none">
+<line x1="450" y1="105" x2="450" y2="133"/>
+<path d="M380 210 L250 243"/><path d="M520 210 L650 243"/>
+<path d="M250 340 L380 358"/><path d="M650 340 L520 358"/>
+<line x1="450" y1="415" x2="450" y2="438"/>
+<path d="M380 495 L250 533"/><path d="M520 495 L650 533"/>
+</g>
+</svg>

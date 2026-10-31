@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="Build order of the codeplug: contacts, RX group lists, channels, scan lists, zones">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#153B5C"/></marker></defs>
+<rect width="900" height="430" rx="12" fill="#F7F9FB" stroke="#C9D3DC"/>
+<text x="450" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#153B5C">Build order in the CPS: bottom layer first</text>
+<g font-size="14" fill="#1B2A38">
+<rect x="30" y="70" width="150" height="110" rx="10" fill="#E3EEF8" stroke="#1E6BA8" stroke-width="2"/>
+<text x="105" y="95" text-anchor="middle" font-weight="700">1. Contacts</text>
+<text x="105" y="120" text-anchor="middle">Digital contacts:</text><text x="105" y="140" text-anchor="middle">talkgroups 206, 2061,</text><text x="105" y="160" text-anchor="middle">9, 91 ... + DMR ID</text>
+<rect x="210" y="70" width="150" height="110" rx="10" fill="#EFE8F7" stroke="#7A5BA8" stroke-width="2"/>
+<text x="285" y="95" text-anchor="middle" font-weight="700">2. RX group lists</text>
+<text x="285" y="120" text-anchor="middle">Which talkgroups</text><text x="285" y="140" text-anchor="middle">you HEAR on a</text><text x="285" y="160" text-anchor="middle">digital channel</text>
+<rect x="390" y="70" width="150" height="110" rx="10" fill="#E6F4EC" stroke="#0E8A50" stroke-width="2"/>
+<text x="465" y="95" text-anchor="middle" font-weight="700">3. Channels</text>
+<text x="465" y="120" text-anchor="middle">Analog (FM) or</text><text x="465" y="140" text-anchor="middle">digital (DMR): the</text><text x="465" y="160" text-anchor="middle">building blocks</text>
+<rect x="570" y="70" width="150" height="110" rx="10" fill="#FBF0DC" stroke="#B8791A" stroke-width="2"/>
+<text x="645" y="95" text-anchor="middle" font-weight="700">4. Scan lists</text>
+<text x="645" y="120" text-anchor="middle">Lists of channels</text><text x="645" y="140" text-anchor="middle">to search; each</text><text x="645" y="160" text-anchor="middle">channel points to one</text>
+<rect x="750" y="70" width="120" height="110" rx="10" fill="#FBE5E0" stroke="#B3412E" stroke-width="2"/>
+<text x="810" y="95" text-anchor="middle" font-weight="700">5. Zones</text>
+<text x="810" y="120" text-anchor="middle">Folders of</text><text x="810" y="140" text-anchor="middle">channels, what</text><text x="810" y="160" text-anchor="middle">you scroll through</text>
+</g>
+<g stroke="#153B5C" stroke-width="2.5" marker-end="url(#a)"><line x1="180" y1="125" x2="208" y2="125"/><line x1="360" y1="125" x2="388" y2="125"/><line x1="540" y1="125" x2="568" y2="125"/><line x1="720" y1="125" x2="748" y2="125"/></g>
+<text x="450" y="228" text-anchor="middle" font-size="16" font-weight="700" fill="#153B5C">What a DIGITAL channel needs from the layers before it</text>
+<g font-size="14" fill="#1B2A38">
+<rect x="130" y="248" width="640" height="150" rx="10" fill="#FFFFFF" stroke="#C9D3DC"/>
+<text x="150" y="276" font-weight="700">Digital channel = frequency + 4 links</text>
+<text x="150" y="304">Timeslot (1 or 2) and Colour Code: must match the repeater</text>
+<text x="150" y="328">Contact (from 1): the talkgroup you TRANSMIT to when you press PTT</text>
+<text x="150" y="352">RX Group List (from 2): the talkgroups you HEAR</text>
+<text x="150" y="376">Scan List (from 4): linked by hand afterwards in the channel screen</text>
+</g>
+</svg>
