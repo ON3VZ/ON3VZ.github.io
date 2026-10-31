@@ -58,6 +58,7 @@ Where something is marked **(to be tested)** I have not yet confirmed it on the 
 <div class="dm-toc" markdown="1">
 **Contents**
 
+0. [The map: how to read the radio](#dm-p2-0)
 1. [The keys and what I put on them](#dm-p2-1)
 2. [The screen and the LED](#dm-p2-2)
 3. [A and B: two channels, one main channel](#dm-p2-3)
@@ -75,6 +76,33 @@ Where something is marked **(to be tested)** I have not yet confirmed it on the 
 15. [Useful extras, each with a step plan](#dm-p2-15)
 16. [Good habits on Belgian DMR](#dm-p2-16)
 17. [When it does not work](#dm-p2-17)
+</div>
+
+<h2 id="dm-p2-0">The map: how to read the radio</h2>
+
+<figure class="dm-fig">
+<img src="/assets/images/dm1801pro/hierarchy-use.svg" alt="Usage hierarchy: radio, zone, line A and B, main channel, channel, analog or digital">
+<figcaption>The order in which you meet things on the radio. The build order (the other way around) is in <a href="{% post_url 2026-10-29-dm1801pro-part-1-setup %}#dm-p1-7">Part 1, chapter 7</a>.</figcaption>
+</figure>
+
+<div class="dm-box dm-mean" markdown="1">
+<p class="dm-box-label">What it means</p>
+You choose a **zone** (a folder of channels). The screen has two lines, **A** and **B**, and each line shows one channel of its zone; the two lines may even use different zones. One of the two lines is the **main channel**: PTT always transmits there. The **channel** itself is **analog** (FM, tone and shift) or **digital** (DMR, timeslot, colour code, talkgroup). **Scanning** is an action on the channel you are on (it uses that channel's scan list), and **Dual Watch** listens to A and B at the same time.
+</div>
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Why this helps</p>
+When something does not work, the map tells you where to look. You cannot hear anything? Check the line (A or B), the zone and the channel. You hear it but cannot answer? Check which line is the main channel. DMR is silent while FM works? Look at the digital part: timeslot, colour code, RX group list. Always work from the top down.
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Example: from switching on to a DMR call</p>
+
+1. Pick the **zone** you need (TK long, or [MENU] > Zone).
+2. Pick the **line**: [A/B] to make A or B the main channel.
+3. Turn the **knob** to the **channel**, for example ON0SNW 206.
+4. Look at the type: DMR channels show a talkgroup or caller ID, FM channels only the name.
+5. Listen. If you want to talk, check the marker on the main channel, then press PTT.
 </div>
 
 <h2 id="dm-p2-1">1. The keys and what I put on them</h2>

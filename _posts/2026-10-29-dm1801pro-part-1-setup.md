@@ -354,6 +354,39 @@ Before typing anything, we decide how the codeplug is organised: which channels,
 A radio with 200 channels in one long list is unusable. The radio works with **zones**: you pick the zone for where you are, and inside that zone you only see the channels that make sense there. The fewer channels in a zone, the faster you turn to the right one, and what you cannot reach anyway is not in the way.
 </div>
 
+<figure class="dm-fig">
+<img src="/assets/images/dm1801pro/hierarchy-build.svg" alt="Build order in the CPS: contacts, RX group lists, channels, scan lists, zones">
+<figcaption>How the codeplug is built: every layer uses the one before it. A digital channel links to a contact (what you transmit to), an RX group list (what you hear) and a scan list. Zones come last because they only collect channels.</figcaption>
+</figure>
+
+<div class="dm-box dm-mean" markdown="1">
+<p class="dm-box-label">What it means</p>
+**Channels** are the building blocks and exist on their own. A channel is either analog (FM) or digital (DMR); that is a property of the channel, not of the zone. **Zones** are only folders that group channels, and one zone may mix FM and DMR. **Scan lists** and **RX group lists** are separate lists that channels point to. So in the CPS you build bottom up: contacts, RX group lists, channels, scan lists, zones. How you then use this on the radio (zone, line A and B, main channel) is drawn in [Part 2]({% post_url 2026-10-29-dm1801pro-part-2-daily-use %}#dm-p2-0).
+</div>
+
+| Layer | What it is | Example in my codeplug | Where in the CPS |
+|---|---|---|---|
+| 1. Contacts | The names of the talkgroups (and private IDs) you can transmit to | 206 Belgium, 2061 Flanders, 9 Local | 8.4 Digital > Talk Groups |
+| 2. RX group list | A list of contacts you want to HEAR on a channel | RX VL = 206, 2061, 9 | 8.5 Digital > RX Group List |
+| 3. Channel | One frequency with all its settings: FM or DMR | ON0AND (FM), ON0SNW 206 (DMR) | 8.6 Public > Channel |
+| 4. Scan list | A list of channels the radio searches through | one list per region | 8.7 Public > Scan |
+| 5. Zone | A folder of channels, so you do not scroll through 200 | Local, Flanders DMR, Hotspot | 8.8 Public > Zone |
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Why this order</p>
+You cannot link to something that does not exist yet. A digital channel asks "which contact do I transmit to?" and "which RX group list do I hear?", so those must exist first. A zone only collects channels, so it comes last. If you build in the wrong order you end up going back and forth between screens, and (as I found out) an import can wipe a list you had already linked.
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Example: how ON0SNW 206 comes to life</p>
+
+1. Contacts: create the talkgroup **206 Belgium** (type Group Call, ID 206).
+2. RX group list: create **RX VL** and add 206 (and the others you want to hear).
+3. Channel: new digital channel **ON0SNW 206** with the repeater frequency, timeslot and colour code of that repeater, Contact = 206 Belgium, RX Group List = RX VL.
+4. Scan list: add the channel to a scan list, then pick that scan list in the channel screen.
+5. Zone: add the channel to the right zone. Now you can find it by turning the knob.
+</div>
+
 ### The channels, and their order
 
 1. **WLD (144.675 MHz simplex)** on channel 1. My club frequency is always first.
