@@ -384,14 +384,14 @@ You cannot link to something that does not exist yet. A digital channel asks "wh
 2. RX group list: create **RX VL** and add 206 (and the others you want to hear).
 3. Channel: new digital channel **ON0SNW 206** with the repeater frequency, timeslot and colour code of that repeater, Contact = 206 Belgium, RX Group List = RX VL.
 4. Scan list: add the channel to a scan list, then pick that scan list in the channel screen.
-5. Zone: add the channel to the right zone. Now you can find it by turning the knob.
+5. Zone: add the channel to the right zone. Now you can find it with [▲] / [▼].
 </div>
 
 ### The channels, and their order
 
 1. **WLD (144.675 MHz simplex)** on channel 1. My club frequency is always first.
 2. **Simplex**: 145.500 (2 m FM calling), 433.500 (70 cm FM calling), DMR simplex 433.450.
-3. **Hotspot**: 15 channels on 438.100 MHz, low power, one channel per talkgroup (HS 206, HS 2061 ... HS Parrot BM). You change talkgroup by turning the channel knob.
+3. **Hotspot**: 15 channels on 438.100 MHz, low power, one channel per talkgroup (HS 206, HS 2061 ... HS Parrot BM). You change talkgroup with the [▲] / [▼] keys.
 4. **FM repeaters**, grouped per province.
 5. **DMR repeaters**, per province, each with **three channels**.
 6. **PMR446**, receive only, at the end.
@@ -639,7 +639,7 @@ My start up: **A = zone QTH Antwerpen, channel ON0AND** (FM) and **B = zone QTH 
 
 <div class="dm-box dm-mean" markdown="1">
 <p class="dm-box-label">What roaming means</p>
-With roaming the radio looks through a list of DMR repeaters, finds the one with the strongest signal and switches to it. On the road you keep TG 206 without turning the knob yourself. "One Time Roam" searches once on request; "Auto Roaming" searches again when the repeater is lost. A **roaming zone** is a group of roaming channels, for example per route.
+With roaming the radio looks through a list of DMR repeaters, finds the one with the strongest signal and switches to it. On the road you keep TG 206 without changing channel yourself. "One Time Roam" searches once on request; "Auto Roaming" searches again when the repeater is lost. A **roaming zone** is a group of roaming channels, for example per route.
 </div>
 
 | Screen | Column | Meaning | My value |
@@ -784,7 +784,26 @@ The dashboard showed "DMR Net" switching between green and yellow. My radio came
 
 <div class="dm-box dm-mean" markdown="1">
 <p class="dm-box-label">Why you hear nothing on TG 206 via the hotspot</p>
-A BrandMeister hotspot only passes a talkgroup when it is subscribed. **Dynamic**: you key up on HS 206 yourself, and 206 stays on your hotspot for about 15 minutes after your last transmission. **Static**: on brandmeister.network > your devices > your hotspot (your DMR ID) > static talkgroups, add 206 (and maybe 2061); then it is always on. Do not add too many: a simplex hotspot passes one conversation at a time. And 206 is a calling group: it can be quiet for hours. Check whether there is traffic with the [BrandMeister Hoseline](https://help.brandmeister.network/last-heard-dash/hoseline/) (listen to TG 206 in your browser) or the [BM206 dashboard](http://dashboard.ham-dmr.be/dynamic/lastheard.php).
+A BrandMeister hotspot only passes a talkgroup when it is subscribed. **Dynamic**: you key up on HS 206 yourself, and 206 stays on your hotspot for about 15 minutes after your last transmission. **Static**: it stays on until you remove it (steps below). Do not add too many: a simplex hotspot passes one conversation at a time. And 206 is a calling group: it can be quiet for hours. Check whether there is traffic with the [BrandMeister Hoseline](https://help.brandmeister.network/last-heard-dash/hoseline/) (listen to TG 206 in your browser) or the [BM206 dashboard](http://dashboard.ham-dmr.be/dynamic/lastheard.php).
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: make 206 and 2061 static on your hotspot</p>
+
+1. On a computer or phone go to [brandmeister.network](https://brandmeister.network) and log in. Do this on the BrandMeister site, not on the Pi-Star dashboard.
+2. In the left menu, at the bottom under the small grey heading **SYSOPDASHBOARD**, click **My Devices**. If the menu is hidden, click the three-line icon at the top left.
+3. In the table **DMR Devices** you see your hotspot (your DMR ID, a green plug icon when it is connected). Click the blue **Bewerken** (Edit) button on that row. Not **Weergeven** (View).
+4. Scroll down to the block **Statische gespreksgroep** (Static talkgroup).
+5. Type **206** in the white field and click the blue arrow **→**. Then type **2061** and click **→** again.
+6. They appear in the box on the right as **Belgium (206)** and **Belgium North (2061)**. Refresh the page (F5) to check that they are still there: that means they are saved. There is no separate Save button for this block.
+7. Leave everything else on that page alone, especially **Device Password** (do not press Save Password, that breaks the link with Pi-Star) and the yellow buttons under Actions.
+</div>
+
+<figure class="dm-fig"><img src="/assets/images/dm1801pro/bm-static-talkgroups.png" alt="BrandMeister device page, block Statische gespreksgroep, with Belgium (206) and Belgium North (2061) in the list on the right" loading="lazy"><figcaption>Done: 206 and 2061 are static on my hotspot. The hotspot works on timeslot 2 only, and there is no slot choice in this block.</figcaption></figure>
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Why only these two</p>
+A simplex hotspot passes one conversation at a time on one timeslot. 206 (all of Belgium) and 2061 (Flanders) are enough to follow what happens; more static talkgroups only make it busier. Everything else you can still call dynamically by keying up on it.
 </div>
 
 <h2 id="dm-p1-11">11. A critical look: validating the result</h2>

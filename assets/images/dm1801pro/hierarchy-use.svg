@@ -12,11 +12,11 @@
 <rect x="90" y="245" width="320" height="95" rx="10" fill="#E3EEF8" stroke="#1E6BA8" stroke-width="2"/>
 <text x="250" y="272" text-anchor="middle" font-weight="700">LINE A</text>
 <text x="250" y="294" text-anchor="middle">shows 1 channel of the zone</text>
-<text x="250" y="314" text-anchor="middle">the knob picks which one</text>
+<text x="250" y="314" text-anchor="middle">[▲] / [▼] picks which one</text>
 <rect x="490" y="245" width="320" height="95" rx="10" fill="#E3EEF8" stroke="#1E6BA8" stroke-width="2"/>
 <text x="650" y="272" text-anchor="middle" font-weight="700">LINE B</text>
 <text x="650" y="294" text-anchor="middle">shows 1 channel of the zone</text>
-<text x="650" y="314" text-anchor="middle">the knob picks which one</text>
+<text x="650" y="314" text-anchor="middle">[▲] / [▼] picks which one</text>
 <rect x="250" y="360" width="400" height="55" rx="10" fill="#FBF0DC" stroke="#B8791A" stroke-width="2"/>
 <text x="450" y="383" text-anchor="middle" font-weight="700">One line is the MAIN CHANNEL</text>
 <text x="450" y="403" text-anchor="middle">PTT transmits on it. [A/B] switches. DW listens to both.</text>

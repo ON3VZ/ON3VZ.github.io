@@ -100,7 +100,7 @@ When something does not work, the map tells you where to look. You cannot hear a
 
 1. Pick the **zone** you need (TK long, or [MENU] > Zone).
 2. Pick the **line**: [A/B] to make A or B the main channel.
-3. Turn the **knob** to the **channel**, for example ON0SNW 206.
+3. Press **[▲] / [▼]** to the **channel**, for example ON0SNW 206.
 4. Look at the type: DMR channels show a talkgroup or caller ID, FM channels only the name.
 5. Listen. If you want to talk, check the marker on the main channel, then press PTT.
 </div>
@@ -113,8 +113,7 @@ When something does not work, the map tells you where to look. You cannot hear a
 | **SK1** (side key above or below PTT) | Display Mode: cycles Single Mode, Double Wait, Single Wait | Switch Main Channel (A or B) |
 | **SK2** (second side key) | Monitor: open the squelch | TBST Send: 1750 Hz tone burst |
 | **TK** (orange top key) | Scan on / off | Zone Up: next zone |
-| **Channel knob** (top) | Next / previous channel in the zone | |
-| **Volume knob** (top) | On / off and volume | |
+| **Volume knob** (top, the only knob) | On / off and volume | |
 | **[MENU]** | Open the menu, confirm | |
 | **[BACK]** | Back one level, exit the menu, delete a character | Switch between channel mode (MR) and frequency mode (VFO) |
 | **[▲] / [▼]** | Channel up / down; move in menus | |
@@ -232,7 +231,7 @@ If the radio falls back too fast for you, raise **Dual Watch Hang Time** in the 
 <p class="dm-box-label">Step plan: change channel</p>
 
 1. Make the line you want to change the main channel ([A/B]).
-2. Turn the **channel knob**, or press **[▲] / [▼]**. You move through the channels of the current zone of that line.
+2. Press **[▲] / [▼]**. You move through the channels of the current zone of that line.
 3. Do you see "VFO" on the screen? Press **[VFO/MR]** to return to channel mode.
 4. Or key in the channel number (to be tested: I expect the number is the position inside the zone).
 </div>
@@ -273,8 +272,8 @@ A and B can each be in their own zone: for example A in "Ant-Kust" (FM along the
 
 1. Before you leave: A = the zone of your route (for example Ant-Kust), B = Onderweg BE 206.
 2. Double Wait on (SK1 short until you see DW).
-3. On A, turn to the repeater you hear best; the channels are in driving order. Or scan (chapter 7).
-4. On B, turn to the 206 channel of the DMR repeater nearest to you, or use roaming.
+3. On A, press [▲] / [▼] to the repeater you hear best; the channels are in driving order. Or scan (chapter 7).
+4. On B, press [▲] / [▼] to the 206 channel of the DMR repeater nearest to you, or use roaming.
 5. Arrived: TK long to the local zone.
 6. **Do not operate while driving.** Set it up before you leave, or let a passenger do it.
 </div>
@@ -414,7 +413,7 @@ Answering **within 5 seconds** (Call Hold Time) after someone stops goes back on
 <p class="dm-box-label">Step plan: closing</p>
 
 1. "73, ON1ABC from ON3VZ."
-2. If you were on a QSY group: turn back to **ON0SNW 206**, so you can be called again. Nothing to "log off": a dynamic group drops by itself after a few quiet minutes.
+2. If you were on a QSY group: go back to **ON0SNW 206**, so you can be called again. Nothing to "log off": a dynamic group drops by itself after a few quiet minutes.
 </div>
 
 <h2 id="dm-p2-10">10. QSY on DMR</h2>
@@ -434,7 +433,7 @@ QSY is the old Q code for "change frequency". On DMR it means: move **together t
 
 1. You called on ON0SNW 206 and ON1ABC answered.
 2. Agree briefly: "ON1ABC, shall we QSY to 2064?" He confirms.
-3. Turn the channel knob to **ON0SNW QSY** (in every zone it sits right after ON0SNW 2061).
+3. Press [▲] / [▼] to **ON0SNW QSY** (in every zone it sits right after ON0SNW 2061).
 4. Check the screen: TG 2064, slot 2.
 5. PTT, wait for the beep: "ON1ABC from ON3VZ on 2064." This first call activates 2064 on ON0SNW.
 6. Release and wait. ON1ABC does the same on his repeater. From then on you hear each other on 2064.
@@ -455,7 +454,7 @@ QSY is the old Q code for "change frequency". On DMR it means: move **together t
 
 | Method | How | When |
 |---|---|---|
-| Via the channel (easiest) | Turn the knob: ON0SNW 206, ON0SNW 2061, ON0SNW QSY; HS 206, HS 2061... | Always the first choice |
+| Via the channel (easiest) | Press [▲] / [▼]: ON0SNW 206, ON0SNW 2061, ON0SNW QSY; HS 206, HS 2061... | Always the first choice |
 | Contact list | [MENU] > Talk Group > Contact List > talkgroup > PTT (manual 9.2) | 2065 to 2069, 9 |
 | Manual dial | [#] short on a digital channel, [#] toggles group / private, type the number, PTT | A talkgroup that is not in your list |
 | Call back | [MENU] > Call Log > a call > PTT | Answering later |
@@ -504,6 +503,41 @@ My first test at home gave "Searching" and then "Failed". The likely reason: a B
 
 <h2 id="dm-p2-13">13. Using the hotspot</h2>
 
+<div class="dm-box" markdown="1">
+<p class="dm-box-label">Situation: I am at home and just want to listen on the hotspot</p>
+Which channel do I choose, 206 or 2061? Do I put 206 on A and another talkgroup on B?
+</div>
+
+<div class="dm-box dm-mean" markdown="1">
+<p class="dm-box-label">What it means</p>
+Two different things are at work, and that is what makes it confusing:
+
+1. **What you hear** is decided by the **hotspot** (which talkgroups BrandMeister sends to it: the *static* ones) and by the **RX group list** of the channel. In my codeplug every hotspot channel uses the list **RX Hotspot**, which contains all talkgroups. So **every** HS channel plays whatever the hotspot receives.
+2. **Where you transmit** is decided by the **channel**: HS 206 sends your voice to talkgroup 206, HS 2061 to 2061.
+
+So for listening it does not matter whether you sit on HS 206 or HS 2061. The channel only decides where **PTT** goes. You do **not** need 206 on A and another talkgroup on B: all hotspot channels share the same frequency (438.100 MHz) and the same timeslot (TS2), so both lines would hear exactly the same thing.
+</div>
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Why not 2062 on B</p>
+2062 is Wallonia. Unless you want to follow Walloon traffic, leave it out. Choose **206** (all of Belgium, the most traffic) or **2061** (Flanders only, calmer). I would make both static, and use **HS 206** as the default listening channel.
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: exactly what to do</p>
+
+1. **Once, on the computer:** brandmeister.network > **My Devices** > **Bewerken** on your hotspot > block **Statische gespreksgroep**: add **206** and **2061**. From now on BrandMeister keeps them on your hotspot. The exact steps with a screenshot are in [Part 1, chapter 10]({% post_url 2026-10-29-dm1801pro-part-1-setup %}#dm-p1-10).
+2. **On the radio:** zone **Hotspot**, channel **HS 206**. Put it on line A or B, it does not matter.
+3. Check that the hotspot is on (Pi-Star dashboard: green, or Admin > Live Logs).
+4. Listen. If someone speaks on 206 or 2061, you hear them and the screen shows who it is.
+5. To answer on 2061 instead of 206: press [▲] / [▼] to **HS 2061** (same frequency, only your TX talkgroup changes) and press PTT.
+</div>
+
+<div class="dm-box dm-warn" markdown="1">
+<p class="dm-box-label">Watch out (to be tested)</p>
+A simple hotspot works on one timeslot, so if 206 and 2061 are both busy at the same moment you will probably hear only one of them. Also: without static talkgroups you hear nothing until you have keyed up once on a talkgroup, and after about 15 minutes of silence it is gone again.
+</div>
+
 <div class="dm-box dm-steps" markdown="1">
 <p class="dm-box-label">Step plan: everyday use at home</p>
 
@@ -523,6 +557,59 @@ My first test at home gave "Searching" and then "Failed". The likely reason: a B
 3. Pi-Star address: look in your phone under hotspot > connected devices for "pi-star" and its IP; pi-star.local does not always work through a phone.
 4. Only in Belgium with an ON3 licence.
 5. If no known network is found, the Pi starts its own network "pi-star" (now with your PSK): connect to it and add the new wifi.
+</div>
+
+<div class="dm-box" markdown="1">
+<p class="dm-box-label">Situation: is anyone talking on 206 or 2061 right now?</p>
+You sit at home with the hotspot on and hear nothing. Is the hotspot broken, or is it just quiet?
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: check the traffic on BrandMeister</p>
+
+1. Log in at [brandmeister.network](https://brandmeister.network) and open **Laatst gehoord (DMR)** (Last Heard) in the left menu.
+2. Open the **Zoeken** (search) block at the top.
+3. In the first rule choose **Bestemming ID** (destination ID), keep **equal**, type **206**. Add a second rule with **+ Rule**, choose **Bestemming ID**, **equal**, **2061**, and set the group to **OR**. Do not use **Master ID**: that is the BrandMeister server, not the talkgroup.
+4. Click **Zoeken**. You now only see calls to 206 and 2061, the two talkgroups your hotspot passes.
+5. Bookmark the page: **Ctrl+D**, or use the button **Kopieer query link** below the filter. The filter is stored in the link.
+6. Only the last 200 calls are searched, so an empty list does not always mean there was no traffic.
+</div>
+
+<figure class="dm-fig dm-narrow"><img src="/assets/images/dm1801pro/bm-lastheard-filter.png" alt="BrandMeister Last Heard search block with two rules: Bestemming ID equal 206 and Bestemming ID equal 2061" loading="lazy"><figcaption>The filter: destination 206 or 2061</figcaption></figure>
+
+<div class="dm-box dm-mean" markdown="1">
+<p class="dm-box-label">What it means: reading the list</p>
+Everything on BrandMeister passes by in this list, all talkgroups of the world. A call to **9990** is somebody testing the Parrot, a call to **208** is France: neither reaches your hotspot. Only lines where the destination is **Belgium (206)** or **Belgium North (2061)** count. Many calls last **0:00 to 0:01** seconds: someone briefly keys up without speaking (a "kerchunk"). Your radio then shows the ID and beeps, but there is nothing to hear. That is what I heard the first time.
+</div>
+
+<div class="dm-box" markdown="1">
+<p class="dm-box-label">Situation: my first call on 206 from the hotspot</p>
+Hotspot on, 206 and 2061 static, and I want to call someone.
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: the first call</p>
+
+1. Listen for a minute on **HS 206**, so you do not interrupt anyone.
+2. Check that the channel name on the screen says **HS 206**, not a Parrot channel.
+3. Press PTT, wait **one second**, then say calmly: "ON3VZ, test" (or "CQ Belgium, this is ON3VZ, listening on 206"). Release.
+4. Wait at least **5 seconds** (the Call Hold Time). If someone answers inside that time, your next PTT goes to the same talkgroup.
+5. Check in Pi-Star (Dashboard) the table **Local RF Activity**: a line from 2060971 to 206 proves the radio reaches the hotspot. Then check **Laatst gehoord** with the filter above: a line with **ON3VZ**, link name **MMDVM Host**, destination Belgium (206).
+6. Keep it short and move to a QSY talkgroup for a longer chat (chapter 10). A signal report on DMR is not an S-meter reading: ask how your audio sounds and whether it comes through every time.
+</div>
+
+<figure class="dm-fig"><img src="/assets/images/dm1801pro/bm-qso-206-hotspot.png" alt="BrandMeister Last Heard filtered on 206: my hotspot (MMDVM Host, ON3VZ) alternating with other stations on a repeater and on Open DMR Terminal" loading="lazy"><figcaption>My first QSO on 206 via the hotspot: the lines with link name "MMDVM Host" are mine, the others are the stations that answered (names blurred). The green star and the signal bars show my own transmissions.</figcaption></figure>
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Hotspot versus repeater: check before you rely on it</p>
+The hotspot sits two metres from the radio, a repeater is kilometres away. Before you try a repeater, look at its page on BrandMeister: **DMR Devices**, search the repeater, open it. Read: **Status** (online, "Slot 1 & 2 linked"), **Colour code**, **Frequencies** (the page shows them from the repeater's point of view, so TX and RX are swapped compared to your radio) and **Slot information**: which talkgroups are static on timeslot 1 and 2. Your channel must match.
+</div>
+
+<figure class="dm-fig dm-narrow"><img src="/assets/images/dm1801pro/bm-device-on0kb.png" alt="BrandMeister device page of repeater ON0KB in Bornem: master BM2061, shift minus 7.6 MHz, colour code 1, timeslot 1 static 206 and 2061, timeslot 2 static 20620 and 206202" loading="lazy"><figcaption>ON0KB (Bornem): online, colour code 1, TS1 static 206 and 2061. My channels ON0KB 206 and ON0KB 2061 therefore use Slot 1. (Sysop names blurred.)</figcaption></figure>
+
+<div class="dm-box dm-warn" markdown="1">
+<p class="dm-box-label">Watch out (to be tested)</p>
+My first try on ON0KB (about 12 km away) with the handheld and its standard antenna, standing outside against the house, did not get through, although the settings matched the page above. DMR is strict: the repeater hears you or it does not. Next: measure the SWR of a longer antenna on 431.325 and 438.925 MHz first, then listen on ON0KB 206 when there is traffic, then try again. I will update this post with the result.
 </div>
 
 <h2 id="dm-p2-14">14. DTMF: EchoLink and SvxLink</h2>
