@@ -11,6 +11,9 @@ excerpt: "Everything I did to turn a brand new Baofeng DM-1801 Pro into a workin
 .dm-kicker { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--dm-warm) !important; margin: 0 0 .4rem !important; }
 .dm-lead { font-size: 1.28rem; line-height: 1.5; color: var(--c-text) !important; font-weight: 300; margin: 0 0 .7rem !important; max-width: 760px; }
 .dm-byline { font-family: var(--f-mono); font-size: .8rem; color: var(--c-text-3) !important; margin: 0 0 1.6rem !important; }
+.dm-article .dm-only-dark { display: none; }
+html[data-mode="dark"] .dm-article .dm-only-dark { display: block; }
+html[data-mode="dark"] .dm-article .dm-only-light { display: none; }
 .dm-fig { margin: 1.6rem 0 2rem; }
 .dm-fig img { display: block; width: 100%; height: auto; border: 1px solid var(--c-border); border-radius: 8px; }
 .dm-fig.dm-narrow img { max-width: 560px; margin: 0 auto; }
@@ -147,6 +150,50 @@ Before you start, gather everything. Below is exactly what I used, with the link
 - **Zone**: a named group of channels, for example "QTH Antwerpen" or "Kust". You switch zones instead of scrolling through 200 channels.
 - **CTCSS**: a low, inaudible tone you send with your FM signal to open a repeater (79.7 Hz and 131.8 Hz are common in Flanders, 74.4 Hz in Wallonia).
 </div>
+
+### The big picture: how it all fits together
+
+<div class="dm-box" markdown="1">
+<p class="dm-box-label">What we do</p>
+Before the details, two drawings of the whole system. First a picture, then an infographic with the details: who you are, how you get on the network, what happens when you press PTT, and what the two timeslots are. Come back to it whenever a later chapter gets confusing. In my [talk report on digital voice]({% post_url 2026-10-10-digital-voice-modes-on4pn-wld %}) the same ideas are explained at a more general level (timeslots, networks, codeplug); this is the DMR-on-my-desk version.
+</div>
+
+<figure class="dm-fig"><img class="dm-only-light" src="/assets/images/dm1801pro/dmr-picture-light.svg" alt="Illustration: a handheld radio and a Pi-Star hotspot at home, a radio on the road, an app or laptop, and three repeater masts, all connected through the BrandMeister internet cloud" loading="lazy"><img class="dm-only-dark" src="/assets/images/dm1801pro/dmr-picture-dark.svg" alt="Illustration: a handheld radio and a Pi-Star hotspot at home, a radio on the road, an app or laptop, and three repeater masts, all connected through the BrandMeister internet cloud" loading="lazy"><figcaption>The same system as a picture. Radio waves only cover the first and last stretch (radio to hotspot, radio to repeater). Everything in between goes over the internet to BrandMeister, the cloud in the middle. An app or web terminal skips the radio part completely.</figcaption></figure>
+
+<figure class="dm-fig"><img class="dm-only-light" src="/assets/images/dm1801pro/dmr-infographic-light.svg" alt="Infographic: callsign, RadioID DMR ID and BrandMeister account; radio, hotspot, repeaters and app connecting to a BrandMeister master with talkgroups; what happens when you press PTT on 206; and the two timeslots" loading="lazy"><img class="dm-only-dark" src="/assets/images/dm1801pro/dmr-infographic-dark.svg" alt="Infographic: callsign, RadioID DMR ID and BrandMeister account; radio, hotspot, repeaters and app connecting to a BrandMeister master with talkgroups; what happens when you press PTT on 206; and the two timeslots" loading="lazy"><figcaption>DMR in one picture. Panel 1: one ID for everything. Panel 2: three ways onto the network. Panel 3: what a call on 206 does. Panel 4: two lanes on one frequency.</figcaption></figure>
+
+<div class="dm-box dm-mean" markdown="1">
+<p class="dm-box-label">What it means</p>
+**One ID.** Your callsign gets a **DMR ID** at RadioID.net (mine is 2060971; 206 stands for Belgium). Your radio, your hotspot and any app use that same number. BrandMeister adds an **account** with your callsign, mostly needed so your hotspot may log in (the Hotspot Security password).
+
+**BrandMeister sits in the middle.** Every hotspot, repeater and app connects over the internet to a **master**, a server of the network. Mine is BM2061 Belgium. Only the first and last stretch is radio; the rest is internet.
+
+**Talkgroups are rooms, not people.** Everyone who has that room switched on hears you. That is why a call on 206 goes to all of Belgium.
+
+**OpenDMR and other networks** are separate networks with their own servers. A repeater is normally connected to one network. Calls only cross if the sysops build a bridge between two networks. Whether that exists for Belgian repeaters, I could not verify (to be verified).
+
+**Everything opens?** Only the repeaters and hotspots that carry that talkgroup. 206 is static on almost every Belgian repeater, so yes: it opens all of them. That is why you keep it short and move to a QSY talkgroup (2064 to 2069) for a chat: nobody carries those permanently, so only the places where someone keys up open.
+
+**Timeslots.** A repeater alternates between two lanes (TS1 and TS2), 30 ms each. A call occupies one lane; the other stays free for a second call. On Belgian repeaters 206 and 2061 live on TS1 and QSY on TS2; a simple hotspot only has TS2. Your channel must use the same slot (and colour code) as the repeater, or the repeater does not hear you.
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: how to read a line in Last Heard</p>
+
+1. Log in at [brandmeister.network](https://brandmeister.network) and open **Laatst gehoord (DMR)** in the left menu.
+2. Look at one line from left to right:
+   - **Tijd**: how long ago it happened.
+   - **Link naam**: how the call entered the network. *MMDVM Host* is a hotspot, *Hytera Multi-Site Connect* (or another repeater type) is a repeater, *Open DMR Terminal* is an app or web terminal.
+   - **Mijn roepnaam**: who spoke: callsign, name and DMR ID.
+   - **Talker Alias**: the name that radio sends along.
+   - **Bron**: the device or repeater the call came from.
+   - **Bestemming**: the talkgroup, with a group icon and a flag (Belgium (206)). A private call shows a person icon.
+   - **Opties, Signal, Duur**: the type (DMR or RoIP for an app), the signal bars (not for an app) and how long the call lasted.
+3. Not sure what you are looking at? Find your own line: link name *MMDVM Host* and your callsign. That is what a call from your hotspot looks like, and everything else follows from it.
+4. Very short calls (0:00 to 0:01) are someone briefly keying up without speaking.
+</div>
+
+<figure class="dm-fig"><img src="/assets/images/dm1801pro/bm-qso-206-hotspot.png" alt="BrandMeister Last Heard filtered on 206: my hotspot (link name MMDVM Host) alternating with other stations on a repeater and on Open DMR Terminal" loading="lazy"><figcaption>An example from my first QSO on 206: my hotspot (MMDVM Host) alternating with a station on a repeater (Hytera Multi-Site Connect) and one on an app (Open DMR Terminal). Names of the other stations blurred.</figcaption></figure>
 
 <h2 id="dm-p1-3">3. Your DMR ID at RadioID.net</h2>
 

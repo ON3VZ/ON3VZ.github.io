@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1270" font-family="'IBM Plex Sans', 'Segoe UI', Arial, sans-serif" role="img" aria-label="Infographic: how DMR fits together: one ID, how you connect through hotspot, repeater or app to BrandMeister, what happens when you press PTT on 206, and the two timeslots">
+<title>How DMR fits together: identity, connections, talkgroups and timeslots</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#A9BDCF"/></marker></defs>
+<rect x="1" y="1" width="998" height="1268" rx="16" fill="#142334" stroke="#2C4258" stroke-width="2"/>
+<text x="500" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#8CCBF2">How DMR fits together</text>
+<rect x="12" y="55" width="976" height="135" rx="12" fill="#1A2D41" stroke="#2C4258"/>
+<text x="30" y="81" font-size="16" font-weight="700" fill="#8CCBF2" letter-spacing="1">1. WHO YOU ARE: ONE ID FOR EVERYTHING</text>
+<rect x="30" y="95" width="190" height="80" rx="10" fill="#17324A" stroke="#5AB4EA" stroke-width="2"/>
+<text x="125.0" y="117" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">Your callsign</text>
+<text x="125.0" y="139" text-anchor="middle" font-size="13.5" fill="#E8F0F7">ON3VZ</text>
+<rect x="270" y="95" width="230" height="80" rx="10" fill="#2A2340" stroke="#A98BD6" stroke-width="2"/>
+<text x="385.0" y="117" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">RadioID.net</text>
+<text x="385.0" y="139" text-anchor="middle" font-size="13.5" fill="#E8F0F7">you register your licence</text>
+<text x="385.0" y="157" text-anchor="middle" font-size="13.5" fill="#E8F0F7">and get a number</text>
+<rect x="550" y="95" width="200" height="80" rx="10" fill="#143A2C" stroke="#4CC38A" stroke-width="2"/>
+<text x="650.0" y="117" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">DMR ID 2060971</text>
+<text x="650.0" y="139" text-anchor="middle" font-size="13.5" fill="#E8F0F7">206 = Belgium</text>
+<text x="650.0" y="157" text-anchor="middle" font-size="13.5" fill="#E8F0F7">radio, hotspot and app use it</text>
+<rect x="790" y="95" width="190" height="80" rx="10" fill="#3A2D14" stroke="#E0A33A" stroke-width="2"/>
+<text x="885.0" y="117" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">BrandMeister account</text>
+<text x="885.0" y="139" text-anchor="middle" font-size="13.5" fill="#E8F0F7">login ON3VZ</text>
+<text x="885.0" y="157" text-anchor="middle" font-size="13.5" fill="#E8F0F7">(for the hotspot)</text>
+<line x1="220" y1="135" x2="268" y2="135" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="500" y1="135" x2="548" y2="135" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="750" y1="135" x2="788" y2="135" stroke="#A9BDCF" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#ar)"/>
+<rect x="12" y="205" width="976" height="485" rx="12" fill="#1A2D41" stroke="#2C4258"/>
+<text x="30" y="231" font-size="16" font-weight="700" fill="#8CCBF2" letter-spacing="1">2. HOW YOU GET ON THE NETWORK</text>
+<rect x="30" y="360" width="140" height="100" rx="10" fill="#17324A" stroke="#5AB4EA" stroke-width="2"/>
+<text x="100.0" y="382" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">Your radio</text>
+<text x="100.0" y="404" text-anchor="middle" font-size="13.5" fill="#E8F0F7">DM-1801 Pro</text>
+<text x="100.0" y="422" text-anchor="middle" font-size="13.5" fill="#E8F0F7">on the air</text>
+<rect x="235" y="250" width="235" height="100" rx="10" fill="#143A2C" stroke="#4CC38A" stroke-width="2"/>
+<text x="352.5" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">Hotspot at home</text>
+<text x="352.5" y="294" text-anchor="middle" font-size="13.5" fill="#E8F0F7">Pi-Star, your wifi</text>
+<text x="352.5" y="312" text-anchor="middle" font-size="13.5" fill="#E8F0F7">438.100 MHz, low power</text>
+<text x="352.5" y="330" text-anchor="middle" font-size="13.5" fill="#E8F0F7">one lane only: TS2</text>
+<rect x="235" y="365" width="235" height="100" rx="10" fill="#3A2D14" stroke="#E0A33A" stroke-width="2"/>
+<text x="352.5" y="387" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">DMR repeaters</text>
+<text x="352.5" y="409" text-anchor="middle" font-size="13.5" fill="#E8F0F7">ON0KB, ON0SNW, ON0AN ...</text>
+<text x="352.5" y="427" text-anchor="middle" font-size="13.5" fill="#E8F0F7">own ID each (ON0KB: 206202)</text>
+<text x="352.5" y="445" text-anchor="middle" font-size="13.5" fill="#E8F0F7">two lanes: TS1 and TS2</text>
+<rect x="235" y="480" width="235" height="100" rx="10" fill="#3B1F1B" stroke="#E5806E" stroke-width="2"/>
+<text x="352.5" y="502" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">App or web terminal</text>
+<text x="352.5" y="524" text-anchor="middle" font-size="13.5" fill="#E8F0F7">Open DMR Terminal</text>
+<text x="352.5" y="542" text-anchor="middle" font-size="13.5" fill="#E8F0F7">no radio needed</text>
+<text x="352.5" y="560" text-anchor="middle" font-size="13.5" fill="#E8F0F7">(a ham calling from a phone or PC)</text>
+<line x1="170" y1="395" x2="233" y2="305" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<text x="178" y="328" text-anchor="middle" font-size="12" font-style="italic" fill="#A9BDCF">radio waves</text>
+<line x1="170" y1="410" x2="233" y2="415" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="235" y="595" width="235" height="62" rx="10" fill="#17283A" stroke="#6F8599" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="352.5" y="617" text-anchor="middle" font-size="14" font-weight="700" fill="#E8F0F7">Another ham's radio</text>
+<text x="352.5" y="639" text-anchor="middle" font-size="12.5" fill="#A9BDCF">hears the same repeater or hotspot</text>
+<line x1="470" y1="300" x2="598" y2="300" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="470" y1="415" x2="598" y2="415" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="470" y1="530" x2="598" y2="530" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<text x="534" y="283" text-anchor="middle" font-size="12.5" font-style="italic" fill="#A9BDCF">internet</text>
+<rect x="600" y="250" width="380" height="255" rx="10" fill="#1F3550" stroke="#8CCBF2" stroke-width="2"/>
+<text x="790.0" y="272" text-anchor="middle" font-size="16" font-weight="700" fill="#E8F0F7">BRANDMEISTER NETWORK</text>
+<text x="790.0" y="294" text-anchor="middle" font-size="13.5" fill="#E8F0F7">master BM2061 Belgium (a server)</text>
+<text x="790.0" y="312" text-anchor="middle" font-size="13.5" fill="#E8F0F7">your repeater or hotspot logs in here</text>
+<text x="790.0" y="330" text-anchor="middle" font-size="13.5" fill="#E8F0F7"></text>
+<text x="790.0" y="348" text-anchor="middle" font-size="13.5" fill="#E8F0F7">Talkgroups are rooms. Everyone in</text>
+<text x="790.0" y="366" text-anchor="middle" font-size="13.5" fill="#E8F0F7">the room hears you:</text>
+<rect x="614" y="437" width="80" height="50" rx="8" fill="#142334" stroke="#8CCBF2" stroke-width="1.5"/>
+<text x="654.0" y="458" text-anchor="middle" font-size="14" font-weight="700" fill="#E8F0F7">206</text>
+<text x="654.0" y="476" text-anchor="middle" font-size="12" fill="#A9BDCF">Belgium</text>
+<rect x="702" y="437" width="80" height="50" rx="8" fill="#142334" stroke="#8CCBF2" stroke-width="1.5"/>
+<text x="742.0" y="458" text-anchor="middle" font-size="14" font-weight="700" fill="#E8F0F7">2061</text>
+<text x="742.0" y="476" text-anchor="middle" font-size="12" fill="#A9BDCF">Flanders</text>
+<rect x="790" y="437" width="100" height="50" rx="8" fill="#142334" stroke="#8CCBF2" stroke-width="1.5"/>
+<text x="840.0" y="458" text-anchor="middle" font-size="14" font-weight="700" fill="#E8F0F7">2064-2069</text>
+<text x="840.0" y="476" text-anchor="middle" font-size="12" fill="#A9BDCF">QSY</text>
+<rect x="898" y="437" width="70" height="50" rx="8" fill="#142334" stroke="#8CCBF2" stroke-width="1.5"/>
+<text x="933.0" y="458" text-anchor="middle" font-size="14" font-weight="700" fill="#E8F0F7">91</text>
+<text x="933.0" y="476" text-anchor="middle" font-size="12" fill="#A9BDCF">World</text>
+<rect x="600" y="520" width="380" height="70" rx="10" fill="#17283A" stroke="#6F8599" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="790.0" y="542" text-anchor="middle" font-size="13.5" font-weight="700" fill="#E8F0F7">Other BrandMeister masters (France, world ...)</text>
+<text x="790.0" y="564" text-anchor="middle" font-size="12.5" fill="#A9BDCF">linked by BrandMeister itself</text>
+<rect x="600" y="600" width="380" height="76" rx="10" fill="#17283A" stroke="#6F8599" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="790.0" y="622" text-anchor="middle" font-size="14" font-weight="700" fill="#E8F0F7">OpenDMR and other networks</text>
+<text x="790.0" y="644" text-anchor="middle" font-size="12.5" fill="#A9BDCF">separate servers; joined only if sysops</text>
+<text x="790.0" y="662" text-anchor="middle" font-size="12.5" fill="#A9BDCF">build a bridge (to be verified for Belgium)</text>
+<rect x="12" y="705" width="976" height="290" rx="12" fill="#1A2D41" stroke="#2C4258"/>
+<text x="30" y="731" font-size="16" font-weight="700" fill="#8CCBF2" letter-spacing="1">3. WHAT HAPPENS WHEN YOU PRESS PTT ON 206?</text>
+<rect x="30" y="745" width="150" height="70" rx="10" fill="#17324A" stroke="#5AB4EA" stroke-width="2"/>
+<text x="105.0" y="767" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">You</text>
+<text x="105.0" y="789" text-anchor="middle" font-size="13.5" fill="#E8F0F7">PTT on 206</text>
+<rect x="230" y="745" width="190" height="70" rx="10" fill="#143A2C" stroke="#4CC38A" stroke-width="2"/>
+<text x="325.0" y="767" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">Hotspot or repeater</text>
+<text x="325.0" y="789" text-anchor="middle" font-size="13.5" fill="#E8F0F7">sends it to the master</text>
+<rect x="470" y="745" width="200" height="70" rx="10" fill="#1F3550" stroke="#8CCBF2" stroke-width="2"/>
+<text x="570.0" y="767" text-anchor="middle" font-size="15" font-weight="700" fill="#E8F0F7">BrandMeister</text>
+<text x="570.0" y="789" text-anchor="middle" font-size="13.5" fill="#E8F0F7">talkgroup 206</text>
+<line x1="180" y1="780" x2="228" y2="780" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="420" y1="780" x2="468" y2="780" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="730" y="735" width="248" height="52" rx="10" fill="#3A2D14" stroke="#E0A33A" stroke-width="2"/>
+<text x="854.0" y="757" text-anchor="middle" font-size="12.5" fill="#E8F0F7">every Belgian repeater where</text>
+<text x="854.0" y="775" text-anchor="middle" font-size="12.5" fill="#E8F0F7">206 is static opens (TS1)</text>
+<rect x="730" y="797" width="248" height="52" rx="10" fill="#143A2C" stroke="#4CC38A" stroke-width="2"/>
+<text x="854.0" y="819" text-anchor="middle" font-size="12.5" fill="#E8F0F7">hotspots with 206 static</text>
+<text x="854.0" y="837" text-anchor="middle" font-size="12.5" fill="#E8F0F7">or recently used</text>
+<rect x="730" y="859" width="248" height="52" rx="10" fill="#3B1F1B" stroke="#E5806E" stroke-width="2"/>
+<text x="854.0" y="881" text-anchor="middle" font-size="12.5" fill="#E8F0F7">apps and web terminals</text>
+<text x="854.0" y="899" text-anchor="middle" font-size="12.5" fill="#E8F0F7">listening to 206</text>
+<line x1="670" y1="770" x2="728" y2="762" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="670" y1="780" x2="728" y2="823" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="670" y1="790" x2="728" y2="885" stroke="#A9BDCF" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="30" y="840" width="325" height="140" rx="10" fill="#3A2D14" stroke="#E0A33A" stroke-width="2"/>
+<text x="44" y="862" text-anchor="start" font-size="14.5" font-weight="700" fill="#E8F0F7">So yes: everything opens</text>
+<text x="44" y="884" text-anchor="start" font-size="12.5" fill="#E8F0F7">A call on 206 goes to all of Belgium.</text>
+<text x="44" y="902" text-anchor="start" font-size="12.5" fill="#E8F0F7">Keep it short, say your callsign,</text>
+<text x="44" y="920" text-anchor="start" font-size="12.5" fill="#E8F0F7">then move to a QSY group (2064 to 2069).</text>
+<text x="44" y="938" text-anchor="start" font-size="12.5" fill="#E8F0F7">Nobody sits on those, so only the</text>
+<text x="44" y="956" text-anchor="start" font-size="12.5" fill="#E8F0F7">repeaters where someone keys up open.</text>
+<rect x="375" y="840" width="330" height="140" rx="10" fill="#143A2C" stroke="#4CC38A" stroke-width="2"/>
+<text x="389" y="862" text-anchor="start" font-size="14.5" font-weight="700" fill="#E8F0F7">2061 is smaller</text>
+<text x="389" y="884" text-anchor="start" font-size="12.5" fill="#E8F0F7">Only Flanders: repeaters and hotspots</text>
+<text x="389" y="902" text-anchor="start" font-size="12.5" fill="#E8F0F7">that have 2061 static. A chat on 2061</text>
+<text x="389" y="920" text-anchor="start" font-size="12.5" fill="#E8F0F7">does not open Walloon repeaters.</text>
+<text x="389" y="938" text-anchor="start" font-size="12.5" fill="#E8F0F7"></text>
+<text x="389" y="956" text-anchor="start" font-size="12.5" fill="#E8F0F7">Wallonia has its own 2062.</text>
+<rect x="12" y="1010" width="976" height="245" rx="12" fill="#1A2D41" stroke="#2C4258"/>
+<text x="30" y="1036" font-size="16" font-weight="700" fill="#8CCBF2" letter-spacing="1">4. TWO TIMESLOTS: ONE FREQUENCY, TWO LANES</text>
+<rect x="56" y="1042" width="70" height="34" rx="4" fill="#2B7BBF"/>
+<text x="91" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS1</text>
+<rect x="130" y="1042" width="70" height="34" rx="4" fill="#B8791A"/>
+<text x="165" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS2</text>
+<rect x="204" y="1042" width="70" height="34" rx="4" fill="#2B7BBF"/>
+<text x="239" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS1</text>
+<rect x="278" y="1042" width="70" height="34" rx="4" fill="#B8791A"/>
+<text x="313" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS2</text>
+<rect x="352" y="1042" width="70" height="34" rx="4" fill="#2B7BBF"/>
+<text x="387" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS1</text>
+<rect x="426" y="1042" width="70" height="34" rx="4" fill="#B8791A"/>
+<text x="461" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS2</text>
+<rect x="500" y="1042" width="70" height="34" rx="4" fill="#2B7BBF"/>
+<text x="535" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS1</text>
+<rect x="574" y="1042" width="70" height="34" rx="4" fill="#B8791A"/>
+<text x="609" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS2</text>
+<rect x="648" y="1042" width="70" height="34" rx="4" fill="#2B7BBF"/>
+<text x="683" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS1</text>
+<rect x="722" y="1042" width="70" height="34" rx="4" fill="#B8791A"/>
+<text x="757" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS2</text>
+<rect x="796" y="1042" width="70" height="34" rx="4" fill="#2B7BBF"/>
+<text x="831" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS1</text>
+<rect x="870" y="1042" width="70" height="34" rx="4" fill="#B8791A"/>
+<text x="905" y="1064" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">TS2</text>
+<text x="500" y="1097" text-anchor="middle" font-size="12.5" font-style="italic" fill="#A9BDCF">the repeater alternates 30 ms for lane 1 and 30 ms for lane 2, so two calls fit on one frequency</text>
+<rect x="30" y="1110" width="455" height="78" rx="10" fill="#17324A" stroke="#5AB4EA" stroke-width="2"/>
+<text x="44" y="1132" text-anchor="start" font-size="14.5" font-weight="700" fill="#E8F0F7">Lane 1 (TS1): 206 and 2061</text>
+<text x="44" y="1154" text-anchor="start" font-size="12.5" fill="#E8F0F7">static on the repeaters. A call here blocks lane 1,</text>
+<text x="44" y="1172" text-anchor="start" font-size="12.5" fill="#E8F0F7">but lane 2 stays free for another call.</text>
+<rect x="515" y="1110" width="455" height="78" rx="10" fill="#3A2D14" stroke="#E0A33A" stroke-width="2"/>
+<text x="529" y="1132" text-anchor="start" font-size="14.5" font-weight="700" fill="#E8F0F7">Lane 2 (TS2): QSY groups and your hotspot</text>
+<text x="529" y="1154" text-anchor="start" font-size="12.5" fill="#E8F0F7">a QSY chat here does not block 206.</text>
+<text x="529" y="1172" text-anchor="start" font-size="12.5" fill="#E8F0F7">A simple hotspot has only this lane.</text>
+<rect x="30" y="1198" width="940" height="48" rx="10" fill="#143A2C" stroke="#4CC38A" stroke-width="2"/>
+<text x="500.0" y="1220" text-anchor="middle" font-size="12.5" fill="#E8F0F7">Your channel must match the lane and the colour code: ON0KB 206 and 2061 = Slot 1, ON0KB QSY = Slot 2,</text>
+<text x="500.0" y="1238" text-anchor="middle" font-size="12.5" fill="#E8F0F7">every HS channel = Slot 2, colour code 1.</text>
+</svg>
