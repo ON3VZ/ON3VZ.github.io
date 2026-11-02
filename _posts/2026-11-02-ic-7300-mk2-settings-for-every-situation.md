@@ -42,8 +42,76 @@ The MkII also has dedicated keys for the most used receive functions: **NB**, **
 
 <figure>
 <img src="/assets/images/ic7300-settings/function-screen.jpg" alt="IC-7300 MkII FUNCTION screen with P.AMP/ATT off, AGC FAST, NOTCH MN, NB off, NR on, IP+ off, VOX off, COMP on, TBW WIDE and MONI off" loading="lazy">
-<figcaption>The FUNCTION screen, photographed while I was writing this. Since then I have changed two things: AGC is now on MID and the notch is off by default (see below).</figcaption>
+<figcaption>The FUNCTION screen, page 1, photographed on 2 November: notch off, NB off, NR on, compressor off for now, TBW on WIDE. AGC still reads FAST here; I am moving it to MID (see situation 7).</figcaption>
 </figure>
+
+## What every key on these screens does
+
+If you have just unpacked the radio, the FUNCTION screen and the Multi-function menu are full of abbreviations. Here is every key from my photos in plain language. Where I write "hold", I mean a touch of one second.
+
+### FUNCTION screen, page 1
+
+<div class="ix-table" markdown="1">
+
+| Key | What it does | When I use it |
+|---|---|---|
+| **P.AMP/ATT** | Receive preamp (P.AMP1 about 12 dB, P.AMP2 about 20 dB) or attenuator (hold) | Preamp for weak signals on quiet bands, attenuator when a very strong signal distorts everything |
+| **AGC** | Automatic gain control: keeps the audio volume steady while signals fade and peak. FAST, MID or SLOW; hold to set the time constant | MID for calm SSB listening, FAST when a weak station disappears after a strong one |
+| **NOTCH** | Cuts out a whistle or carrier: OFF, AN (automatic) or MN (manual) | Only when there is a tone to remove |
+| **NB** | Noise blanker, for short clicks and pulses; hold for LEVEL, DEPTH, WIDTH | Only when pulse noise is present |
+| **NR** | Noise reduction, for steady hiss; hold for the level (0 to 15) | On as standard, at a moderate level |
+| **IP+** | Improves the receiver against intermodulation from strong signals, at a very small cost in sensitivity | On a crowded band or next to a strong station |
+| **VOX** | Voice-operated transmit: the radio transmits when you speak, without PTT; hold for gain, anti-VOX and delay | I leave it off. If you use it, switch MONI off, otherwise your audio echoes |
+| **COMP** | Speech compressor (SSB only); hold to set the level | DX and poor conditions, see situation 2 |
+| **TBW** | Transmit bandwidth in SSB: WIDE (100 to 2900 Hz), MID (300 to 2700 Hz) or NAR (500 to 2500 Hz) | WIDE as standard, narrower for DX |
+| **MONI** | Monitor: you hear your own transmit audio; hold for the level | When I adjust mic gain, compressor or equalizer |
+
+</div>
+
+A key with a coloured outline is active. The word underneath is its state or value: in my photo AGC shows FAST, NOTCH shows OFF and NR shows ON.
+
+### FUNCTION screen, page 2
+
+Touch the **[2]** at the bottom of the screen. According to the manual, page 2 holds keys such as these:
+
+<div class="ix-table" markdown="1">
+
+| Key | What it does | Do I need it? |
+|---|---|---|
+| **RX-ANT** | Routes a separate receive antenna through the RX-ANT connectors on the back | Only if you connect a dedicated receive antenna |
+| **APF** | Audio peak filter: sharpens the audio around the CW pitch | CW only |
+| **1/4** | Slows the tuning to a quarter of the normal speed for fine tuning | Only in the data and CW modes |
+| **TONE** | Tone settings for FM (repeater tone, tone squelch) | FM only, not relevant for SSB |
+
+</div>
+
+I have not photographed page 2 yet, so the exact layout on my radio may differ from this list, which comes from the Icom manual.
+
+### The Multi-function menu
+
+Push the **MULTI** knob and this column appears on the right. Touch an item and turn the knob. For COMP and MONITOR, touching the edge of the item switches the function on or off, while the knob changes the level.
+
+<div class="ix-table" markdown="1">
+
+| Item | What it sets | Notes |
+|---|---|---|
+| **RF POWER** | Transmit power from 0 to 100 % in steps of 1 % | On this 100 W radio, 20 % is roughly 20 W. As a Class C amateur, I keep HF at or below 25 W |
+| **MIC GAIN** | How hard the microphone drives the transmitter | Set it so the ALC meter swings between 30 and 50 % of the ALC zone |
+| **COMP** | Speech compressor on or off (left), level (right) | In my photo: off, level 2 |
+| **MONITOR** | Monitor on or off (left), volume of your own audio (right) | In my photo: off, 50 % |
+
+</div>
+
+### Reading the main screen
+
+A few indicators on the main screen that are easy to miss:
+
+- **RFG** (orange, under TX): the RF gain is turned down.
+- **OVF**: a signal is so strong that the receiver overloads. Reduce RF gain, switch on IP+ or the attenuator.
+- **SPLIT** (orange): split operation is on, see situation 8.
+- **RIT** with a number: receive offset, which shifts only the receive frequency.
+- **Small icons** for NR, NB, notch, AGC, preamp and compressor show which functions are on.
+- **S/Po meter** (the bar under the call): signal strength on receive, output power on transmit. Touch it to switch to SWR, ALC, COMP, Vd or Id.
 
 ## My everyday starting point
 
@@ -54,7 +122,7 @@ This is how my radio is set when I sit down for an SSB session on 40 m. Everythi
 | Function | My setting | Factory default |
 |---|---|---|
 | Receive filter | FIL2, 2.4 kHz, SHARP | FIL2 is 2.4 kHz |
-| AGC | MID | FAST (0.3 s) in SSB, MID is 2.0 s |
+| AGC | FAST in my photo, moving to MID | FAST (0.3 s) in SSB, MID is 2.0 s |
 | Noise reduction (NR) | on, level 5 | off |
 | Noise blanker (NB) | off, switched on when needed | off |
 | Notch | off | off |
@@ -62,7 +130,7 @@ This is how my radio is set when I sit down for an SSB session on 40 m. Everythi
 | IP+ | off | off |
 | RF power | 20 % (about 20 W) | 100 % |
 | Mic gain | 43 % | |
-| Speech compressor | on, level 2, still experimenting | off |
+| Speech compressor | off for now, level 2 prepared | off |
 | Transmit bandwidth (TBW) | WIDE (100 to 2900 Hz) | WIDE |
 | Monitor | off | off |
 
@@ -257,7 +325,7 @@ This is where the filters come in, and they are the part of the radio I enjoy mo
 3. A simple test: switch the preamp on. If the noise rises as much as the signal, it does not help. Switch it off.
 </div>
 
-**AGC.** While we talk about weak signals: I changed my AGC from FAST to MID. AGC keeps the audio volume steady while signals go up and down. In SSB, FAST reacts in 0.3 s and MID in 2.0 s. With MID the gain does not "pump" between the syllables of a voice, which I find calmer to listen to. The manual notes one exception: when a strong signal briefly appears next to a weak one, the AGC can turn the gain down and the weak station disappears for a moment. Then FAST helps. Switching is easy: push **FUNCTION** and touch **[AGC]** to step through FAST, MID and SLOW. The radio remembers the AGC per mode.
+**AGC.** While we talk about weak signals: I am moving my AGC from FAST to MID. AGC keeps the audio volume steady while signals go up and down. In SSB, FAST reacts in 0.3 s and MID in 2.0 s. With MID the gain does not "pump" between the syllables of a voice, which I find calmer to listen to. The manual notes one exception: when a strong signal briefly appears next to a weak one, the AGC can turn the gain down and the weak station disappears for a moment. Then FAST helps. Switching is easy: push **FUNCTION** and touch **[AGC]** to step through FAST, MID and SLOW. The radio remembers the AGC per mode.
 
 ## Situation 8: a DX pile-up: split and XFC
 
@@ -376,7 +444,7 @@ What I watch for:
 
 ## Still learning
 
-Writing this down was useful in itself. I discovered that two of my "standard" settings, AGC on FAST and a manual notch that was always on, were habits and not choices. Both are now changed. The compressor is my current experiment, and I will report back once I know where my voice lands on the COMP meter and what other stations say about it.
+Writing this down was useful in itself. I discovered that two of my "standard" settings, AGC on FAST and a manual notch that was always on, were habits and not choices. The notch is now off by default and AGC is moving to MID. The compressor is my current experiment, and I will report back once I know where my voice lands on the COMP meter and what other stations say about it.
 
 If you have your own favourite IC-7300 combinations, especially for noisy city locations, I would love to hear them on the air or via the [contact page](/contact/). 73 de ON3VZ.
 
