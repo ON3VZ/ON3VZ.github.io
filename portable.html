@@ -19,7 +19,7 @@ extra_css:
   <section class="sk-hero container anim-1">
     <div class="section-label">ON3VZ · Portable</div>
     <h1 class="section-title">The outdoor shack</h1>
-    <p class="section-sub sk-lead">WWFF activations and field operations, from a 25 W HF station on a battery to a 5 W QRP kit that fits in a backpack. On VHF and UHF, a handheld and the Belgian SvxLink network.</p>
+    <p class="section-sub sk-lead">WWFF activations and field operations, from a 25 W HF station on a battery to a 5 W QRP kit that fits in a backpack. On VHF and UHF, two handhelds for FM and DMR, and the Belgian SvxLink network.</p>
 
     <figure class="sk-hero__photo">
       <img src="/assets/images/qrp-portable-station-overview.jpg" width="1600" height="715" alt="The complete QRP portable station in the field: battery, buck converter at 11.50 V, QMX transceiver and speaker" fetchpriority="high">
@@ -59,6 +59,8 @@ extra_css:
         <div class="sk-glance__head"><span class="sk-tag sk-tag--cyan">VHF / UHF</span></div>
         <ul class="sk-list sk-list--plain">
           <li><b>Yaesu FT-65</b><span>Dual-band handheld</span></li>
+          <!-- DM1801PRO-PORTABLE 2026-11-02: glance entry, remove this line to revert -->
+          <li><b>Baofeng DM-1801 Pro</b><span>FM and DMR handheld</span></li>
           <li><b>SvxLink app</b><span>Belgian SVX Reflector network</span></li>
           <li><b>ABBREE BT mic</b><span>Bluetooth speaker microphone</span></li>
         </ul>
@@ -161,7 +163,7 @@ extra_css:
   <section class="sk-section container" id="vhf">
     <header class="sk-chapter">
       <span class="sk-tag sk-tag--cyan">VHF / UHF</span>
-      <h2 class="sk-h2">Handheld</h2>
+      <h2 class="sk-h2">Handhelds</h2>
     </header>
     <div class="sk-item sk-item--reverse">
       <figure class="sk-item__photo sk-item__photo--hand"><img src="/assets/images/mobile/ft65.jpg" width="800" height="920" alt="Yaesu FT-65 handheld tuned to 144.675 MHz, the WLD club frequency" loading="lazy"></figure>
@@ -173,6 +175,23 @@ extra_css:
         <div class="sk-bands sk-bands--cyan"><span>2 m</span><span>70 cm</span><span>Diamond SRJ-701A</span><span>Diamond SRJ-77</span></div>
       </div>
     </div>
+
+    <!-- DM1801PRO-PORTABLE 2026-11-02: start. Baofeng DM-1801 Pro block, delete up to the matching end marker to revert -->
+    <div class="sk-item">
+      <figure class="sk-item__photo sk-item__photo--hand"><img src="/assets/images/dm1801pro/radio-on-desk.jpg" width="900" height="1600" style="aspect-ratio: 900 / 1600;" alt="Baofeng DM-1801 Pro showing FM repeater ON0AND on line A and DMR talkgroup 206 via ON0AN on line B" loading="lazy"></figure>
+      <div class="sk-item__body">
+        <div class="sk-kicker sk-kicker--cyan">Dual-band DMR handheld</div>
+        <h3 class="sk-h3">Baofeng DM-1801 Pro</h3>
+        <p>My first digital radio: FM and DMR on 2 m and 70 cm. I bought it after Patrick ON4PN's talk on digital voice at WLD, purely to experiment.</p>
+        <p>It carries every Belgian FM repeater and every Belgian BrandMeister repeater in 200 channels and 31 zones, with roaming between repeaters on the road. At home it reaches BrandMeister through a Pi-Star hotspot. Here on ON0AND (FM) and talkgroup 206 via ON0AN (DMR).</p>
+        <div class="sk-bands sk-bands--cyan"><span>2 m</span><span>70 cm</span><span>FM</span><span>DMR Tier II</span><span>BrandMeister</span></div>
+      </div>
+    </div>
+    <div class="sk-links">
+      <a class="sk-link" href="/2026/10/29/dm1801pro-part-1-setup/"><span>Blog</span>From box to codeplug: setup (Part 1)</a>
+      <a class="sk-link" href="/2026/10/29/dm1801pro-part-2-daily-use/"><span>Blog</span>Day to day use: FM, DMR and the hotspot (Part 2)</a>
+    </div>
+    <!-- DM1801PRO-PORTABLE 2026-11-02: end -->
   </section>
 
   <!-- ── SVXLINK ── -->
