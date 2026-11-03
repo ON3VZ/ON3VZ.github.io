@@ -118,9 +118,13 @@ A Belgian guide I found (ON3BSQ, version 2024c) says that the developer no longe
 
 1. Open the **Play Store**, search for **DroidStar** and check that the developer is **Doug McLain**. Tap **Install**, then **Open**.
 2. When Android asks for the microphone, choose **Allow while using the app**. Without it you can listen, but not transmit.
-3. Open the **Log** tab once. On the first start the app downloads its host lists and the DMR ID database: you see lines like "Updated DMRHosts.txt" and "Updated DMRIDs.dat". Nothing to do there.
-4. Optional but useful: Android **Settings > Apps > DroidStar > Permissions**, and switch off **Manage app if unused** (on my phone: "App beheren indien ongebruikt"). Otherwise Android may take the microphone permission away again after a few weeks without use.
+3. Tap the **Log** tab once. On the first start the app downloads its host lists and the DMR ID database. You see lines like "Updated DMRHosts.txt" and "Updated DMRIDs.dat". Nothing to do there.
+4. Android **Settings > Apps > DroidStar > Permissions**. Check that **Microphone** is allowed (marker 1) and switch off **Manage app if unused** (marker 2, on my phone "App beheren indien ongebruikt"). Otherwise Android may take the microphone permission away again after a few weeks without use.
 </div>
+
+<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-log-first-start.jpg" alt="DroidStar Log tab on first start: Updated P25Hosts.txt, NXDNHosts.txt, DMRHosts.txt, YSFHosts.txt, M17Hosts-full.csv, DMRIDs.dat" loading="lazy"><figcaption>Step 3: the Log tab on the first start. The app fetched its server lists by itself</figcaption></figure>
+
+<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-permissions.jpg" alt="Android app permissions of DroidStar: Microphone allowed (marker 1) and the switch Manage app if unused (marker 2)" loading="lazy"><figcaption>Step 4: microphone allowed (1), and switch off "Manage app if unused" (2)</figcaption></figure>
 
 <figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-about.jpg" alt="DroidStar About tab: Git build 81f2c69, platform android, Qt 6.12.0, arm64, copyright 2019-2026 Doug McLain AD8DP, GPL version 2" loading="lazy"><figcaption>The About tab: the version I used and the author</figcaption></figure>
 
@@ -138,49 +142,59 @@ A Belgian guide I found (ON3BSQ, version 2024c) says that the developer no longe
 
 <div class="dm-box" markdown="1">
 <p class="dm-box-label">What we do</p>
-The Settings tab is one long page. Only a handful of fields matter for BrandMeister; most others belong to other modes or to a hardware modem. Tap a field, type, and tap Enter. The values are kept, there is no separate save button.
+The Settings tab is one long page. For BrandMeister you fill in eight things; everything else stays as it is. The numbers below match the red markers in the screenshots. Tap a field, type, and tap Enter on the keyboard. There is no save button: the values are kept.
 </div>
 
-| Field | My value | Why |
-|---|---|---|
-| Vocoder | Software vocoder | Leave it. Only change with an AMBE USB stick |
-| Modem | None | Only for an MMDVM board connected to the phone |
-| Playback, Capture | OS Default | Speaker and microphone. See [chapter 12](#ds-12) for Bluetooth |
-| Callsign | ON3VZ | |
-| DMRID | 2060971 | Your 7 digit DMR ID |
-| ESSID | **01** | Gives the app its own number, see below |
-| BM Pass | your Hotspot Security password | Typed, exactly as in SelfCare |
-| TGIF Pass, ADN Pass, ASL Pass | empty | Other networks, see [chapter 13](#ds-13) |
-| Latitude, Longitude | 0 | These are sent to BrandMeister. With 0 your exact position stays private |
-| Location | JO21EE | My Maidenhead locator. Coarse enough |
-| Description, DMR+ Opts | empty | |
-| URL | optional | I put my website there |
-| SoftwareID, PackageID | leave | Sent to BrandMeister as "software" and "hardware", see [chapter 10](#ds-10) |
-| MYCALL, URCALL, RPTR1, RPTR2, USRTXT | leave | D-STAR only. The app fills some of them itself |
-| TX Timeout | 300 | Transmission stops after 5 minutes at most |
-| Enable TX toggle mode | **on** | Tap TX once to talk, tap again to stop. No need to keep your finger on the screen |
-| Everything from RX Freq downwards | leave | Settings for an MMDVM modem |
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: the Settings tab</p>
+
+1. **Callsign:** your callsign, for me ON3VZ.
+2. **DMRID:** your 7 digit DMR ID, for me 2060971.
+3. **ESSID:** tap the drop-down (it says "None") and choose **01**. Why: see the box below.
+4. **BM Pass:** your Hotspot Security password from BrandMeister SelfCare. **Type** it, exactly, and check that there is no space at the end. The field shows dots.
+5. **Latitude** and **Longitude:** leave both on **0**. These values are sent to BrandMeister; with 0 your exact position stays private.
+6. **Location:** your Maidenhead locator, for me JO21EE. Coarse enough.
+7. **TX Timeout:** 300 (already filled in). A transmission stops after 5 minutes at most.
+8. Scroll down: **Enable TX toggle mode** on (it was already ticked for me). Then you tap TX once to talk and once to stop, instead of keeping your finger on the screen.
+</div>
+
+<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-settings.jpg" alt="DroidStar Settings tab with red markers: 1 Callsign ON3VZ, 2 DMRID 2060971, 3 ESSID 01, 4 BM Pass blurred, 5 Latitude and Longitude 0, 6 Location JO21EE, 7 TX Timeout 300" loading="lazy"><figcaption>Markers 1 to 7 on the Settings tab. The password field is blurred</figcaption></figure>
+
+<figure class="dm-fig dm-narrow"><img src="/assets/images/droidstar/droidstar-settings-toggle.jpg" alt="Lower part of the Settings tab with marker 8 on Enable TX toggle mode, ticked" loading="lazy"><figcaption>Marker 8, further down: Enable TX toggle mode</figcaption></figure>
 
 <div class="dm-box dm-why" markdown="1">
 <p class="dm-box-label">Why ESSID 01</p>
-My hotspot already logs in to BrandMeister with my DMR ID 2060971. If the app used the same number, the two would push each other off the network. With ESSID 01 the app logs in as **206097101**: my ID plus two digits. Every extra device gets its own number (01, 02, 03 and so on). The ESSID is only added to the device number; on the air you remain 2060971 and ON3VZ.
+My hotspot already logs in to BrandMeister with my DMR ID 2060971. If the app used the same number, the two would push each other off the network. With ESSID 01 the app logs in as **206097101**: my ID plus two digits. Every extra device gets its own number (01, 02, 03 and so on). On the air you remain 2060971 and ON3VZ.
 </div>
 
-<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-settings.jpg" alt="DroidStar Settings tab with callsign ON3VZ, DMRID 2060971, ESSID 01, BM Pass hidden, latitude and longitude 0, location JO21EE" loading="lazy"><figcaption>My Settings tab. The password is shown as dots</figcaption></figure>
+**What you leave alone**, so you do not have to wonder:
+
+| Field | Leave on | Why |
+|---|---|---|
+| Vocoder, Modem | Software vocoder, None | Only change with an AMBE USB stick or an MMDVM board on the phone |
+| Playback, Capture | OS Default | Phone speaker and microphone. Bluetooth: see [chapter 12](#ds-12) |
+| TGIF Pass, ADN Pass, ASL Pass | empty | Other networks, see [chapter 13](#ds-13) |
+| Description, DMR+ Opts | empty | |
+| URL | optional | I put my website there |
+| SoftwareID, PackageID | as they are | Only a label in BrandMeister, see [chapter 10](#ds-10) |
+| MYCALL, URCALL, RPTR1, RPTR2, USRTXT | as they are | D-STAR only. The app fills some of them itself |
+| Everything from RX Freq downwards | as it is | Settings for an MMDVM modem |
 
 <h2 id="ds-7">7. Main: mode, host and talkgroup</h2>
 
-| Control | Value | Why |
-|---|---|---|
-| Mode | DMR | The first drop-down |
-| Slot | S2 | Default. A hotspot works on timeslot 2 as well |
-| Colour code | CC1 | Default |
-| Host | **BM_2061_Belgium** | The Belgian BrandMeister master. The list only appears after choosing DMR |
-| Private | off | Only on for the echo test, see [chapter 9](#ds-9) |
-| TGID | 9990 for the test, then 2061 | Where your transmission goes |
-| SWTX, SWRX | leave | The app ticks them itself when it connects |
-| AGC | on | Automatic level control on the receive audio |
-| Mic | 50 | My echo test worked at 50. The Belgian guide suggests 90; adjust after the echo test |
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: the Main tab</p>
+
+1. **Mode:** tap the first drop-down ("Mode...") and choose **DMR**. Two more drop-downs appear: slot **S2** and colour code **CC1**. Leave them; a hotspot also works on timeslot 2.
+2. **Host:** tap "Host..." and choose **BM_2061_Belgium**, the Belgian BrandMeister master. The list only appears after step 1.
+3. **Private:** leave it **unticked** for now. It is only for the echo test ([chapter 9](#ds-9)).
+4. **TGID:** the talkgroup you transmit to. Type **9990** for the first test.
+5. **AGC:** tick it (automatic level control on the receive audio). SWTX and SWRX: leave them, the app ticks them itself when it connects.
+6. **Mic:** the slider for your microphone level. My echo test worked at 50. The Belgian guide suggests 90; adjust after the echo test.
+7. **Connect:** do not tap it yet, that is the next chapter.
+</div>
+
+<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-main-setup.jpg" alt="DroidStar Main tab with red markers: 1 DMR, 2 BM_2061_Belgium, 3 Private, 4 TGID 9990, 5 AGC, 6 Mic slider, 7 Connect" loading="lazy"><figcaption>Markers 1 to 7 on the Main tab, ready to connect</figcaption></figure>
 
 <div class="dm-box dm-mean" markdown="1">
 <p class="dm-box-label">What it means</p>
@@ -192,16 +206,16 @@ My hotspot already logs in to BrandMeister with my DMR ID 2060971. If the app us
 <div class="dm-box dm-steps" markdown="1">
 <p class="dm-box-label">Step plan</p>
 
-1. On the Main tab, tap **Connect**. The button changes to **Disconnect**.
-2. Above the TX button, "Not Connected to network" becomes **Connected ping cnt** with a counter that keeps going up. That counter is the regular contact with the server.
-3. Android shows a notification: "Connected to DMR BM_2061_Belgium, 2061.master.brandmeister.network".
-4. In the **Log** tab: "Connected to DMR BM_2061_Belgium" and "Software vocoder loaded".
-5. Extra check on BrandMeister: **My Devices** (left menu, under SYSOPDASHBOARD). Under Device Logs you see "Repeater 206097101 ... verified". Your password was accepted.
+1. On the Main tab, tap **Connect**. The button changes to **Disconnect** (marker 1).
+2. At the bottom, "Not Connected to network" becomes **Connected ping cnt** with a counter that keeps going up (marker 2). That counter is the regular contact with the server.
+3. Android shows a notification: "Connected to DMR BM_2061_Belgium".
+4. Tap the **Log** tab: you see "Connected to DMR BM_2061_Belgium" and "Software vocoder loaded".
+5. Extra check on BrandMeister, see [chapter 10](#ds-10): under Device Logs, "Repeater 206097101 ... verified". Your password was accepted.
 </div>
 
-<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-main-connected.jpg" alt="DroidStar Main tab connected: DMR, S2, CC1, BM_2061_Belgium, TGID 9990, Connected ping cnt 7" loading="lazy"><figcaption>Connected: the button now says Disconnect and the ping counter runs</figcaption></figure>
+<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-main-connected.jpg" alt="DroidStar Main tab connected: marker 1 on the Disconnect button, marker 2 on Connected ping cnt 7" loading="lazy"><figcaption>Connected: the button says Disconnect (1) and the ping counter runs (2)</figcaption></figure>
 
-<figure class="dm-fig dm-narrow"><img src="/assets/images/droidstar/droidstar-connected-notification.jpg" alt="Android notification: DroidStar connected to DMR BM_2061_Belgium 2061.master.brandmeister.network port 62031" loading="lazy"><figcaption>The Android notification confirms the connection</figcaption></figure>
+<figure class="dm-fig dm-narrow"><img src="/assets/images/droidstar/droidstar-connected-notification.jpg" alt="Android notification: DroidStar connected to DMR BM_2061_Belgium 2061.master.brandmeister.network port 62031" loading="lazy"><figcaption>Step 3: the Android notification confirms the connection</figcaption></figure>
 
 <h2 id="ds-9">9. The echo test: a private call</h2>
 
@@ -211,16 +225,18 @@ My first echo test gave nothing back. I had put 9990 in the TGID field as a norm
 </div>
 
 <div class="dm-box dm-steps" markdown="1">
-<p class="dm-box-label">Step plan</p>
+<p class="dm-box-label">Step plan: the echo test</p>
 
-1. Main tab, connected. Tick **Private** and set TGID to **9990**.
-2. Tap the blue **TX** button once. It turns red and counts the seconds.
-3. Say "ON3VZ test, one two three" and tap TX again to stop.
-4. After a few seconds you hear yourself back through the phone speaker.
-5. Untick **Private** again before you go to a normal talkgroup. With Private on, a call to 2061 is a private call to number 2061, not a call on the talkgroup.
+1. Main tab, connected. Tick **Private** (marker 1).
+2. Check that TGID is **9990** (marker 2).
+3. Tap the blue **TX** button once (marker 4). It turns red and counts the seconds.
+4. Say "ON3VZ test, one two three" and tap TX again to stop.
+5. After a few seconds you hear yourself back through the phone speaker.
+6. Look at **GWID** (marker 3): 206097101, my ID plus ESSID 01. That is the number BrandMeister knows the app by.
+7. Untick **Private** again before you go to a normal talkgroup. With Private on, a call to 2061 is a private call to number 2061, not a call on the talkgroup.
 </div>
 
-<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-parrot-tx.jpg" alt="DroidStar transmitting: Private ticked, TGID 9990, callsign ON3VZ Kristof, SrcID 2060971, DestID 9990, GWID 206097101, red TX button" loading="lazy"><figcaption>Transmitting to the Parrot: Private on, DestID 9990, and GWID 206097101 (my ID plus ESSID 01)</figcaption></figure>
+<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-parrot-tx.jpg" alt="DroidStar transmitting to the Parrot: marker 1 Private ticked, 2 TGID 9990, 3 GWID 206097101, 4 red TX button counting" loading="lazy"><figcaption>Transmitting to the Parrot: Private on (1), 9990 (2), GWID (3), TX running (4)</figcaption></figure>
 
 <div class="dm-box dm-mean" markdown="1">
 <p class="dm-box-label">How to read the log</p>
@@ -236,26 +252,28 @@ My first echo test gave nothing back. I had put 9990 in the TGID field as a norm
 After the first connection, BrandMeister lists the app under **My Devices** as a new device: **206097101**, next to my hotspot 2060971. I did not have to create anything.
 </div>
 
-<figure class="dm-fig"><img src="/assets/images/droidstar/bm-my-devices-droidstar.png" alt="BrandMeister My Devices: device log 206097101 verified on master 2061, and two DMR devices, 2060971 (MMDVM_HS_Dual_Hat) and 206097101 (MMDVM_HS_Hat)" loading="lazy"><figcaption>Two devices on one DMR ID: the hotspot and the app</figcaption></figure>
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: check the device and give it statics</p>
+
+1. On [brandmeister.network](https://brandmeister.network), left menu, at the bottom under SYSOPDASHBOARD: **My Devices**.
+2. Under **Device Logs**: "Repeater 206097101 ... verified" (marker 1). The app logged in with your password.
+3. Under **DMR Devices**: the new row **206097101** (marker 2), below your hotspot.
+4. On that row, click the blue **Bewerken** (Edit) (marker 3). Not Weergeven (View).
+5. Scroll down to **Statische gespreksgroep** (Static talkgroup). Type **206** in the white field (marker 1 in the second picture) and click the arrow **→** (marker 2). Do the same with **2061**.
+6. Both appear in the box on the right (marker 3). Refresh the page (F5): if they are still there, they are saved. There is no save button for this block.
+7. Leave the rest alone, especially the yellow buttons and the red **Delete device**.
+</div>
+
+<figure class="dm-fig"><img src="/assets/images/droidstar/bm-my-devices-droidstar.png" alt="BrandMeister My Devices with markers: 1 device log 206097101 verified, 2 the new device row 206097101, 3 the Bewerken button" loading="lazy"><figcaption>Steps 2 to 4: verified (1), the new device (2), Bewerken (3)</figcaption></figure>
+
+<figure class="dm-fig"><img src="/assets/images/droidstar/bm-static-droidstar.png" alt="BrandMeister device 206097101, block Statische gespreksgroep with markers: 1 input field, 2 arrow button, 3 list with Belgium North (2061) and Belgium (206)" loading="lazy"><figcaption>Steps 5 and 6: type the number (1), arrow (2), and the result (3)</figcaption></figure>
 
 <div class="dm-box dm-mean" markdown="1">
 <p class="dm-box-label">What it means</p>
-**Hardware, software and frequency are not real.** For 206097101 BrandMeister shows "MMDVM_HS_Hat", a software version and 438.8000 MHz. A phone has no hotspot board and no frequency. These are simply the **PackageID**, **SoftwareID** and **RX Freq** fields from the Settings tab, which DroidStar sends when it logs in (I checked this in the DroidStar source code).
+**Hardware, software and frequency are not real.** For 206097101 BrandMeister shows a hotspot board, a software version and 438.8000 MHz. A phone has none of these. They are the **PackageID**, **SoftwareID** and **RX Freq** fields from the Settings tab, which DroidStar sends when it logs in (I checked this in the DroidStar source code).
 
-**Static talkgroups are per device.** The new device starts empty: my statics 206 and 2061 on the hotspot do not apply to the app. Without statics you only hear a talkgroup after you key up on it yourself; it then stays on for about 15 minutes.
+**Static talkgroups are per device.** The new device started empty: the statics 206 and 2061 on my hotspot did not apply to the app. Without statics you only hear a talkgroup after you key up on it yourself; it then stays on for about 15 minutes.
 </div>
-
-<div class="dm-box dm-steps" markdown="1">
-<p class="dm-box-label">Step plan: statics for the app</p>
-
-1. On [brandmeister.network](https://brandmeister.network), left menu, under SYSOPDASHBOARD: **My Devices**.
-2. On the row **206097101**, click the blue **Bewerken** (Edit). Not Weergeven (View).
-3. Scroll to **Statische gespreksgroep** (Static talkgroup). Type **206**, click the arrow **→**. Type **2061**, click **→** again.
-4. Refresh the page (F5): if they are still there, they are saved.
-5. Leave the rest alone, especially the yellow buttons and the red **Delete device**.
-</div>
-
-<figure class="dm-fig"><img src="/assets/images/droidstar/bm-static-droidstar.png" alt="BrandMeister device 206097101, block Statische gespreksgroep with Belgium North (2061) and Belgium (206)" loading="lazy"><figcaption>206 and 2061 static on the app as well</figcaption></figure>
 
 <h2 id="ds-11">11. The first call on 2061 (to be tested)</h2>
 
@@ -263,12 +281,14 @@ After the first connection, BrandMeister lists the app under **My Devices** as a
 <p class="dm-box-label">Step plan</p>
 
 1. Settings: Playback and Capture on **OS Default**.
-2. Main: **Private off**, TGID **2061**, **Connect**.
+2. Main: **Private unticked** (marker 1) and TGID **2061** (marker 2). Tap **Connect**.
 3. Listen for a minute. With the statics you hear traffic on 206 and 2061 straight away. Check activity with the Last Heard filter from [Part 1]({% post_url 2026-10-29-dm1801pro-part-1-setup %}).
-4. Tap **TX** once, say "CQ Belgium, ON3VZ listening on 2061", tap again.
+4. Tap **TX** once (marker 3), say "CQ Belgium, ON3VZ listening on 2061", tap again.
 5. Wait at least 5 seconds. Contact made: keep it short and move together to a QSY talkgroup (2064 to 2069), as in [Part 2, chapter 16]({% post_url 2026-10-29-dm1801pro-part-2-daily-use %}#dm-p2-16).
 6. In BrandMeister Last Heard you see your call with 206097101 as the device.
 </div>
+
+<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/droidstar-main-2061.jpg" alt="DroidStar Main tab ready for 2061: marker 1 Private unticked, 2 TGID 2061, 3 TX button" loading="lazy"><figcaption>Ready for a normal call: Private off (1), 2061 (2), TX (3)</figcaption></figure>
 
 <h2 id="ds-12">12. Bluetooth and my Abbree speaker mic</h2>
 
@@ -281,9 +301,20 @@ In DroidStar, **Playback** and **Capture** each offer three choices: **OS Defaul
 
 <figure class="dm-fig dm-narrow"><img src="/assets/images/droidstar/droidstar-audio-choice.jpg" alt="DroidStar Settings, Playback drop-down with OS Default, Bluetooth and Built in microphone" loading="lazy"><figcaption>The audio choices in DroidStar</figcaption></figure>
 
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: what I did</p>
+
+1. Switch the K-plug adapter **off** (its own power button) and take it out of the radio. Otherwise the mic connects to the adapter instead of the phone.
+2. Pair the Abbree with the phone: Android **Settings > Bluetooth > Pair new device**, choose "abbree".
+3. Tap the gear next to "abbree" and check that **Media audio** (marker 1) and **Phone calls** (marker 2) are both on. The second one carries the microphone.
+4. In DroidStar, Settings: **Playback** on **Bluetooth**, then Disconnect and Connect on the Main tab.
+</div>
+
+<figure class="dm-fig dm-phone"><img src="/assets/images/droidstar/abbree-bluetooth-phone.jpg" alt="Android Bluetooth settings for the paired abbree: marker 1 Media audio on, marker 2 Phone calls on; MAC address blurred" loading="lazy"><figcaption>Step 3: media audio (1) and phone calls (2) on. The MAC address is blurred</figcaption></figure>
+
 | What I tried | Result |
 |---|---|
-| Pair the Abbree with the phone (adapter switched off first), "Media audio" and "Phone calls" on | Works |
+| Pair the Abbree with the phone, media audio and phone calls on | Works |
 | DroidStar on OS Default, Abbree connected | The echo came out of the phone, not the Abbree |
 | Playback on **Bluetooth** | Sound comes out of the Abbree |
 | **PTT** on the Abbree | Does **not** key the TX button in DroidStar |
