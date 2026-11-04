@@ -2,7 +2,7 @@
 layout: post
 title: "From Box to Codeplug: Setting Up a Baofeng DM-1801 Pro for FM and DMR in Belgium (Part 1)"
 tags: ['DMR', 'FM', 'Baofeng', 'DM-1801 Pro', 'Codeplug', 'BrandMeister', 'Pi-Star', 'Hotspot', 'VHF', 'UHF', 'Beginners']
-excerpt: "Everything I did to turn a brand new Baofeng DM-1801 Pro into a working FM and DMR radio for Belgium: the shopping list, my DMR ID, a BrandMeister account, the programming software, repeater research, a 200 channel codeplug in 31 zones, roaming, and a Pi-Star hotspot at home. Every field explained: what it is, why I chose it, and where you look it up."
+excerpt: "Everything I did to turn a brand new Baofeng DM-1801 Pro into a working FM and DMR radio for Belgium: the shopping list, my DMR ID, a BrandMeister account, the programming software, repeater research, a 210 channel codeplug in 32 zones, roaming, and a Pi-Star hotspot at home. Every field explained: what it is, why I chose it, and where you look it up."
 ---
 <!-- DM1801PRO-PART1 2026-10-29: new post. Revert by deleting this file, assets/images/dm1801pro/ and assets/files/dm1801pro-codeplug-csv-2026-10.zip -->
 <style>
@@ -393,7 +393,7 @@ I found repeaters that moved, repeaters that went off the air, tones that change
 
 <div class="dm-box" markdown="1">
 <p class="dm-box-label">What we do</p>
-Before typing anything, we decide how the codeplug is organised: which channels, in which order, with which names, in which zones and scan lists. The result: **200 channels, 18 talkgroups, 5 RX group lists, 8 scan lists, 31 zones and 7 roaming zones**.
+Before typing anything, we decide how the codeplug is organised: which channels, in which order, with which names, in which zones and scan lists. The result: **210 channels, 18 talkgroups, 5 RX group lists, 8 scan lists, 32 zones and 7 roaming zones**. The first version had 200 channels and 31 zones. After my first DMR contacts I added 10 QSY channels and one zone (see "Extra QSY channels, one per talkgroup" below).
 </div>
 
 <div class="dm-box dm-why" markdown="1">
@@ -455,7 +455,56 @@ You cannot link to something that does not exist yet. A digital channel asks "wh
 
 <div class="dm-box dm-why" markdown="1">
 <p class="dm-box-label">Why three</p>
-Talkgroups 206 and the regional groups are for **calling**. If you hold a 20 minute chat on 206, you block that timeslot on every Belgian repeater where 206 is static. The Belgian agreement is: call on 206, then move together to a QSY group (2064 to 2069) on TS2. With three channels per repeater you pick national, regional or QSY with the channel knob, without digging in menus.
+Talkgroups 206 and the regional groups are for **calling**. If you hold a 20 minute chat on 206, you block that timeslot on every Belgian repeater where 206 is static. The Belgian agreement is: call on 206, then move together to a QSY group (2064 to 2069) on TS2. With three channels per repeater you pick national, regional or QSY with the [▲] / [▼] keys, without digging in menus.
+</div>
+
+### Extra QSY channels, one per talkgroup
+
+<div class="dm-box dm-mean" markdown="1">
+<p class="dm-box-label">What it means</p>
+A DMR channel has exactly **one transmit contact**. The channel "ON0SNW QSY" transmits to 2064. So on that channel you can always answer on 2064, but not on 2065 or 2067. You can *hear* them, because the RX group list "RX QSY" contains 2064 to 2069, but your PTT still goes to 2064.
+</div>
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Why I added them</p>
+When I planned to join the weekly round on 2067, I realised I could listen to it on the QSY channel but not answer there. Manual dial ([#], type the number, PTT) works, but it is fiddly in the car or outdoors. For the two repeaters I can reach from home, ON0SNW (Sint-Niklaas) and ON0KB (Bornem), I therefore made **one channel per QSY talkgroup**. Then you answer in any QSY room by simply picking the channel.
+</div>
+
+| Channel | Repeater | TX contact |
+|---|---|---|
+| ON0SNW QSY (already existed) | Sint-Niklaas | 2064 QSY |
+| SNW 2065, SNW 2066, SNW 2067, SNW 2068, SNW 2069 | Sint-Niklaas | 2065 to 2069 QSY |
+| ON0KB QSY (already existed) | Bornem | 2064 QSY |
+| KB 2065, KB 2066, KB 2067, KB 2068, KB 2069 | Bornem | 2065 to 2069 QSY |
+
+They go in their **own zone, "QSY QTH DMR"** (12 channels), because my zone "QTH Antwerpen" already holds 25 channels. The names are short so they fit on the screen. Everything except the name and the TX contact is identical to the existing QSY channel of that repeater.
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: add the QSY channels in the CPS (by hand)</p>
+
+1. **Make a backup first**: File > Save As, with a new name such as `codeplug-before-qsy.data`.
+2. Open **Public > Channel** and add a new channel at the bottom of the list. Double-click it: the window "Channel Information" opens.
+3. Fill in the fields of the table below. For Sint-Niklaas use the left column, for Bornem the right one.
+4. Name `SNW 2065` and TX Contact `2065 QSY`. Click OK.
+5. Repeat for 2066, 2067, 2068 and 2069, then for the Bornem channels with the Bornem frequencies. Per channel only the name and the TX contact change.
+6. Open **Public > Zone**, add a new zone called **QSY QTH DMR** and add the 12 channels: ON0SNW QSY and SNW 2065 to 2069, then ON0KB QSY and KB 2065 to 2069.
+7. **Control**: export Public > Channel and check that the list has 210 channels and that each new channel has the right contact. Then File > Save and **Program > Write**.
+</div>
+
+| Field | Sint-Niklaas | Bornem |
+|---|---|---|
+| RX frequency | 439.40000 | 438.92500 |
+| TX frequency | 431.80000 | 431.32500 |
+| Channel Type, Power, TX Admit | Digital, High, Always | Digital, High, Always |
+| Scan List | None | None |
+| TX Contact | 2065 QSY (and so on) | 2065 QSY (and so on) |
+| RX Group List | RX QSY | RX QSY |
+| Color Code, Slot Operation | 1, Slot 2 | 1, Slot 2 |
+| DMR ID | ON3VZ (your own entry) | ON3VZ (your own entry) |
+
+<div class="dm-box dm-warn" markdown="1">
+<p class="dm-box-label">Do not re-import channel.csv</p>
+A channel import in the CPS **replaces all channels**, and the Scan List column is ignored. If you import the file again into a finished codeplug, you lose all your scan list links and have to redo them by hand. Add a few channels by hand, as above. Only add channels for the repeaters you really reach: a channel you never use only makes the list longer.
 </div>
 
 ### The zones
@@ -465,6 +514,7 @@ Talkgroups 206 and the regional groups are for **calling**. If you hold a 20 min
 | QTH Antwerpen | WLD, the FM repeaters I reach from Hoboken (ON0AND, ON0ANR, ON0BEL, ON0DP, ON0WAL, ON0LIR...), DMR ON0AN, ON0KB, ON0SNW, simplex calling | At home |
 | Simplex | WLD, 145.500, 433.500, DMR 433.450 | Direct contact, no repeater |
 | Hotspot | The 15 hotspot channels | DMR at home via the hotspot |
+| QSY QTH DMR | The QSY channels of ON0SNW and ON0KB, one per talkgroup (2064 to 2069) | When you agree to QSY to a talkgroup other than 2064 |
 | Sinaai Waasland, Leuven, Hasselt, Kust, Marche Famenne, Malmedy | The repeaters within handheld range of places I visit often | When you have arrived there |
 | Ant-Breda, Ant-Hasselt, Ant-Leuven, Ant-Gent, Ant-Kust, Ant-Malmedy, Ant-Namen, Ant-Marche | The repeaters along that route from Antwerp, in driving order (Belgian part only) | In the car |
 | SvxLink VL | The FM repeaters of the Flemish SvxLink network | One call is heard on all linked repeaters |
@@ -860,7 +910,7 @@ A simplex hotspot passes one conversation at a time on one timeslot. 206 (all of
 Before trusting the codeplug, I checked it once more against external sources and tried to be critical. This is what came out, as of 29 October 2026.
 </div>
 
-**What checks out:** 200 channels, unique names, nothing transmits outside 2 m and 70 cm, all shifts are standard (-0.6, -7.6, +1.6), encryption off everywhere, transmit blocked on PMR446, the 26 DMR repeaters match BrandMeister (frequency, input, colour code, slot of the regional group), 31 zones without missing channels, no duplicate frequencies inside a scan list, the DMR ID name is ON3VZ on every channel.
+**What checks out:** 200 channels (210 after the QSY extension), unique names, nothing transmits outside 2 m and 70 cm, all shifts are standard (-0.6, -7.6, +1.6), encryption off everywhere, transmit blocked on PMR446, the 26 DMR repeaters match BrandMeister (frequency, input, colour code, slot of the regional group), 31 zones (32 with the QSY zone) without missing channels, no duplicate frequencies inside a scan list, the DMR ID name is ON3VZ on every channel.
 
 **What I changed after the review:** decode None on all FM channels (chapter 8.6), and B now starts on **ON0SNW 206** instead of ON0AN 206: ON0AN, my closest DMR repeater, had no BrandMeister traffic for three months (there are reports that Antwerp repeaters moved to another network).
 

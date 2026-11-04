@@ -47,7 +47,7 @@ excerpt: "The radio is programmed, now what? A practical guide for someone who k
 <p class="dm-lead">In Part 1 I built the codeplug. This part is the user guide I wished I had: what each key does, what the screen tells you, and for every everyday situation a step plan with the exact keys and menus.</p>
 <p class="dm-byline">ON3VZ Kristof Cornelis · October 2026</p>
 
-This guide follows my own codeplug from [Part 1]({% post_url 2026-10-29-dm1801pro-part-1-setup %}): zones per place and per route, three channels per DMR repeater (206, regional, QSY), hotspot channels on 438.100 MHz, and my key setting. If you programmed your radio differently, the principles are the same, only the names differ. Chapter numbers like "manual 6.2.4" refer to the [Baofeng DM-1801 Pro user manual](https://baofeng.s3.amazonaws.com/Baofeng_DM-1801_Pro_User_Manual_EN_20260916.pdf).
+This guide follows my own codeplug from [Part 1]({% post_url 2026-10-29-dm1801pro-part-1-setup %}): zones per place and per route, three channels per DMR repeater (206, regional, QSY) plus a QSY zone for the repeaters I reach, hotspot channels on 438.100 MHz, and my key setting. If you programmed your radio differently, the principles are the same, only the names differ. Chapter numbers like "manual 6.2.4" refer to the [Baofeng DM-1801 Pro user manual](https://baofeng.s3.amazonaws.com/Baofeng_DM-1801_Pro_User_Manual_EN_20260916.pdf).
 
 The same coloured boxes as in Part 1:
 
@@ -428,6 +428,11 @@ QSY is the old Q code for "change frequency". On DMR it means: move **together t
 206 and the regional groups are static on many repeaters across Belgium. A 20 minute chat on 206 blocks that timeslot on all of them, and nobody else in Belgium can call. A QSY group is dynamic: it only comes out of the repeaters where it is called, so your chat only occupies your repeater and your partner's, and only TS2.
 </div>
 
+<div class="dm-box dm-mean" markdown="1">
+<p class="dm-box-label">The default: propose 2064</p>
+When someone asks to QSY, you always **propose 2064**. Every DMR repeater in every zone has a channel "... QSY" whose transmit contact is 2064, and it sits right after the 206 and regional channels. So you never have to change zone or dial a number: you press [▲] / [▼] to the QSY channel and key up. Only when the other station wants **another talkgroup** (2065 to 2069), or when 2064 is busy, you change zone to **QSY QTH DMR** (see below).
+</div>
+
 <div class="dm-box dm-steps" markdown="1">
 <p class="dm-box-label">Step plan: QSY after a call on 206</p>
 
@@ -441,13 +446,29 @@ QSY is the old Q code for "change frequency". On DMR it means: move **together t
 </div>
 
 <div class="dm-box dm-steps" markdown="1">
-<p class="dm-box-label">Step plan: 2064 is busy, use 2065 to 2069</p>
+<p class="dm-box-label">Step plan: another talkgroup than 2064 (2065 to 2069)</p>
 
-1. On ON0SNW QSY you already hear another conversation on 2064. Agree on 2065.
-2. Stay on the channel **ON0SNW QSY** (right repeater, TS2).
-3. **[MENU] > Talk Group > Contact List**, [▲]/[▼] to "2065 QSY", [MENU], PTT.
-4. Or manual dial: **[#]** short, check that it says Group Call (press [#] again to toggle), type 2065, PTT.
-5. (To be tested) Whether the radio stays on 2065 for the next PTT or falls back to 2064. If it falls back, answer within the 5 seconds hold time, or dial again.
+1. Agree on the talkgroup: "ON1ABC, shall we QSY to 2067?" Say the number clearly, both stations must end up on the same group.
+2. **Change zone** to **QSY QTH DMR** on the main line (TK long, or [MENU] > Zone, see chapter 3).
+3. [▲] / [▼] to the channel of your repeater and talkgroup: **SNW 2067** for Sint-Niklaas, **KB 2067** for Bornem.
+4. Check the screen: slot 2, and the channel name shows the talkgroup.
+5. PTT, wait for the beep: "ON1ABC from ON3VZ on 2067." This first call activates 2067 on that repeater, for about 15 minutes, and the timer restarts with every transmission.
+6. Done? Change back to your normal zone (for example QTH Antwerpen) and to the 206 channel, so you can be called again.
+
+A repeater that is not in the zone QSY QTH DMR (all other repeaters): stay on its **QSY channel** and use manual dial: **[#]** short, check that it says Group Call (press [#] again to toggle), type 2067, PTT. Or **[MENU] > Talk Group > Contact List** > "2067 QSY".
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: 2064 is busy</p>
+
+1. On ON0SNW QSY you already hear another conversation on 2064. Agree on 2065 (or another free QSY group).
+2. Follow the step plan above for another talkgroup.
+3. (To be tested) Whether the radio stays on the dialled talkgroup for the next PTT when you use manual dial, or falls back to 2064 after the hold time. Answer within the hold time or dial again.
+</div>
+
+<div class="dm-box dm-warn" markdown="1">
+<p class="dm-box-label">Does the repeater open it?</p>
+Calling a QSY group opens it dynamically on that repeater. A repeater can refuse dynamic talkgroups, or have TS2 busy with another static group. Then your call does not appear in BrandMeister Last Heard under that repeater. In that case ask the sysop or the local hams. Note that the zone QSY QTH DMR only contains the two repeaters I reach from home.
 </div>
 
 <h2 id="dm-p2-11">11. Other ways to pick a talkgroup, private calls and the Parrot</h2>
