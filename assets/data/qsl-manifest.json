@@ -416,5 +416,20 @@
     "band": "40m",
     "mode": "SSB",
     "rst": "59"
+  },
+  {
+    "id": "ta3zz-2026-10-13",
+    "image": "/assets/images/qsl/ta3zz-2026-10-13.jpg",
+    "fromCall": "TA3ZZ",
+    "fromName": "Serdar Savran",
+    "qth": "Nilüfer, Bursa, KN40MF",
+    "country": "Turkey",
+    "continent": "Asia",
+    "date": "2026-10-13",
+    "time": "18:52z",
+    "band": "20m",
+    "mode": "FT8",
+    "freq": "14.075",
+    "rst": "-08"
   }
 ]
