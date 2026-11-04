@@ -431,5 +431,20 @@
     "mode": "FT8",
     "freq": "14.075",
     "rst": "-08"
+  },
+  {
+    "id": "ct2grv-2026-11-02",
+    "image": "/assets/images/qsl/ct2grv-2026-11-02.jpg",
+    "fromCall": "CT2GRV",
+    "fromName": "Abilio Teixeira",
+    "qth": "Aveiro, IN50",
+    "country": "Portugal",
+    "continent": "Europe",
+    "date": "2026-11-02",
+    "time": "21:59z",
+    "band": "40m",
+    "mode": "FT8",
+    "freq": "7.075",
+    "rst": "-18"
   }
 ]
