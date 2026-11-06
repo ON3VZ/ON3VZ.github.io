@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- NC-15M 2026-11-06: day at a glance. Remove together with the post to revert. -->
+<rect width="980" height="470" rx="10" fill="#080d18"/>
+<text x="490" y="34" text-anchor="middle" fill="#e2eaf5" font-size="19">The day of the big openings, at a glance</text>
+<text x="490" y="56" text-anchor="middle" fill="#7a96b0" font-size="12">Daylight at the three places, 6 November 2026 (UTC), with my three contacts</text>
+<text x="178" y="107" text-anchor="end" fill="#e2eaf5" font-size="13">Changsha, China</text><text x="178" y="123" text-anchor="end" fill="#7a96b0" font-size="11">BH7FFR</text>
+<rect x="190.0" y="90" width="164.4" height="38" fill="#d9a21b" fill-opacity="0.9"/>
+<text x="286.2" y="114" text-anchor="middle" fill="#2a1d00" font-size="12">day until 09:40</text>
+<rect x="354.4" y="90" width="575.6" height="38" fill="#16203a" fill-opacity="1"/>
+<text x="178" y="187" text-anchor="end" fill="#e2eaf5" font-size="13">Hoboken, Belgium</text><text x="178" y="203" text-anchor="end" fill="#7a96b0" font-size="11">ON3VZ</text>
+<rect x="190.0" y="170" width="34.4" height="38" fill="#16203a" fill-opacity="1"/>
+<rect x="224.4" y="170" width="418.6" height="38" fill="#d9a21b" fill-opacity="0.9"/>
+<text x="553.7" y="194" text-anchor="middle" fill="#2a1d00" font-size="12">day 06:46 to 16:06</text>
+<rect x="643.0" y="170" width="287.0" height="38" fill="#16203a" fill-opacity="1"/>
+<text x="178" y="267" text-anchor="end" fill="#e2eaf5" font-size="13">North Carolina, USA</text><text x="178" y="283" text-anchor="end" fill="#7a96b0" font-size="11">KK4TE</text>
+<rect x="190.0" y="250" width="263.1" height="38" fill="#16203a" fill-opacity="1"/>
+<rect x="453.1" y="250" width="470.2" height="38" fill="#d9a21b" fill-opacity="0.9"/>
+<text x="808.2" y="274" text-anchor="middle" fill="#2a1d00" font-size="12">day 11:52 to 22:21</text>
+<rect x="923.3" y="250" width="6.7" height="38" fill="#16203a" fill-opacity="1"/>
+<line x1="190.0" y1="80" x2="190.0" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="190.0" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">06:00</text>
+<line x1="279.7" y1="80" x2="279.7" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="279.7" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">08:00</text>
+<line x1="369.4" y1="80" x2="369.4" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="369.4" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">10:00</text>
+<line x1="459.1" y1="80" x2="459.1" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="459.1" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">12:00</text>
+<line x1="548.8" y1="80" x2="548.8" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="548.8" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">14:00</text>
+<line x1="638.5" y1="80" x2="638.5" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="638.5" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">16:00</text>
+<line x1="728.2" y1="80" x2="728.2" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="728.2" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">18:00</text>
+<line x1="817.9" y1="80" x2="817.9" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="817.9" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">20:00</text>
+<line x1="907.6" y1="80" x2="907.6" y2="300" stroke="#1d3050" stroke-width="0.6"/><text x="907.6" y="318" text-anchor="middle" fill="#7a96b0" font-size="11">22:00</text>
+<line x1="371.6" y1="78" x2="371.6" y2="300" stroke="#f0a500" stroke-width="2.4"/>
+<text x="365.6" y="74" text-anchor="end" fill="#f0a500" font-size="12">10 m China</text>
+<line x1="388.1" y1="78" x2="388.1" y2="300" stroke="#ff8ad8" stroke-width="2.4"/>
+<text x="394.1" y="74" text-anchor="start" fill="#ff8ad8" font-size="12">15 m China</text>
+<line x1="633.3" y1="78" x2="633.3" y2="300" stroke="#00ff88" stroke-width="2.4"/>
+<text x="639.3" y="74" text-anchor="start" fill="#00ff88" font-size="12">15 m USA</text>
+<text x="560.0" y="338" text-anchor="middle" fill="#7a96b0" font-size="11">UTC</text>
+<text x="30" y="378" fill="#7a96b0" font-size="11">Morning: China is at dusk, Europe in full daylight. The far end of the path is the one that matters.</text>
+<text x="30" y="396" fill="#7a96b0" font-size="11">Afternoon: Hoboken is at sunset and North Carolina is in the morning. Now it is my own end that is at dusk.</text>
+<text x="30" y="414" fill="#7a96b0" font-size="11">Same sun, same antenna family, two different tricks. Sunset times are calculated for the middle of each town.</text>
+</svg>

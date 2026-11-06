@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- NC-15M 2026-11-06: sun height timeline. Remove together with the post to revert. -->
+<rect width="980" height="560" rx="10" fill="#080d18"/>
+<text x="490" y="34" text-anchor="middle" fill="#e2eaf5" font-size="19">The sun along the path, afternoon of 6 November</text>
+<text x="490" y="56" text-anchor="middle" fill="#7a96b0" font-size="12">Calculated sun height at five points between Hoboken and North Carolina</text>
+<rect x="90" y="90" width="770" height="310" fill="#0c1424" stroke="#1d3050"/>
+<rect x="90" y="354.0740740740741" width="770" height="45.925925925925924" fill="#000510" fill-opacity="0.45"/>
+<line x1="90" y1="124.44444444444444" x2="860" y2="124.44444444444444" stroke="#1d3050" stroke-width="0.7" /><text x="82" y="128.44444444444446" text-anchor="end" fill="#7a96b0" font-size="11">40°</text>
+<line x1="90" y1="181.85185185185185" x2="860" y2="181.85185185185185" stroke="#1d3050" stroke-width="0.7" /><text x="82" y="185.85185185185185" text-anchor="end" fill="#7a96b0" font-size="11">30°</text>
+<line x1="90" y1="239.25925925925924" x2="860" y2="239.25925925925924" stroke="#1d3050" stroke-width="0.7" /><text x="82" y="243.25925925925924" text-anchor="end" fill="#7a96b0" font-size="11">20°</text>
+<line x1="90" y1="296.66666666666663" x2="860" y2="296.66666666666663" stroke="#1d3050" stroke-width="0.7" /><text x="82" y="300.66666666666663" text-anchor="end" fill="#7a96b0" font-size="11">10°</text>
+<line x1="90" y1="354.0740740740741" x2="860" y2="354.0740740740741" stroke="#f0a500" stroke-width="1.6" stroke-dasharray="6 4"/><text x="82" y="358.0740740740741" text-anchor="end" fill="#7a96b0" font-size="11">0°</text>
+<line x1="90.0" y1="90" x2="90.0" y2="400" stroke="#1d3050" stroke-width="0.6"/><text x="90.0" y="416" text-anchor="middle" fill="#7a96b0" font-size="11">15:00</text>
+<line x1="244.0" y1="90" x2="244.0" y2="400" stroke="#1d3050" stroke-width="0.6"/><text x="244.0" y="416" text-anchor="middle" fill="#7a96b0" font-size="11">15:30</text>
+<line x1="398.0" y1="90" x2="398.0" y2="400" stroke="#1d3050" stroke-width="0.6"/><text x="398.0" y="416" text-anchor="middle" fill="#7a96b0" font-size="11">16:00</text>
+<line x1="552.0" y1="90" x2="552.0" y2="400" stroke="#1d3050" stroke-width="0.6"/><text x="552.0" y="416" text-anchor="middle" fill="#7a96b0" font-size="11">16:30</text>
+<line x1="706.0" y1="90" x2="706.0" y2="400" stroke="#1d3050" stroke-width="0.6"/><text x="706.0" y="416" text-anchor="middle" fill="#7a96b0" font-size="11">17:00</text>
+<line x1="860.0" y1="90" x2="860.0" y2="400" stroke="#1d3050" stroke-width="0.6"/><text x="860.0" y="416" text-anchor="middle" fill="#7a96b0" font-size="11">17:30</text>
+<text x="475.0" y="434" text-anchor="middle" fill="#7a96b0" font-size="11">UTC</text>
+<text x="96" y="368.0740740740741" fill="#f0a500" font-size="11">sunset (sun at 0°)</text>
+<path d="M90.0,306.5L115.7,310.0L141.3,313.5L167.0,317.1L192.7,320.7L218.3,324.4L244.0,328.1L269.7,331.7L295.3,335.4L321.0,339.1L346.7,342.8L372.3,346.4L398.0,350.0L423.7,353.4L449.3,359.0L475.0,363.8L500.7,368.2L526.3,372.5L552.0,376.8L577.7,381.1L603.3,385.4L629.0,389.7L654.7,394.0L680.3,398.4L706.0,402.7L731.7,407.1L757.3,411.5L783.0,415.9L808.7,420.3L834.3,424.7L860.0,429.2" fill="none" stroke="#f0a500" stroke-width="2.6"/>
+<text x="868" y="433.2" fill="#f0a500" font-size="12">Hoboken (me)</text>
+<circle cx="428.8" cy="354.1" r="5.5" fill="#080d18" stroke="#f0a500" stroke-width="2"/><text x="428.8" y="342.1" text-anchor="middle" fill="#f0a500" font-size="11">16:06</text>
+<path d="M90.0,265.7L115.7,267.7L141.3,269.9L167.0,272.1L192.7,274.4L218.3,276.8L244.0,279.2L269.7,281.7L295.3,284.2L321.0,286.9L346.7,289.5L372.3,292.3L398.0,295.1L423.7,298.0L449.3,300.9L475.0,303.9L500.7,306.9L526.3,309.9L552.0,313.1L577.7,316.2L603.3,319.4L629.0,322.7L654.7,326.0L680.3,329.3L706.0,332.6L731.7,335.9L757.3,339.3L783.0,342.6L808.7,345.9L834.3,349.2L860.0,352.4" fill="none" stroke="#ffd36a" stroke-width="2.6"/>
+<text x="868" y="356.4" fill="#ffd36a" font-size="12">1/4 way</text>
+<path d="M90.0,229.5L115.7,229.9L141.3,230.4L167.0,231.0L192.7,231.7L218.3,232.5L244.0,233.4L269.7,234.4L295.3,235.5L321.0,236.6L346.7,237.9L372.3,239.3L398.0,240.7L423.7,242.3L449.3,243.9L475.0,245.6L500.7,247.4L526.3,249.3L552.0,251.3L577.7,253.3L603.3,255.4L629.0,257.6L654.7,259.9L680.3,262.3L706.0,264.7L731.7,267.3L757.3,269.8L783.0,272.5L808.7,275.2L834.3,278.0L860.0,280.9" fill="none" stroke="#00d4ff" stroke-width="2.6"/>
+<text x="868" y="284.9" fill="#00d4ff" font-size="12">middle</text>
+<path d="M90.0,200.9L115.7,199.5L141.3,198.1L167.0,196.9L192.7,195.8L218.3,194.8L244.0,194.0L269.7,193.2L295.3,192.6L321.0,192.1L346.7,191.7L372.3,191.4L398.0,191.2L423.7,191.2L449.3,191.3L475.0,191.5L500.7,191.8L526.3,192.2L552.0,192.8L577.7,193.5L603.3,194.3L629.0,195.2L654.7,196.2L680.3,197.3L706.0,198.6L731.7,199.9L757.3,201.4L783.0,203.0L808.7,204.7L834.3,206.5L860.0,208.4" fill="none" stroke="#9bd66a" stroke-width="2.6"/>
+<text x="868" y="212.4" fill="#9bd66a" font-size="12">3/4 way</text>
+<path d="M90.0,182.5L115.7,179.2L141.3,176.0L167.0,173.0L192.7,170.0L218.3,167.1L244.0,164.4L269.7,161.7L295.3,159.2L321.0,156.8L346.7,154.6L372.3,152.4L398.0,150.4L423.7,148.5L449.3,146.8L475.0,145.2L500.7,143.8L526.3,142.5L552.0,141.3L577.7,140.3L603.3,139.4L629.0,138.7L654.7,138.2L680.3,137.7L706.0,137.5L731.7,137.4L757.3,137.4L783.0,137.6L808.7,138.0L834.3,138.5L860.0,139.2" fill="none" stroke="#00ff88" stroke-width="2.6"/>
+<text x="868" y="143.2" fill="#00ff88" font-size="12">N. Carolina</text>
+<line x1="362.1" y1="110" x2="362.1" y2="400" stroke="#ff8ad8" stroke-width="1.8" stroke-dasharray="2 4"/>
+<rect x="302.1" y="94" width="120" height="16" rx="4" fill="#080d18" fill-opacity="0.9"/><text x="362.1" y="106" text-anchor="middle" fill="#ff8ad8" font-size="11">contact with KK4TE</text>
+<text x="90" y="498" fill="#7a96b0" font-size="11">At the contact the sun is 2° high in Hoboken, 20° in the middle of the path and 35° in North Carolina.</text>
+<text x="90" y="516" fill="#7a96b0" font-size="11">The whole path is in daylight, but my own end reaches sunset 13 minutes later, at 16:06 UTC.</text>
+</svg>
