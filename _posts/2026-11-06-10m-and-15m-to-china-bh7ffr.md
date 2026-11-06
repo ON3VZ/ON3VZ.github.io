@@ -145,6 +145,8 @@ I do not know how strong I really was, and I do not think BH7FFR knew either. It
 
 About twenty minutes after the first contact I heard BH7FFR again, this time on 15 m, on 21.298 MHz. The signal was very clear, and we made a second contact. Same station, same path, same antenna and power, a different band. Why did that work when 10 m was fading?
 
+<figure class="cn-fig"><div class="cn-shot"><img src="/assets/images/china-10m/ic7300-21298-usb-tx.jpg" alt="Icom IC-7300 MkII display on 21.298 MHz USB while transmitting, with RF power 25 percent, mic gain 40 percent, compressor on at level 4 and monitor 39 percent" loading="lazy"><span class="cn-pin" style="left:61%;top:38.3%">1</span><span class="cn-pin" style="left:33%;top:26%">2</span><span class="cn-pin" style="left:78%;top:34%">3</span><span class="cn-pin" style="left:78%;top:42%">4</span><span class="cn-pin" style="left:78%;top:52%">5</span><span class="cn-pin" style="left:78%;top:61.5%">6</span></div><figcaption>The same radio during the second contact. 1: 21.298 MHz. 2: USB, this time with filter FIL2. 3: RF power 25 % (25 W again). 4: mic gain 40 %. 5: compressor on, level 4. 6: monitor 39 %. Apart from the frequency, almost nothing changed.</figcaption></figure>
+
 <figure class="cn-fig"><img src="/assets/images/china-10m/china-10m-bands-close.svg" alt="Chart of an illustrative usable-frequency curve sliding down during the morning, crossing 10 m first and staying above 15 m, with my two contacts as dots" loading="lazy"><figcaption>Bands close from the top. The curve is only an illustration of the idea, but both dots are real: the frequencies of my two contacts must lie below it.</figcaption></figure>
 
 <div class="cn-box cn-why" markdown="1">
