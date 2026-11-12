@@ -332,23 +332,87 @@ You want to call on ON0AND, answer someone, and close the contact.
 
 <div class="dm-box dm-mean" markdown="1">
 <p class="dm-box-label">What it means</p>
-Every FM channel of a local zone is linked to the scan list of that zone (Scan QTH, Scan Sinaai, Scan Leuven, ScanHasselt, Scan Kust, Scan Marche, ScanMalmedy, ScanSimplex). When you start scanning, the radio scans **the list of the channel you are on**. It stops on a signal, waits 3 seconds after the signal ends, and continues.
+Scanning means the radio checks a list of channels by itself, one after the other, and stops when it hears a signal. You do not turn through the channels, the radio does. It is the way to find out **who is on the air** without knowing where to look.
 </div>
+
+### Zone or scan list: why two things?
+
+This is the part that confuses everyone at first, so here it is in one picture.
+
+| | Zone | Scan list |
+|---|---|---|
+| What it is | A folder of channels **you step through** with the keys | A list of channels **the radio steps through** by itself |
+| Who moves | You, with ▲ and ▼ | The radio |
+| Size in my codeplug | 5 to 41 channels, FM and DMR mixed | 3 to 12 channels, FM only |
+| Where it is chosen | The zone you select ([chapter 4](#dm-p2-4)) | Per **channel**: every channel points to one scan list |
+
+The radio has **no function "scan my current zone"**. A scan always uses a scan list, and the list comes from the channel you are standing on. That is why the two are separate, and why I made them different on purpose:
+
+- **A zone is built for choosing, a scan list for listening.** My zone Ant-Kust has 41 channels, with DMR channels in it. If the radio scanned all 41, it would be slow, and a DMR channel gives you nothing while scanning. The scan list Scan Kust has only the 12 FM repeaters of the coast that are worth hearing.
+- **One list can serve many zones.** The route zones (Ant-Breda, Ant-Gent, Ant-Kust and so on) start with the repeaters around Antwerp. Those channels all point to **Scan QTH**, so scanning from there searches the Antwerp area, not the whole route.
+- **The list you want depends on where you are, not on the zone you chose.** You drive to the coast with zone Ant-Kust selected, but at the coast you want to hear the coast repeaters. That is the moment you pick another list: **Scan Kust**.
+
+So, in one sentence: the zone decides which channels you can reach with the keys, the scan list decides which channels the radio searches. When they match, you do not notice the difference. When you travel, they do not.
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">When do I scan, and with which list?</p>
+
+| Situation | Scan list | Why |
+|---|---|---|
+| At home, who is on the local repeaters? | Scan QTH (12 repeaters around Antwerp) | You hear who is active without trying every repeater |
+| At a club evening in Waasland | Scan Sinaai | Starts with the Waasland repeaters |
+| Arriving in Leuven, Hasselt, the coast, Marche or Malmedy | Scan Leuven, ScanHasselt, Scan Kust, Scan Marche, ScanMalmedy | The repeaters of the place you are in, whatever zone you left home with |
+| Simplex: is anyone on the calling frequencies? | ScanSimplex (WLD, 145.500, 433.500) | Three channels, fast |
+| DMR | None, use [roaming](#dm-p2-12) | See the box at the end of this chapter |
+
+I do not scan to talk to a friend: for that I know the repeater. I scan when I arrive somewhere new, when I am on the road and curious, or when the band seems quiet and I want to know whether it really is.
+</div>
+
+### Start a scan and answer a call
 
 <div class="dm-box dm-steps" markdown="1">
-<p class="dm-box-label">Step plan</p>
+<p class="dm-box-label">Step plan: scan the list of the channel you are on</p>
 
-1. Go to an FM channel of the zone you want to scan, for example ON0AND (list Scan QTH).
-2. **TK short**: scan on. The LED blinks orange slowly. Or [MENU] > Scan > Scan Switch > On.
-3. The radio stops on a channel with a signal. Press **PTT within the stop** to answer on that channel (Talkback, Scan TX Mode "Current Channel").
-4. Another list: [MENU] > Scan > Scan List > choose > Apply.
-5. A channel that keeps stopping the scan (noise, a beacon): assign "Nuisance Temporary Delete" to a key if you want; it comes back after a restart.
-6. Stop: **TK short** again, or change channel.
+1. Go to an **FM** channel of the area you want to scan, for example ON0AND (list Scan QTH). Not on a DMR channel: scanning is for FM.
+2. Start the scan: **TK short** (the orange top key), or [MENU] > Scan > Scan Switch > On. The LED blinks orange slowly and the scan icon appears.
+3. The radio runs through the list. On a signal it **stops** and you hear the call.
+4. Want to answer? Press **PTT while the scan is stopped**. You transmit on the channel where it stopped, not on the channel where you started. That is the setting Talkback on, Scan TX Mode "Current Channel", set in the CPS (Part 1, chapter 8.7).
+5. After the signal ends, the radio waits **3 seconds** (the hang time) before it moves on. That gives the other station time to reply.
+6. Stop the scan: **TK short** again, or change channel.
+
+**Nothing happens when you start the scan?** Then the channel you are on points to scan list **None**. That is the case for several channels outside my home area, for example ON0KB, ON0BXL and the Hainaut channels. Choose a list as described below, or go to a channel that has one.
 </div>
+
+### Choose another scan list
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: use the list of another region</p>
+
+1. Press [MENU] and go to **Scan** with ▲ / ▼.
+2. Open **Scan List**.
+3. Choose the list you want, for example **Scan Kust**.
+4. Confirm with **Apply**.
+5. Start the scan (TK short). The radio now searches the list you chose, not the list of the channel you are on.
+6. Stop the scan with TK short.
+</div>
+
+### Fine tuning (in the CPS, once)
+
+These settings are in the CPS, window Public > Scan > Scan Information, and are explained field by field in [Part 1, chapter 8.7]({% post_url 2026-10-29-dm1801pro-part-1-setup %}#dm-p1-8):
+
+| Setting | What it does | My value |
+|---|---|---|
+| Hang Time | How long the scan waits after a signal ends | 3.0 s |
+| Talkback | PTT during a stop answers on that channel | on |
+| Scan TX Mode | Where you transmit while the scan is stopped | Current Channel |
+| CTC Scan Mode | How selective the scan is for tones | Detection CTC |
+| Priority Channel 1/2 | A channel that is checked more often | None |
+
+A channel that keeps stopping the scan (a beacon, noise)? Assign **Nuisance Temporary Delete** to a key. It removes that channel from the scan until you restart the radio.
 
 <div class="dm-box dm-why" markdown="1">
 <p class="dm-box-label">Why only FM</p>
-Scanning DMR over many repeaters and two timeslots is slow and misses calls. For DMR on the road, roaming (chapter 12) is the better tool.
+Scanning DMR over many repeaters and two timeslots is slow, and you miss calls. DMR audio only exists while someone talks on your talkgroup and timeslot, so a scan that moves on is rarely there at the right moment. For DMR on the road, roaming ([chapter 12](#dm-p2-12)) is the better tool.
 </div>
 
 <h2 id="dm-p2-8">8. DMR in plain words: who hears what</h2>
