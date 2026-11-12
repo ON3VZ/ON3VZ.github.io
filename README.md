@@ -1,64 +1,62 @@
-# CWLD
+# ON3VZ.github.io
 
-> Repository: `CWLD_DECODE`. The app itself is called **CWLD**.
+The personal amateur radio site of **ON3VZ**, a Belgian Class C radio amateur in Hoboken, Antwerp (locator JO21EE), member of UBA and radio club WLD (ON6WL).
 
-A modern, simple, open-source CW station app for Windows and Linux (macOS later). It is built to control an Icom IC-7300 MK II and a QRP Labs QMX, decode CW, send CW from the keyboard and clickable chips next to your paddle, and work together with Log4OM.
+**Live site: [on3vz.github.io](https://on3vz.github.io/)**
 
-Status: **phase 2 (radio and sending)**. Drivers for the IC-7300 MK II (CI-V) and the QMX (CAT) are written and tested against a fake serial port, but **not yet on real radios**: see `docs/testplan_radio.md`. There is no audio or decoder yet. See `CHANGELOG.md`.
+The site follows my path from a new callsign to HF, portable QRP and digital voice: the station, the log, the cards and what I learn on the way, written so other beginners can follow along.
 
-## Three modes
+## What is on the site
 
-| Mode | Transmits? | Meaning |
-|---|---|---|
-| LIVE | Yes | Sending reaches the radio. Needs a confirmation. CWLD never starts in this mode. |
-| LISTEN | Never | Decode only. The radio can be in any mode. What you type is not sent. |
-| PRACTICE | Never | Sending is simulated with a sidetone, nothing leaves the application. |
+| Page | What you find there |
+|---|---|
+| [Home](https://on3vz.github.io/inner/) | Start page with the latest posts and QSO activity |
+| [Blog](https://on3vz.github.io/blog/) | Step by step guides and stories from the air (see below) |
+| [Shack](https://on3vz.github.io/shack/) | The home station: Icom IC-7300 MkII at 25 W on HF, antennas and filtering |
+| [Mobile](https://on3vz.github.io/mobile/) | Radio in the car |
+| [Portable](https://on3vz.github.io/portable/) | ON3VZ/P, the QRP portable station (QRP Labs QMX, SOTAbeams Band Hopper IV) for WWFF and ONFF activations |
+| [Projects](https://on3vz.github.io/projects/) | Tools I built: QSObridge log converter, N1MM Field Day Tracker, UBA QSL Sorter, HF Band Scout and more |
+| [Trackers](https://on3vz.github.io/trackers/) | Award trackers, such as the BAFARA OR80AF award |
+| [Logbook](https://on3vz.github.io/logbook/) | The interactive log, with the [DXCC matrix](https://on3vz.github.io/dxcc-matrix/), the [QSO dashboard](https://on3vz.github.io/qso-dashboard/) and the [worked countries map](https://on3vz.github.io/worked-countries/) |
+| Wall | [eQSL cards](https://on3vz.github.io/qsl-wall/) and [awards and certificates](https://on3vz.github.io/certificates/) |
+| [Contact](https://on3vz.github.io/contact/) | How to reach me |
 
-Only LIVE can reach the radio: the rule sits in one place (`GuardedRig`) and is covered by tests.
+## Blog highlights
 
-## Build and test
+**DMR and digital voice, for beginners**
 
-Requirements: Rust (stable), Node 20 or newer. On Linux also the Tauri system libraries (webkit2gtk 4.1, gtk 3, libsoup 3, librsvg, openssl, alsa).
+1. [Ones, zeros and a human voice](https://on3vz.github.io/2026/10/10/digital-voice-modes-on4pn-wld/): DMR, D-STAR, Fusion and FreeDV explained (talk by ON4PN at WLD)
+2. [Part 1: from box to codeplug](https://on3vz.github.io/2026/10/29/dm1801pro-part-1-setup/): DMR ID, BrandMeister, a Baofeng DM-1801 Pro and a Pi-Star hotspot
+3. [Part 2: daily use](https://on3vz.github.io/2026/10/29/dm1801pro-part-2-daily-use/): zones, calling, QSY, roaming, EchoLink by DTMF
+4. [Part 3: DroidStar](https://on3vz.github.io/2026/11/03/dmr-on-the-smartphone-droidstar/): DMR on the smartphone
+5. [Part 4: QSO One](https://on3vz.github.io/2026/11/12/qso-one-dmr-echolink-without-a-radio/): DMR, EchoLink and more without a radio
+6. [Friends nets in Flanders](https://on3vz.github.io/2026/11/09/flemish-friends-nets-weekly-planner/): a weekly planner of FM, HF, SvxLink and DMR nets
 
-```
-cargo test --workspace --exclude cwld   # Rust tests
-cd ui && npm install && npm test        # interface tests
-npm run check && npm run build          # type check and build
-cargo tauri dev                         # run the app (needs tauri-cli)
-```
+**Getting started on HF**
 
-`npm run dev` in `ui/` runs the interface in a browser with a mock of the core (same rules), handy for design work.
+- [Building a capable HF station on 25 watts](https://on3vz.github.io/2026/05/01/hf-station-build/)
+- [From first QSO to first QSL card](https://on3vz.github.io/2026/05/06/from-first-qso-to-first-qsl-card/) and [QSL via the UBA bureau](https://on3vz.github.io/2026/06/09/qsl-cards-via-the-uba-bureau/)
+- [First steps into FT8](https://on3vz.github.io/2026/07/12/first-steps-into-ft8/)
+- [IC-7300 MkII settings for every situation](https://on3vz.github.io/2026/11/02/ic-7300-mk2-settings-for-every-situation/)
+- [How a layered setup keeps my 25 W clean](https://on3vz.github.io/2026/10/07/when-theory-meets-practice-clean-25w/)
 
-## Layout
+**Portable QRP**
 
-- `crates/cwld-types`: shared types (policy, commands, settings, Morse timing)
-- `crates/cwld-radio`: `Rig` trait, transmit guard, simulator, keyer, Icom CI-V and QMX CAT drivers
-- `crates/cwld-core`: application logic, no window needed
-- `src-tauri`: thin Tauri shell
-- `ui`: Svelte 5 interface, texts in `ui/src/i18n/en.json` and `nl.json`
+- [Building ON3VZ/P](https://on3vz.github.io/2026/08/18/building-on3vz-p/), a QRP station for Flora and Fauna activations, with the [reference manual](on3vz-p-manual.md)
 
-## License
+All posts are on the [blog page](https://on3vz.github.io/blog/).
 
-GPL-3.0-or-later. No code from other CW programs is used.
+## How the site is built
 
----
+- **Jekyll on GitHub Pages**, with the site's own layout in `_layouts/` and styles in `css/`. The "fresh" look with a light and dark mode is the default.
+- **Posts** live in `_posts/` as `YYYY-MM-DD-title.md`. Post specific styles sit in a `<style>` block at the top of the post. Images per post are in `assets/images/<post-name>/`.
+- **Logbook data**: ADIF files in `assets/data/`, listed in `assets/data/manifest.json` and consolidated into `archive.adi`. The workflows in `.github/workflows/` keep the log in sync (`sync-logbook.yml`, `consolidate-adif.yml`). Page logic is in `js/` (`logbook.js`, `dxcc-matrix.js`, `qso-dashboard.js`, `worked-countries.js`).
+- **eQSL wall**: card images in `assets/images/qsl/`, 877 px wide, named `{callsign-lowercase}-{YYYY-MM-DD}.jpg` (a slash in a portable callsign becomes a hyphen), listed in `assets/data/qsl-manifest.json`.
+- **Scripts** in `scripts/`: the portable field checklist PDF (`build_field_checklist.py`) and the BAFARA tracker build.
+- Every change is additive and dated in a comment, so it can be reverted easily.
 
-# CWLD (Nederlands)
+## Contact
 
-Een moderne, eenvoudige CW-station-app met open source voor Windows en Linux (macOS later). Ze is gemaakt om een Icom IC-7300 MK II en een QRP Labs QMX te bedienen, CW te decoderen, CW te zenden met het toetsenbord en klikbare chips naast je paddle, en samen te werken met Log4OM.
+Questions, corrections or a sked? Use the [contact page](https://on3vz.github.io/contact/).
 
-Stand van zaken: **fase 2 (radio en zenden)**. Stuurprogramma's voor de IC-7300 MK II (CI-V) en de QMX (CAT) zijn geschreven en getest met een nep-seriele poort, maar **nog niet op echte radio's**: zie `docs/testplan_radio.md`. Er is nog geen audio of decoder. Zie `CHANGELOG.md`.
-
-## Drie modi
-
-| Modus | Zendt? | Betekenis |
-|---|---|---|
-| LIVE | Ja | Zenden bereikt de radio. Vraagt bevestiging. CWLD start nooit in deze modus. |
-| LUISTEREN | Nooit | Alleen decoderen. De radio mag in elke modus staan. Wat je typt wordt niet verzonden. |
-| OEFENEN | Nooit | Zenden wordt gesimuleerd met een meeluistertoon, niets verlaat de toepassing. |
-
-Alleen LIVE kan de radio bereiken: de regel zit op één plaats (`GuardedRig`) en is met tests afgedekt.
-
-## Bouwen en testen
-
-Zie de Engelse tekst hierboven, de commando's zijn dezelfde.
+73 de ON3VZ

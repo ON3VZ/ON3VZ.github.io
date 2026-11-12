@@ -718,7 +718,7 @@ The app decides what you do right now. The BrandMeister website decides what rea
 | How long | Until about 15 minutes after the last local activity ([BrandMeister](https://help.brandmeister.network/talk-groups/dynamic-vs-static/)) | Always, until you remove it | Only during that block |
 | Good for | QSY rooms 2064 to 2069, a one-off listen | Your home group, for example 2061 | A weekly net |
 
-QSO One logs in to BrandMeister as a device with your plain DMR ID. Statics on that device come in without tapping Listen.
+Statics and Scheduled Static are set on a **hotspot or repeater device**. QSO One does not show up there: BrandMeister lists it under **DMR Terminals** (type *Open DMR Terminal*), so in the app you use **Listen** for dynamic groups. Do you have a hotspot? Then set your statics on the hotspot, as in [8.1](#qo-8-1).
 </div>
 
 <details class="qo-more" markdown="1">
@@ -733,22 +733,22 @@ QSO One logs in to BrandMeister as a device with your plain DMR ID. Statics on t
 
 </details>
 
-<h3 id="qo-8-1">8.1 A static talkgroup on your app</h3>
+<h3 id="qo-8-1">8.1 A static talkgroup (on your hotspot)</h3>
 
 <div class="dm-box dm-steps" markdown="1">
 <p class="dm-box-label">Step plan: My Devices</p>
-1. Make one connection with QSO One first, so BrandMeister knows the device.
+1. A device only exists on BrandMeister after it has connected once, so connect your hotspot first (see [chapter 9](#qo-9) for the number it should use).
 2. Log in at [brandmeister.network](https://brandmeister.network) and open **My Devices** (Mijn apparaten).
-3. Under **Device Logs** you see your login as "verified". Under **DMR Devices** you find your device: for QSO One the plain 7 digit number.
+3. Under **Device Logs** you see your login as "verified". Under **DMR Devices** you find your hotspot (in my case 206097102). QSO One is not in this list: it is under **DMR Terminals**, further down.
 4. Click **Bewerken** (Edit) on that row.
 5. In the block **Statische gespreksgroep** (Static talkgroup), type `2061` and click the arrow. It appears in the list on the right.
-6. Back in QSO One, connected but without tapping a group: calls on 2061 now come in by themselves.
+6. Calls on 2061 now come in on the hotspot by themselves, without anyone tapping anything.
 7. To remove a static: click it in the list on the right and use the arrow back.
 </div>
 
-<figure class="dm-fig"><img src="/assets/images/droidstar/bm-my-devices-droidstar.png" alt="BrandMeister My Devices: device log verified, the device row and the Bewerken button" loading="lazy"><figcaption>My Devices (here from Part 3, where DroidStar logged in as 206097101; QSO One uses the plain ID): verified login, the device, Bewerken</figcaption></figure>
+<figure class="dm-fig"><img src="/assets/images/qso-one/bm-mydevices-terminal.jpg" alt="BrandMeister My Devices: three DMR devices (plain ID, 206097101, 206097102) and below it DMR Terminals with QSO One as Open DMR Terminal" loading="lazy"><figcaption>My Devices: the hotspot (206097102) is a device with Bewerken; QSO One sits in its own block, DMR Terminals</figcaption></figure>
 
-<figure class="dm-fig"><img src="/assets/images/dm1801pro/bm-static-talkgroups.png" alt="BrandMeister device page, block Statische gespreksgroep, with Belgium (206) and Belgium North (2061) in the list on the right" loading="lazy"><figcaption>The result: 206 and 2061 static on a device</figcaption></figure>
+<figure class="dm-fig"><img src="/assets/images/qso-one/bm-hotspot-static-scheduled.jpg" alt="BrandMeister device page of the hotspot: static Belgium 206 and Belgium North 2061, and a Scheduled static on TG 2067 on Wednesday 20:00 to 23:00" loading="lazy"><figcaption>The page of the hotspot: 206 and 2061 static, and Scheduled static 2067 on Wednesday evening (8.2)</figcaption></figure>
 
 
 <h3 id="qo-8-2">8.2 Scheduled Static: a net that switches on by itself</h3>
@@ -757,12 +757,12 @@ QSO One logs in to BrandMeister as a device with your plain DMR ID. Statics on t
 <p class="dm-box-label">Step plan: Scheduled Static</p>
 Two Flemish DMR nets from my [weekly planner]({% post_url 2026-11-09-flemish-friends-nets-weekly-planner %}): **MLB Genk on TG 2067** (Wednesday 20:30) and the **NOK round on TG 2069** (third Thursday, 20:00).
 
-1. BrandMeister **My Devices** > your device > **Bewerken**, scroll to **Scheduled Static**.
+1. BrandMeister **My Devices** > your hotspot > **Bewerken**, scroll to **Scheduled Static**.
 2. Click **Add Scheduled Static**.
 3. Type the talkgroup (`2067`), choose the day (Wednesday), a block of three hours (19:30 to 22:30) and the start and stop date.
 4. Both UTC and local time are shown. Watch out for the switch between summer and winter time.
 
-The simple alternative: open QSO One five minutes before the net and tap Listen on 2067 or 2069.
+The simple alternative, and the only one in the app: open QSO One five minutes before the net and tap Listen on 2067 or 2069.
 </div>
 
 
@@ -814,22 +814,29 @@ My advice: one or two statics (2061, perhaps 206), QSY groups always dynamic, ne
 <h2 id="qo-9">9. Already a hotspot or DroidStar? Read this</h2>
 
 <div class="dm-box dm-warn" markdown="1">
-<p class="dm-box-label">Watch out: one ID, one connection</p>
-BrandMeister allows **one connection per number**. QSO One logs in with your **plain** DMR ID and, unlike DroidStar, cannot add a two digit suffix (ESSID). Does your hotspot also log in with the plain ID (ESSID "None" in Pi-Star)? Then QSO One and the hotspot push each other off the network, and the Parrot may stop working. The app warns about it too ("Draai je ook een hotspot op deze DMR-ID?"). TGIF and FreeDMR do have a suffix field in QSO One; only BrandMeister has this limitation.
+<p class="dm-box-label">Watch out: one ID, one connection, and private calls</p>
+BrandMeister allows **one connection per number**. QSO One logs in with your **plain** DMR ID and, unlike DroidStar, cannot add a two digit suffix (ESSID). Does your hotspot also use the plain ID (ESSID "None" in Pi-Star)? Then QSO One and the hotspot push each other off the network. The app warns about it too ("Draai je ook een hotspot op deze DMR-ID?"). TGIF and FreeDMR do have a suffix field in QSO One; only BrandMeister has this limitation.
+
+There is a second effect, even when the hotspot has its own number: **private calls to your plain ID go to the app**, not to the hotspot. That includes the Parrot echo test on 9990. Group calls are not affected.
 
 No hotspot and no other DMR app? Then this does not concern you: [continue with EchoLink](#qo-10).
+</div>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">My advice: the radio and hotspot are your main DMR device at home</p>
+1. Give the hotspot its own number (ESSID 02, see below).
+2. At home, when you use the radio, disconnect **DMR only** in QSO One: tap the power button at the top, then **DMR verbreken**. EchoLink can stay connected.
+3. On the road, connect DMR in the app again.
 </div>
 
 <details markdown="1">
 <summary>I have a hotspot: show me the fix</summary>
 
-**Option A, never at the same time.** When you use the hotspot, disconnect QSO One with the power button at the top. Nothing to change, but you have to remember it.
-
-**Option B, give the hotspot its own number** (my choice). Every device gets its own number:
+**Give the hotspot its own number.** Every device gets its own number:
 
 | Device | Number on BrandMeister |
 |---|---|
-| QSO One | 2060971 (plain ID) |
+| QSO One (Open DMR Terminal) | 2060971 (plain ID) |
 | DroidStar | 206097101 (ESSID 01, see [Part 3]({% post_url 2026-11-03-dmr-on-the-smartphone-droidstar %}#ds-6)) |
 | Pi-Star hotspot | 206097102 (ESSID 02) |
 
@@ -837,11 +844,26 @@ No hotspot and no other DMR app? Then this does not concern you: [continue with 
 2. Click **Configuration** and log in.
 3. In **DMR Configuration**, set **DMR ESSID** from "None" to **02** (01 is taken by DroidStar).
 4. Click **Apply Changes** and wait until the hotspot has restarted.
-5. On BrandMeister **My Devices** the hotspot now appears as a new device, 206097102. Click **Bewerken** and add your static talkgroups again (2061, 206), as in [8.1](#qo-8-1). The device with the plain ID is now free for QSO One, and its statics now apply to QSO One.
+5. On BrandMeister **My Devices** the hotspot now appears as a new device, 206097102. Click **Bewerken** and add your static talkgroups again (2061, 206), as in [8.1](#qo-8-1).
+
+Your radio still transmits with your plain ID 2060971 over the air. The suffix only exists between the hotspot and BrandMeister.
 
 Setting up the hotspot itself is in [Part 1, chapter 10]({% post_url 2026-10-29-dm1801pro-part-1-setup %}#dm-p1-10).
 
-<figure class="dm-fig"><img src="/assets/images/dm1801pro/pistar-dmr.png" alt="Pi-Star DMR Configuration with DMR Master BM_2061_Belgium, hotspot security, DMR ESSID and colour code" loading="lazy"><figcaption>Pi-Star, DMR Configuration: the field DMR ESSID is where None becomes 02</figcaption></figure>
+<figure class="dm-fig"><img src="/assets/images/qso-one/pistar-essid02.jpg" alt="Pi-Star DMR Configuration with DMR Master BM_2061_Belgium, DMR ESSID 2060971 followed by 02, colour code 1" loading="lazy"><figcaption>Pi-Star, DMR Configuration: DMR ESSID is where None becomes 02</figcaption></figure>
+
+</details>
+
+<details markdown="1">
+<summary>The Parrot test: why the echo may not come back to your radio</summary>
+
+The Parrot (private call to **9990**) repeats your voice to whoever called it. BrandMeister sends it back to your plain ID 2060971, and with QSO One connected, that is the app, not the hotspot.
+
+In my test, Last Heard shows the radio calling 9990 through the hotspot (source 206097102, *MMDVM Host*), and an *Open DMR Terminal* line (RoIP) for the app. The Pi-Star Live Log then showed my call going out, but no echo coming back until I disconnected DMR in QSO One. After that the echo returned on the hotspot: "received network voice header from 9990 to 2060971".
+
+<figure class="dm-fig"><img src="/assets/images/qso-one/bm-lastheard-9990.jpg" alt="BrandMeister Last Heard on destination 9990: lines from MMDVM Host with source 206097102 and one Open DMR Terminal line" loading="lazy"><figcaption>Last Heard, destination 9990: the hotspot (MMDVM Host, 206097102) and the app (Open DMR Terminal, RoIP)</figcaption></figure>
+
+<figure class="dm-fig"><img src="/assets/images/qso-one/pistar-livelog-echo.jpg" alt="Pi-Star Live Log: RF voice from 2060971 to 9990 followed by network voice from 9990 to 2060971" loading="lazy"><figcaption>Pi-Star Live Log with the app disconnected: your call goes out (RF) and the echo comes back (network)</figcaption></figure>
 
 </details>
 
@@ -1166,8 +1188,9 @@ Mostly foreign nets. The Flemish rounds are in my [weekly planner]({% post_url 2
 | DMR stays off, no "Verbonden als DMR ID" | Wrong Hotspot Security password, or a space pasted after it | DMR-login bewerken, type the password again. Still wrong: set a new one in SelfCare (chapter 3.2) |
 | Your hotspot or the app keeps dropping | Both log in with the same plain DMR ID | Chapter 9: ESSID on the hotspot |
 | No echo from 9990 | Call type is Group | Gesprekstype **Privégesprek** |
+| No echo on your radio or hotspot, but the app gets it | QSO One is connected and takes private calls to your plain ID | Disconnect DMR in QSO One (power button > DMR verbreken), chapter 9 |
 | Your call went to the wrong place | Still on Private after the echo test | Back to **Groep** |
-| Nothing on 2061 | No static and nobody talking, or the dynamic subscription expired | Tap Listen again, or set a static ([8.1](#qo-8-1)) |
+| Nothing on 2061 | No static and nobody talking, or the dynamic subscription expired | Tap Listen again (a static only exists on a hotspot, [8.1](#qo-8-1)) |
 | Not sure you were heard | | BrandMeister Last Heard (chapter 8) |
 | EchoLink login refused | Callsign not validated yet, or the wrong password | Check your validation e-mail; reset at echolink.org |
 | EchoLink node does not answer | Node offline or busy | Look for "Online" in the details first |
@@ -1201,7 +1224,7 @@ Mostly foreign nets. The Flemish rounds are in my [weekly planner]({% post_url 2
 - &#9744; DMR: "Verbonden als DMR ID ...", master Belgium
 - &#9744; My TGs: 206, 2061, 2064 to 2069, 9990
 - &#9744; Echo test on 9990 as a private call, then back to group
-- &#9744; One or two statics in My Devices, nets as Scheduled Static
+- &#9744; Hotspot owners: one or two statics in My Devices, nets as Scheduled Static
 - &#9744; A hotspot too? Its own ESSID (chapter 9)
 - &#9744; EchoLink: favourites set, participant list read before the first TX
 - &#9744; Incoming EchoLink connections: blocked or allowed, your choice
