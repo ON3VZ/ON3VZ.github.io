@@ -71,6 +71,9 @@ excerpt: "A complete step plan for anyone with a licence but without a digital r
 .qo-side summary::-webkit-details-marker { display: none; }
 .qo-side ol { list-style: none; margin: 0 !important; padding: 0 !important; counter-reset: qo; }
 .qo-side li { margin: 0 !important; counter-increment: qo; }
+.qo-side li.qo-sub { counter-increment: none; }
+.qo-side li.qo-sub a { padding-left: 1.6rem; font-size: .8rem; }
+.qo-side li.qo-sub a::before { content: "\21B3  "; }
 .qo-side a { display: block; padding: .32rem .55rem; border-left: 3px solid var(--c-border); color: var(--c-text-3) !important; text-decoration: none !important; }
 .qo-side a::before { content: counter(qo) ". "; font-family: var(--f-mono); font-size: .75rem; }
 .qo-side a:hover { color: var(--c-text) !important; border-left-color: var(--dm-accent); }
@@ -111,6 +114,8 @@ excerpt: "A complete step plan for anyone with a licence but without a digital r
 <li><a href="#qo-6">DMR: logging in</a></li>
 <li><a href="#qo-7">DMR: listen and talk</a></li>
 <li><a href="#qo-8">BrandMeister settings</a></li>
+<li class="qo-sub"><a href="#qo-8-1">Static talkgroup</a></li>
+<li class="qo-sub"><a href="#qo-8-2">Scheduled Static</a></li>
 <li><a href="#qo-9">Hotspot or DroidStar too?</a></li>
 <li><a href="#qo-10">EchoLink</a></li>
 <li><a href="#qo-11">Other networks</a></li>
@@ -709,7 +714,7 @@ The app decides what you do right now. The BrandMeister website decides what rea
 
 | | Dynamic | Static | Scheduled static |
 |---|---|---|---|
-| How it starts | You tap Listen or you transmit on it | Set permanently on your device in My Devices | Set on your device for a day and a time block |
+| How it starts | You tap Listen or you transmit on it | Set permanently on your device in My Devices ([8.1](#qo-8-1)) | Set on your device for a day and a time block ([8.2](#qo-8-2)) |
 | How long | Until about 15 minutes after the last local activity ([BrandMeister](https://help.brandmeister.network/talk-groups/dynamic-vs-static/)) | Always, until you remove it | Only during that block |
 | Good for | QSY rooms 2064 to 2069, a one-off listen | Your home group, for example 2061 | A weekly net |
 
@@ -717,7 +722,7 @@ QSO One logs in to BrandMeister as a device with your plain DMR ID. Statics on t
 </div>
 
 <details class="qo-more" markdown="1">
-<summary>SelfCare: General settings (Talker Alias, Private Hotspot)</summary>
+<summary>First: SelfCare General settings (Talker Alias, Private Hotspot)</summary>
 
 1. Log in at [brandmeister.network](https://brandmeister.network) and open **SelfCare**.
 2. Block **General settings**: leave Brand on ETSI, set your **Language**, leave APRS off, and check that **Private Hotspot** is on.
@@ -728,9 +733,10 @@ QSO One logs in to BrandMeister as a device with your plain DMR ID. Statics on t
 
 </details>
 
-<details class="qo-more" markdown="1">
-<summary>My Devices: a static talkgroup on your app</summary>
+<h3 id="qo-8-1">8.1 A static talkgroup on your app</h3>
 
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: My Devices</p>
 1. Make one connection with QSO One first, so BrandMeister knows the device.
 2. Log in at [brandmeister.network](https://brandmeister.network) and open **My Devices** (Mijn apparaten).
 3. Under **Device Logs** you see your login as "verified". Under **DMR Devices** you find your device: for QSO One the plain 7 digit number.
@@ -738,16 +744,17 @@ QSO One logs in to BrandMeister as a device with your plain DMR ID. Statics on t
 5. In the block **Statische gespreksgroep** (Static talkgroup), type `2061` and click the arrow. It appears in the list on the right.
 6. Back in QSO One, connected but without tapping a group: calls on 2061 now come in by themselves.
 7. To remove a static: click it in the list on the right and use the arrow back.
+</div>
 
 <figure class="dm-fig"><img src="/assets/images/droidstar/bm-my-devices-droidstar.png" alt="BrandMeister My Devices: device log verified, the device row and the Bewerken button" loading="lazy"><figcaption>My Devices (here from Part 3, where DroidStar logged in as 206097101; QSO One uses the plain ID): verified login, the device, Bewerken</figcaption></figure>
 
 <figure class="dm-fig"><img src="/assets/images/dm1801pro/bm-static-talkgroups.png" alt="BrandMeister device page, block Statische gespreksgroep, with Belgium (206) and Belgium North (2061) in the list on the right" loading="lazy"><figcaption>The result: 206 and 2061 static on a device</figcaption></figure>
 
-</details>
 
-<details class="qo-more" markdown="1">
-<summary>Scheduled Static: a net that switches on by itself</summary>
+<h3 id="qo-8-2">8.2 Scheduled Static: a net that switches on by itself</h3>
 
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: Scheduled Static</p>
 Two Flemish DMR nets from my [weekly planner]({% post_url 2026-11-09-flemish-friends-nets-weekly-planner %}): **MLB Genk on TG 2067** (Wednesday 20:30) and the **NOK round on TG 2069** (third Thursday, 20:00).
 
 1. BrandMeister **My Devices** > your device > **Bewerken**, scroll to **Scheduled Static**.
@@ -756,8 +763,10 @@ Two Flemish DMR nets from my [weekly planner]({% post_url 2026-11-09-flemish-fri
 4. Both UTC and local time are shown. Watch out for the switch between summer and winter time.
 
 The simple alternative: open QSO One five minutes before the net and tap Listen on 2067 or 2069.
+</div>
 
-</details>
+
+<h3 id="qo-8-3">8.3 Checking and listening</h3>
 
 <details class="qo-more" markdown="1">
 <summary>Last Heard: were you really on the air?</summary>
@@ -828,7 +837,7 @@ No hotspot and no other DMR app? Then this does not concern you: [continue with 
 2. Click **Configuration** and log in.
 3. In **DMR Configuration**, set **DMR ESSID** from "None" to **02** (01 is taken by DroidStar).
 4. Click **Apply Changes** and wait until the hotspot has restarted.
-5. On BrandMeister **My Devices** the hotspot now appears as a new device, 206097102. Click **Bewerken** and add your static talkgroups again (2061, 206), as in chapter 8. The device with the plain ID is now free for QSO One, and its statics now apply to QSO One.
+5. On BrandMeister **My Devices** the hotspot now appears as a new device, 206097102. Click **Bewerken** and add your static talkgroups again (2061, 206), as in [8.1](#qo-8-1). The device with the plain ID is now free for QSO One, and its statics now apply to QSO One.
 
 Setting up the hotspot itself is in [Part 1, chapter 10]({% post_url 2026-10-29-dm1801pro-part-1-setup %}#dm-p1-10).
 
@@ -1158,7 +1167,7 @@ Mostly foreign nets. The Flemish rounds are in my [weekly planner]({% post_url 2
 | Your hotspot or the app keeps dropping | Both log in with the same plain DMR ID | Chapter 9: ESSID on the hotspot |
 | No echo from 9990 | Call type is Group | Gesprekstype **Privégesprek** |
 | Your call went to the wrong place | Still on Private after the echo test | Back to **Groep** |
-| Nothing on 2061 | No static and nobody talking, or the dynamic subscription expired | Tap Listen again, or set a static (chapter 8) |
+| Nothing on 2061 | No static and nobody talking, or the dynamic subscription expired | Tap Listen again, or set a static ([8.1](#qo-8-1)) |
 | Not sure you were heard | | BrandMeister Last Heard (chapter 8) |
 | EchoLink login refused | Callsign not validated yet, or the wrong password | Check your validation e-mail; reset at echolink.org |
 | EchoLink node does not answer | Node offline or busy | Look for "Online" in the details first |
@@ -1239,7 +1248,7 @@ No radio, no problem: a licence, a phone and an evening of accounts, and you are
   var links = nav.querySelectorAll('a[href^="#qo-"]');
   var map = {};
   links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-  var heads = document.querySelectorAll('.qo-main h2[id^="qo-"]');
+  var heads = document.querySelectorAll('.qo-main h2[id^="qo-"], .qo-main h3[id^="qo-8-"]');
   if (!('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
