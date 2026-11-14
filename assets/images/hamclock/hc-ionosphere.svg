@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- HAMCLOCK 2026-11-14: ionosphere day night. Remove together with the post to revert. -->
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9fb6cc"/></marker></defs>
+<rect width="980" height="560" rx="10" fill="#080d18"/>
+<text x="490.0" y="36" text-anchor="middle" fill="#e2eaf5" font-size="20">Why the band changes between day and night</text>
+<text x="490.0" y="60" text-anchor="middle" fill="#7a96b0" font-size="13">Short wave signals bounce off the ionosphere. The sun charges the layers; the D layer absorbs the low bands by day.</text>
+<rect x="40" y="80" width="430" height="400" rx="10" fill="#10223d" stroke="#1d3050"/>
+<text x="255.0" y="108" text-anchor="middle" fill="#ffb020" font-size="17">DAY</text>
+<rect x="50" y="140" width="410" height="60" fill="#00ff88" fill-opacity="0.28"/>
+<text x="450" y="165" text-anchor="end" fill="#00ff88" font-size="12">F layer 150 to 400 km</text>
+<rect x="50" y="250" width="410" height="28" fill="#ffb020" fill-opacity="0.2"/><text x="450" y="269" text-anchor="end" fill="#ffb020" font-size="12">E layer 90 to 150 km</text>
+<rect x="50" y="320" width="410" height="34" fill="#ff4466" fill-opacity="0.3"/><text x="450" y="342" text-anchor="end" fill="#ff4466" font-size="12">D layer 60 to 90 km: absorbs</text>
+<rect x="40" y="440" width="430" height="40" fill="#1b2a1b"/><polyline points="80,440 230,150 380,440" fill="none" stroke="#00ff88" stroke-width="3"/><text x="230" y="410" text-anchor="middle" fill="#00ff88" font-size="12">20 to 10 m: long hops</text>
+<polyline points="100,440 160,340" fill="none" stroke="#ff4466" stroke-width="3" stroke-dasharray="5 4"/><text x="150" y="372" text-anchor="start" fill="#ff4466" font-size="12">80/40 m</text>
+<rect x="510" y="80" width="430" height="400" rx="10" fill="#0a0f1e" stroke="#1d3050"/>
+<text x="725.0" y="108" text-anchor="middle" fill="#38d6ff" font-size="17">NIGHT</text>
+<rect x="520" y="140" width="410" height="45" fill="#00ff88" fill-opacity="0.18"/>
+<text x="920" y="165" text-anchor="end" fill="#00ff88" font-size="12">F layer 150 to 400 km</text>
+<text x="920" y="342" text-anchor="end" fill="#7a96b0" font-size="12">D layer gone after sunset</text>
+<rect x="510" y="440" width="430" height="40" fill="#1b2a1b"/><polyline points="550,440 700,175 850,440" fill="none" stroke="#38d6ff" stroke-width="3"/><text x="700" y="410" text-anchor="middle" fill="#38d6ff" font-size="12">160 to 40 m: DX at night</text>
+<polyline points="590,440 650,150 680,115" fill="none" stroke="#7a96b0" stroke-width="2" stroke-dasharray="5 4"/><text x="700" y="128" text-anchor="start" fill="#7a96b0" font-size="12">10 m often escapes into space</text>
+<text x="490" y="512" text-anchor="middle" fill="#7a96b0" font-size="12">Above the MUF (maximum usable frequency) a signal goes into space. An active sun raises the MUF.</text>
+<text x="490" y="532" text-anchor="middle" fill="#7a96b0" font-size="12">Around the grey line (dusk and dawn) the D layer is weak and the F layer still strong: good low band DX.</text>
+</svg>

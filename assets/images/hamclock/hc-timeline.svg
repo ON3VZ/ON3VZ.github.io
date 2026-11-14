@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- HAMCLOCK 2026-11-14: timeline. Remove together with the post to revert. -->
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9fb6cc"/></marker></defs>
+<rect width="980" height="470" rx="10" fill="#080d18"/>
+<text x="490.0" y="36" text-anchor="middle" fill="#e2eaf5" font-size="20">From one man&#x27;s desk clock to a community project</text>
+<text x="490.0" y="60" text-anchor="middle" fill="#7a96b0" font-size="13">HamClock in ten moments. Every new version is dedicated to Elwood Downey, WB0OEW (SK).</text>
+<line x1="50" y1="255" x2="930" y2="255" stroke="#1d3050" stroke-width="4"/>
+<circle cx="70" cy="255" r="9" fill="#38d6ff"/>
+<line x1="70" y1="255" x2="70" y2="225" stroke="#38d6ff" stroke-width="2"/>
+<text x="70" y="165" text-anchor="middle" fill="#38d6ff" font-size="14">1974</text>
+<text x="70" y="183" text-anchor="middle" fill="#e2eaf5" font-size="12">WB0OEW licensed</text>
+<circle cx="163" cy="255" r="9" fill="#38d6ff"/>
+<line x1="163" y1="255" x2="163" y2="285" stroke="#38d6ff" stroke-width="2"/>
+<text x="163" y="305" text-anchor="middle" fill="#38d6ff" font-size="14">Oct 2017</text>
+<text x="163" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">QST article,</text>
+<text x="163" y="339" text-anchor="middle" fill="#e2eaf5" font-size="12">ESP8266 clock</text>
+<circle cx="256" cy="255" r="9" fill="#38d6ff"/>
+<line x1="256" y1="255" x2="256" y2="225" stroke="#38d6ff" stroke-width="2"/>
+<text x="256" y="165" text-anchor="middle" fill="#38d6ff" font-size="14">17 Jan 2026</text>
+<text x="256" y="183" text-anchor="middle" fill="#e2eaf5" font-size="12">v4.22, last by</text>
+<text x="256" y="199" text-anchor="middle" fill="#e2eaf5" font-size="12">Elwood, adds -b</text>
+<circle cx="349" cy="255" r="9" fill="#ff4466"/>
+<line x1="349" y1="255" x2="349" y2="285" stroke="#ff4466" stroke-width="2"/>
+<text x="349" y="305" text-anchor="middle" fill="#ff4466" font-size="14">29 Jan 2026</text>
+<text x="349" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">Elwood Downey</text>
+<text x="349" y="339" text-anchor="middle" fill="#e2eaf5" font-size="12">SK</text>
+<circle cx="442" cy="255" r="9" fill="#00ff88"/>
+<line x1="442" y1="255" x2="442" y2="225" stroke="#00ff88" stroke-width="2"/>
+<text x="442" y="165" text-anchor="middle" fill="#00ff88" font-size="14">Feb 2026</text>
+<text x="442" y="183" text-anchor="middle" fill="#e2eaf5" font-size="12">OHB and</text>
+<text x="442" y="199" text-anchor="middle" fill="#e2eaf5" font-size="12">OpenHamClock</text>
+<text x="442" y="215" text-anchor="middle" fill="#e2eaf5" font-size="12">start</text>
+<circle cx="535" cy="255" r="9" fill="#00ff88"/>
+<line x1="535" y1="255" x2="535" y2="285" stroke="#00ff88" stroke-width="2"/>
+<text x="535" y="305" text-anchor="middle" fill="#00ff88" font-size="14">Spring 2026</text>
+<text x="535" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">public OHB</text>
+<text x="535" y="339" text-anchor="middle" fill="#e2eaf5" font-size="12">server, v4.23</text>
+<circle cx="628" cy="255" r="9" fill="#00ff88"/>
+<line x1="628" y1="255" x2="628" y2="225" stroke="#00ff88" stroke-width="2"/>
+<text x="628" y="165" text-anchor="middle" fill="#00ff88" font-size="14">v4.24</text>
+<text x="628" y="183" text-anchor="middle" fill="#e2eaf5" font-size="12">OHB becomes the</text>
+<text x="628" y="199" text-anchor="middle" fill="#e2eaf5" font-size="12">default</text>
+<circle cx="721" cy="255" r="9" fill="#00ff88"/>
+<line x1="721" y1="255" x2="721" y2="285" stroke="#00ff88" stroke-width="2"/>
+<text x="721" y="305" text-anchor="middle" fill="#00ff88" font-size="14">June 2026</text>
+<text x="721" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">Clear Sky</text>
+<text x="721" y="339" text-anchor="middle" fill="#e2eaf5" font-size="12">server goes</text>
+<text x="721" y="355" text-anchor="middle" fill="#e2eaf5" font-size="12">offline</text>
+<circle cx="814" cy="255" r="9" fill="#00ff88"/>
+<line x1="814" y1="255" x2="814" y2="225" stroke="#00ff88" stroke-width="2"/>
+<text x="814" y="165" text-anchor="middle" fill="#00ff88" font-size="14">Sep 2026</text>
+<text x="814" y="183" text-anchor="middle" fill="#e2eaf5" font-size="12">v4.32, Android</text>
+<text x="814" y="199" text-anchor="middle" fill="#e2eaf5" font-size="12">and Fire</text>
+<circle cx="907" cy="255" r="9" fill="#00ff88"/>
+<line x1="907" y1="255" x2="907" y2="285" stroke="#00ff88" stroke-width="2"/>
+<text x="907" y="305" text-anchor="middle" fill="#00ff88" font-size="14">Nov 2026</text>
+<text x="907" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">v4.33 on my</text>
+<text x="907" y="339" text-anchor="middle" fill="#e2eaf5" font-size="12">clock</text>
+<text x="490" y="445" text-anchor="middle" fill="#7a96b0" font-size="12">Seasonal dates are approximate. The project did not die: it started moving faster.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- HAMCLOCK 2026-11-14: space weather scales. Remove together with the post to revert. -->
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9fb6cc"/></marker></defs>
+<rect width="980" height="560" rx="10" fill="#080d18"/>
+<text x="490.0" y="36" text-anchor="middle" fill="#e2eaf5" font-size="20">Reading the space weather numbers at a glance</text>
+<text x="490.0" y="60" text-anchor="middle" fill="#7a96b0" font-size="13">Rough guide values for the four numbers you see most. Always look at them together.</text>
+<text x="60" y="115" text-anchor="start" fill="#e2eaf5" font-size="16">SFI</text>
+<rect x="230" y="90" width="170" height="36" fill="#ff4466" fill-opacity="0.35" stroke="#ff4466"/><text x="315.0" y="113" text-anchor="middle" fill="#e2eaf5" font-size="12">below 80: hard</text>
+<rect x="400" y="90" width="180" height="36" fill="#ffb020" fill-opacity="0.35" stroke="#ffb020"/><text x="490.0" y="113" text-anchor="middle" fill="#e2eaf5" font-size="12">80 to 100: fair</text>
+<rect x="580" y="90" width="180" height="36" fill="#00ff88" fill-opacity="0.35" stroke="#00ff88"/><text x="670.0" y="113" text-anchor="middle" fill="#e2eaf5" font-size="12">100 to 150: good</text>
+<rect x="760" y="90" width="150" height="36" fill="#38d6ff" fill-opacity="0.35" stroke="#38d6ff"/><text x="835.0" y="113" text-anchor="middle" fill="#e2eaf5" font-size="12">150+: great</text>
+<text x="230" y="148" text-anchor="start" fill="#7a96b0" font-size="12">Solar flux. The higher, the more the high bands (15 to 10 m) open.</text>
+<text x="60" y="220" text-anchor="start" fill="#e2eaf5" font-size="16">Kp</text>
+<rect x="230" y="195" width="230" height="36" fill="#00ff88" fill-opacity="0.35" stroke="#00ff88"/><text x="345.0" y="218" text-anchor="middle" fill="#e2eaf5" font-size="12">0 to 2 quiet</text>
+<rect x="460" y="195" width="230" height="36" fill="#ffb020" fill-opacity="0.35" stroke="#ffb020"/><text x="575.0" y="218" text-anchor="middle" fill="#e2eaf5" font-size="12">3 to 4 unsettled</text>
+<rect x="690" y="195" width="220" height="36" fill="#ff4466" fill-opacity="0.35" stroke="#ff4466"/><text x="800.0" y="218" text-anchor="middle" fill="#e2eaf5" font-size="12">5+ storm</text>
+<text x="230" y="253" text-anchor="start" fill="#7a96b0" font-size="12">Geomagnetic unrest. High Kp spoils polar paths (Japan, US west coast).</text>
+<text x="60" y="325" text-anchor="start" fill="#e2eaf5" font-size="16">X-ray</text>
+<rect x="230" y="300" width="140" height="36" fill="#00ff88" fill-opacity="0.35" stroke="#00ff88"/><text x="300.0" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">A, B</text>
+<rect x="370" y="300" width="140" height="36" fill="#00ff88" fill-opacity="0.35" stroke="#00ff88"/><text x="440.0" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">C</text>
+<rect x="510" y="300" width="200" height="36" fill="#ffb020" fill-opacity="0.35" stroke="#ffb020"/><text x="610.0" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">M: fade possible</text>
+<rect x="710" y="300" width="200" height="36" fill="#ff4466" fill-opacity="0.35" stroke="#ff4466"/><text x="810.0" y="323" text-anchor="middle" fill="#e2eaf5" font-size="12">X: blackout</text>
+<text x="230" y="358" text-anchor="start" fill="#7a96b0" font-size="12">Solar flares. Hits the daylight side within minutes, mostly the lower bands.</text>
+<text x="60" y="430" text-anchor="start" fill="#e2eaf5" font-size="16">NOAA R S G</text>
+<rect x="230" y="405" width="230" height="36" fill="#00ff88" fill-opacity="0.35" stroke="#00ff88"/><text x="345.0" y="428" text-anchor="middle" fill="#e2eaf5" font-size="12">0: quiet</text>
+<rect x="460" y="405" width="230" height="36" fill="#ffb020" fill-opacity="0.35" stroke="#ffb020"/><text x="575.0" y="428" text-anchor="middle" fill="#e2eaf5" font-size="12">1 to 2</text>
+<rect x="690" y="405" width="220" height="36" fill="#ff4466" fill-opacity="0.35" stroke="#ff4466"/><text x="800.0" y="428" text-anchor="middle" fill="#e2eaf5" font-size="12">3 to 5: severe</text>
+<text x="230" y="463" text-anchor="start" fill="#7a96b0" font-size="12">Radio blackout, radiation storm and geomagnetic storm, each from 0 to 5.</text>
+<text x="490" y="530" text-anchor="middle" fill="#7a96b0" font-size="12">High SFI with high Kp is worse than it looks. A forecast is not a measurement: check live spots and beacons.</text>
+</svg>

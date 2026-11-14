@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- HAMCLOCK 2026-11-14: client and backend. Remove together with the post to revert. -->
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9fb6cc"/></marker></defs>
+<rect width="980" height="620" rx="10" fill="#080d18"/>
+<text x="490.0" y="36" text-anchor="middle" fill="#e2eaf5" font-size="20">How the information reaches your HamClock</text>
+<text x="490.0" y="60" text-anchor="middle" fill="#7a96b0" font-size="13">The clock (client) gets almost everything from one backend server. Only the DX cluster is a direct connection.</text>
+<rect x="30" y="90" width="300" height="430" rx="10" fill="#0c1424" stroke="#38d6ff" stroke-width="2"/>
+<text x="180" y="120" text-anchor="middle" fill="#38d6ff" font-size="16">Data sources on the internet</text>
+<text x="48" y="158" text-anchor="start" fill="#e2eaf5" font-size="13">NOAA SWPC: SFI, Kp, X-ray, DRAP</text>
+<text x="48" y="198" text-anchor="start" fill="#e2eaf5" font-size="13">N0NBH / HamQSL: band conditions</text>
+<text x="48" y="238" text-anchor="start" fill="#e2eaf5" font-size="13">PSKReporter, RBN, WSPR: spots</text>
+<text x="48" y="278" text-anchor="start" fill="#e2eaf5" font-size="13">KC2G / GIRO: real-time MUF</text>
+<text x="48" y="318" text-anchor="start" fill="#e2eaf5" font-size="13">VOACAP: predictions</text>
+<text x="48" y="358" text-anchor="start" fill="#e2eaf5" font-size="13">CelesTrak / AMSAT: satellites</text>
+<text x="48" y="398" text-anchor="start" fill="#e2eaf5" font-size="13">WA7BNM: contests</text>
+<text x="48" y="438" text-anchor="start" fill="#e2eaf5" font-size="13">NG3K / DXNews: DXpeditions</text>
+<text x="48" y="478" text-anchor="start" fill="#e2eaf5" font-size="13">OpenWeatherMap: weather</text>
+<rect x="400" y="200" width="230" height="170" rx="10" fill="#0c1424" stroke="#ffb020" stroke-width="2"/>
+<text x="515.0" y="256.0" text-anchor="middle" fill="#ffb020" font-size="17">Backend server</text>
+<text x="515.0" y="283.0" text-anchor="middle" fill="#e2eaf5" font-size="14">ohb.hamclock.app:80</text>
+<text x="515.0" y="304.0" text-anchor="middle" fill="#e2eaf5" font-size="14">(default since 4.24)</text>
+<text x="515.0" y="325.0" text-anchor="middle" fill="#e2eaf5" font-size="14">or hamclock.com:80</text>
+<line x1="330" y1="285" x2="398" y2="285" stroke="#9fb6cc" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="735" y="200" width="215" height="170" rx="10" fill="#0c1424" stroke="#00ff88" stroke-width="2"/>
+<text x="842.5" y="256.0" text-anchor="middle" fill="#00ff88" font-size="17">Your HamClock</text>
+<text x="842.5" y="283.0" text-anchor="middle" fill="#e2eaf5" font-size="14">the client: ON4RF box,</text>
+<text x="842.5" y="304.0" text-anchor="middle" fill="#e2eaf5" font-size="14">Raspberry Pi, PC, Mac,</text>
+<text x="842.5" y="325.0" text-anchor="middle" fill="#e2eaf5" font-size="14">Android</text>
+<line x1="630" y1="285" x2="733" y2="285" stroke="#9fb6cc" stroke-width="2" marker-end="url(#ar)"/>
+<text x="682" y="272" text-anchor="middle" fill="#7a96b0" font-size="12">-b host:port</text>
+<rect x="400" y="430" width="230" height="90" rx="10" fill="#0c1424" stroke="#b78bff" stroke-width="2"/>
+<text x="515.0" y="467.5" text-anchor="middle" fill="#b78bff" font-size="17">DX cluster</text>
+<text x="515.0" y="493.5" text-anchor="middle" fill="#e2eaf5" font-size="13">e.g. dxspider.co.uk:7300</text>
+<line x1="630" y1="470" x2="770" y2="372" stroke="#b78bff" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ar)"/>
+<rect x="710" y="430" width="240" height="140" rx="10" fill="#0c1424" stroke="#9aa8b8" stroke-width="2"/>
+<text x="830.0" y="464.0" text-anchor="middle" fill="#9aa8b8" font-size="16">Watch it</text>
+<text x="830.0" y="489.0" text-anchor="middle" fill="#e2eaf5" font-size="12">HDMI screen or TV</text>
+<text x="830.0" y="508.0" text-anchor="middle" fill="#e2eaf5" font-size="12">browser :8081/live.html</text>
+<text x="830.0" y="527.0" text-anchor="middle" fill="#e2eaf5" font-size="12">view only :8082/live.html</text>
+<text x="830.0" y="546.0" text-anchor="middle" fill="#e2eaf5" font-size="12">phone :8080/dashboard.html</text>
+<line x1="830" y1="370" x2="830" y2="428" stroke="#9fb6cc" stroke-width="2" marker-end="url(#ar)"/>
+<text x="490" y="598" text-anchor="middle" fill="#7a96b0" font-size="12">No working backend means a frozen screen with old data. That is why the community built new servers in 2026.</text>
+</svg>
