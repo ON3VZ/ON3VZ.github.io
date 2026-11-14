@@ -179,6 +179,17 @@ This guide brings together everything I found: the official manual of the new te
 
 <h2 id="hc-2">2. What is a HamClock?</h2>
 
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Quick answers to the four questions beginners ask first</p>
+**Is it always on?** Yes, that is what it is made for. HamClock is a kiosk program: it runs all day and refreshes itself, and you never have to click anything. The small box uses only a few watts; the screen uses most of the power. You can dim or switch off the screen at night on setup page 8 ([10.9](#hc-10)), or simply switch the screen off yourself while the clock keeps running. To switch everything off properly, use **Shutdown computer** in the padlock menu and only then pull the plug.
+
+**Do I need a TV?** No, but you need a screen with an HDMI input: an old TV, a computer monitor, anything. If you do not want a fixed screen, you can also watch the clock only in the browser of your PC, tablet or phone ([11.6](#hc-11-6)). Whether a box runs correctly with no screen connected at all depends on the device; some mini PCs want to see a screen at start-up, so test it or ask your supplier.
+
+**Do I need a touch screen?** No. A normal mouse is enough, and you only need it for the first setup. After that you can remove it. A touch screen works too, but it is optional ([2.2](#hc-2-2)).
+
+**Can I control it from my PC?** Yes, completely, including the setup. Open `http://IP-of-your-clock:8081/live.html` in the browser of a computer in the same network. You see exactly the same screen and can click everything. For viewing only, use port 8082. Details are in [section 2.2](#hc-2-2) and [section 11.6](#hc-11-6).
+</div>
+
 <div class="dm-box dm-mean" markdown="1">
 <p class="dm-box-label">What it is</p>
 **HamClock** is free software that shows, on one screen, what a radio amateur wants to know about the state of the bands, the sun and the world. Its creator, Elwood Downey, WB0OEW, called it a **kiosk** program: it runs all day without you having to click anything, and it refreshes itself.
