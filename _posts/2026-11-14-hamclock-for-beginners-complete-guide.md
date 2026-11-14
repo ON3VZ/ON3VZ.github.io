@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "HamClock for Beginners: What It Is, How to Read It, and How to Keep It Running After WB0OEW"
-tags: ['HamClock', 'Propagation', 'Space Weather', 'DX Cluster', 'VOACAP', 'Raspberry Pi', 'Open HamClock Backend', 'OpenHamClock', 'Shack', 'Beginners']
-excerpt: "A complete beginner's guide to HamClock in 2026: what it shows, how to connect it, how to read every pane and the space weather numbers, the setup page by page, real-life scenarios, how to move an old clock to a new backend after the death of its creator Elwood Downey, WB0OEW, how to build one yourself, troubleshooting, and the alternatives."
+tags: ['HamClock', 'Elwood Downey', 'WB0OEW', 'Propagation', 'Space Weather', 'DX Cluster', 'VOACAP', 'Raspberry Pi', 'Open HamClock Backend', 'OpenHamClock', 'Shack', 'Beginners']
+excerpt: "A complete beginner's guide to HamClock in 2026: why it matters, what it shows, what is inside the box and how it connects, how to connect it, how to read every pane and the space weather numbers, the setup page by page, real-life scenarios, how to move an old clock to a new backend after the death of its creator Elwood Downey, WB0OEW, how to build one yourself, troubleshooting, and the alternatives."
 ---
 <!-- HAMCLOCK 2026-11-14: new post. Revert by deleting this file and the folder assets/images/hamclock/ -->
 <style>
@@ -116,9 +116,11 @@ excerpt: "A complete beginner's guide to HamClock in 2026: what it shows, how to
 <summary>Contents</summary>
 <ol>
 <li><a href="#hc-1">Why this guide</a></li>
+<li class="qo-sub"><a href="#hc-1-1">Why it matters</a></li>
 <li><a href="#hc-2">What is a HamClock?</a></li>
 <li class="qo-sub"><a href="#hc-2-1">Connecting it</a></li>
 <li class="qo-sub"><a href="#hc-2-2">Controlling it</a></li>
+<li class="qo-sub"><a href="#hc-2-3">Inside the box</a></li>
 <li><a href="#hc-3">History: WB0OEW</a></li>
 <li><a href="#hc-4">Why and when</a></li>
 <li><a href="#hc-5">Behind the screen</a></li>
@@ -176,6 +178,37 @@ Through Filip, ON4RF, I was able to get one of the last ready-made HamClocks he 
 When I started reading about it, I ran into two problems. Most explanations assume you already know what SFI, Kp or VOACAP mean. And since early 2026 a lot has changed: the creator of HamClock passed away, the original server went offline and the community took over. Many manuals on the internet are no longer correct because of that.
 
 This guide brings together everything I found: the official manual of the new team, the websites of the different projects, Filip's presentation and demo, and the experience of other amateurs. The sources are at the end. Where something depends on your own clock or country, I say so, so you can check it yourself.
+
+<h3 id="hc-1-1">1.1 Why HamClock matters, and why this knowledge should not get lost</h3>
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">Why it matters</p>
+For a new amateur, propagation is the hardest thing to get a feeling for. You cannot see the ionosphere, and a band that is dead at noon can be full of DX at dusk. A HamClock makes that visible every day, on one screen, without any effort. You look at it, you listen on the band, and after a few weeks you start to recognise the patterns yourself. That is why so many shacks and clubs have one, and why a shared screen is such a good conversation starter at a club evening.
+</div>
+
+Three things make it worth writing this down now:
+
+- **It nearly disappeared.** Its creator passed away, the server it depended on was announced to go offline, and for a few months nobody knew whether clocks would keep working. They do, because a community stepped in. But that history is exactly the kind of knowledge that fades: in a year, few new owners will know why there are two backends, what `-b` means or why an old hosts-file trick is now a bad idea.
+- **The information is scattered and partly outdated.** Good explanations exist in forum posts, videos, PDFs and blogs, and many of them were written before 2026. Some describe a server that no longer exists. A newcomer cannot tell which advice still applies.
+- **Two similar names cause confusion.** "HamClock", "Open HamClock", "OpenHamClock", "hamclock.com" and "hamclock.co.uk" are different things. This guide keeps them apart.
+
+I wrote this as a reference you can come back to: a record of what HamClock is, how it works, how to set it up and what to do when something breaks, as it stands in November 2026. If you land here from a search, these are the questions it answers:
+
+| Question | Where to find the answer |
+|---|---|
+| Is HamClock still working in 2026? | [Section 3](#hc-3) and [section 5](#hc-5) |
+| Who maintains HamClock now? | [Section 3](#hc-3) |
+| My HamClock froze or shows old data. What now? | [Section 13](#hc-13) and [section 15](#hc-15) |
+| How do I switch to a new backend (OHB or hamclock.com)? | [Section 13](#hc-13) |
+| What do I need to buy or build to get one? | [Section 6](#hc-6) and [section 14](#hc-14) |
+| How do I connect it, and what is inside the box? | [Section 2.1](#hc-2-1) and [section 2.3](#hc-2-3) |
+| How do I read the space weather numbers? | [Section 8](#hc-8) |
+| Is there a browser alternative without installing anything? | [Section 16](#hc-16) |
+
+<div class="dm-box dm-warn" markdown="1">
+<p class="dm-box-label">This will age</p>
+HamClock is changing fast; new versions arrive every few weeks. Where I could not check something myself, I say so. If you notice something that is out of date or wrong, please tell me via the [contact page](/contact/) so I can correct it.
+</div>
 
 <h2 id="hc-2">2. What is a HamClock?</h2>
 
@@ -265,6 +298,66 @@ The basic gestures are the same everywhere:
 | Scroll wheel (Mercator map only) | Zoom in and out on the map |
 
 For fields you have to fill in (callsign, locator, cluster server) you use the on-screen keyboard or a normal keyboard; more in [section 10](#hc-10). Once everything is set up, you can remove the mouse and keyboard. The clock keeps running by itself, and anything you still want to change, you do from the browser.
+
+<h3 id="hc-2-3">2.3 What is inside the box, and what does it connect to?</h3>
+
+<div class="dm-box" markdown="1">
+<p class="dm-box-label">In short</p>
+A ready-made HamClock is a small computer with no screen of its own. It has a processor, memory and storage, a Linux operating system, and the HamClock program that starts by itself. It sends the picture to your screen over HDMI and gets all its data from the internet, over a network cable or Wi-Fi.
+</div>
+
+<figure class="dm-fig"><img src="/assets/images/hamclock/hc-inside-box.svg" alt="Block diagram of the box: processor, memory, storage with micro-SD slot, the software layers Ubuntu MATE, HamClock and web server, and the connections HDMI, USB, Wi-Fi, network, audio and power" loading="lazy"><figcaption>What is inside a ready-made box, and which connections it has on the outside.</figcaption></figure>
+
+The box that Filip, ON4RF, builds is a small media player with a 64 bit Intel processor, 2 GB of memory and 32 GB of storage, with Wi-Fi, HDMI, USB, audio and a micro-SD slot. Ubuntu MATE (a Linux desktop) runs on it, with the latest HamClock on top. Other boxes, such as a Raspberry Pi or the American Inovato Quadra, are built on the same idea with different parts. If your box is another model, the principle stays the same.
+
+| Part | What it does for HamClock |
+|---|---|
+| Processor and memory | Draw the screen and calculate the sun, moon and satellites. HamClock is light, so a small, cheap computer is enough. |
+| Storage (and micro-SD slot) | Holds the operating system, the program and your settings. On a Raspberry Pi the SD card is the main storage, which is why a good card matters ([section 14.2](#hc-14-2)). |
+| Operating system (Linux) | Starts the program at power on, so the clock appears without you doing anything. |
+| HamClock program | The client: it asks the backend for data and draws the screen ([section 5](#hc-5)). |
+| Built-in web server | Lets you view and control the clock from a browser on ports 8080, 8081 and 8082 ([section 5](#hc-5)). |
+| HDMI | The picture to your screen. |
+| USB | Mouse and keyboard for the first setup, and optional extras. |
+| Wi-Fi or network port | The connection to the internet. |
+
+### How does it connect to your home network and the internet?
+
+<figure class="dm-fig"><img src="/assets/images/hamclock/hc-home-network.svg" alt="Home network diagram: the HamClock box connects to the router by network cable or Wi-Fi; the router connects to the internet with the backend, DX cluster and time server; a PC and a phone view the clock through a browser; a screen is attached to the box by HDMI" loading="lazy"><figcaption>The clock only makes outgoing connections. Your PC and phone talk to it inside your own network.</figcaption></figure>
+
+Three things are good to know:
+
+1. **The clock does the asking.** It connects out to the backend server, the DX cluster and a time server. Nothing from the internet has to reach your clock, so you do **not** need port forwarding or to open anything in your router. The ports 8080, 8081 and 8082 are for devices inside your own network.
+2. **Your PC and phone only look at it.** They open the clock's own web page in a browser ([section 11.6](#hc-11-6)). If your PC is switched off, the clock keeps running.
+3. **There is no link to your radio.** You do not need an antenna, a cable to your transceiver or any radio equipment. A HamClock works just as well in a room without a radio. A link to a radio, rotator or GPS is possible, but optional ([section 17](#hc-17)).
+
+### Wi-Fi or a network cable?
+
+A network cable (UTP) is more reliable and needs no setup: plug it in and the clock has internet. Wi-Fi works well too, if the signal is good where the box sits. The info bar can show the Wi-Fi strength, and a click on it shows a graph of the signal.
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: connect the box to Wi-Fi</p>
+1. Connect a screen, a mouse and, if you have one, a keyboard to the box, and switch it on.
+2. If HamClock is running full screen, click the padlock and choose **Exit HamClock** (twice **OK**) so you reach the desktop. Do this on the device itself.
+3. Click the network icon in the panel of the desktop, usually at the top right or bottom right (it looks like a Wi-Fi fan or two arrows).
+4. Choose your network from the list and type the Wi-Fi password.
+5. Wait until the icon shows you are connected, then restart the box (**Reboot**). HamClock starts again and remembers the network.
+6. Check in the info bar that the clock now shows a local IP address and a backend server.
+</div>
+
+If the Wi-Fi drops, the clock keeps its last data on screen but cannot refresh it. A large question mark next to the clock means it lost the connection and does not know the time. Check the router, the signal and the cable, and see [section 15](#hc-15). If the signal is weak where the screen hangs, a network cable is the fix, or a small Wi-Fi extender near the box.
+
+### What can you add to it, if you want?
+
+| Extra | Connects with | What it gives you |
+|---|---|---|
+| Mouse and keyboard | USB | Setup and typing |
+| Touch screen | HDMI plus USB | Operate by tapping |
+| GPS | USB | A location that follows you, handy in a motorhome |
+| Radio or rotator | Network, via hamlib or flrig | Click a spot and your radio tunes ([section 17.4](#hc-17)) |
+| Temperature and pressure sensor (BME280) | Raspberry Pi pins | Shack weather on the screen |
+
+None of these are needed to start. The basic set is: the box, a power supply, a screen and an internet connection.
 
 <h2 id="hc-3">3. A piece of history: Elwood Downey, WB0OEW</h2>
 

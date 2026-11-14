@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 670" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- HAMCLOCK 2026-11-14: home network. Remove together with the post to revert. -->
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9fb6cc"/></marker></defs>
+<rect width="980" height="670" rx="10" fill="#080d18"/>
+<text x="490.0" y="36" text-anchor="middle" fill="#e2eaf5" font-size="20">How the clock is connected at home</text>
+<text x="490.0" y="60" text-anchor="middle" fill="#7a96b0" font-size="13">Only outgoing connections are needed. Nothing from the internet has to come in, so no port forwarding is required.</text>
+<rect x="250" y="80" width="480" height="100" rx="10" fill="#0c1424" stroke="#38d6ff" stroke-width="2"/>
+<text x="490.0" y="113.0" text-anchor="middle" fill="#38d6ff" font-size="16">The internet</text>
+<text x="490.0" y="138.0" text-anchor="middle" fill="#e2eaf5" font-size="12">backend ohb.hamclock.app:80  |  DX cluster dxspider.co.uk:7300</text>
+<text x="490.0" y="157.0" text-anchor="middle" fill="#e2eaf5" font-size="12">time server (NTP)  |  optional: HamAlert, weather</text>
+<rect x="390" y="250" width="200" height="80" rx="10" fill="#0c1424" stroke="#ffb020" stroke-width="2"/>
+<text x="490.0" y="282.0" text-anchor="middle" fill="#ffb020" font-size="16">Your router</text>
+<text x="490.0" y="308.0" text-anchor="middle" fill="#e2eaf5" font-size="13">switch and Wi-Fi</text>
+<line x1="490" y1="250" x2="490" y2="182" stroke="#9fb6cc" stroke-width="2" marker-end="url(#ar)"/>
+<text x="560" y="222" text-anchor="start" fill="#7a96b0" font-size="12">your internet line</text>
+<rect x="60" y="420" width="240" height="110" rx="10" fill="#0c1424" stroke="#00ff88" stroke-width="2"/>
+<text x="180.0" y="457.0" text-anchor="middle" fill="#00ff88" font-size="16">HamClock box</text>
+<text x="180.0" y="483.0" text-anchor="middle" fill="#e2eaf5" font-size="13">shows the clock</text>
+<text x="180.0" y="503.0" text-anchor="middle" fill="#e2eaf5" font-size="13">(UTP cable or Wi-Fi)</text>
+<line x1="402" y1="330" x2="292" y2="420" stroke="#00ff88" stroke-width="2" marker-end="url(#ar)"/>
+<text x="360" y="395" text-anchor="start" fill="#00ff88" font-size="12">UTP cable (best)</text>
+<line x1="392" y1="305" x2="200" y2="418" stroke="#ffb020" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ar)"/>
+<text x="262" y="345" text-anchor="end" fill="#ffb020" font-size="12">or Wi-Fi</text>
+<rect x="60" y="560" width="240" height="60" rx="10" fill="#0c1424" stroke="#38d6ff" stroke-width="2"/>
+<text x="180.0" y="581.5" text-anchor="middle" fill="#38d6ff" font-size="14">Screen or TV</text>
+<text x="180.0" y="606.5" text-anchor="middle" fill="#e2eaf5" font-size="12">HDMI cable</text>
+<line x1="180" y1="530" x2="180" y2="558" stroke="#9fb6cc" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="480" y="420" width="200" height="110" rx="10" fill="#0c1424" stroke="#b78bff" stroke-width="2"/>
+<text x="580.0" y="457.5" text-anchor="middle" fill="#b78bff" font-size="15">Your PC</text>
+<text x="580.0" y="482.5" text-anchor="middle" fill="#e2eaf5" font-size="12">browser: :8081/live.html</text>
+<text x="580.0" y="501.5" text-anchor="middle" fill="#e2eaf5" font-size="12">control and setup</text>
+<rect x="730" y="420" width="200" height="110" rx="10" fill="#0c1424" stroke="#b78bff" stroke-width="2"/>
+<text x="830.0" y="457.0" text-anchor="middle" fill="#b78bff" font-size="14">Phone or tablet</text>
+<text x="830.0" y="482.0" text-anchor="middle" fill="#e2eaf5" font-size="12">port 8080: text dashboard</text>
+<text x="830.0" y="501.0" text-anchor="middle" fill="#e2eaf5" font-size="12">port 8082: view only</text>
+<line x1="540" y1="332" x2="560" y2="418" stroke="#b78bff" stroke-width="2" marker-end="url(#ar)"/>
+<text x="600" y="372" text-anchor="start" fill="#b78bff" font-size="12">home network</text>
+<line x1="640" y1="320" x2="810" y2="418" stroke="#b78bff" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ar)"/>
+<text x="780" y="372" text-anchor="start" fill="#b78bff" font-size="12">Wi-Fi</text>
+<line x1="480" y1="470" x2="302" y2="470" stroke="#b78bff" stroke-width="2" marker-end="url(#ar)"/>
+<text x="392" y="458" text-anchor="middle" fill="#b78bff" font-size="12">asks the clock</text>
+<text x="490" y="650" text-anchor="middle" fill="#7a96b0" font-size="12">The ports 8080, 8081 and 8082 only work inside your own network.</text>
+</svg>
