@@ -446,5 +446,19 @@
     "mode": "FT8",
     "freq": "7.075",
     "rst": "-18"
+  },
+  {
+    "id": "nx8t-2026-11-14",
+    "image": "/assets/images/qsl/nx8t-2026-11-14.jpg",
+    "fromCall": "NX8T",
+    "fromName": "Jim",
+    "country": "United States",
+    "continent": "North America",
+    "date": "2026-11-14",
+    "time": "14:39z",
+    "band": "15m",
+    "mode": "SSB",
+    "freq": "21.327",
+    "rst": "59"
   }
 ]
