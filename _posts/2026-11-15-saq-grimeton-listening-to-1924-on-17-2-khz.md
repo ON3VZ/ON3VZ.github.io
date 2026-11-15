@@ -30,6 +30,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 .saq-fig { margin: 1.6rem 0 2rem; }
 .saq-fig img { display: block; width: 100%; height: auto; border: 1px solid var(--c-border); border-radius: 8px; background: #fff; }
 .saq-fig.saq-narrow img { max-width: 520px; margin: 0 auto; }
+.saq-fig.saq-tall img { max-width: 260px; margin: 0 auto; }
 .saq-pair { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
 .saq-pair > div { position: relative; }
 .saq-pair figcaption { grid-column: 1 / -1; }
@@ -117,6 +118,11 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ul>
 <p>Grimeton is the last survivor of a network of large transatlantic long wave stations with Alexanderson alternators. It is also listed as an IEEE Milestone. A nice detail: on Christmas Eve 1906 an early Alexanderson alternator was used by Reginald Fessenden for an experimental broadcast with Christmas music.</p>
 
+<figure class="saq-fig">
+  <img src="/assets/images/saq/grimeton-main-building.jpg" alt="The main building of Grimeton Radio Station" loading="lazy">
+  <figcaption>The main building of Grimeton Radio Station, with a log periodic antenna from the 1960s behind it. Photo: Wikimedia Commons.</figcaption>
+</figure>
+
 <h2 id="en-machine">3. How the machine makes 17.2 kHz</h2>
 <p>The transmitter consists of three parts on one steel base, together about 50 tonnes:</p>
 <ol>
@@ -124,6 +130,12 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <li>A <strong>gearbox</strong> that speeds this up about three times, to <strong>2115 revolutions per minute</strong>.</li>
   <li>The <strong>alternator</strong> itself: the radio frequency generator.</li>
 </ol>
+
+<figure class="saq-fig">
+  <img src="/assets/images/saq/grimeton-alternator-motor-tschuch.jpg" alt="The transmitter set at Grimeton: alternator, gearbox and drive motor on one base" loading="lazy">
+  <figcaption>The complete set on its steel base: alternator, gearbox and drive motor. Photo: Gunther Tschuch, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>.</figcaption>
+</figure>
+
 
 <figure class="saq-fig">
   <img src="/assets/images/saq/saq-alternator-principle-en.svg" alt="Simplified principle of the Alexanderson alternator: tooth under the pole gives strong flux, slot gives weak flux" loading="lazy">
@@ -135,6 +147,11 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <p class="saq-formula">488 teeth x 2115 rpm / 60 = <strong>17,202 Hz</strong></p>
 <p>That is how a motor, a gearbox and a disc produce a radio signal. The speed must be kept very constant, because any change in rpm is directly a change in frequency. The licence allows 17.2 kHz plus or minus 50 Hz. In practice the operators stay within a few hertz.</p>
 <p>The speed is controlled with <strong>liquid resistors</strong>: large tanks of water with sodium carbonate, with electrodes in the rotor circuit of the motor. Raise the liquid level and the resistance drops. An automatic speed regulator senses the frequency and corrects it.</p>
+
+<figure class="saq-fig saq-narrow">
+  <img src="/assets/images/saq/grimeton-alternator-lindqvist.jpg" alt="The Alexanderson alternator in the transmitter hall at Grimeton" loading="lazy">
+  <figcaption>The Alexanderson alternator in the transmitter hall at Grimeton. Photo: Hans Lindqvist, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</figcaption>
+</figure>
 
 <figure class="saq-fig">
   <img src="/assets/images/saq/saq-transmitter-chain-en.svg" alt="SAQ transmitter chain from mains supply to tuned antenna, with the Morse key acting on motor, transformers and antenna" loading="lazy">
@@ -170,12 +187,11 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <p>The efficiency is low by modern standards but was a big step at the time: about 14 percent originally, against roughly 2 percent for the antennas of the day. Due to ageing it is now about 10 to 12 percent. So of about 80 kW, roughly 8 kW is actually radiated. According to the operators, with only one tower you would need 1.2 MW instead of 200 kW for the same signal in New York.</p>
 <p>Rain changes the resonance of the antenna. That is why, before the message, a punched tape sends <strong>VVV DE SAQ</strong> for a while: to warm and dry the antenna and let the machine settle. The operators jokingly translate VVV as "hello".</p>
 
-<!-- PHOTO SLOT (Wikimedia Commons, verify licence on the file page before enabling):
-<figure class="saq-fig">
-  <img src="/assets/images/saq/grimeton-towers.jpg" alt="The antenna towers of Grimeton" loading="lazy">
-  <figcaption>The antenna towers of Grimeton. Photo: AUTHOR, via Wikimedia Commons, LICENCE.</figcaption>
+
+<figure class="saq-fig saq-tall">
+  <img src="/assets/images/saq/grimeton-antenna-towers.jpg" alt="The 127 m antenna towers of Grimeton" loading="lazy">
+  <figcaption>Two of the six 127 m towers, with the cross arms that carry the antenna wires. Photo: Wikimedia Commons (Grimetonmasterna.jpg), <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</figcaption>
 </figure>
--->
 
 <h2 id="en-ritual">6. Starting a 100 year old transmitter</h2>
 <p>If you watch a livestream, you see the start up in real time. It takes about half an hour, and every step is done by hand, by ear and by feel. Based on four livestreams (2024 to 2026), the ritual goes like this:</p>
@@ -463,6 +479,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <ul class="saq-sources">
   <li>Fig. 1, 2, 3, 10: drawings by ON3VZ for this article.</li>
   <li>Fig. 4 to 9 and 11: Eddy ON5JK, from CQ-QSO 05/06-2010.</li>
+  <li>Photos of Grimeton: Hans Lindqvist (CC BY-SA 3.0), Gunther Tschuch (CC BY 2.5), Grimetonmasterna.jpg (CC BY-SA 3.0) and the main building photo, all via Wikimedia Commons.</li>
 </ul>
 <p class="saq-small">Bearing and distance calculated from the centre of locator JO21EE. All figures about the machine come from the association and its operators; where sources disagreed, I used the operators' own numbers or kept the wording deliberately approximate.</p>
 
@@ -534,6 +551,11 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ul>
 <p>Grimeton is de laatste overlevende van een netwerk van grote trans-Atlantische langegolfstations met Alexanderson-alternators. Het staat ook op de lijst van IEEE Milestones. Mooi detail: op kerstavond 1906 gebruikte Reginald Fessenden een vroege Alexanderson-alternator voor een experimentele uitzending met kerstmuziek.</p>
 
+<figure class="saq-fig">
+  <img src="/assets/images/saq/grimeton-main-building.jpg" alt="Het hoofdgebouw van Grimeton Radio Station" loading="lazy">
+  <figcaption>Het hoofdgebouw van Grimeton Radio Station, met erachter een log-periodische antenne uit de jaren 1960. Foto: Wikimedia Commons.</figcaption>
+</figure>
+
 <h2 id="nl-machine">3. Hoe de machine 17,2 kHz maakt</h2>
 <p>De zender bestaat uit drie delen op één stalen sokkel, samen ongeveer 50 ton:</p>
 <ol>
@@ -541,6 +563,12 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <li>Een <strong>tandwielkast</strong> die dat ongeveer drie keer sneller maakt, tot <strong>2115 toeren per minuut</strong>.</li>
   <li>De <strong>alternator</strong> zelf: de hoogfrequentgenerator.</li>
 </ol>
+
+<figure class="saq-fig">
+  <img src="/assets/images/saq/grimeton-alternator-motor-tschuch.jpg" alt="De zenderset in Grimeton: alternator, tandwielkast en aandrijfmotor op één sokkel" loading="lazy">
+  <figcaption>De volledige set op haar stalen sokkel: alternator, tandwielkast en aandrijfmotor. Foto: Gunther Tschuch, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>.</figcaption>
+</figure>
+
 
 <figure class="saq-fig">
   <img src="/assets/images/saq/saq-alternator-principle-nl.svg" alt="Vereenvoudigd principe van de Alexanderson-alternator: tand onder de pool geeft sterke flux, gleuf geeft zwakke flux" loading="lazy">
@@ -552,6 +580,11 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <p class="saq-formula">488 tanden x 2115 tpm / 60 = <strong>17.202 Hz</strong></p>
 <p>Zo maken een motor, een tandwielkast en een schijf een radiosignaal. Het toerental moet heel constant blijven, want elke verandering in toeren is meteen een verandering in frequentie. De vergunning laat 17,2 kHz plus of min 50 Hz toe. In de praktijk blijven de operators binnen enkele hertz.</p>
 <p>Het toerental wordt geregeld met <strong>vloeistofweerstanden</strong>: grote tanks met water en natriumcarbonaat, met elektroden in de rotorkring van de motor. Hoger vloeistofniveau betekent minder weerstand. Een automatische snelheidsregeling voelt de frequentie en stuurt bij.</p>
+
+<figure class="saq-fig saq-narrow">
+  <img src="/assets/images/saq/grimeton-alternator-lindqvist.jpg" alt="De Alexanderson-alternator in de zenderhal van Grimeton" loading="lazy">
+  <figcaption>De Alexanderson-alternator in de zenderhal van Grimeton. Foto: Hans Lindqvist, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</figcaption>
+</figure>
 
 <figure class="saq-fig">
   <img src="/assets/images/saq/saq-transmitter-chain-nl.svg" alt="Zenderketen van SAQ van net tot afgestemde antenne, met de seinsleutel die ingrijpt op motor, transformatoren en antenne" loading="lazy">
@@ -586,6 +619,11 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ul>
 <p>Het rendement is laag naar moderne normen, maar was toen een grote stap: oorspronkelijk ongeveer 14 procent, tegenover zo'n 2 procent voor de antennes van die tijd. Door veroudering is het nu ongeveer 10 tot 12 procent. Van ongeveer 80 kW wordt dus ruwweg 8 kW echt uitgestraald. Volgens de operators zou je met maar één toren 1,2 MW nodig hebben in plaats van 200 kW, voor hetzelfde signaal in New York.</p>
 <p>Regen verandert de resonantie van de antenne. Daarom laat een ponsband voor de boodschap een tijdje <strong>VVV DE SAQ</strong> lopen: om de antenne op te warmen en te drogen en de machine tot rust te laten komen. De operators vertalen VVV lachend als "hallo".</p>
+
+<figure class="saq-fig saq-tall">
+  <img src="/assets/images/saq/grimeton-antenna-towers.jpg" alt="De antennetorens van 127 m in Grimeton" loading="lazy">
+  <figcaption>Twee van de zes torens van 127 m, met de dwarsarmen die de antennedraden dragen. Foto: Wikimedia Commons (Grimetonmasterna.jpg), <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</figcaption>
+</figure>
 
 <h2 id="nl-ritual">6. Een zender van 100 jaar opstarten</h2>
 <p>Wie een livestream bekijkt, ziet het opstarten live. Het duurt ongeveer een half uur, en elke stap gebeurt met de hand, op het gehoor en op gevoel. Op basis van vier livestreams (2024 tot 2026) gaat het ritueel zo:</p>
@@ -871,6 +909,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <ul class="saq-sources">
   <li>Fig. 1, 2, 3, 10: tekeningen van ON3VZ voor dit artikel.</li>
   <li>Fig. 4 tot 9 en 11: Eddy ON5JK, uit CQ-QSO 05/06-2010.</li>
+  <li>Foto's van Grimeton: Hans Lindqvist (CC BY-SA 3.0), Gunther Tschuch (CC BY 2.5), Grimetonmasterna.jpg (CC BY-SA 3.0) en de foto van het hoofdgebouw, allemaal via Wikimedia Commons.</li>
 </ul>
 <p class="saq-small">Richting en afstand berekend vanuit het midden van locator JO21EE. Alle cijfers over de machine komen van de vereniging en haar operators; waar bronnen elkaar tegenspraken, gebruikte ik de cijfers van de operators zelf of hield ik de formulering bewust benaderend.</p>
 
