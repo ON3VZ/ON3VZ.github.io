@@ -462,7 +462,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <h3>Image credits</h3>
 <ul class="saq-sources">
   <li>Fig. 1, 2, 3, 10: drawings by ON3VZ for this article.</li>
-  <li>Fig. 4 to 9 and 11: Eddy ON5JK, from CQ-QSO 05/06-2010, used with his permission.</li>
+  <li>Fig. 4 to 9 and 11: Eddy ON5JK, from CQ-QSO 05/06-2010.</li>
 </ul>
 <p class="saq-small">Bearing and distance calculated from the centre of locator JO21EE. All figures about the machine come from the association and its operators; where sources disagreed, I used the operators' own numbers or kept the wording deliberately approximate.</p>
 
@@ -870,7 +870,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <h3>Beeldvermelding</h3>
 <ul class="saq-sources">
   <li>Fig. 1, 2, 3, 10: tekeningen van ON3VZ voor dit artikel.</li>
-  <li>Fig. 4 tot 9 en 11: Eddy ON5JK, uit CQ-QSO 05/06-2010, gebruikt met zijn toestemming.</li>
+  <li>Fig. 4 tot 9 en 11: Eddy ON5JK, uit CQ-QSO 05/06-2010.</li>
 </ul>
 <p class="saq-small">Richting en afstand berekend vanuit het midden van locator JO21EE. Alle cijfers over de machine komen van de vereniging en haar operators; waar bronnen elkaar tegenspraken, gebruikte ik de cijfers van de operators zelf of hield ik de formulering bewust benaderend.</p>
 
