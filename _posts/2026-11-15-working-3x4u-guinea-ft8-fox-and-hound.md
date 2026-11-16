@@ -2,7 +2,7 @@
 layout: post
 title: "Working 3X4U Guinea on FT8: Fox and Hound, Split and Every WSJT-X Setting Explained"
 tags: ['FT8', 'WSJT-X', 'DXpedition', '3X4U', 'Fox and Hound', 'Split', 'PSK Reporter', 'IC-7300', 'Beginners']
-excerpt: "The Belgian Rockall DX Group is on the air from Guinea and I want them on FT8 on 40 m. But they seem to listen somewhere else. Why FT8 has no split on the radio, what Fox and Hound is, why my split setting is on Fake It, every WSJT-X setting step by step, the mistakes I made, and how I used PSK Reporter to see where my 25 W signal arrives. No QSO this time, but a lot learned."
+excerpt: "The Belgian Rockall DX Group is on the air from Guinea and I want them on FT8 on 40 m. But they seem to listen somewhere else. Why FT8 has no DX split but WSJT-X still uses a technical one, what Fox and Hound is, why my split setting is on Fake It, every WSJT-X setting step by step, the mistakes I made, and how I used PSK Reporter to see where my 25 W signal arrives. No QSO this time, but a lot learned."
 ---
 <!-- FT8-3X4U 2026-11-15: new post. Revert by deleting this file and the folder assets/images/ft8-3x4u/ -->
 <style>
@@ -43,7 +43,7 @@ excerpt: "The Belgian Rockall DX Group is on the air from Guinea and I want them
 <div class="dm-article" markdown="1">
 
 <p class="dm-kicker">ON3VZ · DX · FT8 for beginners</p>
-<p class="dm-lead">On 15 November 2026 the Belgian Rockall DX Group was on the air from Guinea as 3X4U. I wanted them in my log on FT8, on 40 m, on 7.056 MHz. Then I noticed that the expedition and the callers are not on the same audio frequency, and that WSJT-X has a special mode just for this. Here is everything I found out: what Fox and Hound is, why there is no radio split in FT8, why my split setting is on Fake It, every setting step by step, the mistakes I made, and how I followed my own 25 W signal from Portugal to Canada on the map.</p>
+<p class="dm-lead">On 15 November 2026 the Belgian Rockall DX Group was on the air from Guinea as 3X4U. I wanted them in my log on FT8, on 40 m, on 7.056 MHz. Then I noticed that the expedition and the callers are not on the same audio frequency, and that WSJT-X has a special mode just for this. Here is everything I found out: what Fox and Hound is, why FT8 has no DX split but WSJT-X still uses a technical one, why my split setting is on Fake It, every setting step by step, the mistakes I made, and how I followed my own 25 W signal from Portugal to Canada on the map.</p>
 <p class="dm-byline">ON3VZ Kristof Cornelis · November 2026 · WSJT-X 3.0.2 · Icom IC-7300 MkII · 25 W</p>
 
 <div class="dm-box dm-warn" markdown="1">
@@ -57,7 +57,7 @@ I called 3X4U on the evening of 15 November 2026 and did not get them in the log
 **Contents**
 
 1. [The question](#ft-1)
-2. [FT8 has no split on the radio](#ft-2)
+2. [Two kinds of split: DX split and technical split](#ft-2)
 3. [What is Fox and Hound?](#ft-3)
 4. [Why Split Operation is on Fake It](#ft-4)
 5. [Why Hound mode, and what it changes](#ft-5)
@@ -79,14 +79,17 @@ The expedition published a frequency chart. For FT8 on 40 m it says **7.056**. I
 
 <figure class="dm-fig"><img src="/assets/images/ft8-3x4u/frequency-chart.png" alt="Frequency chart of the expedition with columns CW, SSB, FT8 and RTTY per band, and two footnotes about listening frequencies" loading="lazy"><figcaption>The frequency chart. The FT8 column says 7.056 on 40 m. The two footnotes (* and **) belong to the SSB column, not to FT8.</figcaption></figure>
 
-<h2 id="ft-2">2. FT8 has no split on the radio</h2>
+<h2 id="ft-2">2. Two kinds of split: DX split and technical split</h2>
 
 <div class="dm-box" markdown="1">
 <p class="dm-box-label">Short answer</p>
-**No.** In FT8 the expedition transmits **and** listens on the same radio frequency, the **dial frequency**: 7.056 MHz. The difference is **inside your audio**. WSJT-X shows about 3000 Hz of audio in the waterfall. The expedition uses the **low part** (about 300 to 900 Hz) and the callers use the **high part** (1000 Hz and up). That is the whole trick.
+**There is no DX split in FT8, but your radio may still go into split.** The word "split" is used for two different things, and mixing them up is what confused me too:
+
+1. **DX split** (SSB, CW): the DX transmits on one frequency and listens on another, so **you** have to transmit where he listens. The asterisks in the chart describe this. **FT8 does not have it.** The expedition transmits **and** listens on the same radio frequency, the **dial frequency**: 7.056 MHz. The difference is **inside your audio**. WSJT-X shows about 3000 Hz of audio in the waterfall. The expedition uses the **low part** (about 300 to 900 Hz) and the callers use the **high part** (1000 Hz and up). That is the whole trick.
+2. **Technical split** (what WSJT-X does): WSJT-X shifts the dial frequency of **your own radio** while you transmit, only to keep your signal clean. It has nothing to do with where the DX listens. If you see **SPLIT** light up on your radio, or the frequency jump, that is this. It is normal, and it happens by default. Section 4 explains it.
 </div>
 
-On SSB or CW, split means two different RF frequencies: the DX transmits on 7.185 and listens on 7.200, for example. That is what the asterisks in the chart describe. On FT8 you stay on one dial frequency, and the "listening elsewhere" is a difference of a few hundred hertz in the audio.
+On SSB or CW, DX split means two different RF frequencies: the DX transmits on 7.185 and listens on 7.200, for example. On FT8 you stay on one dial frequency, and the "listening elsewhere" is a difference of a few hundred hertz in the audio.
 
 The FT8 column of the chart, for reference (these are **Fox and Hound** frequencies, never the normal FT8 calling frequencies):
 
@@ -160,13 +163,23 @@ The team's setup is described with MSHV in the DX-World article, but what I saw 
 
 <h2 id="ft-4">4. Why Split Operation is on Fake It</h2>
 
-This is the setting people understand least, because the name "split" suggests the DX split I described in section 2. It is **something else**.
+This is the setting people understand least, because the name "split" suggests the DX split I described in section 2. It is **the technical split**, and it is something else.
 
 <div class="dm-box dm-why" markdown="1">
 <p class="dm-box-label">What Fake It does</p>
 An SSB transmitter turns your audio tone into RF. A **low** tone (say 500 Hz) has overtones at 1000 and 1500 Hz that still fit inside the transmitter's audio passband, and they are transmitted too: a dirtier signal. A tone in the **middle** of the passband (about 1500 to 2000 Hz) has its overtones outside the filter, so they are cut away.
 
-With **Fake It**, WSJT-X shifts the **dial frequency** of the radio in steps while you transmit, so that your audio tone always lands between about 1500 and 2000 Hz. After the transmission it moves the dial back. The radio is not really in split mode; WSJT-X only pretends, hence the name. **Rig** does the same thing with the radio's own split function.
+With **Fake It**, WSJT-X shifts the **dial frequency** of the radio in steps while you transmit, so that your audio tone always lands between about 1500 and 2000 Hz. After the transmission it moves the dial back. The radio is not really in split mode; WSJT-X only pretends, hence the name. **Rig** does the same thing with the radio's own split function, and then you do see **SPLIT** on the radio.
+
+An example. The Fox answers you and WSJT-X moves your transmit tone to his frequency, 597 Hz. The **real radio signal** must land at the dial frequency plus 597 Hz, and with Fake It or Rig that is exactly what happens:
+
+| | Without split | With split |
+|---|---|---|
+| Dial frequency while transmitting | 3.567000 MHz | **3.566000 MHz** |
+| Audio tone | 597 Hz | **1597 Hz** |
+| Real radio signal | 3.567597 MHz | **3.567597 MHz** (identical) |
+
+The signal that leaves the antenna is the same. Only the way it is made is cleaner. Your receive frequency stays at 3.567000, so you keep seeing the waterfall.
 </div>
 
 <div class="dm-box dm-mean" markdown="1">
@@ -404,7 +417,7 @@ Was it a waste of time? Not at all. In one evening I learned:
 | What | What I take away |
 |---|---|
 | Fox and Hound | How to recognise it on screen (even periods, streams below 1000 Hz, `RR73;` messages) and how it differs from SuperFox and MSHV |
-| Split | That FT8 has no split on the radio, and that **Fake It** is about a clean signal, not about the DX |
+| Split | That FT8 has no DX split, and that the split WSJT-X uses (**Fake It** or **Rig**) is about a clean signal, not about the DX |
 | Hound mode | What it switches on for you, and that you switch it off afterwards |
 | My own mistakes | Always check the selected message, the DX call, the locator and Enable Tx **before** transmitting |
 | Tx frequency | 25 W wins with a free spot, not with power. Watch the waterfall and move |
