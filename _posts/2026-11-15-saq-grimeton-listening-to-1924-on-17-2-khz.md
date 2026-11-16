@@ -66,7 +66,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <p class="saq-mast-2">The wondrous world of yesteryear, passed on <span class="saq-by">By ON3VZ Kristof Cornelis</span></p>
 </div>
 
-<p class="saq-intro">In November 2026 a message reached me from Eddy, ON5JK. For many years he had faithfully listened to the two regular transmissions a year of SAQ, a radio station in Sweden that still sends Morse code with a machine from 1924, on 17.2 kHz. He had built two loop antennas for it, one of them described in CQ-QSO in 2010. Because he is moving, he was looking for someone who would keep listening. Otherwise the antennas would go to the container park. I adopted the first one. This article is my attempt to pass on everything that comes with it: the machine, the antenna, the software, and the craft of reading Morse by ear.</p>
+<p class="saq-intro">In November 2026 Eddy, ON5JK, sent a message to all members of our UBA section WLD. For many years he had faithfully listened to the two regular transmissions a year of SAQ, a radio station in Sweden that still sends Morse code with a machine from 1924, on 17.2 kHz. He had built two loop antennas for it, one of them described in CQ-QSO in 2010. Because he is moving, he was looking for someone who would keep listening. Otherwise the antennas would go to the container park. I offered to adopt the first one and to try to carry on the tradition. This article is my attempt to pass on everything that comes with it: the machine, the antenna, the software, and the craft of reading Morse by ear.</p>
 
 <div class="saq-box saq-why">
   <p class="saq-box-label">Why this article</p>
@@ -653,7 +653,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <p class="saq-mast-2">De wondere wereld van weleer, doorgegeven <span class="saq-by">Door ON3VZ Kristof Cornelis</span></p>
 </div>
 
-<p class="saq-intro">In november 2026 kreeg ik een bericht van Eddy, ON5JK. Jarenlang had hij trouw geluisterd naar de twee vaste uitzendingen per jaar van SAQ, een radiostation in Zweden dat nog altijd morse uitzendt met een machine uit 1924, op 17,2 kHz. Hij bouwde er twee raamantennes voor, waarvan één beschreven in CQ-QSO in 2010. Omdat hij verhuist, zocht hij iemand die zou blijven luisteren. Anders gingen de antennes naar het containerpark. Ik heb de eerste geadopteerd. Dit artikel is mijn poging om alles door te geven wat daarbij hoort: de machine, de antenne, de software, en het ambacht van morse lezen op het gehoor.</p>
+<p class="saq-intro">In november 2026 stuurde Eddy, ON5JK, een bericht naar alle leden van onze UBA-sectie WLD. Jarenlang had hij trouw geluisterd naar de twee vaste uitzendingen per jaar van SAQ, een radiostation in Zweden dat nog altijd morse uitzendt met een machine uit 1924, op 17,2 kHz. Hij bouwde er twee raamantennes voor, waarvan één beschreven in CQ-QSO in 2010. Omdat hij verhuist, zocht hij iemand die zou blijven luisteren. Anders gingen de antennes naar het containerpark. Ik bood aan de eerste te adopteren en te proberen de traditie verder te zetten. Dit artikel is mijn poging om alles door te geven wat daarbij hoort: de machine, de antenne, de software, en het ambacht van morse lezen op het gehoor.</p>
 
 <div class="saq-box saq-why">
   <p class="saq-box-label">Waarom dit artikel</p>
