@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SAQ Grimeton: Listening to a 1924 Machine on 17.2 kHz with Eddy's Loop"
+title: "SAQ Grimeton: Listening to a 1924 Machine on 17.2 kHz with ON5JK's Loop"
 tags: ['SAQ', 'Grimeton', 'VLF', '17.2 kHz', 'Alexanderson alternator', 'Loop antenna', 'Spectrum Lab', 'SAQrx', 'CW', 'Heritage', 'ON5JK', 'Beginners']
 excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ Grimeton: the history, how the 1924 Alexanderson alternator makes 17.2 kHz and how 200 kW is keyed, the start up ritual, how a tuned magnetic loop works and how to aim it from JO21EE, sound card software, reading the Morse by ear, the reception report and e-QSL, and when to listen. With a Dutch version and a Dutch PDF."
 ---
@@ -83,7 +83,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
     <li><a href="#en-grimeton-antenna">The antenna of Grimeton</a></li>
     <li><a href="#en-ritual">Starting a 100 year old transmitter</a></li>
     <li><a href="#en-loop">Why a small loop can hear 17.2 kHz</a></li>
-    <li><a href="#en-build">Eddy's loop: how it is built</a></li>
+    <li><a href="#en-build">ON5JK's loop: how it is built</a></li>
     <li><a href="#en-buildplan">Build plan: the engineering drawings</a></li>
     <li><a href="#en-aim">Placing and aiming the loop from JO21EE</a></li>
     <li><a href="#en-pc">From antenna to PC</a></li>
@@ -244,7 +244,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <ul>
   <li>The magnetic field of the wave changes 17,200 times per second.</li>
   <li>When that changing field passes <strong>through</strong> the loop, it induces a small voltage in the wire (Faraday's law).</li>
-  <li>The voltage grows with the <strong>number of turns</strong>, the <strong>area</strong> of the loop and the strength of the field. That is why Eddy's loop has 25 turns instead of one.</li>
+  <li>The voltage grows with the <strong>number of turns</strong>, the <strong>area</strong> of the loop and the strength of the field. That is why ON5JK's loop has 25 turns instead of one.</li>
 </ul>
 <h3>Tuning: why the capacitor matters</h3>
 <p>The coil of the loop (about 1.6 mH, measured by Eddy) and a capacitor (60 nF) form a <strong>resonant circuit</strong>. At its resonant frequency the circuit builds up the voltage far more than at other frequencies. That has two advantages:</p>
@@ -266,7 +266,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <figcaption><span class="saq-figno">Fig. 3</span> Top view. The plane of the loop (green) points at 35 degrees towards Grimeton. The pattern (orange) has its maxima along the plane and sharp nulls at right angles. Drawing: ON3VZ.</figcaption>
 </figure>
 
-<h2 id="en-build">8. Eddy's loop: how it is built</h2>
+<h2 id="en-build">8. ON5JK's loop: how it is built</h2>
 <p>The loop I adopted is exactly the one Eddy described in CQ-QSO 05/06-2010 ("SAQ, De wondere wereld van weleer"). UBA members can read the original in the <a href="https://www.uba.be/nl/onthaal/e-cq-qso/cq-qso">CQ-QSO archive</a>. He was inspired by the article "Logging SAQ" by ON5EX in CQ-QSO 3-4/2008, and he credits Guido ON6RL and Luc ON4AOL for bringing him to it. His build, in his own order:</p>
 
 <h3>The cross</h3>
@@ -670,7 +670,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
     <li><a href="#nl-grimeton-antenna">De antenne van Grimeton</a></li>
     <li><a href="#nl-ritual">Een zender van 100 jaar opstarten</a></li>
     <li><a href="#nl-loop">Waarom een klein raam 17,2 kHz kan horen</a></li>
-    <li><a href="#nl-build">Eddy's raamantenne: zo is ze gebouwd</a></li>
+    <li><a href="#nl-build">Raamantenne van ON5JK: zo is ze gebouwd</a></li>
     <li><a href="#nl-buildplan">Bouwplan: de technische tekeningen</a></li>
     <li><a href="#nl-aim">Het raam plaatsen en richten vanuit JO21EE</a></li>
     <li><a href="#nl-pc">Van antenne naar pc</a></li>
@@ -830,7 +830,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <ul>
   <li>Het magneetveld van de golf verandert 17.200 keer per seconde.</li>
   <li>Als dat veranderende veld <strong>door</strong> het raam gaat, wekt het een kleine spanning op in de draad (wet van Faraday).</li>
-  <li>De spanning wordt groter met het <strong>aantal windingen</strong>, de <strong>oppervlakte</strong> van het raam en de sterkte van het veld. Daarom heeft Eddy's raam 25 windingen in plaats van één.</li>
+  <li>De spanning wordt groter met het <strong>aantal windingen</strong>, de <strong>oppervlakte</strong> van het raam en de sterkte van het veld. Daarom heeft het raam van ON5JK 25 windingen in plaats van één.</li>
 </ul>
 <h3>Afstemmen: waarom de condensator telt</h3>
 <p>De spoel van het raam (ongeveer 1,6 mH, gemeten door Eddy) en een condensator (60 nF) vormen een <strong>resonantiekring</strong>. Op haar resonantiefrequentie bouwt de kring de spanning veel sterker op dan op andere frequenties. Dat heeft twee voordelen:</p>
@@ -852,7 +852,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <figcaption><span class="saq-figno">Fig. 3</span> Bovenaanzicht. Het vlak van het raam (groen) wijst op 35 graden naar Grimeton. Het patroon (oranje) heeft zijn maxima langs het vlak en scherpe nulpunten haaks erop. Tekening: ON3VZ.</figcaption>
 </figure>
 
-<h2 id="nl-build">8. Eddy's raamantenne: zo is ze gebouwd</h2>
+<h2 id="nl-build">8. Raamantenne van ON5JK: zo is ze gebouwd</h2>
 <p>Het raam dat ik adopteerde is exact het raam dat Eddy beschreef in CQ-QSO 05/06-2010 ("SAQ, De wondere wereld van weleer"). UBA-leden kunnen het origineel lezen in het <a href="https://www.uba.be/nl/onthaal/e-cq-qso/cq-qso">CQ-QSO-archief</a>. Hij werd geïnspireerd door het artikel "Logging SAQ" van ON5EX in CQ-QSO 3-4/2008, en hij bedankt Guido ON6RL en Luc ON4AOL die hem er eigenlijk toe brachten. Zijn bouw, in zijn eigen volgorde:</p>
 
 <h3>Het kruis</h3>
