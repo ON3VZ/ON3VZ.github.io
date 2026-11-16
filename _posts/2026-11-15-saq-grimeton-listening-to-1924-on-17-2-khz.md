@@ -84,6 +84,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
     <li><a href="#en-ritual">Starting a 100 year old transmitter</a></li>
     <li><a href="#en-loop">Why a small loop can hear 17.2 kHz</a></li>
     <li><a href="#en-build">Eddy's loop: how it is built</a></li>
+    <li><a href="#en-buildplan">Build plan: the engineering drawings</a></li>
     <li><a href="#en-aim">Placing and aiming the loop from JO21EE</a></li>
     <li><a href="#en-pc">From antenna to PC</a></li>
     <li><a href="#en-software">Software: Spectrum Lab, SAQrx, Audacity, WebSDR</a></li>
@@ -314,11 +315,23 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <figcaption><span class="saq-figno">Fig. 9</span> The finished loop, mounted as a diamond. The frame measures 107 cm from tip to tip; Eddy's second loop measures 127 cm. Photo: Eddy ON5JK, CQ-QSO 05/06-2010.</figcaption>
 </figure>
 
-<h3 id="en-buildplan">The complete build plan</h3>
+<h2 id="en-buildplan">9. Build plan: the engineering drawings</h2>
 <p>For anyone who wants to build this loop, I worked Eddy's article out into a technical build plan, as an engineer would: a general arrangement drawing with all dimensions, detail drawings, a bill of materials with item numbers, the electrical schematic, the design calculation, build steps with a check after each step, a tuning procedure, troubleshooting and a final inspection list.</p>
+<div class="saq-langbar">
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Download build plan (English, PDF)</a>
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Download bouwplan (Nederlands, PDF)</a>
+</div>
 <figure class="saq-fig">
   <img src="/assets/images/saq/saq-loop-sheet1-en.svg" alt="General arrangement drawing of the SAQ loop antenna with front view, side view and bill of materials" loading="lazy">
   <figcaption><span class="saq-figno">Fig. 9a</span> General arrangement, sheet 1 of 3. Drawing: ON3VZ, after the design of Eddy ON5JK.</figcaption>
+</figure>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet2-en.svg" alt="Sheet 2 of 3: details A hub, B wire guide, C mast clamp, D tuning box." loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9b</span> Sheet 2 of 3: details A hub, B wire guide, C mast clamp, D tuning box. Drawing: ON3VZ, after the design of Eddy ON5JK.</figcaption>
+</figure>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet3-en.svg" alt="Sheet 3 of 3: electrical schematic, tuning set-up and design data." loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9c</span> Sheet 3 of 3: electrical schematic, tuning set-up and design data. Drawing: ON3VZ, after the design of Eddy ON5JK.</figcaption>
 </figure>
 <div class="saq-box saq-mean">
   <p class="saq-box-label">Three things the drawing revealed</p>
@@ -328,23 +341,8 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
     <li><strong>Calculation and measurement agree.</strong> The coil formula gives about 1.33 mH, Eddy measured 1.6 mH. With 60 nF plus coax and wiring, both land near 17.2 kHz. The measured curve corresponds to a loaded Q of about 8, so roughly 2 kHz of bandwidth: wide enough to be forgiving, narrow enough to block hum and other stations.</li>
   </ul>
 </div>
-<div class="saq-langbar">
-  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Download build plan (English, PDF)</a>
-  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Download bouwplan (Nederlands, PDF)</a>
-</div>
 
-<details class="saq-details">
-<summary>Show the full build plan: drawings, calculation, bill of materials, build steps, tuning and checks</summary>
-<figure class="saq-fig">
-  <img src="/assets/images/saq/saq-loop-sheet2-en.svg" alt="Sheet 2 of 3: details A hub, B wire guide, C mast clamp, D tuning box." loading="lazy">
-  <figcaption><span class="saq-figno">Fig. 9b</span> Sheet 2 of 3: details A hub, B wire guide, C mast clamp, D tuning box. Drawing: ON3VZ, after the design of Eddy ON5JK.</figcaption>
-</figure>
-<figure class="saq-fig">
-  <img src="/assets/images/saq/saq-loop-sheet3-en.svg" alt="Sheet 3 of 3: electrical schematic, tuning set-up and design data." loading="lazy">
-  <figcaption><span class="saq-figno">Fig. 9c</span> Sheet 3 of 3: electrical schematic, tuning set-up and design data. Drawing: ON3VZ, after the design of Eddy ON5JK.</figcaption>
-</figure>
-
-<h4>1. Purpose and documents</h4>
+<h3>1. Purpose and documents</h3>
 <p>This file describes the tuned loop antenna of Eddy ON5JK in a way that makes it reproducible to build, tune and check. It goes with the drawings in this section:</p>
 <div class="saq-tablewrap"><table><tr><th>Drawing</th><th>Content</th></tr>
 <tr><td>ON3VZ-SAQ-LOOP-01</td><td>General arrangement: front and side view 1:10, bill of materials, notes</td></tr>
@@ -352,7 +350,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>ON3VZ-SAQ-LOOP-03</td><td>Electrical schematic passive and active, test set-up, design data</td></tr></table></div>
 <div class="saq-box saq-steps"><b>Evidence level of every value.</b> Values without brackets come from the article. Values <b>(in brackets)</b> are derived (calculated from source values) or a suggestion where the source says nothing. You may adapt the latter to your material.</div>
 
-<h4>2. The design in short</h4>
+<h3>2. The design in short</h3>
 <ul>
 <li>Four wooden arms (item 1) as a <b>pinwheel</b> against the four sides of a hub block (item 2), all in one plane. Each arm rests along the full 50 mm of the block and sticks out 510 mm.</li>
 <li>Each arm end is therefore 535 mm from the centre: <b>1070 mm tip to tip</b>. That is the "107 cm" Eddy uses for this antenna. Opposite arms are offset 57 mm sideways: the "50 mm" the article calls acceptable.</li>
@@ -361,7 +359,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <li>Electrically: a parallel circuit L1 with C1 + C2 = 60 nF, via BNC and RG-58 to the shack, and there via a 600 ohm / 10 kohm microphone transformer to the sound card. Optionally a FET buffer at the antenna.</li>
 </ul>
 
-<h4>3. Design calculation</h4>
+<h3>3. Design calculation</h3>
 <div class="saq-tablewrap"><table><tr><th>Quantity</th><th>Value</th><th>Origin</th></tr>
 <tr><td>Arm end from centre</td><td>560 - 25 = 535 mm</td><td>derived</td></tr>
 <tr><td>Wire position at the tip</td><td>(about 543 mm, 8 mm outside the lath)</td><td>derived</td></tr>
@@ -378,7 +376,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>Loop output impedance</td><td>about 2 kohm</td><td>source</td></tr></table></div>
 <p><b>Conclusion.</b> The calculated 1.33 mH and the measured 1.6 mH are close enough for a coil on a wooden frame and hobby instruments. With 60 nF plus the capacitance of coax and wiring, the resonance lands around 17 kHz in both cases. Hence Eddy's rule: <b>calculate as a starting point, tune by measuring</b>.</p>
 
-<h4>4. Bill of materials</h4>
+<h3>4. Bill of materials</h3>
 <div class="saq-tablewrap"><table><tr><th>Item</th><th>Qty</th><th>Description</th><th>Material / size</th><th>Origin</th></tr>
 <tr><td>1</td><td>4</td><td>Arm</td><td>Wood 7 x 35 x 560 mm</td><td>source</td></tr>
 <tr><td>2</td><td>1</td><td>Hub block</td><td>Wood 50 x 50 mm, depth (35)</td><td>source, depth derived</td></tr>
@@ -397,7 +395,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>15</td><td>1</td><td>Amplifier box (option)</td><td>FET buffer after the PA0RDT Miniwhip, without the antenna plate; 56 nF coupling; 9 to 12 V via the coax</td><td>source</td></tr>
 <tr><td>16</td><td>-</td><td>Glue, sealant</td><td>Outdoor glue or mounting kit (article: TEK7), silicone</td><td>source</td></tr></table></div>
 
-<h4>5. Cutting list and tolerances</h4>
+<h3>5. Cutting list and tolerances</h3>
 <div class="saq-tablewrap"><table><tr><th>Part</th><th>Size (mm)</th><th>Tolerance / check</th></tr>
 <tr><td>4 arms</td><td>560 x 35 x 7</td><td>(&plusmn; 1). Equal length within the set matters more than the absolute size.</td></tr>
 <tr><td>2 support laths</td><td>1120 x 35 x 7</td><td>(&plusmn; 2)</td></tr>
@@ -406,10 +404,10 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>4 wire guides</td><td>(55) with M16, (65) with M20</td><td>At least 25 good grooves; M16 pitch 2.0 mm gives 50 mm, M20 pitch 2.5 mm gives 62.5 mm.</td></tr>
 <tr><td>Rain cap</td><td>(100), tube 1"</td><td>Open at the bottom so water can drain.</td></tr></table></div>
 
-<h4>6. Tools</h4>
+<h3>6. Tools</h3>
 <p>Fine saw, square, tape measure, glue clamps; drill with bits of 0.5 mm (coil wire), 2 to 3 mm (cord) and for the bolts; M16 or M20 die with a vice; soldering iron, multimeter. For tuning: an LCR or L/C meter, an LF generator, a 2 kohm resistor and a millivoltmeter or oscilloscope. Eddy used the L/C meter built in the WLD section and an HP339A.</p>
 
-<h4>7. Build steps</h4>
+<h3>7. Build steps</h3>
 <ol class="steps">
 <li><b>Dry fit hub and arms (items 1, 2, detail A).</b> Lay the block flat. Place each arm on its edge (35 mm high) against a different side of the block, with the arm end flush with the corner of the block: the cross turns like a pinwheel. <i>Check:</i> tip to tip 1070 mm in both directions, equal within 2 mm.</li>
 <li><b>Glue.</b> Glue the four arms to the block and clamp until cured. Keep everything flat on the table so the arms lie in one plane. <i>Check:</i> no glue where the wire will run.</li>
@@ -425,7 +423,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <li><b>Option: FET buffer (item 15).</b> A second box below the first, with a PA0RDT Miniwhip board without the antenna plate. Couple the tuned circuit to the FET input via 56 nF and feed 9 to 12 V through the coax (bias tee in the shack). Use a complete, checked Miniwhip schematic for this; the article gives no component values.</li>
 </ol>
 
-<h4>8. Tuning to 17.2 kHz</h4>
+<h3>8. Tuning to 17.2 kHz</h3>
 <ol class="steps">
 <li><b>Measure the inductance.</b> Measure L between start and end of the coil with the capacitors disconnected. Expect 1.3 to 1.6 mH. Write it down.</li>
 <li><b>Calculate the starting capacitance.</b> C = 1 / ((2&pi; x 17200)² x L). At 1.6 mH that is 53.5 nF. After measuring, Eddy ended at 60 nF. Start with 60 nF.</li>
@@ -436,7 +434,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ol>
 <div class="saq-box saq-steps">No instruments? You can also tune on the signal itself: watch the Spectrum Lab waterfall during a test transmission or on another VLF station, and keep the capacitor value that gives the strongest signal.</div>
 
-<h4>9. Installation and aiming</h4>
+<h3>9. Installation and aiming</h3>
 <ul>
 <li>Mount outdoors and as high as is safe; Eddy used about 6 m, with the support tube clamped to the balustrade of his garden stairs.</li>
 <li>Slide the free 250 mm of tube into or over the mast and lock it with a cross bolt. The antenna must be able to rotate.</li>
@@ -444,7 +442,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <li>Away from mains wiring, solar inverters, LED drivers and chargers. Work at height with two people. Disconnect the coax during thunderstorms.</li>
 </ul>
 
-<h4>10. Troubleshooting</h4>
+<h3>10. Troubleshooting</h3>
 <div class="saq-tablewrap"><table><tr><th>Symptom</th><th>Likely cause</th><th>Action</th></tr>
 <tr><td>No continuity between coil ends</td><td>Enamel not removed, broken wire</td><td>Measure directly on the wire ends, repair, relieve strain.</td></tr>
 <tr><td>Peak below 17.2 kHz</td><td>Too much C, or more L than expected</td><td>Reduce capacitance.</td></tr>
@@ -454,7 +452,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>No noise above 16 kHz in the waterfall</td><td>Sound card input filters high tones</td><td>Other input or a USB sound card, 48 kHz sample rate or more.</td></tr>
 <tr><td>Active stage oscillates or is noisy</td><td>Supply, bias tee or layout</td><td>Test passively first; check the amplifier schematic.</td></tr></table></div>
 
-<h4>11. Final inspection</h4>
+<h3>11. Final inspection</h3>
 <ul class="check">
 <li>Arms square, in one plane, 1070 mm tip to tip; cord tensioned.</li>
 <li>25 turns in the grooves, not crossed, enamel intact.</li>
@@ -466,12 +464,12 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <li>With the active option: supply voltage and polarity checked and labelled.</li>
 </ul>
 
-<h4>12. Sources and revision</h4>
+<h3>12. Sources and revision</h3>
 <p>Eddy ON5JK (WLD section), "SAQ, De wondere wereld van weleer", CQ-QSO 05/06-2010, pp. 22-23 (UBA members: CQ-QSO archive on uba.be). Inductance formula: F. W. Grover, Inductance Calculations, square multilayer coil (Rosa/Grover formula). Miniwhip: PA0RDT. Revision A, 16 November 2026: first issue. Full article and background on SAQ: on3vz.github.io, blog "SAQ Grimeton".</p>
 
-</details>
 
-<h2 id="en-aim">9. Placing and aiming the loop from JO21EE</h2>
+
+<h2 id="en-aim">10. Placing and aiming the loop from JO21EE</h2>
 <div class="saq-box saq-steps">
   <p class="saq-box-label">Bearing from Hoboken (JO21EE)</p>
   <p>Grimeton lies at about <strong>35 degrees</strong> (north east), about <strong>840 km</strong> away (great circle, calculated from the centre of JO21EE). The plane of the loop must point at 35 degrees, which is the same as 215 degrees.</p>
@@ -490,7 +488,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <li><strong>Test before the big day.</strong> Other VLF stations transmit continuously. The German navy station DHO38 on 23.4 kHz lies at about 45 degrees from Hoboken, roughly 300 km away. It sends data, so it shows as a wide band on the waterfall, not as Morse. It is near the upper limit of a 48 kHz sound card, so you may need 96 kHz sampling to see it. Practising the null method on it is a good dry run.</li>
 </ol>
 
-<h2 id="en-pc">10. From antenna to PC</h2>
+<h2 id="en-pc">11. From antenna to PC</h2>
 <figure class="saq-fig">
   <img src="/assets/images/saq/saq-receive-chain-en.svg" alt="Receiving chain from tuned loop through coax and transformer to sound card, software and your ears" loading="lazy">
   <figcaption><span class="saq-figno">Fig. 10</span> The receiving chain. No radio needed: the sound card of the PC is the receiver. Drawing: ON3VZ.</figcaption>
@@ -514,7 +512,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <p>Menu names differ a little between Windows versions.</p>
 </div>
 
-<h2 id="en-software">11. Software: Spectrum Lab, SAQrx, Audacity, WebSDR</h2>
+<h2 id="en-software">12. Software: Spectrum Lab, SAQrx, Audacity, WebSDR</h2>
 <h3>Spectrum Lab (DL4YHF), the one Eddy uses</h3>
 <p>Free, from Wolfgang Buescher, DL4YHF. It shows the spectrum as a <strong>waterfall</strong>, on which you literally see the Morse appear as short and long marks.</p>
 <ol>
@@ -543,7 +541,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <h3>No antenna? Use a WebSDR</h3>
 <p>The WebSDR of the University of Twente (Netherlands) covers VLF. Type 17.2 as frequency, choose CW narrow, and set the waterfall contrast high. The official report form explicitly allows this, as long as you tick "Web- or Kiwi-SDR & remote antenna". And you can always watch the machine at work on the association's YouTube livestream.</p>
 
-<h2 id="en-cw">12. No Morse needed to start, but the art is your ear</h2>
+<h2 id="en-cw">13. No Morse needed to start, but the art is your ear</h2>
 <p><strong>You do not need to know Morse code to listen to SAQ.</strong> You can record the transmission, look at the waterfall, and send a report. Your report is welcome even if you did not hear anything.</p>
 <p>But this is the place to be honest: the real experience is reading it yourself. The message is sent by hand by a telegraphist, at about 15 words per minute, with a human rhythm. That is the same Morse that crossed the Atlantic in 1924. Hearing it and turning it into letters in your own head connects you to a hundred years of operators.</p>
 <div class="saq-box saq-steps">
@@ -560,7 +558,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </div>
 <p>Decoders often struggle with hand sent rhythm and static. Your brain is surprisingly good at it. Every letter you catch yourself is worth more than a perfect printout.</p>
 
-<h2 id="en-report">13. Sending a reception report and getting the e-QSL</h2>
+<h2 id="en-report">14. Sending a reception report and getting the e-QSL</h2>
 <p>The association asks for reception reports after every transmission, including "not heard". They use them to build a list and a world map of listeners. For the transmission of 16 November 2022 they received 396 reports, of which 357 heard SAQ. Among the regular listeners is Hugo Matten from Veurne, with a 385 m Beverage antenna.</p>
 <ul>
   <li>Use the <strong>official online form</strong>. The current link is on alexander.n.se, under the announcement of the transmission. Only reports through the form are guaranteed an e-QSL; e-mail or post are not.</li>
@@ -584,7 +582,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <p>R = readability (1 to 5), S = strength (1 to 9), T = tone (1 to 9). 599 means perfectly readable, very strong, pure tone. Be honest; a 449 with a real recording says more than a 599 out of habit.</p>
 </div>
 
-<h2 id="en-when">14. When can you listen?</h2>
+<h2 id="en-when">15. When can you listen?</h2>
 <ul>
   <li><strong>Christmas Eve, 24 December:</strong> the traditional morning transmission. In 2025 the pattern was: livestream 07:20 UTC, start up 07:30 UTC, message <strong>08:00 UTC</strong> (09:00 Belgian time). Test transmissions took place a few days before, in the afternoon.</li>
   <li><strong>Alexanderson Day:</strong> a Sunday around 2 July, usually with a morning and an afternoon transmission.</li>
@@ -596,7 +594,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </div>
 <p>During many transmissions the amateur station <strong>SK6SAQ</strong> is also active on the HF bands in CW and SSB, with its own QSL.</p>
 
-<h2 id="en-checklist">15. Checklist for transmission day</h2>
+<h2 id="en-checklist">16. Checklist for transmission day</h2>
 <div class="saq-box saq-check">
   <p class="saq-box-label">The day before</p>
   <ul>
@@ -624,7 +622,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <p>Thank you, Eddy, for the antenna, the article and the push. I hope to hear the VVV coming through the noise on Christmas Eve, and to report back here.</p>
 <p class="saq-sign">73 de ON3VZ</p>
 
-<h2 id="en-sources">16. Sources and image credits</h2>
+<h2 id="en-sources">17. Sources and image credits</h2>
 <h3>Sources</h3>
 <ul class="saq-sources">
   <li>Alexander Grimeton Friendship Association: <a href="https://alexander.n.se/en/">alexander.n.se</a> (transmitter, reception, transmissions, forum, report form).</li>
@@ -642,7 +640,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ul>
 <h3>Image credits</h3>
 <ul class="saq-sources">
-  <li>Fig. 1, 2, 3, 9a, 10 and the build plan: drawings by ON3VZ for this article, after the design of Eddy ON5JK.</li>
+  <li>Fig. 1, 2, 3, 9a to 9c, 10 and the build plan: drawings by ON3VZ for this article, after the design of Eddy ON5JK.</li>
   <li>Fig. 4 to 9 and 11: Eddy ON5JK, from CQ-QSO 05/06-2010.</li>
   <li>Photos of Grimeton: Hans Lindqvist (CC BY-SA 3.0), Gunther Tschuch (CC BY 2.5), Grimetonmasterna.jpg (CC BY-SA 3.0) and the main building photo, all via Wikimedia Commons.</li>
 </ul>
@@ -673,6 +671,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
     <li><a href="#nl-ritual">Een zender van 100 jaar opstarten</a></li>
     <li><a href="#nl-loop">Waarom een klein raam 17,2 kHz kan horen</a></li>
     <li><a href="#nl-build">Eddy's raamantenne: zo is ze gebouwd</a></li>
+    <li><a href="#nl-buildplan">Bouwplan: de technische tekeningen</a></li>
     <li><a href="#nl-aim">Het raam plaatsen en richten vanuit JO21EE</a></li>
     <li><a href="#nl-pc">Van antenne naar pc</a></li>
     <li><a href="#nl-software">Software: Spectrum Lab, SAQrx, Audacity, WebSDR</a></li>
@@ -902,11 +901,23 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <figcaption><span class="saq-figno">Fig. 9</span> Het afgewerkte raam, als ruit gemonteerd. Het frame meet 107 cm van punt tot punt; Eddy's tweede raam meet 127 cm. Foto: Eddy ON5JK, CQ-QSO 05/06-2010.</figcaption>
 </figure>
 
-<h3 id="nl-buildplan">Het volledige bouwplan</h3>
+<h2 id="nl-buildplan">9. Bouwplan: de technische tekeningen</h2>
 <p>Voor wie dit raam wil nabouwen, werkte ik Eddy's artikel uit tot een technisch bouwplan, zoals een ingenieur dat zou doen: een overzichtstekening met alle maten, detailtekeningen, een stuklijst met positienummers, het elektrisch schema, de ontwerpberekening, bouwstappen met een controle na elke stap, een afregelprocedure, foutzoeken en een eindcontrole.</p>
+<div class="saq-langbar">
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Download bouwplan (Nederlands, pdf)</a>
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Download build plan (English, PDF)</a>
+</div>
 <figure class="saq-fig">
   <img src="/assets/images/saq/saq-loop-sheet1-nl.svg" alt="Overzichtstekening van de SAQ-raamantenne met vooraanzicht, zijaanzicht en stuklijst" loading="lazy">
   <figcaption><span class="saq-figno">Fig. 9a</span> Overzichtstekening, blad 1 van 3. Tekening: ON3VZ, naar het ontwerp van Eddy ON5JK.</figcaption>
+</figure>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet2-nl.svg" alt="Blad 2 van 3: details A kernblok, B draadgeleider, C mastklem, D afstemdoos." loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9b</span> Blad 2 van 3: details A kernblok, B draadgeleider, C mastklem, D afstemdoos. Tekening: ON3VZ, naar het ontwerp van Eddy ON5JK.</figcaption>
+</figure>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet3-nl.svg" alt="Blad 3 van 3: elektrisch schema, meetopstelling en ontwerpgegevens." loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9c</span> Blad 3 van 3: elektrisch schema, meetopstelling en ontwerpgegevens. Tekening: ON3VZ, naar het ontwerp van Eddy ON5JK.</figcaption>
 </figure>
 <div class="saq-box saq-mean">
   <p class="saq-box-label">Drie dingen die de tekening blootlegde</p>
@@ -916,23 +927,8 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
     <li><strong>Berekening en meting kloppen.</strong> De spoelformule geeft ongeveer 1,33 mH, Eddy mat 1,6 mH. Met 60 nF plus coax en bedrading komen beide uit bij ongeveer 17,2 kHz. De gemeten curve komt overeen met een belaste Q van ongeveer 8, dus zo'n 2 kHz bandbreedte: breed genoeg om vergevingsgezind te zijn, smal genoeg om brom en andere zenders tegen te houden.</li>
   </ul>
 </div>
-<div class="saq-langbar">
-  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Download bouwplan (Nederlands, pdf)</a>
-  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Download build plan (English, PDF)</a>
-</div>
 
-<details class="saq-details">
-<summary>Toon het volledige bouwplan: tekeningen, berekening, stuklijst, bouwstappen, afregeling en controles</summary>
-<figure class="saq-fig">
-  <img src="/assets/images/saq/saq-loop-sheet2-nl.svg" alt="Blad 2 van 3: details A kernblok, B draadgeleider, C mastklem, D afstemdoos." loading="lazy">
-  <figcaption><span class="saq-figno">Fig. 9b</span> Blad 2 van 3: details A kernblok, B draadgeleider, C mastklem, D afstemdoos. Tekening: ON3VZ, naar het ontwerp van Eddy ON5JK.</figcaption>
-</figure>
-<figure class="saq-fig">
-  <img src="/assets/images/saq/saq-loop-sheet3-nl.svg" alt="Blad 3 van 3: elektrisch schema, meetopstelling en ontwerpgegevens." loading="lazy">
-  <figcaption><span class="saq-figno">Fig. 9c</span> Blad 3 van 3: elektrisch schema, meetopstelling en ontwerpgegevens. Tekening: ON3VZ, naar het ontwerp van Eddy ON5JK.</figcaption>
-</figure>
-
-<h4>1. Doel en documenten</h4>
+<h3>1. Doel en documenten</h3>
 <p>Dit dossier beschrijft de afgestemde raamantenne van Eddy ON5JK zo dat ze reproduceerbaar te bouwen, af te regelen en te controleren is. Het hoort bij de tekeningen in dit hoofdstuk:</p>
 <div class="saq-tablewrap"><table><tr><th>Tekening</th><th>Inhoud</th></tr>
 <tr><td>ON3VZ-SAQ-LOOP-01</td><td>Overzichtstekening: voor- en zijaanzicht 1:10, stuklijst, opmerkingen</td></tr>
@@ -940,7 +936,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>ON3VZ-SAQ-LOOP-03</td><td>Elektrisch schema passief en actief, meetopstelling, ontwerpgegevens</td></tr></table></div>
 <div class="saq-box saq-steps"><b>Bewijsniveau van elke waarde.</b> Waarden zonder haakjes komen uit het artikel. Waarden <b>(tussen haakjes)</b> zijn afgeleid (berekend uit bronwaarden) of een voorstel waar de bron niets zegt. Die laatste mag je aanpassen aan je materiaal.</div>
 
-<h4>2. Ontwerp in het kort</h4>
+<h3>2. Ontwerp in het kort</h3>
 <ul>
 <li>Vier houten armen (pos. 1) als <b>molenwiek</b> tegen de vier zijden van een kernblok (pos. 2), allemaal in één vlak. Elke arm ligt over de volle 50 mm tegen het blok en steekt 510 mm uit.</li>
 <li>Daardoor ligt elk armuiteinde op 535 mm van het centrum: <b>1070 mm van punt tot punt</b>. Dat is de "107 cm" waarmee Eddy deze antenne aanduidt. Tegenoverliggende armen liggen 57 mm zijwaarts verschoven: de "50 mm" die het artikel aanvaardbaar noemt.</li>
@@ -949,7 +945,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <li>Elektrisch: een parallelkring L1 met C1 + C2 = 60 nF, via BNC en RG-58 naar de shack, en daar via een microfoontransformator 600 ohm / 10 kohm naar de geluidskaart. Optioneel een FET-buffer aan de antenne.</li>
 </ul>
 
-<h4>3. Ontwerpberekening</h4>
+<h3>3. Ontwerpberekening</h3>
 <div class="saq-tablewrap"><table><tr><th>Grootheid</th><th>Waarde</th><th>Herkomst</th></tr>
 <tr><td>Armuiteinde vanaf centrum</td><td>560 - 25 = 535 mm</td><td>afgeleid</td></tr>
 <tr><td>Draadpositie aan de punt</td><td>(ongeveer 543 mm, 8 mm buiten de lat)</td><td>afgeleid</td></tr>
@@ -966,7 +962,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>Uitgangsimpedantie van het raam</td><td>ongeveer 2 kohm</td><td>bron</td></tr></table></div>
 <p><b>Conclusie.</b> De berekende 1,33 mH en de gemeten 1,6 mH liggen dicht genoeg bij elkaar voor een spoel met houten frame en meetinstrumenten uit de hobbyhoek. Met 60 nF plus de capaciteit van coax en bedrading landt de resonantie in beide gevallen rond 17 kHz. Daarom geldt de regel van Eddy: <b>bereken als startpunt, regel af door te meten</b>.</p>
 
-<h4>4. Stuklijst</h4>
+<h3>4. Stuklijst</h3>
 <div class="saq-tablewrap"><table><tr><th>Pos</th><th>Aantal</th><th>Omschrijving</th><th>Materiaal / maat</th><th>Herkomst</th></tr>
 <tr><td>1</td><td>4</td><td>Arm</td><td>Hout 7 x 35 x 560 mm</td><td>bron</td></tr>
 <tr><td>2</td><td>1</td><td>Kernblok</td><td>Hout 50 x 50 mm, diepte (35)</td><td>bron, diepte afgeleid</td></tr>
@@ -985,7 +981,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>15</td><td>1</td><td>Versterkerdoos (optie)</td><td>FET-buffer volgens PA0RDT Miniwhip, zonder antenneplaatje; koppeling 56 nF; voeding 9 tot 12 V via coax</td><td>bron</td></tr>
 <tr><td>16</td><td>-</td><td>Lijm, kit</td><td>Buitenlijm of montagekit (artikel: TEK7), silicone</td><td>bron</td></tr></table></div>
 
-<h4>5. Zaaglijst en toleranties</h4>
+<h3>5. Zaaglijst en toleranties</h3>
 <div class="saq-tablewrap"><table><tr><th>Onderdeel</th><th>Maat (mm)</th><th>Tolerantie / controle</th></tr>
 <tr><td>4 armen</td><td>560 x 35 x 7</td><td>(&plusmn; 1). Gelijke lengte binnen de set is belangrijker dan de absolute maat.</td></tr>
 <tr><td>2 steunlatten</td><td>1120 x 35 x 7</td><td>(&plusmn; 2)</td></tr>
@@ -994,10 +990,10 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>4 draadgeleiders</td><td>(55) bij M16, (65) bij M20</td><td>Minstens 25 gave groeven; M16 spoed 2,0 mm geeft 50 mm, M20 spoed 2,5 mm geeft 62,5 mm.</td></tr>
 <tr><td>Regenkap</td><td>(100), buis 1"</td><td>Open naar beneden, water moet weg kunnen.</td></tr></table></div>
 
-<h4>6. Gereedschap</h4>
+<h3>6. Gereedschap</h3>
 <p>Fijne zaag, winkelhaak, rolmaat, lijmklemmen; boormachine met boortjes 0,5 mm (spoeldraad), 2 tot 3 mm (koord) en voor de bouten; snijplaat M16 of M20 met bankschroef; soldeerbout, multimeter. Voor het afregelen: een LCR- of L/C-meter, een LF-generator, een weerstand van 2 kohm en een mV-meter of oscilloscoop. Eddy gebruikte de L/C-meter die in de sectie WLD gebouwd werd en een HP339A.</p>
 
-<h4>7. Bouwstappen</h4>
+<h3>7. Bouwstappen</h3>
 <ol class="steps">
 <li><b>Kernblok en armen droog passen (pos. 1, 2, detail A).</b> Leg het blok plat. Leg elke arm op zijn kant (35 mm hoog) tegen een andere zijde van het blok, met het armeinde gelijk met de hoek van het blok: zo draait het kruis als een molenwiek. <i>Controle:</i> tip tot tip in beide richtingen 1070 mm, gelijk binnen 2 mm.</li>
 <li><b>Verlijmen.</b> Lijm de vier armen tegen het blok en klem tot de lijm uitgehard is. Houd alles plat op tafel, zodat de armen in één vlak liggen. <i>Controle:</i> geen lijm op de plaatsen waar de draad straks loopt.</li>
@@ -1013,7 +1009,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <li><b>Optie: FET-buffer (pos. 15).</b> Een tweede doos onder de eerste, met een Miniwhip-print van PA0RDT zonder het antenneplaatje. Koppel de afgestemde kring via 56 nF aan de FET-ingang, voed met 9 tot 12 V via de coax (bias-T in de shack). Volg daarvoor een volledig, nagekeken Miniwhip-schema; het artikel geeft geen componentwaarden.</li>
 </ol>
 
-<h4>8. Afregelen op 17,2 kHz</h4>
+<h3>8. Afregelen op 17,2 kHz</h3>
 <ol class="steps">
 <li><b>Zelfinductie meten.</b> Meet L tussen begin en einde van de spoel, met de condensatoren losgekoppeld. Verwacht tussen 1,3 en 1,6 mH. Noteer de waarde.</li>
 <li><b>Startcapaciteit berekenen.</b> C = 1 / ((2&pi; x 17200)² x L). Bij 1,6 mH is dat 53,5 nF. Eddy kwam na meten op 60 nF uit. Begin met 60 nF.</li>
@@ -1024,7 +1020,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ol>
 <div class="saq-box saq-steps">Geen meettoestellen? Dan kan je ook afregelen op het signaal zelf: kijk tijdens een testuitzending of bij een andere VLF-zender in de waterval van Spectrum Lab en kies de condensatorwaarde met het sterkste signaal.</div>
 
-<h4>9. Installatie en richten</h4>
+<h3>9. Installatie en richten</h3>
 <ul>
 <li>Monteer buiten en zo hoog als veilig kan; Eddy gebruikte ongeveer 6 m, met de draagbuis geklemd aan de balustrade van zijn tuintrap.</li>
 <li>Schuif de vrije 250 mm buis in of over de draagmast en borg met een dwarsbout. De antenne moet kunnen draaien.</li>
@@ -1032,7 +1028,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <li>Ver van netleidingen, PV-omvormers, ledvoedingen en laders. Werk op hoogte met twee personen. Koppel de coax los bij onweer.</li>
 </ul>
 
-<h4>10. Foutzoeken</h4>
+<h3>10. Foutzoeken</h3>
 <div class="saq-tablewrap"><table><tr><th>Symptoom</th><th>Waarschijnlijke oorzaak</th><th>Actie</th></tr>
 <tr><td>Geen doorgang tussen spoeleinden</td><td>Lak niet verwijderd, draadbreuk</td><td>Meet rechtstreeks op de draadeinden, herstel, ontlast de draad.</td></tr>
 <tr><td>Piek onder 17,2 kHz</td><td>Te veel C, of meer L dan verwacht</td><td>Capaciteit verlagen.</td></tr>
@@ -1042,7 +1038,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <tr><td>Geen ruis boven 16 kHz in de waterval</td><td>Geluidskaartingang filtert hoge tonen weg</td><td>Andere ingang of USB-geluidskaart, samplefrequentie 48 kHz of meer.</td></tr>
 <tr><td>Actieve trap oscilleert of ruist</td><td>Voeding, bias-T of opbouw</td><td>Eerst passief testen; versterkerschema nakijken.</td></tr></table></div>
 
-<h4>11. Eindcontrole</h4>
+<h3>11. Eindcontrole</h3>
 <ul class="check">
 <li>Armen haaks, in één vlak, 1070 mm punt tot punt; koord gespannen.</li>
 <li>25 windingen in de groeven, niet gekruist, lak intact.</li>
@@ -1054,12 +1050,12 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <li>Bij de actieve optie: voedingsspanning en polariteit gecontroleerd en gelabeld.</li>
 </ul>
 
-<h4>12. Bronnen en revisie</h4>
+<h3>12. Bronnen en revisie</h3>
 <p>Eddy ON5JK (sectie WLD), "SAQ, De wondere wereld van weleer", CQ-QSO 05/06-2010, p. 22-23 (UBA-leden: CQ-QSO-archief op uba.be). Inductantieformule: F. W. Grover, Inductance Calculations, vierkante meerlaagspoel (formule volgens Rosa/Grover). Miniwhip: PA0RDT. Revisie A, 16 november 2026: eerste uitgave. Volledig artikel en uitleg over SAQ: on3vz.github.io, blog "SAQ Grimeton".</p>
 
-</details>
 
-<h2 id="nl-aim">9. Het raam plaatsen en richten vanuit JO21EE</h2>
+
+<h2 id="nl-aim">10. Het raam plaatsen en richten vanuit JO21EE</h2>
 <div class="saq-box saq-steps">
   <p class="saq-box-label">Richting vanuit Hoboken (JO21EE)</p>
   <p>Grimeton ligt op ongeveer <strong>35 graden</strong> (noordoost), op ongeveer <strong>840 km</strong> (grootcirkel, berekend vanuit het midden van JO21EE). Het vlak van het raam moet naar 35 graden wijzen, wat hetzelfde is als 215 graden.</p>
@@ -1078,7 +1074,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <li><strong>Test voor de grote dag.</strong> Andere VLF-zenders zenden continu uit. Het Duitse marinestation DHO38 op 23,4 kHz ligt op ongeveer 45 graden vanuit Hoboken, op zo'n 300 km. Het zendt data, dus je ziet het als een brede band in de waterval, niet als morse. Het zit aan de bovengrens van een geluidskaart op 48 kHz, dus misschien heb je 96 kHz nodig om het te zien. De nulpuntmethode erop oefenen is een goede generale repetitie.</li>
 </ol>
 
-<h2 id="nl-pc">10. Van antenne naar pc</h2>
+<h2 id="nl-pc">11. Van antenne naar pc</h2>
 <figure class="saq-fig">
   <img src="/assets/images/saq/saq-receive-chain-nl.svg" alt="Ontvangstketen van afgestemd raam via coax en transformator naar geluidskaart, software en je oren" loading="lazy">
   <figcaption><span class="saq-figno">Fig. 10</span> De ontvangstketen. Geen radio nodig: de geluidskaart van de pc is de ontvanger. Tekening: ON3VZ.</figcaption>
@@ -1102,7 +1098,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <p>Menunamen verschillen een beetje tussen Windows-versies.</p>
 </div>
 
-<h2 id="nl-software">11. Software: Spectrum Lab, SAQrx, Audacity, WebSDR</h2>
+<h2 id="nl-software">12. Software: Spectrum Lab, SAQrx, Audacity, WebSDR</h2>
 <h3>Spectrum Lab (DL4YHF), wat Eddy gebruikt</h3>
 <p>Gratis, van Wolfgang Buescher, DL4YHF. Het toont het spectrum als een <strong>waterval</strong>, waarop je de morse letterlijk ziet verschijnen als korte en lange streepjes.</p>
 <ol>
@@ -1131,7 +1127,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <h3>Geen antenne? Gebruik een WebSDR</h3>
 <p>De WebSDR van de Universiteit Twente (Nederland) gaat tot in VLF. Tik 17.2 in als frequentie, kies CW smal en zet het contrast van de waterval hoog. Het officiële rapportformulier laat dat uitdrukkelijk toe, zolang je "Web- or Kiwi-SDR &amp; remote antenna" aanduidt. En je kan de machine altijd aan het werk zien op de YouTube-livestream van de vereniging.</p>
 
-<h2 id="nl-cw">12. Geen morse nodig om te starten, maar de kunst is je oor</h2>
+<h2 id="nl-cw">13. Geen morse nodig om te starten, maar de kunst is je oor</h2>
 <p><strong>Je hoeft geen morse te kennen om naar SAQ te luisteren.</strong> Je kan de uitzending opnemen, naar de waterval kijken en een rapport sturen. Je rapport is welkom, ook als je niets hoorde.</p>
 <p>Maar hier mag ik eerlijk zijn: de echte ervaring is het zelf lezen. De boodschap wordt met de hand geseind door een telegrafist, aan ongeveer 15 woorden per minuut, met een menselijk ritme. Dat is dezelfde morse die in 1924 de Atlantische Oceaan overstak. Ze horen en in je eigen hoofd omzetten in letters verbindt je met honderd jaar operators.</p>
 <div class="saq-box saq-steps">
@@ -1148,7 +1144,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </div>
 <p>Decoders hebben het vaak moeilijk met handgeseind ritme en statische ruis. Je hersenen zijn daar verrassend goed in. Elke letter die je zelf opvangt, is meer waard dan een perfecte afdruk.</p>
 
-<h2 id="nl-report">13. Een luisterrapport sturen en de e-QSL krijgen</h2>
+<h2 id="nl-report">14. Een luisterrapport sturen en de e-QSL krijgen</h2>
 <p>De vereniging vraagt na elke uitzending luisterrapporten, ook "niet gehoord". Daarmee maken ze een lijst en een wereldkaart van luisteraars. Voor de uitzending van 16 november 2022 kregen ze 396 rapporten, waarvan 357 SAQ hoorden. Onder de vaste luisteraars is Hugo Matten uit Veurne, met een Beverage-antenne van 385 m.</p>
 <ul>
   <li>Gebruik het <strong>officiële online formulier</strong>. De actuele link staat op alexander.n.se, bij de aankondiging van de uitzending. Alleen rapporten via het formulier krijgen gegarandeerd een e-QSL; e-mail of post niet.</li>
@@ -1172,7 +1168,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <p>R = leesbaarheid (1 tot 5), S = sterkte (1 tot 9), T = toon (1 tot 9). 599 betekent perfect leesbaar, zeer sterk, zuivere toon. Wees eerlijk; een 449 met een echte opname zegt meer dan een 599 uit gewoonte.</p>
 </div>
 
-<h2 id="nl-when">14. Wanneer kan je luisteren?</h2>
+<h2 id="nl-when">15. Wanneer kan je luisteren?</h2>
 <ul>
   <li><strong>Kerstavond, 24 december:</strong> de traditionele ochtenduitzending. In 2025 was het patroon: livestream 07:20 UTC, opstart 07:30 UTC, boodschap <strong>08:00 UTC</strong> (09:00 Belgische tijd). Enkele dagen vooraf waren er testuitzendingen, in de namiddag.</li>
   <li><strong>Alexanderson Day:</strong> een zondag rond 2 juli, meestal met een uitzending in de voor- en in de namiddag.</li>
@@ -1184,7 +1180,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </div>
 <p>Tijdens veel uitzendingen is ook het amateurstation <strong>SK6SAQ</strong> actief op de HF-banden in CW en SSB, met een eigen QSL.</p>
 
-<h2 id="nl-checklist">15. Checklist voor de uitzenddag</h2>
+<h2 id="nl-checklist">16. Checklist voor de uitzenddag</h2>
 <div class="saq-box saq-check">
   <p class="saq-box-label">De dag ervoor</p>
   <ul>
@@ -1211,7 +1207,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 <p>Dank je, Eddy, voor de antenne, het artikel en het duwtje. Ik hoop op kerstavond de VVV door de ruis te horen komen, en hier verslag uit te brengen.</p>
 <p class="saq-sign">73 de ON3VZ</p>
 
-<h2 id="nl-sources">16. Bronnen en beeldvermelding</h2>
+<h2 id="nl-sources">17. Bronnen en beeldvermelding</h2>
 <h3>Bronnen</h3>
 <ul class="saq-sources">
   <li>Alexander Grimeton Friendship Association: <a href="https://alexander.n.se/en/">alexander.n.se</a> (zender, ontvangst, uitzendingen, forum, rapportformulier).</li>
@@ -1229,7 +1225,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ul>
 <h3>Beeldvermelding</h3>
 <ul class="saq-sources">
-  <li>Fig. 1, 2, 3, 9a, 10 en het bouwplan: tekeningen van ON3VZ voor dit artikel, naar het ontwerp van Eddy ON5JK.</li>
+  <li>Fig. 1, 2, 3, 9a tot 9c, 10 en het bouwplan: tekeningen van ON3VZ voor dit artikel, naar het ontwerp van Eddy ON5JK.</li>
   <li>Fig. 4 tot 9 en 11: Eddy ON5JK, uit CQ-QSO 05/06-2010.</li>
   <li>Foto's van Grimeton: Hans Lindqvist (CC BY-SA 3.0), Gunther Tschuch (CC BY 2.5), Grimetonmasterna.jpg (CC BY-SA 3.0) en de foto van het hoofdgebouw, allemaal via Wikimedia Commons.</li>
 </ul>
