@@ -257,7 +257,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </figure>
 
 <h2 id="en-build">8. Eddy's loop: how it is built</h2>
-<p>The loop I adopted is exactly the one Eddy described in CQ-QSO 05/06-2010 ("SAQ, De wondere wereld van weleer"). He was inspired by the article "Logging SAQ" by ON5EX in CQ-QSO 3-4/2008, and he credits Guido ON6RL and Luc ON4AOL for bringing him to it. His build, in his own order:</p>
+<p>The loop I adopted is exactly the one Eddy described in CQ-QSO 05/06-2010 ("SAQ, De wondere wereld van weleer"). UBA members can read the original in the <a href="https://www.uba.be/nl/onthaal/e-cq-qso/cq-qso">CQ-QSO archive</a>. He was inspired by the article "Logging SAQ" by ON5EX in CQ-QSO 3-4/2008, and he credits Guido ON6RL and Luc ON4AOL for bringing him to it. His build, in his own order:</p>
 
 <h3>The cross</h3>
 <ul>
@@ -467,7 +467,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <li>Grimeton Radio Station, World Heritage: <a href="https://grimeton.org/">grimeton.org</a>.</li>
   <li>Robert Petersson, "Generating 200 kW of CW in the 1920s", CWRF 2026, Lund.</li>
   <li>FHT, "History of antennas in Sweden".</li>
-  <li>Eddy ON5JK, "SAQ, De wondere wereld van weleer", CQ-QSO 05/06-2010, pages 22 to 23.</li>
+  <li>Eddy ON5JK, "SAQ, De wondere wereld van weleer", CQ-QSO 05/06-2010, pages 22 to 23, in the <a href="https://www.uba.be/nl/onthaal/e-cq-qso/cq-qso">UBA CQ-QSO archive</a> (UBA members only).</li>
   <li>ON5EX, "Logging SAQ", CQ-QSO 3-4/2008.</li>
   <li>DL4YHF, "Using a PC with soundcard as a VLF receiver" and Spectrum Lab: <a href="https://www.qsl.net/dl4yhf/spectra1.html">qsl.net/dl4yhf</a>.</li>
   <li>SM6LKM, SAQrx VLF receiver: <a href="https://sites.google.com/site/sm6lkm/saqrx-vlf-receiver">sites.google.com/site/sm6lkm</a>.</li>
@@ -689,7 +689,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </figure>
 
 <h2 id="nl-build">8. Eddy's raamantenne: zo is ze gebouwd</h2>
-<p>Het raam dat ik adopteerde is exact het raam dat Eddy beschreef in CQ-QSO 05/06-2010 ("SAQ, De wondere wereld van weleer"). Hij werd geïnspireerd door het artikel "Logging SAQ" van ON5EX in CQ-QSO 3-4/2008, en hij bedankt Guido ON6RL en Luc ON4AOL die hem er eigenlijk toe brachten. Zijn bouw, in zijn eigen volgorde:</p>
+<p>Het raam dat ik adopteerde is exact het raam dat Eddy beschreef in CQ-QSO 05/06-2010 ("SAQ, De wondere wereld van weleer"). UBA-leden kunnen het origineel lezen in het <a href="https://www.uba.be/nl/onthaal/e-cq-qso/cq-qso">CQ-QSO-archief</a>. Hij werd geïnspireerd door het artikel "Logging SAQ" van ON5EX in CQ-QSO 3-4/2008, en hij bedankt Guido ON6RL en Luc ON4AOL die hem er eigenlijk toe brachten. Zijn bouw, in zijn eigen volgorde:</p>
 
 <h3>Het kruis</h3>
 <ul>
@@ -897,7 +897,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <li>Grimeton Radio Station, Werelderfgoed: <a href="https://grimeton.org/">grimeton.org</a>.</li>
   <li>Robert Petersson, "Generating 200 kW of CW in the 1920s", CWRF 2026, Lund.</li>
   <li>FHT, "History of antennas in Sweden".</li>
-  <li>Eddy ON5JK, "SAQ, De wondere wereld van weleer", CQ-QSO 05/06-2010, pagina 22 en 23.</li>
+  <li>Eddy ON5JK, "SAQ, De wondere wereld van weleer", CQ-QSO 05/06-2010, pagina 22 en 23, in het <a href="https://www.uba.be/nl/onthaal/e-cq-qso/cq-qso">CQ-QSO-archief van de UBA</a> (enkel voor UBA-leden).</li>
   <li>ON5EX, "Logging SAQ", CQ-QSO 3-4/2008.</li>
   <li>DL4YHF, "Using a PC with soundcard as a VLF receiver" en Spectrum Lab: <a href="https://www.qsl.net/dl4yhf/spectra1.html">qsl.net/dl4yhf</a>.</li>
   <li>SM6LKM, SAQrx VLF receiver: <a href="https://sites.google.com/site/sm6lkm/saqrx-vlf-receiver">sites.google.com/site/sm6lkm</a>.</li>
