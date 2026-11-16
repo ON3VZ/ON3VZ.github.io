@@ -302,9 +302,27 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 
 <figure class="saq-fig saq-narrow">
   <img src="/assets/images/saq/saq-eddy-fig7-finished-loop.jpg" alt="Eddy's finished diamond shaped loop in front of a garage door" loading="lazy">
-  <figcaption><span class="saq-figno">Fig. 9</span> The finished loop, mounted as a diamond. Eddy refers to this first loop as his 107 cm loop; his second loop measures 127 cm. Photo: Eddy ON5JK, CQ-QSO 05/06-2010.</figcaption>
+  <figcaption><span class="saq-figno">Fig. 9</span> The finished loop, mounted as a diamond. The frame measures 107 cm from tip to tip; Eddy's second loop measures 127 cm. Photo: Eddy ON5JK, CQ-QSO 05/06-2010.</figcaption>
 </figure>
-<!-- PHOTO SLOT: own high resolution photos of the adopted loop (ON3VZ), and verify which dimension the 107 cm refers to. -->
+
+<h3 id="en-buildplan">The complete build plan</h3>
+<p>For anyone who wants to build this loop, I worked Eddy's article out into a technical build plan, as an engineer would: a general arrangement drawing with all dimensions, detail drawings, a bill of materials with item numbers, the electrical schematic, the design calculation, build steps with a check after each step, a tuning procedure, troubleshooting and a final inspection list.</p>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet1-en.svg" alt="General arrangement drawing of the SAQ loop antenna with front view, side view and bill of materials" loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9a</span> General arrangement, sheet 1 of 3. Drawing: ON3VZ, after the design of Eddy ON5JK.</figcaption>
+</figure>
+<div class="saq-box saq-mean">
+  <p class="saq-box-label">Three things the drawing revealed</p>
+  <ul>
+    <li><strong>107 cm explained.</strong> The four 56 cm arms are glued against the sides of the 50 mm block like a pinwheel, so each arm end lies 535 mm from the centre: 1070 mm tip to tip, exactly the 107 cm Eddy mentions.</li>
+    <li><strong>The block is as deep as the tube is wide.</strong> The two long laths sit on the front and back of the block, and the 35 to 36 mm mast tube is clamped between them. Laths, block and tube form one sandwich.</li>
+    <li><strong>Calculation and measurement agree.</strong> The coil formula gives about 1.33 mH, Eddy measured 1.6 mH. With 60 nF plus coax and wiring, both land near 17.2 kHz. The measured curve corresponds to a loaded Q of about 8, so roughly 2 kHz of bandwidth: wide enough to be forgiving, narrow enough to block hum and other stations.</li>
+  </ul>
+</div>
+<div class="saq-langbar">
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Download build plan (English, PDF)</a>
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Download bouwplan (Nederlands, PDF)</a>
+</div>
 
 <h2 id="en-aim">9. Placing and aiming the loop from JO21EE</h2>
 <div class="saq-box saq-steps">
@@ -477,7 +495,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ul>
 <h3>Image credits</h3>
 <ul class="saq-sources">
-  <li>Fig. 1, 2, 3, 10: drawings by ON3VZ for this article.</li>
+  <li>Fig. 1, 2, 3, 9a, 10 and the build plan: drawings by ON3VZ for this article, after the design of Eddy ON5JK.</li>
   <li>Fig. 4 to 9 and 11: Eddy ON5JK, from CQ-QSO 05/06-2010.</li>
   <li>Photos of Grimeton: Hans Lindqvist (CC BY-SA 3.0), Gunther Tschuch (CC BY 2.5), Grimetonmasterna.jpg (CC BY-SA 3.0) and the main building photo, all via Wikimedia Commons.</li>
 </ul>
@@ -734,8 +752,27 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 
 <figure class="saq-fig saq-narrow">
   <img src="/assets/images/saq/saq-eddy-fig7-finished-loop.jpg" alt="Eddy's afgewerkte ruitvormige raamantenne voor een garagepoort" loading="lazy">
-  <figcaption><span class="saq-figno">Fig. 9</span> Het afgewerkte raam, als ruit gemonteerd. Eddy noemt dit eerste raam zijn raam van 107 cm; zijn tweede raam meet 127 cm. Foto: Eddy ON5JK, CQ-QSO 05/06-2010.</figcaption>
+  <figcaption><span class="saq-figno">Fig. 9</span> Het afgewerkte raam, als ruit gemonteerd. Het frame meet 107 cm van punt tot punt; Eddy's tweede raam meet 127 cm. Foto: Eddy ON5JK, CQ-QSO 05/06-2010.</figcaption>
 </figure>
+
+<h3 id="nl-buildplan">Het volledige bouwplan</h3>
+<p>Voor wie dit raam wil nabouwen, werkte ik Eddy's artikel uit tot een technisch bouwplan, zoals een ingenieur dat zou doen: een overzichtstekening met alle maten, detailtekeningen, een stuklijst met positienummers, het elektrisch schema, de ontwerpberekening, bouwstappen met een controle na elke stap, een afregelprocedure, foutzoeken en een eindcontrole.</p>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet1-nl.svg" alt="Overzichtstekening van de SAQ-raamantenne met vooraanzicht, zijaanzicht en stuklijst" loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9a</span> Overzichtstekening, blad 1 van 3. Tekening: ON3VZ, naar het ontwerp van Eddy ON5JK.</figcaption>
+</figure>
+<div class="saq-box saq-mean">
+  <p class="saq-box-label">Drie dingen die de tekening blootlegde</p>
+  <ul>
+    <li><strong>De 107 cm verklaard.</strong> De vier armen van 56 cm zijn als een molenwiek tegen de zijden van het blok van 50 mm gelijmd, dus elk armuiteinde ligt op 535 mm van het centrum: 1070 mm van punt tot punt, precies de 107 cm die Eddy noemt.</li>
+    <li><strong>Het blok is even diep als de buis breed.</strong> De twee lange latten zitten voor en achter het blok, en de mastbuis van 35 tot 36 mm zit ertussen geklemd. Latten, blok en buis vormen één sandwich.</li>
+    <li><strong>Berekening en meting kloppen.</strong> De spoelformule geeft ongeveer 1,33 mH, Eddy mat 1,6 mH. Met 60 nF plus coax en bedrading komen beide uit bij ongeveer 17,2 kHz. De gemeten curve komt overeen met een belaste Q van ongeveer 8, dus zo'n 2 kHz bandbreedte: breed genoeg om vergevingsgezind te zijn, smal genoeg om brom en andere zenders tegen te houden.</li>
+  </ul>
+</div>
+<div class="saq-langbar">
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Download bouwplan (Nederlands, pdf)</a>
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Download build plan (English, PDF)</a>
+</div>
 
 <h2 id="nl-aim">9. Het raam plaatsen en richten vanuit JO21EE</h2>
 <div class="saq-box saq-steps">
@@ -907,7 +944,7 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 </ul>
 <h3>Beeldvermelding</h3>
 <ul class="saq-sources">
-  <li>Fig. 1, 2, 3, 10: tekeningen van ON3VZ voor dit artikel.</li>
+  <li>Fig. 1, 2, 3, 9a, 10 en het bouwplan: tekeningen van ON3VZ voor dit artikel, naar het ontwerp van Eddy ON5JK.</li>
   <li>Fig. 4 tot 9 en 11: Eddy ON5JK, uit CQ-QSO 05/06-2010.</li>
   <li>Foto's van Grimeton: Hans Lindqvist (CC BY-SA 3.0), Gunther Tschuch (CC BY 2.5), Grimetonmasterna.jpg (CC BY-SA 3.0) en de foto van het hoofdgebouw, allemaal via Wikimedia Commons.</li>
 </ul>
