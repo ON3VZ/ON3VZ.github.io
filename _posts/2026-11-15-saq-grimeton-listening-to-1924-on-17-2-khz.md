@@ -41,6 +41,13 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
 .saq-morse { display: block; margin: .4rem 0; font-family: var(--f-mono); }
 .saq-article table { font-size: .88rem !important; }
 .saq-article table thead th { background: var(--saq-blue) !important; color: #fff !important; }
+.saq-details { margin: 1rem 0 2rem; border: 1px solid var(--c-border); border-radius: 12px; padding: .6rem 1.2rem; }
+.saq-details summary { cursor: pointer; font-weight: 700; color: var(--saq-blue); padding: .4rem 0; }
+.saq-details[open] summary { margin-bottom: 1rem; border-bottom: 1px solid var(--c-border); }
+.saq-details h4 { color: var(--saq-blue) !important; margin-top: 1.6rem; }
+.saq-tablewrap { overflow-x: auto; }
+.saq-details ul.check { list-style: none; padding-left: 0; } .saq-details ul.check li:before { content: "\2610  "; }
+.saq-details ol.steps i { color: var(--saq-green); font-style: normal; font-weight: 700; }
 .saq-sign { font-family: var(--f-mono); font-weight: 700; color: var(--saq-blue) !important; }
 .saq-small { font-size: .82rem; color: var(--c-text-3) !important; }
 @media (max-width: 640px) { .saq-pair { grid-template-columns: 1fr; } .saq-toc ol { columns: 1; } .saq-mast-1 { font-size: 2rem; } .saq-mast-2 { font-size: 1.25rem; } }
@@ -50,6 +57,8 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <button type="button" data-saq-lang="en" aria-pressed="true">English</button>
   <button type="button" data-saq-lang="nl" aria-pressed="false">Nederlands</button>
   <a href="/assets/files/ON3VZ-SAQ-Grimeton-NL.pdf" download>Download PDF (Nederlands)</a>
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Build plan (EN, PDF)</a>
+  <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Bouwplan (NL, pdf)</a>
 </div>
 <section class="saq-lang" data-lang="en" lang="en">
 <div class="saq-masthead">
@@ -323,6 +332,144 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Download build plan (English, PDF)</a>
   <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Download bouwplan (Nederlands, PDF)</a>
 </div>
+
+<details class="saq-details">
+<summary>Show the full build plan: drawings, calculation, bill of materials, build steps, tuning and checks</summary>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet2-en.svg" alt="Sheet 2 of 3: details A hub, B wire guide, C mast clamp, D tuning box." loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9b</span> Sheet 2 of 3: details A hub, B wire guide, C mast clamp, D tuning box. Drawing: ON3VZ, after the design of Eddy ON5JK.</figcaption>
+</figure>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet3-en.svg" alt="Sheet 3 of 3: electrical schematic, tuning set-up and design data." loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9c</span> Sheet 3 of 3: electrical schematic, tuning set-up and design data. Drawing: ON3VZ, after the design of Eddy ON5JK.</figcaption>
+</figure>
+
+<h4>1. Purpose and documents</h4>
+<p>This file describes the tuned loop antenna of Eddy ON5JK in a way that makes it reproducible to build, tune and check. It goes with the drawings in this section:</p>
+<div class="saq-tablewrap"><table><tr><th>Drawing</th><th>Content</th></tr>
+<tr><td>ON3VZ-SAQ-LOOP-01</td><td>General arrangement: front and side view 1:10, bill of materials, notes</td></tr>
+<tr><td>ON3VZ-SAQ-LOOP-02</td><td>Details: A hub, B wire guide, C mast clamp, D tuning box</td></tr>
+<tr><td>ON3VZ-SAQ-LOOP-03</td><td>Electrical schematic passive and active, test set-up, design data</td></tr></table></div>
+<div class="saq-box saq-steps"><b>Evidence level of every value.</b> Values without brackets come from the article. Values <b>(in brackets)</b> are derived (calculated from source values) or a suggestion where the source says nothing. You may adapt the latter to your material.</div>
+
+<h4>2. The design in short</h4>
+<ul>
+<li>Four wooden arms (item 1) as a <b>pinwheel</b> against the four sides of a hub block (item 2), all in one plane. Each arm rests along the full 50 mm of the block and sticks out 510 mm.</li>
+<li>Each arm end is therefore 535 mm from the centre: <b>1070 mm tip to tip</b>. That is the "107 cm" Eddy uses for this antenna. Opposite arms are offset 57 mm sideways: the "50 mm" the article calls acceptable.</li>
+<li>The coil (item 11) has 25 turns in the grooves of four wire guides (item 4) on the arm ends. The turns lie side by side at a 2 mm pitch, at right angles to the loop plane.</li>
+<li>Two support laths (item 3) sit on the front and back face of the hub. The aluminium mast tube (item 6) is clamped between them with two bolts. The hub is therefore <b>(35) mm</b> deep: exactly the tube diameter. Laths, hub and tube form one sandwich (detail C).</li>
+<li>Electrically: a parallel circuit L1 with C1 + C2 = 60 nF, via BNC and RG-58 to the shack, and there via a 600 ohm / 10 kohm microphone transformer to the sound card. Optionally a FET buffer at the antenna.</li>
+</ul>
+
+<h4>3. Design calculation</h4>
+<div class="saq-tablewrap"><table><tr><th>Quantity</th><th>Value</th><th>Origin</th></tr>
+<tr><td>Arm end from centre</td><td>560 - 25 = 535 mm</td><td>derived</td></tr>
+<tr><td>Wire position at the tip</td><td>(about 543 mm, 8 mm outside the lath)</td><td>derived</td></tr>
+<tr><td>Loop side (wire)</td><td>(769 mm)</td><td>derived</td></tr>
+<tr><td>Wire per turn / total</td><td>(3.08 m / 77 m; buy 90 m)</td><td>derived</td></tr>
+<tr><td>Loop area</td><td>(0.59 m²)</td><td>derived</td></tr>
+<tr><td>Inductance calculated (Grover, square coil, 25 turns, winding width 50 mm)</td><td>(1.33 mH)</td><td>derived</td></tr>
+<tr><td>Inductance measured by Eddy</td><td>1.6 mH</td><td>source</td></tr>
+<tr><td>Required C for 17.2 kHz: C = 1 / ((2&pi;f)² L)</td><td>(53.5 nF at 1.6 mH; 64 nF at 1.33 mH)</td><td>derived</td></tr>
+<tr><td>C used</td><td>33 nF + 27 nF = 60 nF</td><td>source</td></tr>
+<tr><td>Measured response</td><td>peak 17.2 kHz; -20 dB at 9.6 and 30 kHz</td><td>source</td></tr>
+<tr><td>Loaded quality factor Q (from the -20 dB points)</td><td>(about 8)</td><td>derived</td></tr>
+<tr><td>-3 dB bandwidth = f0 / Q</td><td>(about 2 kHz)</td><td>derived</td></tr>
+<tr><td>Loop output impedance</td><td>about 2 kohm</td><td>source</td></tr></table></div>
+<p><b>Conclusion.</b> The calculated 1.33 mH and the measured 1.6 mH are close enough for a coil on a wooden frame and hobby instruments. With 60 nF plus the capacitance of coax and wiring, the resonance lands around 17 kHz in both cases. Hence Eddy's rule: <b>calculate as a starting point, tune by measuring</b>.</p>
+
+<h4>4. Bill of materials</h4>
+<div class="saq-tablewrap"><table><tr><th>Item</th><th>Qty</th><th>Description</th><th>Material / size</th><th>Origin</th></tr>
+<tr><td>1</td><td>4</td><td>Arm</td><td>Wood 7 x 35 x 560 mm</td><td>source</td></tr>
+<tr><td>2</td><td>1</td><td>Hub block</td><td>Wood 50 x 50 mm, depth (35)</td><td>source, depth derived</td></tr>
+<tr><td>3</td><td>2</td><td>Support lath</td><td>Wood 7 x 35 x 1120 mm</td><td>source</td></tr>
+<tr><td>4</td><td>4</td><td>Wire guide</td><td>PVC conduit 5/8" with M16 thread (or 20 mm with M20), length (55), split lengthwise</td><td>source, length derived</td></tr>
+<tr><td>5</td><td>1</td><td>Bracing cord</td><td>Nylon, (3 m)</td><td>source</td></tr>
+<tr><td>6</td><td>1</td><td>Mast tube</td><td>Aluminium, diameter 35 to 36 mm, 500 mm</td><td>source</td></tr>
+<tr><td>7</td><td>2 + 1</td><td>Bolt, washers, nut</td><td>Stainless, through (M6 x 70); 1 extra as locking bolt in the mast</td><td>source, size suggested</td></tr>
+<tr><td>8</td><td>1</td><td>Tuning box</td><td>Plastic (about 100 x 80 x 50 mm, IP54)</td><td>source, size suggested</td></tr>
+<tr><td>9</td><td>1</td><td>BNC chassis socket</td><td>Central nut fixing</td><td>source</td></tr>
+<tr><td>10</td><td>1</td><td>Rain cap</td><td>Brass hose nut + about 100 mm plastic tube 1"</td><td>source</td></tr>
+<tr><td>11</td><td>1</td><td>Coil L1</td><td>Enamelled copper (transformer wire), 25 turns, (0.5 to 0.8 mm diameter)</td><td>source, diameter suggested</td></tr>
+<tr><td>12</td><td>1 + 1</td><td>C1, C2</td><td>33 nF and 27 nF, (film, 5 %, 100 V or more); (set of 1 to 4.7 nF for trimming)</td><td>source, type suggested</td></tr>
+<tr><td>13</td><td>-</td><td>Coax</td><td>RG-58 with BNC plugs</td><td>source</td></tr>
+<tr><td>14</td><td>1</td><td>Microphone transformer</td><td>600 ohm / 10 kohm, in the shack</td><td>source</td></tr>
+<tr><td>15</td><td>1</td><td>Amplifier box (option)</td><td>FET buffer after the PA0RDT Miniwhip, without the antenna plate; 56 nF coupling; 9 to 12 V via the coax</td><td>source</td></tr>
+<tr><td>16</td><td>-</td><td>Glue, sealant</td><td>Outdoor glue or mounting kit (article: TEK7), silicone</td><td>source</td></tr></table></div>
+
+<h4>5. Cutting list and tolerances</h4>
+<div class="saq-tablewrap"><table><tr><th>Part</th><th>Size (mm)</th><th>Tolerance / check</th></tr>
+<tr><td>4 arms</td><td>560 x 35 x 7</td><td>(&plusmn; 1). Equal length within the set matters more than the absolute size.</td></tr>
+<tr><td>2 support laths</td><td>1120 x 35 x 7</td><td>(&plusmn; 2)</td></tr>
+<tr><td>Hub block</td><td>50 x 50 x (35)</td><td>Depth = tube diameter, so the tube clamps.</td></tr>
+<tr><td>Mast tube</td><td>500, diameter 35-36</td><td>Straight, deburr the ends.</td></tr>
+<tr><td>4 wire guides</td><td>(55) with M16, (65) with M20</td><td>At least 25 good grooves; M16 pitch 2.0 mm gives 50 mm, M20 pitch 2.5 mm gives 62.5 mm.</td></tr>
+<tr><td>Rain cap</td><td>(100), tube 1"</td><td>Open at the bottom so water can drain.</td></tr></table></div>
+
+<h4>6. Tools</h4>
+<p>Fine saw, square, tape measure, glue clamps; drill with bits of 0.5 mm (coil wire), 2 to 3 mm (cord) and for the bolts; M16 or M20 die with a vice; soldering iron, multimeter. For tuning: an LCR or L/C meter, an LF generator, a 2 kohm resistor and a millivoltmeter or oscilloscope. Eddy used the L/C meter built in the WLD section and an HP339A.</p>
+
+<h4>7. Build steps</h4>
+<ol class="steps">
+<li><b>Dry fit hub and arms (items 1, 2, detail A).</b> Lay the block flat. Place each arm on its edge (35 mm high) against a different side of the block, with the arm end flush with the corner of the block: the cross turns like a pinwheel. <i>Check:</i> tip to tip 1070 mm in both directions, equal within 2 mm.</li>
+<li><b>Glue.</b> Glue the four arms to the block and clamp until cured. Keep everything flat on the table so the arms lie in one plane. <i>Check:</i> no glue where the wire will run.</li>
+<li><b>Square up with the cord (item 5).</b> Drill a 2 to 3 mm hole in each arm, 300 mm from the centre. Thread the nylon cord around, tension evenly and knot. <i>Check:</i> measure the four sides of the cord diamond; they are equal. Then the cross is square.</li>
+<li><b>Make the wire guides (item 4, detail B).</b> Cut the thread along the full length of four pieces of tube, saw them in half lengthwise, deburr the grooves. <i>Check:</i> four identical halves with at least 25 good grooves each.</li>
+<li><b>Fit the wire guides.</b> Open each half slightly and clamp it over an arm end, with the grooves at right angles to the loop plane. Fix with a little glue. <i>Check:</i> groove 1 is on the same side (for example the front) at all four tips.</li>
+<li><b>Support laths and mast tube (items 3, 6, 7, detail C).</b> Glue or screw the two support laths to the front and back face of the hub, parallel to the lower arm and pointing down. Slide the tube between the laths so that 250 mm sticks out below them. Drill two holes through lath, tube and lath and fit the stainless bolts. <i>Check:</i> no play, tube in line with the lower arm.</li>
+<li><b>Holes for the coil wire.</b> Drill two 0.5 mm holes in the lower arm, just above the wire guide. <i>Check:</i> the enamelled wire passes twice without damaging the enamel.</li>
+<li><b>Wind the coil (item 11).</b> Pass the start of the wire twice through the first hole. Lay turn 1 in groove 1 at all four tips, turn 2 in groove 2, and so on up to 25. Keep light tension, never cross turns. Fix the end in the second hole. <i>Check:</i> 25 turns, enamel intact (multimeter: continuity from start to end, no contact with tube or bolts).</li>
+<li><b>Tuning box (items 8, 9, 10, detail D).</b> Mount the box on the support lath level with the lower tip. Drill two 0.5 mm holes for the coil wires and a hole for the BNC socket. Fit two solder tags opposite each other inside. Put the brass nut between box and BNC below the box and seal with glue or silicone.</li>
+<li><b>Wiring (item 12).</b> Scrape or sand the enamel off the wire ends and solder start and end to one tag each. Solder C1 (33 nF) and C2 (27 nF) between the two tags, in parallel with the coil. Connect the BNC centre pin to one tag and the BNC ground to the other. Keep all leads short.</li>
+<li><b>Seal.</b> After connecting the coax, slide the 1" tube over the brass nut as a rain cap. Make a drip loop in the coax. <i>Check:</i> water can drain downwards, the weight of the coax does not pull on the BNC.</li>
+<li><b>Option: FET buffer (item 15).</b> A second box below the first, with a PA0RDT Miniwhip board without the antenna plate. Couple the tuned circuit to the FET input via 56 nF and feed 9 to 12 V through the coax (bias tee in the shack). Use a complete, checked Miniwhip schematic for this; the article gives no component values.</li>
+</ol>
+
+<h4>8. Tuning to 17.2 kHz</h4>
+<ol class="steps">
+<li><b>Measure the inductance.</b> Measure L between start and end of the coil with the capacitors disconnected. Expect 1.3 to 1.6 mH. Write it down.</li>
+<li><b>Calculate the starting capacitance.</b> C = 1 / ((2&pi; x 17200)² x L). At 1.6 mH that is 53.5 nF. After measuring, Eddy ended at 60 nF. Start with 60 nF.</li>
+<li><b>Test set-up (sheet 3).</b> LF generator through a 2 kohm series resistor onto the loop circuit, millivoltmeter across the loop circuit. Connect the final coax: it is part of the tuning.</li>
+<li><b>Sweep.</b> Turn the generator slowly from 9 to 35 kHz and note the voltage at every kHz. Find the frequency with the highest voltage.</li>
+<li><b>Adjust.</b> Peak too low: remove capacitance. Peak too high: add a small capacitor (1 to 4.7 nF) in parallel. Repeat until the peak is at 17.2 kHz.</li>
+<li><b>Check.</b> At 9.6 and 30 kHz the voltage should be about 20 dB (a factor 10) below the peak. Record L, C, coax length, peak frequency and date.</li>
+</ol>
+<div class="saq-box saq-steps">No instruments? You can also tune on the signal itself: watch the Spectrum Lab waterfall during a test transmission or on another VLF station, and keep the capacitor value that gives the strongest signal.</div>
+
+<h4>9. Installation and aiming</h4>
+<ul>
+<li>Mount outdoors and as high as is safe; Eddy used about 6 m, with the support tube clamped to the balustrade of his garden stairs.</li>
+<li>Slide the free 250 mm of tube into or over the mast and lock it with a cross bolt. The antenna must be able to rotate.</li>
+<li>From JO21EE: <b>the plane of the loop towards 35 degrees</b> (or 215 degrees, which is the same). Fine tune on the null, then turn back 90 degrees.</li>
+<li>Away from mains wiring, solar inverters, LED drivers and chargers. Work at height with two people. Disconnect the coax during thunderstorms.</li>
+</ul>
+
+<h4>10. Troubleshooting</h4>
+<div class="saq-tablewrap"><table><tr><th>Symptom</th><th>Likely cause</th><th>Action</th></tr>
+<tr><td>No continuity between coil ends</td><td>Enamel not removed, broken wire</td><td>Measure directly on the wire ends, repair, relieve strain.</td></tr>
+<tr><td>Peak below 17.2 kHz</td><td>Too much C, or more L than expected</td><td>Reduce capacitance.</td></tr>
+<tr><td>Peak above 17.2 kHz</td><td>Too little C</td><td>Add a small capacitor in parallel.</td></tr>
+<tr><td>Very broad, low peak</td><td>Too heavy load, moisture, shorted turn</td><td>Measure without coax and transformer; inspect box and turns.</td></tr>
+<tr><td>Line at 15.625 kHz in the waterfall</td><td>CRT television or switching supply nearby</td><td>Turn the loop to null it, or switch the source off.</td></tr>
+<tr><td>No noise above 16 kHz in the waterfall</td><td>Sound card input filters high tones</td><td>Other input or a USB sound card, 48 kHz sample rate or more.</td></tr>
+<tr><td>Active stage oscillates or is noisy</td><td>Supply, bias tee or layout</td><td>Test passively first; check the amplifier schematic.</td></tr></table></div>
+
+<h4>11. Final inspection</h4>
+<ul class="check">
+<li>Arms square, in one plane, 1070 mm tip to tip; cord tensioned.</li>
+<li>25 turns in the grooves, not crossed, enamel intact.</li>
+<li>Coil ends mechanically anchored and well soldered.</li>
+<li>C1 and C2 in parallel, values and any trimming capacitors recorded.</li>
+<li>BNC, box and rain cap strain relieved and watertight, opening downwards.</li>
+<li>Mast tube held by two bolts, 250 mm free, locking bolt present, antenna rotatable.</li>
+<li>Resonance measured at 17.2 kHz with the final coax.</li>
+<li>With the active option: supply voltage and polarity checked and labelled.</li>
+</ul>
+
+<h4>12. Sources and revision</h4>
+<p>Eddy ON5JK (WLD section), "SAQ, De wondere wereld van weleer", CQ-QSO 05/06-2010, pp. 22-23 (UBA members: CQ-QSO archive on uba.be). Inductance formula: F. W. Grover, Inductance Calculations, square multilayer coil (Rosa/Grover formula). Miniwhip: PA0RDT. Revision A, 16 November 2026: first issue. Full article and background on SAQ: on3vz.github.io, blog "SAQ Grimeton".</p>
+
+</details>
 
 <h2 id="en-aim">9. Placing and aiming the loop from JO21EE</h2>
 <div class="saq-box saq-steps">
@@ -773,6 +920,144 @@ excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ 
   <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-NL.pdf" download>Download bouwplan (Nederlands, pdf)</a>
   <a href="/assets/files/ON3VZ-SAQ-Loop-Build-Plan-EN.pdf" download>Download build plan (English, PDF)</a>
 </div>
+
+<details class="saq-details">
+<summary>Toon het volledige bouwplan: tekeningen, berekening, stuklijst, bouwstappen, afregeling en controles</summary>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet2-nl.svg" alt="Blad 2 van 3: details A kernblok, B draadgeleider, C mastklem, D afstemdoos." loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9b</span> Blad 2 van 3: details A kernblok, B draadgeleider, C mastklem, D afstemdoos. Tekening: ON3VZ, naar het ontwerp van Eddy ON5JK.</figcaption>
+</figure>
+<figure class="saq-fig">
+  <img src="/assets/images/saq/saq-loop-sheet3-nl.svg" alt="Blad 3 van 3: elektrisch schema, meetopstelling en ontwerpgegevens." loading="lazy">
+  <figcaption><span class="saq-figno">Fig. 9c</span> Blad 3 van 3: elektrisch schema, meetopstelling en ontwerpgegevens. Tekening: ON3VZ, naar het ontwerp van Eddy ON5JK.</figcaption>
+</figure>
+
+<h4>1. Doel en documenten</h4>
+<p>Dit dossier beschrijft de afgestemde raamantenne van Eddy ON5JK zo dat ze reproduceerbaar te bouwen, af te regelen en te controleren is. Het hoort bij de tekeningen in dit hoofdstuk:</p>
+<div class="saq-tablewrap"><table><tr><th>Tekening</th><th>Inhoud</th></tr>
+<tr><td>ON3VZ-SAQ-LOOP-01</td><td>Overzichtstekening: voor- en zijaanzicht 1:10, stuklijst, opmerkingen</td></tr>
+<tr><td>ON3VZ-SAQ-LOOP-02</td><td>Details: A kernblok, B draadgeleider, C mastklem, D afstemdoos</td></tr>
+<tr><td>ON3VZ-SAQ-LOOP-03</td><td>Elektrisch schema passief en actief, meetopstelling, ontwerpgegevens</td></tr></table></div>
+<div class="saq-box saq-steps"><b>Bewijsniveau van elke waarde.</b> Waarden zonder haakjes komen uit het artikel. Waarden <b>(tussen haakjes)</b> zijn afgeleid (berekend uit bronwaarden) of een voorstel waar de bron niets zegt. Die laatste mag je aanpassen aan je materiaal.</div>
+
+<h4>2. Ontwerp in het kort</h4>
+<ul>
+<li>Vier houten armen (pos. 1) als <b>molenwiek</b> tegen de vier zijden van een kernblok (pos. 2), allemaal in één vlak. Elke arm ligt over de volle 50 mm tegen het blok en steekt 510 mm uit.</li>
+<li>Daardoor ligt elk armuiteinde op 535 mm van het centrum: <b>1070 mm van punt tot punt</b>. Dat is de "107 cm" waarmee Eddy deze antenne aanduidt. Tegenoverliggende armen liggen 57 mm zijwaarts verschoven: de "50 mm" die het artikel aanvaardbaar noemt.</li>
+<li>De spoel (pos. 11) telt 25 windingen in de groeven van vier draadgeleiders (pos. 4) op de armuiteinden. De windingen liggen naast elkaar met een spoed van 2 mm, haaks op het raamvlak.</li>
+<li>Twee steunlatten (pos. 3) zitten op voor- en achtervlak van het kernblok. De aluminium mastbuis (pos. 6) zit ertussen geklemd met twee bouten. Het kernblok is daarom <b>(35) mm</b> diep: precies de buisdiameter. Latten, blok en buis vormen zo één sandwich (detail C).</li>
+<li>Elektrisch: een parallelkring L1 met C1 + C2 = 60 nF, via BNC en RG-58 naar de shack, en daar via een microfoontransformator 600 ohm / 10 kohm naar de geluidskaart. Optioneel een FET-buffer aan de antenne.</li>
+</ul>
+
+<h4>3. Ontwerpberekening</h4>
+<div class="saq-tablewrap"><table><tr><th>Grootheid</th><th>Waarde</th><th>Herkomst</th></tr>
+<tr><td>Armuiteinde vanaf centrum</td><td>560 - 25 = 535 mm</td><td>afgeleid</td></tr>
+<tr><td>Draadpositie aan de punt</td><td>(ongeveer 543 mm, 8 mm buiten de lat)</td><td>afgeleid</td></tr>
+<tr><td>Zijde van het raam (draad)</td><td>(769 mm)</td><td>afgeleid</td></tr>
+<tr><td>Draad per winding / totaal</td><td>(3,08 m / 77 m; koop 90 m)</td><td>afgeleid</td></tr>
+<tr><td>Oppervlak van het raam</td><td>(0,59 m²)</td><td>afgeleid</td></tr>
+<tr><td>Zelfinductie berekend (Grover, vierkante spoel, 25 wdg, wikkelbreedte 50 mm)</td><td>(1,33 mH)</td><td>afgeleid</td></tr>
+<tr><td>Zelfinductie gemeten door Eddy</td><td>1,6 mH</td><td>bron</td></tr>
+<tr><td>Nodige C voor 17,2 kHz: C = 1 / ((2&pi;f)² L)</td><td>(53,5 nF bij 1,6 mH; 64 nF bij 1,33 mH)</td><td>afgeleid</td></tr>
+<tr><td>Gebruikte C</td><td>33 nF + 27 nF = 60 nF</td><td>bron</td></tr>
+<tr><td>Gemeten respons</td><td>piek 17,2 kHz; -20 dB op 9,6 en 30 kHz</td><td>bron</td></tr>
+<tr><td>Belaste kwaliteitsfactor Q (uit de -20 dB-punten)</td><td>(ongeveer 8)</td><td>afgeleid</td></tr>
+<tr><td>-3 dB bandbreedte = f0 / Q</td><td>(ongeveer 2 kHz)</td><td>afgeleid</td></tr>
+<tr><td>Uitgangsimpedantie van het raam</td><td>ongeveer 2 kohm</td><td>bron</td></tr></table></div>
+<p><b>Conclusie.</b> De berekende 1,33 mH en de gemeten 1,6 mH liggen dicht genoeg bij elkaar voor een spoel met houten frame en meetinstrumenten uit de hobbyhoek. Met 60 nF plus de capaciteit van coax en bedrading landt de resonantie in beide gevallen rond 17 kHz. Daarom geldt de regel van Eddy: <b>bereken als startpunt, regel af door te meten</b>.</p>
+
+<h4>4. Stuklijst</h4>
+<div class="saq-tablewrap"><table><tr><th>Pos</th><th>Aantal</th><th>Omschrijving</th><th>Materiaal / maat</th><th>Herkomst</th></tr>
+<tr><td>1</td><td>4</td><td>Arm</td><td>Hout 7 x 35 x 560 mm</td><td>bron</td></tr>
+<tr><td>2</td><td>1</td><td>Kernblok</td><td>Hout 50 x 50 mm, diepte (35)</td><td>bron, diepte afgeleid</td></tr>
+<tr><td>3</td><td>2</td><td>Steunlat</td><td>Hout 7 x 35 x 1120 mm</td><td>bron</td></tr>
+<tr><td>4</td><td>4</td><td>Draadgeleider</td><td>PVC-installatiebuis 5/8" met M16-draad (of 20 mm met M20), lengte (55), overlangs gezaagd</td><td>bron, lengte afgeleid</td></tr>
+<tr><td>5</td><td>1</td><td>Schoorkoord</td><td>Nylon, (3 m)</td><td>bron</td></tr>
+<tr><td>6</td><td>1</td><td>Mastbuis</td><td>Aluminium, diameter 35 tot 36 mm, 500 mm</td><td>bron</td></tr>
+<tr><td>7</td><td>2 + 1</td><td>Bout, ringen, moer</td><td>Inox, doorlopend (M6 x 70); 1 extra als borgbout in de mast</td><td>bron, maat voorstel</td></tr>
+<tr><td>8</td><td>1</td><td>Afstemdoos</td><td>Kunststof (ongeveer 100 x 80 x 50 mm, IP54)</td><td>bron, maat voorstel</td></tr>
+<tr><td>9</td><td>1</td><td>BNC-chassisdeel</td><td>Met centrale moerbevestiging</td><td>bron</td></tr>
+<tr><td>10</td><td>1</td><td>Regenkap</td><td>Messing slangmoer + ongeveer 100 mm kunststofbuis 1"</td><td>bron</td></tr>
+<tr><td>11</td><td>1</td><td>Spoel L1</td><td>Gelakt koperdraad (transformatordraad), 25 windingen, (diameter 0,5 tot 0,8 mm)</td><td>bron, diameter voorstel</td></tr>
+<tr><td>12</td><td>1 + 1</td><td>C1, C2</td><td>33 nF en 27 nF, (folie, 5 %, 100 V of meer); (set 1 tot 4,7 nF om bij te regelen)</td><td>bron, type voorstel</td></tr>
+<tr><td>13</td><td>-</td><td>Coax</td><td>RG-58 met BNC-stekkers</td><td>bron</td></tr>
+<tr><td>14</td><td>1</td><td>Microfoontransformator</td><td>600 ohm / 10 kohm, in de shack</td><td>bron</td></tr>
+<tr><td>15</td><td>1</td><td>Versterkerdoos (optie)</td><td>FET-buffer volgens PA0RDT Miniwhip, zonder antenneplaatje; koppeling 56 nF; voeding 9 tot 12 V via coax</td><td>bron</td></tr>
+<tr><td>16</td><td>-</td><td>Lijm, kit</td><td>Buitenlijm of montagekit (artikel: TEK7), silicone</td><td>bron</td></tr></table></div>
+
+<h4>5. Zaaglijst en toleranties</h4>
+<div class="saq-tablewrap"><table><tr><th>Onderdeel</th><th>Maat (mm)</th><th>Tolerantie / controle</th></tr>
+<tr><td>4 armen</td><td>560 x 35 x 7</td><td>(&plusmn; 1). Gelijke lengte binnen de set is belangrijker dan de absolute maat.</td></tr>
+<tr><td>2 steunlatten</td><td>1120 x 35 x 7</td><td>(&plusmn; 2)</td></tr>
+<tr><td>Kernblok</td><td>50 x 50 x (35)</td><td>Diepte = buisdiameter, zodat de buis klemt.</td></tr>
+<tr><td>Mastbuis</td><td>500, diameter 35-36</td><td>Recht, randen ontbramen.</td></tr>
+<tr><td>4 draadgeleiders</td><td>(55) bij M16, (65) bij M20</td><td>Minstens 25 gave groeven; M16 spoed 2,0 mm geeft 50 mm, M20 spoed 2,5 mm geeft 62,5 mm.</td></tr>
+<tr><td>Regenkap</td><td>(100), buis 1"</td><td>Open naar beneden, water moet weg kunnen.</td></tr></table></div>
+
+<h4>6. Gereedschap</h4>
+<p>Fijne zaag, winkelhaak, rolmaat, lijmklemmen; boormachine met boortjes 0,5 mm (spoeldraad), 2 tot 3 mm (koord) en voor de bouten; snijplaat M16 of M20 met bankschroef; soldeerbout, multimeter. Voor het afregelen: een LCR- of L/C-meter, een LF-generator, een weerstand van 2 kohm en een mV-meter of oscilloscoop. Eddy gebruikte de L/C-meter die in de sectie WLD gebouwd werd en een HP339A.</p>
+
+<h4>7. Bouwstappen</h4>
+<ol class="steps">
+<li><b>Kernblok en armen droog passen (pos. 1, 2, detail A).</b> Leg het blok plat. Leg elke arm op zijn kant (35 mm hoog) tegen een andere zijde van het blok, met het armeinde gelijk met de hoek van het blok: zo draait het kruis als een molenwiek. <i>Controle:</i> tip tot tip in beide richtingen 1070 mm, gelijk binnen 2 mm.</li>
+<li><b>Verlijmen.</b> Lijm de vier armen tegen het blok en klem tot de lijm uitgehard is. Houd alles plat op tafel, zodat de armen in één vlak liggen. <i>Controle:</i> geen lijm op de plaatsen waar de draad straks loopt.</li>
+<li><b>Haaks zetten met koord (pos. 5).</b> Boor in elke arm op 300 mm van het centrum een gaatje van 2 tot 3 mm. Rijg het nylon koord rond, trek gelijkmatig aan en knoop vast. <i>Controle:</i> meet de vier zijden van de koordruit; ze zijn gelijk. Dan staat het kruis haaks.</li>
+<li><b>Draadgeleiders maken (pos. 4, detail B).</b> Snijd op vier stukjes buis de draad over de volle lengte, zaag ze in de lengte doormidden, ontbraam de groeven. <i>Controle:</i> vier identieke helften met elk minstens 25 gave groeven.</li>
+<li><b>Draadgeleiders plaatsen.</b> Trek elke helft wat open en klem ze over een armuiteinde, met de groeven haaks op het raamvlak. Zet vast met een beetje lijm. <i>Controle:</i> groef 1 ligt op alle vier punten aan dezelfde kant (bijvoorbeeld de voorkant).</li>
+<li><b>Steunlatten en mastbuis (pos. 3, 6, 7, detail C).</b> Lijm of schroef de twee steunlatten op voor- en achtervlak van het kernblok, evenwijdig met de onderste arm en naar beneden gericht. Schuif de buis tussen de latten, zodat 250 mm onder de latten uitsteekt. Boor twee doorlopende gaten door lat, buis en lat en monteer de inox bouten. <i>Controle:</i> geen speling, buis in het verlengde van de onderste arm.</li>
+<li><b>Gaatjes voor de spoeldraad.</b> Boor in de onderste arm, net boven de draadgeleider, twee gaatjes van 0,5 mm. <i>Controle:</i> de lakdraad kan er twee keer door zonder dat de lak beschadigt.</li>
+<li><b>Spoel wikkelen (pos. 11).</b> Steek het begin van de draad twee keer door het eerste gaatje. Leg de eerste winding in groef 1 op alle vier punten, de tweede in groef 2, en zo verder tot 25. Houd de draad licht gespannen, laat geen windingen kruisen. Zet het einde vast in het tweede gaatje. <i>Controle:</i> 25 windingen, lak overal intact (meet met de multimeter: doorgang tussen begin en einde, geen contact met de buis of bouten).</li>
+<li><b>Afstemdoos (pos. 8, 9, 10, detail D).</b> Monteer de doos op de steunlat ter hoogte van de onderste punt. Boor twee gaatjes van 0,5 mm voor de spoeldraden en een gat voor het BNC-chassisdeel. Plaats binnen twee soldeerlippen tegenover elkaar. Zet onder de doos de messing moer tussen doos en BNC, dicht af met lijm of silicone.</li>
+<li><b>Bedraden (pos. 12).</b> Schraap of schuur de lak van de draadeinden en soldeer begin en einde elk op een soldeerlip. Soldeer C1 (33 nF) en C2 (27 nF) tussen de twee lippen, parallel over de spoel. Verbind de BNC-middenpen met de ene lip en de BNC-massa met de andere. Houd alle verbindingen kort.</li>
+<li><b>Afdichten.</b> Schuif na het aansluiten van de coax de 1"-buis als regenkap over de messing moer. Maak een druppellus in de coax. <i>Controle:</i> water kan naar beneden weg, het gewicht van de coax trekt niet aan de BNC.</li>
+<li><b>Optie: FET-buffer (pos. 15).</b> Een tweede doos onder de eerste, met een Miniwhip-print van PA0RDT zonder het antenneplaatje. Koppel de afgestemde kring via 56 nF aan de FET-ingang, voed met 9 tot 12 V via de coax (bias-T in de shack). Volg daarvoor een volledig, nagekeken Miniwhip-schema; het artikel geeft geen componentwaarden.</li>
+</ol>
+
+<h4>8. Afregelen op 17,2 kHz</h4>
+<ol class="steps">
+<li><b>Zelfinductie meten.</b> Meet L tussen begin en einde van de spoel, met de condensatoren losgekoppeld. Verwacht tussen 1,3 en 1,6 mH. Noteer de waarde.</li>
+<li><b>Startcapaciteit berekenen.</b> C = 1 / ((2&pi; x 17200)² x L). Bij 1,6 mH is dat 53,5 nF. Eddy kwam na meten op 60 nF uit. Begin met 60 nF.</li>
+<li><b>Meetopstelling (blad 3).</b> LF-generator via een serieweerstand van 2 kohm op de raamkring, mV-meter over de raamkring. Sluit de definitieve coax aan: die telt mee in de afstemming.</li>
+<li><b>Sweepen.</b> Draai de generator langzaam van 9 naar 35 kHz en noteer bij elke kHz de spanning. Zoek de frequentie met de hoogste spanning.</li>
+<li><b>Bijregelen.</b> Piek te laag: haal capaciteit weg. Piek te hoog: zet een kleine condensator (1 tot 4,7 nF) parallel. Herhaal tot de piek op 17,2 kHz ligt.</li>
+<li><b>Controle.</b> Op 9,6 en 30 kHz hoort de spanning ongeveer 20 dB (factor 10) lager te liggen dan op de piek. Noteer L, C, coaxlengte, piekfrequentie en datum.</li>
+</ol>
+<div class="saq-box saq-steps">Geen meettoestellen? Dan kan je ook afregelen op het signaal zelf: kijk tijdens een testuitzending of bij een andere VLF-zender in de waterval van Spectrum Lab en kies de condensatorwaarde met het sterkste signaal.</div>
+
+<h4>9. Installatie en richten</h4>
+<ul>
+<li>Monteer buiten en zo hoog als veilig kan; Eddy gebruikte ongeveer 6 m, met de draagbuis geklemd aan de balustrade van zijn tuintrap.</li>
+<li>Schuif de vrije 250 mm buis in of over de draagmast en borg met een dwarsbout. De antenne moet kunnen draaien.</li>
+<li>Vanuit JO21EE: <b>het vlak van het raam naar 35 graden</b> (of 215 graden, dat is hetzelfde). Fijnregelen op het nulpunt en dan 90 graden terugdraaien.</li>
+<li>Ver van netleidingen, PV-omvormers, ledvoedingen en laders. Werk op hoogte met twee personen. Koppel de coax los bij onweer.</li>
+</ul>
+
+<h4>10. Foutzoeken</h4>
+<div class="saq-tablewrap"><table><tr><th>Symptoom</th><th>Waarschijnlijke oorzaak</th><th>Actie</th></tr>
+<tr><td>Geen doorgang tussen spoeleinden</td><td>Lak niet verwijderd, draadbreuk</td><td>Meet rechtstreeks op de draadeinden, herstel, ontlast de draad.</td></tr>
+<tr><td>Piek onder 17,2 kHz</td><td>Te veel C, of meer L dan verwacht</td><td>Capaciteit verlagen.</td></tr>
+<tr><td>Piek boven 17,2 kHz</td><td>Te weinig C</td><td>Kleine condensator parallel bijzetten.</td></tr>
+<tr><td>Zeer brede, lage piek</td><td>Te zware belasting, vocht, kortgesloten winding</td><td>Meet zonder coax en trafo; kijk de doos en de windingen na.</td></tr>
+<tr><td>Lijn op 15,625 kHz in de waterval</td><td>Beeldbuis-tv of schakelende voeding in de buurt</td><td>Draai het raam op die storing of schakel de bron uit.</td></tr>
+<tr><td>Geen ruis boven 16 kHz in de waterval</td><td>Geluidskaartingang filtert hoge tonen weg</td><td>Andere ingang of USB-geluidskaart, samplefrequentie 48 kHz of meer.</td></tr>
+<tr><td>Actieve trap oscilleert of ruist</td><td>Voeding, bias-T of opbouw</td><td>Eerst passief testen; versterkerschema nakijken.</td></tr></table></div>
+
+<h4>11. Eindcontrole</h4>
+<ul class="check">
+<li>Armen haaks, in één vlak, 1070 mm punt tot punt; koord gespannen.</li>
+<li>25 windingen in de groeven, niet gekruist, lak intact.</li>
+<li>Spoeleinden mechanisch verankerd en goed gesoldeerd.</li>
+<li>C1 en C2 parallel, waarden en eventuele bijregelcondensatoren genoteerd.</li>
+<li>BNC, doos en regenkap trekontlast en waterdicht, opening naar beneden.</li>
+<li>Mastbuis met twee bouten vast, 250 mm vrij, borgbout aanwezig, antenne draaibaar.</li>
+<li>Resonantie met de definitieve coax gemeten op 17,2 kHz.</li>
+<li>Bij de actieve optie: voedingsspanning en polariteit gecontroleerd en gelabeld.</li>
+</ul>
+
+<h4>12. Bronnen en revisie</h4>
+<p>Eddy ON5JK (sectie WLD), "SAQ, De wondere wereld van weleer", CQ-QSO 05/06-2010, p. 22-23 (UBA-leden: CQ-QSO-archief op uba.be). Inductantieformule: F. W. Grover, Inductance Calculations, vierkante meerlaagspoel (formule volgens Rosa/Grover). Miniwhip: PA0RDT. Revisie A, 16 november 2026: eerste uitgave. Volledig artikel en uitleg over SAQ: on3vz.github.io, blog "SAQ Grimeton".</p>
+
+</details>
 
 <h2 id="nl-aim">9. Het raam plaatsen en richten vanuit JO21EE</h2>
 <div class="saq-box saq-steps">
