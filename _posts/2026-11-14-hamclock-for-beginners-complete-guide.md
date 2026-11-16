@@ -138,6 +138,7 @@ excerpt: "A complete beginner's guide to HamClock in 2026: why it matters, what 
 <li><a href="#hc-10">Setup page by page</a></li>
 <li><a href="#hc-11">Daily use</a></li>
 <li><a href="#hc-12">Real-life scenarios</a></li>
+<li class="qo-sub"><a href="#hc-12-0">Is a band open?</a></li>
 <li><a href="#hc-13">Old clock, new server</a></li>
 <li><a href="#hc-14">Build your own</a></li>
 <li><a href="#hc-15">Troubleshooting</a></li>
@@ -1569,6 +1570,7 @@ Eight situations from real life, each with the panes you need and the steps.
 
 | Situation | Panes and map | Section |
 |---|---|---|
+| Is a band open, and when do I call? | All of the below, in five checks | [Overview](#hc-12-0) |
 | Which band do I try tonight? | HF Bands, side pane, Live Spots | [12.1](#hc-12-1) |
 | Can I work a certain country today? | VOACAP, MUF-RT, DX Cluster | [12.2](#hc-12-2) |
 | Low band DX via the grey line | Night, SDO grey line planner | [12.3](#hc-12-3) |
@@ -1577,6 +1579,72 @@ Eight situations from real life, each with the panes you need and the steps.
 | Working the ISS or a satellite | Satellite in the DX pane | [12.6](#hc-12-6) |
 | Planning an EME window | Moon, EME planner | [12.7](#hc-12-7) |
 | The bands suddenly go quiet | X-Ray, DRAP, NOAA SpcWx | [12.8](#hc-12-8) |
+
+<!-- HAMCLOCK 2026-11-16: added "is a band open" overview. Revert by deleting this block up to the next h3. -->
+<h3 id="hc-12-0">Before the scenarios: is a band open, and when do you call?</h3>
+
+<div class="dm-box dm-why" markdown="1">
+<p class="dm-box-label">The short answer</p>
+A HamClock gives you two kinds of information: **predictions** (HF Bands, VOACAP, MUF maps) and **measurements** (Live Spots, DX Cluster). A band is really open when both agree. A green prediction with no spots means "maybe"; spots from your area mean "yes, right now".
+</div>
+
+#### What are you looking for?
+
+| Question | Where to look | What a good sign looks like |
+|---|---|---|
+| Which bands are good in general right now? | HF Bands pane ([7.4](#hc-7-4)) | **Good** (green) in the Sun column by day, in the Moon column at night |
+| Is the band open from **my** area, now? | Live Spots pane with your grid square ([7.4](#hc-7-4)) | Many long lines in the colour of that band, starting near you |
+| Is the band open **towards a specific country**? | VOACAP pane after clicking the country on the map ([7.4](#hc-7-4)) | The row of your band turns green in the coming hours |
+| Can a signal on that band be reflected along the path? | Map style **MUF-RT** ([7.11](#hc-7-11)) | The MUF along your path is above the band frequency (for example above 14 MHz for 20 m) |
+| Is anyone from there active? | DX Cluster pane ([7.4](#hc-7-4)) | Stations from that region spotted on your band in the last 15 minutes |
+| Is the space weather spoiling it? | Side pane: Kp and X-Ray ([section 8](#hc-8)) | Kp 0 to 3, no M or X flare in the last hours |
+
+#### The five-check method
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: decide in two minutes which band to try</p>
+1. **Space weather first.** Look at Kp in the side pane. At 5 or higher, paths over the pole (to Japan, Alaska, the US west coast) are poor: choose a direction towards the south or west instead. A recent M or X flare in the X-Ray pane? Then the bands on the daylight side can be dead for an hour; try again later.
+2. **General picture.** Look at the HF Bands pane. Note which band groups say **Good** for now (Sun column by day, Moon column at night).
+3. **Reality check.** Look at Live Spots set to your grid square. Which band colour has the most and the longest lines? That band is open from Belgium at this moment, in the direction of the lines.
+4. **Towards your target.** Click the place you want to reach on the map. In the VOACAP pane, check the row of the band you picked: green now, or green in an hour? Set power and mode at the bottom of the pane to what you really use (for example 25W SSB) so the colours are realistic.
+5. **Who is there?** Look at the DX Cluster. Stations from your target region spotted on that band confirm it. Click a spot: it becomes your DX and the DX pane shows the bearing for your antenna.
+</div>
+
+If steps 2 to 5 all point to the same band, switch the radio to that band and **listen first**. If you hear the stations from the spots, the band is open for you too. If you hear nothing, your antenna or local noise may be the limit, not the band.
+
+#### Rules of thumb for the time of day
+
+| Moment (Belgian time) | Usually best | Why |
+|---|---|---|
+| Daytime | 20, 17, 15, 12 and 10 m | The sun charges the F layer; the D layer absorbs the low bands |
+| Around sunrise and sunset | 40 and 80 m, along the grey line | The D layer is weak, the F layer still works |
+| Night | 80 and 40 m, sometimes 30 and 20 m | The D layer is gone; the high bands close |
+| High solar flux (SFI above about 150) | 15, 12 and 10 m stay open longer | More charge in the F layer, higher MUF |
+| Low solar flux (SFI below about 90) | 40, 30 and 20 m | The high bands often stay closed |
+
+These are tendencies, not laws. The measured spots always win over a rule of thumb.
+
+#### The grey line, in practice
+
+The **grey line** is the border between day and night on the map: the twilight zone that slides around the earth all day. Along that line the D layer, which absorbs low frequencies by day, is weak, while the F layer still reflects. That is why 80 and 40 m signals can reach surprisingly far at dusk and dawn, especially towards other places that are also in twilight.
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: use the grey line</p>
+1. Open the map menu (click the style name at the top left of the map) and switch **Night** on. Click **Ok**. The edge of the dark part is the grey line.
+2. In the DE pane, read your sunrise (**R**) and sunset (**S**) time. Your best window is roughly from half an hour before to half an hour after that moment.
+3. Look along the grey line on the map: which regions lie on it at the same time as you? Those are your best targets. The angle of the line changes with the seasons, so the regions on it change too: look at the map each time rather than remembering a fixed list.
+4. For a specific station: click it on the map, then click in the middle of the SDO pane and choose the **grey line planner**. It shows the moments when you and your DX are both in twilight.
+5. In that window, go to 40 or 80 m and listen for those regions. Check the DX Cluster for spots from them.
+</div>
+
+#### When is the best moment to call?
+
+- **When your target is open, not only you.** VOACAP and the grey line planner tell you when the path works at both ends.
+- **When the station you hear is calling CQ or listening.** Spots in the cluster tell you where to look; your ears tell you whether it is your turn.
+- **When the band is not full of a contest**, unless you want to join it. The Contests pane tells you what is on this weekend.
+- **Early in an opening rather than at the end.** A band that is just opening (lines on Live Spots growing longer) gives you more time than one that is closing.
+
+The scenarios below put all this into practice.
 
 <h3 id="hc-12-1">12.1 "Which band do I try tonight?"</h3>
 
