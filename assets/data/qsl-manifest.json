@@ -460,5 +460,20 @@
     "mode": "SSB",
     "freq": "21.327",
     "rst": "59"
+  },
+  {
+    "id": "iq1qq-1-2026-11-17",
+    "image": "/assets/images/qsl/iq1qq-1-2026-11-17.jpg",
+    "fromCall": "IQ1QQ/1",
+    "fromName": "Special Event Station",
+    "qth": "Corio (TO)",
+    "country": "Italy",
+    "continent": "Europe",
+    "date": "2026-11-17",
+    "time": "07:23z",
+    "band": "40m",
+    "mode": "SSB",
+    "freq": "7.113",
+    "rst": "59"
   }
 ]
