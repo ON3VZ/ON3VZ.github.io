@@ -2,9 +2,9 @@
 layout: post
 title: "Working 3X4U Guinea on FT8: Fox and Hound, Split and Every WSJT-X Setting Explained"
 tags: ['FT8', 'WSJT-X', 'DXpedition', '3X4U', 'Fox and Hound', 'Split', 'PSK Reporter', 'IC-7300', 'Beginners']
-excerpt: "The Belgian Rockall DX Group is on the air from Guinea and I want them on FT8 on 40 m. But they seem to listen somewhere else. Why FT8 has no DX split but WSJT-X still uses a technical one, what Fox and Hound is, why my split setting is on Fake It, every WSJT-X setting step by step, the mistakes I made, and how I used PSK Reporter to see where my 25 W signal arrives. No QSO this time, but a lot learned."
+excerpt: "The Belgian Rockall DX Group is on the air from Guinea and I want them on FT8 on 40 m. But they seem to listen somewhere else. Why FT8 has no DX split but WSJT-X still uses a technical one, what Fox and Hound is, why my split setting is on Fake It, every WSJT-X setting step by step, the mistakes I made, and how I used PSK Reporter to see where my signal arrives. No QSO on the first evening, but on 17 November the Fox picked me on 40 m, with about 20 W."
 ---
-<!-- FT8-3X4U 2026-11-15: new post. Revert by deleting this file and the folder assets/images/ft8-3x4u/ -->
+<!-- FT8-3X4U 2026-11-15: new post. 2026-11-18: QSO result, WSJT-X and PSK Reporter screenshots added (section 14). Revert by deleting this file and the folder assets/images/ft8-3x4u/ -->
 <style>
 .dm-article { --dm-accent: var(--c-cyan, #1E6BA8); --dm-warm: var(--c-amber, #B8791A); --dm-ok: var(--c-primary, #0E8A50); --dm-red: #B3412E; }
 .dm-kicker { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--dm-warm) !important; margin: 0 0 .4rem !important; }
@@ -43,12 +43,12 @@ excerpt: "The Belgian Rockall DX Group is on the air from Guinea and I want them
 <div class="dm-article" markdown="1">
 
 <p class="dm-kicker">ON3VZ · DX · FT8 for beginners</p>
-<p class="dm-lead">On 15 November 2026 the Belgian Rockall DX Group was on the air from Guinea as 3X4U. I wanted them in my log on FT8, on 40 m, on 7.056 MHz. Then I noticed that the expedition and the callers are not on the same audio frequency, and that WSJT-X has a special mode just for this. Here is everything I found out: what Fox and Hound is, why FT8 has no DX split but WSJT-X still uses a technical one, why my split setting is on Fake It, every setting step by step, the mistakes I made, and how I followed my own 25 W signal from Portugal to Canada on the map.</p>
-<p class="dm-byline">ON3VZ Kristof Cornelis · November 2026 · WSJT-X 3.0.2 · Icom IC-7300 MkII · 25 W</p>
+<p class="dm-lead">On 15 November 2026 the Belgian Rockall DX Group was on the air from Guinea as 3X4U. I wanted them in my log on FT8, on 40 m, on 7.056 MHz. Then I noticed that the expedition and the callers are not on the same audio frequency, and that WSJT-X has a special mode just for this. Here is everything I found out: what Fox and Hound is, why FT8 has no DX split but WSJT-X still uses a technical one, why my split setting is on Fake It, every setting step by step, the mistakes I made, how I followed my own signal across the map, and how I finally worked 3X4U with about 20 W.</p>
+<p class="dm-byline">ON3VZ Kristof Cornelis · November 2026 · WSJT-X 3.0.2 · Icom IC-7300 MkII · about 20 W</p>
 
-<div class="dm-box dm-warn" markdown="1">
-<p class="dm-box-label">Spoiler: no QSO this time</p>
-I called 3X4U on the evening of 15 November 2026 and did not get them in the log. With 25 W in a pile-up against a 1 kW expedition, that is no surprise. But the **setting up** is the lesson, whether the QSO comes or not. The hunt was fun; the catch is for next time. See [section 14](#ft-14).
+<div class="dm-box dm-check" markdown="1">
+<p class="dm-box-label">Result: worked on 17 November</p>
+The first evening (15 November) I did not get 3X4U in the log. I tried again on 80 m and on 20 m. On **17 November 2026 at 23:26 UTC** the Fox answered me on **40 m FT8**, with about **20 W**, and Club Log shows the green tick. The **setting up** is the lesson, and this page shows both the attempts that failed and the one that worked. See [section 14](#ft-14).
 </div>
 
 <div class="dm-legend"><span class="l-what">Situation</span><span class="l-why">Why</span><span class="l-mean">What it means</span><span class="l-steps">Step plan</span><span class="l-warn">Watch out</span></div>
@@ -66,10 +66,10 @@ I called 3X4U on the evening of 15 November 2026 and did not get them in the log
 8. [Choosing your transmit frequency](#ft-8)
 9. [Calling, and what you see](#ft-9)
 10. [Where does my signal arrive? PSK Reporter](#ft-10)
-11. [Can 25 W do this?](#ft-11)
+11. [Can 20 to 25 W do this?](#ft-11)
 12. [When to try](#ft-12)
 13. [When it does not work](#ft-13)
-14. [Outcome](#ft-14)
+14. [Outcome: I worked 3X4U](#ft-14)
 15. [Sources](#ft-15)
 </div>
 
@@ -129,7 +129,7 @@ Normal FT8 is one QSO at a time: 15 seconds calling, 15 seconds answering. A rar
 | | Fox (the expedition) | Hound (you) |
 |---|---|---|
 | Transmits in | **even** periods: seconds 00 and 30 | **odd** periods: seconds 15 and 45 |
-| Audio frequency | about **300 to 900 Hz**, up to 5 signals at once, about 60 Hz apart | first call anywhere between **1000 and 4000 Hz** |
+| Audio frequency | usually about **300 to 900 Hz** (not always, see section 14), up to 5 signals at once, about 60 Hz apart | first call anywhere between **1000 and 4000 Hz** |
 | Hears callers | above 1000 Hz | the Fox below 1000 Hz |
 | First message | answers callers | `3X4U ON3VZ JO21` (call sign and locator, always Tx1) |
 
@@ -205,7 +205,7 @@ Hound is not a setting for "calling a DXpedition" in general. It is a mode that 
 
 - WSJT-X **transmits in the odd periods** (15 and 45) and locks that, so the "Tx even/1st" box goes grey.
 - **Auto Seq** is forced on, so your follow-up messages go out by themselves.
-- WSJT-X only decodes and shows what is **below 1000 Hz**, which is the Fox. The pile-up above it is hidden, so you get a quiet view of the actual QSOs. If you want to watch the pile-up too, tick **Rx All Freqs** under the controls.
+- WSJT-X only decodes and shows what is **below 1000 Hz**, which is the Fox. The pile-up above it is hidden, so you get a quiet view of the actual QSOs. If you want to watch the pile-up too, tick **Rx All Freqs** under the controls. Tick it also when you cannot find the Fox at all: on 40 m one evening he sat at about 2700 Hz, and Hound mode hides that (section 14).
 - When the Fox answers you, WSJT-X **jumps** to the Fox's frequency for your report (section 3).
 - After a number of calls without an answer, **Enable Tx switches itself off**, so you do not call forever.
 - A red **Hound** label appears under the controls, and the **H** button turns red.
@@ -363,7 +363,9 @@ Ten minutes later the picture had changed. The band opened to the west and my si
 Almost **the same distance**, but **82° apart** in direction. So the Canadian report proves that 25 W on 40 m covers that kind of distance with a signal FT8 decodes easily (-18 dB). It does **not** prove that the path to the south is open in the same way.
 </div>
 
-<h2 id="ft-11">11. Can 25 W do this?</h2>
+<h2 id="ft-11">11. Can 20 to 25 W do this?</h2>
+
+This section is the calculation I made on the first evening, with 25 W. The result is in section 14.
 
 A rough calculation. Decibels (dB) compare two signals; **a factor 40 in power is 16 dB**.
 
@@ -386,7 +388,7 @@ On this simple comparison I am **7 to 10 dB too weak**. But the numbers do not t
 
 <div class="dm-box dm-mean" markdown="1">
 <p class="dm-box-label">What it means</p>
-Power was not the bottleneck. 25 W was enough to be decoded at the same distance. What I needed was for the operator to **pick me** out of a pile-up, at a moment when his antenna and the band were open in my direction. That is a matter of timing, a free Tx spot and patience, not of watts.
+Power was not the bottleneck. 25 W was enough to be decoded at the same distance. What I needed was for the operator to **pick me** out of a pile-up, at a moment when his antenna and the band were open in my direction. That is a matter of timing, a free Tx spot and patience, not of watts. I got my answer on 17 November: with about 20 W the Fox picked me out of the pile-up (section 14).
 </div>
 
 <h2 id="ft-12">12. When to try</h2>
@@ -394,7 +396,7 @@ Power was not the bottleneck. 25 W was enough to be decoded at the same distance
 - **Watch who the Fox works.** On 40 m at 22:10 UTC he worked mostly Japanese and American stations (7M2PDT, JG6NGS, JH4CES, KT8Y, K2DH, WD4OOZ). When you see him work a series of **European** stations, his antenna is pointed your way: **that is your moment**.
 - **Darkness on both sides.** As a rule of thumb, 40 m between Belgium and West Africa is best when **both ends are in the dark**, in the hours before sunrise. Check a grey-line map for the exact times. My [HamClock guide]({% post_url 2026-11-14-hamclock-for-beginners-complete-guide %}) shows how to read one.
 - **Try other bands.** The Fox frequencies in section 2 cover the whole HF range.
-- **Be patient.** They are on the air until 23 November.
+- **Be patient.** They are on the air until 23 November. It took me three days, three bands and about 50 minutes of calling on the evening it worked.
 
 <h2 id="ft-13">13. When it does not work</h2>
 
@@ -408,24 +410,66 @@ Power was not the bottleneck. 25 W was enough to be decoded at the same distance
 | Your QSO is not in Club Log | Wait for the daily log upload. Do not call again right away |
 | Normal FT8 behaves strangely afterwards | Hound is still on. **Settings**, **Advanced**, untick **Special operating activity** |
 
-<h2 id="ft-14">14. Outcome</h2>
+<h2 id="ft-14">14. Outcome: I worked 3X4U</h2>
 
-**No QSO.** I called 3X4U on 40 m on the evening of 15 November 2026, from about 22:10 UTC. The Fox decoded well at my station (around -12 to -18 dB), my signal was heard from Portugal to Canada, and every setting was right. But while I was calling, the operator mostly worked Japanese and North American stations, and my call sign never appeared in one of his messages.
+<div class="dm-box dm-check" markdown="1">
+<p class="dm-box-label">Result</p>
+**Worked: 3X4U, 40 m, FT8, 17 November 2026 at 23:26 UTC** (00:26 on 18 November local time; the log uses UTC). The Fox gave me **-08**, I sent **R-03**, and he answered with **RR73**. Power: about **20 W**, the figure WSJT-X showed. I did not check it with an external meter. Club Log shows the green tick for FT8 on 40 m.
+</div>
 
-Was it a waste of time? Not at all. In one evening I learned:
+**First evening, 15 November: no QSO.** I called 3X4U on 40 m on the evening of 15 November 2026, from about 22:10 UTC. The Fox decoded well at my station (around -12 to -18 dB), my signal was heard from Portugal to Canada, and every setting was right. But while I was calling, the operator mostly worked Japanese and North American stations, and my call sign never appeared in one of his messages.
+
+**The next days.** I tried again on 80 m on 16 November and on 20 m on the afternoon of 17 November. On both bands I could decode the Fox, but he never called me.
+
+**17 November, evening, 40 m.** I went back to 40 m, where the Fox came in strongly. From 22:36 UTC I called with Tx1, `3X4U ON3VZ JO21`. I moved my Tx frequency several times (1796, 1942, 1444, 1392 and 1523 Hz) and switched Enable Tx on again every time it had switched itself off. About 50 minutes later, at 23:26:00 UTC, the Fox called me.
+
+<figure class="dm-fig"><img src="/assets/images/ft8-3x4u/wsjtx-qso-3x4u.png" alt="WSJT-X Rx Frequency window on 40 m: yellow lines with my calls at 1392 and 1523 Hz, a red Fox message KV4T RR73; ON3VZ 3X4U in brackets -08, my reply 3X4U ON3VZ R-03 at 446 Hz, and a red Fox message ON3VZ RR73; IK1JMJ 3X4U in brackets +10" loading="lazy"><figcaption>The QSO in my WSJT-X Rx Frequency window (17 November, UTC). Yellow: my calls at 1392 and 1523 Hz, then my report on the Fox's frequency (446 Hz) and, later, 746 Hz. Red: the Fox messages with my call sign, at 23:26:00, 23:26:30 and 23:28:00.</figcaption></figure>
+
+| UTC | What I saw | What WSJT-X did |
+|---|---|---|
+| 23:25:45 | | My Tx1 call at 1523 Hz |
+| 23:26:00 | `KV4T RR73; ON3VZ <3X4U> -08`: the Fox finishes KV4T and gives **me** a report | Hound mode moved my Tx to the Fox's frequency, 446 Hz |
+| 23:26:15 | | Sent `3X4U ON3VZ R-03`, my report to him |
+| 23:26:30 | `ON3VZ RR73; IK1JMJ <3X4U> +10`: **RR73** to me | The QSO is complete |
+| 23:26:47 to 23:27:45 | | Sent my R-03 three more times, 300 Hz higher (746 Hz), the shift the user guide describes for repeats |
+| 23:28:00 | `ON3VZ RR73; KD8JAM <3X4U> -06`: the Fox sent RR73 again | |
+
+I do not know exactly why WSJT-X kept repeating my report after the first RR73. The RR73 was addressed to me, so I treated the QSO as complete, and it is in Club Log.
+
+### Where was the Fox? Not always where the book says
+
+The user guide puts the Fox at 300 to 900 Hz. On 20 m and 80 m that is where I found him (about 670 Hz and 500 Hz). On 40 m at 22:36 UTC he was at **2667 and 2727 Hz**, a little later also at 2787 and 2847 Hz. At 23:26 UTC he was back at 446 and 506 Hz. I do not know why he moved.
+
+Why it matters: Hound mode ignores everything above 1000 Hz unless **Rx All Freqs** is ticked, so a Fox at 2700 Hz does not show up in Band Activity. With Rx All Freqs ticked I could decode him there. Your own call still goes **above 1000 Hz**, in a free spot.
+
+<figure class="dm-fig"><img src="/assets/images/ft8-3x4u/wsjtx-fox-high-audio-40m.png" alt="WSJT-X Band Activity on 40 m with Fox messages marked in red at 2667 and 2727 Hz, such as N8SNM RR73; DK3WN 3X4U in brackets -06, and callers in between" loading="lazy"><figcaption>Band Activity on 40 m, 22:36 to 22:38 UTC. The Fox messages (red `3X4U`) are at 2667 and 2727 Hz. The lines with VK9XY are callers for another expedition on the same band: ignore them.</figcaption></figure>
+
+### Where my signal went that evening
+
+<figure class="dm-fig"><img src="/assets/images/ft8-3x4u/pskreporter-it9zir-40m.png" alt="PSK Reporter map of 40 m with a popup showing that IT9ZIR in Sicily decoded ON3VZ at -20 dB at 22:36 UTC over 1739 km" loading="lazy"><figcaption>PSK Reporter, 22:36 UTC. IT9ZIR in Sicily decoded me at -20 dB over 1739 km. The popup frequency, 7.057.796 MHz, is my dial (7.056 MHz) plus the 1796 Hz tone I was sending at that moment.</figcaption></figure>
+
+<figure class="dm-fig"><img src="/assets/images/ft8-3x4u/pskreporter-np3o-puerto-rico.png" alt="PSK Reporter map of 40 m with a line from Belgium across the Atlantic to Puerto Rico and a popup showing NP3O decoded ON3VZ at -10 dB over 4378 miles at 22:46 UTC" loading="lazy"><figcaption>PSK Reporter, 22:46 UTC. NP3O in Puerto Rico decoded me at -10 dB over 4378 miles, about 7050 km. The line is the path. The other pins are only stations that are listening: a report always has a popup that starts with "From ON3VZ".</figcaption></figure>
+
+Guinea is about 4900 km away. About 20 W reached a station at 7050 km with a signal that FT8 decodes easily. The direction is different (section 10), but the signal is healthy.
+
+### What I take away
 
 | What | What I take away |
 |---|---|
-| Fox and Hound | How to recognise it on screen (even periods, streams below 1000 Hz, `RR73;` messages) and how it differs from SuperFox and MSHV |
-| Split | That FT8 has no DX split, and that the split WSJT-X uses (**Fake It** or **Rig**) is about a clean signal, not about the DX |
-| Hound mode | What it switches on for you, and that you switch it off afterwards |
+| Persistence | Three days, three bands (40 m, 80 m, 20 m) and about 50 minutes of calling on the evening it worked. The Fox picks a few callers out of a big pile-up each cycle, so every cycle is a small chance |
+| A free Tx spot | I moved my Tx frequency several times. The call that worked was at 1523 Hz. Watch the waterfall and move |
+| Power | About 20 W was enough. Power was not the bottleneck, as section 11 suggested |
+| Hound mode | WSJT-X moved my Tx to the Fox's frequency by itself, sent my report, and shifted 300 Hz when it repeated |
+| Finding the Fox | He is not always at 300 to 900 Hz. Tick **Rx All Freqs** if you cannot see him |
+| Enable Tx | It switches itself off after a few minutes (the Tx watchdog). Switch it on again regularly, and only call while you decode the Fox |
+| After the QSO | A second QSO on the same band and mode adds nothing, so I moved to 80 m right away. Check that your QSO shows up in Club Log |
+| Fox and Hound | How to recognise it on screen (even periods, streams, `RR73;` messages) and how it differs from SuperFox and MSHV |
+| Split | FT8 has no DX split. The split WSJT-X uses (**Fake It** or **Rig**) is about a clean signal, not about the DX |
 | My own mistakes | Always check the selected message, the DX call, the locator and Enable Tx **before** transmitting |
-| Tx frequency | 25 W wins with a free spot, not with power. Watch the waterfall and move |
-| PSK Reporter | My 25 W reached 4981 km at -18 dB. Distance was not the problem |
 
 <div class="dm-box dm-why" markdown="1">
-<p class="dm-box-label">Next time</p>
-The setup is saved, so next time it is a matter of minutes: choose the Fox frequency, switch on Hound, type the DX call, find a free spot. I will try again while 3X4U is still on the air, in the hours before sunrise and when the Fox works a series of Europeans. And with the next DXpedition, the same recipe applies. The hunt was fun. The catch is for next time.
+<p class="dm-box-label">What next</p>
+The setup is saved, so a new band is a matter of minutes: choose the Fox frequency from the table in section 2, switch on Hound, type the DX call, tick Rx All Freqs, find a free spot. 3X4U is on the air until 23 November, so I will try 80 m and 20 m for the other band slots. With the next DXpedition the same recipe applies. The hunt was fun, and this time the catch came with it: a 1 kW expedition, a pile-up, and about 20 W.
 </div>
 
 <h2 id="ft-15">15. Sources</h2>
