@@ -434,11 +434,11 @@ Power was not the bottleneck. 25 W was enough to be decoded at the same distance
 | 23:26:47 to 23:27:45 | | Sent my R-03 three more times, 300 Hz higher (746 Hz), the shift the user guide describes for repeats |
 | 23:28:00 | `ON3VZ RR73; KD8JAM <3X4U> -06`: the Fox sent RR73 again | |
 
-I do not know exactly why WSJT-X kept repeating my report after the first RR73. The RR73 was addressed to me, so I treated the QSO as complete, and it is in Club Log.
+The first RR73 was addressed to me, so I treated the QSO as complete, and it is in Club Log.
 
 ### Where was the Fox? Not always where the book says
 
-The user guide puts the Fox at 300 to 900 Hz. On 20 m and 80 m that is where I found him (about 670 Hz and 500 Hz). On 40 m at 22:36 UTC he was at **2667 and 2727 Hz**, a little later also at 2787 and 2847 Hz. At 23:26 UTC he was back at 446 and 506 Hz. I do not know why he moved.
+The user guide puts the Fox at 300 to 900 Hz. On 20 m and 80 m that is where I found him (about 670 Hz and 500 Hz). On 40 m at 22:36 UTC he was at **2667 and 2727 Hz**, a little later also at 2787 and 2847 Hz. At 23:26 UTC he was back at 446 and 506 Hz.
 
 Why it matters: Hound mode ignores everything above 1000 Hz unless **Rx All Freqs** is ticked, so a Fox at 2700 Hz does not show up in Band Activity. With Rx All Freqs ticked I could decode him there. Your own call still goes **above 1000 Hz**, in a free spot.
 
