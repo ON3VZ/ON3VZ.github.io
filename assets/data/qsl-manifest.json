@@ -475,5 +475,20 @@
     "mode": "SSB",
     "freq": "7.113",
     "rst": "59"
+  },
+  {
+    "id": "iu1cya-2026-11-19",
+    "image": "/assets/images/qsl/iu1cya-2026-11-19.jpg",
+    "fromCall": "IU1CYA",
+    "fromName": "Giuseppe",
+    "qth": "Collegno (TO)",
+    "country": "Italy",
+    "continent": "Europe",
+    "date": "2026-11-19",
+    "time": "07:34z",
+    "band": "40m",
+    "mode": "SSB",
+    "freq": "7.170",
+    "rst": "59"
   }
 ]
