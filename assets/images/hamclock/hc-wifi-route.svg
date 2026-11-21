@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 700" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- HAMCLOCK 2026-11-22: wifi route. Remove together with the post to revert. -->
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9fb6cc"/></marker></defs>
+<rect width="980" height="700" rx="10" fill="#080d18"/>
+<text x="490.0" y="36" text-anchor="middle" fill="#e2eaf5" font-size="20">Route B: connect the box to Wi-Fi</text>
+<text x="490.0" y="60" text-anchor="middle" fill="#7a96b0" font-size="13">Only needed without a network cable. Use the mouse and keyboard on the box itself. Illustration.</text>
+<rect x="40" y="100" width="440" height="250" rx="8" fill="#000" stroke="#1d3050" stroke-width="3"/><circle cx="60" cy="92" r="14" fill="#38d6ff"/><text x="60" y="97" text-anchor="middle" fill="#080d18" font-size="15">1</text>
+<text x="84" y="97" text-anchor="start" fill="#e2eaf5" font-size="14">Click the padlock, choose Exit HamClock</text>
+<rect x="60" y="118" width="130" height="50" fill="#0c1424" stroke="#1d3050"/><text x="125" y="148" text-anchor="middle" fill="#00ff88" font-size="14">ON3VZ</text>
+<rect x="195" y="128" width="20" height="16" rx="2" fill="none" stroke="#ffb020" stroke-width="2"/><path d="M199,128 v-6 a6,6 0 0 1 12,0 v6" fill="none" stroke="#ffb020" stroke-width="2"/><rect x="250" y="128" width="200" height="24" fill="#0c1424" stroke="#1d3050"/><text x="262" y="145" text-anchor="start" fill="#e2eaf5" font-size="12">Lock screen</text>
+<rect x="250" y="155" width="200" height="24" fill="#0c1424" stroke="#1d3050"/><text x="262" y="172" text-anchor="start" fill="#e2eaf5" font-size="12">Demo mode</text>
+<rect x="250" y="182" width="200" height="24" fill="#0c1424" stroke="#1d3050"/><text x="262" y="199" text-anchor="start" fill="#e2eaf5" font-size="12">Configurations</text>
+<rect x="250" y="209" width="200" height="24" fill="#0c1424" stroke="#1d3050"/><text x="262" y="226" text-anchor="start" fill="#e2eaf5" font-size="12">Restart HamClock</text>
+<rect x="250" y="236" width="200" height="24" fill="#3a2a05" stroke="#ffb020"/><text x="262" y="253" text-anchor="start" fill="#ffb020" font-size="12">Exit HamClock</text>
+<rect x="250" y="263" width="200" height="24" fill="#0c1424" stroke="#1d3050"/><text x="262" y="280" text-anchor="start" fill="#e2eaf5" font-size="12">Reboot computer</text>
+<rect x="250" y="290" width="200" height="24" fill="#0c1424" stroke="#1d3050"/><text x="262" y="307" text-anchor="start" fill="#e2eaf5" font-size="12">Shutdown computer</text>
+<text x="150" y="230" text-anchor="middle" fill="#ffb020" font-size="13">then OK, OK</text>
+<rect x="500" y="100" width="440" height="250" rx="8" fill="#000" stroke="#1d3050" stroke-width="3"/><circle cx="520" cy="92" r="14" fill="#38d6ff"/><text x="520" y="97" text-anchor="middle" fill="#080d18" font-size="15">2</text>
+<text x="544" y="97" text-anchor="start" fill="#e2eaf5" font-size="14">The desktop: click the network icon</text>
+<rect x="503" y="103" width="434" height="26" fill="#2a2f38"/><text x="515" y="121" text-anchor="start" fill="#e2eaf5" font-size="11">Applications  Places  System</text>
+<circle cx="900" cy="116" r="15" fill="none" stroke="#ffb020" stroke-width="2.5"/><path d="M892,121 A10,10 0 0 1 908,121 M895,116 A6,6 0 0 1 905,116" fill="none" stroke="#e2eaf5" stroke-width="1.5"/><text x="720" y="230" text-anchor="middle" fill="#7a96b0" font-size="12">Usually at the top right or bottom right</text>
+<text x="720" y="252" text-anchor="middle" fill="#7a96b0" font-size="12">(a Wi-Fi fan or two small arrows)</text>
+<line x1="830" y1="205" x2="890" y2="135" stroke="#ffb020" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="40" y="410" width="440" height="250" rx="8" fill="#000" stroke="#1d3050" stroke-width="3"/><circle cx="60" cy="402" r="14" fill="#38d6ff"/><text x="60" y="407" text-anchor="middle" fill="#080d18" font-size="15">3</text>
+<text x="84" y="407" text-anchor="start" fill="#e2eaf5" font-size="14">Pick your network, type the password</text>
+<rect x="60" y="432" width="200" height="26" fill="#06283a" stroke="#38d6ff"/><text x="72" y="450" text-anchor="start" fill="#38d6ff" font-size="12">MyHome-WiFi</text>
+<rect x="60" y="462" width="200" height="26" fill="#0c1424" stroke="#1d3050"/><text x="72" y="480" text-anchor="start" fill="#e2eaf5" font-size="12">Neighbour-5G</text>
+<rect x="60" y="492" width="200" height="26" fill="#0c1424" stroke="#1d3050"/><text x="72" y="510" text-anchor="start" fill="#e2eaf5" font-size="12">Telenet-XXXX</text>
+<rect x="280" y="460" width="180" height="120" rx="6" fill="#0c1424" stroke="#38d6ff"/><text x="370" y="485" text-anchor="middle" fill="#e2eaf5" font-size="12">Password</text>
+<rect x="295" y="497" width="150" height="24" fill="#000" stroke="#1d3050"/><text x="305" y="514" text-anchor="start" fill="#e2eaf5" font-size="12">••••••••</text>
+<rect x="330" y="535" width="80" height="28" rx="4" fill="none" stroke="#38d6ff" stroke-width="2"/><text x="370" y="554" text-anchor="middle" fill="#38d6ff" font-size="12">Connect</text>
+<text x="260" y="640" text-anchor="middle" fill="#7a96b0" font-size="12">Wait until the icon shows full bars</text>
+<rect x="500" y="410" width="440" height="250" rx="8" fill="#000" stroke="#1d3050" stroke-width="3"/><circle cx="520" cy="402" r="14" fill="#38d6ff"/><text x="520" y="407" text-anchor="middle" fill="#080d18" font-size="15">4</text>
+<text x="544" y="407" text-anchor="start" fill="#e2eaf5" font-size="14">Restart the box</text>
+<text x="720" y="460" text-anchor="middle" fill="#ffb020" font-size="15">System  &gt;  Shut Down  &gt;  Restart</text>
+<text x="720" y="500" text-anchor="middle" fill="#7a96b0" font-size="12">(names can differ slightly per desktop)</text>
+<text x="720" y="550" text-anchor="middle" fill="#e2eaf5" font-size="13">HamClock starts again by itself</text>
+<text x="720" y="575" text-anchor="middle" fill="#e2eaf5" font-size="13">and remembers the Wi-Fi network</text>
+<text x="490" y="690" text-anchor="middle" fill="#ff4466" font-size="13">Never choose Exit HamClock from a browser on your PC: only on the box itself.</text>
+</svg>

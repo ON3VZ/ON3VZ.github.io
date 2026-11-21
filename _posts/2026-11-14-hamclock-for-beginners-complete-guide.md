@@ -134,7 +134,12 @@ excerpt: "A complete beginner's guide to HamClock in 2026: why it matters, what 
 <li class="qo-sub"><a href="#hc-7-10">DE, DX, satellites</a></li>
 <li class="qo-sub"><a href="#hc-7-11">The world map</a></li>
 <li><a href="#hc-8">Space weather explained</a></li>
-<li><a href="#hc-9">First start</a></li>
+<li><a href="#hc-9">From box to working clock</a></li>
+<li class="qo-sub"><a href="#hc-9-1">What you need</a></li>
+<li class="qo-sub"><a href="#hc-9-3">Cables</a></li>
+<li class="qo-sub"><a href="#hc-9-5">Wi-Fi</a></li>
+<li class="qo-sub"><a href="#hc-9-6">Health check</a></li>
+<li class="qo-sub"><a href="#hc-9-8">If it goes wrong</a></li>
 <li><a href="#hc-10">Setup page by page</a></li>
 <li><a href="#hc-11">Daily use</a></li>
 <li><a href="#hc-12">Real-life scenarios</a></li>
@@ -165,7 +170,7 @@ This is a long guide on purpose. Since 2026 a lot of HamClock knowledge is scatt
 ### Where do you start?
 
 <div class="qo-routes">
-<a href="#hc-9"><strong>I just got a clock</strong><span>Start at the first start (9) and the setup (10).</span></a>
+<a href="#hc-9"><strong>I just got a clock</strong><span>Follow the step plan from box to working clock (9).</span></a>
 <a href="#hc-7"><strong>I want to understand the screen</strong><span>Read the screen tour (7) and space weather (8).</span></a>
 <a href="#hc-13"><strong>My old clock froze</strong><span>Go straight to "old clock, new server" (13).</span></a>
 </div>
@@ -270,7 +275,7 @@ A HamClock is a small computer with a screen and an internet connection. That is
 3. Plug a network cable into the box and into a free port on your router or switch.
 4. Plug the mouse (and the keyboard, if you have one) into a USB port.
 5. Plug in the power supply last. The box starts by itself and HamClock appears after a minute or so.
-6. Check your callsign, the server and the version ([section 9](#hc-9-3)).
+6. Check the four signs that it works ([9.6](#hc-9-6)). The full step plan, including Wi-Fi, is in [section 9](#hc-9).
 </div>
 
 <h3 id="hc-2-2">2.2 How to control it</h3>
@@ -1261,55 +1266,175 @@ The sun has a cycle of about 11 years, from few sunspots to many and back. Near 
 5. For a few weeks, write down what you hear next to what the clock showed. That way you learn what the numbers mean for your own station and your own antenna.
 </div>
 
-<h2 id="hc-9">9. Getting started with a ready-made box</h2>
+<!-- HAMCLOCK 2026-11-22: section 9 rewritten as a full unboxing step plan with drawings. Revert: git revert the commit "HamClock post: section 9 unboxing". -->
+<h2 id="hc-9">9. From the box to your first working clock</h2>
 
 <div class="dm-box" markdown="1">
 <p class="dm-box-label">In short</p>
-A ready-made box works as soon as it is connected. You only have to check three things: your callsign, the server and the version.
+A ready-made box needs no installing. You connect a screen, give it internet (a network cable or Wi-Fi) and switch it on. HamClock starts by itself. Then you check four signs, adjust a few settings and you are done. Count on about 15 minutes with a network cable and 25 with Wi-Fi.
 </div>
 
-### 9.1 Connecting
+This chapter is written for someone who has never done this before. Follow the steps in order and do not skip any. The drawing below is your map: every box is a numbered step in this chapter.
 
-1. Put the box near a screen or TV with an HDMI input.
-2. Connect box and screen with the HDMI cable. Select the right HDMI input on the screen with the source button.
-3. Plug a network cable into the box and into your router or switch. If you want Wi-Fi instead, you need a mouse and keyboard the first time to choose the network (click the network icon on the desktop, pick your network, type the password).
-4. Temporarily connect a mouse (and a keyboard if you have one) to a USB port.
-5. Plug in the power supply. The box starts and HamClock appears by itself.
+<figure class="dm-fig"><img src="/assets/images/hamclock/hc-unbox-flow.svg" alt="Flowchart: unpack, choose a spot, connect HDMI mouse and keyboard, then route A with a network cable or route B with Wi-Fi, first start, health check, first settings, save and lock" loading="lazy"><figcaption>The whole route at a glance. With a cable you go left (route A), without a cable right (route B).</figcaption></figure>
 
-### 9.2 The first start
+<h3 id="hc-9-1">9.1 Step 1: put everything on the table</h3>
 
-1. First you see a black screen with text.
-2. A countdown appears, asking you to click anywhere to open the setup ("Click anywhere to enter setup"). You have about 10 seconds. If you do not click, the clock simply starts.
-3. HamClock looks for a time server (NTP) to set the clock right. You may click **Skip** to speed this up.
-4. The screen builds up. The first spots appear after a few seconds.
+<figure class="dm-fig"><img src="/assets/images/hamclock/hc-unbox-kit.svg" alt="Eight items: HamClock box, power supply, HDMI cable, screen or TV, USB mouse, USB keyboard, network cable or Wi-Fi details" loading="lazy"><figcaption>Everything you need. No antenna, no radio.</figcaption></figure>
 
-<h3 id="hc-9-3">9.3 Three things to check right away</h3>
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: check the kit</p>
+1. Open the box and lay everything out. Usually you find the HamClock box and its power supply. Check whether an HDMI cable came with it.
+2. Find a **screen with an HDMI input**. A spare computer monitor or an old flat TV is fine. Look at the back or side of the screen for a port marked **HDMI**.
+3. Find a **USB mouse**. You need it for the first setup; afterwards you can remove it.
+4. Decide on the internet connection (see step 2 below) and prepare it:
+   - with a **network cable** (also called UTP or Ethernet cable): make sure it is long enough to reach your router or a free port on a switch;
+   - with **Wi-Fi**: write down the exact network name and password (often on a sticker under your modem), and get a **USB keyboard**. Typing a password with only a mouse is close to impossible.
+5. Only use the power supply that came with the box. Another adapter with the same plug can have a different voltage and damage the box.
+</div>
 
-| Check | Where to look | What you should see | If it is wrong |
-|---|---|---|---|
-| Your callsign | Top left, large letters | Your callsign, for example ON3VZ | Change it on setup page 1 ([section 10](#hc-10)) |
-| The server | The info bar under your call; wait a moment, the line alternates | `ohb.hamclock.app` or `hamclock.com` | Switch it ([section 13](#hc-13)) |
-| The version | Right in the same line | 4.24 or higher | Update: click the version number if it is red, or see [section 13](#hc-13) |
+<h3 id="hc-9-2">9.2 Step 2: choose a spot, and choose cable or Wi-Fi</h3>
 
-On my clock it says `ohb.hamclock.app` with version 4.33. So there is nothing to change, except a typo in the callsign (ON3VC instead of ON3VZ).
+**The spot.** Put the box next to the screen, within reach of a power socket. Choose a place you can see from your operating position, for example above your main monitor. Leave some air around the box: it gets slightly warm.
 
-### 9.4 Then check and set
+**Cable or Wi-Fi?** This is the only real choice you make.
 
-| What | How you notice | Solution |
+| | Route A: network cable | Route B: Wi-Fi |
 |---|---|---|
-| Units | Temperature in °F, wind in mph | Setup page 5: Units to **Metric** |
-| Local time | The time in the DE pane is wrong | Adjust the time zone in the DE pane ([11.4](#hc-11-4)) |
-| Centre of the map | America is in the middle | Setup page 4: Map center longitude to about 4 degrees east |
-| DX cluster | The cluster header is red or the list stays empty | Check setup page 2 |
-| Public IP | Your internet address is on the screen | Setup page 5: Show public IP to **No** (better for photos and videos) |
+| When | Your router or a switch is near the clock, and your box has a network port | No cable possible, or no network port on the box |
+| Setup | None: plug in and it works | About 10 minutes extra, once |
+| Reliability | Best | Good if the signal is strong where the box sits |
+| What you need extra | A network cable | Network name, password and a USB keyboard |
+
+<div class="dm-box dm-warn" markdown="1">
+<p class="dm-box-label">Does your box have a network port?</p>
+A network port looks like a slightly wider telephone socket, often with two small lights. Not every small box has one. Look at all sides of your box before you choose route A. If there is none, route B (Wi-Fi) is your only option. I have not been able to confirm whether every box that ON4RF supplies has one.
+</div>
+
+<h3 id="hc-9-3">9.3 Step 3 and 4: plug in the cables, power last</h3>
+
+<figure class="dm-fig"><img src="/assets/images/hamclock/hc-unbox-cables.svg" alt="Drawing of the box with five numbered connections: 1 HDMI to the screen, 2 USB mouse, 3 USB keyboard, 4 network cable to the router, 5 power supply last" loading="lazy"><figcaption>Follow the numbers. The position of the ports on your box will be different.</figcaption></figure>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: connect</p>
+1. **HDMI.** Plug one end of the HDMI cable into the box and the other end into the screen. The plug only fits one way round: the wide side of the trapezium goes up or down, do not force it. Note which input you used on the screen (for example HDMI 2).
+2. **Mouse.** Plug the USB mouse into any USB port on the box.
+3. **Keyboard.** Plug in the USB keyboard if you have one. With route B you need it.
+4. **Network cable (route A only).** Plug the cable into the network port of the box and into a free port on your router or switch. You hear a small click when it is in. Route B: skip this step.
+5. **Switch on the screen** and press its **Source** or **Input** button (on the screen or on the TV remote) until you have the HDMI input from step 1. The screen stays black for now: that is normal.
+6. **Power, as the very last step.** Plug the power supply into the box, then into the socket. There is usually no on/off button: the box starts as soon as it gets power. A small light on the box comes on.
+</div>
+
+Why power last? A box that starts without a screen sometimes picks a wrong or very low resolution, and without a network cable it does not find the internet the first time. If that happens anyway: shut down cleanly (see [9.9](#hc-9-9)), check the cables and switch on again.
+
+<h3 id="hc-9-4">9.4 Step 6: the first start</h3>
+
+<figure class="dm-fig"><img src="/assets/images/hamclock/hc-first-start-screens.svg" alt="Four drawn screens: black screen with start-up text, the setup countdown, the search for a time server with a Skip button, and the clock building up" loading="lazy"><figcaption>The four screens you see the first time, in this order. These are drawings to show the order, not real screenshots.</figcaption></figure>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: let it start</p>
+1. **Black screen with text, or a logo.** The computer starts. This takes 10 seconds to a minute. Do nothing.
+2. **The setup countdown.** The screen says something like "Click anywhere to enter setup", with a counter running down from about 10. **This first time, do not click.** A ready-made box is already set up; you check the settings later. If you click by accident, you land in the setup pages: click **Done** to continue.
+3. **Searching for the time.** HamClock looks for a time server (NTP) on the internet. If it takes long, click **Skip**. With route B (no internet yet) it cannot find one: click **Skip**.
+4. **The clock builds up.** Panes fill one by one, the map appears and after a few seconds the first spots and lines show up.
+</div>
+
+With route A you can go straight on to the health check in [9.6](#hc-9-6). With route B you continue with 9.5 first.
+
+<h3 id="hc-9-5">9.5 Route B only: connect the box to Wi-Fi</h3>
+
+The clock now runs, but without internet: you will see a question mark next to the time and empty panes. To choose a Wi-Fi network you have to leave HamClock for a moment and use the desktop of the small computer underneath it.
+
+<figure class="dm-fig"><img src="/assets/images/hamclock/hc-wifi-route.svg" alt="Four drawn steps: the padlock menu with Exit HamClock, the desktop with the network icon, the list of networks with a password field, and restarting the box" loading="lazy"><figcaption>Four steps, once. The box remembers the network afterwards. Drawings, not real screenshots.</figcaption></figure>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: Wi-Fi</p>
+1. **Leave HamClock.** Click the small padlock at the top left of the clock, next to your callsign. A menu opens. Click **Exit HamClock**. Two questions follow; click **OK** both times. The clock disappears and you see the desktop.
+2. **Find the network icon.** Look in the bar at the top or bottom of the desktop, at the right. The network icon looks like a Wi-Fi fan (three arcs) or two small arrows. Click it once with the left mouse button.
+3. **Choose your network.** A list of Wi-Fi networks appears. Click the name of your own network. Not sure which one is yours? It is the name on the sticker of your modem or router.
+4. **Type the password** with the USB keyboard. Watch upper and lower case. Click **Connect**.
+5. **Wait** until the network icon changes into Wi-Fi bars. That can take up to half a minute. If a message says the connection failed, check the password and try again from step 2.
+6. **Restart the box.** Open the desktop menu (in Ubuntu MATE: **System**, then **Shut Down**, then **Restart**; on other desktops the names differ slightly, look for Restart or Reboot). The box restarts, HamClock appears by itself and this time it finds the internet.
+7. Continue with the health check in [9.6](#hc-9-6).
+</div>
+
+<div class="dm-box dm-warn" markdown="1">
+<p class="dm-box-label">Two things to avoid</p>
+- Never choose **Exit HamClock** from a browser on your PC or phone. Only do it on the box itself, with a mouse. From a browser you cannot start the program again.
+- Do not pull the plug to restart. Always use Restart or Shutdown, otherwise the memory card can get damaged.
+</div>
+
+<h3 id="hc-9-6">9.6 Step 7: the health check, four signs that it works</h3>
+
+<figure class="dm-fig"><img src="/assets/images/hamclock/hc-health-check.svg" alt="Two drawn clocks side by side: on the left a good one with a server in the info bar and a green DX cluster header, on the right one without internet with a big question mark and a red cluster header" loading="lazy"><figcaption>Left: everything fine. Right: no internet yet. Drawing, not a real screenshot.</figcaption></figure>
+
+Look at the top left of the screen. Give the clock a minute after it has started; the line under your callsign changes every few seconds.
+
+| Sign | Where | Good | Not good |
+|---|---|---|---|
+| 1. The time is known | Next to the big clock | No question mark | A big question mark |
+| 2. A server | The info bar under your callsign | `ohb.hamclock.app` or `hamclock.com` | No server, or an old address such as clearskyinstitute.com |
+| 3. The version | Right in the same info bar | 4.24 or higher | Lower than 4.24 |
+| 4. Live data | The DX Cluster pane, if you have one on screen | Green header, spots appear | Red header, empty list |
+
+<figure class="dm-fig dm-narrow"><img src="/assets/images/hamclock/hamclock-infobar-server-version.jpg" alt="Photo of the top left of a real HamClock with the server ohb.hamclock.app and version V4.33 marked" loading="lazy"><figcaption>The real thing: server and version in the info bar. Photo: ON4RF.</figcaption></figure>
+
+All four good? Then your clock works. Something not good? Go to [9.8](#hc-9-8).
+
+<h3 id="hc-9-7">9.7 Step 8: the first settings</h3>
+
+A ready-made box comes with someone else's settings. These are the ones to check the first day. The setup pages are explained one by one in [section 10](#hc-10).
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: get into the setup</p>
+1. Click the padlock and choose **Restart HamClock** (not Restart computer).
+2. As soon as the countdown "Click anywhere to enter setup" appears, click anywhere on the screen.
+3. The first setup page opens. To go to another page, click the arrows next to the page number.
+4. When you are done, click **Done**. The clock starts with your new settings.
+</div>
+
+| What to check | How you notice it is wrong | Where to change it |
+|---|---|---|
+| Your callsign | Another call in large letters at the top left | Setup page 1 |
+| Your location | Wrong place marked on the map; wrong sunrise | Setup page 1, or click your locator in the DE pane ([7.10](#hc-7-10)) |
+| Units | Temperature in °F, distance in miles | Setup page 5: Units to **Metric** |
+| Local time | The time in the DE pane is off by one or more hours | Time zone in the DE pane ([11.4](#hc-11-4)) |
+| Centre of the map | America in the middle | Setup page 4: Map center longitude to about 4 degrees east |
+| Public IP on screen | Your internet address is visible | Setup page 5: Show public IP to **No** (better for photos) |
 | Full screen | You still see the desktop around the clock | Setup page 5: Full scrn direct to **Yes** |
+| DX cluster | Header red or list empty | Setup page 2 ([section 10](#hc-10)) |
 
-### 9.5 A fixed place in the shack
+Then set up a layout you understand. The beginner layout in [7.2](#hc-7-2) is a good start.
 
-- Hang the screen so you can see it from your operating position, for example above your main monitor.
-- Use a network cable if you can.
-- Lock the clock (padlock menu, **Lock screen**) once everything is set up.
-- Remove the mouse and keyboard; from now on everything can be done from the browser ([section 11](#hc-11)).
+On my own clock the server was already `ohb.hamclock.app` with version 4.33. The only thing to fix was a typo in the callsign.
+
+<h3 id="hc-9-8">9.8 If something goes wrong the first time</h3>
+
+| What you see | Most likely cause | What to do |
+|---|---|---|
+| The screen stays black, "No signal" | Wrong input on the screen, or HDMI loose | Press Source or Input on the screen until you find the right HDMI; push both plugs in firmly |
+| No light on the box at all | No power | Check the socket and the plug of the power supply on the box |
+| Picture too small, cut off or blurry | The box started before the screen was on | Shut down cleanly ([9.9](#hc-9-9)), switch the screen on first, then give the box power |
+| Big question mark next to the clock | No internet | Route A: is the cable clicked in at both ends, do the lights on the port blink? Route B: redo 9.5 |
+| The network icon shows no networks | Wi-Fi is switched off, or the box has no Wi-Fi | Right-click the network icon and check that Wi-Fi is enabled; otherwise use a cable |
+| Old server address in the info bar | A box set up before 2026 | Switch to a new backend ([section 13](#hc-13)) |
+| Version number in red | An update is available | Click the red version number and confirm; the clock updates and restarts |
+| Mouse does nothing | USB plug loose, or wireless mouse without its receiver | Plug in again, try another USB port |
+
+Not in this list? See the full troubleshooting table in [section 15](#hc-15).
+
+<h3 id="hc-9-9">9.9 Step 9: save, lock and tidy up</h3>
+
+<div class="dm-box dm-steps" markdown="1">
+<p class="dm-box-label">Step plan: finish</p>
+1. **Save your settings.** Click the padlock, choose **Configurations**, type a name such as "basic" and save. If you later break something while experimenting, you load "basic" again.
+2. **Lock the screen.** Click the padlock and choose **Lock screen**. Now nobody (cat, child, visitor) changes anything by accident. To unlock, click the padlock again.
+3. **Remove the mouse and keyboard**, if you want. From now on you can do almost everything from a browser on your PC or phone ([11.6](#hc-11-6)). Keep the mouse nearby for the rare occasions you need it on the box.
+4. **Switching off.** You can simply leave the clock running day and night; most owners do. If you want to switch it off: padlock, **Shutdown computer**, confirm, wait until the screen is black and the light on the box stops flickering, and only then pull the plug.
+</div>
+
+Your HamClock is ready. Next: get to know the screen in the [screen tour](#hc-7), or read what the numbers mean in [space weather explained](#hc-8).
+
 
 <h2 id="hc-10">10. The setup, page by page</h2>
 

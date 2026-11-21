@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- HAMCLOCK 2026-11-22: unboxing kit. Remove together with the post to revert. -->
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9fb6cc"/></marker></defs>
+<rect width="980" height="560" rx="10" fill="#080d18"/>
+<text x="490.0" y="36" text-anchor="middle" fill="#e2eaf5" font-size="20">Step 1: put this on the table before you start</text>
+<text x="490.0" y="60" text-anchor="middle" fill="#7a96b0" font-size="13">Check which items came in the box. The rest you take from home.</text>
+<rect x="25" y="80" width="215" height="200" rx="10" fill="#0c1424" stroke="#00ff88" stroke-width="2"/>
+<rect x="87" y="128" width="90" height="44" rx="6" fill="none" stroke="#00ff88" stroke-width="2"/><circle cx="162" cy="150" r="4" fill="#00ff88"/><text x="132" y="220" text-anchor="middle" fill="#00ff88" font-size="15">HamClock box</text>
+<text x="132" y="242" text-anchor="middle" fill="#e2eaf5" font-size="12">the small computer</text>
+<text x="132" y="260" text-anchor="middle" fill="#7a96b0" font-size="12"></text>
+<rect x="265" y="80" width="215" height="200" rx="10" fill="#0c1424" stroke="#ffb020" stroke-width="2"/>
+<rect x="347" y="125" width="50" height="40" rx="6" fill="none" stroke="#ffb020" stroke-width="2"/><path d="M372,165 C372,190 412,170 417,190" fill="none" stroke="#ffb020" stroke-width="2"/><line x1="362" y1="125" x2="362" y2="112" stroke="#ffb020" stroke-width="3"/><line x1="382" y1="125" x2="382" y2="112" stroke="#ffb020" stroke-width="3"/><text x="372" y="220" text-anchor="middle" fill="#ffb020" font-size="15">Power supply</text>
+<text x="372" y="242" text-anchor="middle" fill="#e2eaf5" font-size="12">the adapter of the box</text>
+<text x="372" y="260" text-anchor="middle" fill="#7a96b0" font-size="12">use only this one</text>
+<rect x="505" y="80" width="215" height="200" rx="10" fill="#0c1424" stroke="#38d6ff" stroke-width="2"/>
+<path d="M552,150 C592,110 632,190 672,150" fill="none" stroke="#38d6ff" stroke-width="3"/><polygon points="537,141 557,141 554,159 540,159" fill="#38d6ff"/><polygon points="667,141 687,141 684,159 670,159" fill="#38d6ff"/><text x="612" y="220" text-anchor="middle" fill="#38d6ff" font-size="15">HDMI cable</text>
+<text x="612" y="242" text-anchor="middle" fill="#e2eaf5" font-size="12">box to screen</text>
+<text x="612" y="260" text-anchor="middle" fill="#7a96b0" font-size="12"></text>
+<rect x="745" y="80" width="215" height="200" rx="10" fill="#0c1424" stroke="#38d6ff" stroke-width="2"/>
+<rect x="802" y="115" width="100" height="60" rx="4" fill="none" stroke="#38d6ff" stroke-width="2"/><line x1="852" y1="175" x2="852" y2="188" stroke="#38d6ff" stroke-width="2"/><line x1="827" y1="188" x2="877" y2="188" stroke="#38d6ff" stroke-width="2"/><text x="852" y="220" text-anchor="middle" fill="#38d6ff" font-size="15">Screen or TV</text>
+<text x="852" y="242" text-anchor="middle" fill="#e2eaf5" font-size="12">with an HDMI input</text>
+<text x="852" y="260" text-anchor="middle" fill="#7a96b0" font-size="12">a spare monitor is fine</text>
+<rect x="25" y="300" width="215" height="200" rx="10" fill="#0c1424" stroke="#b78bff" stroke-width="2"/>
+<rect x="114" y="340" width="36" height="56" rx="18" fill="none" stroke="#b78bff" stroke-width="2"/><line x1="132" y1="340" x2="132" y2="362" stroke="#b78bff" stroke-width="2"/><text x="132" y="440" text-anchor="middle" fill="#b78bff" font-size="15">USB mouse</text>
+<text x="132" y="462" text-anchor="middle" fill="#e2eaf5" font-size="12">needed for the first setup</text>
+<text x="132" y="480" text-anchor="middle" fill="#7a96b0" font-size="12">you can remove it later</text>
+<rect x="265" y="300" width="215" height="200" rx="10" fill="#0c1424" stroke="#b78bff" stroke-width="2"/>
+<rect x="312" y="348" width="120" height="44" rx="5" fill="none" stroke="#b78bff" stroke-width="2"/><rect x="320.0" y="355" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="333.5" y="355" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="347.0" y="355" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="360.5" y="355" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="374.0" y="355" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="387.5" y="355" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="401.0" y="355" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="414.5" y="355" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="320.0" y="367" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="333.5" y="367" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="347.0" y="367" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="360.5" y="367" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="374.0" y="367" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="387.5" y="367" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="401.0" y="367" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="414.5" y="367" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="320.0" y="379" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="333.5" y="379" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="347.0" y="379" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="360.5" y="379" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="374.0" y="379" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="387.5" y="379" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="401.0" y="379" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><rect x="414.5" y="379" width="9" height="8" fill="#b78bff" fill-opacity="0.6"/><text x="372" y="440" text-anchor="middle" fill="#b78bff" font-size="15">USB keyboard</text>
+<text x="372" y="462" text-anchor="middle" fill="#e2eaf5" font-size="12">needed for Wi-Fi password</text>
+<text x="372" y="480" text-anchor="middle" fill="#7a96b0" font-size="12">borrow one if needed</text>
+<rect x="505" y="300" width="215" height="200" rx="10" fill="#0c1424" stroke="#00ff88" stroke-width="2"/>
+<path d="M552,380 C592,330 632,410 667,365" fill="none" stroke="#00ff88" stroke-width="3"/><rect x="662" y="353" width="20" height="22" rx="2" fill="none" stroke="#00ff88" stroke-width="2"/><rect x="537" y="370" width="20" height="22" rx="2" fill="none" stroke="#00ff88" stroke-width="2"/><text x="612" y="440" text-anchor="middle" fill="#00ff88" font-size="15">Network cable (UTP)</text>
+<text x="612" y="462" text-anchor="middle" fill="#e2eaf5" font-size="12">route A, best choice</text>
+<text x="612" y="480" text-anchor="middle" fill="#7a96b0" font-size="12">long enough to the router</text>
+<rect x="745" y="300" width="215" height="200" rx="10" fill="#0c1424" stroke="#38d6ff" stroke-width="2"/>
+<path d="M840.8,364.4 A14,14 0 0 1 863.2,364.4" fill="none" stroke="#38d6ff" stroke-width="3"/><path d="M829.6,358.8 A28,28 0 0 1 874.4,358.8" fill="none" stroke="#38d6ff" stroke-width="3"/><path d="M818.4,353.2 A42,42 0 0 1 885.6,353.2" fill="none" stroke="#38d6ff" stroke-width="3"/><circle cx="852" cy="376" r="5" fill="#38d6ff"/><text x="852" y="440" text-anchor="middle" fill="#38d6ff" font-size="15">or Wi-Fi details</text>
+<text x="852" y="462" text-anchor="middle" fill="#e2eaf5" font-size="12">route B</text>
+<text x="852" y="480" text-anchor="middle" fill="#7a96b0" font-size="12">network name and password</text>
+<text x="490" y="535" text-anchor="middle" fill="#7a96b0" font-size="13">No antenna, no radio and no coax needed. The clock gets everything from the internet.</text>
+</svg>

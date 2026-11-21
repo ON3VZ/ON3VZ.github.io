@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" font-family="'Share Tech Mono','JetBrains Mono',monospace">
+<!-- HAMCLOCK 2026-11-22: health check. Remove together with the post to revert. -->
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9fb6cc"/></marker></defs>
+<rect width="980" height="560" rx="10" fill="#080d18"/>
+<text x="490.0" y="36" text-anchor="middle" fill="#e2eaf5" font-size="20">Step 7: the four signs that everything works</text>
+<text x="490.0" y="60" text-anchor="middle" fill="#7a96b0" font-size="13">Look at the top left of the screen and at the DX cluster pane. Illustration.</text>
+<rect x="40" y="100" width="400" height="230" rx="8" fill="#000" stroke="#00ff88" stroke-width="3"/><text x="240" y="88" text-anchor="middle" fill="#00ff88" font-size="16">GOOD</text>
+<text x="170" y="145" text-anchor="middle" fill="#00ff88" font-size="30">ON3VZ</text>
+<rect x="55" y="160" width="370" height="24" fill="#0c1424"/><text x="65" y="177" text-anchor="start" fill="#e2eaf5" font-size="12">Up 0d0h05  ohb.hamclock.app  V4.33</text>
+<text x="170" y="240" text-anchor="middle" fill="#e2eaf5" font-size="38">14:32:07</text>
+<rect x="55" y="270" width="370" height="44" fill="#0c1424" stroke="#1d3050"/><rect x="55" y="270" width="370" height="18" fill="#00ff88" fill-opacity="0.35"/><text x="240" y="284" text-anchor="middle" fill="#e2eaf5" font-size="11">dxspider.co.uk:7300</text>
+<text x="240" y="306" text-anchor="middle" fill="#e2eaf5" font-size="11">14070  DL1ABC  2m</text>
+<rect x="540" y="100" width="400" height="230" rx="8" fill="#000" stroke="#ff4466" stroke-width="3"/><text x="740" y="88" text-anchor="middle" fill="#ff4466" font-size="16">NOT YET OK</text>
+<text x="670" y="145" text-anchor="middle" fill="#ffb020" font-size="30">ON3VZ</text>
+<rect x="555" y="160" width="370" height="24" fill="#0c1424"/><text x="565" y="177" text-anchor="start" fill="#ff4466" font-size="12">Up 0d0h05   (no server, no IP)</text>
+<text x="670" y="240" text-anchor="middle" fill="#e2eaf5" font-size="38">14:32:07</text>
+<text x="855" y="240" text-anchor="middle" fill="#ff4466" font-size="60">?</text>
+<rect x="555" y="270" width="370" height="44" fill="#0c1424" stroke="#1d3050"/><rect x="555" y="270" width="370" height="18" fill="#ff4466" fill-opacity="0.35"/><text x="740" y="284" text-anchor="middle" fill="#e2eaf5" font-size="11">dxspider.co.uk:7300</text>
+<text x="740" y="306" text-anchor="middle" fill="#7a96b0" font-size="11">(empty)</text>
+<text x="60" y="385" text-anchor="start" fill="#00ff88" font-size="14">1  No question mark next to the clock: the time is known</text>
+<text x="60" y="413" text-anchor="start" fill="#00ff88" font-size="14">2  The info bar shows a server: ohb.hamclock.app or hamclock.com</text>
+<text x="60" y="441" text-anchor="start" fill="#00ff88" font-size="14">3  The version is 4.24 or higher (here V4.33)</text>
+<text x="60" y="469" text-anchor="start" fill="#00ff88" font-size="14">4  The DX cluster header turns green and spots appear</text>
+<text x="60" y="510" text-anchor="start" fill="#7a96b0" font-size="12">A big question mark, a red cluster header or no server in the info bar = no internet yet: see section 9.8.</text>
+</svg>
