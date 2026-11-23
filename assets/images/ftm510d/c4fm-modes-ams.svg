@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="Segoe UI, Arial, sans-serif" font-size="14">
+<rect width="760" height="360" fill="#f7f9fb"/>
+<text x="20" y="32" font-size="18" font-weight="600" fill="#1b2430">One 12.5 kHz channel, four ways to use it</text>
+<g>
+<rect x="20" y="52" width="170" height="150" rx="10" fill="#fff" stroke="#9aa7b4"/>
+<text x="105" y="80" text-anchor="middle" font-weight="600" fill="#1b2430">FM</text>
+<text x="105" y="106" text-anchor="middle" fill="#1b2430">Analogue voice</text>
+<text x="105" y="128" text-anchor="middle" fill="#6b7785">Works with every radio</text>
+<text x="105" y="150" text-anchor="middle" fill="#6b7785">Noise when weak</text>
+</g>
+<g>
+<rect x="205" y="52" width="170" height="150" rx="10" fill="#e8f1f9" stroke="#1E6BA8"/>
+<text x="290" y="80" text-anchor="middle" font-weight="600" fill="#1E6BA8">DN (V/D)</text>
+<text x="290" y="106" text-anchor="middle" fill="#1b2430">Digital voice + data</text>
+<text x="290" y="128" text-anchor="middle" fill="#6b7785">Callsign, GPS position</text>
+<text x="290" y="150" text-anchor="middle" fill="#6b7785">Error correction</text>
+<text x="290" y="172" text-anchor="middle" fill="#6b7785">The normal C4FM mode</text>
+</g>
+<g>
+<rect x="390" y="52" width="170" height="150" rx="10" fill="#e8f1f9" stroke="#1E6BA8"/>
+<text x="475" y="80" text-anchor="middle" font-weight="600" fill="#1E6BA8">VW (Voice FR)</text>
+<text x="475" y="106" text-anchor="middle" fill="#1b2430">Digital voice only</text>
+<text x="475" y="128" text-anchor="middle" fill="#6b7785">Better audio</text>
+<text x="475" y="150" text-anchor="middle" fill="#6b7785">Less robust when weak</text>
+<text x="475" y="172" text-anchor="middle" fill="#6b7785">Menu 14 must be ON</text>
+</g>
+<g>
+<rect x="575" y="52" width="165" height="150" rx="10" fill="#e8f1f9" stroke="#1E6BA8"/>
+<text x="657" y="80" text-anchor="middle" font-weight="600" fill="#1E6BA8">DW (Data FR)</text>
+<text x="657" y="106" text-anchor="middle" fill="#1b2430">Data only</text>
+<text x="657" y="128" text-anchor="middle" fill="#6b7785">Pictures, messages</text>
+<text x="657" y="150" text-anchor="middle" fill="#6b7785">Chosen automatically</text>
+</g>
+<rect x="20" y="222" width="720" height="118" rx="10" fill="#e8f6ee" stroke="#0E8A50"/>
+<text x="36" y="250" font-weight="600" fill="#0E8A50">AMS (Automatic Mode Select)</text>
+<text x="36" y="276" fill="#1b2430">Listens to every mode and switches by itself. With AMS TX MODE on AUTO you answer</text>
+<text x="36" y="298" fill="#1b2430">in the mode you just heard: FM to an FM station, DN to a C4FM station.</text>
+<text x="36" y="322" fill="#6b7785">Short press on the D X key: AMS, DN, FM, AMS ... Hold D X: WIRES-X.</text>
+</svg>

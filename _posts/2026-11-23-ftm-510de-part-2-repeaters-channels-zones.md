@@ -252,7 +252,7 @@ When APRS is on, it takes the lower band (Part 4). Then the upper band is still 
 - **Change a channel:** in the master list, never on the radio.
 - **EchoLink:** short FUNC > DTMF > memory > PTT. Disconnect with "#".
 
-In Part 3 we switch to digital: what C4FM, DN, VW and AMS really mean, the DG-ID, and how WIRES-X connects a Belgian repeater to rooms all over the world.
+In [Part 3](/2026/11/23/ftm-510de-part-3-c4fm-digital-wires-x/) we switch to digital: what C4FM, DN, VW and AMS really mean, the DG-ID, and how WIRES-X connects a Belgian repeater to rooms all over the world.
 
 73 de ON3VZ
 
