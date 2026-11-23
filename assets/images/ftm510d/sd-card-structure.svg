@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="Segoe UI, Arial, sans-serif" font-size="14">
+<rect width="760" height="420" fill="#f7f9fb"/>
+<text x="20" y="32" font-size="18" font-weight="600" fill="#1b2430">What lives on the microSD card of the FTM-510DE</text>
+<rect x="20" y="52" width="230" height="330" rx="10" fill="#fff" stroke="#9aa7b4"/>
+<text x="36" y="80" font-weight="600" fill="#1b2430">microSD card</text>
+<text x="44" y="112" fill="#1b2430">FTM510D\</text>
+<text x="62" y="138" fill="#1b2430">BACKUP\</text>
+<text x="80" y="162" fill="#1E6BA8">CLN...dat  (ALL)</text>
+<text x="80" y="184" fill="#B8791A">SYS...dat  (SETUP)</text>
+<text x="80" y="206" fill="#6b7785">$index.dat</text>
+<text x="62" y="232" fill="#6b7785">*.SFL (firmware, temporary)</text>
+<text x="44" y="268" fill="#1b2430">FTM510D_MEMORY-CH\</text>
+<text x="62" y="292" fill="#0E8A50">MEM...dat / Z01...dat</text>
+<text x="62" y="314" fill="#0E8A50">(MEMORY)</text>
+<text x="36" y="362" font-size="12" fill="#6b7785">Names: max 12 characters, no spaces</text>
+<rect x="290" y="70" width="450" height="90" rx="10" fill="#e8f1f9" stroke="#1E6BA8"/>
+<text x="306" y="96" font-weight="600" fill="#1E6BA8">ALL</text>
+<text x="306" y="120" fill="#1b2430">Every memory channel + every Set Mode setting.</text>
+<text x="306" y="142" fill="#1b2430">Use it for a full backup and a full restore.</text>
+<rect x="290" y="176" width="450" height="90" rx="10" fill="#fbf3e6" stroke="#B8791A"/>
+<text x="306" y="202" font-weight="600" fill="#B8791A">SETUP</text>
+<text x="306" y="226" fill="#1b2430">Only the Set Mode settings (menus, APRS, callsign...).</text>
+<text x="306" y="248" fill="#1b2430">Channels stay untouched when you load it.</text>
+<rect x="290" y="282" width="450" height="100" rx="10" fill="#e8f6ee" stroke="#0E8A50"/>
+<text x="306" y="308" font-weight="600" fill="#0E8A50">MEMORY</text>
+<text x="306" y="332" fill="#1b2430">Only the memory channels (and backtrack points).</text>
+<text x="306" y="354" fill="#1b2430">Settings stay untouched: ideal for "zones".</text>
+<text x="306" y="374" font-size="12" fill="#6b7785">Max 10 files per type are offered, newest first.</text>
+</svg>
