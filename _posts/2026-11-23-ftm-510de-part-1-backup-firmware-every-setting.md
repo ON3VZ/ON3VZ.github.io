@@ -362,7 +362,7 @@ The four **P keys** on the microphone are for blind operation while driving: P1 
 - **APO:** 3 hours on a separate battery.
 - **APRS on or off:** short press FUNC, APRS tile.
 
-In Part 2 we go to the channels themselves: how a repeater works, why "TN" and "TSQ" make such a difference near DMR repeaters, how to check narrow or wide by ear, and how ten files on the SD card give this radio the "zones" it does not have.
+In [Part 2](/2026/11/23/ftm-510de-part-2-repeaters-channels-zones/) we go to the channels themselves: how a repeater works, why "TN" and "TSQ" make such a difference near DMR repeaters, how to check narrow or wide by ear, and how ten files on the SD card give this radio the "zones" it does not have.
 
 73 de ON3VZ
 
