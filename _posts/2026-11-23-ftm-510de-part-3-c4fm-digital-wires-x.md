@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Yaesu FTM-510DE ASP, One Year Later (Part 3): C4FM Digital, AMS, DG-ID and WIRES-X Explained"
+title: "Part 3/5 · Yaesu FTM-510DE ASP, One Year Later: C4FM Digital, AMS, DG-ID and WIRES-X Explained"
 tags: ['Yaesu', 'FTM-510DE', 'Mobile', 'C4FM', 'System Fusion', 'WIRES-X', 'DG-ID', 'YSF', 'Digital Voice', 'Beginners']
 excerpt: "For a year the little digital icon on my FTM-510DE was a mystery. This is what C4FM really is, what DN, VW, DW and AMS mean on the screen, why DG-ID 00 is almost always the right answer, how WIRES-X links a Belgian repeater to rooms all over the world, and what a hotspot adds."
 ---
@@ -163,7 +163,7 @@ I already run a hotspot for DMR (see my [DM-1801 Pro articles](/2026/10/29/dm180
 - **WIRES-X analogue:** FM, PTT + "#" + 5 digits. Disconnect: PTT + "#99999".
 - **Etiquette:** listen first, ask on a local repeater, always disconnect.
 
-In Part 4 it is APRS's turn. I understood the map on aprs.fi, but beacons, messages and the station list were a mystery. So Part 4 starts from zero.
+In [Part 4](/2026/11/23/ftm-510de-part-4-aprs-from-zero/) it is APRS's turn. I understood the map on aprs.fi, but beacons, messages and the station list were a mystery. So Part 4 starts from zero.
 
 73 de ON3VZ
 
