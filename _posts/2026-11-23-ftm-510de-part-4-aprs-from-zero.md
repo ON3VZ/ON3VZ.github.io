@@ -46,12 +46,42 @@ What is inside a beacon of my FTM-510DE:
 | Speed, course, altitude | on | 83 BEACON INFO |
 | Symbol | a car | 98 MY SYMBOL: ICON 1 |
 | Position comment | En Route | 99 POSITION COMMENT. A fixed list: Off Duty, En Route, In Service, Returning and more |
-| Status text | off | 84 BEACON STATUSTXT. A free text, for example "Listening ON0AND 438.9875" |
+| Status text | ON3VZ mobile QRV + frequency | 84 BEACON STATUSTXT. A short free text, and the radio can add the frequency you are on by itself (see below) |
 | Path | WIDE1-1,WIDE2-1 | 86 DIGI PATH. How many times digipeaters may repeat it (explained below) |
 
 </div>
 
-**Position comment versus status text.** The position comment is a short standard word from a fixed list. The status text is your own sentence. A nice use for status text is your listening frequency: then someone who sees you on the map knows where to call you.
+**Position comment versus status text.** The position comment is a short standard word from a fixed list. The status text is your own sentence, up to 60 characters, in five versions (TEXT 1 to 5) of which you choose one.
+
+## Your listening frequency in every beacon, automatically
+
+This is the most practical APRS trick I found. You do **not** have to type your frequency. The FTM-510DE can add the frequency of the **other** band, the one that is not doing APRS, to the status text by itself. In my set-up APRS runs on the lower band, so every beacon carries the frequency of my **upper** band: the repeater I am listening to. Change repeater while driving, and the next beacon carries the new one.
+
+Anyone who sees ON3VZ-9 in his station list or on aprs.fi then reads something like "ON3VZ mobile QRV 438.987MHz T131 -760" and knows exactly where to call me: frequency, tone and shift.
+
+<div class="fx-how" markdown="1">
+<p class="fx-how-label">How to: set it up once in ADMS-18</p>
+
+1. Tab **APRS Beacon**, group **BEACON STATUS TEXT** at the bottom.
+2. In line **1**, type a short text, for example `ON3VZ mobile QRV`. Keep it under 20 characters: some radios cut the text off at fixed positions.
+3. In the dropdown to the right of line 1, choose **FREQ & SQL & SHIFT** instead of NONE. (FREQUENCY adds only the frequency; FREQ & SQL & SHIFT also adds tone and shift, so the other station can call you straight away.)
+4. Select the radio button **1** instead of OFF. That makes TEXT 1 the active status text.
+5. Set **TX RATE** to **1/2(FREQ)**: the frequency goes with every beacon, the text with every second one. That keeps 144.800 quieter.
+6. Send to the radio as usual (Send Data to SD card, SETUP or ALL, then 107 READ FROM SD).
+</div>
+
+<div class="fx-how" markdown="1">
+<p class="fx-how-label">How to: the same on the radio</p>
+
+1. Hold **FUNC**, turn to **84 BEACON STATUSTXT**, press FUNC.
+2. Choose **TEXT 1**, press FUNC, select **FREQ & SQL & SHIFT**, press FUNC, type the text and **hold FUNC** to confirm.
+3. Set **SELECT** to **TEXT 1** and **TX RATE** to **1/2(FREQ)**.
+4. Press PTT or the main knob to go back.
+</div>
+
+**Activating it:** nothing extra. Switch APRS on as usual (short press FUNC, APRS tile) and every beacon carries the text and your upper band frequency. **Check it** after a drive: search ON3VZ-9 on aprs.fi; the status line under your position shows the text with the frequency.
+
+**Tip:** do the same thing the other way round. When you see a station in your list with a frequency in his status text, tune the upper band to it and give him a call.
 
 ## Who receives a beacon
 
@@ -98,7 +128,7 @@ The **station list** shows every APRS station your radio has heard, newest first
 
 **What it is good for in the car:**
 
-- **Who is nearby.** A radio amateur 3 km ahead on the same road? His status text may show his listening frequency.
+- **Who is nearby.** A radio amateur 3 km ahead on the same road? His status text may show his listening frequency, with tone and shift: tune and call.
 - **Coverage check.** Hear a digipeater in the list? Then your beacons have a good chance of reaching the map.
 - **Finding a meeting point.** The compass in the details points to the other station.
 
@@ -164,7 +194,8 @@ APRS needs a band. When the modem is on, it uses one band permanently for 144.80
 ## What I actually do with APRS in the car
 
 - **Let family follow a trip** on aprs.fi, without a phone app.
-- **See who is around** in the station list and call him on his listening frequency.
+- **Be callable:** my status text carries the repeater I am on, automatically, so anyone who sees me on the map or in his station list knows where to call me.
+- **See who is around** in the station list and call him on the frequency in his status text.
 - **Check coverage** on a new route: where do the digipeaters reach, where not.
 - **A short message** to a friend who has APRS on, or to my own callsign on aprs.fi as a test.
 - **Find my way back** with the compass to a station I saw in the list.
@@ -174,6 +205,7 @@ APRS needs a band. When the modem is on, it uses one band permanently for 144.80
 - **APRS frequency:** 144.800 MHz, 1200 bps, lower band (SUB).
 - **On or off:** short press FUNC, APRS tile. A12 means on.
 - **Callsign:** ON3VZ-9 for the car.
+- **Status text:** TEXT 1 "ON3VZ mobile QRV" with FREQ & SQL & SHIFT, TX RATE 1/2(FREQ): your upper band frequency in every beacon.
 - **Path:** WIDE1-1,WIDE2-1.
 - **SmartBeaconing TYPE1:** 30 min standing still, 2 min at speed, extra in corners.
 - **Station list:** hold SUB DIAL, S.LIST. **Messages:** hold SUB DIAL, M.LIST.
