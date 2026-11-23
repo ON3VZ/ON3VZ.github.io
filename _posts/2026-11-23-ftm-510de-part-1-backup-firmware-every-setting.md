@@ -22,6 +22,11 @@ excerpt: "After almost a year of using my Yaesu FTM-510DE ASP in the car for not
 
 The Yaesu FTM-510DE ASP has been in my car for almost a year. If I am honest, I used it like a very expensive FM scanner: a list of repeaters, a few of them in the favourite group, and that was it. No APRS, no C4FM, never a firmware update, and a channel list that had grown by trial and error.
 
+<figure>
+<img src="/assets/images/ftm510d/ftm-510de-product.png" alt="Yaesu FTM-510DE ASP control head, main unit and microphone" style="max-width:220px;border:none" loading="lazy">
+<figcaption>The Yaesu FTM-510DE ASP: control head, main unit and the SSM-85D microphone.</figcaption>
+</figure>
+
 This series is the fix. I went through the whole radio again, from the microSD card to the last menu item, with one goal: get out of it everything that is in it, and understand why each setting is what it is. It is written for beginners like me. For every topic you get what it is, how it works, why you would use it, exactly which keys to press, the value I chose, and what "normal" looks like.
 
 <div class="fx-note" markdown="1">
