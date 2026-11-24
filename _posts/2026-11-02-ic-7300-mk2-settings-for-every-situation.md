@@ -3,6 +3,7 @@ layout: post
 title: "IC-7300 MkII Settings That Make Life Easier: Which Function, When, Why and How"
 tags: ['IC-7300', 'Station', 'SSB', 'Compressor', 'Noise Reduction', 'Filters', 'Split', 'Spectrum Scope', 'Beginners']
 excerpt: "A few months with the Icom IC-7300 MkII and I am still discovering combinations. This is my practical overview, organised by situation: a calm ragchew, chasing DX, city noise, a whistle on the frequency, a crowded band, a pile-up. For each one: which function I switch on, why, and exactly which keys to press."
+topics: ['Station & Equipment']
 ---
 <!-- IC7300-SETTINGS 2026-11-02: new post. Revert by deleting this file and the folder assets/images/ic7300-settings/ -->
 <style>

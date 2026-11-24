@@ -2,6 +2,7 @@
 layout: post
 title: "Ferrite Mix 43 and the 49:1 UNUN: Why a Beautiful SWR Curve Is Not the Whole Story"
 tags: [Ferrite, UNUN, EFHW, Antennas, VNA, Measurements, Beginners]
+topics: ['Antennas & Measurement']
 ---
 
 ## It started in the club chat

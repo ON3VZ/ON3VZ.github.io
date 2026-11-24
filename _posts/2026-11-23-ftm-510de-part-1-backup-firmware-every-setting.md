@@ -3,6 +3,10 @@ layout: post
 title: "Part 1/5 · Yaesu FTM-510DE ASP, One Year Later: Backup, Firmware, ADMS-18 and Every Setting Explained"
 tags: ['Yaesu', 'FTM-510DE', 'Mobile', 'C4FM', 'APRS', 'ADMS-18', 'Firmware', 'VHF', 'UHF', 'Beginners']
 excerpt: "After almost a year of using my Yaesu FTM-510DE ASP in the car for nothing more than a handful of FM repeaters, I went through the whole radio again. Part 1: the microSD card, a safe backup, the firmware update, programming with ADMS-18, and every Set Mode setting with what it does, what I chose and why."
+topics: ['VHF/UHF & Digital Voice']
+series: 'FTM-510DE'
+series_part: 1
+series_total: 5
 ---
 <!-- FTM510D-PART1 2026-11-23: new post. Revert by deleting this file and the folder assets/images/ftm510d/ -->
 <style>

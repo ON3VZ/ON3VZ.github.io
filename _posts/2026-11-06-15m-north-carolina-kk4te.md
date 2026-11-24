@@ -3,6 +3,7 @@ layout: post
 title: "Afternoon Opening: 15 m SSB to North Carolina on 25 Watts and an End-Fed Wire"
 tags: ['DX', '15m', 'USA', 'KK4TE', 'SSB', 'Propagation', 'HyEndFed', 'Beginners']
 excerpt: "The same day as my contacts with China, 15 m also opened for a short while towards the US east coast. KK4TE in North Carolina, 6,644 km away, 57 both ways, 25 watts into my end-fed wire. A few minutes later there was nothing left. This time it was not the far end that was at sunset, but my own."
+topics: ['HF & DX']
 ---
 <!-- NC-15M 2026-11-06: new post. Revert by deleting this file and the folder assets/images/nc-15m/ -->
 <style>

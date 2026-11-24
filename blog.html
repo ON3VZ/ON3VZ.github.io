@@ -2,22 +2,40 @@
 layout: default
 title: Blog
 ---
+<!-- BLOG-FILTER 2026-11-24: topic filter chips and series labels. Revert: git revert the commit that added this comment. -->
+{% assign topic_list = "Getting Started|HF & DX|FT8 & Digital Modes|VHF/UHF & Digital Voice|Antennas & Measurement|Station & Equipment|Portable & WWFF|Club, CW & Heritage|Tools & Software" | split: "|" %}
 <style>
 .blog-list{ padding: 5rem 0; }
 .blog-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+.blog-filter { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:2rem; }
+.blog-filter button { font-family: var(--f-mono); font-size:.72rem; letter-spacing:.04em; padding:.45rem .8rem; border-radius:999px; border:1px solid var(--c-border); background: var(--c-surface); color: var(--c-text-2, inherit); cursor:pointer; }
+.blog-filter button:hover { border-color: var(--c-primary); }
+.blog-filter button.is-active { background: var(--c-primary); border-color: var(--c-primary); color: var(--c-bg, #fff); }
+.blog-filter button .n { opacity:.7; margin-left:.3rem; }
+.blog-card__series { font-family: var(--f-mono); font-size:.6rem; letter-spacing:.06em; padding:.1rem .45rem; border:1px solid var(--c-border); border-radius:4px; color: var(--c-text-3); }
+.blog-count { font-family: var(--f-mono); font-size:.72rem; color: var(--c-text-3); margin-top:1rem; }
+.blog-card[hidden] { display:none !important; }
 </style>
 <section class="blog-list">
   <div class="container">
     <div class="section-label">Blog</div>
     <h1 class="section-title">Blog</h1>
-    <p class="section-sub">Overview of all posts.</p>
+    <p class="section-sub">Overview of all posts, newest first. Filter by topic.</p>
 
-    <div class="blog-grid" style="margin-top:2.5rem;">
-      {% for post in site.posts %}
-      <a class="blog-card" href="{{ post.url | relative_url }}" style="text-decoration:none;">
+    <div class="blog-filter" role="group" aria-label="Filter posts by topic">
+      <button type="button" class="is-active" data-topic="all" aria-pressed="true">All<span class="n">{{ site.posts.size }}</span></button>
+      {% for t in topic_list %}{% assign tslug = t | slugify %}{% assign tcount = 0 %}{% for post in site.posts %}{% if post.topics contains t %}{% assign tcount = tcount | plus: 1 %}{% endif %}{% endfor %}
+      <button type="button" data-topic="{{ tslug }}" aria-pressed="false">{{ t }}<span class="n">{{ tcount }}</span></button>{% endfor %}
+    </div>
+    <div class="blog-count" id="blog-count" aria-live="polite"></div>
+
+    <div class="blog-grid" style="margin-top:1.5rem;">
+      {% for post in site.posts %}{% capture tslugs %}{% for t in post.topics %}{{ t | slugify }} {% endfor %}{% endcapture %}
+      <a class="blog-card" href="{{ post.url | relative_url }}" style="text-decoration:none;" data-topics="{{ tslugs | strip }}">
         <div class="blog-card__inner">
           <div class="blog-card__meta">
-            {% if post.tags and post.tags.size > 0 %}<span class="blog-card__tag">{{ post.tags[0] }}</span>{% endif %}
+            {% if post.topics and post.topics.size > 0 %}<span class="blog-card__tag">{{ post.topics[0] }}</span>{% elsif post.tags and post.tags.size > 0 %}<span class="blog-card__tag">{{ post.tags[0] }}</span>{% endif %}
+            {% if post.series %}<span class="blog-card__series">{{ post.series }} {{ post.series_part }}/{{ post.series_total }}</span>{% endif %}
             <span>{{ post.date | date: '%d %b %Y' }}</span>
           </div>
           <div class="blog-card__title">{{ post.title }}</div>
@@ -32,3 +50,35 @@ title: Blog
     </div>
   </div>
 </section>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.blog-filter button');
+  var cards = document.querySelectorAll('.blog-grid .blog-card');
+  var count = document.getElementById('blog-count');
+  function apply(topic, push) {
+    var shown = 0, label = 'All';
+    buttons.forEach(function (b) {
+      var on = b.getAttribute('data-topic') === topic;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (on) label = b.firstChild.textContent;
+    });
+    cards.forEach(function (c) {
+      var ok = topic === 'all' || (' ' + c.getAttribute('data-topics') + ' ').indexOf(' ' + topic + ' ') > -1;
+      c.hidden = !ok; if (ok) shown++;
+    });
+    count.textContent = topic === 'all' ? '' : shown + (shown === 1 ? ' post' : ' posts') + ' in ' + label;
+    if (push) {
+      var url = new URL(window.location.href);
+      if (topic === 'all') url.searchParams.delete('topic'); else url.searchParams.set('topic', topic);
+      history.replaceState(null, '', url);
+    }
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-topic'), true); });
+  });
+  var start = new URLSearchParams(window.location.search).get('topic');
+  var valid = Array.prototype.some.call(buttons, function (b) { return b.getAttribute('data-topic') === start; });
+  apply(valid ? start : 'all', false);
+})();
+</script>

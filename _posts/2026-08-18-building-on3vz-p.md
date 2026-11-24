@@ -2,6 +2,7 @@
 layout: post
 title: "Building ON3VZ/P: a QRP Portable Station for Flora & Fauna"
 tags: ['Portable', 'QRP', 'WWFF', 'ONFF', 'POTA', 'Log4OM', 'WSJT-X', 'QMX', 'Beginners']
+topics: ['Portable & WWFF']
 ---
 
 <style>

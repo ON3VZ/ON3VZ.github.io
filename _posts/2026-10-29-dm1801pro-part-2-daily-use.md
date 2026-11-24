@@ -3,6 +3,10 @@ layout: post
 title: "Using a Baofeng DM-1801 Pro Day to Day: FM, DMR, Zones, Scanning and the Hotspot (Part 2)"
 tags: ['DMR', 'FM', 'Baofeng', 'DM-1801 Pro', 'BrandMeister', 'Talkgroups', 'Roaming', 'EchoLink', 'Hotspot', 'Beginners']
 excerpt: "The radio is programmed, now what? A practical guide for someone who knows nothing about DMR: the keys and the screen, A and B, dual watch, zones, scanning, an FM QSO, a DMR call, who hears what, QSY, roaming, DTMF for EchoLink and using the hotspot. Always a situation, then a step plan with the exact keys and menus."
+topics: ['VHF/UHF & Digital Voice']
+series: 'Digital Voice'
+series_part: 2
+series_total: 4
 ---
 <!-- DM1801PRO-PART2 2026-10-29: new post. Revert by deleting this file (images are shared with part 1 in assets/images/dm1801pro/) -->
 <style>

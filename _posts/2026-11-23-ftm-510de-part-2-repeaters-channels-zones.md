@@ -3,6 +3,10 @@ layout: post
 title: "Part 2/5 · Yaesu FTM-510DE ASP, One Year Later: Repeaters, a Clean Channel List and Zones on the SD Card"
 tags: ['Yaesu', 'FTM-510DE', 'Mobile', 'FM', 'Repeaters', 'CTCSS', 'SvxLink', 'EchoLink', 'ADMS-18', 'VHF', 'UHF', 'Beginners']
 excerpt: "How a repeater works, why TN and TSQ make such a difference, how to check narrow or wide by ear, how I rebuilt my channel list in ADMS-18 without breaking what already worked, and how ten files on the microSD card give the FTM-510DE the zones it does not have."
+topics: ['VHF/UHF & Digital Voice']
+series: 'FTM-510DE'
+series_part: 2
+series_total: 5
 ---
 <!-- FTM510D-PART2 2026-11-23: new post. Revert by deleting this file, the Part 2 images in assets/images/ftm510d/ (adms-memories-*.jpg, radio-on0wal.jpg, radio-on0bel.jpg, repeater-shift-ctcss.svg) and assets/files/ftm510de-zones-csv-2026-11.zip -->
 <style>

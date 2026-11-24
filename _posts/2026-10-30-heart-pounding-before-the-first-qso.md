@@ -3,6 +3,7 @@ layout: post
 title: "Heart Pounding Before the First QSO: Five Months from Callsign to Pile-ups"
 tags: ['Beginners', 'First QSO', 'Class C', 'Station', 'Logging', 'Propagation', 'Split', 'Contest', 'Portable', 'QRP', 'WLD']
 excerpt: "WIMO asked: do you remember your first QSO? My answer, and a wrap-up of five months as a new Class C operator: the search for the right gear, a clean shack for DX and NVIS, logging, propagation, my first split, my first contest hours, and the QRP experiments that come next."
+topics: ['Getting Started']
 ---
 <!-- FIRST-QSO-WRAPUP 2026-10-30: new post. Revert by deleting this file, the folder assets/images/first-qso-wrapup/ and assets/files/ON3VZ-Heart-Pounding-Before-the-First-QSO.pdf -->
 <style>

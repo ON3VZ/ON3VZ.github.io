@@ -3,6 +3,7 @@ layout: post
 title: "My First Split QSO: Working an Iceland Pile-Up on 40 m (TF/PD9DX)"
 tags: ['DX', 'TF/PD9DX', 'Iceland', 'Split', 'Pile-up', 'SSB', '40m', 'IC-7300', 'Beginners']
 excerpt: "I heard it described many times, but today I lived it: a DX station calling CQ on 7.150 and listening on 7.154. How split operation works, how I set up my IC-7300 MkII, why the display jumps to VFO B, and what I would tell any beginner before the first pile-up."
+topics: ['HF & DX']
 ---
 <!-- SPLIT-QSO 2026-10-12: new post. Revert by deleting this file and the folder assets/images/split-qso/ -->
 <style>

@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "HF Band Scout — When Can I Reach Where, and How Should I Set Up My Radio?"
+title: "HF Band Scout: When Can I Reach Where, and How Should I Set Up My Radio?"
 tags: ['HF', 'Propagation', 'Tools', 'Projects']
+topics: ['Tools & Software', 'HF & DX']
 ---
 
 <div style="background:linear-gradient(135deg,rgba(0,255,136,0.07) 0%,rgba(0,212,255,0.05) 100%);border:1px solid rgba(0,255,136,0.2);border-radius:12px;padding:1.8rem 2rem;margin:0 0 2.5rem;text-align:center;">
   <div style="font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.18rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.6rem;">Interactive · Free · PWA · No account needed</div>
   <div style="font-family:var(--f-display);font-size:2.2rem;font-weight:900;color:var(--c-primary);text-shadow:0 0 30px rgba(0,255,136,0.4);letter-spacing:0.1rem;margin-bottom:0.4rem;">HF Band Scout</div>
-  <div style="color:var(--c-text-2);font-size:0.95rem;margin-bottom:1.4rem;">An interactive world map that shows where you can currently make contact — and on which band — based on your station, licence, and live space weather.</div>
+  <div style="color:var(--c-text-2);font-size:0.95rem;margin-bottom:1.4rem;">An interactive world map that shows where you can currently make contact, and on which band, based on your station, licence, and live space weather.</div>
   <a href="https://on3vz.github.io/BandScout" target="_blank" rel="noopener"
      style="display:inline-block;background:var(--c-primary);color:#080d18;font-family:var(--f-display);font-size:0.85rem;font-weight:700;letter-spacing:0.12rem;padding:0.8rem 2.2rem;border-radius:6px;text-decoration:none;box-shadow:0 0 24px rgba(0,255,136,0.4);">
     OPEN BAND SCOUT →
@@ -18,7 +19,7 @@ Every HF operator hits the same wall early on.
 
 You switch on the rig, tune across the band, hear a handful of stations, and then wonder: can they actually hear me? Am I on the right band for where I want to go? And when the contact finally happens, was my radio set up correctly for those conditions?
 
-Experienced operators solve this almost by instinct. They know that 20m is the workhorse for daytime DX toward North America, that 40m opens up toward Eastern Europe after sunset, that a geomagnetic storm means polar paths are probably useless. They have spent years building that feel — thousands of contacts, countless hours of listening.
+Experienced operators solve this almost by instinct. They know that 20m is the workhorse for daytime DX toward North America, that 40m opens up toward Eastern Europe after sunset, that a geomagnetic storm means polar paths are probably useless. They have spent years building that feel, thousands of contacts, countless hours of listening.
 
 As a beginner, that instinct is simply not there yet. And as a Belgian Class C licensee limited to 25 watts, there is even less margin for guesswork.
 
@@ -40,7 +41,7 @@ Switch bands with the tabs at the top. Use the time slider to see how conditions
 
 ## 2. The Ionosphere in Plain Language
 
-To understand what the app does, a brief step back into the physics — no maths, promised.
+To understand what the app does, a brief step back into the physics, no maths, promised.
 
 The Earth is surrounded by a layer of charged particles high in the atmosphere: the **ionosphere**, sitting between 60 and 400 km altitude. This layer reflects radio waves back toward the Earth's surface, allowing HF signals to travel far beyond line of sight.
 
@@ -48,7 +49,7 @@ The ionosphere is not a fixed mirror. It changes constantly, driven by the sun.
 
 ### Solar Flux Index (SFI)
 
-Ultraviolet radiation from the sun ionises the upper atmosphere. More solar activity means more ionisation, which means the higher bands, 15m and 10m especially, work better. The Solar Flux Index, measured daily at 10.7 cm wavelength, is the standard proxy for solar activity. As of June 2026, the SFI sits around 142 — a good value, well above solar minimum.
+Ultraviolet radiation from the sun ionises the upper atmosphere. More solar activity means more ionisation, which means the higher bands, 15m and 10m especially, work better. The Solar Flux Index, measured daily at 10.7 cm wavelength, is the standard proxy for solar activity. As of June 2026, the SFI sits around 142, a good value, well above solar minimum.
 
 ### Maximum Usable Frequency (MUF)
 

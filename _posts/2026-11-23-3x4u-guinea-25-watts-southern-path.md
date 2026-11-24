@@ -3,6 +3,7 @@ layout: post
 title: "3X4U Guinea on 25 Watts: Working the Southern Path on SSB, CW and FT8"
 tags: ['DXpedition', '3X4U', 'Propagation', 'SSB', 'CW', 'FT8', '10m', '15m', '40m', 'IronWave 6', 'HyEndFed', 'Low Power', 'Beginners']
 excerpt: "A Belgian DXpedition in Guinea, and a Belgian Class C station with 25 W in a city garden. Between 17 and 19 November 2026 I worked 3X4U five times: FT8 on 40 m and 15 m, CW on 10 m with 20 W, and SSB on 15 m and 10 m with 25 W. Why is the path due south so hard, how does a small signal still get there, and why did SSB work on days when the model said it should not? With maps, diagrams and my own numbers."
+topics: ['HF & DX']
 ---
 <!-- 3X4U-PROPAGATION 2026-11-23: new post. Revert by deleting this file and the folder assets/images/3x4u-propagation/ -->
 <style>

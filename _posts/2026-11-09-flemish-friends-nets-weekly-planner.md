@@ -3,6 +3,7 @@ layout: post
 title: "Friends Nets in Flanders: Who, Where and When (Plus How to Join)"
 tags: ['Friends nets', 'VHF', 'SvxLink', 'DMR', 'Beginners', 'Flanders']
 excerpt: "Sometimes you cannot see the forest for the trees: more ways to communicate, fewer QSOs. So here is one weekly planner of the Flemish friends nets I could confirm on the clubs' own pages, with the frequency, the time and the mode, plus how to join on FM, SvxLink and DMR, including how to get a DMR net on your radio automatically."
+topics: ['VHF/UHF & Digital Voice', 'Club, CW & Heritage']
 ---
 <!-- FRIENDS-NETS 2026-11-09: new post. Revert by deleting this file. -->
 <style>

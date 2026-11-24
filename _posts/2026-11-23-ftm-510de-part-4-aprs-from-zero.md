@@ -3,6 +3,10 @@ layout: post
 title: "Part 4/5 · Yaesu FTM-510DE ASP, One Year Later: APRS From Zero, Beacons, Messages and What You Do With It"
 tags: ['Yaesu', 'FTM-510DE', 'Mobile', 'APRS', 'SmartBeaconing', 'GPS', 'aprs.fi', 'Beginners']
 excerpt: "I knew aprs.fi: a map with little cars. What a beacon really is, where it goes, what a message or a station list is for, and what you actually do with all of it in the car was a mystery. This is APRS explained from zero, with the settings I use on the FTM-510DE."
+topics: ['VHF/UHF & Digital Voice']
+series: 'FTM-510DE'
+series_part: 4
+series_total: 5
 ---
 <!-- FTM510D-PART4 2026-11-23: new post. Revert by deleting this file and assets/images/ftm510d/aprs-path.svg -->
 <style>

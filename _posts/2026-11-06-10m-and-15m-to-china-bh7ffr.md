@@ -3,6 +3,7 @@ layout: post
 title: "Two Bands to China in One Morning: 10 m and 15 m SSB with BH7FFR on 25 Watts"
 tags: ['DX', '10m', '15m', 'China', 'BH7FFR', 'SSB', 'Propagation', 'Grey Line', 'IronWave', 'Beginners']
 excerpt: "On 6 November the 10 metre band opened to South China for about half an hour and I worked BH7FFR in Changsha, 8,780 km away, with 25 watts and a vertical in a city garden. Twenty minutes later I worked him again on 15 m, with a very clear signal. Why 10 m opened and closed, why 15 m took over, and why everybody got a 59."
+topics: ['HF & DX']
 ---
 <!-- CHINA-10M 2026-11-06: new post (second QSO on 15 m added the same day). Revert by deleting this file and the folder assets/images/china-10m/ -->
 <style>

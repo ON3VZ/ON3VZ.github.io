@@ -2,6 +2,7 @@
 layout: post
 title: "Eight Weeks On The Air: What 247 QSOs Taught a Class C Beginner"
 tags: [Logbook, Analysis, Propagation, Grey Line, SSB, FT8, Beginners, IC-7300, DXCC]
+topics: ['Getting Started', 'HF & DX']
 ---
 
 <!--

@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "dB & dBm — From Zero to Confident in One Course"
+title: "dB & dBm: From Zero to Confident in One Course"
 tags: ['HF', 'Learning', 'Tools']
+topics: ['Getting Started', 'Antennas & Measurement']
 ---
 
 <div style="background:linear-gradient(135deg,rgba(0,255,136,0.07) 0%,rgba(0,212,255,0.05) 100%);border:1px solid rgba(0,255,136,0.2);border-radius:12px;padding:1.8rem 2rem;margin:0 0 2.5rem;text-align:center;">
   <div style="font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.18rem;color:var(--c-text-3);text-transform:uppercase;margin-bottom:0.6rem;">Interactive · 3 languages · Free</div>
   <div style="font-family:var(--f-display);font-size:2.2rem;font-weight:900;color:var(--c-primary);text-shadow:0 0 30px rgba(0,255,136,0.4);letter-spacing:0.1rem;margin-bottom:0.4rem;">RF dB & dBm</div>
-  <div style="color:var(--c-text-2);font-size:0.95rem;margin-bottom:1.4rem;">A step-by-step course that takes you from basic maths to reading RF analyser output — confidently.</div>
+  <div style="color:var(--c-text-2);font-size:0.95rem;margin-bottom:1.4rem;">A step-by-step course that takes you from basic maths to reading RF analyser output, confidently.</div>
   <a href="https://on3vz.github.io/rf-db-dbm" target="_blank" rel="noopener"
      style="display:inline-block;background:var(--c-primary);color:#080d18;font-family:var(--f-display);font-size:0.85rem;font-weight:700;letter-spacing:0.12rem;padding:0.8rem 2.2rem;border-radius:6px;text-decoration:none;box-shadow:0 0 24px rgba(0,255,136,0.4);transition:all 0.2s ease;">
     START THE COURSE →
@@ -16,17 +17,17 @@ tags: ['HF', 'Learning', 'Tools']
 
 It started with a workshop.
 
-Every few months our section at [WLD / ON6WL](https://on6wl.be) gets together for a hands-on session. Last time, the theme was **measuring and analysing our portable setups** — antennas, feedlines, connectors, the works. Everyone brought their gear. Someone brought a RigExpert. Someone else had a NanoVNA. Readings appeared on screens. Numbers got written down.
+Every few months our section at [WLD / ON6WL](https://on6wl.be) gets together for a hands-on session. Last time, the theme was **measuring and analysing our portable setups**, antennas, feedlines, connectors, the works. Everyone brought their gear. Someone brought a RigExpert. Someone else had a NanoVNA. Readings appeared on screens. Numbers got written down.
 
 And then came the question that always comes up at some point:
 
-*"Wait — what does −3 dB actually mean?"*
+*"Wait, what does −3 dB actually mean?"*
 
 ---
 
 ## Why dB Trips People Up
 
-The decibel is one of those concepts that feels mysterious until the moment it clicks — and once it clicks, you wonder why it ever seemed complicated. The problem is that most explanations either skip the basics entirely (*"just remember that 3 dB is double the power"*) or go straight into logarithm theory that loses half the room in the first paragraph.
+The decibel is one of those concepts that feels mysterious until the moment it clicks, and once it clicks, you wonder why it ever seemed complicated. The problem is that most explanations either skip the basics entirely (*"just remember that 3 dB is double the power"*) or go straight into logarithm theory that loses half the room in the first paragraph.
 
 What I noticed at the workshop: it was not that people did not understand the physics. It was that they had never seen the maths laid out step by step, at the right pace, with room to practise.
 
@@ -46,26 +47,26 @@ So I built a course.
 
 <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1.2rem 1.4rem;">
   <div style="font-family:var(--f-mono);font-size:0.62rem;letter-spacing:0.12rem;color:var(--c-primary);margin-bottom:0.5rem;">MODULE 02</div>
-  <div style="font-weight:600;margin-bottom:0.4rem;">The Maths — Gently</div>
+  <div style="font-weight:600;margin-bottom:0.4rem;">The Maths, Gently</div>
   <div style="font-size:0.82rem;color:var(--c-text-2);">Logarithms without the trauma. The key formulas, explained from first principles, with worked examples at each step.</div>
 </div>
 
 <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1.2rem 1.4rem;">
   <div style="font-family:var(--f-mono);font-size:0.62rem;letter-spacing:0.12rem;color:var(--c-cyan);margin-bottom:0.5rem;">MODULE 03</div>
-  <div style="font-weight:600;margin-bottom:0.4rem;">dB vs dBm — The Difference</div>
+  <div style="font-weight:600;margin-bottom:0.4rem;">dB vs dBm, The Difference</div>
   <div style="font-size:0.82rem;color:var(--c-text-2);">dB is a ratio. dBm is an absolute level referenced to 1 milliwatt. Understanding which one you are reading changes everything.</div>
 </div>
 
 <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1.2rem 1.4rem;">
   <div style="font-family:var(--f-mono);font-size:0.62rem;letter-spacing:0.12rem;color:var(--c-cyan);margin-bottom:0.5rem;">MODULE 04</div>
   <div style="font-weight:600;margin-bottom:0.4rem;">Chain Calculations</div>
-  <div style="font-size:0.82rem;color:var(--c-text-2);">Antenna gain, coax loss, connector loss — add and subtract dB values through a real RF chain, step by step.</div>
+  <div style="font-size:0.82rem;color:var(--c-text-2);">Antenna gain, coax loss, connector loss, add and subtract dB values through a real RF chain, step by step.</div>
 </div>
 
 <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1.2rem 1.4rem;">
   <div style="font-family:var(--f-mono);font-size:0.62rem;letter-spacing:0.12rem;color:var(--c-amber);margin-bottom:0.5rem;">MODULE 05</div>
   <div style="font-weight:600;margin-bottom:0.4rem;">Reading Analyser Output</div>
-  <div style="font-size:0.82rem;color:var(--c-text-2);">Take a real NanoVNA or RigExpert screenshot and interpret what it tells you — SWR, return loss, insertion loss, all of it.</div>
+  <div style="font-size:0.82rem;color:var(--c-text-2);">Take a real NanoVNA or RigExpert screenshot and interpret what it tells you, SWR, return loss, insertion loss, all of it.</div>
 </div>
 
 <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:1.2rem 1.4rem;">
@@ -78,9 +79,9 @@ So I built a course.
 
 ---
 
-## Built for Beginners — But Not Dumbed Down
+## Built for Beginners: But Not Dumbed Down
 
-The course starts with the assumption that you know basic arithmetic and nothing else. By the end, you will be comfortable doing RF chain calculations in your head — the kind that actually come up at a portable setup or during an antenna measurement session.
+The course starts with the assumption that you know basic arithmetic and nothing else. By the end, you will be comfortable doing RF chain calculations in your head, the kind that actually come up at a portable setup or during an antenna measurement session.
 
 Each section has **exercises with worked answers**, so you can check your understanding before moving on. A progress tracker at the top of each page shows you exactly where you are and what is left.
 
@@ -93,7 +94,7 @@ Each section has **exercises with worked answers**, so you can check your unders
 
 ## The Cheat Sheet
 
-A taste of what is inside — the four relationships you will use most often:
+A taste of what is inside, the four relationships you will use most often:
 
 <div style="background:var(--c-surface);border:1px solid rgba(0,255,136,0.18);border-radius:10px;padding:1.4rem 1.8rem;margin:1.5rem 0;font-family:var(--f-mono);font-size:0.82rem;">
 
@@ -120,7 +121,7 @@ A taste of what is inside — the four relationships you will use most often:
 
 ## Available in Three Languages
 
-The course is available in **English**, **Dutch (Nederlands)**, and **French (Français)** — switch freely between them at any time. It is completely free, no account required, no strings attached.
+The course is available in **English**, **Dutch (Nederlands)**, and **French (Français)**, switch freely between them at any time. It is completely free, no account required, no strings attached.
 
 <div style="text-align:center;margin:2.5rem 0 1rem;">
   <a href="https://on3vz.github.io/rf-db-dbm" target="_blank" rel="noopener"
@@ -129,4 +130,4 @@ The course is available in **English**, **Dutch (Nederlands)**, and **French (Fr
   </a>
 </div>
 
-*73, Kristof — ON3VZ*
+*73, Kristof, ON3VZ*

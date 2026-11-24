@@ -4,6 +4,7 @@ title: "How to (Almost) Crash a Lunar Lander: The Lunar Descent CTF Explained"
 tags: [Radar, Signal Processing, FMCW, FFT, CTF, DSP, Beginners]
 extra_css:
   - /css/lunar-ctf.css
+topics: ['Tools & Software']
 ---
 
 A little while ago, [ON4AOL](https://www.qrz.com/db/ON4AOL) (Luc) forwarded me a link to an article by Daniel Estévez (EA4GPZ/M0HXM), *ORI's lunar descent CTF*, with the simple question of whether this might be something for me.

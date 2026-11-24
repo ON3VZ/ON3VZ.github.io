@@ -2,6 +2,7 @@
 layout: post
 title: "QSObridge: Any Log In, the Right Format Out"
 tags: ['Tools', 'Logging', 'Contest']
+topics: ['Tools & Software']
 ---
 
 <style>

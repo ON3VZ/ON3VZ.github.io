@@ -3,6 +3,7 @@ layout: post
 title: "HamClock for Beginners: What It Is, How to Read It, and How to Keep It Running After WB0OEW"
 tags: ['HamClock', 'Elwood Downey', 'WB0OEW', 'Propagation', 'Space Weather', 'DX Cluster', 'VOACAP', 'Raspberry Pi', 'Open HamClock Backend', 'OpenHamClock', 'Shack', 'Beginners']
 excerpt: "A complete beginner's guide to HamClock in 2026: why it matters, what it shows, what is inside the box and how it connects, how to connect it, how to read every pane and the space weather numbers, the setup page by page, real-life scenarios, how to move an old clock to a new backend after the death of its creator Elwood Downey, WB0OEW, how to build one yourself, troubleshooting, and the alternatives."
+topics: ['Station & Equipment', 'Tools & Software']
 ---
 <!-- HAMCLOCK 2026-11-14: new post. Revert by deleting this file and the folder assets/images/hamclock/ -->
 <style>

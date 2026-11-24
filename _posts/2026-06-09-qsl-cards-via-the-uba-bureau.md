@@ -2,6 +2,7 @@
 layout: post
 title: "QSL via the Bureau: A Newcomer's Guide to Real Cards on the UBA QSL Service"
 tags: [QSL, UBA, Bureau, Beginners, HF, DX]
+topics: ['Getting Started']
 ---
 
 *By ON3VZ / Kristof, Hoboken (Antwerp), Grid JO21EE*

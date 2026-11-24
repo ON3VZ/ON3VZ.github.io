@@ -3,6 +3,7 @@ layout: post
 title: "25 Watts to Borneo: My 15m SSB Contact with Indonesia"
 tags: [DX, YC7ONI, SSB, 15m, Propagation, Equinox, EFHW, IC-7300, Beginners]
 excerpt: "Planned, not lucky: I worked out the best time for a marginal 15m path to South-East Asia, kept listening through deep QSB until the signal built up, and made an 11,450 km SSB contact with Borneo on just 25 watts."
+topics: ['HF & DX']
 ---
 <!-- BORNEO-15M 2026-09-28: new post. Revert by deleting this file. -->
 

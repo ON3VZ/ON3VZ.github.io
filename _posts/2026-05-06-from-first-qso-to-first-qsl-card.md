@@ -2,9 +2,10 @@
 layout: post
 title: "From First QSO to First QSL Card: The Complete Logging and QSL Guide for the Belgian Radio Amateur"
 tags: [Logging, QSL, FT8, POTA, Awards, Beginners, HF, Software]
+topics: ['Getting Started']
 ---
 
-*By ON3VZ / Kristof — Hoboken (Antwerp) — Grid: JO21EE*
+*By ON3VZ / Kristof, Hoboken (Antwerp), Grid: JO21EE*
 *Member of UBA and radio amateur club WLD (ON6WL)*
 
 ---
@@ -36,7 +37,7 @@ tags: [Logging, QSL, FT8, POTA, Awards, Beginners, HF, Software]
 
 When you have just passed your radio amateur exam and received your callsign, you are faced with a wall of choices. Which software do I install? What is LoTW and why does everyone ask about it? How does the QSL bureau work? What is FT8?
 
-This article answers all those questions — completely, in the right order, with an emphasis on the Belgian context. Not a superficial overview — a reference guide that takes you from zero to fully operational.
+This article answers all those questions, completely, in the right order, with an emphasis on the Belgian context. Not a superficial overview, a reference guide that takes you from zero to fully operational.
 
 **For whom:**
 - New Belgian radio amateurs (Class A, B or C)
@@ -49,7 +50,7 @@ This article answers all those questions — completely, in the right order, wit
 
 ### What Is a QSO?
 
-A **QSO** is radio amateur terminology for a two-way radio conversation. The word comes from the Q-code — a system of three-letter abbreviations developed for telegraphy in the early 20th century. Today, radio amateurs use the term as a synonym for "making a radio contact", regardless of the mode.
+A **QSO** is radio amateur terminology for a two-way radio conversation. The word comes from the Q-code, a system of three-letter abbreviations developed for telegraphy in the early 20th century. Today, radio amateurs use the term as a synonym for "making a radio contact", regardless of the mode.
 
 Three Q-codes that beginners constantly mix up:
 
@@ -59,30 +60,30 @@ Three Q-codes that beginners constantly mix up:
 | **QSL** | Confirmation of that contact | A card or digital confirmation |
 | **QRZ** | "Who is calling me?" | Also the name of the most well-known ham radio website |
 
-> ⚠️ **Heads up:** QRZ.com is a website, not a radio term to confirm a QSO. If you say "QRZ?" on the radio, you are asking who is calling you — nothing more.
+> ⚠️ **Heads up:** QRZ.com is a website, not a radio term to confirm a QSO. If you say "QRZ?" on the radio, you are asking who is calling you, nothing more.
 
 ### Typical Flow of an SSB QSO
 
 **SSB** (*Single Side Band*) is the most commonly used voice mode on HF (shortwave, 3–30 MHz):
 
-1. **Station A calls CQ** — *"CQ CQ CQ, this is ON3VZ, Oscar November Three Victor Zulu, calling CQ and standing by."*
-   — **CQ** = "I am calling anyone", a general call.
-2. **Station B replies** — *"ON3VZ, this is PA3XYZ, Papa Alpha Three X-ray Yankee Zulu."*
-3. **Exchange** — Minimum: **RST report** (Readability, Strength, Tone — e.g. 59 = perfectly readable and strong), name, location.
-4. **Closing** — *"73, PA3XYZ ON3VZ."* — 73 is the radio greeting for "best regards".
+1. **Station A calls CQ**: *"CQ CQ CQ, this is ON3VZ, Oscar November Three Victor Zulu, calling CQ and standing by."*
+  , **CQ** = "I am calling anyone", a general call.
+2. **Station B replies**: *"ON3VZ, this is PA3XYZ, Papa Alpha Three X-ray Yankee Zulu."*
+3. **Exchange**: Minimum: **RST report** (Readability, Strength, Tone, e.g. 59 = perfectly readable and strong), name, location.
+4. **Closing**: *"73, PA3XYZ ON3VZ."*, 73 is the radio greeting for "best regards".
 
-> 💡 **Pro tip:** The NATO phonetic alphabet is not optional — it is a requirement. "Oscar November Three Victor Zulu" must come automatically before you go on the air. Practise it out loud until it flows without thinking.
+> 💡 **Pro tip:** The NATO phonetic alphabet is not optional, it is a requirement. "Oscar November Three Victor Zulu" must come automatically before you go on the air. Practise it out loud until it flows without thinking.
 
 ### What Is a Logbook and Why Does It Exist?
 
 A **logbook** is an ordered record of all your QSOs. For each contact you note who, when, on which frequency, in which mode, and what the signal report was.
 
 The logbook serves five purposes:
-- **Proof** — your log is the reference in case of disputes
-- **Awards** — every diploma is based on confirmed QSOs
-- **Statistics** — how many countries? which bands perform best?
-- **QSL management** — which confirmations have been sent, received, matched?
-- **Antenna analysis** — is my new antenna performing better than the previous one?
+- **Proof**: your log is the reference in case of disputes
+- **Awards**: every diploma is based on confirmed QSOs
+- **Statistics**: how many countries? which bands perform best?
+- **QSL management**: which confirmations have been sent, received, matched?
+- **Antenna analysis**: is my new antenna performing better than the previous one?
 
 ### Is Logging Legally Mandatory in Belgium?
 
@@ -101,7 +102,7 @@ The UBA (*Union of Belgian Radio Amateurs*) considers logging "good amateur prac
 | Field | Example | Why |
 |---|---|---|
 | **Date** | 2026-05-12 | ISO format: year-month-day |
-| **Time UTC** | 14:32 | Always UTC — never local time |
+| **Time UTC** | 14:32 | Always UTC: never local time |
 | **Band or frequency** | 40m / 7.150 MHz | Band is minimum, frequency is better |
 | **Mode** | SSB / CW / FT8 | How you communicated |
 | **Counterpart callsign** | PA3XYZ | Exact, without typos |
@@ -117,7 +118,7 @@ The UBA (*Union of Belgian Radio Amateurs*) considers logging "good amateur prac
 | Winter (CET) | 13:00 | 12:00 |
 | Summer (CEST) | 14:00 | 12:00 |
 
-> ⚠️ **Critical mistake:** You make a QSO at 14:00 Belgian summer time and log 14:00 — but it must be 12:00 UTC. If the counterpart logs 12:00 UTC and you log 14:00 local, your log will **never** match in LoTW. Confirmation lost.
+> ⚠️ **Critical mistake:** You make a QSO at 14:00 Belgian summer time and log 14:00, but it must be 12:00 UTC. If the counterpart logs 12:00 UTC and you log 14:00 local, your log will **never** match in LoTW. Confirmation lost.
 
 The entire radio amateur world uses UTC. Set your PC clock to automatic time synchronisation. A clock that is 2 minutes slow already causes problems with FT8.
 
@@ -141,15 +142,15 @@ An ADIF record for one QSO:
 <EOR>
 ```
 
-`<EOR>` = *End Of Record*. You never write this manually — your logging software does it. But you recognise it when checking an upload by hand.
+`<EOR>` = *End Of Record*. You never write this manually, your logging software does it. But you recognise it when checking an upload by hand.
 
-> 💡 **Pro tip:** Make periodic ADIF backups of your complete log and save to the cloud. An ADIF file is your life's work as a radio amateur — treat it that way.
+> 💡 **Pro tip:** Make periodic ADIF backups of your complete log and save to the cloud. An ADIF file is your life's work as a radio amateur, treat it that way.
 
 ---
 
 ## 3. The Ecosystem: Four Tools, Four Roles {#ecosystem}
 
-You do not need one piece of software — you need four, each for a specific situation.
+You do not need one piece of software, you need four, each for a specific situation.
 
 ```
 IC-7300 MkII ──USB──▶ OmniRig ──▶ Log4OM 2   (daily logbook, hub)
@@ -182,15 +183,15 @@ Log4OM 2  ──▶ LoTW      (awards, DXCC)
 
 ### What Is Log4OM 2?
 
-**Log4OM 2** is free, Windows-based logging software from the Italian team of Daniele Pistollato (IW3HMH). The most popular logging software in Europe, with excellent integration with LoTW, Clublog, QRZ.com and eQSL. A paid Log4OM Club version for cloud sync also exists — for the average home shack the free version is more than sufficient.
+**Log4OM 2** is free, Windows-based logging software from the Italian team of Daniele Pistollato (IW3HMH). The most popular logging software in Europe, with excellent integration with LoTW, Clublog, QRZ.com and eQSL. A paid Log4OM Club version for cloud sync also exists, for the average home shack the free version is more than sufficient.
 
-### Installation Procedure — the Correct Order
+### Installation Procedure: the Correct Order
 
 > ⚠️ **Heads up:** Follow this order strictly. Installing Log4OM before OmniRig requires extra steps afterwards.
 
 **Step 1: IC-7300 MkII USB driver**
 
-Download from [https://www.icomjapan.com/support/](https://www.icomjapan.com/support/) → search IC-7300. Connect the radio after installation and note the COM port number in Windows Device Manager (e.g. COM5). Always use the same USB port on your PC — put a sticker on the correct port.
+Download from [https://www.icomjapan.com/support/](https://www.icomjapan.com/support/) → search IC-7300. Connect the radio after installation and note the COM port number in Windows Device Manager (e.g. COM5). Always use the same USB port on your PC, put a sticker on the correct port.
 
 **Step 2: OmniRig**
 
@@ -205,7 +206,7 @@ RTS:         High / DTR: High
 Poll Int:    500 ms
 ```
 
-> ⚠️ **IC-7300 MkII specific:** The MkII operates at 115200 baud — unlike the original IC-7300 (9600 or 19200). Also configure on the radio: MENU → SET → Connectors → CI-V Baud Rate: 115200, CI-V Transceive: ON.
+> ⚠️ **IC-7300 MkII specific:** The MkII operates at 115200 baud, unlike the original IC-7300 (9600 or 19200). Also configure on the radio: MENU → SET → Connectors → CI-V Baud Rate: 115200, CI-V Transceive: ON.
 
 If the radio's frequency is visible in the OmniRig window: ✅ connection OK.
 
@@ -227,7 +228,7 @@ CQ Zone:        14
 
 ### Setting Up the CAT Link
 
-**Settings → CAT/Rig Control → OmniRig Rig 1** → click Test. Turn the tuning knob — the frequency in Log4OM should follow. All frequency and mode changes via the radio are now tracked automatically.
+**Settings → CAT/Rig Control → OmniRig Rig 1** → click Test. Turn the tuning knob, the frequency in Log4OM should follow. All frequency and mode changes via the radio are now tracked automatically.
 
 ### QRZ.com API Integration
 
@@ -242,7 +243,7 @@ Username:               ON3VZ
 API Key:                [your XML API key]
 ```
 
-> ⚠️ **Confusion to avoid:** QRZ.com has two separate API keys — one for XML Lookup (callsign info) and one for the Logbook (QSO upload). Both require a paid subscription but are different keys. Generate and enter them separately.
+> ⚠️ **Confusion to avoid:** QRZ.com has two separate API keys, one for XML Lookup (callsign info) and one for the Logbook (QSO upload). Both require a paid subscription but are different keys. Generate and enter them separately.
 
 ### Connecting Online Services in Log4OM
 
@@ -299,7 +300,7 @@ Send QSL:         On
 
 1. Type callsign in the Entry Window → Tab
 2. QRZ.com lookup fills in name, QTH and DXCC automatically
-3. Date and UTC time are filled in automatically — verify them
+3. Date and UTC time are filled in automatically, verify them
 4. Band and mode are taken from the radio via CAT
 5. Fill in RST sent and received
 6. Press F12 → QSO appears in the log list
@@ -340,15 +341,15 @@ There is no universal system. Each platform arose from a different need. You nee
 | **Counts for DXCC?** | ✅ Yes | ❌ No | ❌ No | ❌ No |
 | **Verification required?** | ✅ Yes (certificate) | ❌ No | ❌ No | ❌ No |
 
-### LoTW — The Gold Standard for Awards
+### LoTW: The Gold Standard for Awards
 
 **LoTW** (*Logbook of the World*) is the ARRL's digital confirmation system (2003). The world standard for official QSO confirmations.
 
-**How it works:** You upload QSO X. The counterpart uploads the same QSO. LoTW compares them — if callsign, band, mode, date and time match within ±30 minutes: match = confirmed QSO, valid as DXCC evidence.
+**How it works:** You upload QSO X. The counterpart uploads the same QSO. LoTW compares them, if callsign, band, mode, date and time match within ±30 minutes: match = confirmed QSO, valid as DXCC evidence.
 
-Every account is linked to a **cryptographic certificate** verified via the national licensing authority — in Belgium via the UBA. A LoTW QSO cannot be forged.
+Every account is linked to a **cryptographic certificate** verified via the national licensing authority, in Belgium via the UBA. A LoTW QSO cannot be forged.
 
-#### LoTW Registration as a Belgian — Step by Step
+#### LoTW Registration as a Belgian: Step by Step
 
 > ⚠️ **Critical: Start on Day 1.** Wait time for the certificate is 1–3 weeks. Every day of delay = QSOs that may not match.
 
@@ -371,10 +372,10 @@ CQ Zone:      14
 
 **Step 4: Verification via the UBA**
 
-> 🇧🇪 **Belgian-specific:** The UBA has an official agreement with the ARRL for verification of Belgian callsigns. Send an email to the UBA's LoTW coordinator (see [https://www.uba.be](https://www.uba.be)) with the `.tq5` file and a copy of your BIPT licence. Wait time: 1–3 weeks. Always use the UBA route — faster and local support.
+> 🇧🇪 **Belgian-specific:** The UBA has an official agreement with the ARRL for verification of Belgian callsigns. Send an email to the UBA's LoTW coordinator (see [https://www.uba.be](https://www.uba.be)) with the `.tq5` file and a copy of your BIPT licence. Wait time: 1–3 weeks. Always use the UBA route, faster and local support.
 
 **Step 5: Install the certificate**
-You receive a `.tq8` file by email. Double-click it — TQSL imports automatically. Valid for 3 years.
+You receive a `.tq8` file by email. Double-click it, TQSL imports automatically. Valid for 3 years.
 
 > ⚠️ **Heads up:** Keep a backup of your TQSL certificate on an external drive. TQSL → Station Locations → Export. In the event of a PC crash you otherwise have to repeat the entire verification process.
 
@@ -382,13 +383,13 @@ You receive a `.tq8` file by email. Double-click it — TQSL imports automatical
 
 **Viewing confirmations:** [https://lotw.arrl.org](https://lotw.arrl.org) → Your QSOs → green "Y" = confirmed. In Log4OM: Menu → Online → Download LoTW QSLs.
 
-### Clublog — DX Statistics and OQRS
+### Clublog: DX Statistics and OQRS
 
 **Clublog** ([https://clublog.org](https://clublog.org)) is a British platform that does what LoTW doesn't: DX statistics, graphs and the **OQRS** (*Online QSL Request System*).
 
 OQRS is crucial for DX hunters. After a QSO with a DXpedition:
 1. Go to the DXpedition's page on Clublog → click OQRS
-2. Enter your callsign — Clublog checks if you are in their log
+2. Enter your callsign, Clublog checks if you are in their log
 3. Request a paper or bureau QSL (paid via PayPal)
 
 Many major DXpeditions work exclusively with OQRS. No Clublog = you miss the easiest way to get DX QSL cards.
@@ -399,9 +400,9 @@ Many major DXpeditions work exclusively with OQRS. No Clublog = you miss the eas
 
 **"Most Wanted" list:** Statistics → Most Wanted shows the rarest DXCC entities and which ones you haven't worked yet. Your personal DX wish list.
 
-### eQSL.cc — Quick Digital Confirmations
+### eQSL.cc: Quick Digital Confirmations
 
-**eQSL.cc** ([https://www.eqsl.cc](https://www.eqsl.cc)) — the oldest digital QSL system (1999). Free, no certificate required.
+**eQSL.cc** ([https://www.eqsl.cc](https://www.eqsl.cc)), the oldest digital QSL system (1999). Free, no certificate required.
 
 Register as ON3VZ → request **AG (Authenticated Gold)** status by uploading a scan of your BIPT licence (My Account → Get Authenticated). AG status is required for the awards that accept eQSL.
 
@@ -414,7 +415,7 @@ You already have your QRZ.com profile. The logbook is a separate, paid system (r
 ### Start-Up Priorities
 
 ```
-WEEK 1 (start immediately — in parallel):
+WEEK 1 (start immediately, in parallel):
 1. Activate QRZ.com subscription → generate API keys → enter in Log4OM
 2. Create eQSL account → request AG authentication (scan BIPT licence)
 3. Create Clublog account → link to Log4OM
@@ -431,7 +432,7 @@ AFTER RECEIVING LOTW CERTIFICATE:
 1. Double-click the QSO in Log4OM → correct → Save QSO
 2. If already uploaded to LoTW: right-click → Upload to LoTW again
 3. LoTW automatically replaces when same date/time/band/mode
-4. LoTW automatically re-matches at each new upload — you do not need to contact the counterpart
+4. LoTW automatically re-matches at each new upload, you do not need to contact the counterpart
 
 ---
 
@@ -468,7 +469,7 @@ In the Antwerp region there are several suitable locations: Kalmthoutse Heide, T
 
 ### Installing and Configuring HAMRS
 
-**HAMRS** (*Ham Amateur Radio Logging Software*) — free lightweight logging app optimised for POTA/SOTA. Available for iOS, Android, Windows and macOS.
+**HAMRS** (*Ham Amateur Radio Logging Software*), free lightweight logging app optimised for POTA/SOTA. Available for iOS, Android, Windows and macOS.
 
 Download: iOS/Android → "HAMRS" in App Store/Play. Windows/Mac: [https://hamrs.app](https://hamrs.app)
 
@@ -488,7 +489,7 @@ Name:         Kristof
 Logging a QSO:
 ```
 Callsign:  PA3XYZ
-Band:      40m     (dropdown — stays set)
+Band:      40m     (dropdown, stays set)
 Mode:      SSB
 RST Sent:  59
 RST Rcvd:  57
@@ -501,7 +502,7 @@ After the activation: Export Log → ADIF → save as `ON3VZ_ON-XXXX_20260512.ad
 
 ### Fast Log Entry (FLE) as an Alternative
 
-**FLE** ([https://df3cb.com/fle/](https://df3cb.com/fle/)) — Windows tool where you enter QSOs via abbreviated text:
+**FLE** ([https://df3cb.com/fle/](https://df3cb.com/fle/)), Windows tool where you enter QSOs via abbreviated text:
 
 ```
 date 2026-05-12
@@ -519,9 +520,9 @@ FLE converts this to ADIF. Ideal with a physical keyboard in the car or when log
 3. POTA.app validates: park reference number recognised? Enough QSOs? Fields correct?
 4. Confirm → processing time: minutes to an hour
 
-**Fewer than 10 QSOs?** Upload anyway — "failed activation" but the hunters get their points. Not uploading is considered poor form.
+**Fewer than 10 QSOs?** Upload anyway, "failed activation" but the hunters get their points. Not uploading is considered poor form.
 
-**After the activation:** also import the ADIF into Log4OM (Menu → File → Import → ADIF) and upload to LoTW — POTA QSOs also count for DXCC.
+**After the activation:** also import the ADIF into Log4OM (Menu → File → Import → ADIF) and upload to LoTW, POTA QSOs also count for DXCC.
 
 ### Spotting Yourself
 
@@ -536,11 +537,11 @@ Comments:   CQ POTA from Kalmthout
 
 Re-spot when changing frequency or band, or after 30–45 minutes of silence.
 
-> ⚠️ **Critical:** For POTA always use your base callsign `ON3VZ` — no `/P`. POTA.app matches callsigns exactly. `ON3VZ/P` does not match your account `ON3VZ`.
+> ⚠️ **Critical:** For POTA always use your base callsign `ON3VZ`, no `/P`. POTA.app matches callsigns exactly. `ON3VZ/P` does not match your account `ON3VZ`.
 
 ### Mobile Activation with the Yaesu FTM-510DE
 
-The FTM-510DE is your mobile radio in the Mazda CX-60. Advantage: quick to set up, permanently mounted, 50W VHF/UHF. Limitation: no HF — most POTA hunters expect 40m or 20m. For serious HF activations: bring a compact HF radio alongside the FTM-510DE.
+The FTM-510DE is your mobile radio in the Mazda CX-60. Advantage: quick to set up, permanently mounted, 50W VHF/UHF. Limitation: no HF, most POTA hunters expect 40m or 20m. For serious HF activations: bring a compact HF radio alongside the FTM-510DE.
 
 ### Hunter Side from the Shack
 
@@ -563,9 +564,9 @@ See an activator on the spots? Tune in, wait for a pause, call your callsign. Lo
 
 ### What Is FT8?
 
-**FT8** (*Franke-Taylor design, 8-FSK modulation*) — a digital radio mode by Joe Taylor (K1JT) and Steve Franke (K9AN), first released in 2017. It has thoroughly changed the radio amateur world.
+**FT8** (*Franke-Taylor design, 8-FSK modulation*), a digital radio mode by Joe Taylor (K1JT) and Steve Franke (K9AN), first released in 2017. It has thoroughly changed the radio amateur world.
 
-**How it works:** Your PC encodes a standardised message of 13 characters into a digital signal of exactly 15 seconds. The receiving PC decodes it — even well below the noise floor.
+**How it works:** Your PC encodes a standardised message of 13 characters into a digital signal of exactly 15 seconds. The receiving PC decodes it, even well below the noise floor.
 
 ```
 Second   0      15      30      45
@@ -581,14 +582,14 @@ ON3VZ PA3XYZ R-12      ← you confirm (-12 dB)
 PA3XYZ ON3VZ RR73      ← confirmation OK, 73
 ```
 
-SSB becomes unintelligible around -10 dB. FT8 still works at -25 dB — a difference of 15 dB. Enormous.
+SSB becomes unintelligible around -10 dB. FT8 still works at -25 dB, a difference of 15 dB. Enormous.
 
 ### Why Is It So Popular?
 
 1. Works with weak signals that are inaudible on SSB
-2. No language barrier — standardised message structure
+2. No language barrier, standardised message structure
 3. A modest antenna is sufficient for worldwide DX
-4. Fully automated — WSJT-X handles the sequence
+4. Fully automated, WSJT-X handles the sequence
 5. With 100W and a wire you can make QSOs with Japan and Australia
 
 ### The Criticism
@@ -599,9 +600,9 @@ SSB becomes unintelligible around -10 dB. FT8 still works at -25 dB — a differ
 
 | Mode | Use |
 |---|---|
-| **FT4** | Faster version (7.5s cycles) — for contests |
-| **WSPR** | Beacon mode — testing how far your signal reaches, no QSOs |
-| **MSK144** | Meteor scatter — VHF DX via meteor trails |
+| **FT4** | Faster version (7.5s cycles): for contests |
+| **WSPR** | Beacon mode: testing how far your signal reaches, no QSOs |
+| **MSK144** | Meteor scatter: VHF DX via meteor trails |
 | **JT65** | Older mode, still active for EME (moon bounce) |
 
 ### Installing WSJT-X
@@ -626,7 +627,7 @@ Mode:             USB/Data
 Split Operation:  Rig
 ```
 
-**Tab Audio — the critical part:**
+**Tab Audio, the critical part:**
 
 The IC-7300 MkII has built-in USB audio. Windows shows the radio as "USB Audio CODEC".
 
@@ -657,7 +658,7 @@ Enable PSK Reporter:     ✅ On
 | 10m | 28.074 MHz |
 | 2m | 144.174 MHz |
 
-> ⚠️ **Heads up:** NEVER tune the radio manually when WSJT-X is active — WSJT-X controls the frequency via CAT. Manual tuning disrupts synchronisation.
+> ⚠️ **Heads up:** NEVER tune the radio manually when WSJT-X is active, WSJT-X controls the frequency via CAT. Manual tuning disrupts synchronisation.
 
 ### Linking WSJT-X and Log4OM via UDP
 
@@ -691,14 +692,14 @@ Cycle 1 (even):   You transmit: CQ ON3VZ JO21
 Cycle 2 (odd):    PA3XYZ replies: ON3VZ PA3XYZ -07
 Cycle 3 (even):   You transmit: PA3XYZ ON3VZ R-12
 Cycle 4 (odd):    PA3XYZ: ON3VZ PA3XYZ RR73
-→ QSO COMPLETE — automatically logged + forwarded to Log4OM
+→ QSO COMPLETE, automatically logged + forwarded to Log4OM
 ```
 
 ### Fox/Hound Mode at DXpeditions
 
 At popular DXpeditions, operators use a special **Fox/Hound** mode. If you don't know that a station is in Fox mode, you will never get through no matter how you call. Read DXpedition announcements at [https://dx-world.net](https://dx-world.net).
 
-### PSK Reporter — Who Can Hear You?
+### PSK Reporter: Who Can Hear You?
 
 With PSK Reporter enabled, WSJT-X automatically reports which stations it has heard.
 
@@ -706,7 +707,7 @@ Go to [https://pskreporter.info/pskmap.html](https://pskreporter.info/pskmap.htm
 
 ### FT8 QSL and LoTW
 
-FT8 QSOs arrive via UDP in Log4OM and are uploaded from there to LoTW. Use **Log4OM as a hub** for all uploads — not WSJT-X directly (causes duplicate uploads).
+FT8 QSOs arrive via UDP in Log4OM and are uploaded from there to LoTW. Use **Log4OM as a hub** for all uploads, not WSJT-X directly (causes duplicate uploads).
 
 ### DX Possibilities with the IC-7300 MkII
 
@@ -719,11 +720,11 @@ With 25W and a good antenna:
 | 15m | Worldwide with good propagation | 10:00–16:00 |
 | 10m | Worldwide with excellent propagation | 10:00–16:00 |
 
-We are currently in (2026) at or around the **maximum of Solar Cycle 25** — 10m and 15m are the best in years. This is the perfect time to start. Check [https://www.hamqsl.com](https://www.hamqsl.com) for daily propagation forecasts (Solar Flux Index > 150 = excellent conditions).
+We are currently in (2026) at or around the **maximum of Solar Cycle 25**, 10m and 15m are the best in years. This is the perfect time to start. Check [https://www.hamqsl.com](https://www.hamqsl.com) for daily propagation forecasts (Solar Flux Index > 150 = excellent conditions).
 
-> ⚠️ **Heads up:** FT8 is a continuous duty cycle mode — the radio transmits for 15 seconds at a stretch. Start at reduced power and increase gradually.
+> ⚠️ **Heads up:** FT8 is a continuous duty cycle mode, the radio transmits for 15 seconds at a stretch. Start at reduced power and increase gradually.
 
-### JTAlert — The Indispensable Companion
+### JTAlert: The Indispensable Companion
 
 **JTAlert** ([https://hamapps.com](https://hamapps.com)) runs alongside WSJT-X and shows for each decoded FT8 station whether it is a new DXCC entity, already worked, or already confirmed in LoTW. Audio alert for new entities. Install it as soon as WSJT-X and Log4OM work correctly.
 
@@ -733,7 +734,7 @@ We are currently in (2026) at or around the **maximum of Solar Cycle 25** — 10
 
 ### What Is a Radio Contest?
 
-A **radio contest** is an organised event where you make as many QSOs as possible in a limited time frame (4 to 48 hours). Each QSO is brief and standardised — you exchange a fixed **exchange** and move on immediately.
+A **radio contest** is an organised event where you make as many QSOs as possible in a limited time frame (4 to 48 hours). Each QSO is brief and standardised, you exchange a fixed **exchange** and move on immediately.
 
 **Exchange by contest type:**
 - CQ WW DX Contest: RST + CQ Zone (e.g. 59 14)
@@ -742,7 +743,7 @@ A **radio contest** is an organised event where you make as many QSOs as possibl
 
 **Final score = points × multipliers.** Points per QSO, multipliers for unique countries/zones/provinces. DX stations give more points AND count as a multiplier.
 
-> 💡 **Pro tip:** As a beginner, start with a Belgian national contest or a short contest (4 hours). The UBA HF Contest or Belgian QSO Party are ideal — more local, more familiar, less pressure.
+> 💡 **Pro tip:** As a beginner, start with a Belgian national contest or a short contest (4 hours). The UBA HF Contest or Belgian QSO Party are ideal, more local, more familiar, less pressure.
 
 ### What Is N1MM Logger+?
 
@@ -756,7 +757,7 @@ A **radio contest** is an organised event where you make as many QSOs as possibl
 | Multi-operator network | ❌ | ✅ |
 | Real-time scoreboard | Limited | ✅ |
 
-**Workflow:** Do contest in N1MM+ → export ADIF after the contest → import into Log4OM as main log. Never run both simultaneously on the same radio — CAT conflicts.
+**Workflow:** Do contest in N1MM+ → export ADIF after the contest → import into Log4OM as main log. Never run both simultaneously on the same radio, CAT conflicts.
 
 ### Installing and Configuring N1MM+
 
@@ -771,7 +772,7 @@ Grid:            JO21EE
 ARRL Section:    DX  (for non-US stations)
 ```
 
-**CAT link:** Config → Configure Ports → Tab Hardware → Rig 1: OmniRig Rig 1. Use OmniRig as intermediary — then CAT works for Log4OM, N1MM+ and WSJT-X via the same connection without conflicts.
+**CAT link:** Config → Configure Ports → Tab Hardware → Rig 1: OmniRig Rig 1. Use OmniRig as intermediary, then CAT works for Log4OM, N1MM+ and WSJT-X via the same connection without conflicts.
 
 ### The N1MM+ Interface
 
@@ -819,11 +820,11 @@ Workflow per QSO:
 3. Submit Cabrillo to organiser within 7 days
 4. Upload QSOs to LoTW from Log4OM
 
-> ⚠️ **Heads up:** Not submitting a log = disqualification, even if you won. Always submit — even a small log as a "check log" is better than nothing.
+> ⚠️ **Heads up:** Not submitting a log = disqualification, even if you won. Always submit, even a small log as a "check log" is better than nothing.
 
 ### Multi-Operator Field Day with ON6WL
 
-At an ON6WL field day the club operates as **ON6WL** — not as ON3VZ. Legally permitted: you operate under the club licence.
+At an ON6WL field day the club operates as **ON6WL**, not as ON3VZ. Legally permitted: you operate under the club licence.
 
 **Multi-op network:** Multiple PCs run N1MM+, connected via LAN, with the same log in real-time:
 ```
@@ -837,7 +838,7 @@ PC2 (Mult Station) ──LAN──┼──▶ Shared N1MM+ log
 
 As a beginner you will probably be a **run station operator**. Preparation:
 - Know the exchange for that specific contest by heart
-- NATO phonetic alphabet fluent — copying callsigns must be automatic
+- NATO phonetic alphabet fluent, copying callsigns must be automatic
 - Bring your own headphones
 - Practise N1MM+ at home with fictitious QSOs
 
@@ -848,7 +849,7 @@ As a beginner you will probably be a **run station operator**. Preparation:
 | Situation | Recommended callsign |
 |---|---|
 | Home, fixed shack | `ON3VZ` |
-| POTA activation in Belgium | `ON3VZ` (NO /P — pota.app matches exactly) |
+| POTA activation in Belgium | `ON3VZ` (NO /P: pota.app matches exactly) |
 | Contest field day as ON6WL | `ON6WL` |
 | Solo field day other Belgian location | `ON3VZ` or `ON3VZ/P` |
 | Operation outside Belgium (Netherlands) | `PA/ON3VZ` |
@@ -860,11 +861,11 @@ As a beginner you will probably be a **run station operator**. Preparation:
 
 ### What Is a QSL Card and Why Does It Still Exist?
 
-A **QSL card** is the physical confirmation of a radio contact — in use since the 1920s. In the digital age it serves to:
-1. **Awards** — DXCC accepts paper QSL as an alternative to LoTW
-2. **Collecting** — a rare DX card on the wall
-3. **DXpeditions** — major expeditions always send paper QSLs
-4. **Prestige** — a professionally designed ON3VZ card is a statement
+A **QSL card** is the physical confirmation of a radio contact, in use since the 1920s. In the digital age it serves to:
+1. **Awards**: DXCC accepts paper QSL as an alternative to LoTW
+2. **Collecting**: a rare DX card on the wall
+3. **DXpeditions**: major expeditions always send paper QSLs
+4. **Prestige**: a professionally designed ON3VZ card is a statement
 
 > 💡 **Pro tip:** A well-designed QSL card is a sign of a serious operator. No card or a sloppy one sends the wrong signal.
 
@@ -875,8 +876,8 @@ A **QSL card** is the physical confirmation of a radio contact — in use since 
 ### What Goes on It?
 
 **Front:**
-- **Callsign** — large, clear, dominant
-- Name and QTH (Kristof — Hoboken, Belgium)
+- **Callsign**: large, clear, dominant
+- Name and QTH (Kristof, Hoboken, Belgium)
 - Grid locator (JO21EE)
 - DXCC country / prefix (Belgium / ON)
 - Club memberships (UBA Member / WLD / ON6WL)
@@ -901,12 +902,12 @@ A **QSL card** is the physical confirmation of a radio contact — in use since 
 
 ### Designing with Canva
 
-**Canva** ([https://www.canva.com](https://www.canva.com)) — free online design tool. Create an account → Create a design → Custom size: **90 × 140 mm** → export as **PDF (Print)** with crop marks and bleed.
+**Canva** ([https://www.canva.com](https://www.canva.com)), free online design tool. Create an account → Create a design → Custom size: **90 × 140 mm** → export as **PDF (Print)** with crop marks and bleed.
 
 **Technical requirements:**
 - Resolution: minimum **300 DPI**
 - Colour profile: **CMYK** (not RGB)
-- Bleed: **3 mm all around** — extend background 3 mm beyond the finished size
+- Bleed: **3 mm all around**: extend background 3 mm beyond the finished size
 
 **Design ideas for ON3VZ:**
 - Antwerp cathedral or harbour cranes
@@ -920,9 +921,9 @@ A **QSL card** is the physical confirmation of a radio contact — in use since 
 ### Print Suppliers
 
 Specialised QSL printers know the requirements:
-- **dl-qsl.net** (Germany) — popular in Europe, competitive pricing
-- **eqslprint.com** — online design tool included
-- **qslshop.com** — wide assortment
+- **dl-qsl.net** (Germany): popular in Europe, competitive pricing
+- **eqslprint.com**: online design tool included
+- **qslshop.com**: wide assortment
 
 > 🇧🇪 **Belgian-specific:** Ask at ON6WL which printer the members use. Clubs often have a preferred supplier.
 
@@ -936,7 +937,7 @@ Specialised QSL printers know the requirements:
 
 **Recommendation: 250 copies for your first order.**
 
-> ⚠️ **Heads up:** Beginners almost always make a mistake on their first card. Order 100–250 copies. After 6 months you know what needs changing — then you reprint. Check every field **three times**: callsign, grid, zones, name, QTH.
+> ⚠️ **Heads up:** Beginners almost always make a mistake on their first card. Order 100–250 copies. After 6 months you know what needs changing, then you reprint. Check every field **three times**: callsign, grid, zones, name, QTH.
 
 **Request a proof:** always, before the full run. Costs €5–10, shows whether colours and readability are correct.
 
@@ -967,7 +968,7 @@ After receiving cards:
 - Special QSOs (first DX country, special occasion)
 - Stations who state "Direct only" on QRZ.com
 
-Find address: QRZ.com → callsign → QSL via section. If the profile says "QSL via [another callsign]" — that is the **QSL manager**. Send to that person, not the operator themselves.
+Find address: QRZ.com → callsign → QSL via section. If the profile says "QSL via [another callsign]", that is the **QSL manager**. Send to that person, not the operator themselves.
 
 **Postage:** check current rates at [https://www.bpost.be](https://www.bpost.be). A QSL + envelope typically weighs 8–12 g.
 
@@ -977,7 +978,7 @@ Find address: QRZ.com → callsign → QSL via section. If the profile says "QSL
 
 **Response times:** Europe 2–6 weeks, North America 4–12 weeks, Asia/Oceania 2–6 months, DXpeditions sometimes 1–3 years.
 
-### The UBA Bureau System — Fully Explained
+### The UBA Bureau System: Fully Explained
 
 The **QSL bureau** is a system where you bundle cards and have them forwarded via the UBA. In the reverse direction: incoming international QSLs arrive at your address via the bureau.
 
@@ -991,9 +992,9 @@ Foreign bureau
 PA3XYZ (Rotterdam)
 ```
 
-**Cost:** As a UBA member €0.05–0.15 per card — much cheaper than individual postage.
+**Cost:** As a UBA member €0.05–0.15 per card, much cheaper than individual postage.
 
-#### Sorting by Country Prefix — The Most Critical Step
+#### Sorting by Country Prefix: The Most Critical Step
 
 For each QSL card, look at which callsign is addressed. The first 1–3 letters are the country prefix:
 
@@ -1024,7 +1025,7 @@ Hand your sorted cards to the QSL bureau coordinator of ON6WL. ON6WL bundles and
 
 #### Collecting Incoming Bureau QSLs
 
-The UBA bureau does **not** notify you automatically. Incoming cards for ON3VZ go via bureau to ON6WL. Collect them at least twice a year — cards that sit for years can get lost.
+The UBA bureau does **not** notify you automatically. Incoming cards for ON3VZ go via bureau to ON6WL. Collect them at least twice a year, cards that sit for years can get lost.
 
 ### QSL Etiquette
 
@@ -1032,7 +1033,7 @@ The UBA bureau does **not** notify you automatically. Incoming cards for ON3VZ g
 
 **"100% QSL"** on QRZ.com = every QSL received is answered. Aim for this.
 
-**"No QSL needed, LoTW only"** = respect this — don't send a card.
+**"No QSL needed, LoTW only"** = respect this, don't send a card.
 
 ### Tracking QSL Status in Log4OM
 
@@ -1083,7 +1084,7 @@ QSO made in Log4OM
 
 Awards give structure to your radio activity. They answer the question *why do I go on the air today?* They turn random QSOs into a targeted, motivated collection.
 
-### DXCC — DX Century Club
+### DXCC: DX Century Club
 
 The most prestigious HF award. Managed by the ARRL. Requires confirmed QSOs with **100 different DXCC entities**.
 
@@ -1098,7 +1099,7 @@ Full list: [https://www.arrl.org/country-lists-prefixes](https://www.arrl.org/co
 
 | Award | What |
 |---|---|
-| **DXCC Mixed** | All modes together — easiest, start here |
+| **DXCC Mixed** | All modes together: easiest, start here |
 | **DXCC Phone** | SSB only |
 | **DXCC Digital** | Digital modes only (FT8 counts here) |
 | **DXCC per band** | 40m, 20m, 15m, etc. separate awards |
@@ -1127,11 +1128,11 @@ Important awards:
 
 Application: export relevant QSOs as ADIF from Log4OM → submit by email or online form.
 
-### WAZ — Worked All Zones
+### WAZ: Worked All Zones
 
 **WAZ** (*Worked All Zones*) from CQ Magazine: work all **40 CQ zones**. An achievable intermediate award on the way to DXCC. QSL requirements: LoTW or paper QSL.
 
-### WAS — Worked All States
+### WAS: Worked All States
 
 **WAS** (*Worked All States*) from the ARRL: work all **50 American states**. Achievable on HF from Belgium. Challenge: sparsely populated states (North Dakota, Wyoming) are rarer. QSL requirements: LoTW or paper QSL.
 
@@ -1157,7 +1158,7 @@ FT8 on 20m is the fastest route. Required: LoTW active.
 Directly achievable once hardware is available.
 
 **3. UBA ON Award Bronze**
-Belgian and achievable — targeted activity on ON stations.
+Belgian and achievable, targeted activity on ON stations.
 
 ### Realistic Goals Per Year
 
@@ -1182,17 +1183,17 @@ WEEK 1:
 ✅ Callsign consistently: ON3VZ (no /P for normal home operations)
 ```
 
-> 💡 **Pro tip:** We are at the maximum of Solar Cycle 25 (2025–2026). 10m and 15m are the best they have been in years. In the coming years propagation will decline. The first years of ON3VZ fall in a golden period — make the most of it.
+> 💡 **Pro tip:** We are at the maximum of Solar Cycle 25 (2025–2026). 10m and 15m are the best they have been in years. In the coming years propagation will decline. The first years of ON3VZ fall in a golden period, make the most of it.
 
 ---
 
 ## 12. The Complete Startup Checklist {#checklist}
 
-### Phase 0 — Before the Radio Arrives (Start Now)
+### Phase 0: Before the Radio Arrives (Start Now)
 
 ```
 [ ] Create LoTW account + install TQSL
-    → Request certificate via UBA — WAIT TIME 1-3 WEEKS
+    → Request certificate via UBA, WAIT TIME 1-3 WEEKS
 [ ] Upgrade QRZ.com subscription (approx. $25/year)
     → Generate XML API key
     → Generate Logbook API key (separate key!)
@@ -1202,7 +1203,7 @@ WEEK 1:
 [ ] Create POTA.app account
 ```
 
-### Phase 1 — Installing Hardware
+### Phase 1: Installing Hardware
 
 ```
 IC-7300 MkII:
@@ -1226,7 +1227,7 @@ FTM-510DE (mobile):
 [ ] Antenna connected, check for RF interference
 ```
 
-### Phase 2 — Installing Software (In Order!)
+### Phase 2: Installing Software (In Order!)
 
 ```
 STEP 1: IC-7300 MkII USB driver
@@ -1275,10 +1276,10 @@ STEP 6: HAMRS (tablet/phone)
 STEP 7: N1MM+ (ready for contests)
 [ ] Download n1mmwp.hamdocs.com → Full Install
 [ ] Callsign ON3VZ / CQ Zone 14 / CAT: OmniRig Rig 1
-[ ] Save for the first contest — don't actively use yet
+[ ] Save for the first contest, don't actively use yet
 ```
 
-### Phase 3 — Full System Test
+### Phase 3: Full System Test
 
 ```
 Start order: OmniRig → Log4OM → WSJT-X
@@ -1291,7 +1292,7 @@ Start order: OmniRig → Log4OM → WSJT-X
 [ ] PC clock: synchronised UTC ✅
 ```
 
-### Phase 4 — QSL Card
+### Phase 4: QSL Card
 
 ```
 [ ] Design in Canva (90×140mm, 300 DPI, CMYK, 3mm bleed)
@@ -1301,7 +1302,7 @@ Start order: OmniRig → Log4OM → WSJT-X
 [ ] Card image uploaded on QRZ.com and eQSL.cc
 ```
 
-### Repeating Checklist — Before Every QSO
+### Repeating Checklist: Before Every QSO
 
 **Before each session:**
 ```
@@ -1315,7 +1316,7 @@ Start order: OmniRig → Log4OM → WSJT-X
 **During each SSB QSO:**
 ```
 [ ] Frequency free? ("Is this frequency in use?")
-[ ] Write callsign phonetically — not from memory
+[ ] Write callsign phonetically, not from memory
 [ ] Uncertain? → ask again ("Please confirm your call")
 [ ] Note RST sent and received
 [ ] Close: "73, this is ON3VZ, clear"
@@ -1331,7 +1332,7 @@ Start order: OmniRig → Log4OM → WSJT-X
 
 **Weekly:**
 ```
-[ ] Upload to LoTW (batch — Menu → Online → Upload to LoTW)
+[ ] Upload to LoTW (batch, Menu → Online → Upload to LoTW)
 [ ] Download LoTW confirmations
 [ ] Check eQSL inbox
 [ ] ADIF backup to cloud
@@ -1349,18 +1350,18 @@ Start order: OmniRig → Log4OM → WSJT-X
 **Annually:**
 ```
 [ ] Export full ADIF archive → extra backup
-[ ] LoTW certificate: still valid? (3 years — renew in time)
+[ ] LoTW certificate: still valid? (3 years, renew in time)
 [ ] Apply for DXCC if 100+ confirmed entities
 [ ] Update all software (Log4OM, WSJT-X, N1MM+)
 [ ] QSL card: sufficient stock remaining?
 ```
 
-### Your First QSO — How Do You Find Someone?
+### Your First QSO: How Do You Find Someone?
 
 | Band | Best for | Best time (UTC) |
 |---|---|---|
-| **40m SSB** | First QSO — European contacts | 18:00–22:00 |
-| **20m SSB** | DX — always active | 08:00–18:00 |
+| **40m SSB** | First QSO: European contacts | 18:00–22:00 |
+| **20m SSB** | DX: always active | 08:00–18:00 |
 | **20m FT8** | Easiest DX for beginners | Any time |
 
 **Answering is easier than calling CQ.** Hear a station calling CQ?
@@ -1373,7 +1374,7 @@ You:       "PA3XYZ, this is ON3VZ, Oscar November Three Victor Zulu. Over."
 
 **ON6WL club frequency:** Ask at ON6WL for the regular club frequency and the weekly club net. This is the ideal place for your very first QSO.
 
-**Language:** Dutch on the 40m evening with Belgian/Dutch stations is normal. English for international QSOs. Radio English is simple: "Good evening, your signal is 59 in Hoboken, Belgium. My name is Kristof. Over." — that is enough.
+**Language:** Dutch on the 40m evening with Belgian/Dutch stations is normal. English for international QSOs. Radio English is simple: "Good evening, your signal is 59 in Hoboken, Belgium. My name is Kristof. Over.", that is enough.
 
 ### Absolute Top 5 for Your First QSO
 
@@ -1393,7 +1394,7 @@ You:       "PA3XYZ, this is ON3VZ, Oscar November Three Victor Zulu. Over."
    Oscar November Three Victor Zulu.
    No hesitation. No thinking. Automatic.
 
-5. LISTEN FIRST — TALK LATER
+5. LISTEN FIRST, TALK LATER
    Open 40m (7.050-7.200 MHz), volume up,
    listen for 30 minutes without transmitting.
    Learn the rhythm before you join in.
@@ -1443,61 +1444,61 @@ Estimated total:        ±€100 excl. UBA membership
 
 | Term | Definition |
 |---|---|
-| **ADIF** | Amateur Data Interchange Format — universal logbook format |
-| **AG (eQSL)** | Authenticated Gold — verified eQSL account |
-| **ARRL** | American Radio Relay League — US radio amateur federation |
+| **ADIF** | Amateur Data Interchange Format: universal logbook format |
+| **AG (eQSL)** | Authenticated Gold: verified eQSL account |
+| **ARRL** | American Radio Relay League: US radio amateur federation |
 | **BIPT** | Belgian Institute for Postal Services and Telecommunications |
 | **Bureau** | QSL forwarding system via national radio amateur federations |
 | **Cabrillo** | Standard log submission format for contests |
-| **CAT** | Computer-Aided Transceiver — PC controls your radio |
+| **CAT** | Computer-Aided Transceiver: PC controls your radio |
 | **CI-V** | Icom's CAT protocol |
 | **Clublog** | Platform for DX statistics and OQRS |
 | **CQ** | General call: "I am calling anyone" |
-| **CW** | Continuous Wave — Morse code |
-| **DXCC** | DX Century Club — award for 100+ DXCC entities |
+| **CW** | Continuous Wave: Morse code |
+| **DXCC** | DX Century Club: award for 100+ DXCC entities |
 | **DXCC entity** | Geographic unit for DX awards (≠ country) |
 | **DXpedition** | Expedition to a rare location for radio activations |
 | **eQSL** | Electronic QSL card via eqsl.cc |
 | **FT4** | Faster version of FT8 (7.5s cycles), for contests |
 | **FT8** | Digital mode: 15-second cycles, extremely sensitive |
 | **Grid locator** | Maidenhead code for geographic position (ON3VZ = JO21EE) |
-| **HAMRS** | Ham Amateur Radio Logging Software — field logging app |
-| **HF** | High Frequency — shortwave, 3–30 MHz |
-| **IRC** | International Reply Coupon — postage coupon |
+| **HAMRS** | Ham Amateur Radio Logging Software: field logging app |
+| **HF** | High Frequency: shortwave, 3–30 MHz |
+| **IRC** | International Reply Coupon: postage coupon |
 | **JTAlert** | Free add-on to WSJT-X for DXCC alerts in the waterfall |
-| **LoTW** | Logbook of the World — ARRL's digital confirmation system |
-| **LSB** | Lower Side Band — SSB variant for 40m and lower |
+| **LoTW** | Logbook of the World: ARRL's digital confirmation system |
+| **LSB** | Lower Side Band: SSB variant for 40m and lower |
 | **Multi-op** | Multi-operator contest: multiple operators, one callsign |
 | **N1MM+** | Most widely used free contest software in the world |
 | **OmniRig** | Free intermediary between radio and multiple log programs |
 | **OQRS** | Online QSL Request System (Clublog) |
-| **P2P** | Park to Park — QSO between two active POTA activators |
-| **POTA** | Parks on the Air — activations from recognised park areas |
+| **P2P** | Park to Park: QSO between two active POTA activators |
+| **POTA** | Parks on the Air: activations from recognised park areas |
 | **PSK Reporter** | Global reception reporting system for digital modes |
-| **PTT** | Push-to-Talk — switch from receive to transmit |
+| **PTT** | Push-to-Talk: switch from receive to transmit |
 | **QRZ.com** | Website with profiles of radio amateurs worldwide |
 | **QSL** | Confirmation of a QSO (card or digital) |
 | **QSO** | Two-way radio contact |
 | **RST** | Readability-Strength-Tone: signal assessment (e.g. 59) |
 | **Run station** | Contest operator calling CQ on a fixed frequency |
-| **SAE** | Self Addressed Envelope — for QSL return mailing |
+| **SAE** | Self Addressed Envelope: for QSL return mailing |
 | **Sked** | Scheduled contact at a predetermined time and frequency |
-| **SOTA** | Summits on the Air — activations from mountain peaks |
+| **SOTA** | Summits on the Air: activations from mountain peaks |
 | **Spot** | Alert on DX cluster or pota.app that a station is active |
-| **SSB** | Single Side Band — most common voice mode on HF |
-| **SWR** | Standing Wave Ratio — antenna matching ratio |
-| **TQSL** | Trusted QSL — software for LoTW upload |
+| **SSB** | Single Side Band: most common voice mode on HF |
+| **SWR** | Standing Wave Ratio: antenna matching ratio |
+| **TQSL** | Trusted QSL: software for LoTW upload |
 | **UBA** | Unie der Belgische Amateurs (Union of Belgian Radio Amateurs) |
-| **UDP** | User Datagram Protocol — network link WSJT-X → Log4OM |
-| **USB** | Upper Side Band — SSB variant for 20m and higher |
+| **UDP** | User Datagram Protocol: network link WSJT-X → Log4OM |
+| **USB** | Upper Side Band: SSB variant for 20m and higher |
 | **USB-D** | USB Data mode on IC-7300 MkII for digital modes |
-| **UTC** | Coordinated Universal Time — the global time standard |
-| **VHF** | Very High Frequency — 30–300 MHz (incl. 2m) |
-| **VUCC** | VHF/UHF Century Club — award for 100 grid squares |
-| **WAS** | Worked All States — all 50 US states |
+| **UTC** | Coordinated Universal Time: the global time standard |
+| **VHF** | Very High Frequency: 30–300 MHz (incl. 2m) |
+| **VUCC** | VHF/UHF Century Club: award for 100 grid squares |
+| **WAS** | Worked All States: all 50 US states |
 | **Waterfall** | Visual display of radio spectrum in WSJT-X |
-| **WAZ** | Worked All Zones — all 40 CQ zones |
-| **WSPR** | Weak Signal Propagation Reporter — beacon mode |
+| **WAZ** | Worked All Zones: all 40 CQ zones |
+| **WSPR** | Weak Signal Propagation Reporter: beacon mode |
 | **WSJT-X** | Software for FT8 and other digital modes |
 | **73** | Radio greeting: "best regards" |
 
@@ -1537,11 +1538,11 @@ Estimated total:        ±€100 excl. UBA membership
 
 ## Closing Words
 
-I wrote this article while my radio was still on its way. Everything here is what I wished I had known before my first QSO — including the things you normally only learn by making a mistake.
+I wrote this article while my radio was still on its way. Everything here is what I wished I had known before my first QSO, including the things you normally only learn by making a mistake.
 
 The radio amateur world is large but the core is simple: you make contact with someone on the other side of the world, you confirm it, and you gradually build a logbook that becomes your life's work.
 
 Start with LoTW. Set your clock correctly. Log in UTC. Learn your NATO phonetic alphabet. Listen before you talk. Everything else follows naturally.
 
-73, Kristof — ON3VZ
-*Hoboken (Antwerp) — Grid JO21EE — UBA / WLD / ON6WL*
+73, Kristof, ON3VZ
+*Hoboken (Antwerp), Grid JO21EE, UBA / WLD / ON6WL*

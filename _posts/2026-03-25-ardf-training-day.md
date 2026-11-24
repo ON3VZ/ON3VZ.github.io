@@ -2,6 +2,7 @@
 layout: post
 title: "My First ARDF Experience: Fox Hunting with the WLD NextGen System"
 tags: ['ARDF']
+topics: ['Club, CW & Heritage']
 ---
 
 On March 28, 2026, my club [ON6WL](https://on6wl.be) organises an ARDF training and test day, a perfect opportunity to discover a discipline I had never tried before. The day revolves around an extensive field test of the **WLD ARDF NextGen system**, which will make me leave with a head full of new knowledge and a real appetite for more.
@@ -17,13 +18,13 @@ ARDF is an officially recognised sport with its own IARU competition rules. Even
 The [WLD ARDF NextGen](https://on6wl.be/archives/18582) is a modern, open-source transmitter platform designed specifically for ARDF events. It improves on older fox hardware in several ways:
 
 - **Precise timing and synchronisation** between multiple transmitters via GPS or network
-- **Configurable output power and call sign** — easy to set up for different band plans
-- **Compact and weatherproof** — ready for field deployment
-- **Telemetry feedback** — organisers can monitor transmitter status remotely
+- **Configurable output power and call sign**: easy to set up for different band plans
+- **Compact and weatherproof**: ready for field deployment
+- **Telemetry feedback**: organisers can monitor transmitter status remotely
 
 The test day is about putting this system through its paces under realistic conditions: checking timing accuracy, signal quality, and ease of deployment for a full club event.
 
-## New to Me — and Immediately Fascinating
+## New to Me: and Immediately Fascinating
 
 I'll be honest: before this day, ARDF was just a name to me. I had seen it mentioned in amateur radio magazines but never really understood what it involved. The first time I picked up a directional antenna and tried to make sense of a signal bouncing off trees and buildings, I felt completely lost.
 
@@ -51,4 +52,4 @@ Beyond the equipment and the sport, the biggest takeaway from this day is the kn
 
 If you are anywhere near ARDF or are curious about direction finding, I strongly recommend getting in touch. This will be an excellent introduction, and it definitely won't be my last fox hunt.
 
-*73, Kristof — ON3VZ*
+*73, Kristof, ON3VZ*

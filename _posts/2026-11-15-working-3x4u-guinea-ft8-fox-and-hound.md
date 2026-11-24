@@ -3,6 +3,7 @@ layout: post
 title: "Working 3X4U Guinea on FT8: Fox and Hound, Split and Every WSJT-X Setting Explained"
 tags: ['FT8', 'WSJT-X', 'DXpedition', '3X4U', 'Fox and Hound', 'Split', 'PSK Reporter', 'IC-7300', 'Beginners']
 excerpt: "The Belgian Rockall DX Group is on the air from Guinea and I want them on FT8 on 40 m. But they seem to listen somewhere else. Why FT8 has no DX split but WSJT-X still uses a technical one, what Fox and Hound is, why my split setting is on Fake It, every WSJT-X setting step by step, the mistakes I made, and how I used PSK Reporter to see where my signal arrives. No QSO on the first evening, but on 17 November the Fox picked me on 40 m, with about 20 W."
+topics: ['FT8 & Digital Modes', 'HF & DX']
 ---
 <!-- FT8-3X4U 2026-11-15: new post. 2026-11-18: QSO result, WSJT-X and PSK Reporter screenshots added (section 14). Revert by deleting this file and the folder assets/images/ft8-3x4u/ -->
 <style>

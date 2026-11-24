@@ -3,6 +3,10 @@ layout: post
 title: "Part 5/5 · Yaesu FTM-510DE ASP, One Year Later: GM, Mobile Installation, Microphone Keys and the Hidden Extras"
 tags: ['Yaesu', 'FTM-510DE', 'Mobile', 'GM', 'Group Monitor', 'ASP', 'Super DX', 'Installation', 'Beginners']
 excerpt: "The last part of the series: Group Monitor and its radar screen, how the radio is installed in my car, the microphone keys for driving blind, Super DX and ASP noise reduction, recording, navigation back to your starting point, cloning, and a pocket cheat sheet for the car."
+topics: ['VHF/UHF & Digital Voice']
+series: 'FTM-510DE'
+series_part: 5
+series_total: 5
 ---
 <!-- FTM510D-PART5 2026-11-23: new post. Revert by deleting this file -->
 <style>

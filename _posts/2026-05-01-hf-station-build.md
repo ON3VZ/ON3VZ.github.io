@@ -2,6 +2,7 @@
 layout: post
 title: "Starting from Zero: Building a Capable HF Station on 25 Watts"
 tags: [HF, Antennas, Station Build, Class C, Equipment]
+topics: ['Station & Equipment', 'Getting Started']
 ---
 
 Getting a Class C amateur radio licence feels like finally having the key to a door you have been staring at for months. You pass the exam, you receive your callsign, and then reality sets in: **now what?**

@@ -3,6 +3,7 @@ layout: post
 title: "Hunting the BAFARA Award OR80AF"
 tags: ['Awards', 'BAFARA', 'OR80AF', 'Belgian Air Force', 'HF', 'Beginners']
 excerpt: "The Belgian Air Force turns 80 and BAFARA celebrates with an award hunt in October 2026. How it scores, how I am chasing it from a Class C station on 25 W, and a live tracker of what is still to work."
+topics: ['HF & DX', 'Club, CW & Heritage']
 ---
 <!-- BAFARA-OR80AF 2026-10-08: short story post, the live tracker is on /trackers/or80af/. Revert by deleting this file (see the comment in tracker-or80af.html for the full list) -->
 

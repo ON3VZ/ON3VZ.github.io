@@ -3,6 +3,10 @@ layout: post
 title: "From Box to Codeplug: Setting Up a Baofeng DM-1801 Pro for FM and DMR in Belgium (Part 1)"
 tags: ['DMR', 'FM', 'Baofeng', 'DM-1801 Pro', 'Codeplug', 'BrandMeister', 'Pi-Star', 'Hotspot', 'VHF', 'UHF', 'Beginners']
 excerpt: "Everything I did to turn a brand new Baofeng DM-1801 Pro into a working FM and DMR radio for Belgium: the shopping list, my DMR ID, a BrandMeister account, the programming software, repeater research, a 210 channel codeplug in 32 zones, roaming, and a Pi-Star hotspot at home. Every field explained: what it is, why I chose it, and where you look it up."
+topics: ['VHF/UHF & Digital Voice']
+series: 'Digital Voice'
+series_part: 1
+series_total: 4
 ---
 <!-- DM1801PRO-PART1 2026-10-29: new post. Revert by deleting this file, assets/images/dm1801pro/ and assets/files/dm1801pro-codeplug-csv-2026-10.zip -->
 <style>

@@ -3,6 +3,7 @@ layout: post
 title: "SAQ Grimeton: Listening to a 1924 Machine on 17.2 kHz with ON5JK's Loop"
 tags: ['SAQ', 'Grimeton', 'VLF', '17.2 kHz', 'Alexanderson alternator', 'Loop antenna', 'Spectrum Lab', 'SAQrx', 'CW', 'Heritage', 'ON5JK', 'Beginners']
 excerpt: "Eddy ON5JK passed on his VLF loop. A complete beginner's guide to SAQ Grimeton: the history, how the 1924 Alexanderson alternator makes 17.2 kHz and how 200 kW is keyed, the start up ritual, how a tuned magnetic loop works and how to aim it from JO21EE, sound card software, reading the Morse by ear, the reception report and e-QSL, and when to listen. With a Dutch version and a Dutch PDF."
+topics: ['Club, CW & Heritage']
 ---
 <!-- SAQ 2026-11-15: new post. Revert by deleting this file, the folder assets/images/saq/ and assets/files/ON3VZ-SAQ-Grimeton-NL.pdf -->
 <style>

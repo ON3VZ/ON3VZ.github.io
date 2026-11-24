@@ -3,6 +3,10 @@ layout: post
 title: "DMR on My Smartphone: DroidStar on BrandMeister (Part 3)"
 tags: ['DMR', 'BrandMeister', 'DroidStar', 'Android', 'Hotspot', 'Talkgroups', 'Beginners']
 excerpt: "The third way onto BrandMeister: no radio, no hotspot, just an Android phone and the DroidStar app. Which app to install, every setting explained, the echo test that only works as a private call, why the app shows up as a second device on BrandMeister, and what happened when I tried my Bluetooth speaker mic."
+topics: ['VHF/UHF & Digital Voice']
+series: 'Digital Voice'
+series_part: 3
+series_total: 4
 ---
 <!-- DROIDSTAR-PART3 2026-11-03: new post. Revert by deleting this file and the folder assets/images/droidstar/ -->
 <style>

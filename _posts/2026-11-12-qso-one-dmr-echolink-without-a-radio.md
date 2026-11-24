@@ -3,6 +3,10 @@ layout: post
 title: "No Radio Yet? QSO One Puts DMR, EchoLink and More on Your Phone (Part 4)"
 tags: ['DMR', 'EchoLink', 'BrandMeister', 'QSO One', 'Android', 'Windows', 'Talkgroups', 'Digital Voice', 'Beginners']
 excerpt: "A complete step plan for anyone with a licence but without a digital radio: the accounts (RadioID, BrandMeister, EchoLink), the free QSO One app on Android or Windows, DMR talkgroups, statics and scheduled nets, EchoLink repeaters across Flanders, and a fixed card for every other network in the app. For radio owners too: how it fits next to your hotspot."
+topics: ['VHF/UHF & Digital Voice']
+series: 'Digital Voice'
+series_part: 4
+series_total: 4
 ---
 <!-- QSO-ONE-PART4 2026-11-12: new post. Revert by deleting this file and the folder assets/images/qso-one/ -->
 <style>

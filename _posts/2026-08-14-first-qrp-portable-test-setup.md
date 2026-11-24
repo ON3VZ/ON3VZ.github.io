@@ -2,6 +2,7 @@
 layout: post
 title: "First QRP Portable Test Setup: 5 Watts, a QMX and a Band Hopper IV in a Field"
 tags: ['Portable', 'QRP', 'QMX', 'Antennas', 'Power', 'Beginners']
+topics: ['Portable & WWFF']
 ---
 
 <style>

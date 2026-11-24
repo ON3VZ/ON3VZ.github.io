@@ -3,6 +3,7 @@ layout: post
 title: "Two Antennas, Two Jobs: What My IronWave Vertical and HyEndFed Sloper Can Do"
 tags: ['Antennas', 'IronWave', 'HyEndFed', 'NanoVNA', 'SWR', 'NVIS', 'DX', 'Measurements', 'Beginners']
 excerpt: "A vertical for DX and a sloping end-fed wire for the low bands: what a 1 to 30 MHz NanoVNA sweep of both antennas shows, which band each one is good for, and where NVIS ends and DX begins."
+topics: ['Antennas & Measurement']
 ---
 <!-- ANTENNA-SWEEPS 2026-10-29: new post. Revert by deleting this file and the folder assets/images/antenna-sweeps/ -->
 <style>

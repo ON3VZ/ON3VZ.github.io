@@ -3,6 +3,7 @@ layout: post
 title: "UBA QSL Sorter: From a Stack of Cards to Bureau-Ready Packets"
 tags: ['QSL', 'UBA', 'QSL Bureau', 'Tools', 'Web App']
 excerpt: "Sorting QSL cards for the UBA bureau is mandatory and easy to get wrong. I built a small web app that takes a list of callsigns and gives you the packets in the order of the official UBA sorting list."
+topics: ['Tools & Software']
 ---
 <!-- UBA-QSL-SORTER 2026-11-01: new post. Revert by deleting this file and the folder assets/images/uba-qsl-sorter/, and remove project card 09 from projects.html (and set the hero badge back to 8 active projects) -->
 <style>

@@ -2,6 +2,7 @@
 layout: post
 title: "From a Paper Grid to a Live Scoreboard: Building the N1MM Field Day Tracker"
 tags: ['Projects', 'Field Day', 'N1MM', 'Software', 'WLD']
+topics: ['Tools & Software', 'Club, CW & Heritage']
 ---
 
 <!-- HERO PANEL. Manual removal block: delete everything between the

@@ -2,6 +2,7 @@
 layout: post
 title: "First Steps into FT8: When 25 Watts Suddenly Reaches Argentina"
 tags: [FT8, Digital Modes, HF, IC-7300, WSJT-X, DX, Beginners]
+topics: ['FT8 & Digital Modes']
 ---
 
 Today was the day I finally dipped my toes into the digital modes. FT8, to be precise. I had been putting it off for a while, partly because phone (SSB) is what drew me into this hobby, and partly because I was honestly a bit afraid of doing something wrong and damaging the radio. Spoiler: nothing broke, and by the end of the evening I was staring at my screen in disbelief.

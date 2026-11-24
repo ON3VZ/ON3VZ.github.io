@@ -3,6 +3,7 @@ layout: post
 title: "25 Watts to Christmas Island: Right Moment, Right Mode, Clean Signal"
 tags: ['FT8', 'Propagation', 'DXpedition', 'VK9XY', 'Fox and Hound', '15m', 'IronWave 6', 'IC-7300', 'Low Power', 'Beginners']
 excerpt: "On 23 November 2026 at 12:09 UTC the VK9XY youth DXpedition on Christmas Island put me in the log on 15 m FT8: 11,696 km on 25 W with a vertical in a city garden. I called at most five times. Why did it work? A quiet ionosphere, a path that was half in daylight and half in the dark, a mode that decodes far below the noise, and a clean signal. With maps, diagrams and my own numbers, as a boost for everyone who wants to go far on little power."
+topics: ['HF & DX', 'FT8 & Digital Modes']
 ---
 <!-- VK9XY-PROPAGATION 2026-11-23: new post. Revert by deleting this file and the folder assets/images/vk9xy-propagation/ -->
 <style>

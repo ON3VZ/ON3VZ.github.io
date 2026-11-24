@@ -2,6 +2,7 @@
 layout: post
 title: "My Yaesu FT-65 Under the Microscope: A Deep Spectrum Analysis on 2 Metres"
 tags: [VHF, Measurement, Equipment, Beginners, FT-65, Spectrum Analyser]
+topics: ['Antennas & Measurement']
 ---
 
 Yesterday the WLD club organised a workshop on spectrum analysers. I brought along my **Yaesu FT-65** handheld radio and connected it, for the first time in my life, to a real spectrum analyser. What appeared on the screen was frankly fascinating, and deeply educational.
@@ -549,7 +550,7 @@ This means: every harmonic or spurious emission may be at most **one millionth**
 
 | Emission | Frequency | Measured level | Standard | Verdict |
 |----------|-----------|---------------|----------|---------|
-| Carrier | 145.960 MHz | 0 dBc (reference) | — | ✅ |
+| Carrier | 145.960 MHz | 0 dBc (reference) | - | ✅ |
 | 2nd harmonic | ~291.6 MHz | **−55.37 dBc** | < −60 dBc | ⚠️ |
 | 3rd peak / spur | ~434.2 MHz | −71.80 dBc | < −60 dBc | ✅ |
 
@@ -597,10 +598,10 @@ Carrier at antenna:              +27 dBm (500 mW, low power mode)
 
 | Emission | Freq (MHz) | Power (dBm) | Level (dBc) | Standard | Verdict |
 |----------|-----------|-------------|-------------|----------|---------|
-| Carrier | 145.960 | −37.73 dBm | 0 dBc (ref.) | — | ✅ |
+| Carrier | 145.960 | −37.73 dBm | 0 dBc (ref.) | - | ✅ |
 | 2nd harmonic | ~291.600 | −93.10 dBm | −55.37 dBc | <−60 dBc | ⚠️ * |
 | 3rd peak / spur | ~434.160 | −109.53 dBm | −71.80 dBc | <−60 dBc | ✅ |
-| Noise floor | (all) | ~−110.82 dBm | −73.09 dBc | — | — |
+| Noise floor | (all) | ~−110.82 dBm | −73.09 dBc | - |: |
 
 \* Measurement uncertainty ±3–5 dB; official CE type approval already granted.
 

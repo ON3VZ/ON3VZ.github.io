@@ -3,6 +3,7 @@ layout: post
 title: "Ones, Zeros and a Human Voice: Patrick ON4PN on Digital Voice at WLD"
 tags: ['WLD', 'Digital Voice', 'DMR', 'D-STAR', 'System Fusion', 'FreeDV', 'VHF', 'HF', 'Beginners']
 excerpt: "A club evening at WLD where Patrick ON4PN took us from ones and zeros to D-STAR, Fusion, DMR and FreeDV, and then left us with something to think about: more possibilities, fewer QSOs. With a start for beginners, a jargon list and a full Dutch version."
+topics: ['VHF/UHF & Digital Voice', 'Club, CW & Heritage']
 ---
 <!-- DIGITAL-VOICE 2026-10-10: new post (English + Dutch with language switch). Revert by deleting this file and the folder assets/images/digital-voice/ -->
 <style>

@@ -3,6 +3,10 @@ layout: post
 title: "Part 3/5 · Yaesu FTM-510DE ASP, One Year Later: C4FM Digital, AMS, DG-ID and WIRES-X Explained"
 tags: ['Yaesu', 'FTM-510DE', 'Mobile', 'C4FM', 'System Fusion', 'WIRES-X', 'DG-ID', 'YSF', 'Digital Voice', 'Beginners']
 excerpt: "For a year the little digital icon on my FTM-510DE was a mystery. This is what C4FM really is, what DN, VW, DW and AMS mean on the screen, why DG-ID 00 is almost always the right answer, how WIRES-X links a Belgian repeater to rooms all over the world, and what a hotspot adds."
+topics: ['VHF/UHF & Digital Voice']
+series: 'FTM-510DE'
+series_part: 3
+series_total: 5
 ---
 <!-- FTM510D-PART3 2026-11-23: new post. Revert by deleting this file and assets/images/ftm510d/c4fm-modes-ams.svg -->
 <style>

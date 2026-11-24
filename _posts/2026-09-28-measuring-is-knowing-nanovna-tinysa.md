@@ -3,6 +3,7 @@ layout: post
 title: "Measuring is Knowing: the NanoVNA-H4 and tinySA for New Radio Amateurs"
 tags: ['Measurement', 'NanoVNA', 'tinySA', 'Antennas', 'SWR', 'Smith Chart', 'Beginners']
 excerpt: "A complete beginner's guide to the NanoVNA-H4 and the tinySA: safety, calibration, reading SWR, return loss and the Smith chart, a band-by-band SWR sweep plan, harmonics and chokes. With 55 annotated figures and downloadable PDFs in English and Dutch."
+topics: ['Antennas & Measurement']
 ---
 <!-- MEASURING-IS-KNOWING 2026-09-28: new post. Revert by deleting this file, assets/images/measuring-is-knowing/ and the four PDFs in assets/files/. -->
 <style>
