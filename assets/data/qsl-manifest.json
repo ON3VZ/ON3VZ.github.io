@@ -490,5 +490,20 @@
     "mode": "SSB",
     "freq": "7.170",
     "rst": "59"
+  },
+  {
+    "id": "sx602n-2026-11-23",
+    "image": "/assets/images/qsl/sx602n-2026-11-23.jpg",
+    "fromCall": "SX602N",
+    "fromName": "Special Event Station",
+    "qth": "Naval Fort of Votanikos",
+    "country": "Greece",
+    "continent": "Europe",
+    "date": "2026-11-23",
+    "time": "12:21z",
+    "band": "15m",
+    "mode": "CW",
+    "freq": "21.015",
+    "rst": "599"
   }
 ]
