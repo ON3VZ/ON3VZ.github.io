@@ -505,5 +505,18 @@
     "mode": "CW",
     "freq": "21.015",
     "rst": "599"
+  },
+  {
+    "id": "eh3pda-2026-09-09",
+    "image": "/assets/images/qsl/eh3pda-2026-09-09.jpg",
+    "fromCall": "EH3PDA",
+    "country": "Spain",
+    "continent": "Europe",
+    "date": "2026-09-09",
+    "time": "15:41z",
+    "band": "20m",
+    "mode": "SSB",
+    "freq": "14.300",
+    "rst": "59"
   }
 ]
